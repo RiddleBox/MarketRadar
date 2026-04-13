@@ -34,18 +34,18 @@ logger = logging.getLogger(__name__)
 
 # 按优先级定义最大风险预算（占总资金 %）
 RISK_BUDGET_BY_PRIORITY = {
-    PriorityLevel.watch: 0.0,
-    PriorityLevel.research: 0.01,   # 1%
-    PriorityLevel.position: 0.05,   # 5%
-    PriorityLevel.urgent: 0.08,     # 8%
+    PriorityLevel.WATCH: 0.0,
+    PriorityLevel.RESEARCH: 0.01,   # 1%
+    PriorityLevel.POSITION: 0.05,   # 5%
+    PriorityLevel.URGENT: 0.08,     # 8%
 }
 
 # 行动计划有效期（天）
 PLAN_VALIDITY_DAYS = {
-    PriorityLevel.watch: 30,
-    PriorityLevel.research: 21,
-    PriorityLevel.position: 14,
-    PriorityLevel.urgent: 7,
+    PriorityLevel.WATCH: 30,
+    PriorityLevel.RESEARCH: 21,
+    PriorityLevel.POSITION: 14,
+    PriorityLevel.URGENT: 7,
 }
 
 
@@ -70,7 +70,7 @@ class ActionDesigner:
         )
 
         # watch 级别不生成执行计划，只生成观察计划
-        if opportunity.priority_level == PriorityLevel.watch:
+        if opportunity.priority_level == PriorityLevel.WATCH:
             return self._build_watch_plan(opportunity)
 
         # 通过 LLM 生成具体行动细节
@@ -88,39 +88,44 @@ class ActionDesigner:
         now = datetime.now()
 
         return ActionPlan(
-            plan_id=f"plan_{uuid.uuid4().hex[:8]}",
             opportunity_id=opportunity.opportunity_id,
-            action_type=ActionType.WATCH,
-            instrument=instrument,
-            direction=opportunity.trade_direction,
-            position_sizing=PositionSizing(
-                method="FIXED_PERCENT",
-                value=0.0,
-                notes="watch 阶段不入场，仓位为 0",
+            plan_summary=f"观察期：跟踪 {instrument}，等待优先级升级后再入场",
+            primary_instruments=opportunity.target_instruments or ["待定"],
+            instrument_type=(
+                opportunity.instrument_types[0]
+                if opportunity.instrument_types
+                else InstrumentType.STOCK
             ),
-            entry_conditions=[
-                f"优先级升级至 research 或以上",
-                f"核实以下假设成立：{'; '.join(opportunity.key_assumptions[:2])}",
-            ],
             stop_loss=StopLossConfig(
-                stop_price=None,
-                stop_condition="watch 阶段无持仓，无需止损",
-                trigger_type="NONE",
+                stop_loss_type="percent",
+                stop_loss_value=0.0,
+                notes="watch 阶段无持仓，无需止损",
             ),
             take_profit=TakeProfitConfig(
-                target_price=None,
-                partial_exits=[],
-                trailing_stop=None,
+                take_profit_type="percent",
+                take_profit_value=0.0,
+                notes="watch 阶段无持仓，无止盈设置",
+            ),
+            position_sizing=PositionSizing(
+                suggested_allocation="0%",
+                max_allocation="0%",
+                sizing_rationale="watch 阶段不入场，仓位为零",
             ),
             phases=[
                 ActionPhase(
                     phase_name="观察期",
-                    trigger_condition="持续",
-                    action_description=f"持续跟踪：{'; '.join(opportunity.next_validation_questions[:3])}",
+                    action_type=ActionType.WATCH,
+                    timing_description=f"持续跟踪：{'; '.join(opportunity.next_validation_questions[:3])}",
+                    allocation_ratio=1.0,
+                    trigger_condition="优先级升级至 research 或以上",
                 )
             ],
-            created_at=now,
-            expires_at=now + timedelta(days=PLAN_VALIDITY_DAYS[PriorityLevel.watch]),
+            valid_until=now + timedelta(days=PLAN_VALIDITY_DAYS[PriorityLevel.WATCH]),
+            review_triggers=[
+                "优先级升级至 research 或以上",
+                f"核实假设：{'; '.join(opportunity.key_assumptions[:2])}",
+            ],
+            opportunity_priority=PriorityLevel.WATCH,
         )
 
     # ------------------------------------------------------------------
@@ -255,26 +260,29 @@ class ActionDesigner:
         # 止损配置
         sl_data = detail.get("stop_loss", {})
         stop_loss = StopLossConfig(
-            stop_price=None,  # 由 M5 根据实际入场价更新
-            stop_condition=sl_data.get("stop_condition", "关键假设失效"),
-            trigger_type=sl_data.get("trigger_type", "CONDITION_BASED"),
-            description=sl_data.get("stop_price_description", ""),
+            stop_loss_type=sl_data.get("stop_loss_type", "percent"),
+            stop_loss_value=float(sl_data.get("stop_loss_value", 5.0)),
+            stop_loss_price=sl_data.get("stop_loss_price"),
+            hard_stop=sl_data.get("hard_stop", True),
+            notes=sl_data.get("notes", sl_data.get("stop_price_description", "关键假设失效时止损")),
         )
 
         # 止盈配置
         tp_data = detail.get("take_profit", {})
         take_profit = TakeProfitConfig(
-            target_price=None,
-            partial_exits=tp_data.get("partial_exits", []),
-            trailing_stop=tp_data.get("trailing_stop"),
-            description=tp_data.get("target_price_description", ""),
+            take_profit_type=tp_data.get("take_profit_type", "percent"),
+            take_profit_value=float(tp_data.get("take_profit_value", 10.0)),
+            take_profit_price=tp_data.get("take_profit_price"),
+            partial_take_profit=tp_data.get("partial_take_profit", True),
+            partial_ratio=float(tp_data.get("partial_ratio", 0.5)),
+            notes=tp_data.get("notes", tp_data.get("target_price_description")),
         )
 
         # 仓位建议
         position_sizing = PositionSizing(
-            method="FIXED_PERCENT",
-            value=risk_budget,
-            notes=f"优先级={priority.value}，最大风险预算={risk_budget*100:.0f}%总资金",
+            suggested_allocation=f"{risk_budget*100:.0f}-{risk_budget*100*1.5:.0f}%",
+            max_allocation=f"不超过{risk_budget*100*2:.0f}%",
+            sizing_rationale=f"优先级={priority.value}，最大风险预算={risk_budget*100:.0f}%总资金",
         )
 
         # 分阶段计划
@@ -282,30 +290,57 @@ class ActionDesigner:
         for p in detail.get("phases", []):
             phases.append(ActionPhase(
                 phase_name=p.get("phase_name", ""),
-                trigger_condition=p.get("trigger_condition", ""),
-                action_description=p.get("action_description", ""),
+                action_type=ActionType(p.get("action_type", "buy")),
+                timing_description=p.get("timing_description", p.get("action_description", "等待入场信号")),
+                allocation_ratio=float(p.get("allocation_ratio", 0.5)),
+                price_range=p.get("price_range"),
+                trigger_condition=p.get("trigger_condition"),
             ))
 
         if not phases:
-            phases = [ActionPhase(
-                phase_name="Phase 1",
-                trigger_condition="入场条件满足时",
-                action_description="建立初始仓位",
-            )]
+            phases = [
+                ActionPhase(
+                    phase_name="第一批建仓",
+                    action_type=ActionType.BUY,
+                    timing_description="入场信号满足时分批建仓",
+                    allocation_ratio=0.5,
+                    trigger_condition="价格回调或强度確认",
+                ),
+                ActionPhase(
+                    phase_name="第二批加仓",
+                    action_type=ActionType.BUY,
+                    timing_description="第一批盈利确认后加仓",
+                    allocation_ratio=0.5,
+                    trigger_condition="第一批建仓后价格继续走强",
+                ),
+            ]
 
         return ActionPlan(
-            plan_id=f"plan_{uuid.uuid4().hex[:8]}",
             opportunity_id=opportunity.opportunity_id,
-            action_type=ActionType.OPEN,
-            instrument=detail.get("instrument", opportunity.target_instruments[0] if opportunity.target_instruments else "待定"),
-            direction=opportunity.trade_direction,
-            position_sizing=position_sizing,
-            entry_conditions=detail.get("entry_conditions", ["等待入场信号"]),
+            plan_summary=detail.get(
+                "plan_summary",
+                f"{opportunity.trade_direction.value} | {', '.join(opportunity.target_instruments[:2] or ['待定'])}"
+            ),
+            primary_instruments=(
+                detail.get("primary_instruments")
+                or opportunity.target_instruments
+                or ["待定"]
+            ),
+            instrument_type=(
+                opportunity.instrument_types[0]
+                if opportunity.instrument_types
+                else InstrumentType.STOCK
+            ),
             stop_loss=stop_loss,
             take_profit=take_profit,
+            position_sizing=position_sizing,
             phases=phases,
-            created_at=now,
-            expires_at=now + timedelta(days=PLAN_VALIDITY_DAYS[priority]),
+            valid_until=now + timedelta(days=PLAN_VALIDITY_DAYS[priority]),
+            review_triggers=detail.get(
+                "review_triggers",
+                ["关键假设失效", f"{PLAN_VALIDITY_DAYS[priority]}天内未触发入场则重新评估"],
+            ),
+            opportunity_priority=priority,
         )
 
     def _parse_json(self, raw: str) -> dict:
