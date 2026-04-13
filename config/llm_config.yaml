@@ -5,6 +5,15 @@
 default_provider: deepseek
 
 providers:
+  xfyun:
+    base_url: "https://maas-coding-api.cn-huabei-1.xf-yun.com/v2"
+    api_key: "${XFYUN_API_KEY}"
+    model: "astron-code-latest"
+    timeout: 60
+    max_retries: 3
+    # 讯飞星辰 Coding Plan，OpenAI-compatible API
+
+
   deepseek:
     base_url: "https://api.deepseek.com/v1"
     api_key: "${DEEPSEEK_API_KEY}"
