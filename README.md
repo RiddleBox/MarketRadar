@@ -57,7 +57,7 @@ python .\scripts\inspect_llm_runtime.py
 
 ### 运行联调主链路（当前推荐）
 ```powershell
-pwsh -File .\run_dev_pipeline.ps1 -Provider xfyun
+pwsh -File .\run_dev_pipeline.ps1 -Provider gongfeng
 ```
 
 ### 运行 Pipeline（分析一段文本）

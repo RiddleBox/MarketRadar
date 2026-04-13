@@ -10,7 +10,7 @@ integrations/openclaw_market_brief.py — OpenClaw 市场情绪分析入口
 OpenClaw 调用 get_market_brief() 或 analyze_event()，
 拿到结构化分析结果后以自然语言回复用户。
 
-LLM 模式：OpenClaw 自身模型（工蜂AI claude-sonnet），
+LLM 模式：OpenClaw 自身模型（当前修复周期统一以工蜂AI gongfeng/gpt-5-4 为目标），
 通过 OpenClaw 的内置 HTTP API 推理，无需额外 API key。
 """
 from __future__ import annotations
@@ -43,7 +43,7 @@ class OpenClawLLMClient:
             "OPENCLAW_API_URL", "http://localhost:3000/v1"
         )
         self.model = os.environ.get(
-            "OPENCLAW_MODEL", "gongfeng/claude-sonnet-4-6"
+            "OPENCLAW_MODEL", "gongfeng/gpt-5-4"
         )
         self._client = None
         self._available = None
@@ -70,9 +70,13 @@ class OpenClawLLMClient:
         if client is None:
             self._available = False
             return False
+
+        # 注意：当前环境下 GET /models 可能返回 404，不能作为可用性检查。
+        # 这里只做最保守的本地连通性探测：能成功建立到 base_url 的 HTTP 往返，
+        # 即认为入口“可尝试”；真实可用性由实际 chat/completions 调用决定。
         try:
-            resp = client.get("/models", timeout=3.0)
-            self._available = resp.status_code == 200
+            resp = client.get("/", timeout=3.0)
+            self._available = resp.status_code < 500
         except Exception:
             self._available = False
         return self._available
