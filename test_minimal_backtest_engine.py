@@ -1,5 +1,6 @@
 from backtest.minimal_backtest_engine import MinimalBacktestEngine
 from core.task4_mappers import build_backtest_task
+from data.price_loader import PriceLoader
 from run_test_pipeline_force_deepseek import run_pipeline
 
 
@@ -11,9 +12,10 @@ if __name__ == "__main__":
     opportunity = result["opportunities"][0]
     task = build_backtest_task(opportunity)
 
-    closes = [100, 101.5, 103.2, 102.8, 104.5, 106.0, 107.8, 106.9, 108.6, 110.2, 109.7]
+    instrument = task.instrument_candidates[0] if task.instrument_candidates else "沪深300ETF"
+    closes = PriceLoader().load_closes(instrument, frequency="daily")
     engine = MinimalBacktestEngine()
-    summary = engine.run(task, instrument=task.instrument_candidates[0] if task.instrument_candidates else "TEST_ETF", closes=closes)
+    summary = engine.run(task, instrument=instrument, closes=closes)
 
     print("BACKTEST_SUMMARY=", summary.summary_id, summary.total_runs, round(summary.win_rate, 4))
     print("AVG_NET_RETURN=", round(summary.avg_net_return_pct, 4))
