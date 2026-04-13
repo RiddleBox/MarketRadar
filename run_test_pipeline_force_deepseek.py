@@ -58,6 +58,9 @@ print(f"识别到 {len(opportunities)} 个机会:")
 for opp in opportunities:
     print(f"  [{opp.priority_level.value}] {opp.opportunity_title}")
     print(f"    方向={opp.trade_direction.value} 时间窗={opp.opportunity_window.start} -> {opp.opportunity_window.end}")
+    print(f"    评分: overall={opp.opportunity_score.overall_score} confidence={opp.opportunity_score.confidence_score} execution={opp.opportunity_score.execution_readiness}")
+    print(f"    失效条件: {opp.invalidation_conditions[:2]}")
+    print(f"    Kill switch: {opp.kill_switch_signals[:2]}")
     print(f"    理由: {opp.opportunity_thesis[:120]}...")
 
 if not opportunities:

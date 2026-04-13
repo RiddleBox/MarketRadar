@@ -97,8 +97,23 @@ STEP_B_SYSTEM_PROMPT = """你是一位专业的市场机会分析师，负责判
   "key_assumptions": ["假设1：...成立", "假设2：...未恶化"],
   "uncertainty_map": ["最大不确定性1（影响程度：高）", "不确定性2（影响程度：中）"],
   "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.72
+  },
   "risk_reward_profile": "潜在收益/风险结构描述",
   "next_validation_questions": ["需要验证的问题1", "问题2"],
+  "invalidation_conditions": ["失效条件1", "失效条件2"],
+  "must_watch_indicators": ["必须跟踪指标1", "指标2"],
+  "kill_switch_signals": ["危险信号1", "危险信号2"],
   "warnings": ["注意：证据来源均为新闻，非官方公告"]
 }
 ```
@@ -107,7 +122,19 @@ STEP_B_SYSTEM_PROMPT = """你是一位专业的市场机会分析师，负责判
 ```json
 {
   "is_opportunity": false,
-  "reason": "简短说明为什么不构成机会"
+  "reason": "简短说明为什么不构成机会",
+  "opportunity_score": {
+    "catalyst_strength": 3,
+    "timeliness": 4,
+    "market_confirmation": 3,
+    "tradability": 5,
+    "risk_clarity": 4,
+    "consensus_gap": 2,
+    "signal_consistency": 3,
+    "overall_score": 3.4,
+    "confidence_score": 0.62,
+    "execution_readiness": 0.28
+  }
 }
 ```
 """
@@ -119,5 +146,14 @@ STEP_B_USER_PROMPT = """请判断以下场景是否构成市场机会：
 
 ## 关联信号详情
 {signals_detail}
+
+## 额外要求
+1. 必须显式输出 `opportunity_score`。
+2. 若 `is_opportunity=true`，必须同时输出：
+   - `invalidation_conditions`
+   - `must_watch_indicators`
+   - `kill_switch_signals`
+3. 分数要彼此协调，不要出现 `overall_score` 很高但 `execution_readiness` 极低的明显矛盾。
+4. 所有字段都必须是结构化 JSON，不要输出解释文字。
 
 请按格式输出 JSON。"""
