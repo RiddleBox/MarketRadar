@@ -257,6 +257,8 @@
 # Phase 6：回测系统升级
 
 ## P6-1. OpportunityObject 驱动回测
+状态：已完成第一阶段（BacktestTask / mapper / 最小回测执行器已落地）
+
 目标：让回测与机会对象直接对齐。
 
 任务：
@@ -282,6 +284,8 @@
 # Phase 7：模拟盘系统升级
 
 ## P7-1. 机会对象与模拟仓位绑定
+状态：已完成第一阶段（SimulatedExecutionSpec / mapper / 最小模拟执行器已落地）
+
 任务：
 - 每一笔模拟仓必须绑定 `opportunity_id`
 - 记录入场逻辑、执行计划、退出理由、盈亏归因
@@ -385,6 +389,11 @@
 ### 进入 Task 4 前的边界提醒
 - 参数系统是共享语义层，不是新的裁决层
 - 回测/模拟盘后续应优先复用 Task 3 参数，不应再私造一套平行参数体系
+
+### 截至 Task 4 收口的新增锚点
+- 回测主线已形成：`OpportunityObject -> BacktestTask -> BacktestSummary`
+- 模拟执行主线已形成：`ActionPlan -> SimulatedExecutionSpec -> SimulatedExecutionResult`
+- 当前两条链均为“最小可执行验证器”，下一步应优先补数据接入层与真实市场约束
 
 ---
 
