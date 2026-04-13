@@ -5,7 +5,7 @@
 # 换机器时：更新 default_provider 即可切换全局 LLM
 # 详细说明见 docs/LLM_Config.md
 
-default_provider: gongfeng
+default_provider: deepseek
 
 providers:
   # ── 工蜂AI（腾讯内网推荐，无需 API Key）──────────────────
@@ -22,14 +22,14 @@ providers:
     # 如果限流/不可用，自动尝试下面 fallback_providers
     fallback_providers: [xfyun, deepseek, claude, openai]
 
-  # ── DeepSeek（通用备用，需要 API Key）────────────────────
+  # ── DeepSeek（当前联调默认 provider，需要 API Key）──────────
   deepseek:
     base_url: "https://api.deepseek.com/v1"
     api_key: "${DEEPSEEK_API_KEY}"
     model: "deepseek-chat"
     timeout: 60
     max_retries: 3
-    # 通用备用方案。设置环境变量 DEEPSEEK_API_KEY 即可使用。
+    # 当前推荐联调默认方案。设置环境变量 DEEPSEEK_API_KEY 即可使用。
 
   xfyun:
     base_url: "https://maas-coding-api.cn-huabei-1.xf-yun.com/v2"

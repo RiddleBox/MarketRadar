@@ -39,9 +39,16 @@ pip install -r requirements.txt
 ```
 
 ### 配置 LLM API Key
-```bash
-cp .env.example .env
-# 编辑 .env，填入你的 API Key
+当前推荐联调默认 provider 为 **DeepSeek**。
+
+PowerShell 示例：
+```powershell
+$env:DEEPSEEK_API_KEY="<your-deepseek-key>"
+```
+
+### 运行联调主链路（当前推荐）
+```powershell
+pwsh -File .\run_dev_pipeline.ps1 -Provider deepseek
 ```
 
 ### 运行 Pipeline（分析一段文本）
@@ -63,6 +70,13 @@ python pipeline/run_backtest.py --start 2024-01-01 --end 2024-06-30 --market A_S
 ```bash
 pytest tests/ -v
 ```
+
+### 当前联调建议
+- 默认联调 provider：`deepseek`
+- `gongfeng` 已接入，但当前可能遇到 429 限流
+- `xfyun` 可作为备用 provider
+- 端到端主链路验证脚本：`test_pipeline.py`
+- 统一联调入口脚本：`run_dev_pipeline.ps1`
 
 ---
 
