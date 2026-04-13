@@ -189,8 +189,13 @@ def _get_agent_network(market: str = "a_share"):
     if market not in _agent_network_cache:
         try:
             from m11_agent_sim.agent_network import AgentNetwork
-            net = AgentNetwork.from_config_file(market)
+            # 先获取 LLM 客户端，在创建 network 时就传入
+            llm = _get_llm_client()
+            net = AgentNetwork.from_config_file(
+                market, llm_client=llm, use_llm=(llm is not None)
+            )
             _agent_network_cache[market] = net
+            logger.info(f"[Ablation] AgentNetwork 已加载: market={market}, use_llm={net.use_llm}")
         except Exception as e:
             logger.warning(f"[Ablation] AgentNetwork 加载失败: {e}")
             _agent_network_cache[market] = None
@@ -201,8 +206,20 @@ def _get_agent_network(market: str = "a_share"):
 _llm_client_cache: dict = {}
 
 def _get_llm_client():
-    """获取 LLM 客户端（优先 OpenClaw，失败降级规则模式）"""
+    """获取 LLM 客户端（优先工蜂AI直连，失败降级规则模式）"""
     if "client" not in _llm_client_cache:
+        # 优先尝试工蜂AI直连客户端
+        try:
+            from integrations.gongfeng_llm_client import GongfengLLMClient
+            from integrations.llm_adapter import LLMAdapter
+            gc = GongfengLLMClient()
+            _llm_client_cache["client"] = LLMAdapter(gc, provider_name="gongfeng")
+            logger.info("[Ablation] 使用工蜂AI直连客户端")
+            return _llm_client_cache["client"]
+        except Exception as e:
+            logger.debug(f"[Ablation] 工蜂AI直连初始化失败: {e}")
+
+        # 降级：尝试 make_llm_client auto
         try:
             from integrations.llm_adapter import make_llm_client
             client = make_llm_client("auto")
@@ -275,12 +292,6 @@ def run_agent_sim(opp: dict, snap: dict | None) -> dict | None:
             sentiment=sentiment_ctx,
             signals=signal_ctx,
         )
-
-        # 接入 LLM（如果可用则启用 LLM 模式）
-        llm = _get_llm_client()
-        if llm is not None and not net.use_llm:
-            net.llm_client = llm
-            net.use_llm = True
 
         dist = net.run(inp)
         return {
