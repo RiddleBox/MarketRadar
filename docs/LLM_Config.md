@@ -2,17 +2,40 @@
 
 ## 概述
 
-MarketRadar 的 M11 AgentNetwork 支持两种 LLM 接入模式：
+MarketRadar 的当前修复周期统一以 **gongfeng/gpt-5-4** 为唯一推荐主链路。
 
 | 模式 | 方式 | 适用场景 |
 |------|------|---------|
-| **工蜂AI直连** | 读取 OpenClaw 本地 OAuth token | 腾讯内网机器（推荐）|
-| **DeepSeek** | 环境变量 `DEEPSEEK_API_KEY` | 任意机器（通用备用）|
+| **工蜂AI主链路** | `core.LLMClient` + 本地 OpenClaw OAuth token | 腾讯内网机器（当前默认/推荐）|
+| **OpenClaw Gateway** | `http://localhost:3000/v1` OpenAI-compatible | 本地 Gateway 已启动时的次选链路 |
+| **DeepSeek** | 环境变量 `DEEPSEEK_API_KEY` | 仅在主链路不可用时备用 |
 | **规则模式** | 无需 LLM | 离线/测试环境降级 |
 
 ---
 
-## 方案一：工蜂AI直连（GongfengLLMClient）
+## 方案一：工蜂AI主链路（推荐，当前默认）
+
+优先建议直接使用 `core/llm_client.py` + `config/llm_config.yaml`，因为这是 M1/M3/M4 主流程真正使用的统一入口。
+
+### 当前默认解析
+
+```yaml
+default_provider: gongfeng
+providers:
+  gongfeng:
+    model: gongfeng/gpt-5-4
+    auth_type: gongfeng_oauth
+```
+
+可用以下命令核对实际解析：
+
+```powershell
+python .\scripts\inspect_llm_runtime.py
+```
+
+如果输出中的 `default` / `m1_decoder` / `m3_judgment` / `m4_action` 仍指向 `gongfeng / gongfeng/gpt-5-4`，说明主链路解析正确。
+
+### 兼容封装：GongfengLLMClient
 
 > 适用于腾讯内网 + 已登录 OpenClaw 的机器
 
@@ -82,7 +105,13 @@ net = AgentNetwork.from_config_file("a_share", llm_client=llm, use_llm=True)
 
 ---
 
-## 方案二：DeepSeek（通用备用）
+## 方案二：OpenClaw Gateway（次选）
+
+当本机已启动 OpenClaw Gateway，且 `http://localhost:3000/v1` 可访问时，可通过 `OpenClawLLMClient` 走本地兼容入口。
+
+注意：这不是当前默认主链路，当前默认仍应优先使用工蜂 OAuth 直连。
+
+## 方案三：DeepSeek（通用备用）
 
 任何机器均可使用，无需 OpenClaw。
 
@@ -98,7 +127,7 @@ llm = make_llm_client("deepseek")  # 自动读取环境变量
 
 ---
 
-## 方案三：规则模式（离线降级）
+## 方案四：规则模式（离线降级）
 
 不传 `llm_client` 或 LLM 不可用时自动降级，不影响系统正常运行：
 
@@ -110,13 +139,16 @@ net = AgentNetwork.from_config_file("a_share")  # use_llm=False，规则模式
 
 ---
 
-## ablation_study.py 的 LLM 优先级
+## make_llm_client() 的当前优先级
 
-`backtest/ablation_study.py` 的 `_get_llm_client()` 按以下顺序尝试：
+`integrations/llm_adapter.py` 当前约定：
 
-1. `GongfengLLMClient`（工蜂AI直连）
-2. `make_llm_client("auto")`（读取环境变量，依次尝试 DeepSeek / OpenClaw Gateway）
-3. `None`（规则模式）
+1. `make_llm_client("gongfeng")`：强制走 `core.LLMClient` 的工蜂 OAuth 主链路
+2. `make_llm_client("openclaw")`：强制走 localhost Gateway
+3. `make_llm_client("deepseek")`：强制走 DeepSeek 备用链路
+4. `make_llm_client("auto")`：依次尝试 `gongfeng -> openclaw -> deepseek -> 规则模式`
+
+这次修复的目标是：**不再让任何默认链路优先落到 Claude。**
 
 ---
 
