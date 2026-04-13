@@ -4,6 +4,23 @@ integrations/gongfeng_llm_client.py — 工蜂AI直连客户端
 直接调用 copilot-gateway，使用本地缓存的 OAuth access token。
 绕开 localhost:3000 代理，直接访问工蜂AI后端。
 
+⚠️  机器相关配置说明（见 docs/LLM_Config.md）
+
+Token 缓存路径：
+  Windows : %USERPROFILE%\.openclaw\agents\main\agent\auth-profiles.json
+  macOS/Linux: ~/.openclaw/agents/main/agent/auth-profiles.json
+
+API 端点：
+  https://copilot.code.woa.com/server/openclaw/copilot-gateway/v1/chat/completions
+
+必须携带的 Headers（缺任一个返回 400）：
+  Authorization: Bearer <access>
+  OAUTH-TOKEN: <access>
+  X-Username: <username>
+  DEVICE-ID: <deviceId>
+
+注意：GET /models 返回 404 是正常的，不能用来做可用性检查。
+
 用法：
     from integrations.gongfeng_llm_client import GongfengLLMClient
     client = GongfengLLMClient()
