@@ -17,7 +17,7 @@ import os
 import re
 import time
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import yaml
 from openai import OpenAI, APITimeoutError, RateLimitError, APIError
@@ -82,9 +82,12 @@ class GongfengOAuthClient:
     def chat_completions_create(self, model: str, messages: list, **kwargs) -> str:
         """OpenAI-style interface, returns content string"""
         base_url = self._config["base_url"].rstrip("/")
-        payload = {"model": model, "messages": messages,
-                   "temperature": kwargs.get("temperature", 0.1),
-                   "max_tokens": kwargs.get("max_tokens", 2000)}
+        payload = {
+            "model": model,
+            "messages": messages,
+            "temperature": kwargs.get("temperature", 0.1),
+            "max_tokens": kwargs.get("max_tokens", 2000),
+        }
         resp = self._get_http().post(
             f"{base_url}/chat/completions",
             json=payload,
@@ -92,6 +95,9 @@ class GongfengOAuthClient:
         )
         if resp.status_code == 401:
             raise RuntimeError("[GongfengOAuth] Token 已过期，请重新登录 OpenClaw")
+        if resp.status_code == 429:
+            retry_after = resp.headers.get("Retry-After") or resp.headers.get("retry-after")
+            raise RuntimeError(f"[GongfengOAuth] RATE_LIMIT_429 retry_after={retry_after or ''}".strip())
         resp.raise_for_status()
         data = resp.json()
         return data["choices"][0]["message"]["content"]
@@ -251,6 +257,24 @@ class LLMClient:
 
         return self._clients[provider_name]
 
+    def _pick_fallback_provider(self, requested: List[str]) -> Optional[Tuple[str, dict]]:
+        """按顺序选择第一个看起来可用的 fallback provider。"""
+        providers = self._config.get("providers", {})
+        for name in requested:
+            cfg = providers.get(name)
+            if not cfg:
+                continue
+            auth_type = cfg.get("auth_type", "api_key")
+            if auth_type == "gongfeng_oauth":
+                gc = GongfengOAuthClient(cfg)
+                if gc.is_available():
+                    return name, cfg
+            else:
+                api_key = cfg.get("api_key", "")
+                if api_key and not str(api_key).startswith("${"):
+                    return name, cfg
+        return None
+
     def chat_completion(
         self,
         messages: List[Dict[str, str]],
@@ -286,6 +310,7 @@ class LLMClient:
 
         # ── 工蜂AI 分支（GongfengOAuthClient）───────────────────────────────
         if isinstance(client, GongfengOAuthClient):
+            rate_limit_backoff = int(provider_config.get("rate_limit_backoff_seconds", 8))
             for attempt in range(1, max_retries + 1):
                 try:
                     logger.debug(
@@ -304,15 +329,24 @@ class LLMClient:
                     last_exception = e
                     logger.warning(f"[工蜂AI] 尝试 {attempt}/{max_retries} 失败: {e}")
                     if attempt < max_retries:
-                        time.sleep(2 ** attempt)
+                        msg = str(e)
+                        if "RATE_LIMIT_429" in msg:
+                            m = re.search(r"retry_after=([0-9]+)", msg)
+                            wait_s = int(m.group(1)) if m else rate_limit_backoff * attempt
+                            logger.warning(f"[工蜂AI] 命中 429，等待 {wait_s}s 后重试")
+                            time.sleep(wait_s)
+                        else:
+                            time.sleep(2 ** attempt)
                 except Exception as e:
                     last_exception = e
                     logger.warning(f"[工蜂AI] 尝试 {attempt}/{max_retries} 异常: {e}")
                     if attempt < max_retries:
                         time.sleep(2 ** attempt)
 
-            fallback = provider_config.get("fallback_provider")
-            if fallback and not _tried_fallback and ("429" in str(last_exception) or "Too Many Requests" in str(last_exception)):
+            fallback_names = provider_config.get("fallback_providers") or []
+            picked = None if _tried_fallback else self._pick_fallback_provider(fallback_names)
+            if picked and ("429" in str(last_exception) or "Too Many Requests" in str(last_exception) or "RATE_LIMIT_429" in str(last_exception)):
+                fallback, _fb_cfg = picked
                 logger.warning(f"[LLMClient] 工蜂AI 遇到限流，自动降级到 fallback_provider={fallback}")
                 original_default = self._config.get("default_provider")
                 try:

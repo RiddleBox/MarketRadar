@@ -15,11 +15,12 @@ providers:
     auth_profile_path: "~/.openclaw/agents/main/agent/auth-profiles.json"
     model: "claude-sonnet-4-6"
     timeout: 60
-    max_retries: 3
+    max_retries: 4
+    rate_limit_backoff_seconds: 8
     # 腾讯内网机器推荐。认证方式：读取本地 OpenClaw OAuth token，无需手动配置。
     # Windows 路径: %USERPROFILE%\.openclaw\agents\main\agent\auth-profiles.json
-    # 如果不在内网/未登录 OpenClaw，自动降级到 fallback_provider
-    fallback_provider: deepseek
+    # 如果限流/不可用，自动尝试下面 fallback_providers
+    fallback_providers: [xfyun, deepseek, claude, openai]
 
   # ── DeepSeek（通用备用，需要 API Key）────────────────────
   deepseek:
