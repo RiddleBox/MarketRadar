@@ -225,6 +225,47 @@ class SignalDecoder:
 
         return []
 
+    def decode_file(
+        self,
+        file_path,
+        source_ref: str,
+        source_type: SourceType,
+        batch_id: str,
+        max_chunk_chars: int = 6000,
+    ) -> List[MarketSignal]:
+        """
+        从文件路径解码信号，自动分块处理超长文本。
+
+        Args:
+            file_path: 文件路径（str 或 Path）
+            source_ref: 来源引用
+            source_type: 来源类型
+            batch_id: 批次 ID
+            max_chunk_chars: 每块最大字符数（默认 6000）
+
+        Returns:
+            MarketSignal 列表
+        """
+        from pathlib import Path
+        from pipeline.ingest import split_text_into_chunks
+
+        text = Path(file_path).read_text(encoding="utf-8")
+        chunks = split_text_into_chunks(text, max_chars=max_chunk_chars)
+
+        all_signals: List[MarketSignal] = []
+        for i, chunk in enumerate(chunks):
+            chunk_ref = f"{source_ref}#chunk{i+1}" if len(chunks) > 1 else source_ref
+            signals = self.decode(
+                raw_text=chunk,
+                source_ref=chunk_ref,
+                source_type=source_type,
+                batch_id=batch_id,
+            )
+            all_signals.extend(signals)
+
+        logger.info(f"decode_file: {len(chunks)} chunks → {len(all_signals)} signals")
+        return all_signals
+
     def decode_batch(
         self,
         texts: List[dict],
