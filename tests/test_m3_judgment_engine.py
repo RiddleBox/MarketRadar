@@ -94,3 +94,37 @@ def test_build_opportunity_uses_safe_defaults_when_window_invalid():
     assert opp.trade_direction == Direction.BULLISH
     assert [item.value for item in opp.instrument_types] == ["STOCK"]
     assert opp.opportunity_window.end > opp.opportunity_window.start
+
+
+def test_build_opportunity_ignores_unknown_market_and_instrument_values():
+    engine = JudgmentEngine(llm_client=None)
+    signal = _build_signal()
+    start = datetime(2026, 4, 14, 9, 30, 0)
+    end = start + timedelta(days=5)
+
+    data = {
+        "opportunity_title": "未知枚举容错测试",
+        "target_markets": ["A", "BONDS_MARKET", "HK"],
+        "trade_direction": "LONG",
+        "instrument_types": ["ETFS", "SWAP", "BONDS"],
+        "opportunity_window": {
+            "start": start.isoformat(),
+            "end": end.isoformat(),
+            "confidence_level": 0.8,
+        },
+    }
+
+    opp = engine._build_opportunity(data, [signal], "batch_test")
+
+    assert opp.target_markets == [Market.A_SHARE, Market.HK]
+    assert [item.value for item in opp.instrument_types] == ["ETF", "BOND"]
+
+
+def test_parse_json_response_supports_markdown_code_fence():
+    engine = JudgmentEngine(llm_client=None)
+    raw = """```json
+{\n  \"is_opportunity\": true,\n  \"opportunity_title\": \"测试\"\n}
+```"""
+    data = engine._parse_json_response(raw)
+    assert data["is_opportunity"] is True
+    assert data["opportunity_title"] == "测试"

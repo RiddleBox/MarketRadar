@@ -249,10 +249,27 @@ class JudgmentEngine:
         }
 
         raw_types = data.get("instrument_types") or ["STOCK"]
-        clean_types = [instrument_aliases.get(str(t).upper(), str(t).upper()) for t in raw_types]
+        clean_types = []
+        for t in raw_types:
+            normalized = instrument_aliases.get(str(t).upper(), str(t).upper())
+            if normalized in {"STOCK", "ETF", "FUTURES", "OPTIONS", "INDEX", "BOND"}:
+                clean_types.append(normalized)
+            else:
+                logger.warning(f"[M3] 忽略未知 instrument_type: {t}")
+        if not clean_types:
+            clean_types = ["STOCK"]
 
         raw_markets = data.get("target_markets") or ["A_SHARE"]
-        clean_markets = [market_aliases.get(str(m).upper().replace(" ", "").replace("-", "_"), str(m).upper()) for m in raw_markets]
+        clean_markets = []
+        for m in raw_markets:
+            key = str(m).upper().replace(" ", "").replace("-", "_")
+            normalized = market_aliases.get(key, str(m).upper())
+            if normalized in {"A_SHARE", "HK", "US", "A_FUTURES", "HK_FUTURES", "US_FUTURES"}:
+                clean_markets.append(normalized)
+            else:
+                logger.warning(f"[M3] 忽略未知 target_market: {m}")
+        if not clean_markets:
+            clean_markets = ["A_SHARE"]
 
         raw_direction = str(data.get("trade_direction", "NEUTRAL")).upper()
         clean_direction = direction_aliases.get(raw_direction, raw_direction)
