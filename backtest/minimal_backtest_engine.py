@@ -12,7 +12,7 @@ from __future__ import annotations
 from statistics import mean
 from typing import Iterable, List
 
-from core.schemas import BacktestRunResult, BacktestSummary, BacktestTask, Direction
+from core.schemas import BacktestRunResult, BacktestSummary, BacktestTask, Direction, InstrumentBacktestComparison
 
 
 class MinimalBacktestEngine:
@@ -59,6 +59,31 @@ class MinimalBacktestEngine:
             worst_run_net_return_pct=worst_run.net_return_pct,
             by_holding_period=by_holding_period,
             runs=runs,
+        )
+
+    def compare_instruments(self, task: BacktestTask, price_map: dict[str, Iterable[float]]) -> InstrumentBacktestComparison:
+        summaries: List[BacktestSummary] = []
+        ranked_results: List[dict] = []
+
+        for instrument, closes in price_map.items():
+            summary = self.run(task, instrument=instrument, closes=closes)
+            summaries.append(summary)
+            ranked_results.append({
+                "instrument": instrument,
+                "avg_net_return_pct": summary.avg_net_return_pct,
+                "win_rate": summary.win_rate,
+                "avg_max_drawdown_pct": summary.avg_max_drawdown_pct,
+            })
+
+        ranked_results.sort(key=lambda x: x["avg_net_return_pct"], reverse=True)
+        best_instrument = ranked_results[0]["instrument"] if ranked_results else None
+
+        return InstrumentBacktestComparison(
+            task_id=task.task_id,
+            market=task.market,
+            best_instrument=best_instrument,
+            ranked_results=ranked_results,
+            summaries=summaries,
         )
 
     def _run_once(

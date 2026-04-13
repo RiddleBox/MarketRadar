@@ -664,6 +664,19 @@ class BacktestSummary(BaseModel):
     runs: List[BacktestRunResult] = Field(default_factory=list, description="单次回测结果列表")
 
 
+class InstrumentBacktestComparison(BaseModel):
+    """多标的回测对比结果。"""
+    comparison_id: str = Field(
+        default_factory=lambda: f"btc_{uuid.uuid4().hex[:12]}",
+        description="多标的对比结果唯一标识符"
+    )
+    task_id: str = Field(..., description="对应回测任务ID")
+    market: Market = Field(..., description="目标市场")
+    best_instrument: Optional[str] = Field(default=None, description="表现最佳的标的")
+    ranked_results: List[dict] = Field(default_factory=list, description="按净收益排序的结果摘要")
+    summaries: List[BacktestSummary] = Field(default_factory=list, description="各标的回测汇总")
+
+
 class SimulatedFill(BaseModel):
     """模拟成交记录。"""
     fill_id: str = Field(

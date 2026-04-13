@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import csv
 from pathlib import Path
-from typing import List
+from typing import Dict, List
 
 import yaml
 
@@ -37,6 +37,15 @@ class PriceLoader:
         if prices:
             return prices
         raise FileNotFoundError(f"no price data found for instrument={instrument}, frequency={frequency}")
+
+    def load_closes_for_instruments(self, instruments: List[str], frequency: str = "daily") -> Dict[str, List[float]]:
+        result: Dict[str, List[float]] = {}
+        for instrument in instruments:
+            try:
+                result[instrument] = self.load_closes(instrument, frequency=frequency)
+            except FileNotFoundError:
+                continue
+        return result
 
     def _load_from_csv_local(self, instrument: str, frequency: str) -> List[float]:
         default_directory = CSV_LOCAL_CONFIG.get("default_directory", "data/csv_cache")
