@@ -1,0 +1,49 @@
+# m0_collector/config.yaml — 收集器配置
+
+# RSS 数据源（无需 API Key，公开可访问）
+rss:
+  timeout: 15           # 每个源请求超时秒数
+  max_per_feed: 50      # 每个源最多取多少条
+  feeds:
+    - name: 财联社
+      url: https://www.cls.cn/rss
+      language: zh
+      enabled: true
+
+    - name: 东方财富
+      url: https://feed.eastmoney.com/news/cat_179.rss
+      language: zh
+      enabled: true
+
+    - name: 新浪财经
+      url: https://finance.sina.com.cn/rss/news.xml
+      language: zh
+      enabled: true
+
+    - name: 华尔街见闻
+      url: https://wallstreetcn.com/rss
+      language: zh
+      enabled: true
+
+    # Phase 2 备选（需要测试可用性）
+    # - name: 证券时报
+    #   url: https://www.stcn.com/rss/news.xml
+    #   language: zh
+    #   enabled: false
+
+    # - name: 彭博中文
+    #   url: https://feeds.bloomberg.com/markets/news.rss
+    #   language: en
+    #   enabled: false
+
+# 去重配置
+dedup:
+  index_path: manifest/dedup_index.json
+  # 内容 hash 截取前 N 字符做指纹（越大越精确，但相似文章会被漏重）
+  content_fingerprint_chars: 500
+
+# 输出配置
+output:
+  incoming_dir: ../../data/incoming   # 相对于 m0_collector/ 的路径
+  # 文件名格式：{date}_{provider}_{hash}.txt
+  filename_format: "{date}_{provider}_{hash}.txt"
