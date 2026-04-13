@@ -5,7 +5,7 @@
 # 换机器时：更新 default_provider 即可切换全局 LLM
 # 详细说明见 docs/LLM_Config.md
 
-default_provider: deepseek
+default_provider: openai
 
 providers:
   # ── 工蜂AI（腾讯内网推荐，无需 API Key）──────────────────
@@ -13,14 +13,15 @@ providers:
     base_url: "https://copilot.code.woa.com/server/openclaw/copilot-gateway/v1"
     auth_type: gongfeng_oauth          # 特殊认证：自动读取本地 OpenClaw OAuth token
     auth_profile_path: "~/.openclaw/agents/main/agent/auth-profiles.json"
-    model: "claude-sonnet-4-6"
+    model: "gongfeng/gpt-5-4"
     timeout: 60
     max_retries: 4
     rate_limit_backoff_seconds: 8
+    model_header: "GPT-5.4"
     # 腾讯内网机器推荐。认证方式：读取本地 OpenClaw OAuth token，无需手动配置。
     # Windows 路径: %USERPROFILE%\.openclaw\agents\main\agent\auth-profiles.json
     # 如果限流/不可用，自动尝试下面 fallback_providers
-    fallback_providers: [xfyun, deepseek, claude, openai]
+    fallback_providers: [openai, xfyun, deepseek]
 
   # ── DeepSeek（当前联调默认 provider，需要 API Key）──────────
   deepseek:
@@ -50,10 +51,10 @@ providers:
   openai:
     base_url: "${OPENAI_BASE_URL}"
     api_key: "${OPENAI_API_KEY}"
-    model: "gpt-4o"
+    model: "gongfeng/gpt-5-4"
     timeout: 60
     max_retries: 3
-    # OpenAI as fallback or for specific tasks
+    # Preferred non-Claude path for this project cycle. Requires a valid OPENAI-compatible endpoint.
 
 # Per-module configuration overrides
 # provider 留空 = 使用 default_provider

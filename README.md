@@ -39,16 +39,24 @@ pip install -r requirements.txt
 ```
 
 ### 配置 LLM API Key
-当前推荐联调默认 provider 为 **DeepSeek**。
+当前修复周期的目标是优先走 **非-Claude** 路径，统一默认 provider 为 **OpenAI-compatible / `gongfeng/gpt-5-4`**。
 
 PowerShell 示例：
 ```powershell
-$env:DEEPSEEK_API_KEY="<your-deepseek-key>"
+$env:OPENAI_BASE_URL="<your-openai-compatible-base-url>"
+$env:OPENAI_API_KEY="<your-api-key>"
+```
+
+如当前机器只有讯飞或 DeepSeek 可用，可临时切换 provider，但不要再把 Claude 作为主链路默认值。
+
+### 检查实际运行时 LLM 路由
+```powershell
+python .\scripts\inspect_llm_runtime.py
 ```
 
 ### 运行联调主链路（当前推荐）
 ```powershell
-pwsh -File .\run_dev_pipeline.ps1 -Provider deepseek
+pwsh -File .\run_dev_pipeline.ps1 -Provider xfyun
 ```
 
 ### 运行 Pipeline（分析一段文本）
@@ -67,15 +75,17 @@ python pipeline/run_backtest.py --start 2024-01-01 --end 2024-06-30 --market A_S
 ```
 
 ### 运行测试
+先确认 pytest 已安装：
 ```bash
-pytest tests/ -v
+python -m pytest tests/ -v
 ```
 
 ### 当前联调建议
-- 默认联调 provider：`deepseek`
-- `gongfeng` 已接入，但当前可能遇到 429 限流
-- `xfyun` 可作为备用 provider
+- 默认配置 provider：`openai`，模型目标：`gongfeng/gpt-5-4`
+- `gongfeng` provider 仅在其实际模型也能解析到 `gongfeng/gpt-5-4` 时再启用；不要默认走 Claude
+- `xfyun` / `deepseek` 仅作为临时兼容或排障通道
 - 端到端主链路验证脚本：`test_pipeline.py`
+- 运行时解析检查脚本：`scripts/inspect_llm_runtime.py`
 - 统一联调入口脚本：`run_dev_pipeline.ps1`
 
 ---

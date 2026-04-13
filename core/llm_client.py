@@ -64,13 +64,14 @@ class GongfengOAuthClient:
 
     def _make_headers(self) -> dict:
         p = self._load_profile()
+        model_header = self._config.get("model_header") or self._config.get("model") or "GPT-5.4"
         return {
             "Authorization": f"Bearer {p['access']}",
             "OAUTH-TOKEN": p["access"],
             "X-Username": p.get("username", ""),
             "DEVICE-ID": p.get("deviceId", ""),
             "Content-Type": "application/json",
-            "X-Model-Name": "Claude Sonnet 4.6",
+            "X-Model-Name": model_header,
         }
 
     def _get_http(self):
@@ -248,9 +249,14 @@ class LLMClient:
             else:
                 api_key = provider_config.get("api_key", "")
                 base_url = provider_config.get("base_url")
-                if not api_key or api_key.startswith("${"):
+                if not api_key or str(api_key).startswith("${"):
                     logger.warning(
                         f"Provider '{provider_name}' API key may not be set correctly: {api_key!r}"
+                    )
+                if base_url and str(base_url).startswith("${"):
+                    raise RuntimeError(
+                        f"Provider '{provider_name}' base_url is unresolved: {base_url!r}. "
+                        f"Please set the required environment variable before running LLM flows."
                     )
                 self._clients[provider_name] = OpenAI(api_key=api_key, base_url=base_url)
                 logger.debug(f"Created OpenAI client for provider '{provider_name}' at {base_url}")
@@ -280,6 +286,7 @@ class LLMClient:
         messages: List[Dict[str, str]],
         module_name: str = "default",
         _tried_fallback: bool = False,
+        _forced_provider: Optional[str] = None,
         **kwargs: Any,
     ) -> str:
         """
@@ -298,7 +305,18 @@ class LLMClient:
         Raises:
             RuntimeError: 重试次数耗尽后仍然失败
         """
-        provider_name, provider_config = self._get_provider_config(module_name)
+        if _forced_provider:
+            providers = self._config.get("providers", {})
+            if _forced_provider not in providers:
+                raise ValueError(f"Forced provider '{_forced_provider}' not found in config")
+            provider_name = _forced_provider
+            provider_config = dict(providers[_forced_provider])
+            module_override = self._config.get("module_overrides", {}).get(module_name, {})
+            for key, value in module_override.items():
+                if key != "provider":
+                    provider_config[key] = value
+        else:
+            provider_name, provider_config = self._get_provider_config(module_name)
         client = self._get_or_create_client(provider_name, provider_config)
 
         model = provider_config.get("model", "claude-sonnet-4-6")
@@ -359,12 +377,11 @@ class LLMClient:
                         messages=messages,
                         module_name=module_name,
                         _tried_fallback=True,
+                        _forced_provider=fallback,
                         **kwargs,
                     )
                 finally:
                     self._config["default_provider"] = original_default
-                    if module_name in self._config.get("module_overrides", {}):
-                        self._config["module_overrides"][module_name].pop("provider", None)
 
             raise RuntimeError(
                 f"[工蜂AI] 调用失败，已重试 {max_retries} 次。Last: {last_exception}"
@@ -422,13 +439,15 @@ class LLMClient:
 
             except APIError as e:
                 last_exception = e
+                status_code = getattr(e, "status_code", None)
+                message = getattr(e, "message", str(e))
                 logger.error(
                     f"API error on attempt {attempt}/{max_retries}: "
-                    f"status={e.status_code}, message={e.message}"
+                    f"status={status_code}, message={message}"
                 )
-                if e.status_code and 400 <= e.status_code < 500 and e.status_code != 429:
+                if status_code and 400 <= status_code < 500 and status_code != 429:
                     raise RuntimeError(
-                        f"Non-retryable API error: {e.status_code} - {e.message}"
+                        f"Non-retryable API error: {status_code} - {message}"
                     ) from e
                 if attempt < max_retries:
                     time.sleep(2 ** attempt)
@@ -450,9 +469,9 @@ class LLMClient:
         auth_type = config.get("auth_type", "api_key")
         if auth_type == "gongfeng_oauth":
             gc = GongfengOAuthClient(config)
-            api_key_set = gc.is_available()
+            credential_ready = gc.is_available()
         else:
-            api_key_set = bool(
+            credential_ready = bool(
                 config.get("api_key") and not config.get("api_key", "").startswith("${")
             )
         return {
@@ -462,7 +481,8 @@ class LLMClient:
             "base_url": config.get("base_url"),
             "temperature": config.get("temperature"),
             "max_retries": config.get("max_retries"),
-            "api_key_set": api_key_set,
+            "credential_ready": credential_ready,
+            "api_key_set": credential_ready,
         }
 
 
