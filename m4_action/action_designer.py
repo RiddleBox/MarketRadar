@@ -310,7 +310,14 @@ class ActionDesigner:
 
         # 分阶段计划
         phases = []
-        phase_source = detail.get("phases") or EXECUTION_CONFIG.get("phase_templates", {}).get(priority.value, [])
+        phase_templates = EXECUTION_CONFIG.get("phase_templates", {})
+        instrument_phase_templates = phase_templates.get(instrument_type.value, {})
+        default_phase_templates = phase_templates.get("default", {})
+        phase_source = (
+            detail.get("phases")
+            or instrument_phase_templates.get(priority.value)
+            or default_phase_templates.get(priority.value, [])
+        )
         for p in phase_source:
             phases.append(ActionPhase(
                 phase_name=p.get("phase_name", ""),

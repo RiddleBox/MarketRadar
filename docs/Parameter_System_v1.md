@@ -46,6 +46,12 @@
 这意味着：
 - M4 不再只依赖硬编码常量
 - 不同优先级与品类的默认参数可以通过 YAML 调整
+- 分阶段建仓模板已支持“按品类覆盖默认模板”
+
+当前模板选择顺序：
+1. LLM 直接输出的 `phases`
+2. `instrument_type` 对应的 phase template
+3. default phase template
 
 ---
 
