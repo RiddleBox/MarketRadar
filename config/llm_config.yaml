@@ -5,7 +5,7 @@
 # 换机器时：更新 default_provider 即可切换全局 LLM
 # 详细说明见 docs/LLM_Config.md
 
-default_provider: openai
+default_provider: gongfeng
 
 providers:
   # ── 工蜂AI（腾讯内网推荐，无需 API Key）──────────────────
@@ -21,7 +21,7 @@ providers:
     # 腾讯内网机器推荐。认证方式：读取本地 OpenClaw OAuth token，无需手动配置。
     # Windows 路径: %USERPROFILE%\.openclaw\agents\main\agent\auth-profiles.json
     # 如果限流/不可用，自动尝试下面 fallback_providers
-    fallback_providers: [openai, xfyun, deepseek]
+    fallback_providers: [xfyun, deepseek, openai]
 
   # ── DeepSeek（当前联调默认 provider，需要 API Key）──────────
   deepseek:

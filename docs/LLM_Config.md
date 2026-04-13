@@ -56,7 +56,7 @@ OAUTH-TOKEN: <access>
 X-Username: <username>
 DEVICE-ID: <deviceId>
 Content-Type: application/json
-X-Model-Name: Claude Sonnet 4.6
+X-Model-Name: GPT-5.4
 ```
 
 > ⚠️ **GET /models 返回 404 是正常的**，不能用来做可用性检查。
@@ -133,12 +133,14 @@ OpenClaw Gateway 在本地运行时会暴露 `http://localhost:3000/v1`（OpenAI
 
 ## 模型配置
 
-默认使用 `claude-sonnet-4-6`，可通过构造函数覆盖：
+当前项目修复周期统一使用 `gongfeng/gpt-5-4`，默认链路应优先走工蜂 OAuth 直连，不再把 Claude 设为主链路默认值。
 
 ```python
-client = GongfengLLMClient(model="claude-sonnet-4-6")  # 默认
+client = GongfengLLMClient(model="gongfeng/gpt-5-4")  # 默认
 ```
 
-可选模型（工蜂AI支持）：
-- `claude-sonnet-4-6`（推荐，速度/质量均衡）
-- `deepseek-v3-2`（备用）
+推荐顺序：
+- `gongfeng/gpt-5-4`（主链路，当前唯一推荐默认模型）
+- `deepseek-v3-2`（仅备用）
+
+如果某个脚本仍写死 Claude 名称，应优先修正该脚本，而不是继续沿用 Claude。
