@@ -159,6 +159,39 @@ def load_latest_price(instrument: str) -> float | None:
         return None
 
 
+@st.cache_data(ttl=60)
+def load_sentiment_history(n: int = 48) -> list[dict]:
+    """M10 SentimentStore — 最近 n 条情绪快照"""
+    try:
+        from m10_sentiment.sentiment_store import SentimentStore
+        store = SentimentStore()
+        return store.latest(n)
+    except Exception:
+        return []
+
+
+@st.cache_data(ttl=60)
+def load_sentiment_trend(n: int = 20) -> dict:
+    """M10 SentimentStore — 趋势统计"""
+    try:
+        from m10_sentiment.sentiment_store import SentimentStore
+        store = SentimentStore()
+        return store.trend(n)
+    except Exception:
+        return {}
+
+
+@st.cache_data(ttl=60)
+def load_sentiment_stats() -> dict:
+    """M10 SentimentStore — 全期统计"""
+    try:
+        from m10_sentiment.sentiment_store import SentimentStore
+        store = SentimentStore()
+        return store.stats()
+    except Exception:
+        return {}
+
+
 def clear_cache():
     st.cache_data.clear()
 
@@ -350,8 +383,8 @@ with st.sidebar:
 # 主页 Tabs
 # ─────────────────────────────────────────────────────────────
 
-tab_opp, tab_signals, tab_paper, tab_system = st.tabs([
-    "🎯 机会", "📶 信号", "📊 模拟盘", "⚙️ 系统"
+tab_opp, tab_signals, tab_paper, tab_sentiment, tab_system = st.tabs([
+    "🎯 机会", "📶 信号", "📊 模拟盘", "🧠 情绪面", "⚙️ 系统"
 ])
 
 
@@ -759,7 +792,240 @@ with tab_paper:
 
 
 # ═══════════════════════════════════════════════════════════════
-# TAB 4: 系统（M7 调度器 + 数据文件）
+# TAB 4: 情绪面（M10 SentimentEngine 恐贪指数 + 历史趋势）
+# ═══════════════════════════════════════════════════════════════
+
+with tab_sentiment:
+    st.header("🧠 情绪面仪表盘")
+
+    # ── 实时采集按鈕 ────────────────────────────────────────────
+    s_col1, s_col2, s_col3 = st.columns([2, 2, 6])
+    with s_col1:
+        if st.button("🔄 立即采集", key="sentiment_run", use_container_width=True):
+            with st.spinner("正在采集情绪数据..."):
+                try:
+                    from m10_sentiment.sentiment_engine import SentimentEngine
+                    from datetime import datetime
+                    engine = SentimentEngine()
+                    sig = engine.run(
+                        batch_id=f"dash_{datetime.now().strftime('%H%M%S')}",
+                        save_snapshot=True,
+                        inject_m2=True,
+                    )
+                    st.success(f"恐贪指数: {sig.fear_greed_index:.1f} ({sig.sentiment_label}) — 已入库")
+                    st.cache_data.clear()
+                except Exception as e:
+                    st.error(f"采集失败: {e}")
+    with s_col2:
+        if st.button("🔁 刷新显示", key="sentiment_refresh", use_container_width=True):
+            st.cache_data.clear()
+            st.rerun()
+
+    st.divider()
+
+    hist = load_sentiment_history(48)
+    trend = load_sentiment_trend(20)
+    stats = load_sentiment_stats()
+
+    if not hist:
+        st.info("💭 暂无情绪历史数据，点击》立即采集《生成第一条快照")
+        st.stop()
+
+    latest = hist[0]
+    fg = latest.get("fear_greed", 50.0)
+    label = latest.get("label", "--")
+    direction = latest.get("direction", "NEUTRAL")
+    ts = latest.get("ts", "")[:16]
+
+    # ── 恐贪指数主展示区 ─────────────────────────────────────────
+    m1, m2, m3, m4 = st.columns(4)
+
+    # 恐贪指数使用进度条展示
+    fg_pct = fg / 100
+    if fg >= 80:
+        fg_color = "#ff4b4b"    # 极度贪婪 — 警告色
+        fg_emoji = "🔴"
+    elif fg >= 60:
+        fg_color = "#ffaa00"    # 贪婪
+        fg_emoji = "🟡"
+    elif fg >= 40:
+        fg_color = "#aaaaaa"    # 中性
+        fg_emoji = "⚪"
+    elif fg >= 20:
+        fg_color = "#00ccff"    # 恐惧
+        fg_emoji = "🔵"
+    else:
+        fg_color = "#0044ff"    # 极度恐惧 — 反转机会色
+        fg_emoji = "🔵"
+
+    # 方向颜色
+    dir_color = "#00c851" if direction == "BULLISH" else (
+        "#ff4b4b" if direction == "BEARISH" else "#aaaaaa"
+    )
+    dir_text = {
+        "BULLISH": "↑ 倚多",
+        "BEARISH": "↓ 假空",
+        "NEUTRAL": "— 中性",
+    }.get(direction, direction)
+
+    with m1:
+        st.metric(
+            label=f"{fg_emoji} 恐贪指数",
+            value=f"{fg:.1f}",
+            delta=f"{fg - hist[1]['fear_greed']:.1f}" if len(hist) > 1 else None,
+        )
+        st.caption(f"{label}  |  {ts}")
+        st.progress(fg_pct)
+
+    with m2:
+        nd = latest.get("northbound", 0.0)
+        nd_delta = nd - hist[1].get("northbound", 0.0) if len(hist) > 1 else None
+        st.metric(
+            label="🌏 北向资金",
+            value=f"{nd:+.1f}亿",
+            delta=f"{nd_delta:+.1f}" if nd_delta is not None else None,
+        )
+        st.caption("南向资金断面" if nd > 0 else "外资流出")
+
+    with m3:
+        adr = latest.get("adr", 0.0) * 100
+        st.metric(
+            label="📈 涨跌家数比",
+            value=f"{adr:.1f}%",
+            delta=None,
+        )
+        st.caption(f"{'> 50% 市场偵健' if adr > 50 else '< 50% 偏弱迎'}") 
+
+    with m4:
+        st.metric(
+            label="🦭 情绪方向",
+            value=dir_text,
+        )
+        is_rising = trend.get("is_rising")
+        slope = trend.get("slope", 0)
+        if is_rising is not None:
+            st.caption(f"{'\u2191 情绪上升中' if is_rising else '\u2193 情绪下降中'}  (斜率{slope:+.2f})")
+
+    st.divider()
+
+    # ── 恐贪指数解读 + 信号指导 ─────────────────────────────
+    st.subheader("📊 情绪解读与操作建议")
+
+    # 根据 FG 值给出操作解读
+    if fg >= 80:
+        advice_text = "🚨 极度贪婪 — 市场冠居情绪颜峰，历史上属于高风险区间"
+        advice_detail = """
+**操作建议**
+- ✅ 考虑分批减仓，采用移动止盈保护已有收益
+- ✅ 新开仓要求更强的基本面支撑（不追资添仓）
+- ⚠️ "Buy the rumor, sell the news" — 语气筑顶时小利好随时可能引发轻仓
+- ⚠️ 监测北向资金是否翻转为净流出
+        """
+    elif fg >= 60:
+        advice_text = "🟡 贪婪 — 市场选择偵康，但要防范主力采笹应局"
+        advice_detail = """
+**操作建议**
+- ✅ 市场热度高但未到顶部，可少量添仓跟进
+- ✅ 优先选择具有基本面支山的标的
+- ⚠️ 误信号厯能增加，不轻弹全仓入
+        """
+    elif fg >= 40:
+        advice_text = "⚪ 中性 — 市场情绪平衡，逸有分昔观察横盘机会"
+        advice_detail = """
+**操作建议**
+- ✅ 等待情绪确方向后再加入
+- ✅ 逸有娇眼收集基本面优缺且尚未被挖掘的标的
+- ✅ 重点关注北向资金和强弱轮动信号
+        """
+    elif fg >= 20:
+        advice_text = "🔵 恐惧 — 市场情绪低迷，反向指标开始上升"
+        advice_detail = """
+**操作建议**
+- ✅ 反转窗口开始出现，安全边际少量布局
+- ✅ 优先看大盘追辟过多的蓝筹指数 ETF
+- ⚠️ 情绪还未到谷底，不要现在全仓入
+- 💡 结合宏观政策信号 + 恐贪指数共振，信号质量大幅提升
+        """
+    else:
+        advice_text = "🔵 极度恐惧 — 历史上是最好的买入机会区间"
+        advice_detail = """
+**操作建议**
+- 🔥 共同恐惧 — Warren Buffett: "Be fearful when others are greedy, be greedy when others are fearful"
+- ✅ 等待 1~2 个交易日确认底部信号（大涌量阳线或政策出台）再入
+- ✅ 分批买入，第一批对应 ETF（非个股）伦风险
+- ⚠️ 不要试图猫丸底，第一批可以不完美
+        """
+    st.info(advice_text)
+    with st.expander("💡 详细操作建议", expanded=(fg >= 80 or fg <= 20)):
+        st.markdown(advice_detail)
+
+    st.divider()
+
+    # ── 历史趋势图 ───────────────────────────────────────────
+    st.subheader("📈 情绪历史趋势")
+
+    if len(hist) >= 2:
+        # 构建图表数据
+        import pandas as pd
+        df_sent = pd.DataFrame([
+            {
+                "time": r["ts"][:16],
+                "恐贪指数": r["fear_greed"],
+                "北向资金": r.get("northbound", 0),
+            }
+            for r in reversed(hist)  # 时间正序
+        ])
+        df_sent["time"] = pd.to_datetime(df_sent["time"])
+        df_sent = df_sent.set_index("time")
+
+        # 恐贪指数折线图
+        st.line_chart(df_sent["恐贪指数"], height=200, use_container_width=True)
+
+        # 北向资金柱状图
+        st.bar_chart(df_sent["北向资金"], height=150, use_container_width=True)
+    else:
+        st.caption("记录不足，多采集几次后显示趋势图")
+
+    st.divider()
+
+    # ── 历史快照列表 ───────────────────────────────────────
+    st.subheader("🕒 历史快照")
+    hist_cols = st.columns([2, 2, 2, 2, 4])
+    hist_cols[0].markdown("**时间**")
+    hist_cols[1].markdown("**恐贪指数**")
+    hist_cols[2].markdown("**北向资金**")
+    hist_cols[3].markdown("**方向**")
+    hist_cols[4].markdown("**标签**")
+
+    for row in hist[:20]:
+        fg_v = row.get("fear_greed", 50)
+        d = row.get("direction", "NEUTRAL")
+        d_mark = "↑" if d == "BULLISH" else ("↓" if d == "BEARISH" else "—")
+        nd_v = row.get("northbound", 0)
+        cc = hist_cols
+        with st.container():
+            cols_row = st.columns([2, 2, 2, 2, 4])
+            cols_row[0].caption(row.get("ts", "")[:16])
+            # 恐贪指数加颜色
+            fg_style = "🔴" if fg_v >= 80 else ("🟡" if fg_v >= 60 else ("⚪" if fg_v >= 40 else ("🔵" if fg_v >= 20 else "🔵")))
+            cols_row[1].caption(f"{fg_style} {fg_v:.1f}")
+            cols_row[2].caption(f"{nd_v:+.1f}亿")
+            cols_row[3].caption(d_mark)
+            cols_row[4].caption(row.get("label", ""))
+
+    # ── 全期统计 ──────────────────────────────────────────
+    if stats:
+        st.divider()
+        st.subheader("📊 全期统计")
+        st_cols = st.columns(4)
+        st_cols[0].metric("总快照数", stats.get("total_snapshots", 0))
+        st_cols[1].metric("均值", f"{stats.get('avg_fear_greed', 50):.1f}")
+        st_cols[2].metric("最高", f"{stats.get('max_fear_greed', 0):.1f}")
+        st_cols[3].metric("最低", f"{stats.get('min_fear_greed', 100):.1f}")
+
+
+# ═══════════════════════════════════════════════════════════════
+# TAB 5: 系统（M7 调度器 + 数据文件）
 # ═══════════════════════════════════════════════════════════════
 
 with tab_system:

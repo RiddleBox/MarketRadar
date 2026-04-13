@@ -212,6 +212,15 @@ class Scheduler:
             **_c("news_collect", 15),
         ))
 
+        self.register(ScheduledTask(
+            name="sentiment_collect",
+            fn=self._task_sentiment_collect,
+            description="M10情绪采集：恐贪指数+北向资金+热搜+微博 → 写入 SQLite + 注入 M2",
+            run_at_start=True,
+            time_window=("09:00", "22:00"),   # 交易日+盘后均采集
+            **_c("sentiment_collect", 30),      # 每 30 分钟一次
+        ))
+
     # ── 启停 ─────────────────────────────────────────────────
 
     def start(self, background: bool = True):
@@ -512,4 +521,38 @@ class Scheduler:
             return {"fetched": len(items), "written": written}
         except Exception as e:
             logger.error(f"[M7/news_collect] 失败: {e}")
+            return {"error": str(e)}
+
+    def _task_sentiment_collect(self, run_id: str = "") -> dict:
+        """
+        M10 情绪采集任务：
+          1. SentimentProvider 从 AKShare 拉取 4 维数据
+          2. 合成恐贪指数（FearGreed 0~100）
+          3. 保存快照到 SQLite（data/sentiment/sentiment_history.db）
+          4. 生成 SentimentSignal 注入 M2（可供 M3 机会判断参考）
+
+        失败容忍：单个数据源失败不阻断整体，errors 记录到 result。
+        """
+        import sys
+        sys.path.insert(0, str(ROOT))
+        try:
+            from m10_sentiment.sentiment_engine import SentimentEngine
+            batch_id = f"sched_sent_{run_id or datetime.now().strftime('%Y%m%d_%H%M%S')}"
+            engine = SentimentEngine()
+            signal = engine.run(batch_id=batch_id, save_snapshot=True, inject_m2=True)
+            result = {
+                "fear_greed": round(signal.fear_greed_index, 1),
+                "label": signal.sentiment_label,
+                "direction": signal.signal_direction,
+                "intensity": signal.intensity_score,
+                "batch_id": batch_id,
+                "errors": [],
+            }
+            logger.info(
+                f"[M7/sentiment_collect] FG={signal.fear_greed_index:.1f} "
+                f"({signal.sentiment_label}) {signal.signal_direction}"
+            )
+            return result
+        except Exception as e:
+            logger.error(f"[M7/sentiment_collect] 失败: {e}")
             return {"error": str(e)}
