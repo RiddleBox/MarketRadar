@@ -20,8 +20,9 @@ from typing import Dict, List, Optional
 
 from core.schemas import (
     ActionPlan,
-    ActionType,
     Direction,
+    InstrumentType,
+    Market,
     Position,
     PositionStatus,
     PositionUpdate,
@@ -49,184 +50,219 @@ class PositionManager:
     # 核心操作
     # ------------------------------------------------------------------
 
-    def open_position(self, plan: ActionPlan, entry_price: float) -> Position:
+    def open_position(
+        self,
+        plan: ActionPlan,
+        instrument: str,
+        entry_price: float,
+        quantity: float,
+        market: Market = Market.A_SHARE,
+        instrument_type: InstrumentType = InstrumentType.STOCK,
+        direction: Direction = Direction.BULLISH,
+        notes: Optional[str] = None,
+    ) -> Position:
         """开仓：基于 ActionPlan 建立新持仓
 
         Args:
             plan: M4 输出的行动计划
+            instrument: 实际操作标的代码（如 510300.SH）
             entry_price: 实际入场价格
+            quantity: 买入数量（股/手）
+            market: 所在市场
+            instrument_type: 标的类型
+            direction: 做多 / 做空
+            notes: 备注
 
         Returns:
             新建的 Position 对象
         """
-        if plan.action_type == ActionType.WATCH:
-            raise ValueError("WATCH 类型的行动计划不建立实际持仓")
-
         now = datetime.now()
+        total_cost = entry_price * quantity
 
-        # 计算止损价（如果计划中有具体止损价格）
-        stop_price = plan.stop_loss.stop_price
+        # 计算止损价（按止损百分比推算）
+        sl = plan.stop_loss
+        if sl.stop_loss_price is not None:
+            stop_loss_price = sl.stop_loss_price
+        elif sl.stop_loss_type == "percent":
+            pct = sl.stop_loss_value / 100.0
+            stop_loss_price = (
+                entry_price * (1 - pct) if direction == Direction.BULLISH
+                else entry_price * (1 + pct)
+            )
+        else:
+            # ATR 或其他类型：先用默认 5%
+            stop_loss_price = entry_price * 0.95
+
+        # 计算止盈价
+        tp = plan.take_profit
+        if tp.take_profit_price is not None:
+            take_profit_price = tp.take_profit_price
+        elif tp.take_profit_type == "percent":
+            pct = tp.take_profit_value / 100.0
+            take_profit_price = (
+                entry_price * (1 + pct) if direction == Direction.BULLISH
+                else entry_price * (1 - pct)
+            )
+        else:
+            take_profit_price = None
 
         position = Position(
-            position_id=f"pos_{uuid.uuid4().hex[:8]}",
             plan_id=plan.plan_id,
             opportunity_id=plan.opportunity_id,
-            status=PositionStatus.ACTIVE,
-            instrument=plan.instrument,
-            direction=plan.direction,
+            instrument=instrument,
+            instrument_type=instrument_type,
+            market=market,
+            direction=direction,
             entry_price=entry_price,
             entry_time=now,
-            size=plan.position_sizing.value,
-            current_price=entry_price,
-            unrealized_pnl=0.0,
-            stop_loss_price=stop_price,
-            take_profit_price=None,  # 由 ActionPlan.take_profit 决定，后续可更新
-            updates=[
-                PositionUpdate(
-                    update_time=now,
-                    update_type="OPEN",
-                    description=f"开仓 | 入场价={entry_price} | 止损={stop_price or '条件触发'}",
-                    price=entry_price,
-                )
-            ],
-            close_reason=None,
-            realized_pnl=None,
+            quantity=quantity,
+            total_cost=total_cost,
+            stop_loss_price=stop_loss_price,
+            take_profit_price=take_profit_price,
+            status=PositionStatus.OPEN,
+            notes=notes,
         )
 
         self._positions[position.position_id] = position
         self._save()
 
         logger.info(
-            f"[M5] 开仓 | id={position.position_id} instrument={plan.instrument} "
-            f"direction={plan.direction.value} entry={entry_price} stop={stop_price}"
+            f"[M5] 开仓 | id={position.position_id} {instrument} "
+            f"{direction.value} @{entry_price} x{quantity} "
+            f"止损={stop_loss_price:.4f} 止盈={take_profit_price}"
         )
         return position
 
-    def update_price(self, position_id: str, current_price: float) -> Optional[PositionUpdate]:
-        """更新当前价格，重新计算浮盈
+    def update_price(self, position_id: str, current_price: float) -> PositionUpdate:
+        """更新当前价格，记录浮盈快照
 
         Returns:
-            PositionUpdate 记录（如有状态变化），否则 None
+            PositionUpdate 记录
         """
-        pos = self._get_active(position_id)
-        old_price = pos.current_price
-        pos.current_price = current_price
+        pos = self._get_open(position_id)
 
-        # 计算浮盈
-        if pos.direction == Direction.BULLISH:
-            pos.unrealized_pnl = (current_price - pos.entry_price) / pos.entry_price
-        else:  # BEARISH / SHORT
-            pos.unrealized_pnl = (pos.entry_price - current_price) / pos.entry_price
+        pnl = pos.current_pnl(current_price)
+        pnl_pct = pos.current_pnl_pct(current_price)
 
         update = PositionUpdate(
-            update_time=datetime.now(),
-            update_type="PRICE_UPDATE",
-            description=f"价格更新 {old_price:.4f} → {current_price:.4f} | 浮盈={pos.unrealized_pnl*100:.2f}%",
-            price=current_price,
+            position_id=position_id,
+            current_price=current_price,
+            unrealized_pnl=pnl,
+            unrealized_pnl_pct=pnl_pct,
+            stop_loss_price=pos.stop_loss_price,
+            take_profit_price=pos.take_profit_price,
+            notes=f"价格更新 @{current_price:.4f} | 浮盈={pnl_pct:+.2f}%",
         )
         pos.updates.append(update)
         self._save()
-
         return update
 
-    def check_triggers(self, position_id: str) -> Optional[str]:
+    def check_triggers(self, position_id: str, current_price: float) -> Optional[str]:
         """检查止损/止盈是否触发
 
-        Returns:
-            触发信息字符串（如："【止损触发】价格 9.85 已低于止损价 10.00，请立即执行平仓。"）
-            None 表示未触发
-        """
-        pos = self._get_active(position_id)
-        price = pos.current_price
+        Args:
+            current_price: 当前最新价格
 
-        if price is None:
-            return None
+        Returns:
+            触发信息字符串，None 表示未触发
+        """
+        pos = self._get_open(position_id)
+        pnl_pct = pos.current_pnl_pct(current_price)
 
         # 止损检查
         if pos.stop_loss_price is not None:
-            if pos.direction == Direction.BULLISH and price <= pos.stop_loss_price:
+            if pos.direction == Direction.BULLISH and current_price <= pos.stop_loss_price:
                 return (
-                    f"【止损触发】{pos.instrument} 当前价 {price:.4f} ≤ 止损价 {pos.stop_loss_price:.4f}，"
-                    f"浮亏 {abs(pos.unrealized_pnl)*100:.2f}%，请立即执行平仓。"
+                    f"【止损触发】{pos.instrument} 当前价 {current_price:.4f} ≤ 止损价 {pos.stop_loss_price:.4f}，"
+                    f"浮亏 {abs(pnl_pct):.2f}%，请立即执行平仓。"
                 )
-            elif pos.direction in (Direction.BEARISH, Direction.NEUTRAL) and price >= pos.stop_loss_price:
+            elif pos.direction == Direction.BEARISH and current_price >= pos.stop_loss_price:
                 return (
-                    f"【止损触发】{pos.instrument} 当前价 {price:.4f} ≥ 止损价 {pos.stop_loss_price:.4f}，"
-                    f"浮亏 {abs(pos.unrealized_pnl)*100:.2f}%，请立即执行平仓。"
+                    f"【止损触发】{pos.instrument} 当前价 {current_price:.4f} ≥ 止损价 {pos.stop_loss_price:.4f}，"
+                    f"浮亏 {abs(pnl_pct):.2f}%，请立即执行平仓。"
                 )
 
         # 止盈检查
         if pos.take_profit_price is not None:
-            if pos.direction == Direction.BULLISH and price >= pos.take_profit_price:
+            if pos.direction == Direction.BULLISH and current_price >= pos.take_profit_price:
                 return (
-                    f"【止盈触发】{pos.instrument} 当前价 {price:.4f} ≥ 止盈价 {pos.take_profit_price:.4f}，"
-                    f"浮盈 {pos.unrealized_pnl*100:.2f}%，建议执行止盈。"
+                    f"【止盈触发】{pos.instrument} 当前价 {current_price:.4f} ≥ 止盈价 {pos.take_profit_price:.4f}，"
+                    f"浮盈 {pnl_pct:.2f}%，建议执行止盈。"
                 )
-            elif pos.direction in (Direction.BEARISH, Direction.NEUTRAL) and price <= pos.take_profit_price:
+            elif pos.direction == Direction.BEARISH and current_price <= pos.take_profit_price:
                 return (
-                    f"【止盈触发】{pos.instrument} 当前价 {price:.4f} ≤ 止盈价 {pos.take_profit_price:.4f}，"
-                    f"浮盈 {pos.unrealized_pnl*100:.2f}%，建议执行止盈。"
+                    f"【止盈触发】{pos.instrument} 当前价 {current_price:.4f} ≤ 止盈价 {pos.take_profit_price:.4f}，"
+                    f"浮盈 {pnl_pct:.2f}%，建议执行止盈。"
                 )
 
         return None
 
-    def close_position(self, position_id: str, exit_price: float, reason: str) -> Position:
+    def close_position(
+        self,
+        position_id: str,
+        exit_price: float,
+        reason: str,
+    ) -> Position:
         """平仓
 
         Args:
             position_id: 持仓 ID
             exit_price: 实际平仓价格
-            reason: 平仓原因（"止损" / "止盈" / "手动平仓" / "计划到期" 等）
+            reason: 平仓原因
 
         Returns:
             已关闭的 Position 对象
         """
-        pos = self._get_active(position_id)
+        pos = self._get_open(position_id)
         now = datetime.now()
 
-        # 计算实现盈亏
         if pos.direction == Direction.BULLISH:
-            realized_pnl = (exit_price - pos.entry_price) / pos.entry_price
+            realized_pnl = (exit_price - pos.entry_price) * pos.quantity
+            realized_pnl_pct = (exit_price - pos.entry_price) / pos.entry_price * 100
         else:
-            realized_pnl = (pos.entry_price - exit_price) / pos.entry_price
+            realized_pnl = (pos.entry_price - exit_price) * pos.quantity
+            realized_pnl_pct = (pos.entry_price - exit_price) / pos.entry_price * 100
 
         pos.status = PositionStatus.CLOSED
-        pos.current_price = exit_price
+        pos.exit_price = exit_price
+        pos.exit_time = now
+        pos.exit_reason = reason
         pos.realized_pnl = realized_pnl
-        pos.close_reason = reason
-        pos.updates.append(
-            PositionUpdate(
-                update_time=now,
-                update_type="CLOSE",
-                description=f"平仓 | 原因={reason} | 平仓价={exit_price:.4f} | 实现盈亏={realized_pnl*100:.2f}%",
-                price=exit_price,
-            )
-        )
+        pos.realized_pnl_pct = realized_pnl_pct
+
+        # 最后一次 update 记录
+        pos.updates.append(PositionUpdate(
+            position_id=position_id,
+            current_price=exit_price,
+            unrealized_pnl=0.0,
+            unrealized_pnl_pct=0.0,
+            notes=f"平仓 | 原因={reason} | 实现盈亏={realized_pnl_pct:+.2f}%",
+        ))
 
         self._save()
 
-        result_emoji = "✅" if realized_pnl >= 0 else "❌"
+        emoji = "✅" if realized_pnl >= 0 else "❌"
         logger.info(
-            f"[M5] 平仓 {result_emoji} | id={position_id} instrument={pos.instrument} "
-            f"原因={reason} 盈亏={realized_pnl*100:.2f}%"
+            f"[M5] 平仓 {emoji} | id={position_id} {pos.instrument} "
+            f"原因={reason} 盈亏={realized_pnl_pct:+.2f}%"
         )
         return pos
 
-    def update_stop_loss(self, position_id: str, new_stop: float, reason: str) -> Position:
-        """更新止损价（移动止盈/止损）"""
-        pos = self._get_active(position_id)
+    def update_stop_loss(self, position_id: str, new_stop: float, reason: str = "") -> Position:
+        """更新止损价（移动止损）"""
+        pos = self._get_open(position_id)
         old_stop = pos.stop_loss_price
         pos.stop_loss_price = new_stop
-        pos.updates.append(
-            PositionUpdate(
-                update_time=datetime.now(),
-                update_type="STOP_LOSS_UPDATE",
-                description=f"止损更新 {old_stop} → {new_stop} | 原因: {reason}",
-                price=pos.current_price,
-            )
-        )
+        pos.updates.append(PositionUpdate(
+            position_id=position_id,
+            current_price=new_stop,  # 记录止损更新时的参考价
+            unrealized_pnl=0.0,
+            unrealized_pnl_pct=0.0,
+            stop_loss_price=new_stop,
+            notes=f"止损更新 {old_stop:.4f} → {new_stop:.4f} | {reason}",
+        ))
         self._save()
-        logger.info(f"[M5] 止损更新 | id={position_id} {old_stop} → {new_stop}")
+        logger.info(f"[M5] 止损更新 | id={position_id} {old_stop:.4f} → {new_stop:.4f}")
         return pos
 
     # ------------------------------------------------------------------
@@ -239,23 +275,30 @@ class PositionManager:
     def get_all_positions(self) -> List[Position]:
         return list(self._positions.values())
 
-    def get_active_positions(self) -> List[Position]:
-        return [p for p in self._positions.values() if p.status == PositionStatus.ACTIVE]
+    def get_open_positions(self) -> List[Position]:
+        return [p for p in self._positions.values() if p.status == PositionStatus.OPEN]
+
+    def get_closed_positions(self) -> List[Position]:
+        return [p for p in self._positions.values() if p.status == PositionStatus.CLOSED]
 
     def get_summary(self) -> dict:
         """持仓摘要统计"""
-        active = self.get_active_positions()
-        closed = [p for p in self._positions.values() if p.status == PositionStatus.CLOSED]
+        open_pos = self.get_open_positions()
+        closed_pos = self.get_closed_positions()
 
-        win_trades = [p for p in closed if p.realized_pnl and p.realized_pnl > 0]
-        total_closed = len(closed)
+        win_trades = [p for p in closed_pos if p.realized_pnl and p.realized_pnl > 0]
+        total_closed = len(closed_pos)
 
         return {
-            "active_count": len(active),
+            "open_count": len(open_pos),
             "closed_count": total_closed,
-            "win_rate": len(win_trades) / total_closed if total_closed > 0 else None,
-            "total_unrealized_pnl": sum(p.unrealized_pnl or 0 for p in active),
-            "total_realized_pnl": sum(p.realized_pnl or 0 for p in closed),
+            "win_rate": round(len(win_trades) / total_closed, 3) if total_closed > 0 else None,
+            "total_realized_pnl": sum(p.realized_pnl or 0 for p in closed_pos),
+            "avg_realized_pnl_pct": (
+                sum(p.realized_pnl_pct or 0 for p in closed_pos) / total_closed
+                if total_closed > 0 else None
+            ),
+            "instruments": list({p.instrument for p in open_pos}),
         }
 
     # ------------------------------------------------------------------
@@ -280,7 +323,7 @@ class PositionManager:
             encoding="utf-8",
         )
 
-    def _get_active(self, position_id: str) -> Position:
+    def _get_open(self, position_id: str) -> Position:
         pos = self._positions.get(position_id)
         if pos is None:
             raise KeyError(f"持仓不存在: {position_id}")
