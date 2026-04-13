@@ -269,6 +269,20 @@ class TimeWindow(BaseModel):
         return self
 
 
+class OpportunityScore(BaseModel):
+    """机会评分卡。用于将 M3 的判断拆解为可解释的多维评分。"""
+    catalyst_strength: int = Field(..., ge=1, le=10, description="催化剂强度，1-10")
+    timeliness: int = Field(..., ge=1, le=10, description="时效性，1-10")
+    market_confirmation: int = Field(..., ge=1, le=10, description="市场确认度，1-10")
+    tradability: int = Field(..., ge=1, le=10, description="可交易性，1-10")
+    risk_clarity: int = Field(..., ge=1, le=10, description="风险边界清晰度，1-10")
+    consensus_gap: int = Field(..., ge=1, le=10, description="预期差大小，1-10")
+    signal_consistency: int = Field(..., ge=1, le=10, description="信号一致性，1-10")
+    overall_score: float = Field(..., ge=0.0, le=10.0, description="综合得分，0-10")
+    confidence_score: float = Field(..., ge=0.0, le=1.0, description="机会判断置信度，0-1")
+    execution_readiness: float = Field(..., ge=0.0, le=1.0, description="执行就绪度，0-1")
+
+
 class OpportunityObject(BaseModel):
     """
     市场机会对象 — M3 的核心输出单元。
@@ -356,6 +370,10 @@ class OpportunityObject(BaseModel):
         ...,
         description="机会优先级，决定行动紧迫性"
     )
+    opportunity_score: OpportunityScore = Field(
+        ...,
+        description="机会评分卡，用于解释机会为何成立以及强弱程度"
+    )
     risk_reward_profile: str = Field(
         ...,
         description="风险收益特征描述，定性说明潜在盈利空间和可能损失。"
@@ -365,6 +383,18 @@ class OpportunityObject(BaseModel):
         ...,
         min_length=1,
         description="需要进一步验证的问题列表，指导下一步研究方向"
+    )
+    invalidation_conditions: List[str] = Field(
+        default_factory=list,
+        description="机会失效条件。任一关键条件被触发时，需重新评估或退出。"
+    )
+    must_watch_indicators: List[str] = Field(
+        default_factory=list,
+        description="必须持续跟踪的验证指标或观测变量"
+    )
+    kill_switch_signals: List[str] = Field(
+        default_factory=list,
+        description="一旦出现就应快速放弃该机会的危险信号"
     )
 
     # 警告

@@ -19,6 +19,7 @@ from typing import List, Optional
 from core.schemas import (
     MarketSignal,
     OpportunityObject,
+    OpportunityScore,
     PriorityLevel,
     Direction,
     TimeWindow,
@@ -276,6 +277,36 @@ class JudgmentEngine:
         key_assumptions = data.get("key_assumptions") or ["政策宽松将继续传导至流动性和风险偏好"]
         uncertainty_map = data.get("uncertainty_map") or ["政策效果兑现节奏存在不确定性"]
         next_validation_questions = data.get("next_validation_questions") or ["市场是否出现量价配合验证"]
+        invalidation_conditions = data.get("invalidation_conditions") or ["核心政策宽松预期被证伪"]
+        must_watch_indicators = data.get("must_watch_indicators") or ["成交量是否放大", "风险偏好是否持续修复"]
+        kill_switch_signals = data.get("kill_switch_signals") or ["核心假设被证伪", "市场出现显著反向宏观冲击"]
+
+        score_data = data.get("opportunity_score") or {}
+        catalyst_strength = int(score_data.get("catalyst_strength", max((getattr(s, 'intensity_score', 6) for s in signals), default=6)))
+        timeliness = int(score_data.get("timeliness", max((getattr(s, 'timeliness_score', 6) for s in signals), default=6)))
+        signal_consistency = int(score_data.get("signal_consistency", min(10, max(5, len(signals) + 5))))
+        market_confirmation = int(score_data.get("market_confirmation", 6))
+        tradability = int(score_data.get("tradability", 7 if clean_types else 5))
+        risk_clarity = int(score_data.get("risk_clarity", 6))
+        consensus_gap = int(score_data.get("consensus_gap", 6))
+        overall_score = float(score_data.get(
+            "overall_score",
+            round((catalyst_strength + timeliness + signal_consistency + market_confirmation + tradability + risk_clarity + consensus_gap) / 7, 2),
+        ))
+        confidence_score = float(score_data.get("confidence_score", min(1.0, round(sum(getattr(s, 'confidence_score', 7) for s in signals) / max(len(signals), 1) / 10, 2))))
+        execution_readiness = float(score_data.get("execution_readiness", min(1.0, round((timeliness + tradability + risk_clarity) / 30, 2))))
+        opportunity_score = OpportunityScore(
+            catalyst_strength=catalyst_strength,
+            timeliness=timeliness,
+            market_confirmation=market_confirmation,
+            tradability=tradability,
+            risk_clarity=risk_clarity,
+            consensus_gap=consensus_gap,
+            signal_consistency=signal_consistency,
+            overall_score=overall_score,
+            confidence_score=confidence_score,
+            execution_readiness=execution_readiness,
+        )
 
         return OpportunityObject(
             opportunity_id=f"opp_{uuid.uuid4().hex[:8]}",
@@ -293,8 +324,12 @@ class JudgmentEngine:
             key_assumptions=key_assumptions,
             uncertainty_map=uncertainty_map,
             priority_level=clean_priority,
+            opportunity_score=opportunity_score,
             risk_reward_profile=data.get("risk_reward_profile", "待进一步量化"),
             next_validation_questions=next_validation_questions,
+            invalidation_conditions=invalidation_conditions,
+            must_watch_indicators=must_watch_indicators,
+            kill_switch_signals=kill_switch_signals,
             warnings=data.get("warnings"),
             judgment_version=self.version,
             created_at=now,
