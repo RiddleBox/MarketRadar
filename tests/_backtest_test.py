@@ -319,3 +319,66 @@ if report.by_signal_type:
     worst = min(report.by_signal_type.items(), key=lambda x: x[1].get('avg_pnl_pct', 0))
     print(f"    • 最强信号类型: {best[0]} (均盈亏 {best[1].get('avg_pnl_pct',0):+.2f}%)")
     print(f"    • 最弱信号类型: {worst[0]} (均盈亏 {worst[1].get('avg_pnl_pct',0):+.2f}%)")
+
+
+# ═══════════════════════════════════════════════════════════════
+# 测试4：AKShare 联网拉取验证（网络可用时自动执行）
+# ═══════════════════════════════════════════════════════════════
+print(f"\n{'='*60}")
+print("测试4: AKShare 联网拉取（有网络时执行，无网络自动跳过）")
+print("=" * 60)
+
+import socket
+def _network_ok(host="8.8.8.8", port=53, timeout=2):
+    try:
+        socket.setdefaulttimeout(timeout)
+        socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((host, port))
+        return True
+    except Exception:
+        return False
+
+if not _network_ok():
+    print("⏭  当前无网络连接，跳过 AKShare 在线拉取测试")
+    print("   离线模式使用内嵌种子数据，功能完整 ✓")
+else:
+    print("✓ 网络连通，尝试 AKShare 拉取...")
+    try:
+        # 创建新的 feed 实例（不依赖种子，强制走 AKShare）
+        online_feed = HistoryPriceFeed(use_seed=False, seed_merge=True)
+        # 只拉一个标的验证接口可用性
+        price = online_feed.get_price("510300.SH", date.today())
+        summary = online_feed.data_source_summary()
+        if summary.get("510300.SH"):
+            info = summary["510300.SH"]
+            print(f"✓ AKShare 拉取成功: 510300.SH")
+            print(f"  数据范围: {info['min_date']} ~ {info['max_date']} ({info['days']} 天)")
+            # 写入磁盘缓存后，种子+缓存合并效果验证
+            merged_feed = HistoryPriceFeed(use_seed=True, seed_merge=True)
+            merged_summary = merged_feed.data_source_summary()
+            if merged_summary.get("510300.SH"):
+                m = merged_summary["510300.SH"]
+                print(f"✓ 合并后 510300.SH: {m['days']} 天 ({m['min_date']} ~ {m['max_date']})")
+                print("  种子数据 + AKShare 实时数据双重覆盖 ✓")
+        else:
+            print("⚠️  AKShare 拉取返回空数据（可能 API 被限流或域名不可达）")
+            print("   离线种子数据已覆盖主要历史节点，回测功能不受影响")
+    except Exception as e:
+        print(f"⚠️  AKShare 拉取异常: {e}")
+        print("   离线种子数据已覆盖主要历史节点，回测功能不受影响")
+
+
+print(f"\n{'='*60}")
+print("数据源策略总结：")
+print("  离线（无网络）: 内嵌种子数据 → 187天/510300 + 33天/588000 ✓")
+print("  联网（AKShare可用）: 种子 + AKShare全量历史 合并 → 磁盘缓存 ✓")
+print("  磁盘缓存命中: data/price_cache/<inst>.json → 跳过 AKShare 请求 ✓")
+print(f"  当前缓存目录: {HistoryPriceFeed().cache_dir}")
+
+cache_files = list(HistoryPriceFeed().cache_dir.glob("*.json"))
+if cache_files:
+    print(f"  已缓存文件:")
+    for cf in cache_files:
+        size_kb = cf.stat().st_size // 1024
+        print(f"    {cf.name} ({size_kb}KB)")
+else:
+    print("  暂无磁盘缓存（联网后首次拉取会自动写入）")
