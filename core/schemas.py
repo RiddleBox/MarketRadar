@@ -577,6 +577,55 @@ class ActionPlan(BaseModel):
 # Position Models
 # ============================================================
 
+class BacktestTask(BaseModel):
+    """回测任务定义。由 OpportunityObject 映射得到，供回测系统消费。"""
+    task_id: str = Field(
+        default_factory=lambda: f"bt_{uuid.uuid4().hex[:12]}",
+        description="回测任务唯一标识符"
+    )
+    opportunity_id: str = Field(..., description="对应的机会ID")
+    task_type: str = Field(default="event", description="回测任务类型：event/trend/regime/basket")
+    market: Market = Field(..., description="目标市场")
+    instrument_candidates: List[str] = Field(default_factory=list, description="候选回测标的")
+    instrument_type: InstrumentType = Field(..., description="主要标的类型")
+    direction: Direction = Field(..., description="回测方向")
+    event_start: datetime = Field(..., description="回测事件起始时间")
+    event_end: datetime = Field(..., description="回测事件结束时间")
+    entry_rules: List[str] = Field(default_factory=list, description="入场规则说明")
+    exit_rules: List[str] = Field(default_factory=list, description="退出规则说明")
+    holding_period_grid: List[int] = Field(default_factory=lambda: [1, 3, 5, 10], description="持有期扫描窗口（交易日）")
+    risk_budget_pct: float = Field(..., ge=0.0, le=1.0, description="风险预算占总资金比例")
+    stop_loss_template: Optional[dict] = Field(default=None, description="止损模板")
+    take_profit_template: Optional[dict] = Field(default=None, description="止盈模板")
+    phase_template: List[dict] = Field(default_factory=list, description="分阶段执行模板")
+    evaluation_metrics: List[str] = Field(default_factory=lambda: ["return", "max_drawdown", "win_rate", "profit_loss_ratio"], description="评估指标")
+    metadata: dict = Field(default_factory=dict, description="附加元数据")
+
+
+class SimulatedExecutionSpec(BaseModel):
+    """模拟执行规格。由 ActionPlan 映射得到，供模拟盘系统消费。"""
+    spec_id: str = Field(
+        default_factory=lambda: f"sim_{uuid.uuid4().hex[:12]}",
+        description="模拟执行规格唯一标识符"
+    )
+    plan_id: str = Field(..., description="对应的行动计划ID")
+    opportunity_id: str = Field(..., description="对应的机会ID")
+    market: Optional[Market] = Field(default=None, description="目标市场")
+    instrument: str = Field(..., description="主要模拟执行标的")
+    direction: Direction = Field(..., description="执行方向")
+    entry_phases: List[ActionPhase] = Field(default_factory=list, description="分阶段执行计划")
+    stop_loss_rule: StopLossConfig = Field(..., description="止损规则")
+    take_profit_rule: TakeProfitConfig = Field(..., description="止盈规则")
+    max_position_pct: Optional[float] = Field(default=None, ge=0.0, le=1.0, description="最大仓位比例")
+    order_constraints: dict = Field(default_factory=dict, description="下单约束")
+    slippage_model: dict = Field(default_factory=dict, description="滑点模型")
+    fee_model: dict = Field(default_factory=dict, description="手续费模型")
+    liquidity_constraints: dict = Field(default_factory=dict, description="流动性约束")
+    expiry_time: datetime = Field(..., description="规格过期时间")
+    review_triggers: List[str] = Field(default_factory=list, description="复核触发条件")
+    metadata: dict = Field(default_factory=dict, description="附加元数据")
+
+
 class PositionUpdate(BaseModel):
     """持仓更新记录"""
     position_id: str = Field(..., description="对应的持仓ID")
