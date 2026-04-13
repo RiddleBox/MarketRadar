@@ -664,6 +664,43 @@ class BacktestSummary(BaseModel):
     runs: List[BacktestRunResult] = Field(default_factory=list, description="单次回测结果列表")
 
 
+class SimulatedFill(BaseModel):
+    """模拟成交记录。"""
+    fill_id: str = Field(
+        default_factory=lambda: f"fill_{uuid.uuid4().hex[:12]}",
+        description="成交记录唯一标识符"
+    )
+    phase_name: str = Field(..., description="对应执行阶段名称")
+    instrument: str = Field(..., description="成交标的")
+    side: str = Field(..., description="成交方向：buy/sell")
+    price: float = Field(..., gt=0, description="成交价格")
+    allocation_ratio: float = Field(..., ge=0.0, le=1.0, description="该次成交对应仓位比例")
+    notional: float = Field(..., ge=0.0, description="成交名义金额")
+    fee_paid: float = Field(..., ge=0.0, description="手续费")
+    slippage_paid: float = Field(..., ge=0.0, description="滑点成本")
+
+
+class SimulatedExecutionResult(BaseModel):
+    """模拟执行结果。"""
+    result_id: str = Field(
+        default_factory=lambda: f"simr_{uuid.uuid4().hex[:12]}",
+        description="模拟执行结果唯一标识符"
+    )
+    spec_id: str = Field(..., description="对应的模拟执行规格ID")
+    plan_id: str = Field(..., description="对应的行动计划ID")
+    opportunity_id: str = Field(..., description="对应的机会ID")
+    instrument: str = Field(..., description="执行标的")
+    fills: List[SimulatedFill] = Field(default_factory=list, description="模拟成交明细")
+    average_entry_price: Optional[float] = Field(default=None, gt=0, description="平均入场价")
+    exit_price: Optional[float] = Field(default=None, gt=0, description="退出价格")
+    exit_reason: Optional[str] = Field(default=None, description="退出原因")
+    realized_pnl_pct: float = Field(..., description="已实现盈亏百分比")
+    max_drawdown_pct: float = Field(..., description="模拟持有期间最大回撤")
+    review_triggered: bool = Field(default=False, description="是否触发复核")
+    notes: Optional[str] = Field(default=None, description="结果备注")
+    metadata: dict = Field(default_factory=dict, description="附加元数据")
+
+
 class PositionUpdate(BaseModel):
     """持仓更新记录"""
     position_id: str = Field(..., description="对应的持仓ID")
