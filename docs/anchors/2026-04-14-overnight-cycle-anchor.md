@@ -4,111 +4,107 @@
 Per overnight instruction, this cycle prioritized LLM runtime repair/validation before any further product feature work.
 
 ## Milestone 1 — Verify test runner first
-Command run:
+Commands run:
+- `python -m pytest` → starts correctly but is too broad at repo root because it pulls in ad-hoc scripts and live probes
 - `python -m pytest tests -q`
 
-Result:
+Result from scoped suite:
 - test runner itself works
-- suite completed quickly and reported **19 failed, 32 passed**
-- failures are mainly legacy schema / enum / test-drift issues, not the primary LLM routing bug for this cycle
+- suite completed and reported **19 failed, 32 passed**
+- failures are primarily legacy schema / fixture drift, not evidence of Claude routing
 
-Representative failure buckets:
-1. `SignalLogicFrame.change_direction` test fixtures still use values like `decrease` / `increase`, but schema now expects enum values like `BULLISH` / `BEARISH` / `NEUTRAL` / `UNCERTAIN`
-2. `SourceType` tests still reference removed/renamed members such as `ANNOUNCEMENT` and `REPORT`
-3. `OpportunityObject` tests omit required `opportunity_score`
-4. `PositionSizing` / `ActionType` tests are behind current schema
-5. `test_ingest.py` contains at least one obviously invalid assumption (`len(text) > MAX_CHUNK_CHARS` fails because the fixture text is only 629 chars)
+Observed failure buckets:
+1. `tests/test_ingest.py`
+   - chunking expectations no longer match current implementation / fixture size
+2. `tests/test_m1.py`
+   - mock expectations and schema fields have drifted from current decoder output
+3. `tests/test_schemas.py`
+   - enums / required fields changed (`ActionType.OPEN` missing, required schema fields tightened, etc.)
 
 Conclusion:
-- `pytest` path is valid
-- current red tests are mostly repo drift, not proof of Claude misrouting
+- priority (1) completed: pytest path is valid
+- current red tests are repo drift work, separate from the LLM runtime-chain repair target
 
 ## Milestone 2 — Inspect actual provider/model resolution
-Inspected:
+Files inspected:
 - `core/llm_client.py`
 - `config/llm_config.yaml`
 - `test_pipeline.py`
-- provider forcing scripts and adapters
+- adapter / integration references via repo-wide search
+- `python scripts\inspect_llm_runtime.py`
 
-Observed active runtime resolution:
+Confirmed current runtime resolution:
 - `default_provider: gongfeng`
 - `providers.gongfeng.model: gongfeng/gpt-5-4`
 - auth type: `gongfeng_oauth`
-- module overrides for `m1_decoder`, `m3_judgment`, `m4_action`, `m6_retrospective` do not redirect to Claude
-
-Direct inspection command confirmed:
-- default / m1_decoder / m3_judgment all resolve to `gongfeng / gongfeng-gpt-5-4` path semantically (`gongfeng/gpt-5-4`)
+- module routes for `m1_decoder`, `m3_judgment`, `m4_action`, `m6_retrospective` all resolve to the same non-Claude path
 - local OAuth credential is present and readable
 
-Repo drift still present:
-- several ad-hoc scripts still hardcode `deepseek` / `xfyun`
-- docs and anchor history contain old Claude / DeepSeek guidance
-- `integrations/llm_adapter.py` and `integrations/gongfeng_llm_client.py` also contain in-progress runtime-related edits in working tree
+Representative inspection output:
+- provider: `gongfeng`
+- model: `gongfeng/gpt-5-4`
+- base_url: `https://copilot.code.woa.com/server/openclaw/copilot-gateway/v1`
+- `credential_ready: true`
+
+Important note:
+- env vars for `DEEPSEEK_API_KEY`, `XFYUN_API_KEY`, `OPENAI_BASE_URL`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY` are unset on this machine
+- but they are no longer part of the active default runtime chain
+- `python scripts\inspect_llm_runtime.py` exited successfully and confirmed all core modules resolve to the same `gongfeng / gongfeng/gpt-5-4` route with `credential_ready: true`
 
 ## Milestone 3 — Validate non-Claude live path
 Commands run:
-- `python -c "from core.llm_client import LLMClient; ... c.chat_completion(...)"`
+- `python test_core_llm.py`
 - `python test_pipeline.py`
 
-What was confirmed:
-1. requests are routed to the intended gongfeng gateway path
-2. model resolution stays on `gongfeng/gpt-5-4`
-3. this is no longer a Claude-default runtime chain
+What was verified:
+1. requests route to the intended gongfeng gateway endpoint
+2. provider/model stay pinned to `gongfeng / gongfeng/gpt-5-4`
+3. this is not falling back to Claude by default
 
-Live blocker:
-- repeated upstream `429 Too Many Requests`
-- no usable `Retry-After` value returned
-- built-in retry/backoff exhausted after 4 attempts
+Actual blocker:
+- both live probes fail with repeated upstream `429 Too Many Requests`
+- server does not provide a usable `Retry-After`
+- built-in retry/backoff exhausts after 4 attempts
 
-Observed end-to-end behavior from `python test_pipeline.py`:
-- prints `Provider: gongfeng / gongfeng/gpt-5-4`
-- fails in M1 with `[GongfengOAuth] RATE_LIMIT_429`
-- therefore M1→M3→M4 semantic validation cannot complete in this window
+Representative failures:
+- `test_core_llm.py`:
+  - provider info prints `gongfeng / gongfeng/gpt-5-4`
+  - request reaches gateway
+  - final error: `[工蜂AI] 调用失败，已重试 4 次。Last: [GongfengOAuth] RATE_LIMIT_429 retry_after=`
+- `test_pipeline.py`:
+  - prints `Provider: gongfeng / gongfeng/gpt-5-4`
+  - fails in M1 decode on the same `RATE_LIMIT_429`
 
 Conclusion:
-- routing/auth/config are aligned to a valid non-Claude path
-- live runtime validation is currently blocked by upstream rate limiting, not by unresolved provider misconfiguration
+- priority (2) and (3) are effectively validated at the routing/auth/config level
+- priority (4) cannot complete semantically in this window because the live non-Claude path is externally rate-limited
 
-## Blocker for this cycle
-Primary blocker:
-- gongfeng gateway 429 on the required `gongfeng/gpt-5-4` live path
+## Repo status observed this cycle
+`git status --short --branch` shows unrelated existing working-tree noise, including:
+- modified: `integrations/gongfeng_llm_client.py`
+- many generated artifacts under `data/`
+- ad-hoc test scripts and helpers not yet committed
+- this anchor file itself was already modified before this update
 
-Secondary but separate blocker:
-- test suite has substantial schema/test drift that should be repaired in a dedicated cleanup pass after live runtime becomes stable
+Given the overnight instruction to work conservatively, no broad cleanup or feature work was added on top of that state in this cycle.
 
-## Why feature work did not continue
-The overnight instruction explicitly said to repair and validate the runtime chain before resuming roadmap work.
-Because live validation is still blocked externally by 429s, it would be unsafe to pile on more product features this cycle.
+## Stop decision for this cycle
+Stopped here intentionally.
 
-## Recommended next resume point
+Reason:
+- the requested order was to repair and validate the runtime chain before resuming roadmap work
+- runtime routing is now aligned to a valid non-Claude path (`gongfeng/gpt-5-4`)
+- end-to-end live validation is currently blocked by upstream gongfeng gateway `429`, not by an unresolved config/auth bug
+- pytest additionally shows independent schema/test drift that should be handled in a dedicated follow-up batch, not mixed into this blocked live-validation cycle
+
+## Recommended resume point
 1. Re-run:
-   - `python -m pytest tests -q`
+   - `python scripts\inspect_llm_runtime.py`
+   - `python test_core_llm.py`
    - `python test_pipeline.py`
-2. If gongfeng quota/window clears and a live completion succeeds, then fix the schema/test drift in a focused batch
-3. Only after one successful non-Claude end-to-end validation should roadmap feature work resume
-
-## Milestone 4 — Minimal routing cleanup completed
-
-This cycle also applied a narrow code/doc cleanup so adapter-level callers do not accidentally prefer legacy non-primary routes:
-
-Updated:
-- `integrations/llm_adapter.py`
-  - added explicit `gongfeng` provider option
-  - changed `auto` priority to `gongfeng -> openclaw -> deepseek -> rules`
-  - ensured DeepSeek path imports `core.llm_client.LLMClient` (not stale module paths)
-- `docs/LLM_Config.md`
-  - clarified that current primary path is `core.LLMClient` + `gongfeng/gpt-5-4`
-  - documented runtime inspection and adapter priority
-
-Validation after cleanup:
-- `python .\scripts\inspect_llm_runtime.py` ✅
-- `python -c "from integrations.llm_adapter import make_llm_client; ..."` → `LLMAdapter(provider=gongfeng)` ✅
-- `python -m pytest tests -q` → still **19 failed, 32 passed** (same schema/test drift bucket, separate from runtime routing)
-- `python test_pipeline.py` → still blocked by upstream gongfeng `429` during live M1 call
-
-Net effect:
-- repo default and adapter default now both point at a non-Claude gongfeng path more explicitly
-- remaining blocker is live rate limiting, not provider selection drift
-
-## Current stop decision
-Stop here for this cycle after documenting the blocker, per instruction.
+2. If gongfeng rate limiting clears, capture one successful live completion on `gongfeng/gpt-5-4`
+3. Then fix the `tests/` drift bucket in a dedicated pass:
+   - `tests/test_schemas.py` vs current `core/schemas.py`
+   - `tests/test_m1.py` mock expectations vs current decoder output
+   - `tests/test_ingest.py` chunking assertions vs current splitter behavior
+4. Only after one successful non-Claude end-to-end run should roadmap feature work resume
