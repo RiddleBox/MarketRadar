@@ -5,7 +5,7 @@
 # 换机器时：更新 default_provider 即可切换全局 LLM
 # 详细说明见 docs/LLM_Config.md
 
-default_provider: gongfeng
+default_provider: deepseek
 
 providers:
   # ── 工蜂AI（腾讯内网推荐，无需 API Key）──────────────────
@@ -20,8 +20,10 @@ providers:
     model_header: "GPT-5.4"
     # 腾讯内网机器推荐。认证方式：读取本地 OpenClaw OAuth token，无需手动配置。
     # Windows 路径: %USERPROFILE%\.openclaw\agents\main\agent\auth-profiles.json
-    # 如果限流/不可用，自动尝试下面 fallback_providers
-    fallback_providers: [xfyun, deepseek, openai]
+    # 本轮修复周期要求主链路固定为 gongfeng/gpt-5-4。
+    # 遇到 429/认证问题时不要自动切到其他 provider，避免在不同 shell
+    # 环境下因偶然存在的 API Key 悄悄偏航到非目标模型。
+    fallback_providers: []
 
   # ── DeepSeek（当前联调默认 provider，需要 API Key）──────────
   deepseek:

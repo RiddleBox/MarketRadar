@@ -1,4 +1,4 @@
-"""M1->M3->M4 端到端链路测试（工蜂AI）"""
+"""M1->M3->M4 端到端链路测试（当前默认 provider）"""
 import sys
 import logging
 from datetime import datetime

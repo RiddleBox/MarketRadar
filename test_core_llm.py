@@ -1,4 +1,4 @@
-"""验证 core/llm_client.py 工蜂AI分支"""
+"""验证 core/llm_client.py 当前默认 provider 分支（用于本地联调）"""
 import sys, logging
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
 sys.path.insert(0, r'D:\AIproject\MarketRadar')
