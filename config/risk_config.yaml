@@ -1,0 +1,43 @@
+# Risk configuration for MarketRadar
+# 风险参数：定义全局、优先级级别与品类级别的风险约束
+
+version: v1
+
+global:
+  max_total_exposure_pct: 30
+  max_single_theme_exposure_pct: 15
+  max_single_position_pct: 8
+  max_daily_drawdown_pct: 3
+  default_risk_unit_pct: 1
+
+priority_risk_budget_pct:
+  watch: 0
+  research: 1
+  position: 5
+  urgent: 8
+
+instrument_risk_overrides:
+  STOCK:
+    max_position_pct: 5
+    preferred_stop_loss_pct: 6
+    preferred_take_profit_pct: 12
+  ETF:
+    max_position_pct: 8
+    preferred_stop_loss_pct: 5
+    preferred_take_profit_pct: 10
+  FUTURES:
+    max_position_pct: 4
+    preferred_stop_loss_pct: 3
+    preferred_take_profit_pct: 8
+  OPTIONS:
+    max_position_pct: 2
+    preferred_stop_loss_pct: 8
+    preferred_take_profit_pct: 15
+  INDEX:
+    max_position_pct: 6
+    preferred_stop_loss_pct: 4
+    preferred_take_profit_pct: 8
+  BOND:
+    max_position_pct: 10
+    preferred_stop_loss_pct: 2
+    preferred_take_profit_pct: 4

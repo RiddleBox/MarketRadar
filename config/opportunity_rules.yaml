@@ -1,0 +1,28 @@
+# Opportunity rules for MarketRadar
+# 机会规则：定义评分语义、非裁决性使用边界与后续模块消费约定
+
+version: v1
+
+scoring:
+  role: explanation_only
+  notes:
+    - "opportunity_score 属于 M3 的解释层输出，不是二次裁决器"
+    - "is_opportunity 与 priority_level 仍由 M3 主判断职责决定"
+    - "M4/回测/模拟盘可消费评分字段，但不得反向改写 M3 主判断"
+
+recommended_usage:
+  m4:
+    - "用 execution_readiness 调整建仓节奏"
+    - "用 risk_clarity 调整止损模板"
+    - "不得用 overall_score 否决机会"
+  backtest:
+    - "按 overall_score 分桶评估机会表现"
+    - "检验 execution_readiness 与实际命中率的关系"
+  paper_trading:
+    - "将评分卡作为模拟准入参考，而非唯一条件"
+
+priority_semantics:
+  watch: "信号有趣但证据不足，持续观察"
+  research: "有初步机会轮廓，需要深入验证"
+  position: "证据较充分，可以考虑建立试探仓位"
+  urgent: "时间窗口短，需要快速决策"

@@ -13,7 +13,10 @@ import json
 import logging
 import uuid
 from datetime import datetime, timedelta
+from pathlib import Path
 from typing import List, Optional
+
+import yaml
 
 from core.schemas import (
     ActionPlan,
@@ -32,20 +35,32 @@ from core.llm_client import LLMClient
 logger = logging.getLogger(__name__)
 
 
+CONFIG_DIR = Path(__file__).resolve().parents[1] / "config"
+
+
+def _load_yaml_config(filename: str) -> dict:
+    path = CONFIG_DIR / filename
+    with open(path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f) or {}
+
+
+RISK_CONFIG = _load_yaml_config("risk_config.yaml")
+EXECUTION_CONFIG = _load_yaml_config("execution_config.yaml")
+
 # 按优先级定义最大风险预算（占总资金 %）
 RISK_BUDGET_BY_PRIORITY = {
-    PriorityLevel.WATCH: 0.0,
-    PriorityLevel.RESEARCH: 0.01,   # 1%
-    PriorityLevel.POSITION: 0.05,   # 5%
-    PriorityLevel.URGENT: 0.08,     # 8%
+    PriorityLevel.WATCH: float(RISK_CONFIG.get("priority_risk_budget_pct", {}).get("watch", 0)) / 100,
+    PriorityLevel.RESEARCH: float(RISK_CONFIG.get("priority_risk_budget_pct", {}).get("research", 1)) / 100,
+    PriorityLevel.POSITION: float(RISK_CONFIG.get("priority_risk_budget_pct", {}).get("position", 5)) / 100,
+    PriorityLevel.URGENT: float(RISK_CONFIG.get("priority_risk_budget_pct", {}).get("urgent", 8)) / 100,
 }
 
 # 行动计划有效期（天）
 PLAN_VALIDITY_DAYS = {
-    PriorityLevel.WATCH: 30,
-    PriorityLevel.RESEARCH: 21,
-    PriorityLevel.POSITION: 14,
-    PriorityLevel.URGENT: 7,
+    PriorityLevel.WATCH: int(EXECUTION_CONFIG.get("plan_validity_days", {}).get("watch", 30)),
+    PriorityLevel.RESEARCH: int(EXECUTION_CONFIG.get("plan_validity_days", {}).get("research", 21)),
+    PriorityLevel.POSITION: int(EXECUTION_CONFIG.get("plan_validity_days", {}).get("position", 14)),
+    PriorityLevel.URGENT: int(EXECUTION_CONFIG.get("plan_validity_days", {}).get("urgent", 7)),
 }
 
 
@@ -256,25 +271,33 @@ class ActionDesigner:
         now = datetime.now()
         priority = opportunity.priority_level
         risk_budget = RISK_BUDGET_BY_PRIORITY[priority]
+        instrument_type = (
+            opportunity.instrument_types[0]
+            if opportunity.instrument_types
+            else InstrumentType.STOCK
+        )
+        instrument_cfg = RISK_CONFIG.get("instrument_risk_overrides", {}).get(instrument_type.value, {})
 
         # 止损配置
         sl_data = detail.get("stop_loss", {})
+        default_stop_loss_pct = float(instrument_cfg.get("preferred_stop_loss_pct", 5))
         stop_loss = StopLossConfig(
-            stop_loss_type=sl_data.get("stop_loss_type", "percent"),
-            stop_loss_value=float(sl_data.get("stop_loss_value", 5.0)),
+            stop_loss_type=sl_data.get("stop_loss_type", EXECUTION_CONFIG.get("fallback_stop_loss", {}).get("type", "percent")),
+            stop_loss_value=float(sl_data.get("stop_loss_value", default_stop_loss_pct)),
             stop_loss_price=sl_data.get("stop_loss_price"),
-            hard_stop=sl_data.get("hard_stop", True),
+            hard_stop=sl_data.get("hard_stop", EXECUTION_CONFIG.get("fallback_stop_loss", {}).get("hard_stop", True)),
             notes=sl_data.get("notes", sl_data.get("stop_price_description", "关键假设失效时止损")),
         )
 
         # 止盈配置
         tp_data = detail.get("take_profit", {})
+        default_take_profit_pct = float(instrument_cfg.get("preferred_take_profit_pct", 10))
         take_profit = TakeProfitConfig(
-            take_profit_type=tp_data.get("take_profit_type", "percent"),
-            take_profit_value=float(tp_data.get("take_profit_value", 10.0)),
+            take_profit_type=tp_data.get("take_profit_type", EXECUTION_CONFIG.get("fallback_take_profit", {}).get("type", "percent")),
+            take_profit_value=float(tp_data.get("take_profit_value", default_take_profit_pct)),
             take_profit_price=tp_data.get("take_profit_price"),
-            partial_take_profit=tp_data.get("partial_take_profit", True),
-            partial_ratio=float(tp_data.get("partial_ratio", 0.5)),
+            partial_take_profit=tp_data.get("partial_take_profit", EXECUTION_CONFIG.get("fallback_take_profit", {}).get("partial_take_profit", True)),
+            partial_ratio=float(tp_data.get("partial_ratio", EXECUTION_CONFIG.get("fallback_take_profit", {}).get("partial_ratio", 0.5))),
             notes=tp_data.get("notes", tp_data.get("target_price_description")),
         )
 
@@ -287,7 +310,8 @@ class ActionDesigner:
 
         # 分阶段计划
         phases = []
-        for p in detail.get("phases", []):
+        phase_source = detail.get("phases") or EXECUTION_CONFIG.get("phase_templates", {}).get(priority.value, [])
+        for p in phase_source:
             phases.append(ActionPhase(
                 phase_name=p.get("phase_name", ""),
                 action_type=ActionType(p.get("action_type", "buy")),
@@ -326,11 +350,7 @@ class ActionDesigner:
                 or opportunity.target_instruments
                 or ["待定"]
             ),
-            instrument_type=(
-                opportunity.instrument_types[0]
-                if opportunity.instrument_types
-                else InstrumentType.STOCK
-            ),
+            instrument_type=instrument_type,
             stop_loss=stop_loss,
             take_profit=take_profit,
             position_sizing=position_sizing,
@@ -338,7 +358,7 @@ class ActionDesigner:
             valid_until=now + timedelta(days=PLAN_VALIDITY_DAYS[priority]),
             review_triggers=detail.get(
                 "review_triggers",
-                ["关键假设失效", f"{PLAN_VALIDITY_DAYS[priority]}天内未触发入场则重新评估"],
+                EXECUTION_CONFIG.get("default_review_triggers", []) + [f"{PLAN_VALIDITY_DAYS[priority]}天内未触发入场则重新评估"],
             ),
             opportunity_priority=priority,
         )

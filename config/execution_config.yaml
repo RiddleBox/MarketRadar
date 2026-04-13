@@ -1,0 +1,50 @@
+# Execution configuration for MarketRadar
+# 执行参数：定义行动计划有效期、分阶段建仓与默认执行约束
+
+version: v1
+
+plan_validity_days:
+  watch: 30
+  research: 21
+  position: 14
+  urgent: 7
+
+phase_templates:
+  watch:
+    - phase_name: "观察期"
+      action_type: "watch"
+      allocation_ratio: 1.0
+  research:
+    - phase_name: "Phase 1 侦察仓"
+      action_type: "buy"
+      allocation_ratio: 0.3
+    - phase_name: "Phase 2 验证后加仓"
+      action_type: "buy"
+      allocation_ratio: 0.7
+  position:
+    - phase_name: "Phase 1 试探建仓"
+      action_type: "buy"
+      allocation_ratio: 0.4
+    - phase_name: "Phase 2 主仓建立"
+      action_type: "buy"
+      allocation_ratio: 0.6
+  urgent:
+    - phase_name: "Phase 1 快速建仓"
+      action_type: "buy"
+      allocation_ratio: 0.5
+    - phase_name: "Phase 2 顺势补仓"
+      action_type: "buy"
+      allocation_ratio: 0.5
+
+default_review_triggers:
+  - "关键假设失效"
+  - "机会窗口到期前复核"
+
+fallback_stop_loss:
+  type: percent
+  hard_stop: true
+
+fallback_take_profit:
+  type: percent
+  partial_take_profit: true
+  partial_ratio: 0.5
