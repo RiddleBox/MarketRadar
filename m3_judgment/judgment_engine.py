@@ -281,6 +281,8 @@ class JudgmentEngine:
         must_watch_indicators = data.get("must_watch_indicators") or ["成交量是否放大", "风险偏好是否持续修复"]
         kill_switch_signals = data.get("kill_switch_signals") or ["核心假设被证伪", "市场出现显著反向宏观冲击"]
 
+        # 评分卡属于 M3 的解释层输出：用于解释判断、供后续模块消费，
+        # 不作为独立的二次裁决器去反向覆盖 is_opportunity / priority_level。
         score_data = data.get("opportunity_score") or {}
         catalyst_strength = int(score_data.get("catalyst_strength", max((getattr(s, 'intensity_score', 6) for s in signals), default=6)))
         timeliness = int(score_data.get("timeliness", max((getattr(s, 'timeliness_score', 6) for s in signals), default=6)))
