@@ -1,0 +1,50 @@
+market: HK
+description: "港股市场 Agent 配置（行为金融学分法）"
+
+# 港股特点：外资主导，国际机构占比高，散户比例低于A股
+# 行为金融学分法：散户(动量追随) / 机构(价值锚定) / 游资(信息套利) / 外资(宏观对冲)
+agents:
+  - agent_type: northbound
+    name: 外资宏观对冲
+    weight: 0.35          # 港股外资权重更高
+    sequence_pos: 0
+    enabled: true
+    params:
+      strong_inflow: 50.0
+      strong_outflow: -50.0
+
+  - agent_type: fundamental
+    name: 国际机构价值投资
+    weight: 0.30          # 机构占比高，基本面权重高
+    sequence_pos: 1
+    enabled: true
+    params: {}
+
+  - agent_type: technical
+    name: 游资信息套利
+    weight: 0.20
+    sequence_pos: 2
+    enabled: true
+    params:
+      ma_short: 5
+      ma_long: 20
+
+  - agent_type: sentiment_retail
+    name: 散户动量追随
+    weight: 0.15          # 港股散户比例低
+    sequence_pos: 3
+    enabled: true
+    params:
+      herding_factor: 0.20  # 港股羊群效应弱于A股
+
+# 图结构权重矩阵（Phase 2 预留）
+weight_matrix:
+  northbound:
+    fundamental: 0.20
+    technical: 0.25
+    sentiment_retail: 0.15
+  fundamental:
+    technical: 0.15
+    sentiment_retail: 0.20
+  technical:
+    sentiment_retail: 0.25

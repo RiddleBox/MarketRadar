@@ -1,0 +1,62 @@
+market: A_SHARE
+description: "A股市场 Agent 配置（特殊建模）"
+
+# Agent 列表：序列传导顺序 policy → northbound → technical → sentiment_retail → fundamental
+agents:
+  - agent_type: policy
+    name: 政策分析师
+    weight: 0.25
+    sequence_pos: 0
+    enabled: true
+    params:
+      min_intensity: 3.0    # 低于此强度的政策信号不触发看多
+
+  - agent_type: northbound
+    name: 北向跟随者
+    weight: 0.25
+    sequence_pos: 1
+    enabled: true
+    params:
+      strong_inflow: 80.0   # 亿元，超过此值为强流入
+      strong_outflow: -80.0
+
+  - agent_type: technical
+    name: 技术分析师
+    weight: 0.15
+    sequence_pos: 2
+    enabled: true
+    params:
+      ma_short: 5
+      ma_long: 20
+
+  - agent_type: sentiment_retail
+    name: 情绪散户
+    weight: 0.20
+    sequence_pos: 3
+    enabled: true
+    params:
+      herding_factor: 0.30  # 羊群效应强度（0~1）
+
+  - agent_type: fundamental
+    name: 基本面分析师
+    weight: 0.15
+    sequence_pos: 4
+    enabled: true
+    params: {}
+
+# 图结构权重矩阵（Phase 2 预留，topology=graph 时生效）
+# 经验值来源：行为金融学文献（Shiller 1981, De Long et al. 1990）
+# 含义：policy 对 sentiment_retail 有 25% 的情绪传导影响
+weight_matrix:
+  policy:
+    northbound: 0.10
+    sentiment_retail: 0.25
+    technical: 0.08
+  northbound:
+    technical: 0.20
+    sentiment_retail: 0.30
+    fundamental: 0.12
+  technical:
+    sentiment_retail: 0.18
+  fundamental:
+    sentiment_retail: 0.08
