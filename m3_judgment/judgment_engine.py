@@ -166,7 +166,14 @@ class JudgmentEngine:
                 logger.info(f"[M3 Step B] 场景不构成机会 | reason={reason}")
                 return None
 
-            return self._build_opportunity(data, scenario_signals, batch_id)
+            try:
+                return self._build_opportunity(data, scenario_signals, batch_id)
+            except Exception as build_err:
+                logger.error(
+                    "[M3 Step B] LLM 已返回机会对象，但构建 OpportunityObject 失败 | "
+                    f"title={data.get('opportunity_title')} | error={build_err} | raw_keys={list(data.keys())}"
+                )
+                return None
 
         except Exception as e:
             logger.error(f"[M3 Step B] LLM 调用或解析失败: {e}")
@@ -185,32 +192,101 @@ class JudgmentEngine:
         """从 LLM 输出构建 OpportunityObject"""
         now = datetime.now()
 
+        # LLM 常见字段/枚举容错归一化
+        instrument_aliases = {
+            "BONDS": "BOND",
+            "BOND": "BOND",
+            "STOCKS": "STOCK",
+            "STOCK": "STOCK",
+            "ETFS": "ETF",
+            "ETF": "ETF",
+            "FUTURE": "FUTURES",
+            "FUTURES": "FUTURES",
+            "OPTION": "OPTIONS",
+            "OPTIONS": "OPTIONS",
+            "INDEX": "INDEX",
+            "INDICES": "INDEX",
+        }
+        market_aliases = {
+            "A": "A_SHARE",
+            "ASHARE": "A_SHARE",
+            "A_SHARE": "A_SHARE",
+            "A-SHARE": "A_SHARE",
+            "CN": "A_SHARE",
+            "CHINA": "A_SHARE",
+            "HK": "HK",
+            "HONGKONG": "HK",
+            "US": "US",
+            "USA": "US",
+            "A_FUTURES": "A_FUTURES",
+            "HK_FUTURES": "HK_FUTURES",
+            "US_FUTURES": "US_FUTURES",
+        }
+        priority_aliases = {
+            "WATCH": "watch",
+            "RESEARCH": "research",
+            "POSITION": "position",
+            "URGENT": "urgent",
+        }
+        direction_aliases = {
+            "LONG": "BULLISH",
+            "SHORT": "BEARISH",
+            "BUY": "BULLISH",
+            "SELL": "BEARISH",
+            "BULLISH": "BULLISH",
+            "BEARISH": "BEARISH",
+            "NEUTRAL": "NEUTRAL",
+            "UNCERTAIN": "UNCERTAIN",
+        }
+
+        raw_types = data.get("instrument_types") or ["STOCK"]
+        clean_types = [instrument_aliases.get(str(t).upper(), str(t).upper()) for t in raw_types]
+
+        raw_markets = data.get("target_markets") or ["A_SHARE"]
+        clean_markets = [market_aliases.get(str(m).upper().replace(" ", "").replace("-", "_"), str(m).upper()) for m in raw_markets]
+
+        raw_direction = str(data.get("trade_direction", "NEUTRAL")).upper()
+        clean_direction = direction_aliases.get(raw_direction, raw_direction)
+
+        raw_priority = str(data.get("priority_level", "watch"))
+        clean_priority = priority_aliases.get(raw_priority.upper(), raw_priority.lower())
+
         # 处理时间窗口
-        window_data = data.get("opportunity_window", {})
+        window_data = data.get("opportunity_window") or {}
+        start = datetime.fromisoformat(window_data["start"]) if window_data.get("start") else now
+        end = datetime.fromisoformat(window_data["end"]) if window_data.get("end") else now
+        if end <= start:
+            from datetime import timedelta
+            end = start + timedelta(days=14)
         opportunity_window = TimeWindow(
-            start=datetime.fromisoformat(window_data["start"]) if "start" in window_data else now,
-            end=datetime.fromisoformat(window_data["end"]) if "end" in window_data else None,
+            start=start,
+            end=end,
             confidence_level=float(window_data.get("confidence_level", 0.6)),
         )
+
+        supporting_evidence = data.get("supporting_evidence") or [s.signal_label for s in signals[:3]] or ["LLM 未显式给出 supporting_evidence"]
+        key_assumptions = data.get("key_assumptions") or ["政策宽松将继续传导至流动性和风险偏好"]
+        uncertainty_map = data.get("uncertainty_map") or ["政策效果兑现节奏存在不确定性"]
+        next_validation_questions = data.get("next_validation_questions") or ["市场是否出现量价配合验证"]
 
         return OpportunityObject(
             opportunity_id=f"opp_{uuid.uuid4().hex[:8]}",
             opportunity_title=data.get("opportunity_title", "未命名机会"),
-            opportunity_thesis=data.get("opportunity_thesis", ""),
-            target_markets=data.get("target_markets", []),
+            opportunity_thesis=data.get("opportunity_thesis") or data.get("reason", ""),
+            target_markets=clean_markets,
             target_instruments=data.get("target_instruments", []),
-            trade_direction=data.get("trade_direction", Direction.NEUTRAL),
-            instrument_types=data.get("instrument_types", []),
+            trade_direction=clean_direction,
+            instrument_types=clean_types,
             opportunity_window=opportunity_window,
-            why_now=data.get("why_now", ""),
+            why_now=data.get("why_now") or data.get("reason", ""),
             related_signals=[s.signal_id for s in signals],
-            supporting_evidence=data.get("supporting_evidence", []),
+            supporting_evidence=supporting_evidence,
             counter_evidence=data.get("counter_evidence", []),
-            key_assumptions=data.get("key_assumptions", []),
-            uncertainty_map=data.get("uncertainty_map", []),
-            priority_level=PriorityLevel(data.get("priority_level", "watch")),
-            risk_reward_profile=data.get("risk_reward_profile", ""),
-            next_validation_questions=data.get("next_validation_questions", []),
+            key_assumptions=key_assumptions,
+            uncertainty_map=uncertainty_map,
+            priority_level=clean_priority,
+            risk_reward_profile=data.get("risk_reward_profile", "待进一步量化"),
+            next_validation_questions=next_validation_questions,
             warnings=data.get("warnings"),
             judgment_version=self.version,
             created_at=now,

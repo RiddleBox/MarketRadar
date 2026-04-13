@@ -1,10 +1,35 @@
 # LLM Provider Configuration for MarketRadar
 # Supports multiple providers with per-module overrides
 # Environment variables: use ${VAR_NAME} syntax
+#
+# 换机器时：更新 default_provider 即可切换全局 LLM
+# 详细说明见 docs/LLM_Config.md
 
-default_provider: deepseek
+default_provider: gongfeng
 
 providers:
+  # ── 工蜂AI（腾讯内网推荐，无需 API Key）──────────────────
+  gongfeng:
+    base_url: "https://copilot.code.woa.com/server/openclaw/copilot-gateway/v1"
+    auth_type: gongfeng_oauth          # 特殊认证：自动读取本地 OpenClaw OAuth token
+    auth_profile_path: "~/.openclaw/agents/main/agent/auth-profiles.json"
+    model: "claude-sonnet-4-6"
+    timeout: 60
+    max_retries: 3
+    # 腾讯内网机器推荐。认证方式：读取本地 OpenClaw OAuth token，无需手动配置。
+    # Windows 路径: %USERPROFILE%\.openclaw\agents\main\agent\auth-profiles.json
+    # 如果不在内网/未登录 OpenClaw，自动降级到 fallback_provider
+    fallback_provider: deepseek
+
+  # ── DeepSeek（通用备用，需要 API Key）────────────────────
+  deepseek:
+    base_url: "https://api.deepseek.com/v1"
+    api_key: "${DEEPSEEK_API_KEY}"
+    model: "deepseek-chat"
+    timeout: 60
+    max_retries: 3
+    # 通用备用方案。设置环境变量 DEEPSEEK_API_KEY 即可使用。
+
   xfyun:
     base_url: "https://maas-coding-api.cn-huabei-1.xf-yun.com/v2"
     api_key: "${XFYUN_API_KEY}"
@@ -12,15 +37,6 @@ providers:
     timeout: 60
     max_retries: 3
     # 讯飞星辰 Coding Plan，OpenAI-compatible API
-
-
-  deepseek:
-    base_url: "https://api.deepseek.com/v1"
-    api_key: "${DEEPSEEK_API_KEY}"
-    model: "deepseek-chat"
-    timeout: 60
-    max_retries: 3
-    # DeepSeek is the primary provider: cost-effective and strong reasoning
 
   claude:
     base_url: "https://api.anthropic.com/v1"
@@ -39,24 +55,19 @@ providers:
     # OpenAI as fallback or for specific tasks
 
 # Per-module configuration overrides
-# These override the default_provider settings for specific modules
+# provider 留空 = 使用 default_provider
+# 如需针对某模块切换 provider，取注 provider 行即可
 module_overrides:
   m1_decoder:
-    provider: deepseek
     temperature: 0.1
-    # Low temperature: M1 must extract facts objectively, not creatively
+    # 低 temperature: M1 必须客观提取事实
+    # 切换 provider 示例: provider: deepseek
 
   m3_judgment:
-    provider: deepseek
     temperature: 0.2
-    # Slightly higher for judgment flexibility, still conservative
 
   m4_action:
-    provider: deepseek
     temperature: 0.2
-    # Action planning requires structured output, keep temperature low
 
   m6_retrospective:
-    provider: deepseek
     temperature: 0.1
-    # Retrospective analysis should be objective and consistent

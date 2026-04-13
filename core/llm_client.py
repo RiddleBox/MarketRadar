@@ -1,13 +1,17 @@
 """
 core/llm_client.py — 统一 LLM 调用客户端
 
-支持多 provider（DeepSeek / Claude / OpenAI），使用 OpenAI-compatible API。
-支持每个模块的独立配置覆盖（temperature、provider 等）。
-内置重试逻辑、超时处理和详细错误日志。
+支持多 provider（工蜂AI / DeepSeek / Claude / OpenAI）。
+工蜂AI使用 gongfeng_oauth 认证，自动读取本地 OpenClaw token，无需 API Key。
+其他 provider 使用 OpenAI-compatible API + env var API Key。
+
+配置文件：config/llm_config.yaml
+详细说明见 docs/LLM_Config.md
 """
 
 from __future__ import annotations
 
+import json
 import logging
 import os
 import re
@@ -21,6 +25,87 @@ from openai import OpenAI, APITimeoutError, RateLimitError, APIError
 logger = logging.getLogger(__name__)
 
 
+# ───────────────────────────────────────────────────────────────────
+class GongfengOAuthClient:
+    """
+    工蜂AI 直连客户端。
+
+    自动读取本地 OpenClaw OAuth token，无需手动配置。
+    必须携带 3 个自定义 Header：OAUTH-TOKEN / X-Username / DEVICE-ID。
+    """
+
+    def __init__(self, config: dict):
+        self._config = config
+        self._profile: Optional[dict] = None
+        self._http = None
+
+    def _load_profile(self) -> dict:
+        """load OAuth profile from local OpenClaw cache"""
+        if self._profile is not None:
+            return self._profile
+        raw_path = self._config.get(
+            "auth_profile_path",
+            "~/.openclaw/agents/main/agent/auth-profiles.json",
+        )
+        p = Path(raw_path).expanduser()
+        # Windows 尝试替换路径
+        if not p.exists() and os.name == "nt":
+            p = Path(os.environ.get("USERPROFILE", "~")) / ".openclaw" / "agents" / "main" / "agent" / "auth-profiles.json"
+        if not p.exists():
+            raise RuntimeError(
+                f"[GongfengOAuth] auth-profiles.json 不存在: {p}\n"
+                f"请确保已登录 OpenClaw，或在 llm_config.yaml 中更新 auth_profile_path"
+            )
+        data = json.loads(p.read_text(encoding="utf-8"))
+        self._profile = data.get("profiles", {}).get("gongfeng:default", {})
+        if not self._profile.get("access"):
+            raise RuntimeError("[GongfengOAuth] 无效 token，请重新登录 OpenClaw")
+        return self._profile
+
+    def _make_headers(self) -> dict:
+        p = self._load_profile()
+        return {
+            "Authorization": f"Bearer {p['access']}",
+            "OAUTH-TOKEN": p["access"],
+            "X-Username": p.get("username", ""),
+            "DEVICE-ID": p.get("deviceId", ""),
+            "Content-Type": "application/json",
+            "X-Model-Name": "Claude Sonnet 4.6",
+        }
+
+    def _get_http(self):
+        if self._http is None:
+            import httpx
+            self._http = httpx.Client(timeout=self._config.get("timeout", 60))
+        return self._http
+
+    def chat_completions_create(self, model: str, messages: list, **kwargs) -> str:
+        """OpenAI-style interface, returns content string"""
+        base_url = self._config["base_url"].rstrip("/")
+        payload = {"model": model, "messages": messages,
+                   "temperature": kwargs.get("temperature", 0.1),
+                   "max_tokens": kwargs.get("max_tokens", 2000)}
+        resp = self._get_http().post(
+            f"{base_url}/chat/completions",
+            json=payload,
+            headers=self._make_headers(),
+        )
+        if resp.status_code == 401:
+            raise RuntimeError("[GongfengOAuth] Token 已过期，请重新登录 OpenClaw")
+        resp.raise_for_status()
+        data = resp.json()
+        return data["choices"][0]["message"]["content"]
+
+    def is_available(self) -> bool:
+        """token 存在且非空即认为可用（不发网络请求）"""
+        try:
+            p = self._load_profile()
+            return bool(p.get("access"))
+        except Exception:
+            return False
+
+
+# ───────────────────────────────────────────────────────────────────
 def _resolve_env_vars(value: Any) -> Any:
     """
     递归替换字符串中的环境变量占位符。
@@ -129,23 +214,40 @@ class LLMClient:
 
         return provider_name, provider_config
 
-    def _get_or_create_client(self, provider_name: str, provider_config: dict) -> OpenAI:
-        """获取或创建 OpenAI 客户端实例（按 provider 缓存）"""
+    def _get_or_create_client(self, provider_name: str, provider_config: dict):
+        """获取或创建客户端实例（按 provider 缓存）
+
+        工蜂AI provider 返回 GongfengOAuthClient（不是 OpenAI）。
+        其他 provider 返回标准 OpenAI 实例。
+        """
         if provider_name not in self._clients:
-            api_key = provider_config.get("api_key", "")
-            base_url = provider_config.get("base_url")
+            auth_type = provider_config.get("auth_type", "api_key")
 
-            # 检查 API key 是否有效
-            if not api_key or api_key.startswith("${"):
-                logger.warning(
-                    f"Provider '{provider_name}' API key may not be set correctly: {api_key!r}"
-                )
-
-            self._clients[provider_name] = OpenAI(
-                api_key=api_key,
-                base_url=base_url,
-            )
-            logger.debug(f"Created OpenAI client for provider '{provider_name}' at {base_url}")
+            if auth_type == "gongfeng_oauth":
+                gc = GongfengOAuthClient(provider_config)
+                if not gc.is_available():
+                    # token 不可用，尝试 fallback
+                    fallback = provider_config.get("fallback_provider")
+                    if fallback:
+                        logger.warning(
+                            f"[LLMClient] 工蜂AI OAuth 不可用，自动降级到 {fallback}"
+                        )
+                        fb_config = self._config["providers"].get(fallback, {})
+                        return self._get_or_create_client(fallback, fb_config)
+                    raise RuntimeError(
+                        "[LLMClient] 工蜂AI OAuth 不可用且无 fallback_provider 配置"
+                    )
+                self._clients[provider_name] = gc
+                logger.info("[LLMClient] 工蜂AI OAuth 客户端已就绪")
+            else:
+                api_key = provider_config.get("api_key", "")
+                base_url = provider_config.get("base_url")
+                if not api_key or api_key.startswith("${"):
+                    logger.warning(
+                        f"Provider '{provider_name}' API key may not be set correctly: {api_key!r}"
+                    )
+                self._clients[provider_name] = OpenAI(api_key=api_key, base_url=base_url)
+                logger.debug(f"Created OpenAI client for provider '{provider_name}' at {base_url}")
 
         return self._clients[provider_name]
 
@@ -153,6 +255,7 @@ class LLMClient:
         self,
         messages: List[Dict[str, str]],
         module_name: str = "default",
+        _tried_fallback: bool = False,
         **kwargs: Any,
     ) -> str:
         """
@@ -174,21 +277,75 @@ class LLMClient:
         provider_name, provider_config = self._get_provider_config(module_name)
         client = self._get_or_create_client(provider_name, provider_config)
 
-        model = provider_config.get("model", "gpt-4o")
-        timeout = provider_config.get("timeout", 60)
+        model = provider_config.get("model", "claude-sonnet-4-6")
         max_retries = provider_config.get("max_retries", 3)
-        temperature = provider_config.get("temperature", 0.1)
+        temperature = kwargs.pop("temperature", provider_config.get("temperature", 0.1))
+        max_tokens = kwargs.pop("max_tokens", provider_config.get("max_tokens", 2000))
 
-        # 允许调用者覆盖任何参数
+        last_exception: Optional[Exception] = None
+
+        # ── 工蜂AI 分支（GongfengOAuthClient）───────────────────────────────
+        if isinstance(client, GongfengOAuthClient):
+            for attempt in range(1, max_retries + 1):
+                try:
+                    logger.debug(
+                        f"LLM request [工蜂AI]: module={module_name}, "
+                        f"attempt={attempt}/{max_retries}, model={model}"
+                    )
+                    content = client.chat_completions_create(
+                        model=model, messages=messages,
+                        temperature=temperature, max_tokens=max_tokens,
+                    )
+                    logger.debug(f"LLM response: {len(content)} chars")
+                    return content
+                except RuntimeError as e:
+                    if "Token 已过期" in str(e):
+                        raise
+                    last_exception = e
+                    logger.warning(f"[工蜂AI] 尝试 {attempt}/{max_retries} 失败: {e}")
+                    if attempt < max_retries:
+                        time.sleep(2 ** attempt)
+                except Exception as e:
+                    last_exception = e
+                    logger.warning(f"[工蜂AI] 尝试 {attempt}/{max_retries} 异常: {e}")
+                    if attempt < max_retries:
+                        time.sleep(2 ** attempt)
+
+            fallback = provider_config.get("fallback_provider")
+            if fallback and not _tried_fallback and ("429" in str(last_exception) or "Too Many Requests" in str(last_exception)):
+                logger.warning(f"[LLMClient] 工蜂AI 遇到限流，自动降级到 fallback_provider={fallback}")
+                original_default = self._config.get("default_provider")
+                try:
+                    self._config["default_provider"] = fallback
+                    overrides = self._config.setdefault("module_overrides", {})
+                    module_override = dict(overrides.get(module_name, {}))
+                    module_override["provider"] = fallback
+                    overrides[module_name] = module_override
+                    return self.chat_completion(
+                        messages=messages,
+                        module_name=module_name,
+                        _tried_fallback=True,
+                        **kwargs,
+                    )
+                finally:
+                    self._config["default_provider"] = original_default
+                    if module_name in self._config.get("module_overrides", {}):
+                        self._config["module_overrides"][module_name].pop("provider", None)
+
+            raise RuntimeError(
+                f"[工蜂AI] 调用失败，已重试 {max_retries} 次。Last: {last_exception}"
+            ) from last_exception
+
+        # ── 标准 OpenAI-compatible 分支─────────────────────────────────────
+        timeout = provider_config.get("timeout", 60)
         request_params: Dict[str, Any] = {
             "model": model,
             "messages": messages,
             "temperature": temperature,
+            "max_tokens": max_tokens,
             "timeout": timeout,
         }
         request_params.update(kwargs)
-
-        last_exception: Optional[Exception] = None
 
         for attempt in range(1, max_retries + 1):
             try:
@@ -221,7 +378,6 @@ class LLMClient:
 
             except RateLimitError as e:
                 last_exception = e
-                # 速率限制：等待更长时间
                 wait_time = 10 * attempt
                 logger.warning(
                     f"Rate limit on attempt {attempt}/{max_retries}. "
@@ -236,7 +392,6 @@ class LLMClient:
                     f"API error on attempt {attempt}/{max_retries}: "
                     f"status={e.status_code}, message={e.message}"
                 )
-                # 4xx 客户端错误通常不可重试（除了 429）
                 if e.status_code and 400 <= e.status_code < 500 and e.status_code != 429:
                     raise RuntimeError(
                         f"Non-retryable API error: {e.status_code} - {e.message}"
@@ -256,18 +411,24 @@ class LLMClient:
         ) from last_exception
 
     def get_provider_info(self, module_name: str = "default") -> dict:
-        """
-        获取指定模块将使用的 provider 信息（脱敏）。
-        用于日志和调试。
-        """
+        """获取指定模块将使用的 provider 信息（脱敏），用于日志和调试。"""
         provider_name, config = self._get_provider_config(module_name)
+        auth_type = config.get("auth_type", "api_key")
+        if auth_type == "gongfeng_oauth":
+            gc = GongfengOAuthClient(config)
+            api_key_set = gc.is_available()
+        else:
+            api_key_set = bool(
+                config.get("api_key") and not config.get("api_key", "").startswith("${")
+            )
         return {
             "provider": provider_name,
+            "auth_type": auth_type,
             "model": config.get("model"),
             "base_url": config.get("base_url"),
             "temperature": config.get("temperature"),
             "max_retries": config.get("max_retries"),
-            "api_key_set": bool(config.get("api_key") and not config.get("api_key", "").startswith("${")),
+            "api_key_set": api_key_set,
         }
 
 
