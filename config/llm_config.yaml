@@ -1,0 +1,53 @@
+# LLM Provider Configuration for MarketRadar
+# Supports multiple providers with per-module overrides
+# Environment variables: use ${VAR_NAME} syntax
+
+default_provider: deepseek
+
+providers:
+  deepseek:
+    base_url: "https://api.deepseek.com/v1"
+    api_key: "${DEEPSEEK_API_KEY}"
+    model: "deepseek-chat"
+    timeout: 60
+    max_retries: 3
+    # DeepSeek is the primary provider: cost-effective and strong reasoning
+
+  claude:
+    base_url: "https://api.anthropic.com/v1"
+    api_key: "${ANTHROPIC_API_KEY}"
+    model: "claude-3-5-sonnet-20241022"
+    timeout: 90
+    max_retries: 2
+    # Claude for complex judgment tasks requiring nuanced reasoning
+
+  openai:
+    base_url: "${OPENAI_BASE_URL}"
+    api_key: "${OPENAI_API_KEY}"
+    model: "gpt-4o"
+    timeout: 60
+    max_retries: 3
+    # OpenAI as fallback or for specific tasks
+
+# Per-module configuration overrides
+# These override the default_provider settings for specific modules
+module_overrides:
+  m1_decoder:
+    provider: deepseek
+    temperature: 0.1
+    # Low temperature: M1 must extract facts objectively, not creatively
+
+  m3_judgment:
+    provider: deepseek
+    temperature: 0.2
+    # Slightly higher for judgment flexibility, still conservative
+
+  m4_action:
+    provider: deepseek
+    temperature: 0.2
+    # Action planning requires structured output, keep temperature low
+
+  m6_retrospective:
+    provider: deepseek
+    temperature: 0.1
+    # Retrospective analysis should be objective and consistent

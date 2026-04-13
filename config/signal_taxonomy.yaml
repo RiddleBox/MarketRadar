@@ -1,0 +1,201 @@
+# Signal Taxonomy for MarketRadar
+# 信号分类体系 — 定义 MarketRadar 可识别的所有信号类型
+
+# ============================================================
+# 信号类型（Signal Types）
+# ============================================================
+signal_types:
+
+  macro:
+    description: >
+      宏观经济信号。反映整体经济运行状态的变化，包括GDP、通胀、就业、
+      货币政策等核心宏观指标的实质性变动。这类信号影响范围广、持续时间长，
+      通常构成市场趋势的底层驱动力。
+    typical_time_horizon: MEDIUM
+    examples:
+      - "中国2024年Q3 GDP增速录得4.6%，低于市场预期的4.9%"
+      - "美联储议息会议宣布降息25bp，联邦基金利率目标区间下调至4.50%-4.75%"
+      - "国家统计局数据：11月CPI同比下降0.5%，PPI同比下降2.5%，通缩压力加剧"
+      - "央行意外下调LPR 15bp，为2023年8月以来最大降幅"
+      - "财政部宣布发行1万亿特别国债，用于支持地方化债和基础设施建设"
+
+  industry:
+    description: >
+      行业层面的结构性信号。反映特定行业供需关系、技术变革、竞争格局、
+      产能利用率等行业基本面的实质变化。这类信号通常比宏观信号更具针对性，
+      能够指向具体的行业配置机会。
+    typical_time_horizon: MEDIUM
+    examples:
+      - "工信部数据：10月新能源汽车渗透率突破50%，首次超越传统燃油车"
+      - "半导体行业协会报告：全球芯片库存去化基本完成，下游补库预期升温"
+      - "民航局数据：国内航线旅客运输量已恢复至2019年同期水平的108%"
+      - "光伏组件价格连续三周反弹，主流210尺寸组件报价回升至0.95元/W以上"
+      - "多家大型银行同步下调存款利率，净息差收窄压力阶段性缓解"
+
+  capital_flow:
+    description: >
+      资金流动信号。反映市场中各类资金（外资、北向资金、融资资金、ETF资金）
+      的实质性流向变化。资金流动是市场供需的直接体现，往往领先价格变动。
+    typical_time_horizon: SHORT
+    examples:
+      - "北向资金单日净流入超过200亿元，为2024年以来最大单日净流入"
+      - "沪深股通连续5个交易日净流入，累计净买入规模超过500亿元"
+      - "A股融资余额突破1.5万亿元，较上月底增加1200亿元，杠杆资金加速入场"
+      - "港股南向资金连续三个月净流出，累计流出规模超过800亿港元"
+      - "宽基ETF（沪深300ETF+中证500ETF）单日净申购超过100亿元"
+
+  technical:
+    description: >
+      技术面信号。基于价格、成交量、技术指标的客观变化，反映市场供需
+      力量对比的转变。技术信号的有效性依赖于其出现的市场环境背景。
+    typical_time_horizon: SHORT
+    examples:
+      - "上证指数在3200点整数关口缩量企稳，连续三日下影线较长"
+      - "沪深300指数在跌破250日均线后，当周收盘重回均线上方"
+      - "恒生指数RSI从超卖区（30以下）回升至50附近，动量转正"
+      - "中证1000指数周线级别形成双底形态，颈线位在4800点"
+      - "A股市场成交量连续放大至2万亿以上，突破近6个月均量的2倍"
+
+  event_driven:
+    description: >
+      事件驱动信号。由具体的、一次性的市场事件触发，包括公司重大公告、
+      并购重组、业绩超预期/低预期、政策出台、重大人事变动等。
+      这类信号通常具有较高的时效性。
+    typical_time_horizon: SHORT
+    examples:
+      - "某头部光伏企业公告以超低价中标海外大型光伏电站项目，规模超2GW"
+      - "国务院召开专题会议，明确将新能源汽车购置税减免政策延续至2027年"
+      - "某大型房企宣布完成债务重组，整体债务折扣率超过40%"
+      - "证监会正式批准REITs扩募规则，公募REITs扩容路径明确"
+      - "某AI芯片公司公告获得国际大厂订单，金额超过历史最大单笔订单3倍"
+
+  policy:
+    description: >
+      政策面信号。来自政府部门、监管机构的正式政策文件、规划、法规变化。
+      与event_driven不同，policy信号通常具有系统性、长期性，影响整个行业
+      或市场的制度环境。
+    typical_time_horizon: LONG
+    examples:
+      - "国务院印发《关于推动中长期资金入市的指导意见》，鼓励保险资金提高股票配置比例"
+      - "证监会发布《上市公司股份回购规则》修订版，简化回购程序，取消前置审批"
+      - "住建部明确认定城中村改造属于保障性住房范畴，专项债可用于相关项目"
+      - "商务部对欧盟乳制品展开反补贴调查，贸易摩擦风险升级"
+      - "科技部发布《人工智能治理框架》，明确大模型备案要求和合规路径"
+
+  sentiment:
+    description: >
+      【预留给 MarketSentinel】情绪面信号。反映市场参与者的集体情绪状态，
+      包括恐慌指数、散户开户数、社交媒体热度等。此类信号由 MarketSentinel
+      系统负责采集和解析，通过标准化接口注入 MarketRadar。
+    typical_time_horizon: SHORT
+    examples:
+      - "雪球平台讨论量48小时内增长300%，看多情绪占比达到历史高位"
+      - "A股新增开户数单周突破50万，为2015年牛市后新高"
+      - "恐慌指数VIX快速攀升至35以上，市场恐慌情绪达到极值"
+
+# ============================================================
+# 市场标识（Markets）
+# ============================================================
+markets:
+  A_SHARE:
+    display_name: "A股（沪深京）"
+    currency: CNY
+    timezone: "Asia/Shanghai"
+    description: "中国大陆上海、深圳、北京交易所上市股票"
+
+  HK:
+    display_name: "港股（香港联交所）"
+    currency: HKD
+    timezone: "Asia/Hong_Kong"
+    description: "香港联合交易所上市股票及相关衍生品"
+
+  US:
+    display_name: "美股（纽约/纳斯达克）"
+    currency: USD
+    timezone: "America/New_York"
+    description: "美国纽约证券交易所及纳斯达克上市股票"
+
+  A_FUTURES:
+    display_name: "A股期货（中金所/郑商所/大商所/上期所）"
+    currency: CNY
+    timezone: "Asia/Shanghai"
+    description: "国内各期货交易所上市期货品种"
+
+  HK_FUTURES:
+    display_name: "港股期货（恒生期货）"
+    currency: HKD
+    timezone: "Asia/Hong_Kong"
+    description: "香港期货交易所上市期货品种"
+
+  US_FUTURES:
+    display_name: "美股期货（CME/CBOT/COMEX）"
+    currency: USD
+    timezone: "America/New_York"
+    description: "美国期货交易所上市期货品种"
+
+# ============================================================
+# 标的类型（Instrument Types）
+# ============================================================
+instrument_types:
+  STOCK:
+    display_name: "股票"
+    description: "交易所上市的普通股票"
+
+  ETF:
+    display_name: "ETF"
+    description: "交易所交易基金，包括宽基/行业/跨境ETF"
+
+  FUTURES:
+    display_name: "期货"
+    description: "商品期货、股指期货、国债期货等"
+
+  OPTIONS:
+    display_name: "期权"
+    description: "股票期权、ETF期权等"
+
+  INDEX:
+    display_name: "指数"
+    description: "股票指数，通常通过ETF/期货跟踪"
+
+  BOND:
+    display_name: "债券"
+    description: "国债、地方债、信用债等"
+
+# ============================================================
+# 时间维度（Time Horizons）
+# ============================================================
+time_horizons:
+  SHORT:
+    display_name: "短期"
+    description: "日内至数周，通常1日~4周"
+    typical_range: "1d ~ 4w"
+
+  MEDIUM:
+    display_name: "中期"
+    description: "数月至一个季度，通常1月~3月"
+    typical_range: "1m ~ 3m"
+
+  LONG:
+    display_name: "长期"
+    description: "半年以上，通常6月~数年"
+    typical_range: "6m ~ 3y"
+
+# ============================================================
+# 方向标识（Directions）
+# ============================================================
+directions:
+  BULLISH:
+    display_name: "看多"
+    description: "信号支持价格上涨或正向表现"
+
+  BEARISH:
+    display_name: "看空"
+    description: "信号支持价格下跌或负向表现"
+
+  NEUTRAL:
+    display_name: "中性"
+    description: "信号不明确偏向多空，或多空影响相互抵消"
+
+  UNCERTAIN:
+    display_name: "不确定"
+    description: "当前信息不足以判断方向，需要更多信号确认"

@@ -1,0 +1,198 @@
+# Market Configuration for MarketRadar
+# 市场配置：交易时间、主要指数、数据源优先级
+
+# Phase 1 active markets
+active_markets:
+  - A_SHARE
+  - HK
+
+# ============================================================
+# A股市场配置
+# ============================================================
+markets:
+  A_SHARE:
+    display_name: "A股（沪深京）"
+    currency: CNY
+    timezone: "Asia/Shanghai"
+
+    trading_hours:
+      morning_open: "09:30"
+      morning_close: "11:30"
+      afternoon_open: "13:00"
+      afternoon_close: "15:00"
+      pre_open_call_auction: "09:15"  # 集合竞价开始
+      post_close_call_auction: "15:00"  # 尾盘集合竞价
+      notes: "周六周日及法定节假日休市"
+
+    trading_days: "MON-FRI"
+    settlement_cycle: "T+1"  # A股T+1卖出，T+1交收
+
+    major_indices:
+      - code: "000001.SH"
+        name: "上证指数"
+        description: "上海交易所所有上市A股的综合指数"
+      - code: "399001.SZ"
+        name: "深证成指"
+        description: "深圳交易所市值最大的500只股票"
+      - code: "000300.SH"
+        name: "沪深300"
+        description: "沪深两市市值最大、流动性最好的300只股票"
+      - code: "000905.SH"
+        name: "中证500"
+        description: "中等市值代表性指数"
+      - code: "000852.SH"
+        name: "中证1000"
+        description: "小盘股代表性指数"
+      - code: "399006.SZ"
+        name: "创业板指"
+        description: "创业板代表性指数"
+      - code: "000688.SH"
+        name: "科创50"
+        description: "科创板代表性指数"
+
+    data_sources:
+      priority:
+        - akshare      # 首选：免费，覆盖全面
+        - baostock     # 备用：A股历史数据稳定
+        - csv_local    # 兜底：本地缓存数据
+      notes: >
+        akshare 提供最全面的A股数据，包括日线、分钟线、行情快照、基本面等。
+        baostock 数据更稳定，适合长期历史数据批量下载。
+        csv_local 用于测试和离线场景。
+
+    market_characteristics:
+      - "T+1交易制度：买入后次日才能卖出，存在单日追跌陷阱"
+      - "涨跌停板制度：主板±10%，ST股±5%，科创板/创业板±20%"
+      - "散户主导：情绪面对短期走势影响显著"
+      - "政策敏感性高：政策信号对行情催化作用强且快"
+      - "北向资金（陆股通）为重要的外资参考指标"
+
+  # ============================================================
+  # 港股市场配置
+  # ============================================================
+  HK:
+    display_name: "港股（香港联交所）"
+    currency: HKD
+    timezone: "Asia/Hong_Kong"
+
+    trading_hours:
+      morning_open: "09:30"
+      morning_close: "12:00"
+      afternoon_open: "13:00"
+      afternoon_close: "16:00"
+      pre_open_call_auction: "09:00"   # 开盘前竞价
+      closing_call_auction_start: "16:00"
+      closing_call_auction_end: "16:10"
+      notes: "圣诞节、新年、复活节等港股特有假期注意"
+
+    trading_days: "MON-FRI"
+    settlement_cycle: "T+2"
+
+    major_indices:
+      - code: "HSI"
+        name: "恒生指数"
+        description: "香港股市最重要的综合指数，约80只成分股"
+      - code: "HSCEI"
+        name: "恒生中国企业指数（国企指数）"
+        description: "在港上市的中国内地企业H股指数"
+      - code: "HSTECH"
+        name: "恒生科技指数"
+        description: "在港上市的大型科技公司指数"
+      - code: "HSHKI"
+        name: "恒生香港中资企业指数"
+        description: "香港本地红筹股指数"
+
+    data_sources:
+      priority:
+        - akshare      # 首选：akshare 有港股基本数据
+        - csv_local    # 备用：本地缓存
+      notes: >
+        港股数据通过 akshare.stock_hk_hist() 获取日线行情。
+        实时数据需要额外配置，Phase 1 以日线数据为主。
+
+    market_characteristics:
+      - "T+2交收：流动性影响与A股不同"
+      - "机构主导：外资和机构投资者占比高，价值投资逻辑更有效"
+      - "南向资金（港股通）为重要的内地资金参考指标"
+      - "港股折价现象：同一公司A+H股存在长期价差"
+      - "流动性分化：大市值流动性好，小市值极差"
+      - "受美联储政策和港元联系汇率制影响较大"
+
+  # ============================================================
+  # 美股市场配置（Phase 2）
+  # ============================================================
+  US:
+    display_name: "美股（纽约/纳斯达克）"
+    currency: USD
+    timezone: "America/New_York"
+    active: false  # Phase 2 启用
+
+    trading_hours:
+      regular_open: "09:30"
+      regular_close: "16:00"
+      pre_market_open: "04:00"
+      after_hours_close: "20:00"
+      notes: "夏令时/冬令时切换影响北京时间对应"
+
+    trading_days: "MON-FRI"
+    settlement_cycle: "T+1"  # 2024年起改为T+1
+
+    major_indices:
+      - code: "SPX"
+        name: "标普500"
+        description: "美国最重要的股票市场基准指数"
+      - code: "NDX"
+        name: "纳斯达克100"
+        description: "科技股为主的大型股指数"
+      - code: "DJI"
+        name: "道琼斯工业平均指数"
+        description: "30只大蓝筹股组成的价格加权指数"
+
+    data_sources:
+      priority:
+        - csv_local
+      notes: "Phase 2 接入，当前使用本地数据"
+
+  # ============================================================
+  # 期货市场配置
+  # ============================================================
+  A_FUTURES:
+    display_name: "A股期货（国内各期交所）"
+    currency: CNY
+    timezone: "Asia/Shanghai"
+    active: false  # Phase 2 启用
+
+    major_contracts:
+      - code: "IF"
+        name: "沪深300股指期货"
+        exchange: "CFFEX（中金所）"
+      - code: "IC"
+        name: "中证500股指期货"
+        exchange: "CFFEX（中金所）"
+      - code: "IM"
+        name: "中证1000股指期货"
+        exchange: "CFFEX（中金所）"
+      - code: "T"
+        name: "10年期国债期货"
+        exchange: "CFFEX（中金所）"
+
+# ============================================================
+# 数据源全局配置
+# ============================================================
+data_sources:
+  akshare:
+    enabled: true
+    description: "AKShare — 开源财经数据接口"
+    rate_limit: 10  # 每秒最大请求数
+    retry_delay: 2  # 请求失败后等待秒数
+
+  baostock:
+    enabled: true
+    description: "BaoStock — A股历史数据"
+    notes: "需要调用 bs.login() / bs.logout()"
+
+  csv_local:
+    enabled: true
+    description: "本地 CSV 文件数据"
+    default_directory: "data/csv_cache"
+    filename_pattern: "{instrument}_{frequency}.csv"
