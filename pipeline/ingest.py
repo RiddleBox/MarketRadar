@@ -428,7 +428,7 @@ def _run_judgment_after_ingest(store: SignalStore, markets: List[Market], batch_
         )
         console.print(
             f"  [{priority_color}][{opp.priority_level.value}][/{priority_color}] "
-            f"{opp.opportunity_title} → {plan.instrument}"
+            f"{opp.opportunity_title} → {', '.join(plan.primary_instruments[:2])}"
         )
 
     console.print(f"\n[dim]机会已保存: {out_file}[/dim]")

@@ -249,13 +249,18 @@ class JudgmentEngine:
             )
         return "\n".join(lines)
 
-    def _parse_json_response(self, raw: str, expected_key: Optional[str]) -> dict:
+    def _parse_json_response(self, raw: str, expected_key: Optional[str] = None):
         """解析 LLM JSON 输出，兼容 markdown 代码块包裹"""
         text = raw.strip()
         if text.startswith("```"):
             lines = text.split("\n")
-            text = "\n".join(lines[1:-1]) if lines[-1].strip() == "```" else "\n".join(lines[1:])
+            # 去掉首行 ```json 和末行 ```
+            start = 1
+            end = len(lines) - 1 if lines[-1].strip() == "```" else len(lines)
+            text = "\n".join(lines[start:end])
         data = json.loads(text)
-        if expected_key and expected_key not in data:
-            raise ValueError(f"LLM 输出缺少期望字段 '{expected_key}'，实际字段: {list(data.keys())}")
+        if expected_key:
+            if expected_key not in data:
+                raise ValueError(f"LLM 输出缺少期望字段 '{expected_key}'，实际字段: {list(data.keys()) if isinstance(data, dict) else type(data)}")
+            return data[expected_key]  # 直接返回对应的列表/对象
         return data
