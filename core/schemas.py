@@ -626,6 +626,44 @@ class SimulatedExecutionSpec(BaseModel):
     metadata: dict = Field(default_factory=dict, description="附加元数据")
 
 
+class BacktestRunResult(BaseModel):
+    """单次回测运行结果。"""
+    run_id: str = Field(
+        default_factory=lambda: f"btr_{uuid.uuid4().hex[:12]}",
+        description="回测运行唯一标识符"
+    )
+    task_id: str = Field(..., description="对应的回测任务ID")
+    instrument: str = Field(..., description="执行回测的标的")
+    holding_period_days: int = Field(..., ge=1, description="持有期（交易日）")
+    entry_price: float = Field(..., gt=0, description="入场价格")
+    exit_price: float = Field(..., gt=0, description="出场价格")
+    gross_return_pct: float = Field(..., description="毛收益率")
+    net_return_pct: float = Field(..., description="净收益率（扣成本后）")
+    max_drawdown_pct: float = Field(..., description="持有期最大回撤")
+    stop_loss_hit: bool = Field(default=False, description="是否触发止损")
+    take_profit_hit: bool = Field(default=False, description="是否触发止盈")
+    bars_held: int = Field(..., ge=1, description="实际持有K线数")
+    notes: Optional[str] = Field(default=None, description="运行备注")
+    metadata: dict = Field(default_factory=dict, description="附加元数据")
+
+
+class BacktestSummary(BaseModel):
+    """回测任务的汇总结果。"""
+    summary_id: str = Field(
+        default_factory=lambda: f"bts_{uuid.uuid4().hex[:12]}",
+        description="回测汇总唯一标识符"
+    )
+    task_id: str = Field(..., description="对应的回测任务ID")
+    total_runs: int = Field(..., ge=0, description="总运行数")
+    win_rate: float = Field(..., ge=0.0, le=1.0, description="胜率")
+    avg_net_return_pct: float = Field(..., description="平均净收益率")
+    avg_max_drawdown_pct: float = Field(..., description="平均最大回撤")
+    best_run_net_return_pct: float = Field(..., description="最佳净收益率")
+    worst_run_net_return_pct: float = Field(..., description="最差净收益率")
+    by_holding_period: dict = Field(default_factory=dict, description="按持有期分组的统计")
+    runs: List[BacktestRunResult] = Field(default_factory=list, description="单次回测结果列表")
+
+
 class PositionUpdate(BaseModel):
     """持仓更新记录"""
     position_id: str = Field(..., description="对应的持仓ID")
