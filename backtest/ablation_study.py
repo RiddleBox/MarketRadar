@@ -197,20 +197,91 @@ def _get_agent_network(market: str = "a_share"):
     return _agent_network_cache[market]
 
 
+# LLM 客户端（延迟初始化）
+_llm_client_cache: dict = {}
+
+def _get_llm_client():
+    """获取 LLM 客户端（优先 OpenClaw，失败降级规则模式）"""
+    if "client" not in _llm_client_cache:
+        try:
+            from integrations.llm_adapter import make_llm_client
+            client = make_llm_client("auto")
+            _llm_client_cache["client"] = client
+            if client is not None:
+                logger.info(f"[Ablation] LLM 客户端: {client}")
+            else:
+                logger.info("[Ablation] LLM 不可用，Agent 使用规则模式")
+        except Exception as e:
+            logger.warning(f"[Ablation] LLM 初始化失败: {e}")
+            _llm_client_cache["client"] = None
+    return _llm_client_cache["client"]
+
+
 def run_agent_sim(opp: dict, snap: dict | None) -> dict | None:
     """运行 M11 AgentNetwork，返回 SentimentDistribution 关键字段"""
     net = _get_agent_network("a_share")
     if net is None:
         return None
     try:
-        from m11_agent_sim.schemas import MarketInput
-        inp = MarketInput(
-            event_description=opp["opportunity_title"],
-            market_date=opp["signal_date"],
-            fg_index=snap["fg"] if snap else 50,
-            northbound_flow=snap["northbound"] if snap else 0.0,
-            adr_ratio=snap.get("adr", 50.0) if snap else 50.0,
+        from m11_agent_sim.schemas import (
+            MarketInput, SentimentContext, SignalContext
         )
+        from datetime import datetime
+
+        # 构造情绪上下文（正确填充 SentimentContext）
+        fg = snap["fg"] if snap else 50.0
+        nb = snap["northbound"] if snap else 0.0
+        adr_raw = snap.get("adr", 50.0) if snap else 50.0
+        adr_ratio = adr_raw / 100.0  # SentimentContext 用 0~1 小数
+
+        sentiment_ctx = SentimentContext(
+            fear_greed_index=float(fg),
+            sentiment_label=snap.get("label", "中性") if snap else "中性",
+            northbound_flow=float(nb),
+            advance_decline_ratio=float(adr_ratio),
+        )
+
+        # 构造信号上下文（从机会强度和方向推断）
+        intensity = opp.get("intensity_score", 5)
+        direction = opp.get("direction", "BULLISH")
+        bull_cnt = intensity if direction == "BULLISH" else 1
+        bear_cnt = intensity if direction == "BEARISH" else 1
+        signal_ctx = SignalContext(
+            recent_signals=[
+                {
+                    "signal_type": opp.get("event_type", "macro"),
+                    "description": opp["opportunity_title"],
+                    "intensity_score": intensity,
+                    "direction": direction,
+                }
+            ],
+            dominant_signal_type=opp.get("event_type", "macro"),
+            avg_intensity=float(intensity),
+            avg_confidence=min(0.9, intensity / 10.0),
+            bullish_count=bull_cnt,
+            bearish_count=bear_cnt,
+            neutral_count=0,
+        )
+
+        try:
+            signal_date = datetime.strptime(opp["signal_date"], "%Y-%m-%d")
+        except Exception:
+            signal_date = datetime.now()
+
+        inp = MarketInput(
+            timestamp=signal_date,
+            market="A_SHARE",
+            event_description=opp["opportunity_title"],
+            sentiment=sentiment_ctx,
+            signals=signal_ctx,
+        )
+
+        # 接入 LLM（如果可用则启用 LLM 模式）
+        llm = _get_llm_client()
+        if llm is not None and not net.use_llm:
+            net.llm_client = llm
+            net.use_llm = True
+
         dist = net.run(inp)
         return {
             "direction": dist.direction,
