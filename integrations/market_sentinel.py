@@ -90,10 +90,10 @@ class SentimentSignalData:
 
     event_time: Optional[datetime] = None
     collected_time: datetime = field(default_factory=datetime.now)
-    source_type: str = "sentiment_system"
+    source_type: str = "social_media"   # SourceType.social_media
     source_ref: str = "market_sentinel"
     batch_id: str = ""
-    time_horizon: str = "short"
+    time_horizon: str = "SHORT"           # TimeHorizon 大写
 
     def to_market_signal_dict(self) -> dict:
         """转换为 MarketSignal 兼容的 dict，可传入 SignalStore"""
@@ -106,9 +106,9 @@ class SentimentSignalData:
             "affected_markets": self.affected_markets,
             "affected_instruments": self.affected_instruments,
             "signal_direction": self.signal_direction,
-            "intensity_score": self.intensity_score,
-            "confidence_score": self.confidence_score,
-            "timeliness_score": self.timeliness_score,
+            "intensity_score": int(round(self.intensity_score)),
+            "confidence_score": int(round(self.confidence_score)),
+            "timeliness_score": int(round(self.timeliness_score)),
             "event_time": self.event_time or self.collected_time,
             "collected_time": self.collected_time,
             "source_type": self.source_type,
