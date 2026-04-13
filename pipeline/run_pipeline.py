@@ -138,7 +138,8 @@ def run(input_file, market, batch_id, source_type, source_ref, verbose, dry_run,
         for opp in opportunities:
             plan = designer.design(opp)
             plans.append(plan)
-            console.print(f"  ✓ [{opp.priority_level.value}] {opp.opportunity_title} → {plan.instrument}")
+            instruments = ', '.join(plan.primary_instruments[:2])
+            console.print(f"  ✓ [{opp.priority_level.value}] {opp.opportunity_title} → {instruments}")
 
         # 保存机会到 data/opportunities/
         _save_opportunities(opportunities, batch_id)
