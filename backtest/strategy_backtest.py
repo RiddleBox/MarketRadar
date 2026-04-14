@@ -360,23 +360,40 @@ class StrategyBacktester:
 
             aliases = {
                 "沪深300ETF": "510300.SH",
+                "上证50ETF": "510050.SH",
+                "中证500ETF": "510500.SH",
+                "创业板ETF": "159915.SZ",
+                "创业板指ETF": "159915.SZ",
+                "创业板50ETF": "159949.SZ",
                 "科创50ETF": "588000.SH",
+                "科创50指数": "588000.SH",
+                "半导体ETF": "512480.SH",
                 "半导体ETF(512480)": "512480.SH",
                 "半导体ETF（512480）": "512480.SH",
+                "新能源车ETF": "515030.SH",
+                "新能源车主题ETF": "515030.SH",
+                "锂电池ETF": "159755.SZ",
                 "锂电池ETF(159755)": "159755.SZ",
                 "锂电池ETF（159755）": "159755.SZ",
+                "人工智能AI主题ETF": "515980.SH",
+                "中证基建指数ETF": "516950.SH",
+                "中芯国际": "688981.SH",
+                "中芯国际A股": "688981.SH",
+                "恒生科技指数期货": "3033.HK",
             }
             if text in aliases:
                 return aliases[text]
 
             import re
-            m = re.search(r"(\d{6})\.(SH|SZ|HK)", text, re.IGNORECASE)
+            m = re.search(r"(\d{5,6})\.(SH|SZ|HK)", text, re.IGNORECASE)
             if m:
                 return f"{m.group(1)}.{m.group(2).upper()}"
 
-            m = re.search(r"[（(](\d{6})[）)]", text)
+            m = re.search(r"[（(](\d{5,6})(?:\.(HK))?[）)]", text, re.IGNORECASE)
             if m:
                 code = m.group(1)
+                if m.group(2):
+                    return f"{code}.HK"
                 suffix = "SH" if code.startswith(("5", "6")) else "SZ"
                 return f"{code}.{suffix}"
 

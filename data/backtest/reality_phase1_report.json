@@ -25,13 +25,31 @@
   },
   "price_cache": {
     "exists": true,
-    "files": 1,
+    "files": 4,
     "samples": [
+      {
+        "file": "00981_HK.json",
+        "days": 5408,
+        "start": "2004-03-18",
+        "end": "2026-04-13"
+      },
+      {
+        "file": "01347_HK.json",
+        "days": 2826,
+        "start": "2014-10-15",
+        "end": "2026-04-13"
+      },
       {
         "file": "510300_SH.json",
         "days": 3371,
         "start": "2012-05-28",
         "end": "2026-04-13"
+      },
+      {
+        "file": "512480_SH.json",
+        "days": 1658,
+        "start": "2019-06-12",
+        "end": "2026-04-14"
       }
     ]
   },
@@ -48,9 +66,9 @@
   ],
   "report": {
     "strategies_ranked": [
+      "ComboFilter",
       "MacroMomentum",
-      "PolicyBreakout",
-      "ComboFilter"
+      "PolicyBreakout"
     ],
     "summaries": {
       "MacroMomentum": {
@@ -130,29 +148,29 @@
           "max_holding_days": 45
         },
         "total_cases": 14,
-        "completed": 0,
-        "skipped_no_data": 14,
-        "wins": 0,
+        "completed": 1,
+        "skipped_no_data": 13,
+        "wins": 1,
         "losses": 0,
-        "win_rate": 0.0,
-        "avg_pnl_pct": 0.0,
-        "avg_win_pct": 0,
+        "win_rate": 100.0,
+        "avg_pnl_pct": 1.57,
+        "avg_win_pct": 1.57,
         "avg_loss_pct": 0,
         "profit_factor": Infinity,
-        "max_drawdown_pct": 0.0,
-        "avg_holding_days": 0.0,
-        "stop_loss_rate": 0,
-        "take_profit_rate": 0,
-        "timeout_rate": 0
+        "max_drawdown_pct": -0.19,
+        "avg_holding_days": 1.0,
+        "stop_loss_rate": 0.0,
+        "take_profit_rate": 0.0,
+        "timeout_rate": 100.0
       }
     },
     "recommendations": [
       "MacroMomentum: 样本不足（0笔），结论参考价值有限",
       "PolicyBreakout: 样本不足（0笔），结论参考价值有限",
-      "ComboFilter: 样本不足（0笔），结论参考价值有限"
+      "ComboFilter: 样本不足（1笔），结论参考价值有限"
     ],
-    "best_strategy": "MacroMomentum",
-    "best_win_rate": 0.0,
-    "best_avg_pnl": 0.0
+    "best_strategy": "ComboFilter",
+    "best_win_rate": 100.0,
+    "best_avg_pnl": 1.57
   }
 }

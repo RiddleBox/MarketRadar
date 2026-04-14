@@ -71,3 +71,30 @@ def test_load_events_from_opportunities_normalizes_common_instrument_aliases(tmp
 
     assert len(events) == 1
     assert events[0].instrument == "512480.SH"
+
+
+def test_load_events_from_opportunities_normalizes_common_named_indexes_and_hk_codes(tmp_path: Path):
+    payload = {
+        "opportunity_id": "opp_test_003",
+        "opportunity_title": "港股科技修复",
+        "target_markets": ["HK"],
+        "target_instruments": ["恒生科技指数期货", "阿里巴巴（09988.HK）"],
+        "trade_direction": "BULLISH",
+        "opportunity_window": {
+            "start": "2026-04-14T09:30:00",
+            "end": "2026-05-10T15:00:00",
+            "confidence_level": 0.7,
+        },
+        "why_now": "港股风险偏好修复。",
+        "supporting_evidence": ["南向资金改善"],
+        "created_at": "2026-04-14T10:00:00",
+        "opportunity_score": {"catalyst_strength": 7, "confidence_score": 0.7},
+    }
+    p = tmp_path / "opp3.json"
+    p.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+    bt = StrategyBacktester(use_seed=False)
+    events = bt.load_events_from_opportunities(tmp_path)
+
+    assert len(events) == 1
+    assert events[0].instrument == "3033.HK"

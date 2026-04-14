@@ -14,14 +14,18 @@
 ## 当前主 blocker
 不是事件链，而是**价格链**：
 
-### 价格缓存覆盖极薄
-- `data/price_cache/` 当前仅 1 个缓存文件
-- 真实样本涉及的标的覆盖远超当前缓存范围
+### 价格缓存覆盖已开始改善，但仍明显不足
+- 初始状态：`data/price_cache/` 仅 1 个缓存文件
+- 经过 warmup + instrument normalize 后：已提升到 4 个缓存文件
+- 当前已确认缓存样本：
+  - `510300_SH.json`
+  - `512480_SH.json`
+  - `00981_HK.json`
+  - `01347_HK.json`
 
-### 在线拉取不稳定
-本轮运行中，AKShare 拉取多只标的失败，例如：
+### 在线拉取仍不稳定
+本轮运行中，AKShare 仍有多只标的拉取失败，例如：
 - `159755.SZ`
-- `512480.SH`
 - `300750.SZ`
 - `588000.SH`
 
@@ -32,11 +36,15 @@
 本轮 Phase 1 runner 输出中：
 - `PolicyBreakout.total_cases = 19`
 - `ComboFilter.total_cases = 14`
-- 但 completed = 0
-- 原因是价格数据缺失，不是事件 loader 失效
+- 已从 **completed = 0** 推进到 **completed = 1**
+- 当前唯一完成样本来自 `ComboFilter`
+- 结果：
+  - `win_rate = 100%`（但仅 1 笔）
+  - `avg_pnl_pct = 1.57`
+  - `max_drawdown_pct = -0.19`
 
-因此当前结论不是“策略无效”，而是：
-> **现实机会样本接入已打通，但真实价格缓存尚未形成可用覆盖面。**
+因此当前结论更新为：
+> **现实机会样本接入已打通，价格缓存覆盖开始形成，但仍不足以支撑有统计意义的高精回测。**
 
 ## 已做的小修
 ### instrument normalize
