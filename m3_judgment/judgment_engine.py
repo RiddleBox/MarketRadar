@@ -14,6 +14,7 @@ import json
 import logging
 import uuid
 from datetime import datetime
+from pathlib import Path
 from typing import List, Optional
 
 from core.schemas import (
@@ -35,6 +36,7 @@ from m3_judgment.prompt_templates import (
 logger = logging.getLogger(__name__)
 
 SMALL_BATCH_THRESHOLD = 10  # 小批次直接全量送 Step B
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 class JudgmentEngine:
@@ -159,7 +161,24 @@ class JudgmentEngine:
 
         try:
             raw = self.llm.chat_completion(messages, module_name="m3_judgment")
-            data = self._parse_json_response(raw, expected_key=None)
+            try:
+                data = self._parse_json_response(raw, expected_key=None)
+            except Exception as parse_err:
+                logger.warning(f"[M3 Step B] 首次 JSON 解析失败，尝试定向修复重试: {parse_err}")
+                self._write_debug_anchor(batch_id, scenario, raw, parse_err)
+                repair_messages = messages + [
+                    {"role": "assistant", "content": raw},
+                    {
+                        "role": "user",
+                        "content": (
+                            "你上一条回复不是合法 JSON。请只返回一个 JSON 对象，不要 markdown、不要解释、不要前后缀文本。"
+                            "必须包含 is_opportunity 字段；如果为 true，请补全构造机会所需字段。"
+                        ),
+                    },
+                ]
+                repaired_raw = self.llm.chat_completion(repair_messages, module_name="m3_judgment")
+                data = self._parse_json_response(repaired_raw, expected_key=None)
+                raw = repaired_raw
 
             # LLM 明确判断不构成机会
             if data.get("is_opportunity") is False:
@@ -174,10 +193,12 @@ class JudgmentEngine:
                     "[M3 Step B] LLM 已返回机会对象，但构建 OpportunityObject 失败 | "
                     f"title={data.get('opportunity_title')} | error={build_err} | raw_keys={list(data.keys())}"
                 )
+                self._write_debug_anchor(batch_id, scenario, raw, build_err)
                 return None
 
         except Exception as e:
             logger.error(f"[M3 Step B] LLM 调用或解析失败: {e}")
+            self._write_debug_anchor(batch_id, scenario, None, e)
             return None
 
     # ------------------------------------------------------------------
@@ -387,18 +408,59 @@ class JudgmentEngine:
             )
         return "\n".join(lines)
 
+    def _write_debug_anchor(self, batch_id: str, scenario: dict, raw: Optional[str], error: Exception) -> None:
+        """把关键失败信息落到 docs/anchors，便于下一轮排障。"""
+        try:
+            anchor_dir = PROJECT_ROOT / "docs" / "anchors"
+            anchor_dir.mkdir(parents=True, exist_ok=True)
+            ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+            path = anchor_dir / f"m3-stepb-parse-failure-{ts}.md"
+            content = (
+                f"# M3 Step B parse failure anchor\n\n"
+                f"- batch_id: {batch_id}\n"
+                f"- scenario: {json.dumps(scenario, ensure_ascii=False)}\n"
+                f"- error: {type(error).__name__}: {error}\n\n"
+                f"## Raw response\n\n```text\n{(raw or '').strip()}\n```\n"
+            )
+            path.write_text(content, encoding="utf-8")
+        except Exception as anchor_err:
+            logger.warning(f"[M3] 写调试锚点失败: {anchor_err}")
+
     def _parse_json_response(self, raw: str, expected_key: Optional[str] = None):
-        """解析 LLM JSON 输出，兼容 markdown 代码块包裹"""
-        text = raw.strip()
+        """解析 LLM JSON 输出，兼容 markdown 代码块、前后解释文字与轻微脏输出。"""
+        text = (raw or "").strip()
+        if not text:
+            raise ValueError("LLM 输出为空")
+
         if text.startswith("```"):
             lines = text.split("\n")
-            # 去掉首行 ```json 和末行 ```
             start = 1
             end = len(lines) - 1 if lines[-1].strip() == "```" else len(lines)
-            text = "\n".join(lines[start:end])
-        data = json.loads(text)
+            text = "\n".join(lines[start:end]).strip()
+
+        try:
+            data = json.loads(text)
+        except json.JSONDecodeError:
+            candidate = None
+            if expected_key:
+                obj_start = text.find("{")
+                obj_end = text.rfind("}")
+                if obj_start != -1 and obj_end != -1 and obj_end > obj_start:
+                    candidate = text[obj_start:obj_end + 1]
+            else:
+                obj_start = text.find("{")
+                obj_end = text.rfind("}")
+                arr_start = text.find("[")
+                arr_end = text.rfind("]")
+                obj_candidate = text[obj_start:obj_end + 1] if obj_start != -1 and obj_end != -1 and obj_end > obj_start else None
+                arr_candidate = text[arr_start:arr_end + 1] if arr_start != -1 and arr_end != -1 and arr_end > arr_start else None
+                candidate = obj_candidate or arr_candidate
+            if not candidate:
+                raise
+            data = json.loads(candidate)
+
         if expected_key:
-            if expected_key not in data:
+            if not isinstance(data, dict) or expected_key not in data:
                 raise ValueError(f"LLM 输出缺少期望字段 '{expected_key}'，实际字段: {list(data.keys()) if isinstance(data, dict) else type(data)}")
-            return data[expected_key]  # 直接返回对应的列表/对象
+            return data[expected_key]
         return data

@@ -31,10 +31,10 @@ MOCK_LLM_RESPONSE = json.dumps({
             "intensity_score": 9,
             "confidence_score": 9,
             "timeliness_score": 10,
-            "source_type": "announcement",
+            "source_type": "official_announcement",
             "logic_frame": {
-                "what_changed": "7天逆回购利率",
-                "change_direction": "decrease",
+                "what_changed": "7天逆回购利率下调",
+                "change_direction": "BULLISH",
                 "affects": ["股市估值", "债券收益率", "资金成本"]
             }
         },
@@ -52,10 +52,10 @@ MOCK_LLM_RESPONSE = json.dumps({
             "intensity_score": 7,
             "confidence_score": 9,
             "timeliness_score": 10,
-            "source_type": "data",
+            "source_type": "market_data",
             "logic_frame": {
-                "what_changed": "北向资金流向",
-                "change_direction": "increase",
+                "what_changed": "北向资金净流入增加",
+                "change_direction": "BULLISH",
                 "affects": ["大盘蓝筹股", "A股情绪"]
             }
         }
@@ -85,7 +85,7 @@ class TestSignalDecoder:
         signals = decoder.decode(
             raw_text="测试文本",
             source_ref="test_001",
-            source_type=SourceType.ANNOUNCEMENT,
+            source_type=SourceType.OFFICIAL_ANNOUNCEMENT,
             batch_id="test_batch",
         )
         sig = signals[0]
@@ -122,7 +122,7 @@ class TestSignalDecoder:
 
     def test_source_ref_assigned(self):
         decoder = self._make_decoder()
-        signals = decoder.decode("test", "my_source_ref", SourceType.REPORT, "batch_001")
+        signals = decoder.decode("test", "my_source_ref", SourceType.RESEARCH_REPORT, "batch_001")
         for sig in signals:
             assert sig.source_ref == "my_source_ref"
 
@@ -156,7 +156,7 @@ class TestSignalDecoder:
         # 验证 LLM 被调用
         assert mock_llm.chat_completion.called
         call_args = mock_llm.chat_completion.call_args
-        messages = call_args[0][0]  # 第一个位置参数
+        messages = call_args.kwargs["messages"]
         # 验证原始文本出现在某条消息中
         full_content = " ".join(m.get("content", "") for m in messages)
         assert test_text in full_content

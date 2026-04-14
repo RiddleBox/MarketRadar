@@ -4,6 +4,8 @@
 
 MarketRadar 的当前修复周期统一以 **gongfeng/gpt-5-4** 为唯一推荐主链路。
 
+> 2026-04-14 runtime note: 当前已确认默认 provider 与模块级覆盖都解析到 `gongfeng/gpt-5-4`，未观察到 Claude 被实际选中。当前主阻塞点不是 provider 路由，而是 M3 Step B 在真实调用中偶发返回脏/截断 JSON；相关失败会自动落到 `docs/anchors/m3-stepb-parse-failure-*.md` 供排障。
+
 | 模式 | 方式 | 适用场景 |
 |------|------|---------|
 | **工蜂AI主链路** | `core.LLMClient` + 本地 OpenClaw OAuth token | 腾讯内网机器（当前默认/推荐）|
@@ -31,9 +33,10 @@ providers:
 
 ```powershell
 python .\scripts\inspect_llm_runtime.py
+python .\scripts\assert_gongfeng_runtime.py
 ```
 
-如果输出中的 `default` / `m1_decoder` / `m3_judgment` / `m4_action` 仍指向 `gongfeng / gongfeng/gpt-5-4`，说明主链路解析正确。
+如果输出中的 `default` / `m1_decoder` / `m3_judgment` / `m4_action` 仍指向 `gongfeng / gongfeng/gpt-5-4`，且断言脚本返回 `RUNTIME_ASSERT_OK`，说明主链路解析正确。
 
 ### 兼容封装：GongfengLLMClient
 

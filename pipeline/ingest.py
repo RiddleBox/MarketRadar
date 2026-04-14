@@ -98,7 +98,9 @@ def split_text_into_chunks(text: str, max_chars: int = MAX_CHUNK_CHARS) -> List[
     if current_chunk_parts:
         chunks.append("\n\n".join(current_chunk_parts))
 
-    return [c for c in chunks if len(c) >= MIN_PARAGRAPH_CHARS]
+    # 不要把最后一个短尾 chunk 直接丢掉，否则在小 max_chars 场景会出现内容丢失。
+    # 仅过滤纯空白块，保留有效短块。
+    return [c for c in chunks if c.strip()]
 
 
 def _split_paragraph_by_sentence(paragraph: str, max_chars: int) -> List[str]:

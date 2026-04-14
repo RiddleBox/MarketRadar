@@ -54,7 +54,7 @@ class TestSplitTextIntoChunks:
     def test_single_huge_paragraph_split_by_sentence(self):
         """单个超长段落（无换行）应按句子分割"""
         # 构造一个超长段落，每句以句号结尾
-        sentences = [f"央行公告第{i}条内容如下，具体实施细节待定。" for i in range(1, 30)]
+        sentences = [f"央行公告第{i}条内容如下，具体实施细节待定，并补充市场影响分析与执行说明。" * 20 for i in range(1, 30)]
         text = "".join(sentences)  # 无段落分隔
         assert len(text) > MAX_CHUNK_CHARS
 
@@ -89,7 +89,7 @@ class TestSplitTextIntoChunks:
         text = "内容。" * 100  # 300 字符
         chunks_small = split_text_into_chunks(text, max_chars=50)
         chunks_large = split_text_into_chunks(text, max_chars=1000)
-        assert len(chunks_small) >= len(chunks_large)
+        assert len(chunks_small) > len(chunks_large)
 
 
 class TestCollectFiles:

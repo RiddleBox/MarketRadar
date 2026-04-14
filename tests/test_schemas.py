@@ -9,7 +9,7 @@ from core.schemas import (
     Market, InstrumentType, SignalType, Direction, TimeHorizon,
     PriorityLevel, PositionStatus, ActionType, SourceType,
     SignalLogicFrame, MarketSignal, OpportunityObject, TimeWindow,
-    ActionPlan, StopLossConfig, TakeProfitConfig, ActionPhase,
+    OpportunityScore, ActionPlan, StopLossConfig, TakeProfitConfig, ActionPhase,
     PositionSizing, Position, PositionUpdate,
 )
 
@@ -34,8 +34,8 @@ class TestMarketSignal:
             source_type=SourceType.NEWS,
             source_ref="test_ref_001",
             logic_frame=SignalLogicFrame(
-                what_changed="央行利率",
-                change_direction="decrease",
+                what_changed="央行利率下调",
+                change_direction=Direction.BULLISH,
                 affects=["债券", "股市"],
             ),
         )
@@ -110,6 +110,18 @@ class TestOpportunityObject:
             key_assumptions=["降息政策在1个月内落地", "外部市场无重大风险事件"],
             uncertainty_map=["美联储政策变化（影响：高）", "国内经济数据超预期下行（影响：中）"],
             priority_level=PriorityLevel.RESEARCH,
+            opportunity_score=OpportunityScore(
+                catalyst_strength=8,
+                timeliness=7,
+                market_confirmation=7,
+                tradability=8,
+                risk_clarity=6,
+                consensus_gap=7,
+                signal_consistency=8,
+                overall_score=7.29,
+                confidence_score=0.78,
+                execution_readiness=0.7,
+            ),
             risk_reward_profile="潜在收益10-15%，止损5%，盈亏比约2-3:1",
             next_validation_questions=["降息具体幅度是多少？", "资金面持续性如何？"],
             judgment_version="v1.0",
@@ -150,41 +162,65 @@ class TestActionPlan:
         plan = ActionPlan(
             plan_id="plan_001",
             opportunity_id="opp_001",
-            action_type=ActionType.WATCH,
-            instrument="沪深300ETF",
-            direction=Direction.BULLISH,
-            position_sizing=PositionSizing(method="FIXED_PERCENT", value=0.0, notes="watch 不入场"),
-            entry_conditions=["等待降息落地"],
-            stop_loss=StopLossConfig(stop_price=None, stop_condition="无", trigger_type="NONE"),
-            take_profit=TakeProfitConfig(target_price=None, partial_exits=[], trailing_stop=None),
-            phases=[ActionPhase(phase_name="观察期", trigger_condition="持续", action_description="观察")],
+            plan_summary="先观察政策兑现与量价配合，暂不直接入场。",
+            primary_instruments=["沪深300ETF"],
+            instrument_type=InstrumentType.ETF,
+            position_sizing=PositionSizing(
+                suggested_allocation="0%",
+                max_allocation="0%",
+                sizing_rationale="watch 阶段不入场，仅跟踪验证。",
+            ),
+            stop_loss=StopLossConfig(stop_loss_type="percent", stop_loss_value=0.0, notes="观察阶段无实际止损执行"),
+            take_profit=TakeProfitConfig(take_profit_type="percent", take_profit_value=0.0, notes="观察阶段无实际止盈执行"),
+            phases=[
+                ActionPhase(
+                    phase_name="观察期",
+                    action_type=ActionType.WATCH,
+                    timing_description="持续观察政策细则与市场反馈。",
+                    allocation_ratio=1.0,
+                    trigger_condition="政策落地前",
+                )
+            ],
+            valid_until=datetime(2026, 5, 13),
+            review_triggers=["政策未落地", "量价背离扩大"],
             created_at=datetime(2026, 4, 13),
-            expires_at=datetime(2026, 5, 13),
+            opportunity_priority=PriorityLevel.WATCH,
         )
-        assert plan.action_type == ActionType.WATCH
-        assert plan.position_sizing.value == 0.0
+        assert plan.phases[0].action_type == ActionType.WATCH
+        assert plan.position_sizing.suggested_allocation == "0%"
 
     def test_serialization(self):
         plan = ActionPlan(
             plan_id="plan_002",
             opportunity_id="opp_001",
-            action_type=ActionType.OPEN,
-            instrument="沪深300ETF",
-            direction=Direction.BULLISH,
-            position_sizing=PositionSizing(method="FIXED_PERCENT", value=0.03),
-            entry_conditions=["降息落地后", "收盘价突破60日均线"],
-            stop_loss=StopLossConfig(stop_price=3.85, stop_condition="跌破关键支撑", trigger_type="PRICE_LEVEL"),
-            take_profit=TakeProfitConfig(target_price=4.50, partial_exits=["到达4.30止盈50%"], trailing_stop="浮盈5%后上移止损"),
+            plan_summary="若降息兑现且指数放量突破，则分两阶段建立仓位。",
+            primary_instruments=["沪深300ETF"],
+            instrument_type=InstrumentType.ETF,
+            position_sizing=PositionSizing(
+                suggested_allocation="3-5%",
+                max_allocation="8%",
+                sizing_rationale="宏观驱动较强，但仍需控制单主题风险暴露。",
+            ),
+            stop_loss=StopLossConfig(stop_loss_type="price", stop_loss_value=3.85, stop_loss_price=3.85, notes="跌破关键支撑离场"),
+            take_profit=TakeProfitConfig(take_profit_type="price", take_profit_value=4.50, take_profit_price=4.50, notes="首目标位止盈"),
             phases=[
-                ActionPhase(phase_name="Phase 1", trigger_condition="降息落地", action_description="买入30%仓位"),
+                ActionPhase(
+                    phase_name="Phase 1",
+                    action_type=ActionType.BUY,
+                    timing_description="降息落地后首个放量日买入首批仓位。",
+                    allocation_ratio=0.5,
+                    trigger_condition="降息兑现",
+                ),
             ],
+            valid_until=datetime(2026, 4, 27),
+            review_triggers=["收盘价跌破关键支撑", "政策预期逆转"],
             created_at=datetime(2026, 4, 13),
-            expires_at=datetime(2026, 4, 27),
+            opportunity_priority=PriorityLevel.RESEARCH,
         )
         data = plan.model_dump(mode="json")
         plan2 = ActionPlan.model_validate(data)
-        assert plan2.stop_loss.stop_price == 3.85
-        assert plan2.take_profit.target_price == 4.50
+        assert plan2.stop_loss.stop_loss_price == 3.85
+        assert plan2.take_profit.take_profit_price == 4.50
 
 
 class TestEnums:
