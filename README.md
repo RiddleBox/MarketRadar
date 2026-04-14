@@ -78,7 +78,19 @@ python pipeline/run_backtest.py --start 2024-01-01 --end 2024-06-30 --market A_S
 ### 运行测试
 先确认 pytest 已安装：
 ```bash
-python -m pytest tests/ -v
+python -m pytest
+```
+
+当前建议的联调验收顺序：
+```powershell
+python .\scripts\assert_gongfeng_runtime.py
+python -m pytest tests/test_schemas.py tests/test_m1.py tests/test_ingest.py -q
+python test_pipeline.py
+```
+
+如需先确认运行时没有悄悄偏航到其他 provider：
+```powershell
+python .\scripts\assert_gongfeng_runtime.py
 ```
 
 ### 当前联调建议

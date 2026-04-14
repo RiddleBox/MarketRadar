@@ -5,7 +5,7 @@
 # 换机器时：更新 default_provider 即可切换全局 LLM
 # 详细说明见 docs/LLM_Config.md
 
-default_provider: deepseek
+default_provider: gongfeng
 
 providers:
   # ── 工蜂AI（腾讯内网推荐，无需 API Key）──────────────────

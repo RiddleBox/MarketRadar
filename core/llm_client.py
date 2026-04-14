@@ -140,7 +140,7 @@ class LLMClient:
     统一 LLM 调用客户端。
 
     从 config/llm_config.yaml 加载配置，支持：
-    - 多 provider（deepseek / claude / openai）
+    - 多 provider（gongfeng / xfyun / deepseek / openai 等）
     - 模块级配置覆盖（不同模块用不同温度/provider）
     - 自动重试（timeout / rate_limit 错误）
     - 环境变量替换
@@ -319,7 +319,7 @@ class LLMClient:
             provider_name, provider_config = self._get_provider_config(module_name)
         client = self._get_or_create_client(provider_name, provider_config)
 
-        model = provider_config.get("model", "claude-sonnet-4-6")
+        model = provider_config.get("model", "gongfeng/gpt-5-4")
         max_retries = provider_config.get("max_retries", 3)
         temperature = kwargs.pop("temperature", provider_config.get("temperature", 0.1))
         max_tokens = kwargs.pop("max_tokens", provider_config.get("max_tokens", 2000))
