@@ -41,3 +41,33 @@ def test_load_events_from_opportunities_supports_m3_style_payload(tmp_path: Path
     assert event.signal_intensity == 9
     assert event.signal_confidence == 8.2
     assert event.time_horizon == "medium"
+
+
+def test_load_events_from_opportunities_normalizes_common_instrument_aliases(tmp_path: Path):
+    payload = {
+        "opportunity_id": "opp_test_002",
+        "opportunity_title": "半导体政策催化",
+        "target_markets": ["A_SHARE"],
+        "target_instruments": ["半导体ETF（512480）"],
+        "trade_direction": "BULLISH",
+        "opportunity_window": {
+            "start": "2026-04-14T09:30:00",
+            "end": "2026-04-20T15:00:00",
+            "confidence_level": 0.75,
+        },
+        "why_now": "政策催化落地。",
+        "supporting_evidence": ["产业政策支持"],
+        "created_at": "2026-04-14T10:00:00",
+        "opportunity_score": {
+            "catalyst_strength": 8,
+            "confidence_score": 0.76,
+        },
+    }
+    p = tmp_path / "opp2.json"
+    p.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+    bt = StrategyBacktester(use_seed=False)
+    events = bt.load_events_from_opportunities(tmp_path)
+
+    assert len(events) == 1
+    assert events[0].instrument == "512480.SH"

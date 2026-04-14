@@ -1,0 +1,158 @@
+{
+  "opportunities": {
+    "exists": true,
+    "files": 21,
+    "items": 33,
+    "samples": [
+      {
+        "file": "ingest_20260413_105002_opportunities.json",
+        "keys": [
+          "opportunity_id",
+          "opportunity_title",
+          "opportunity_thesis",
+          "target_markets",
+          "target_instruments",
+          "trade_direction",
+          "instrument_types",
+          "opportunity_window",
+          "why_now",
+          "related_signals",
+          "supporting_evidence",
+          "counter_evidence"
+        ]
+      }
+    ]
+  },
+  "price_cache": {
+    "exists": true,
+    "files": 1,
+    "samples": [
+      {
+        "file": "510300_SH.json",
+        "days": 3371,
+        "start": "2012-05-28",
+        "end": "2026-04-13"
+      }
+    ]
+  },
+  "events_loaded": 33,
+  "event_instruments": [
+    "159755.SZ",
+    "300750.SZ",
+    "510300.SH",
+    "512480.SH",
+    "588000.SH"
+  ],
+  "event_markets": [
+    "A_SHARE"
+  ],
+  "report": {
+    "strategies_ranked": [
+      "MacroMomentum",
+      "PolicyBreakout",
+      "ComboFilter"
+    ],
+    "summaries": {
+      "MacroMomentum": {
+        "strategy": "MacroMomentum",
+        "description": "宏观动量策略：货币/财政政策宽松信号触发后，T+1 开盘买入沪深宽基 ETF。止损 5%，止盈 20%，最多持有 30 天。适合捕捉政策宽松期的系统性行情。",
+        "params": {
+          "signal_types": [
+            "macro"
+          ],
+          "require_all": false,
+          "min_intensity": 6.0,
+          "min_confidence": 5.0,
+          "stop_loss_pct": 0.05,
+          "take_profit_pct": 0.2,
+          "max_holding_days": 30
+        },
+        "total_cases": 0,
+        "completed": 0,
+        "skipped_no_data": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": 0.0,
+        "avg_pnl_pct": 0.0,
+        "avg_win_pct": 0,
+        "avg_loss_pct": 0,
+        "profit_factor": Infinity,
+        "max_drawdown_pct": 0.0,
+        "avg_holding_days": 0.0,
+        "stop_loss_rate": 0,
+        "take_profit_rate": 0,
+        "timeout_rate": 0
+      },
+      "PolicyBreakout": {
+        "strategy": "PolicyBreakout",
+        "description": "政策突破策略：产业/监管政策信号后，T+1 开盘入场，止损 3%，止盈 10%，最多持有 15 天。适合主题政策短线行情。",
+        "params": {
+          "signal_types": [
+            "policy",
+            "industry"
+          ],
+          "require_all": false,
+          "min_intensity": 7.0,
+          "min_confidence": 6.0,
+          "stop_loss_pct": 0.03,
+          "take_profit_pct": 0.1,
+          "max_holding_days": 15
+        },
+        "total_cases": 19,
+        "completed": 0,
+        "skipped_no_data": 19,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": 0.0,
+        "avg_pnl_pct": 0.0,
+        "avg_win_pct": 0,
+        "avg_loss_pct": 0,
+        "profit_factor": Infinity,
+        "max_drawdown_pct": 0.0,
+        "avg_holding_days": 0.0,
+        "stop_loss_rate": 0,
+        "take_profit_rate": 0,
+        "timeout_rate": 0
+      },
+      "ComboFilter": {
+        "strategy": "ComboFilter",
+        "description": "组合过滤策略：要求宏观信号 + 资金流信号双重确认后入场。止损 7%，止盈 25%，最多持有 45 天。信号质量高，持仓时间长，适合捕捉资金驱动的大级别行情。",
+        "params": {
+          "signal_types": [
+            "macro",
+            "capital_flow"
+          ],
+          "require_all": true,
+          "min_intensity": 6.0,
+          "min_confidence": 5.5,
+          "stop_loss_pct": 0.07,
+          "take_profit_pct": 0.25,
+          "max_holding_days": 45
+        },
+        "total_cases": 14,
+        "completed": 0,
+        "skipped_no_data": 14,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": 0.0,
+        "avg_pnl_pct": 0.0,
+        "avg_win_pct": 0,
+        "avg_loss_pct": 0,
+        "profit_factor": Infinity,
+        "max_drawdown_pct": 0.0,
+        "avg_holding_days": 0.0,
+        "stop_loss_rate": 0,
+        "take_profit_rate": 0,
+        "timeout_rate": 0
+      }
+    },
+    "recommendations": [
+      "MacroMomentum: 样本不足（0笔），结论参考价值有限",
+      "PolicyBreakout: 样本不足（0笔），结论参考价值有限",
+      "ComboFilter: 样本不足（0笔），结论参考价值有限"
+    ],
+    "best_strategy": "MacroMomentum",
+    "best_win_rate": 0.0,
+    "best_avg_pnl": 0.0
+  }
+}

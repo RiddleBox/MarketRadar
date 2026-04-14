@@ -353,6 +353,39 @@ class StrategyBacktester:
             logger.warning(f"[StrategyBacktester] 机会目录不存在: {opp_path}")
             return events
 
+        def _normalize_instrument(raw_inst: str) -> str:
+            text = str(raw_inst or "").strip()
+            if not text:
+                return text
+
+            aliases = {
+                "沪深300ETF": "510300.SH",
+                "科创50ETF": "588000.SH",
+                "半导体ETF(512480)": "512480.SH",
+                "半导体ETF（512480）": "512480.SH",
+                "锂电池ETF(159755)": "159755.SZ",
+                "锂电池ETF（159755）": "159755.SZ",
+            }
+            if text in aliases:
+                return aliases[text]
+
+            import re
+            m = re.search(r"(\d{6})\.(SH|SZ|HK)", text, re.IGNORECASE)
+            if m:
+                return f"{m.group(1)}.{m.group(2).upper()}"
+
+            m = re.search(r"[（(](\d{6})[）)]", text)
+            if m:
+                code = m.group(1)
+                suffix = "SH" if code.startswith(("5", "6")) else "SZ"
+                return f"{code}.{suffix}"
+
+            if re.fullmatch(r"\d{6}", text):
+                suffix = "SH" if text.startswith(("5", "6")) else "SZ"
+                return f"{text}.{suffix}"
+
+            return text
+
         def _pick_signal_type(opp: dict) -> str:
             rel_signals = opp.get("related_signals", [])
             if rel_signals and isinstance(rel_signals[0], dict):
@@ -439,7 +472,7 @@ class StrategyBacktester:
                         direction = direction.get("value", "BULLISH")
 
                     events.append(SignalEvent(
-                        instrument=instruments[0],
+                        instrument=_normalize_instrument(instruments[0]),
                         market=str(market),
                         signal_type=_pick_signal_type(opp),
                         signal_direction=str(direction),
