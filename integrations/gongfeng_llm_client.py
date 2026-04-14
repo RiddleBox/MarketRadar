@@ -37,7 +37,7 @@ logger = logging.getLogger(__name__)
 
 # 工蜂 copilot-gateway 端点
 GONGFENG_BASE_URL = "https://copilot.code.woa.com/server/openclaw/copilot-gateway/v1"
-DEFAULT_MODEL = "claude-sonnet-4-6"
+DEFAULT_MODEL = "gongfeng/gpt-5-4"
 
 # 本地 OAuth token 缓存路径
 AUTH_PROFILE_PATH = (
@@ -100,7 +100,7 @@ class GongfengLLMClient:
             "X-Username": profile.get("username", ""),
             "DEVICE-ID": profile.get("deviceId", ""),
             "Content-Type": "application/json",
-            "X-Model-Name": "Claude Sonnet 4.6",
+            "X-Model-Name": "GPT-5.4",
         }
 
     def is_available(self) -> bool:

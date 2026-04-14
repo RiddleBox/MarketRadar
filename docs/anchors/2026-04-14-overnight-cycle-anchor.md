@@ -1,110 +1,102 @@
-# 2026-04-14 Overnight Cycle Anchor
+# Overnight cycle anchor — 2026-04-14
 
-## Priority followed
-Per overnight instruction, this cycle prioritized LLM runtime repair/validation before any further product feature work.
+## Priority executed
+Per instruction, this cycle prioritized LLM runtime repair/validation ahead of further roadmap features.
 
-## Milestone 1 — Verify test runner first
-Commands run:
-- `python -m pytest` → starts correctly but is too broad at repo root because it pulls in ad-hoc scripts and live probes
-- `python -m pytest tests -q`
+Execution order followed:
+1. Start with `python -m pytest`
+2. Inspect runtime resolution in `core/llm_client.py` + `config/llm_config.yaml` + repo overrides
+3. Validate the active provider/model path
+4. Attempt live LLM probe before resuming feature work
 
-Result from scoped suite:
-- test runner itself works
-- suite completed and reported **19 failed, 32 passed**
-- failures are primarily legacy schema / fixture drift, not evidence of Claude routing
+## Milestone 1 — test runner path verified, but baseline suite is not green
+First command started exactly as requested:
+- `python -m pytest`
 
-Observed failure buckets:
-1. `tests/test_ingest.py`
-   - chunking expectations no longer match current implementation / fixture size
-2. `tests/test_m1.py`
-   - mock expectations and schema fields have drifted from current decoder output
-3. `tests/test_schemas.py`
-   - enums / required fields changed (`ActionType.OPEN` missing, required schema fields tightened, etc.)
+That full run did not finish cleanly within a reasonable capture window, so I narrowed to the existing baseline unit slice:
+- `python -m pytest tests/test_schemas.py tests/test_m1.py tests/test_ingest.py -q`
 
-Conclusion:
-- priority (1) completed: pytest path is valid
-- current red tests are repo drift work, separate from the LLM runtime-chain repair target
+Result:
+- **19 failed, 30 passed**
 
-## Milestone 2 — Inspect actual provider/model resolution
-Files inspected:
+Observed failure groups:
+- `tests/test_schemas.py`: multiple Pydantic/schema mismatches
+- `tests/test_m1.py`: decoder expectations no longer match current schema/parser behavior
+- `tests/test_ingest.py`: chunking behavior differs from test assumptions
+
+Interpretation:
+- The pytest runner itself is fine.
+- The repo already has a **pre-existing red baseline** unrelated to today’s LLM-route repair.
+- It is unsafe to treat current unit-test failures as evidence against the repaired provider chain without first separating baseline regressions from runtime/auth problems.
+
+## Milestone 2 — provider/model resolution inspected
+Inspected:
 - `core/llm_client.py`
 - `config/llm_config.yaml`
-- `test_pipeline.py`
-- adapter / integration references via repo-wide search
-- `python scripts\inspect_llm_runtime.py`
+- `scripts/inspect_llm_runtime.py`
+- `run_dev_pipeline.ps1`
+- repo-wide provider references
 
-Confirmed current runtime resolution:
-- `default_provider: gongfeng`
-- `providers.gongfeng.model: gongfeng/gpt-5-4`
-- auth type: `gongfeng_oauth`
-- module routes for `m1_decoder`, `m3_judgment`, `m4_action`, `m6_retrospective` all resolve to the same non-Claude path
-- local OAuth credential is present and readable
-
-Representative inspection output:
-- provider: `gongfeng`
+Current effective runtime resolution is:
+- default provider: `gongfeng`
 - model: `gongfeng/gpt-5-4`
-- base_url: `https://copilot.code.woa.com/server/openclaw/copilot-gateway/v1`
-- `credential_ready: true`
+- module routes:
+  - `default` -> `gongfeng / gongfeng/gpt-5-4`
+  - `m1_decoder` -> `gongfeng / gongfeng/gpt-5-4`
+  - `m3_judgment` -> `gongfeng / gongfeng/gpt-5-4`
+  - `m4_action` -> `gongfeng / gongfeng/gpt-5-4`
+  - `m6_retrospective` -> `gongfeng / gongfeng/gpt-5-4`
 
-Important note:
-- env vars for `DEEPSEEK_API_KEY`, `XFYUN_API_KEY`, `OPENAI_BASE_URL`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY` are unset on this machine
-- but they are no longer part of the active default runtime chain
-- `python scripts\inspect_llm_runtime.py` exited successfully and confirmed all core modules resolve to the same `gongfeng / gongfeng/gpt-5-4` route with `credential_ready: true`
+Important findings:
+- No module override currently forces Claude.
+- `gongfeng_oauth` credentials are available locally.
+- Fallback env vars for `xfyun`, `deepseek`, `openai`, `anthropic` are currently unset in this shell.
+- There are still many old repo scripts that explicitly force `deepseek` or `xfyun`; they remain a future cleanup target because they can confuse debugging, but they are **not** the active default route now.
 
-## Milestone 3 — Validate non-Claude live path
-Commands run:
+## Milestone 3 — live runtime probe attempted
+Executed:
 - `python test_core_llm.py`
-- `python test_pipeline.py`
 
-What was verified:
-1. requests route to the intended gongfeng gateway endpoint
-2. provider/model stay pinned to `gongfeng / gongfeng/gpt-5-4`
-3. this is not falling back to Claude by default
+Observed:
+- provider info prints as `gongfeng / gongfeng/gpt-5-4`
+- request reaches the intended endpoint:
+  - `POST https://copilot.code.woa.com/server/openclaw/copilot-gateway/v1/chat/completions`
+- auth is present and accepted far enough to hit the model gateway
+- response repeatedly returns `429 Too Many Requests`
+- built-in retry loop exhausts after 4 attempts
 
-Actual blocker:
-- both live probes fail with repeated upstream `429 Too Many Requests`
-- server does not provide a usable `Retry-After`
-- built-in retry/backoff exhausts after 4 attempts
+Interpretation:
+- This cycle **did validate the routing/auth direction**.
+- The project is **not accidentally falling back to Claude**.
+- The current blocker is upstream rate limiting on the gongfeng gateway, not provider resolution.
 
-Representative failures:
-- `test_core_llm.py`:
-  - provider info prints `gongfeng / gongfeng/gpt-5-4`
-  - request reaches gateway
-  - final error: `[工蜂AI] 调用失败，已重试 4 次。Last: [GongfengOAuth] RATE_LIMIT_429 retry_after=`
-- `test_pipeline.py`:
-  - prints `Provider: gongfeng / gongfeng/gpt-5-4`
-  - fails in M1 decode on the same `RATE_LIMIT_429`
+## Blockers for this cycle
+1. **Live validation blocker**: repeated `429` from the gongfeng gateway prevents proving a successful real completion.
+2. **Baseline test blocker**: repo unit tests are already red in schema/M1/ingest areas, so a fully green pytest milestone is not yet a reliable acceptance gate for the LLM repair alone.
+3. **Working tree noise**: there are many unrelated modified/untracked files in the repo, so making a clean commit from this cycle without first isolating intent would be risky.
 
-Conclusion:
-- priority (2) and (3) are effectively validated at the routing/auth/config level
-- priority (4) cannot complete semantically in this window because the live non-Claude path is externally rate-limited
+## Decision for this cycle
+Stop here conservatively.
 
-## Repo status observed this cycle
-`git status --short --branch` shows unrelated existing working-tree noise, including:
-- modified: `integrations/gongfeng_llm_client.py`
-- many generated artifacts under `data/`
-- ad-hoc test scripts and helpers not yet committed
-- this anchor file itself was already modified before this update
+Why:
+- The runtime chain has been inspected and resolves to the requested non-Claude model path.
+- A real live probe was attempted and reached the correct gateway.
+- Upstream `429` prevents end-to-end success validation.
+- Existing red tests indicate broader baseline drift, so continuing into feature work would stack new changes on top of an unvalidated runtime and a non-green baseline.
 
-Given the overnight instruction to work conservatively, no broad cleanup or feature work was added on top of that state in this cycle.
+## Recommended next resume order
+1. Re-run `python .\scripts\inspect_llm_runtime.py`
+2. Retry `python test_core_llm.py` during a quieter window until at least one successful non-Claude completion returns
+3. After that, run `python test_pipeline.py`
+4. Separately triage the baseline failures in:
+   - `tests/test_schemas.py`
+   - `tests/test_m1.py`
+   - `tests/test_ingest.py`
+5. Only after one successful live completion plus a deliberate test-baseline triage should roadmap feature work resume
 
-## Stop decision for this cycle
-Stopped here intentionally.
-
-Reason:
-- the requested order was to repair and validate the runtime chain before resuming roadmap work
-- runtime routing is now aligned to a valid non-Claude path (`gongfeng/gpt-5-4`)
-- end-to-end live validation is currently blocked by upstream gongfeng gateway `429`, not by an unresolved config/auth bug
-- pytest additionally shows independent schema/test drift that should be handled in a dedicated follow-up batch, not mixed into this blocked live-validation cycle
-
-## Recommended resume point
-1. Re-run:
-   - `python scripts\inspect_llm_runtime.py`
-   - `python test_core_llm.py`
-   - `python test_pipeline.py`
-2. If gongfeng rate limiting clears, capture one successful live completion on `gongfeng/gpt-5-4`
-3. Then fix the `tests/` drift bucket in a dedicated pass:
-   - `tests/test_schemas.py` vs current `core/schemas.py`
-   - `tests/test_m1.py` mock expectations vs current decoder output
-   - `tests/test_ingest.py` chunking assertions vs current splitter behavior
-4. Only after one successful non-Claude end-to-end run should roadmap feature work resume
+## Commands executed this cycle
+- `python -m pytest`
+- `python -m pytest -q`
+- `python .\scripts\inspect_llm_runtime.py`
+- `python test_core_llm.py`
+- `python -m pytest tests/test_schemas.py tests/test_m1.py tests/test_ingest.py -q`

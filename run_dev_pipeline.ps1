@@ -1,5 +1,5 @@
 param(
-    [string]$Provider = "deepseek"
+    [string]$Provider = "gongfeng"
 )
 
 switch ($Provider.ToLower()) {
