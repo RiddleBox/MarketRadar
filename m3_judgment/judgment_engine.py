@@ -437,6 +437,8 @@ class JudgmentEngine:
             start = 1
             end = len(lines) - 1 if lines[-1].strip() == "```" else len(lines)
             text = "\n".join(lines[start:end]).strip()
+        if text.startswith("json\n"):
+            text = text[5:].strip()
 
         try:
             data = json.loads(text)
@@ -455,12 +457,77 @@ class JudgmentEngine:
                 obj_candidate = text[obj_start:obj_end + 1] if obj_start != -1 and obj_end != -1 and obj_end > obj_start else None
                 arr_candidate = text[arr_start:arr_end + 1] if arr_start != -1 and arr_end != -1 and arr_end > arr_start else None
                 candidate = obj_candidate or arr_candidate
-            if not candidate:
-                raise
-            data = json.loads(candidate)
+            if candidate:
+                try:
+                    data = json.loads(candidate)
+                except json.JSONDecodeError:
+                    repaired = self._repair_partial_json_object(candidate)
+                    if repaired is None:
+                        raise
+                    data = json.loads(repaired)
+            else:
+                repaired = self._repair_partial_json_object(text)
+                if repaired is None:
+                    raise
+                data = json.loads(repaired)
 
         if expected_key:
             if not isinstance(data, dict) or expected_key not in data:
                 raise ValueError(f"LLM 输出缺少期望字段 '{expected_key}'，实际字段: {list(data.keys()) if isinstance(data, dict) else type(data)}")
             return data[expected_key]
         return data
+
+    def _repair_partial_json_object(self, text: str) -> Optional[str]:
+        """针对 Step B 常见的截断对象做最小修复。
+
+        仅处理“对象已开始、后段在某个长数组字段中截断”的场景，
+        目标是尽量保住前面已完整输出的关键字段，供 OpportunityObject 构建继续进行。
+        """
+        if not text:
+            return None
+
+        candidate = text.strip()
+        obj_start = candidate.find("{")
+        if obj_start == -1:
+            return None
+        candidate = candidate[obj_start:]
+
+        repair_fields = [
+            '"warnings"',
+            '"kill_switch_signals"',
+            '"must_watch_indicators"',
+            '"invalidation_conditions"',
+            '"next_validation_questions"',
+            '"risk_reward_profile"',
+        ]
+        for field in repair_fields:
+            idx = candidate.find(field)
+            if idx != -1:
+                prefix = candidate[:idx].rstrip()
+                if prefix.endswith(','):
+                    prefix = prefix[:-1].rstrip()
+                return prefix + "\n}"
+
+        safe_tail_fields = [
+            '"execution_readiness"',
+            '"confidence_score"',
+            '"overall_score"',
+            '"signal_consistency"',
+            '"consensus_gap"',
+            '"risk_clarity"',
+            '"tradability"',
+            '"market_confirmation"',
+            '"timeliness"',
+            '"catalyst_strength"',
+        ]
+        for field in safe_tail_fields:
+            idx = candidate.rfind(field)
+            if idx != -1:
+                line_end = candidate.find("\n", idx)
+                if line_end != -1:
+                    prefix = candidate[:line_end].rstrip()
+                    if prefix.endswith(','):
+                        prefix = prefix[:-1].rstrip()
+                    return prefix + "\n  }\n}"
+
+        return None
