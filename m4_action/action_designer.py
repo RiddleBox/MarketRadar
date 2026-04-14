@@ -31,6 +31,7 @@ from core.schemas import (
     TakeProfitConfig,
 )
 from core.llm_client import LLMClient
+from m4_action.strategy_registry import StrategySpec, get_strategy_spec
 
 logger = logging.getLogger(__name__)
 
@@ -70,6 +71,38 @@ class ActionDesigner:
     def __init__(self, llm_client: Optional[LLMClient] = None):
         self.llm = llm_client or LLMClient()
 
+    def resolve_default_strategy_spec(self, opportunity: OpportunityObject) -> Optional[StrategySpec]:
+        """为机会解析一个默认策略语义。
+
+        说明：
+        - 这是共享策略接口层的轻绑定
+        - 仅用于提供 strategy identity / 可读语义
+        - 不改变当前 ActionPlan 契约，也不让 M4 立即多策略输出
+        """
+        evidence_blob = " ".join(
+            [opportunity.opportunity_title, opportunity.opportunity_thesis, opportunity.why_now]
+            + list(opportunity.supporting_evidence or [])
+        ).lower()
+
+        macro_hit = any(k in evidence_blob for k in ["macro", "央行", "货币", "财政", "降准", "降息"])
+        flow_hit = any(k in evidence_blob for k in ["northbound", "北向", "capital flow", "资金流"])
+        policy_hit = any(k in evidence_blob for k in ["policy", "政策", "监管", "产业"])
+
+        if macro_hit and flow_hit:
+            return get_strategy_spec("ComboFilter")
+
+        if macro_hit:
+            return get_strategy_spec("MacroMomentum")
+
+        if policy_hit:
+            return get_strategy_spec("PolicyBreakout")
+
+        return None
+
+    def describe_default_strategy(self, opportunity: OpportunityObject) -> Optional[str]:
+        spec = self.resolve_default_strategy_spec(opportunity)
+        return spec.name if spec else None
+
     def design(self, opportunity: OpportunityObject) -> ActionPlan:
         """主入口：OpportunityObject → ActionPlan
 
@@ -79,9 +112,11 @@ class ActionDesigner:
         Returns:
             ActionPlan，包含止损/止盈/仓位/分阶段计划
         """
+        strategy_name = self.describe_default_strategy(opportunity)
         logger.info(
             f"[M4] 设计行动计划 | opportunity_id={opportunity.opportunity_id} "
-            f"priority={opportunity.priority_level} direction={opportunity.trade_direction}"
+            f"priority={opportunity.priority_level} direction={opportunity.trade_direction} "
+            f"default_strategy={strategy_name or 'None'}"
         )
 
         # watch 级别不生成执行计划，只生成观察计划
