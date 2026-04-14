@@ -342,12 +342,77 @@ class StrategyBacktester:
         """
         从真实历史机会文件（data/opportunities/*.json）加载信号事件。
         用于将真实 M3 产出接入策略回测。
+
+        兼容两类输入：
+        1. OpportunityObject 风格（当前主链产物）
+        2. 历史/手工导出的较松散 dict
         """
         opp_path = opp_dir or (ROOT / "data" / "opportunities")
         events = []
         if not opp_path.exists():
             logger.warning(f"[StrategyBacktester] 机会目录不存在: {opp_path}")
             return events
+
+        def _pick_signal_type(opp: dict) -> str:
+            rel_signals = opp.get("related_signals", [])
+            if rel_signals and isinstance(rel_signals[0], dict):
+                signal_types = {str(s.get("signal_type", "")).lower() for s in rel_signals if isinstance(s, dict)}
+                if {"macro", "capital_flow"}.issubset(signal_types):
+                    return "capital_flow"
+                for candidate in ["macro", "policy", "industry", "capital_flow", "event_driven"]:
+                    if candidate in signal_types:
+                        return candidate
+
+            text = " ".join([
+                str(opp.get("opportunity_title", "")),
+                str(opp.get("opportunity_thesis", "")),
+                str(opp.get("why_now", "")),
+            ] + [str(x) for x in (opp.get("supporting_evidence") or [])]).lower()
+            if any(k in text for k in ["northbound", "北向", "资金流", "净流入", "净流出"]):
+                return "capital_flow"
+            if any(k in text for k in ["政策", "policy", "监管", "产业"]):
+                return "policy"
+            if any(k in text for k in ["行业", "板块", "新能源", "半导体", "地产", "银行", "科技"]):
+                return "industry"
+            if any(k in text for k in ["macro", "央行", "货币", "财政", "降准", "降息"]):
+                return "macro"
+            return "event_driven"
+
+        def _pick_horizon(opp: dict) -> str:
+            window = opp.get("opportunity_window", {})
+            if isinstance(window, dict):
+                start = str(window.get("start", ""))[:10]
+                end = str(window.get("end", ""))[:10]
+                if start and end:
+                    try:
+                        days = (date.fromisoformat(end) - date.fromisoformat(start)).days
+                        if days <= 10:
+                            return "short"
+                        if days <= 45:
+                            return "medium"
+                        return "long"
+                    except Exception:
+                        pass
+            return "short"
+
+        def _pick_confidence(opp: dict) -> float:
+            score = opp.get("opportunity_score") or {}
+            if isinstance(score, dict):
+                if score.get("confidence_score") is not None:
+                    val = float(score.get("confidence_score"))
+                    return val * 10 if val <= 1 else val
+                if score.get("overall_score") is not None:
+                    return float(score.get("overall_score"))
+            return float(opp.get("conviction_score", 7.0))
+
+        def _pick_intensity(opp: dict) -> float:
+            score = opp.get("opportunity_score") or {}
+            if isinstance(score, dict):
+                if score.get("catalyst_strength") is not None:
+                    return float(score.get("catalyst_strength"))
+                if score.get("overall_score") is not None:
+                    return float(score.get("overall_score"))
+            return float(opp.get("conviction_score", 7.0))
 
         for f in sorted(opp_path.glob("*.json")):
             try:
@@ -356,29 +421,31 @@ class StrategyBacktester:
                 for opp in items:
                     if not isinstance(opp, dict):
                         continue
-                    created = opp.get("created_at", "")[:10]
+                    created = str(opp.get("created_at", ""))[:10]
                     if not created:
                         continue
                     sig_date = date.fromisoformat(created)
                     instruments = opp.get("target_instruments") or opp.get("primary_instruments", [])
                     if not instruments:
                         continue
-                    # related_signals 可能是 signal_id 列表或 dict 列表
-                    rel_signals = opp.get("related_signals", [])
-                    if rel_signals and isinstance(rel_signals[0], dict):
-                        sig_type = rel_signals[0].get("signal_type", "macro")
-                    else:
-                        sig_type = "macro"  # signal_id 列表，无法推断类型，默认宏观
-                    window = opp.get("opportunity_window", {})
-                    horizon = window.get("horizon", "short") if isinstance(window, dict) else "short"
+
+                    markets = opp.get("target_markets") or ["A_SHARE"]
+                    market = markets[0]
+                    if isinstance(market, dict):
+                        market = market.get("value", "A_SHARE")
+
+                    direction = opp.get("trade_direction", "BULLISH")
+                    if isinstance(direction, dict):
+                        direction = direction.get("value", "BULLISH")
+
                     events.append(SignalEvent(
                         instrument=instruments[0],
-                        market=(opp.get("target_markets") or ["A_SHARE"])[0],
-                        signal_type=sig_type,
-                        signal_direction=opp.get("trade_direction", "BULLISH"),
-                        signal_intensity=opp.get("conviction_score", 7.0),
-                        signal_confidence=opp.get("conviction_score", 7.0),
-                        time_horizon=horizon,
+                        market=str(market),
+                        signal_type=_pick_signal_type(opp),
+                        signal_direction=str(direction),
+                        signal_intensity=_pick_intensity(opp),
+                        signal_confidence=_pick_confidence(opp),
+                        time_horizon=_pick_horizon(opp),
                         signal_date=sig_date,
                         note=opp.get("opportunity_title", ""),
                     ))
