@@ -35,8 +35,6 @@ from m3_judgment.prompt_templates import (
 
 logger = logging.getLogger(__name__)
 
-from m3_judgment.sentiment_resonance import SentimentResonanceEnhancer
-
 SMALL_BATCH_THRESHOLD = 10  # 小批次直接全量送 Step B
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
@@ -54,7 +52,6 @@ class JudgmentEngine:
     def __init__(self, llm_client: Optional[LLMClient] = None, version: str = "v1.0"):
         self.llm = llm_client or LLMClient()
         self.version = version
-        self.resonance = SentimentResonanceEnhancer()
 
     def judge(
         self,
@@ -190,8 +187,7 @@ class JudgmentEngine:
                 return None
 
             try:
-                opp = self._build_opportunity(data, scenario_signals, batch_id)
-                return self.resonance.enhance(opp)
+                return self._build_opportunity(data, scenario_signals, batch_id)
             except Exception as build_err:
                 logger.error(
                     "[M3 Step B] LLM 已返回机会对象，但构建 OpportunityObject 失败 | "
