@@ -78,10 +78,11 @@ def normalize_instrument(raw_inst: str) -> str:
     return text
 
 
-def collect_instruments(opp_dir: Path) -> list[str]:
+def collect_instruments(opp_dir: Path) -> tuple[list[str], dict[str, list[str]]]:
     result: list[str] = []
+    by_market: dict[str, list[str]] = {}
     if not opp_dir.exists():
-        return result
+        return result, by_market
     for f in sorted(opp_dir.glob("*.json")):
         try:
             data = json.loads(f.read_text(encoding="utf-8"))
@@ -89,14 +90,17 @@ def collect_instruments(opp_dir: Path) -> list[str]:
             for opp in items:
                 if not isinstance(opp, dict):
                     continue
+                markets = opp.get("target_markets") or ["A_SHARE"]
+                market = str(markets[0]) if markets else "A_SHARE"
                 insts = opp.get("target_instruments") or opp.get("primary_instruments") or []
                 for inst in insts:
                     norm = normalize_instrument(inst)
                     if norm:
                         result.append(norm)
+                        by_market.setdefault(market, []).append(norm)
         except Exception:
             continue
-    return sorted(set(result))
+    return sorted(set(result)), {k: sorted(set(v)) for k, v in by_market.items()}
 
 
 def main():
@@ -112,7 +116,7 @@ def main():
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    instruments = collect_instruments(opp_dir)
+    instruments, instruments_by_market = collect_instruments(opp_dir)
     feed = HistoryPriceFeed(cache_dir=cache_dir, use_seed=args.use_seed)
 
     successes = []
@@ -132,6 +136,7 @@ def main():
         "opportunity_dir": str(opp_dir),
         "instrument_count": len(instruments),
         "instruments": instruments,
+        "instruments_by_market": instruments_by_market,
         "successes": successes,
         "failures": failures,
     }

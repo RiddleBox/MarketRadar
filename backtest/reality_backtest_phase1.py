@@ -104,12 +104,17 @@ def main():
     results = bt.run_all(events, strategy_names=strategy_names)
     report = bt.compare_strategies(results)
 
+    market_event_counts = {}
+    for e in events:
+        market_event_counts[e.market] = market_event_counts.get(e.market, 0) + 1
+
     payload = {
         "opportunities": opp_summary,
         "price_cache": cache_summary,
         "events_loaded": len(events),
         "event_instruments": sorted({e.instrument for e in events}),
         "event_markets": sorted({e.market for e in events}),
+        "market_event_counts": market_event_counts,
         "report": report,
     }
 

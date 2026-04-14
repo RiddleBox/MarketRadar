@@ -25,7 +25,7 @@
   },
   "price_cache": {
     "exists": true,
-    "files": 4,
+    "files": 5,
     "samples": [
       {
         "file": "00981_HK.json",
@@ -50,6 +50,12 @@
         "days": 1658,
         "start": "2019-06-12",
         "end": "2026-04-14"
+      },
+      {
+        "file": "515030_SH.json",
+        "days": 1482,
+        "start": "2020-03-04",
+        "end": "2026-04-14"
       }
     ]
   },
@@ -64,6 +70,9 @@
   "event_markets": [
     "A_SHARE"
   ],
+  "market_event_counts": {
+    "A_SHARE": 33
+  },
   "report": {
     "strategies_ranked": [
       "ComboFilter",

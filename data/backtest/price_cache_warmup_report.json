@@ -21,6 +21,28 @@
     "588000.SH",
     "688981.SH"
   ],
+  "instruments_by_market": {
+    "A_SHARE": [
+      "002371.SZ",
+      "002594.SZ",
+      "00981.HK",
+      "01347.HK",
+      "159755.SZ",
+      "159915.SZ",
+      "159949.SZ",
+      "300750.SZ",
+      "3033.HK",
+      "510050.SH",
+      "510300.SH",
+      "510500.SH",
+      "512480.SH",
+      "515030.SH",
+      "515980.SH",
+      "516950.SH",
+      "588000.SH",
+      "688981.SH"
+    ]
+  },
   "successes": [
     {
       "instrument": "00981.HK",
@@ -44,6 +66,12 @@
       "instrument": "512480.SH",
       "days": 1658,
       "min_date": "2019-06-12",
+      "max_date": "2026-04-14"
+    },
+    {
+      "instrument": "515030.SH",
+      "days": 1482,
+      "min_date": "2020-03-04",
       "max_date": "2026-04-14"
     }
   ],
@@ -82,10 +110,6 @@
     },
     {
       "instrument": "510500.SH",
-      "reason": "no_data_after_preload"
-    },
-    {
-      "instrument": "515030.SH",
       "reason": "no_data_after_preload"
     },
     {
