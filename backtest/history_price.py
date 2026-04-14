@@ -22,9 +22,12 @@ from datetime import date, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
+import pandas as pd
+
 logger = logging.getLogger(__name__)
 
 PRICE_CACHE_DIR = Path(__file__).parent.parent / "data" / "price_cache"
+CSV_CACHE_DIR = Path(__file__).parent.parent / "data" / "csv_cache"
 
 
 class HistoryPriceFeed:
@@ -37,6 +40,7 @@ class HistoryPriceFeed:
     def __init__(
         self,
         cache_dir: Path = PRICE_CACHE_DIR,
+        csv_dir: Path = CSV_CACHE_DIR,
         use_seed: bool = True,
         seed_merge: bool = True,
     ):
@@ -47,7 +51,9 @@ class HistoryPriceFeed:
                          False = 各源独立，后加载的完全替换
         """
         self.cache_dir = cache_dir
+        self.csv_dir = csv_dir
         self.cache_dir.mkdir(parents=True, exist_ok=True)
+        self.csv_dir.mkdir(parents=True, exist_ok=True)
         self.seed_merge = seed_merge
         # instrument → {date_str → {"close": float, "open": float, ...}}
         self._cache: Dict[str, Dict[str, dict]] = {}
@@ -165,13 +171,74 @@ class HistoryPriceFeed:
             except Exception as e:
                 logger.warning(f"[PriceFeed] 磁盘缓存读取失败 {instrument}: {e}")
 
-        # 2. 已有足够的种子数据时不强制调 AKShare
+        # 2. 尝试本地 CSV（标准化缓存/人工沉淀）
+        if instrument not in self._fetched and self._load_from_csv_cache(instrument):
+            return
+
+        # 3. 已有足够的种子数据时不强制调 AKShare
         if instrument in self._cache and self._cache[instrument]:
             return
 
-        # 3. 调 AKShare 拉全量日线（只在无任何数据时触发）
+        # 4. 调 AKShare 拉全量日线（只在无任何数据时触发）
         if instrument not in self._fetched:
             self._fetch_and_cache(instrument)
+
+    def _load_from_csv_cache(self, instrument: str) -> bool:
+        """尝试从 data/csv_cache 读取本地 CSV。支持 *_1d.csv / *_daily.csv。"""
+        candidates = [
+            self.csv_dir / f"{instrument}_1d.csv",
+            self.csv_dir / f"{instrument}_daily.csv",
+            self.csv_dir / f"{instrument.replace('.', '_')}_1d.csv",
+            self.csv_dir / f"{instrument.replace('.', '_')}_daily.csv",
+            self.csv_dir / f"{instrument.split('.')[0]}_1d.csv",
+            self.csv_dir / f"{instrument.split('.')[0]}_daily.csv",
+        ]
+
+        file_path = next((p for p in candidates if p.exists()), None)
+        if not file_path:
+            return False
+
+        try:
+            df = pd.read_csv(file_path)
+            if df is None or df.empty:
+                return False
+
+            date_col = "date" if "date" in df.columns else ("日期" if "日期" in df.columns else None)
+            if not date_col:
+                return False
+
+            column_map = {
+                "日期": "date",
+                "开盘": "open",
+                "最高": "high",
+                "最低": "low",
+                "收盘": "close",
+                "成交量": "volume",
+            }
+            df = df.rename(columns=column_map)
+            day_data: dict = {}
+            for _, row in df.iterrows():
+                ds = str(row.get("date", ""))[:10]
+                if not ds:
+                    continue
+                day_data[ds] = {
+                    "open": float(row.get("open", row.get("close", 0)) or 0),
+                    "high": float(row.get("high", row.get("close", 0)) or 0),
+                    "low": float(row.get("low", row.get("close", 0)) or 0),
+                    "close": float(row.get("close", 0) or 0),
+                    "volume": float(row.get("volume", 0) or 0),
+                }
+
+            if not day_data:
+                return False
+
+            existing = self._cache.setdefault(instrument, {})
+            existing.update(day_data)
+            logger.info(f"[PriceFeed] CSV 缓存合并 {instrument}: {file_path.name}, 共 {len(existing)} 天")
+            return True
+        except Exception as e:
+            logger.warning(f"[PriceFeed] CSV 缓存读取失败 {instrument}: {e}")
+            return False
 
     def _fetch_and_cache(self, instrument: str):
         """用 AKShare 拉取日线数据并写入缓存"""
