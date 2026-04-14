@@ -75,6 +75,18 @@
       "max_date": "2026-04-13"
     },
     {
+      "instrument": "159915.SZ",
+      "days": 12,
+      "min_date": "2026-04-14",
+      "max_date": "2026-04-29"
+    },
+    {
+      "instrument": "510050.SH",
+      "days": 12,
+      "min_date": "2026-04-14",
+      "max_date": "2026-04-29"
+    },
+    {
       "instrument": "510300.SH",
       "days": 3371,
       "min_date": "2012-05-28",
@@ -103,10 +115,6 @@
       "reason": "no_data_after_preload"
     },
     {
-      "instrument": "159915.SZ",
-      "reason": "no_data_after_preload"
-    },
-    {
       "instrument": "159949.SZ",
       "reason": "no_data_after_preload"
     },
@@ -116,10 +124,6 @@
     },
     {
       "instrument": "3033.HK",
-      "reason": "no_data_after_preload"
-    },
-    {
-      "instrument": "510050.SH",
       "reason": "no_data_after_preload"
     },
     {

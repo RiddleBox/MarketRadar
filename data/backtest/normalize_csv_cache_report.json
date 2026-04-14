@@ -1,0 +1,21 @@
+{
+  "csv_dir": "D:\\AIproject\\MarketRadar\\data\\csv_cache",
+  "created": [
+    {
+      "source": "上证50ETF_daily.csv",
+      "target": "510050.SH_daily.csv",
+      "instrument": "510050.SH"
+    },
+    {
+      "source": "创业板ETF_daily.csv",
+      "target": "159915.SZ_daily.csv",
+      "instrument": "159915.SZ"
+    },
+    {
+      "source": "沪深300ETF_daily.csv",
+      "target": "510300.SH_daily.csv",
+      "instrument": "510300.SH"
+    }
+  ],
+  "skipped": []
+}
