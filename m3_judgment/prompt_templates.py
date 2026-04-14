@@ -149,11 +149,28 @@ STEP_B_USER_PROMPT = """请判断以下场景是否构成市场机会：
 
 ## 额外要求
 1. 必须显式输出 `opportunity_score`。
-2. 若 `is_opportunity=true`，必须同时输出：
-   - `invalidation_conditions`
-   - `must_watch_indicators`
-   - `kill_switch_signals`
-3. 分数要彼此协调，不要出现 `overall_score` 很高但 `execution_readiness` 极低的明显矛盾。
-4. 所有字段都必须是结构化 JSON，不要输出解释文字。
+2. 若 `is_opportunity=true`，优先保证以下核心字段完整：
+   - `opportunity_title`
+   - `opportunity_thesis`
+   - `target_markets`
+   - `target_instruments`
+   - `trade_direction`
+   - `instrument_types`
+   - `opportunity_window`
+   - `why_now`
+   - `supporting_evidence`
+   - `key_assumptions`
+   - `uncertainty_map`
+   - `priority_level`
+   - `risk_reward_profile`
+   - `next_validation_questions`
+3. 以下字段保持精简：
+   - `counter_evidence` 最多 2 条
+   - `invalidation_conditions` 最多 3 条
+   - `must_watch_indicators` 最多 4 条
+   - `kill_switch_signals` 最多 3 条
+   - `warnings` 最多 2 条
+4. 分数要彼此协调，不要出现 `overall_score` 很高但 `execution_readiness` 极低的明显矛盾。
+5. 所有字段都必须是结构化 JSON，不要输出解释文字，不要 markdown 代码块。
 
 请按格式输出 JSON。"""
