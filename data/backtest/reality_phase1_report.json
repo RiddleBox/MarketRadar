@@ -25,8 +25,14 @@
   },
   "price_cache": {
     "exists": true,
-    "files": 5,
+    "files": 6,
     "samples": [
+      {
+        "file": "002594_SZ.json",
+        "days": 3579,
+        "start": "2011-06-30",
+        "end": "2026-04-14"
+      },
       {
         "file": "00981_HK.json",
         "days": 5408,
@@ -50,12 +56,6 @@
         "days": 1658,
         "start": "2019-06-12",
         "end": "2026-04-14"
-      },
-      {
-        "file": "515030_SH.json",
-        "days": 1482,
-        "start": "2020-03-04",
-        "end": "2026-04-14"
       }
     ]
   },
@@ -72,6 +72,18 @@
   ],
   "market_event_counts": {
     "A_SHARE": 33
+  },
+  "market_source_plan": {
+    "A_SHARE": {
+      "market": "A_SHARE",
+      "source_priority": [
+        "price_cache",
+        "csv",
+        "baostock",
+        "akshare"
+      ],
+      "notes": "A_SHARE 优先本地缓存/CSV，其次 baostock，最后 akshare。"
+    }
   },
   "report": {
     "strategies_ranked": [

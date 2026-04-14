@@ -18,6 +18,7 @@ import json
 from pathlib import Path
 
 from backtest.strategy_backtest import StrategyBacktester
+from backtest.market_price_resolver import get_market_price_plan
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OPP_DIR = ROOT / "data" / "opportunities"
@@ -108,6 +109,8 @@ def main():
     for e in events:
         market_event_counts[e.market] = market_event_counts.get(e.market, 0) + 1
 
+    market_source_plan = {m: get_market_price_plan(m).__dict__ for m in sorted({e.market for e in events})}
+
     payload = {
         "opportunities": opp_summary,
         "price_cache": cache_summary,
@@ -115,6 +118,7 @@ def main():
         "event_instruments": sorted({e.instrument for e in events}),
         "event_markets": sorted({e.market for e in events}),
         "market_event_counts": market_event_counts,
+        "market_source_plan": market_source_plan,
         "report": report,
     }
 

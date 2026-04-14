@@ -43,7 +43,25 @@
       "688981.SH"
     ]
   },
+  "market_source_plan": {
+    "A_SHARE": {
+      "market": "A_SHARE",
+      "source_priority": [
+        "price_cache",
+        "csv",
+        "baostock",
+        "akshare"
+      ],
+      "notes": "A_SHARE 优先本地缓存/CSV，其次 baostock，最后 akshare。"
+    }
+  },
   "successes": [
+    {
+      "instrument": "002594.SZ",
+      "days": 3579,
+      "min_date": "2011-06-30",
+      "max_date": "2026-04-14"
+    },
     {
       "instrument": "00981.HK",
       "days": 5408,
@@ -78,10 +96,6 @@
   "failures": [
     {
       "instrument": "002371.SZ",
-      "reason": "no_data_after_preload"
-    },
-    {
-      "instrument": "002594.SZ",
       "reason": "no_data_after_preload"
     },
     {

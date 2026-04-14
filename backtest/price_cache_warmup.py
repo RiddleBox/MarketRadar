@@ -18,6 +18,7 @@ import json
 from pathlib import Path
 
 from backtest.history_price import HistoryPriceFeed
+from backtest.market_price_resolver import get_market_price_plan
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OPP_DIR = ROOT / "data" / "opportunities"
@@ -132,11 +133,14 @@ def main():
         except Exception as e:
             failures.append({"instrument": inst, "reason": str(e)})
 
+    market_source_plan = {m: get_market_price_plan(m).__dict__ for m in instruments_by_market.keys()}
+
     payload = {
         "opportunity_dir": str(opp_dir),
         "instrument_count": len(instruments),
         "instruments": instruments,
         "instruments_by_market": instruments_by_market,
+        "market_source_plan": market_source_plan,
         "successes": successes,
         "failures": failures,
     }
