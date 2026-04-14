@@ -41,6 +41,10 @@ pip install -r requirements.txt
 ### 配置 LLM
 当前修复周期的默认主链路为 **`gongfeng` provider + `gongfeng/gpt-5-4`**。
 
+2026-04-14 运行时修复补充：
+- `pytest` 现已通过 `pytest.ini -> testpaths = tests` 限定只收集 `tests/` 目录，避免把仓库根目录的手工联调脚本（如 `test_pipeline.py`）误当成 pytest 用例。
+- 仓库根目录下的 `test_*.py` 更适合作为手工 smoke / E2E 脚本单独运行，不保证 import-safe。
+
 在腾讯内网且已登录 OpenClaw 的机器上，通常**无需额外配置 API Key**，项目会自动读取本地 OAuth token。
 
 如需排障，可先检查运行时解析结果：
