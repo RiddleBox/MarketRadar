@@ -45,8 +45,9 @@ for s in signals:
     print(f"  [{s.signal_type}] {s.signal_label} | 强度={s.intensity_score} 置信={s.confidence_score:.1f} 方向={s.signal_direction}")
 
 if not signals:
-    print("  ⚠ 无信号，退出")
-    sys.exit(0)
+    print("  ⚠ 无信号：本次测试未解码出任何信号")
+    print("  RESULT: NO_SIGNALS")
+    sys.exit(2)
 
 print()
 print("=" * 60)
@@ -61,8 +62,9 @@ for opp in opportunities:
     print(f"    理由: {opp.opportunity_thesis[:120]}...")
 
 if not opportunities:
-    print("  M3 判断当前信号不构成可操作机会（正常行为）")
-    sys.exit(0)
+    print("  M3 判断当前信号不构成可操作机会（这是业务结论，不是链路成功）")
+    print("  RESULT: NO_OPPORTUNITIES")
+    sys.exit(3)
 
 print()
 print("=" * 60)
@@ -79,4 +81,5 @@ for opp in opportunities[:1]:
     print(f"  阶段数={len(plan.phases)} 有效期至: {plan.valid_until}")
 
 print()
+print("RESULT: FULL_CHAIN_OK")
 print("✅ M1->M3->M4 链路全部通过")
