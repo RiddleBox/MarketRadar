@@ -23,12 +23,13 @@ class PolicySensitiveAgent(BaseMarketAgent):
     """政策敏感型 Agent — A股特有"""
 
     agent_type = "policy"
-    default_weight = 0.25   # A股权重最高，政策驱动市场
+    default_weight = 0.20
 
     def _build_system_prompt(self) -> str:
         return (
             "你是一个专注于中国宏观政策的市场分析师，擅长解读央行/财政部/证监会政策信号对A股的影响。"
             "你的判断优先基于政策信号，弱化技术面和情绪面。"
+            "判断原则：明确政策利好(降准/降息/刺激)→BULLISH；明确政策收紧→BEARISH；无明确信号→NEUTRAL。"
             "只输出 JSON，格式：\n"
             '{"direction": "BULLISH|BEARISH|NEUTRAL", '
             '"bullish_prob": 0.0~1.0, "bearish_prob": 0.0~1.0, "neutral_prob": 0.0~1.0, '

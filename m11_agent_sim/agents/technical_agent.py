@@ -29,6 +29,8 @@ class TechnicalAgent(BaseMarketAgent):
     def _build_system_prompt(self) -> str:
         return (
             "你是一个纯技术分析师，只看K线、均线、量比等技术指标，不看新闻和政策。"
+            "判断原则：均线多头排列+量比放大+持续上涨→BULLISH；均线空头排列+量比放大+持续下跌→BEARISH；信号混合或较弱→NEUTRAL。"
+            "不要过度预测反转，趋势持续的概率高于反转。"
             "只输出 JSON，格式：\n"
             '{"direction": "BULLISH|BEARISH|NEUTRAL", '
             '"bullish_prob": 0.0~1.0, "bearish_prob": 0.0~1.0, "neutral_prob": 0.0~1.0, '
@@ -47,6 +49,12 @@ class TechnicalAgent(BaseMarketAgent):
             f"  MA5：{p.ma5:.3f}  MA20：{p.ma20:.3f}",
             f"  站上MA5：{'是' if p.above_ma5 else '否'}  站上MA20：{'是' if p.above_ma20 else '否'}",
             f"  量比：{p.volume_ratio:.2f}",
+        ]
+        if market_input.recent_extreme_move != 0.0:
+            lines.append(f"  近期极端行情：{market_input.recent_extreme_move:+.1%}（距今{market_input.days_since_extreme}天）")
+            if abs(market_input.recent_extreme_move) > 0.05:
+                lines.append("  提示：近期有大波动，注意观察是延续还是反转，需结合量比和均线判断。")
+        lines += [
             "",
             f"【上游情绪参考（可不采用）】",
             f"  共识：{consensus['direction']} 置信{consensus['avg_confidence']:.0%}",
@@ -83,6 +91,42 @@ class TechnicalAgent(BaseMarketAgent):
             score = score * 1.3   # 放量放大趋势
         elif p.volume_ratio < 0.5:
             score = score * 0.5   # 缩量减弱信号
+
+        # 止盈/均值回归元规则
+        if p.price_5d_chg_pct > 0.08:
+            score -= 3.0   # 5日涨超8%，强获利了结压力
+        elif p.price_5d_chg_pct > 0.05:
+            score -= 1.5   # 5日涨超5%，适度回调压力
+        elif p.price_5d_chg_pct < -0.08:
+            score += 2.0   # 5日跌超8%，技术反弹可能
+        elif p.price_5d_chg_pct < -0.05:
+            score += 1.0   # 5日跌超5%，适度反弹可能
+
+        # 近期大涨后转跌 → 趋势反转信号（最强信号）
+        if p.price_20d_chg_pct > 0.10 and p.price_5d_chg_pct < -0.02:
+            score -= 4.0   # 20日大涨但5日转跌，获利了结反转
+        elif p.price_20d_chg_pct > 0.05 and p.price_5d_chg_pct < -0.03:
+            score -= 2.5
+
+        # 连续下跌趋势确认
+        if p.price_5d_chg_pct < -0.03 and p.price_20d_chg_pct < -0.05:
+            score -= 1.5
+
+        # 极端反转：大涨后立即大跌（5日跌超5%且20日涨超10%）
+        if p.price_5d_chg_pct < -0.05 and p.price_20d_chg_pct > 0.08:
+            score -= 5.0
+
+        # recent_extreme_move 补充
+        if market_input.recent_extreme_move > 0.06 and market_input.days_since_extreme <= 3:
+            score -= 1.5
+        elif market_input.recent_extreme_move < -0.06 and market_input.days_since_extreme <= 3:
+            score += 1.0
+
+        # 20日超买超卖
+        if p.price_20d_chg_pct > 0.15:
+            score -= 1.5
+        elif p.price_20d_chg_pct < -0.15:
+            score += 1.0
 
         # score 映射到概率（sigmoid-like）
         import math

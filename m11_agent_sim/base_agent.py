@@ -108,6 +108,7 @@ class BaseMarketAgent(ABC):
         return (
             f"你是一个{self.config.name or self.agent_type}市场分析师。"
             "根据市场数据，判断市场短期（1~5个交易日）的方向。"
+            "判断原则：信号明确时输出BULLISH或BEARISH，信号混合或较弱时输出NEUTRAL。"
             "只输出 JSON，格式：\n"
             '{"direction": "BULLISH|BEARISH|NEUTRAL", '
             '"bullish_prob": 0.0~1.0, '

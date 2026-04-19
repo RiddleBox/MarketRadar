@@ -32,6 +32,7 @@ class SentimentRetailAgent(BaseMarketAgent):
             "你的判断主要来自市场氛围、热点讨论和跟风行为，而非理性分析。"
             "注意：极度贪婪（FG>80）时你会追高，但这往往是危险信号；"
             "极度恐惧（FG<20）时你会割肉，但这往往是买点。"
+            "判断原则：FG>60且涨跌比>0.6→BULLISH；FG<40且涨跌比<0.4→BEARISH；其余→NEUTRAL。"
             "只输出 JSON，格式：\n"
             '{"direction": "BULLISH|BEARISH|NEUTRAL", '
             '"bullish_prob": 0.0~1.0, "bearish_prob": 0.0~1.0, "neutral_prob": 0.0~1.0, '
@@ -71,14 +72,13 @@ class SentimentRetailAgent(BaseMarketAgent):
         # 情绪直接映射（散户跟着情绪走）
         # FG → 多方概率（注意极值时的非线性）
         if fg >= 80:
-            # 极度贪婪：散户追高，但我们知道这是风险区
             raw_bull = 0.75
             intensity = 9.0
-            conf = 0.40   # 低置信（极端情绪不稳定）
+            conf = 0.20   # 极低置信（极度贪婪=反转信号，散户判断不可靠）
         elif fg >= 60:
             raw_bull = 0.60
             intensity = 7.0
-            conf = 0.55
+            conf = 0.45
         elif fg >= 40:
             raw_bull = 0.45
             intensity = 4.0
@@ -86,12 +86,11 @@ class SentimentRetailAgent(BaseMarketAgent):
         elif fg >= 20:
             raw_bull = 0.30
             intensity = 7.0
-            conf = 0.55
+            conf = 0.45
         else:
-            # 极度恐惧：散户割肉
             raw_bull = 0.20
             intensity = 9.0
-            conf = 0.40
+            conf = 0.20   # 极低置信（极度恐惧=反转信号）
 
         # 微博情绪修正
         raw_bull += weibo * 0.10

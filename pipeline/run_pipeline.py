@@ -54,7 +54,7 @@ def run(input_file, market, batch_id, source_type, source_ref, verbose, dry_run,
     # ── 读取输入 ────────────────────────────────────────────────
     input_path = Path(input_file)
     if not input_path.exists():
-        console.print(f"[red]✗ 输入文件不存在: {input_file}[/red]")
+        console.print(f"[red]FAIL 输入文件不存在: {input_file}[/red]")
         sys.exit(1)
 
     raw_text = input_path.read_text(encoding="utf-8")
@@ -78,13 +78,13 @@ def run(input_file, market, batch_id, source_type, source_ref, verbose, dry_run,
             source_type=SourceType(source_type),
             batch_id=batch_id,
         )
-        console.print(f"[green]✓ 提取 {len(signals)} 条信号[/green]")
+        console.print(f"[green]OK 提取 {len(signals)} 条信号[/green]")
     except Exception as e:
-        console.print(f"[red]✗ 解码失败: {e}[/red]")
+        console.print(f"[red]FAIL 解码失败: {e}[/red]")
         sys.exit(1)
 
     if not signals:
-        console.print("[yellow]⚠ 未提取到有效信号，pipeline 终止[/yellow]")
+        console.print("[yellow]WARN 未提取到有效信号，pipeline 终止[/yellow]")
         sys.exit(0)
 
     # 打印信号摘要
@@ -94,7 +94,7 @@ def run(input_file, market, batch_id, source_type, source_ref, verbose, dry_run,
     console.print("\n[bold]M2 信号存储[/bold] ...", end=" ")
     store = SignalStore()
     saved = store.save(signals)
-    console.print(f"[green]✓ 保存 {saved} 条（去重后）[/green]")
+    console.print(f"[green]OK 保存 {saved} 条（去重后）[/green]")
 
     if dry_run:
         console.print("\n[yellow]--dry-run 模式，跳过 M3/M4[/yellow]")
@@ -125,9 +125,9 @@ def run(input_file, market, batch_id, source_type, source_ref, verbose, dry_run,
     )
 
     if not opportunities:
-        console.print("[yellow]⚠ 当前批次未发现机会（信号已保留，将参与后续批次组合）[/yellow]")
+        console.print("[yellow]WARN 当前批次未发现机会（信号已保留，将参与后续批次组合）[/yellow]")
     else:
-        console.print(f"[green]✓ 发现 {len(opportunities)} 个机会[/green]")
+        console.print(f"[green]OK 发现 {len(opportunities)} 个机会[/green]")
         _print_opportunities_table(opportunities)
 
     # ── M4 行动设计 ─────────────────────────────────────────────
@@ -139,7 +139,7 @@ def run(input_file, market, batch_id, source_type, source_ref, verbose, dry_run,
             plan = designer.design(opp)
             plans.append(plan)
             instruments = ', '.join(plan.primary_instruments[:2])
-            console.print(f"  ✓ [{opp.priority_level.value}] {opp.opportunity_title} → {instruments}")
+            console.print(f"  OK [{opp.priority_level.value}] {opp.opportunity_title} → {instruments}")
 
         # 保存机会到 data/opportunities/
         _save_opportunities(opportunities, batch_id)

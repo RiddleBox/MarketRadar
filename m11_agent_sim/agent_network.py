@@ -71,10 +71,12 @@ class AgentNetwork:
         llm_client=None,
         use_llm: bool = False,   # 默认规则模式（离线可用，测试方便）
         agent_registry: Optional[Dict[str, Type[BaseMarketAgent]]] = None,
+        min_confidence: float = 0.0,   # 置信度门控阈值（低于此值强制NEUTRAL+no_trade）
     ):
         self.config = config or NetworkConfig()
         self.llm_client = llm_client
         self.use_llm = use_llm
+        self.min_confidence = min_confidence
         self.registry = agent_registry or _default_registry()
         self._agents: List[BaseMarketAgent] = self._build_agents()
 
@@ -108,21 +110,22 @@ class AgentNetwork:
 
     @classmethod
     def _default_a_share(
-        cls, topology: str = "sequential", llm_client=None, use_llm: bool = False
+        cls, topology: str = "sequential", llm_client=None, use_llm: bool = False,
+        min_confidence: float = 0.0,
     ) -> "AgentNetwork":
         """默认 A 股配置（不依赖文件）"""
         config = NetworkConfig(
             market="A_SHARE",
             topology=topology,
             agents=[
-                AgentConfig(agent_type="policy",           name="政策分析师", weight=0.25, sequence_pos=0),
-                AgentConfig(agent_type="northbound",       name="北向跟随者", weight=0.25, sequence_pos=1),
+                AgentConfig(agent_type="policy",           name="政策分析师", weight=0.20, sequence_pos=0),
+                AgentConfig(agent_type="northbound",       name="北向跟随者", weight=0.20, sequence_pos=1),
                 AgentConfig(agent_type="technical",        name="技术分析师", weight=0.15, sequence_pos=2),
                 AgentConfig(agent_type="sentiment_retail", name="情绪散户",   weight=0.20, sequence_pos=3),
-                AgentConfig(agent_type="fundamental",      name="基本面分析师", weight=0.15, sequence_pos=4),
+                AgentConfig(agent_type="fundamental",      name="基本面分析师", weight=0.25, sequence_pos=4),
             ],
         )
-        return cls(config=config, llm_client=llm_client, use_llm=use_llm)
+        return cls(config=config, llm_client=llm_client, use_llm=use_llm, min_confidence=min_confidence)
 
     # ── 主入口 ────────────────────────────────────────────────
 
@@ -145,6 +148,14 @@ class AgentNetwork:
         dist.simulation_ms = int((time.time() - t0) * 1000)
         dist.topology_used = self.config.topology
         dist.agents_count = len(outputs)
+
+        # 置信度门控：低置信时不交易
+        if self.min_confidence > 0 and dist.confidence < self.min_confidence:
+            dist.no_trade = True
+            dist.direction = "NEUTRAL"
+            logger.debug(
+                f"[AgentNetwork] 置信度门控: {dist.confidence:.2f} < {self.min_confidence:.2f} → NEUTRAL/no_trade"
+            )
         return dist
 
     # ── 序列传导（Phase 1）────────────────────────────────────
@@ -325,8 +336,8 @@ class AgentNetwork:
 
         # 综合方向
         direction = (
-            "BULLISH" if bull > bear + 0.08
-            else "BEARISH" if bear > bull + 0.08
+            "BULLISH" if bull > bear + 0.07
+            else "BEARISH" if bear > bull + 0.07
             else "NEUTRAL"
         )
 

@@ -24,7 +24,7 @@ class NorthboundFollowerAgent(BaseMarketAgent):
     """北向跟随型 Agent"""
 
     agent_type = "northbound"
-    default_weight = 0.25   # 外资信号权重高
+    default_weight = 0.20
 
     # 北向资金判断阈值（亿元）
     STRONG_INFLOW = 80.0
@@ -36,6 +36,7 @@ class NorthboundFollowerAgent(BaseMarketAgent):
         return (
             "你是一个专注于北向资金（沪深港通）动向的机构量化分析师。"
             "你高度重视外资流向作为先行指标，同时结合上游分析师的判断。"
+            "判断原则：大幅净流入(>80亿)→BULLISH；大幅净流出(<-80亿)→BEARISH；温和流向→NEUTRAL。"
             "只输出 JSON，格式：\n"
             '{"direction": "BULLISH|BEARISH|NEUTRAL", '
             '"bullish_prob": 0.0~1.0, "bearish_prob": 0.0~1.0, "neutral_prob": 0.0~1.0, '

@@ -70,6 +70,7 @@ class MarketInput(BaseModel):
     - 价格上下文
     - 情绪上下文
     - 信号上下文
+    - 历史上下文（近期极端行情，供均值回归/止盈推理）
     - 原始事件描述（可选，用于 LLM prompt）
     """
     timestamp: datetime = Field(default_factory=datetime.now)
@@ -78,6 +79,8 @@ class MarketInput(BaseModel):
     price: PriceContext = Field(default_factory=PriceContext)
     sentiment: SentimentContext = Field(default_factory=SentimentContext)
     signals: SignalContext = Field(default_factory=SignalContext)
+    recent_extreme_move: float = 0.0  # 近5日最大单日涨幅(正)/跌幅(负)，供止盈/恐慌推理
+    days_since_extreme: int = 0        # 距离最近一次极端行情的天数
     extra: Dict[str, Any] = Field(default_factory=dict)  # 扩展字段
 
 
@@ -194,6 +197,7 @@ class SentimentDistribution(BaseModel):
     topology_used: str = "sequential"
     agents_count: int = 0
     simulation_ms: int = 0            # 模拟耗时（毫秒）
+    no_trade: bool = False            # 置信度门控：低置信时标记不交易
 
     def summary(self) -> str:
         return (
@@ -232,6 +236,10 @@ class CalibrationScore(BaseModel):
     prob_calibration_err : 概率校准误差（模拟上涨概率 vs 实际上涨频率）
     extreme_recall       : 极值识别召回率（历史极值点中被正确标记的比例）
     composite_score      : 加权综合分（0~100）
+
+    选择性准确率（为胜率而交易，不为交易而交易）：
+    selective_accuracy   : 仅在有方向判断（非NEUTRAL）时的命中率
+    skip_rate            : 跳过率（系统输出NEUTRAL的比例，即不交易）
     """
     total_events: int = 0
     direction_hits: int = 0
@@ -243,4 +251,35 @@ class CalibrationScore(BaseModel):
     composite_score: float = 0.0       # 加权综合分
     pass_threshold: bool = False       # 是否通过校准
 
+    # 选择性准确率
+    selective_accuracy: float = 0.0    # 有方向判断时的命中率
+    selective_n: int = 0               # 有方向判断的事件数
+    skip_rate: float = 0.0             # 跳过率（NEUTRAL比例）
+
     details: List[Dict[str, Any]] = Field(default_factory=list)  # 每个事件的明细
+
+
+class ValidationCase(BaseModel):
+    """单个历史事件的验证结果（事件 + 模拟输出 + 匹配判定）"""
+    event_id: str
+    date: str
+    description: str
+    actual_direction: Direction = "NEUTRAL"
+    simulated_direction: Direction = "NEUTRAL"
+    direction_match: bool = False
+    actual_5d_return: float = 0.0
+    simulated_bullish_prob: float = 0.0
+    prob_error: float = 0.0
+    simulated_intensity: float = 5.0
+    simulated_confidence: float = 0.5
+
+
+class CalibrationRun(BaseModel):
+    """一次完整的校准运行记录"""
+    run_id: str
+    run_timestamp: datetime = Field(default_factory=datetime.now)
+    market: str = "A_SHARE"
+    topology: str = "sequential"
+    n_events: int = 0
+    score: CalibrationScore = Field(default_factory=CalibrationScore)
+    cases: List[ValidationCase] = Field(default_factory=list)

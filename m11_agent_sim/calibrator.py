@@ -27,6 +27,8 @@ from .agent_network import AgentNetwork
 from .schemas import (
     AgentOutput,
     CalibrationScore,
+    CalibrationRun,
+    ValidationCase,
     Direction,
     HistoricalEvent,
     MarketInput,
@@ -35,6 +37,7 @@ from .schemas import (
     SignalContext,
     SentimentDistribution,
 )
+from .sentiment_provider import SentimentProvider, DecorrelatedSentimentProvider
 
 logger = logging.getLogger(__name__)
 
@@ -52,7 +55,7 @@ class HistoricalCalibrator:
         print(score)
     """
 
-    # 方向判断阈值
+    # 方向判断阈值（可配置）
     BULLISH_THRESHOLD = 0.03   # 5日涨幅 > 3% → BULLISH
     BEARISH_THRESHOLD = -0.03  # 5日涨幅 < -3% → BEARISH
 
@@ -67,9 +70,11 @@ class HistoricalCalibrator:
         self,
         network: Optional[AgentNetwork] = None,
         market: str = "a_share",
+        sentiment_provider: Optional[SentimentProvider] = None,
     ):
         self.network = network or AgentNetwork.from_config_file(market)
         self.market = market
+        self._sentiment_provider = sentiment_provider or DecorrelatedSentimentProvider()
 
     # ── 事件加载 ─────────────────────────────────────────────
 
@@ -221,41 +226,51 @@ class HistoricalCalibrator:
             return 0.0
 
     def _estimate_sentiment_context(self, date_str: str, signal_dir: str) -> SentimentContext:
-        """
-        估算历史情绪上下文（M10 历史数据暂无存档，用信号方向代理）
-        Phase 2：当 M10 积累足够历史后，从数据库查询真实历史快照
-        """
-        # 用已知的几个关键时间点的情绪估计
-        known_contexts = {
-            "2024-09-24": SentimentContext(
-                fear_greed_index=35.0, sentiment_label="恐惧",
-                northbound_flow=120.0, advance_decline_ratio=0.72,
-                weibo_sentiment=0.2,
-            ),
-            "2024-10-08": SentimentContext(
-                fear_greed_index=78.0, sentiment_label="贪婪",
-                northbound_flow=85.0, advance_decline_ratio=0.85,
-                weibo_sentiment=0.7,
-            ),
-            "2025-02-17": SentimentContext(
-                fear_greed_index=55.0, sentiment_label="中性",
-                northbound_flow=15.0, advance_decline_ratio=0.52,
-                weibo_sentiment=0.1,
-            ),
-            "2025-04-07": SentimentContext(
-                fear_greed_index=22.0, sentiment_label="恐惧",
-                northbound_flow=-95.0, advance_decline_ratio=0.28,
-                weibo_sentiment=-0.5,
-            ),
-        }
-        if date_str in known_contexts:
-            return known_contexts[date_str]
-        # 默认：用信号方向估算
-        if signal_dir == "BULLISH":
-            return SentimentContext(fear_greed_index=55.0, northbound_flow=30.0, advance_decline_ratio=0.55)
-        elif signal_dir == "BEARISH":
-            return SentimentContext(fear_greed_index=35.0, northbound_flow=-30.0, advance_decline_ratio=0.40)
-        return SentimentContext()
+        return self._sentiment_provider.get_sentiment(date_str, signal_dir)
+
+    def _compute_recent_extreme_builtin(self, instrument: str, date_str: str) -> float:
+        try:
+            from backtest.seed_data import SEED_510300
+            seed = SEED_510300
+        except ImportError:
+            return 0.0
+        if date_str not in seed:
+            return 0.0
+        dates_sorted = sorted(seed.keys())
+        idx = dates_sorted.index(date_str)
+        max_move = 0.0
+        for d in range(1, 6):
+            if idx - d >= 0:
+                prev_date = dates_sorted[idx - d]
+                curr_date = dates_sorted[idx - d + 1]
+                prev_close = seed[prev_date]["close"]
+                curr_close = seed[curr_date]["close"]
+                if prev_close > 0:
+                    chg = (curr_close - prev_close) / prev_close
+                    if abs(chg) > abs(max_move):
+                        max_move = chg
+        return max_move
+
+    def _compute_days_since_extreme_builtin(self, instrument: str, date_str: str, threshold: float = 0.04) -> int:
+        try:
+            from backtest.seed_data import SEED_510300
+            seed = SEED_510300
+        except ImportError:
+            return 0
+        if date_str not in seed:
+            return 0
+        dates_sorted = sorted(seed.keys())
+        idx = dates_sorted.index(date_str)
+        for d in range(1, min(21, idx + 1)):
+            prev_date = dates_sorted[idx - d]
+            curr_date = dates_sorted[idx - d + 1]
+            prev_close = seed[prev_date]["close"]
+            curr_close = seed[curr_date]["close"]
+            if prev_close > 0:
+                chg = abs((curr_close - prev_close) / prev_close)
+                if chg >= threshold:
+                    return d
+        return 99
 
     def _builtin_events(self) -> List[HistoricalEvent]:
         """内置的4个关键历史事件（不依赖种子数据文件）"""
@@ -318,6 +333,8 @@ class HistoricalCalibrator:
                     dominant_signal_type="macro",
                 ),
                 price=self._load_price_context("510300.SH", raw["date"]),
+                recent_extreme_move=self._compute_recent_extreme_builtin("510300.SH", raw["date"]),
+                days_since_extreme=self._compute_days_since_extreme_builtin("510300.SH", raw["date"]),
             )
             events.append(HistoricalEvent(
                 event_id=raw["event_id"],
@@ -332,12 +349,21 @@ class HistoricalCalibrator:
 
     # ── 校准评分 ─────────────────────────────────────────────
 
-    def calibrate(self, events: Optional[List[HistoricalEvent]] = None) -> CalibrationScore:
+    def calibrate(
+        self,
+        events: Optional[List[HistoricalEvent]] = None,
+        persist: bool = True,
+    ) -> CalibrationScore:
         """
         对历史事件运行模拟，计算多维度校准评分。
+
+        Args:
+            events: 历史事件列表（None 时从 event_catalog 加载）
+            persist: 是否持久化结果到 CalibrationStore
         """
         if events is None:
-            events = self.load_seed_events()
+            from .event_catalog import load_event_catalog
+            events = load_event_catalog(min_events=50)
         if not events:
             logger.warning("[Calibrator] 无历史事件可校准")
             return CalibrationScore()
@@ -347,6 +373,7 @@ class HistoricalCalibrator:
         prob_errors = []
         extreme_events = [e for e in events if e.actual_is_extreme]
         extreme_hits = 0
+        validation_cases = []
 
         for event in events:
             dist = self.network.run(event.market_input)
@@ -354,34 +381,32 @@ class HistoricalCalibrator:
             if hit:
                 direction_hits += 1
 
-            # 概率校准误差（预测多方概率 vs 实际方向）
             actual_bull = 1.0 if event.actual_direction == "BULLISH" else 0.0
             prob_error = abs(dist.bullish_prob - actual_bull)
             prob_errors.append(prob_error)
 
-            # 极值识别
             if event.actual_is_extreme:
                 sim_extreme = dist.intensity >= 7.0
                 if sim_extreme:
                     extreme_hits += 1
 
-            details.append({
-                "event_id": event.event_id,
-                "date": event.date,
-                "description": event.description[:50],
-                "actual": event.actual_direction,
-                "simulated": dist.direction,
-                "hit": hit,
-                "bullish_prob": dist.bullish_prob,
-                "actual_5d_return": event.actual_5d_return,
-                "prob_error": prob_error,
-                "intensity": dist.intensity,
-                "confidence": dist.confidence,
-            })
+            validation_cases.append(ValidationCase(
+                event_id=event.event_id,
+                date=event.date,
+                description=event.description[:50],
+                actual_direction=event.actual_direction,
+                simulated_direction=dist.direction,
+                direction_match=hit,
+                actual_5d_return=event.actual_5d_return,
+                simulated_bullish_prob=dist.bullish_prob,
+                prob_error=prob_error,
+                simulated_intensity=dist.intensity,
+                simulated_confidence=dist.confidence,
+            ))
             logger.info(
                 f"[Calibrator] {event.date} {event.description[:30]} | "
-                f"实际:{event.actual_direction} 模拟:{dist.direction} {'✓' if hit else '✗'} | "
-                f"多概率:{dist.bullish_prob:.0%}"
+                f"actual:{event.actual_direction} sim:{dist.direction} {'OK' if hit else 'MISS'} | "
+                f"bull_prob:{dist.bullish_prob:.0%}"
             )
 
         n = len(events)
@@ -389,9 +414,16 @@ class HistoricalCalibrator:
         avg_prob_err = sum(prob_errors) / len(prob_errors) if prob_errors else 0.5
         extreme_recall = extreme_hits / len(extreme_events) if extreme_events else 1.0
 
+        # 选择性准确率：仅计算系统给出方向判断（非NEUTRAL）时的命中率
+        directional_cases = [c for c in validation_cases if c.simulated_direction != "NEUTRAL"]
+        selective_n = len(directional_cases)
+        selective_hits = sum(1 for c in directional_cases if c.direction_match)
+        selective_accuracy = selective_hits / selective_n if selective_n > 0 else 0.0
+        skip_rate = sum(1 for c in validation_cases if c.simulated_direction == "NEUTRAL") / n if n > 0 else 0.0
+
         # 综合得分（0~100）
         dir_score = direction_accuracy * 100
-        prob_score = max(0, (1 - avg_prob_err / 0.5) * 100)   # 误差0→100分，误差0.5→0分
+        prob_score = max(0, (1 - avg_prob_err / 0.5) * 100)
         ext_score = extreme_recall * 100
 
         composite = (
@@ -409,15 +441,38 @@ class HistoricalCalibrator:
             extreme_recall=round(extreme_recall, 4),
             composite_score=round(composite, 2),
             pass_threshold=pass_threshold,
-            details=details,
+            selective_accuracy=round(selective_accuracy, 4),
+            selective_n=selective_n,
+            skip_rate=round(skip_rate, 4),
+            details=[c.model_dump() for c in validation_cases],
         )
 
         logger.info(
-            f"[Calibrator] 校准完成 | "
-            f"方向命中:{direction_accuracy:.0%} | "
-            f"概率误差:{avg_prob_err:.3f} | "
-            f"极值召回:{extreme_recall:.0%} | "
-            f"综合:{composite:.1f} | "
-            f"{'✅ 通过' if pass_threshold else '❌ 未通过'}"
+            f"[Calibrator] calibration done | "
+            f"direction_accuracy:{direction_accuracy:.0%} | "
+            f"prob_err:{avg_prob_err:.3f} | "
+            f"extreme_recall:{extreme_recall:.0%} | "
+            f"composite:{composite:.1f} | "
+            f"selective_acc:{selective_accuracy:.0%}({selective_n}/{n}) skip:{skip_rate:.0%} | "
+            f"{'PASS' if pass_threshold else 'FAIL'}"
         )
+
+        if persist:
+            import uuid as _uuid
+            run = CalibrationRun(
+                run_id=f"run_{_uuid.uuid4().hex[:8]}",
+                run_timestamp=datetime.now(),
+                market=self.market,
+                topology="sequential",
+                n_events=n,
+                score=score,
+                cases=validation_cases,
+            )
+            try:
+                from .calibration_store import CalibrationStore
+                store = CalibrationStore()
+                store.save_run(run)
+            except Exception as e:
+                logger.warning(f"[Calibrator] 持久化失败: {e}")
+
         return score

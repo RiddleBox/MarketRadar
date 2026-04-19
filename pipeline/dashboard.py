@@ -383,8 +383,8 @@ with st.sidebar:
 # 主页 Tabs
 # ─────────────────────────────────────────────────────────────
 
-tab_opp, tab_signals, tab_paper, tab_sentiment, tab_system = st.tabs([
-    "🎯 机会", "📶 信号", "📊 模拟盘", "🧠 情绪面", "⚙️ 系统"
+tab_opp, tab_signals, tab_paper, tab_sentiment, tab_system, tab_control = st.tabs([
+    "🎯 机会", "📶 信号", "📊 模拟盘", "🧠 情绪面", "⚙️ 系统", "🎛️ 工作流"
 ])
 
 
@@ -807,10 +807,8 @@ with tab_sentiment:
                     from m10_sentiment.sentiment_engine import SentimentEngine
                     from datetime import datetime
                     engine = SentimentEngine()
-                    sig = engine.run(
+                    sig = engine.run_and_inject(
                         batch_id=f"dash_{datetime.now().strftime('%H%M%S')}",
-                        save_snapshot=True,
-                        inject_m2=True,
                     )
                     st.success(f"恐贪指数: {sig.fear_greed_index:.1f} ({sig.sentiment_label}) — 已入库")
                     st.cache_data.clear()
@@ -904,7 +902,9 @@ with tab_sentiment:
         is_rising = trend.get("is_rising")
         slope = trend.get("slope", 0)
         if is_rising is not None:
-            st.caption(f"{'\u2191 情绪上升中' if is_rising else '\u2193 情绪下降中'}  (斜率{slope:+.2f})")
+            arrow_up = "\u2191"
+            arrow_down = "\u2193"
+            st.caption(f"{arrow_up} 情绪上升中" if is_rising else f"{arrow_down} 情绪下降中  (斜率{slope:+.2f})")
 
     st.divider()
 
@@ -1176,3 +1176,180 @@ python pipeline/ingest.py --dir data/incoming/
 python -m backtest.backtest_engine --help
 ```
 """)
+
+
+# ═══════════════════════════════════════════════════════════════
+# TAB 6: 工作流 + 确认 + 审计
+# ═══════════════════════════════════════════════════════════════
+
+with tab_control:
+    st.header("🎛️ 工作流控制中心")
+
+    # ── 当前阶段指示 ──────────────────────────────────────────
+    try:
+        from pipeline.workflows import WorkflowPhase, resolve_phase, get_phase_steps, run_workflow
+        current_phase = resolve_phase("A_SHARE")
+        phase_labels = {
+            WorkflowPhase.PRE_MARKET: ("🟡 盘前", "准备阶段，采集隔夜信号和情绪快照"),
+            WorkflowPhase.INTRADAY: ("🟢 盘中", "交易时段，实时监控和信号处理"),
+            WorkflowPhase.POST_MARKET: ("🔴 盘后", "复盘阶段，归因分析和风控检查"),
+            WorkflowPhase.CLOSED: ("⚫ 休市", "非交易时段"),
+        }
+        label, desc = phase_labels.get(current_phase, ("❓", "未知"))
+        col_ph1, col_ph2 = st.columns([1, 3])
+        with col_ph1:
+            st.metric("当前阶段", label)
+        with col_ph2:
+            st.info(desc)
+
+        # ── 工作流执行 ──────────────────────────────────────────
+        st.subheader("阶段工作流")
+        phase_names = {
+            WorkflowPhase.PRE_MARKET: "盘前工作流",
+            WorkflowPhase.INTRADAY: "盘中工作流",
+            WorkflowPhase.POST_MARKET: "盘后工作流",
+        }
+
+        steps = get_phase_steps(current_phase)
+        if steps:
+            step_cols = st.columns(min(len(steps), 4))
+            for i, step in enumerate(steps):
+                with step_cols[i % len(step_cols)]:
+                    st.markdown(f"**{step.step_id}** {step.name}")
+                    deps = ", ".join(step.depends_on) if step.depends_on else "无依赖"
+                    st.caption(f"依赖: {deps}")
+
+        wf_col1, wf_col2, wf_col3 = st.columns(3)
+        with wf_col1:
+            if st.button("▶ 执行盘前工作流", use_container_width=True):
+                with st.spinner("执行盘前工作流..."):
+                    result = run_workflow(WorkflowPhase.PRE_MARKET)
+                    st.success(f"完成 {result.steps_completed}/{result.steps_total} 步")
+        with wf_col2:
+            if st.button("▶ 执行盘中工作流", use_container_width=True):
+                with st.spinner("执行盘中工作流..."):
+                    result = run_workflow(WorkflowPhase.INTRADAY)
+                    st.success(f"完成 {result.steps_completed}/{result.steps_total} 步")
+        with wf_col3:
+            if st.button("▶ 执行盘后工作流", use_container_width=True):
+                with st.spinner("执行盘后工作流..."):
+                    result = run_workflow(WorkflowPhase.POST_MARKET)
+                    st.success(f"完成 {result.steps_completed}/{result.steps_total} 步")
+    except Exception as e:
+        st.warning(f"工作流模块加载失败: {e}")
+
+    st.divider()
+
+    # ── 确认中心 ──────────────────────────────────────────────
+    st.subheader("🔐 确认中心")
+    try:
+        from pipeline.confirmation_store import ConfirmationStore
+        from pipeline.confirmation import ConfirmationStatus
+
+        cfm_store = ConfirmationStore()
+        pending = cfm_store.get_pending()
+
+        if not pending:
+            st.success("无待确认请求")
+        else:
+            for req in pending:
+                risk_badge = {"low": "🟢", "medium": "🟡", "high": "🔴", "critical": "⛔"}.get(
+                    req.get("risk_level", "medium"), "🟡"
+                )
+                with st.expander(
+                    f'{risk_badge} {req["action_type"]} — {req["description"][:60]}',
+                    expanded=True,
+                ):
+                    st.write(f"**创建时间**: {req['created_at']}")
+                    if req.get("parameters_json"):
+                        try:
+                            import json
+                            params = json.loads(req["parameters_json"])
+                            st.json(params)
+                        except Exception:
+                            pass
+                    c1, c2 = st.columns(2)
+                    with c1:
+                        if st.button("✅ 批准", key=f"approve_{req['request_id']}"):
+                            cfm_store.approve(req["request_id"], reviewed_by="dashboard_user")
+                            from pipeline.audit import audit
+                            from pipeline.audit_log import ActionType, Actor, AuditResult
+                            audit(
+                                action_type=ActionType.CONFIRMATION_APPROVE,
+                                actor=Actor.USER,
+                                target_id=req["request_id"],
+                                description=f"批准: {req['action_type']}",
+                                result=AuditResult.SUCCESS,
+                            )
+                            st.success("已批准")
+                            st.rerun()
+                    with c2:
+                        if st.button("❌ 拒绝", key=f"reject_{req['request_id']}"):
+                            note = "dashboard拒绝"
+                            cfm_store.reject(req["request_id"], reviewed_by="dashboard_user", note=note)
+                            from pipeline.audit import audit
+                            from pipeline.audit_log import ActionType, Actor, AuditResult
+                            audit(
+                                action_type=ActionType.CONFIRMATION_REJECT,
+                                actor=Actor.USER,
+                                target_id=req["request_id"],
+                                description=f"拒绝: {req['action_type']}",
+                                result=AuditResult.SUCCESS,
+                            )
+                            st.warning("已拒绝")
+                            st.rerun()
+
+        history = cfm_store.list_history(limit=10)
+        if history:
+            with st.expander("最近确认历史"):
+                import pandas as pd
+                hist_df = pd.DataFrame(history)
+                display_cols = [c for c in ["created_at", "action_type", "status", "reviewed_by"] if c in hist_df.columns]
+                st.dataframe(hist_df[display_cols], use_container_width=True, hide_index=True)
+    except Exception as e:
+        st.warning(f"确认中心加载失败: {e}")
+
+    st.divider()
+
+    # ── 审计日志 ──────────────────────────────────────────────
+    st.subheader("📋 审计日志")
+    try:
+        from pipeline.audit_store import AuditStore
+        audit_store = AuditStore()
+
+        col_a1, col_a2 = st.columns([1, 3])
+        with col_a1:
+            audit_filter = st.selectbox(
+                "动作类型", ["全部"] + [t.value for t in ActionType],
+                key="audit_filter",
+            )
+        with col_a2:
+            audit_days = st.slider("查看天数", 1, 30, 7, key="audit_days")
+
+        from datetime import timedelta as _td
+        filter_type = None if audit_filter == "全部" else audit_filter
+        entries = audit_store.query(
+            action_type=filter_type,
+            start=datetime.now() - _td(days=audit_days),
+            limit=100,
+        )
+
+        if entries:
+            import pandas as pd
+            audit_df = pd.DataFrame(entries)
+            display_cols = [c for c in ["timestamp", "action_type", "actor", "description", "result"]
+                          if c in audit_df.columns]
+            st.dataframe(audit_df[display_cols], use_container_width=True, hide_index=True)
+
+            stats = audit_store.get_stats(days=audit_days)
+            col_s1, col_s2, col_s3 = st.columns(3)
+            with col_s1:
+                st.metric("总操作数", stats["total_entries"])
+            with col_s2:
+                st.metric("失败数", stats["failure_count"])
+            with col_s3:
+                st.metric("成功率", f'{(1 - stats["failure_count"]/max(stats["total_entries"],1)):.0%}')
+        else:
+            st.info("无审计记录")
+    except Exception as e:
+        st.warning(f"审计日志加载失败: {e}")
