@@ -486,6 +486,16 @@ class PositionSizing(BaseModel):
         ...,
         description="仓位大小的理由说明"
     )
+    suggested_allocation_pct: Optional[float] = Field(
+        default=None,
+        ge=0.0, le=1.0,
+        description="建议仓位占总资金比例 (0.05 = 5%)"
+    )
+    max_allocation_pct: Optional[float] = Field(
+        default=None,
+        ge=0.0, le=1.0,
+        description="最大仓位占比 (0.10 = 10%)"
+    )
 
 
 class ActionPhase(BaseModel):
@@ -540,6 +550,14 @@ class ActionPlan(BaseModel):
     instrument_type: InstrumentType = Field(
         ...,
         description="主要标的类型"
+    )
+    direction: Direction = Field(
+        ...,
+        description="交易方向，从 OpportunityObject.trade_direction 传入"
+    )
+    market: Market = Field(
+        default=Market.A_SHARE,
+        description="目标市场，从 OpportunityObject.target_markets 传入"
     )
 
     # 核心配置

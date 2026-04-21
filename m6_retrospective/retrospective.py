@@ -9,7 +9,7 @@ from __future__ import annotations
 import json
 import logging
 import uuid
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Optional, Dict
 
@@ -335,6 +335,7 @@ ID: {opp.opportunity_id}
         """当没有对应机会对象时，构造一个最简版本用于复盘"""
         from core.schemas import (
             PriorityLevel, Direction, Market, InstrumentType, TimeWindow,
+            OpportunityScore,
         )
         now = datetime.now()
         return OpportunityObject(
@@ -359,6 +360,12 @@ ID: {opp.opportunity_id}
             uncertainty_map=["市场不确定性"],
             risk_reward_profile="",
             next_validation_questions=["持仓结果如何？"],
+            opportunity_score=OpportunityScore(
+                catalyst_strength=1, timeliness=1, market_confirmation=1,
+                tradability=1, risk_clarity=1, consensus_gap=1,
+                signal_consistency=1, overall_score=1.0, confidence_score=0.1,
+                execution_readiness=0.1,
+            ),
             judgment_version="retrospective",
             created_at=pos.entry_time or now,
             batch_id=pos.plan_id,
@@ -392,12 +399,15 @@ ID: {opp.opportunity_id}
             lesson = report["analysis"].get("key_lesson", "")
             improvement = report["analysis"].get("system_improvement", "")
             if lesson:
-                kb.add_entry(
-                    category="retrospective_lessons",
-                    title=f"复盘教训: {report.get('opportunity_title', '')}",
+                kb.add_document(
                     content=f"结果: {report['outcome']} | 盈亏: {report.get('realized_pnl')}\n\n{lesson}\n\n改进建议: {improvement}",
-                    tags=["retrospective", report.get("outcome", "").lower()],
-                    source_ref=report["retro_id"],
+                    metadata={
+                        "title": f"复盘教训: {report.get('opportunity_title', '')}",
+                        "category": "retrospective_lessons",
+                        "content_type": "retrospective",
+                        "tags": ["retrospective", report.get("outcome", "").lower()],
+                        "source": report["retro_id"],
+                    },
                 )
         except Exception as e:
             logger.warning(f"[M6] 写入 M8 失败: {e}")

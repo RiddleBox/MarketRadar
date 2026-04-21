@@ -12,6 +12,7 @@ env/
 
 # 环境与密钥
 .env
+config/llm_config.local.yaml
 
 # 数据目录（不提交原始输入和持仓数据）
 data/incoming/

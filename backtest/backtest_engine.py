@@ -40,6 +40,9 @@ HORIZON_MAX_DAYS = {
 }
 
 
+from core.fee_model import FeeModel, DEFAULT_FEE_MODEL
+
+
 @dataclass
 class BacktestCase:
     """单个回测案例 — 一个机会 + 对应行动计划"""
@@ -88,6 +91,8 @@ class BacktestReport:
     take_profit_rate: float
     by_signal_type: dict = field(default_factory=dict)
     by_horizon: dict = field(default_factory=dict)
+    by_direction: dict = field(default_factory=dict)
+    fee_cost_pct: float = 0.0
     recommendations: List[str] = field(default_factory=list)
     cases: List[BacktestCase] = field(default_factory=list)
 
@@ -105,8 +110,13 @@ class BacktestEngine:
       report = engine.run(cases)
     """
 
-    def __init__(self, price_feed: Optional[HistoryPriceFeed] = None):
+    def __init__(
+        self,
+        price_feed: Optional[HistoryPriceFeed] = None,
+        fee_model: Optional[FeeModel] = None,
+    ):
         self.price_feed = price_feed or HistoryPriceFeed()
+        self.fee_model = fee_model or DEFAULT_FEE_MODEL
         BACKTEST_DIR.mkdir(parents=True, exist_ok=True)
 
     # ── 加载回测案例 ─────────────────────────────────────────
@@ -301,13 +311,14 @@ class BacktestEngine:
 
         case.entry_price = entry_price
 
-        # 计算止损/止盈价格
         if case.signal_direction == "BULLISH":
             sl_price = entry_price * (1 - case.stop_loss_pct)
             tp_price = entry_price * (1 + case.take_profit_pct) if case.take_profit_pct else None
         else:
             sl_price = entry_price * (1 + case.stop_loss_pct)
             tp_price = entry_price * (1 - case.take_profit_pct) if case.take_profit_pct else None
+
+        fee_cost = self.fee_model.round_trip_cost_pct()
 
         max_hold_days = HORIZON_MAX_DAYS.get(case.time_horizon, 30)
         max_fav = 0.0
@@ -348,16 +359,13 @@ class BacktestEngine:
                     case.status = "TAKE_PROFIT"
                     case.exit_price = tp_price
                     case.exit_date = cur
-                    case.realized_pnl_pct = case.take_profit_pct if case.signal_direction == "BULLISH" else case.take_profit_pct
+                    case.realized_pnl_pct = case.take_profit_pct - fee_cost if case.signal_direction == "BULLISH" else case.take_profit_pct - fee_cost
                     break
                 elif hit_sl:
                     case.status = "STOP_LOSS"
                     case.exit_price = sl_price
                     case.exit_date = cur
-                    if case.signal_direction == "BULLISH":
-                        case.realized_pnl_pct = -case.stop_loss_pct
-                    else:
-                        case.realized_pnl_pct = -case.stop_loss_pct
+                    case.realized_pnl_pct = -case.stop_loss_pct - fee_cost
                     break
 
                 # 超时平仓
@@ -367,9 +375,9 @@ class BacktestEngine:
                     case.exit_date = cur
                     if close > 0 and entry_price > 0:
                         if case.signal_direction == "BULLISH":
-                            case.realized_pnl_pct = (close - entry_price) / entry_price
+                            case.realized_pnl_pct = (close - entry_price) / entry_price - fee_cost
                         else:
-                            case.realized_pnl_pct = (entry_price - close) / entry_price
+                            case.realized_pnl_pct = (entry_price - close) / entry_price - fee_cost
                     break
 
             cur += timedelta(days=1)
@@ -435,17 +443,26 @@ class BacktestEngine:
 
         # 按信号类型分组
         by_type: Dict[str, list] = defaultdict(list)
+        by_type_cases: Dict[str, list] = defaultdict(list)
         for c in completed:
             if c.realized_pnl_pct is not None:
                 by_type[c.signal_type].append(c.realized_pnl_pct)
+                by_type_cases[c.signal_type].append(c)
 
         by_type_stats = {}
         for k, vals in by_type.items():
             ws = [v for v in vals if v > 0]
+            ls = [v for v in vals if v <= 0]
+            pf_k = sum(ws) / abs(sum(ls)) if ls and sum(ls) != 0 else float("inf")
+            avg_hold_k = sum(c.days_held for c in by_type_cases[k]) / len(by_type_cases[k])
             by_type_stats[k] = {
                 "count": len(vals),
                 "win_rate": round(len(ws) / len(vals) * 100, 1) if vals else 0,
                 "avg_pnl_pct": round(sum(vals) / len(vals) * 100, 2) if vals else 0,
+                "profit_factor": round(pf_k, 2) if pf_k != float("inf") else 999.0,
+                "avg_holding_days": round(avg_hold_k, 1),
+                "best": round(max(vals) * 100, 2) if vals else 0,
+                "worst": round(min(vals) * 100, 2) if vals else 0,
             }
 
         # 按 time_horizon 分组
@@ -458,6 +475,21 @@ class BacktestEngine:
         for k, vals in by_horizon.items():
             ws = [v for v in vals if v > 0]
             by_horizon_stats[k] = {
+                "count": len(vals),
+                "win_rate": round(len(ws) / len(vals) * 100, 1) if vals else 0,
+                "avg_pnl_pct": round(sum(vals) / len(vals) * 100, 2) if vals else 0,
+            }
+
+        # 按方向分组
+        by_dir: Dict[str, list] = defaultdict(list)
+        for c in completed:
+            if c.realized_pnl_pct is not None:
+                by_dir[c.signal_direction].append(c.realized_pnl_pct)
+
+        by_dir_stats = {}
+        for k, vals in by_dir.items():
+            ws = [v for v in vals if v > 0]
+            by_dir_stats[k] = {
                 "count": len(vals),
                 "win_rate": round(len(ws) / len(vals) * 100, 1) if vals else 0,
                 "avg_pnl_pct": round(sum(vals) / len(vals) * 100, 2) if vals else 0,
@@ -481,6 +513,8 @@ class BacktestEngine:
             take_profit_rate=round(tp_rate * 100, 1),
             by_signal_type=by_type_stats,
             by_horizon=by_horizon_stats,
+            by_direction=by_dir_stats,
+            fee_cost_pct=round(self.fee_model.round_trip_cost_pct() * 100, 4),
             cases=completed,
         )
 

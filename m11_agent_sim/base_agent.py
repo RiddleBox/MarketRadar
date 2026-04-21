@@ -88,7 +88,14 @@ class BaseMarketAgent(ABC):
         """LLM 分析（默认实现，子类可 override _build_prompt 定制）"""
         prompt = self._build_prompt(market_input, upstream_context)
         system = self._build_system_prompt()
-        response = self.llm_client.chat(prompt=prompt, system=system)
+
+        # 构造 messages 格式
+        messages = [
+            {"role": "system", "content": system},
+            {"role": "user", "content": prompt}
+        ]
+
+        response = self.llm_client.chat_completion(messages=messages, module_name="m11_agent_sim")
         return self._parse_llm_response(response, market_input)
 
     @abstractmethod

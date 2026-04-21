@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m m10_sentiment.cli --help)",
+      "Bash(python -c \"from m11_agent_sim.event_catalog import ANNOTATED_EVENTS; dates = [e['date'] for e in ANNOTATED_EVENTS]; print\\(f'标注事件时间范围: {min\\(dates\\)} 到 {max\\(dates\\)}'\\); print\\(f'共 {len\\(dates\\)} 个事件'\\)\")"
+    ]
+  }
+}

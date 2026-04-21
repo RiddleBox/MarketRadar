@@ -248,18 +248,33 @@ class PositionManager:
         )
         return pos
 
-    def update_stop_loss(self, position_id: str, new_stop: float, reason: str = "") -> Position:
-        """更新止损价（移动止损）"""
+    def update_stop_loss(
+        self,
+        position_id: str,
+        new_stop: float,
+        reason: str = "",
+        new_plan: Optional[object] = None,
+    ) -> Position:
+        """更新止损价（移动止损）。
+
+        根据 M5 PRINCIPLES.md：不修改 M4 设定的止损位，除非有新的 ActionPlan 覆盖。
+        调用此方法时必须提供新的 ActionPlan 作为依据，否则记录 WARNING 日志。
+        """
+        if new_plan is None:
+            logger.warning(
+                f"[M5] 止损更新未提供新 ActionPlan | id={position_id} "
+                f"{reason} — 违反 PRINCIPLES: 不修改 M4 设定的止损位"
+            )
         pos = self._get_open(position_id)
         old_stop = pos.stop_loss_price
         pos.stop_loss_price = new_stop
         pos.updates.append(PositionUpdate(
             position_id=position_id,
-            current_price=new_stop,  # 记录止损更新时的参考价
+            current_price=new_stop,
             unrealized_pnl=0.0,
             unrealized_pnl_pct=0.0,
             stop_loss_price=new_stop,
-            notes=f"止损更新 {old_stop:.4f} → {new_stop:.4f} | {reason}",
+            notes=f"止损更新 {old_stop:.4f} → {new_stop:.4f} | {reason} | plan={'yes' if new_plan else 'no'}",
         ))
         self._save()
         logger.info(f"[M5] 止损更新 | id={position_id} {old_stop:.4f} → {new_stop:.4f}")

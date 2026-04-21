@@ -1,14 +1,15 @@
 # PROJECT_CONTEXT.md — MarketRadar 开工必读
 
 > **文档类型**：项目状态总览 + 开工上下文
-> **最后更新**：2026-04-13（初始版本）
-> **当前阶段**：项目骨架建立，Phase 1 开发中
+> **最后更新**：2026-04-18
+> **当前阶段**：阶段 C（工具化）完成
+> **迭代计划**：[MarketRadar_Iteration_Plan_v2.md](docs/MarketRadar_Iteration_Plan_v2.md)
 
 ---
 
 ## 一句话当前状态
 
-> 项目骨架已建立（所有模块目录 + PRINCIPLES.md + 核心代码框架），尚未接入真实 LLM API 进行端到端验证。
+> Iteration 1~9 全部完成；253+ tests passed；M10 准入主链，M11 不准入；盘前/盘中/盘后工作流 + 人工确认 + 审计日志 + Dashboard 6 tab 已上线。项目从"研究原型"升级为"交易研究助手"。
 
 ---
 
@@ -16,18 +17,38 @@
 
 | 模块 | 目录 | 状态 | 说明 |
 |------|------|------|------|
-| M1 信号解码 | `m1_decoder/` | 🟡 代码框架完成 | decoder.py + prompt_templates.py 已写，待真实 LLM 验证 |
-| M2 信号存储 | `m2_storage/` | 🟡 代码框架完成 | SQLite 存储，待集成测试 |
-| M3 机会判断 | `m3_judgment/` | 🟡 代码框架完成 | Step A/B 框架，待真实 LLM 验证 |
-| M4 行动设计 | `m4_action/` | 🟡 代码框架完成 | 含止损/止盈/仓位逻辑，待验证 |
-| M5 持仓管理 | `m5_position/` | 🟡 代码框架完成 | 持久化 + 止损检查，待集成测试 |
-| M6 复盘归因 | `m6_retrospective/` | 🟡 代码框架完成 | LLM 驱动归因，待验证 |
-| M7 回测引擎 | `m7_backtester/` | 🟡 代码框架完成 | 前向隔离逻辑，待接入真实数据 |
-| M8 知识库 | `m8_knowledge/` | 🟡 代码框架完成 | JSON 存储，待填充初始知识文档 |
-| Pipeline | `pipeline/` | 🟡 CLI 已写 | run_pipeline.py + run_backtest.py + dashboard.py |
-| 测试 | `tests/` | 🟡 框架完成 | test_schemas.py + test_m1.py，待 LLM mock 验证 |
+| M0 收集器 | `m0_collector/` | ✅ 代码完成 | 4 providers + dedup + normalizer + CLI |
+| M1 信号解码 | `m1_decoder/` | ✅ 代码完成 | LLM 解码 + retry，已验证 |
+| M2 信号存储 | `m2_storage/` | ✅ 代码完成 | SQLite 存储，Phase 2 向量检索待做 |
+| M3 机会判断 | `m3_judgment/` | ✅ 代码完成，评分校准已实现 | Step A/B + 评分卡 + _calibrate_priority + _validate_invalidation_conditions |
+| M4 行动设计 | `m4_action/` | ✅ 代码完成，参数化仓位已实现 | 策略接口 + Kelly/RiskBudget仓位 + 品类模板差异化 |
+| M5 持仓管理 | `m5_position/` | ✅ 代码完成，已联调 | M4→M5 桥接完成，position_bridge 可开仓 |
+| M6 复盘归因 | `m6_retrospective/` | ✅ 代码完成，已联调 | M6→M8 写入修复，全闭环 M1→M6 验证通过 |
+| M7 回测引擎 | `m7_backtester/` | ✅ 已增强 | FeeModel+OHLC+丰富统计，csv_cache 已清理 |
+| M7 调度器 | `m7_scheduler/` | ✅ 代码完成 | 5 任务调度 + 状态持久化 |
+| M8 知识库 | `m8_knowledge/` | ✅ 代码完成（Phase 1） | JSON + keyword search，Phase 2 向量待做 |
+| M10 情绪感知 | `m10_sentiment/` | ✅ 代码完成 | FG 指数 + SQLite 历史，独立采集→注入 M2 |
+| M11 Agent 模拟 | `m11_agent_sim/` | ✅ 代码完成（Phase 1） | 5 agents 串行拓扑，图谱拓扑骨架 |
+| Pipeline | `pipeline/` | ✅ 代码完成 | CLI + 回测 + Dashboard（6 tabs） |
+| 测试 | `tests/` | ✅ 核心测试通过 | 253+ tests passed, 1 known failure (m3_parse_repair) |
 
-**状态图例**：⏳ 待开始 | 🟡 进行中 | ✅ 完成 | ❌ 有问题
+**状态图例**：⏳ 待开始 | 🟡 进行中 | ⚠️ 有风险 | ✅ 完成 | ❌ 有问题
+
+---
+
+## 模块分层定位
+
+```
+主生产判断链：  M1 → M2 → M3 → M4
+输入前端：     M0
+闭环后段：     M5 / M6
+支撑层：       M8 / M9
+并行输入层：   M10（独立采集→注入M2→M3按标准signal消费）
+验证链：       M11 / backtest / ablation
+编排层：       M7 Scheduler
+```
+
+**硬约束**：验证链有效 ≠ 应进入主链；M10/M11 不在未充分验证前升格为主链必经节点。
 
 ---
 
@@ -61,6 +82,7 @@ MarketRadar 试图解决这四个问题：
 
 | 模块 | PRINCIPLES.md | 核心代码 |
 |------|--------------|---------|
+| M0 | [m0_collector/PRINCIPLES.md](m0_collector/PRINCIPLES.md) | [cli.py](m0_collector/cli.py) |
 | M1 | [m1_decoder/PRINCIPLES.md](m1_decoder/PRINCIPLES.md) | [decoder.py](m1_decoder/decoder.py) |
 | M2 | [m2_storage/PRINCIPLES.md](m2_storage/PRINCIPLES.md) | [signal_store.py](m2_storage/signal_store.py) |
 | M3 | [m3_judgment/PRINCIPLES.md](m3_judgment/PRINCIPLES.md) | [judgment_engine.py](m3_judgment/judgment_engine.py) |
@@ -72,15 +94,16 @@ MarketRadar 试图解决这四个问题：
 
 ---
 
-## 当前最高优先级（Phase 1）
+## 当前最高优先级（后续迭代）
 
 | # | 任务 | 状态 |
 |---|------|------|
-| P0-1 | 配置 .env，验证 LLM API 连通性 | ⏳ |
-| P0-2 | 运行 `pytest tests/` 确认 Schema 和 Mock 测试通过 | ⏳ |
-| P0-3 | 用一段真实文本跑 M1，验证信号解码质量 | ⏳ |
-| P0-4 | M1→M2→M3 端到端联调，验证机会判断输出 | ⏳ |
-| P0-5 | M4 行动设计联调，验证止损/止盈生成质量 | ⏳ |
+| 9.1 | 盘前/盘中/盘后工作流 | ✅ |
+| 9.2 | 所有关键动作保留人工确认点 | ✅ |
+| 9.3 | Dashboard 完善 | ✅ |
+| 9.4 | 审计日志 | ✅ |
+
+详细计划见：[docs/MarketRadar_Iteration_Plan_v2.md](docs/MarketRadar_Iteration_Plan_v2.md)
 
 ---
 
@@ -89,10 +112,19 @@ MarketRadar 试图解决这四个问题：
 - LLM 配置：[config/llm_config.yaml](config/llm_config.yaml)
 - 信号分类：[config/signal_taxonomy.yaml](config/signal_taxonomy.yaml)
 - 市场配置：[config/market_config.yaml](config/market_config.yaml)
+- 风险参数：[config/risk_config.yaml](config/risk_config.yaml)
+- 执行参数：[config/execution_config.yaml](config/execution_config.yaml)
+- 机会规则：[config/opportunity_rules.yaml](config/opportunity_rules.yaml)
 - 环境变量：`.env`（从 `.env.example` 复制后填写）
 
 ---
 
-## 架构设计文档
+## 关键文档索引
 
-详见工作区：`C:\Users\Administrator\.openclaw\workspace\MarketRadar_Architecture_v1.md`
+| 文档 | 说明 |
+|------|------|
+| [docs/MarketRadar_Iteration_Plan_v2.md](docs/MarketRadar_Iteration_Plan_v2.md) | 当前迭代计划（v2，2026-04-17） |
+| [docs/MarketRadar_Roadmap_v1.md](docs/MarketRadar_Roadmap_v1.md) | 整体演进路线图 |
+| [docs/MarketRadar_Execution_Plan_v1.md](docs/MarketRadar_Execution_Plan_v1.md) | 旧执行计划（已被 v2 替代） |
+| [docs/anchors/2026-04-14-architecture-plan-and-change-disposition-anchor.md](docs/anchors/2026-04-14-architecture-plan-and-change-disposition-anchor.md) | 架构校准锚点（仍然有效） |
+| [MEMORY.md](MEMORY.md) | 项目记忆 & 环境注意事项 |

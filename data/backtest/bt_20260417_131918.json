@@ -1,0 +1,35 @@
+{
+  "batch_id": "bt_20260417_131918",
+  "start_date": "2024-09-24",
+  "end_date": "2024-10-08",
+  "total_cases": 2,
+  "completed": 2,
+  "skipped": 0,
+  "win_rate": 100.0,
+  "avg_pnl_pct": 9.0,
+  "profit_factor": 999.0,
+  "avg_holding_days": 2.0,
+  "timeout_rate": 0.0,
+  "stop_loss_rate": 0.0,
+  "take_profit_rate": 100.0,
+  "by_signal_type": {
+    "macro": {
+      "count": 1,
+      "win_rate": 100.0,
+      "avg_pnl_pct": 10.0
+    },
+    "technical": {
+      "count": 1,
+      "win_rate": 100.0,
+      "avg_pnl_pct": 8.0
+    }
+  },
+  "by_horizon": {
+    "short": {
+      "count": 2,
+      "win_rate": 100.0,
+      "avg_pnl_pct": 9.0
+    }
+  },
+  "recommendations": []
+}

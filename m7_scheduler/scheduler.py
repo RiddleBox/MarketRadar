@@ -539,7 +539,7 @@ class Scheduler:
             from m10_sentiment.sentiment_engine import SentimentEngine
             batch_id = f"sched_sent_{run_id or datetime.now().strftime('%Y%m%d_%H%M%S')}"
             engine = SentimentEngine()
-            signal = engine.run(batch_id=batch_id, save_snapshot=True, inject_m2=True)
+            signal = engine.run_and_inject(batch_id=batch_id)
             result = {
                 "fear_greed": round(signal.fear_greed_index, 1),
                 "label": signal.sentiment_label,

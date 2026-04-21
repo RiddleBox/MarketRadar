@@ -113,6 +113,17 @@ class GongfengOAuthClient:
 
 
 # ───────────────────────────────────────────────────────────────────
+def _deep_merge(base: dict, override: dict) -> dict:
+    """递归合并两个字典，override 中的值覆盖 base 中的同名键。"""
+    result = dict(base)
+    for key, value in override.items():
+        if key in result and isinstance(result[key], dict) and isinstance(value, dict):
+            result[key] = _deep_merge(result[key], value)
+        else:
+            result[key] = value
+    return result
+
+
 def _resolve_env_vars(value: Any) -> Any:
     """
     递归替换字符串中的环境变量占位符。
@@ -124,8 +135,8 @@ def _resolve_env_vars(value: Any) -> Any:
             var_name = match.group(1)
             env_val = os.environ.get(var_name)
             if env_val is None:
-                logger.warning(f"Environment variable '{var_name}' not set")
-                return match.group(0)  # 保留原始占位符，不报错
+                logger.debug(f"Environment variable '{var_name}' not set (provider not active)")
+                return match.group(0)
             return env_val
         return pattern.sub(replacer, value)
     elif isinstance(value, dict):
@@ -166,7 +177,12 @@ class LLMClient:
         logger.info(f"LLMClient initialized with default provider: {self._config['default_provider']}")
 
     def _load_config(self, config_path: Optional[str]) -> dict:
-        """加载并解析 LLM 配置文件"""
+        """加载并解析 LLM 配置文件
+        
+        支持本地覆盖：如果 config/llm_config.local.yaml 存在，
+        会与 llm_config.yaml 合并（local 覆盖 default）。
+        llm_config.local.yaml 应加入 .gitignore，不提交密钥。
+        """
         if config_path is None:
             # 自动查找配置文件
             candidates = [
@@ -186,6 +202,15 @@ class LLMClient:
 
         with open(config_path, "r", encoding="utf-8") as f:
             raw_config = yaml.safe_load(f)
+
+        # 检查是否有 local 覆盖文件
+        base_path = Path(config_path)
+        local_path = base_path.parent / "llm_config.local.yaml"
+        if local_path.exists():
+            with open(str(local_path), "r", encoding="utf-8") as f:
+                local_config = yaml.safe_load(f) or {}
+            raw_config = _deep_merge(raw_config, local_config)
+            logger.info(f"[LLMClient] 已加载本地覆盖配置: {local_path}")
 
         # 解析环境变量
         return _resolve_env_vars(raw_config)
@@ -365,7 +390,10 @@ class LLMClient:
             picked = None if _tried_fallback else self._pick_fallback_provider(fallback_names)
             if picked and ("429" in str(last_exception) or "Too Many Requests" in str(last_exception) or "RATE_LIMIT_429" in str(last_exception)):
                 fallback, _fb_cfg = picked
-                logger.warning(f"[LLMClient] 工蜂AI 遇到限流，自动降级到 fallback_provider={fallback}")
+                logger.warning(
+                    f"[LLMClient] Provider '{provider_name}' rate-limited, "
+                    f"switching to fallback_provider='{fallback}' for module='{module_name}'"
+                )
                 original_default = self._config.get("default_provider")
                 try:
                     self._config["default_provider"] = fallback

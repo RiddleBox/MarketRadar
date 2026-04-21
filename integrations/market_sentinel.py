@@ -118,7 +118,7 @@ class SentimentSignalData:
             "logic_frame": {
                 "what_changed": f"情绪面: {self.sentiment_label}",
                 "change_direction": self.signal_direction,
-                "affects": self.hot_sectors or self.affected_instruments,
+                "affects": self.hot_sectors or self.affected_instruments or ["市场整体"],
             },
         }
 
@@ -246,7 +246,7 @@ class MockSentinelAdapter(MarketSentinelAdapter):
             timeliness_score=9.5,
             event_time=reading.timestamp,
             batch_id=batch_id,
-            time_horizon="short",
+            time_horizon="SHORT",
         ))
 
         # 信号2：北向资金（A股专有）
@@ -276,7 +276,7 @@ class MockSentinelAdapter(MarketSentinelAdapter):
                 timeliness_score=9.0,
                 event_time=reading.timestamp,
                 batch_id=batch_id,
-                time_horizon="short",
+                time_horizon="SHORT",
             ))
 
         # 信号3：板块轮动
@@ -298,7 +298,7 @@ class MockSentinelAdapter(MarketSentinelAdapter):
                 timeliness_score=8.5,
                 event_time=reading.timestamp,
                 batch_id=batch_id,
-                time_horizon="short",
+                time_horizon="SHORT",
             ))
 
         return signals

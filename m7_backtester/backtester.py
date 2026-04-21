@@ -63,6 +63,7 @@ class BacktestReport:
     by_market: Dict[str, dict] = field(default_factory=dict)
     by_signal_type: Dict[str, dict] = field(default_factory=dict)
     by_priority: Dict[str, dict] = field(default_factory=dict)
+    by_direction: Dict[str, dict] = field(default_factory=dict)
     warnings: List[str] = field(default_factory=list)
 
     def summary(self) -> str:
@@ -166,7 +167,7 @@ class Backtester:
                 warnings.append(f"品种 {plan.instrument} 在 {data_start.date()}~{end.date()} 无行情数据")
                 continue
 
-            trade = self._simulate_trade(plan, opp, ohlcv)
+            trade = self._simulate_trade(plan, opp, ohlcv, signals)
             if trade:
                 trades.append(trade)
 
@@ -177,6 +178,7 @@ class Backtester:
         plan: ActionPlan,
         opp: OpportunityObject,
         ohlcv: pd.DataFrame,
+        signals: List[MarketSignal] = None,
     ) -> Optional[BacktestTrade]:
         """模拟单笔交易执行"""
         if ohlcv.empty:
@@ -267,7 +269,7 @@ class Backtester:
             exit_price=exit_price,
             exit_reason=exit_reason,
             pnl_pct=pnl_pct,
-            signal_types=list({s.signal_type.value for s in []}),  # 从 related_signals 填充
+            signal_types=list({s.signal_type.value for s in signals}) if signals else [],
             priority_level=opp.priority_level.value,
             market="/".join([m.value for m in opp.target_markets]),
         )
@@ -311,6 +313,8 @@ class Backtester:
         # 分层统计
         by_market = self._group_stats(trades, key="market")
         by_priority = self._group_stats(trades, key="priority_level")
+        by_signal_type = self._group_stats(trades, key="signal_types")
+        by_direction = self._group_stats(trades, key="direction")
 
         return BacktestReport(
             start=start, end=end,
@@ -326,6 +330,8 @@ class Backtester:
             trades=trades,
             by_market=by_market,
             by_priority=by_priority,
+            by_signal_type=by_signal_type,
+            by_direction=by_direction,
             warnings=warnings,
         )
 

@@ -202,6 +202,128 @@ class JudgmentEngine:
             return None
 
     # ------------------------------------------------------------------
+    # 评分→优先级映射
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def _extract_sentiment_context(signals: List[MarketSignal]) -> Optional[dict]:
+        """从信号列表中提取情绪信号上下文。
+
+        Returns:
+            {"fear_greed_index": float, "sentiment_label": str, "signal_ids": [str]}
+            或 None（无情绪信号时）
+        """
+        sentiment_signals = [s for s in signals if s.signal_type.value == "sentiment"]
+        if not sentiment_signals:
+            return None
+
+        fg_indices = []
+        label = "neutral"
+        sig_ids = []
+        for s in sentiment_signals:
+            sig_ids.append(s.signal_id)
+            desc = s.description or ""
+            if "恐贪指数" in desc:
+                import re
+                m = re.search(r"恐贪指数\D*(\d+\.?\d*)", desc)
+                if m:
+                    fg_indices.append(float(m.group(1)))
+            label_text = s.signal_label or ""
+            for candidate in ["极度贪婪", "贪婪", "极度恐惧", "恐惧", "中性"]:
+                if candidate in label_text:
+                    label = candidate
+                    break
+
+        fg = fg_indices[0] if fg_indices else 50.0
+        return {
+            "fear_greed_index": fg,
+            "sentiment_label": label,
+            "signal_ids": sig_ids,
+        }
+
+    @staticmethod
+    def _calibrate_priority(llm_priority: str, score: OpportunityScore, sentiment_context: Optional[dict] = None) -> str:
+        """基于评分校准 LLM 给出的优先级。
+
+        规则：
+          - overall >= 8 且 confidence >= 0.8 → position 或 urgent
+          - overall >= 6 且 execution_readiness >= 0.6 → research 或更高
+          - overall < 4 → watch（不论 LLM 给什么）
+          - 其余保持 LLM 输出
+        """
+        try:
+            p = PriorityLevel(llm_priority)
+        except ValueError:
+            p = PriorityLevel.WATCH
+
+        if score.overall_score >= 8 and score.confidence_score >= 0.8:
+            if score.timeliness >= 9:
+                return PriorityLevel.URGENT.value
+            return PriorityLevel.POSITION.value
+
+        if score.overall_score >= 6 and score.execution_readiness >= 0.6:
+            if p in (PriorityLevel.POSITION, PriorityLevel.URGENT):
+                return p.value
+            return PriorityLevel.RESEARCH.value
+
+        if score.overall_score < 4:
+            return PriorityLevel.WATCH.value
+
+        if sentiment_context:
+            fg = sentiment_context["fear_greed_index"]
+            if fg <= 20 and score.overall_score >= 5:
+                if p.value in ("watch", "research"):
+                    logger.info(
+                        f"[M3] 情绪校准: 极度恐惧(FG={fg:.0f}) + 利好信号 → 优先级提升 "
+                        f"{p.value} → position"
+                    )
+                    return PriorityLevel.POSITION.value
+            elif fg >= 80 and p.value in ("position", "urgent"):
+                logger.info(
+                    f"[M3] 情绪校准: 极度贪婪(FG={fg:.0f}) + 利好信号 → 优先级降低 "
+                    f"{p.value} → research（短期过热风险）"
+                )
+                return PriorityLevel.RESEARCH.value
+
+        return p.value
+
+    @staticmethod
+    def _validate_invalidation_conditions(
+        invalidation_conditions: List[str],
+        kill_switch_signals: List[str],
+        title: str,
+    ) -> tuple:
+        """结构化验证失效条件与 kill_switch 信号。
+
+        规则：
+          1. is_opportunity=true 时，invalidation_conditions 不能为空
+          2. 每条条件长度 >= 4 字符（过滤"下跌"等过于模糊的表述）
+          3. kill_switch_signals 不能与 invalidation_conditions 完全重复
+          4. 模糊条件追加日志提醒但不删除（LLM 可能给出简短但有效的条件）
+        """
+        if not invalidation_conditions:
+            invalidation_conditions = ["核心假设被证伪"]
+            logger.info(f"[M3] invalidation_conditions 为空，已补充默认条件 | title={title}")
+
+        vague_conditions = [c for c in invalidation_conditions if len(c) < 4]
+        if vague_conditions:
+            logger.warning(
+                f"[M3] 存在过于模糊的 invalidation_conditions: {vague_conditions} | title={title}"
+            )
+
+        if not kill_switch_signals:
+            kill_switch_signals = ["核心假设被证伪", "市场出现显著反向宏观冲击"]
+            logger.info(f"[M3] kill_switch_signals 为空，已补充默认信号 | title={title}")
+
+        overlap = set(invalidation_conditions) & set(kill_switch_signals)
+        if overlap and len(kill_switch_signals) > 1:
+            kill_switch_signals = [s for s in kill_switch_signals if s not in overlap]
+            kill_switch_signals.append(list(overlap)[0])
+            logger.info(f"[M3] kill_switch_signals 与 invalidation_conditions 去重 | title={title}")
+
+        return invalidation_conditions, kill_switch_signals
+
+    # ------------------------------------------------------------------
     # 工具方法
     # ------------------------------------------------------------------
 
@@ -319,6 +441,10 @@ class JudgmentEngine:
         must_watch_indicators = data.get("must_watch_indicators") or ["成交量是否放大", "风险偏好是否持续修复"]
         kill_switch_signals = data.get("kill_switch_signals") or ["核心假设被证伪", "市场出现显著反向宏观冲击"]
 
+        invalidation_conditions, kill_switch_signals = self._validate_invalidation_conditions(
+            invalidation_conditions, kill_switch_signals, data.get("opportunity_title", "")
+        )
+
         # 评分卡属于 M3 的解释层输出：用于解释判断、供后续模块消费，
         # 不作为独立的二次裁决器去反向覆盖 is_opportunity / priority_level。
         score_data = data.get("opportunity_score") or {}
@@ -348,6 +474,16 @@ class JudgmentEngine:
             execution_readiness=execution_readiness,
         )
 
+        # 评分→优先级映射：当 LLM 给出的 priority 与评分不匹配时校准
+        sentiment_context = self._extract_sentiment_context(signals)
+        calibrated_priority = self._calibrate_priority(clean_priority, opportunity_score, sentiment_context)
+        if calibrated_priority != clean_priority:
+            logger.info(
+                f"[M3] priority 校准: {clean_priority} → {calibrated_priority} "
+                f"(overall={overall_score}, confidence={confidence_score})"
+            )
+            clean_priority = calibrated_priority
+
         return OpportunityObject(
             opportunity_id=f"opp_{uuid.uuid4().hex[:8]}",
             opportunity_title=data.get("opportunity_title", "未命名机会"),
@@ -363,7 +499,7 @@ class JudgmentEngine:
             counter_evidence=data.get("counter_evidence", []),
             key_assumptions=key_assumptions,
             uncertainty_map=uncertainty_map,
-            priority_level=clean_priority,
+            priority_level=calibrated_priority,
             opportunity_score=opportunity_score,
             risk_reward_profile=data.get("risk_reward_profile", "待进一步量化"),
             next_validation_questions=next_validation_questions,
@@ -394,6 +530,9 @@ class JudgmentEngine:
         for s in signals:
             markets = "/".join([m.value for m in s.affected_markets])
             instruments = ", ".join(s.affected_instruments) if s.affected_instruments else "未指定"
+            extra = ""
+            if s.signal_type.value == "sentiment":
+                extra = "\n⚠️ 【情绪信号】此信号来自 M10 情绪面系统，恐贪指数反映市场整体情绪状态"
             lines.append(
                 f"""---
 信号ID: {s.signal_id}
@@ -404,7 +543,7 @@ class JudgmentEngine:
 关联品种: {instruments}
 逻辑框架: {s.logic_frame.what_changed} → {s.logic_frame.change_direction} → 影响 {', '.join(s.logic_frame.affects)}
 评分: 强度={s.intensity_score}/10 置信={s.confidence_score}/10 时效={s.timeliness_score}/10
-事件时间: {s.event_time.isoformat() if s.event_time else '未知'}"""
+事件时间: {s.event_time.isoformat() if s.event_time else '未知'}{extra}"""
             )
         return "\n".join(lines)
 

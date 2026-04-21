@@ -1,0 +1,97 @@
+[
+  {
+    "opportunity_id": "opp_f3dd919d",
+    "opportunity_title": "双降催化成长板块",
+    "opportunity_thesis": "央行同时降准降息，释放明确的宽松信号，直接利好市场流动性和风险偏好。情绪面显示资金正从传统板块轮动至成长板块（新能源/半导体），与政策意图形成共振。当前时点政策刚落地，市场反应可能尚未充分，存在预期差。",
+    "target_markets": [
+      "A_SHARE"
+    ],
+    "target_instruments": [
+      "创业板ETF",
+      "科创50ETF",
+      "新能源车ETF",
+      "半导体ETF"
+    ],
+    "trade_direction": "BULLISH",
+    "instrument_types": [
+      "ETF"
+    ],
+    "opportunity_window": {
+      "start": "2026-04-18T11:23:07",
+      "end": "2026-05-18T11:23:07",
+      "confidence_level": 0.75
+    },
+    "why_now": "央行于4月18日宣布双降（降准+降息），政策已于4月20日生效，是明确的短期催化剂。情绪面信号在政策宣布前后持续显示资金向成长板块轮动，表明市场情绪与政策方向开始同步。",
+    "related_signals": [
+      "sig_bb796ffb26fa",
+      "sig_a4d76d494a52",
+      "sent_b3cc88f9",
+      "sent_94185672",
+      "sent_c5cfe485",
+      "sent_b0cb4f31",
+      "sent_05da3317",
+      "sent_0fc7fb49"
+    ],
+    "supporting_evidence": [
+      "央行宣布降准0.5个百分点，释放长期流动性",
+      "央行下调7天逆回购利率10bp，引导市场利率下行",
+      "情绪面信号持续显示资金从消费/地产流向新能源/半导体"
+    ],
+    "counter_evidence": [
+      "信号中未包含恐贪指数具体数值，无法判断市场整体情绪是否过度悲观或已修复",
+      "降准降息已被市场部分预期，利好落地后可能引发获利了结"
+    ],
+    "key_assumptions": [
+      "假设央行双降能有效传导至实体经济与金融市场",
+      "假设资金轮动信号是可持续的趋势而非短期波动",
+      "假设外部环境（如美联储政策、地缘政治）不出现重大恶化"
+    ],
+    "uncertainty_map": [
+      "政策传导效果与市场反应强度（影响程度：高）",
+      "成长板块（新能源/半导体）基本面能否支撑估值（影响程度：中）",
+      "市场整体风险偏好修复的持续性（影响程度：中）"
+    ],
+    "priority_level": "research",
+    "opportunity_score": {
+      "catalyst_strength": 8,
+      "timeliness": 8,
+      "market_confirmation": 6,
+      "tradability": 9,
+      "risk_clarity": 6,
+      "consensus_gap": 7,
+      "signal_consistency": 8,
+      "overall_score": 7.3,
+      "confidence_score": 0.7,
+      "execution_readiness": 0.8
+    },
+    "risk_reward_profile": "潜在收益源于政策宽松带来的估值修复与资金轮动，风险在于政策效果不及预期或市场“利好出尽”。止损点可设在政策宣布前市场低点附近。",
+    "next_validation_questions": [
+      "降准降息后，银行间市场利率（如DR007）是否显著下行？",
+      "新能源/半导体板块的成交量与资金净流入是否持续放大？",
+      "市场对后续政策（如LPR下调）的预期如何？"
+    ],
+    "invalidation_conditions": [
+      "市场在政策宣布后高开低走，放量下跌",
+      "成长板块资金流入趋势逆转，重回流出",
+      "央行官员释放鹰派言论，打消进一步宽松预期"
+    ],
+    "must_watch_indicators": [
+      "DR007利率走势",
+      "北向资金流向",
+      "新能源/半导体板块成交额占比",
+      "10年期国债收益率"
+    ],
+    "kill_switch_signals": [
+      "A股主要指数跌破政策宣布前低点",
+      "出现重大外部风险事件（如中美关系急剧恶化）",
+      "国内经济数据（如PMI）大幅不及预期"
+    ],
+    "warnings": [
+      "情绪信号未提供恐贪指数，无法精确判断市场情绪极值。",
+      "机会基于政策催化，需密切关注政策后续表述与市场解读。"
+    ],
+    "judgment_version": "v1.0",
+    "created_at": "2026-04-18T11:23:54.057502",
+    "batch_id": "test_01"
+  }
+]

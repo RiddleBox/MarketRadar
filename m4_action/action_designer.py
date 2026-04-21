@@ -24,6 +24,7 @@ from core.schemas import (
     ActionType,
     Direction,
     InstrumentType,
+    Market,
     OpportunityObject,
     PositionSizing,
     PriorityLevel,
@@ -63,6 +64,60 @@ PLAN_VALIDITY_DAYS = {
     PriorityLevel.POSITION: int(EXECUTION_CONFIG.get("plan_validity_days", {}).get("position", 14)),
     PriorityLevel.URGENT: int(EXECUTION_CONFIG.get("plan_validity_days", {}).get("urgent", 7)),
 }
+
+
+def compute_kelly_position(
+    win_rate: float,
+    avg_win_pct: float,
+    avg_loss_pct: float,
+    fraction: float = 0.25,
+) -> float:
+    """Kelly 公式计算仓位比例。
+
+    f* = (p * b - q) / b，其中 p=胜率, q=1-p, b=盈亏比
+    实际使用 fraction * f*（通常 1/4 Kelly）。
+
+    Returns:
+        建议仓位占总资金比例 (0.0 ~ 1.0)
+    """
+    if avg_loss_pct <= 0 or win_rate <= 0 or win_rate >= 1:
+        return 0.0
+    b = avg_win_pct / avg_loss_pct
+    q = 1 - win_rate
+    kelly_f = (win_rate * b - q) / b
+    if kelly_f <= 0:
+        return 0.0
+    return min(kelly_f * fraction, 1.0)
+
+
+def compute_position_from_risk_budget(
+    priority: PriorityLevel,
+    stop_loss_pct: float,
+    instrument_type: InstrumentType,
+) -> float:
+    """基于风险预算和止损距离计算仓位比例。
+
+    仓位 = 风险预算 / 止损距离
+    即：如果止损触发，亏损恰好等于风险预算。
+
+    Args:
+        priority: 优先级，决定风险预算
+        stop_loss_pct: 止损比例 (0.05 = 5%)
+        instrument_type: 品种类型，影响仓位上限
+
+    Returns:
+        建议仓位占总资金比例
+    """
+    risk_budget = RISK_BUDGET_BY_PRIORITY.get(priority, 0.01)
+    if stop_loss_pct <= 0:
+        return 0.0
+    position = risk_budget / stop_loss_pct
+    max_cap = float(
+        RISK_CONFIG.get("instrument_risk_overrides", {})
+        .get(instrument_type.value, {})
+        .get("max_position_pct", 8)
+    ) / 100
+    return min(position, max_cap)
 
 
 class ActionDesigner:
@@ -146,6 +201,8 @@ class ActionDesigner:
                 if opportunity.instrument_types
                 else InstrumentType.STOCK
             ),
+            direction=opportunity.trade_direction,
+            market=opportunity.target_markets[0] if opportunity.target_markets else Market.A_SHARE,
             stop_loss=StopLossConfig(
                 stop_loss_type="percent",
                 stop_loss_value=0.0,
@@ -160,6 +217,8 @@ class ActionDesigner:
                 suggested_allocation="0%",
                 max_allocation="0%",
                 sizing_rationale="watch 阶段不入场，仓位为零",
+                suggested_allocation_pct=0.0,
+                max_allocation_pct=0.0,
             ),
             phases=[
                 ActionPhase(
@@ -336,11 +395,32 @@ class ActionDesigner:
             notes=tp_data.get("notes", tp_data.get("target_price_description")),
         )
 
-        # 仓位建议
+        # 仓位建议：基于风险预算/止损距离的参数化计算
+        stop_loss_pct = stop_loss.stop_loss_value / 100 if stop_loss.stop_loss_type == "percent" else 0.05
+        suggested_pct = compute_position_from_risk_budget(priority, stop_loss_pct, instrument_type)
+        max_pct = min(suggested_pct * 1.5, float(instrument_cfg.get("max_position_pct", 8)) / 100)
+
+        kelly_pct = 0.0
+        if hasattr(opportunity, "opportunity_score") and opportunity.opportunity_score:
+            oscore = opportunity.opportunity_score
+            if oscore.confidence_score > 0.6 and oscore.overall_score >= 6:
+                implied_win_rate = min(0.8, oscore.confidence_score)
+                avg_win = float(instrument_cfg.get("preferred_take_profit_pct", 10)) / 100
+                avg_loss = float(instrument_cfg.get("preferred_stop_loss_pct", 5)) / 100
+                kelly_pct = compute_kelly_position(implied_win_rate, avg_win, avg_loss)
+                suggested_pct = min(suggested_pct, max(kelly_pct, suggested_pct * 0.5))
+
         position_sizing = PositionSizing(
-            suggested_allocation=f"{risk_budget*100:.0f}-{risk_budget*100*1.5:.0f}%",
-            max_allocation=f"不超过{risk_budget*100*2:.0f}%",
-            sizing_rationale=f"优先级={priority.value}，最大风险预算={risk_budget*100:.0f}%总资金",
+            suggested_allocation=f"{suggested_pct*100:.1f}%",
+            max_allocation=f"不超过{max_pct*100:.1f}%",
+            sizing_rationale=(
+                f"优先级={priority.value} | 风险预算={risk_budget*100:.0f}% | "
+                f"止损={stop_loss_pct*100:.1f}% | 仓位=风险预算/止损="
+                f"{suggested_pct*100:.1f}%"
+                + (f" | Kelly参考={kelly_pct*100:.1f}%" if kelly_pct > 0 else "")
+            ),
+            suggested_allocation_pct=round(suggested_pct, 4),
+            max_allocation_pct=round(max_pct, 4),
         )
 
         # 分阶段计划
@@ -393,6 +473,8 @@ class ActionDesigner:
                 or ["待定"]
             ),
             instrument_type=instrument_type,
+            direction=opportunity.trade_direction,
+            market=opportunity.target_markets[0] if opportunity.target_markets else Market.A_SHARE,
             stop_loss=stop_loss,
             take_profit=take_profit,
             position_sizing=position_sizing,

@@ -1,12 +1,12 @@
-"""Minimal price loader for Task 5 preparation.
-
-Current priority:
-1. local CSV
-2. future: akshare
-3. future: baostock
-"""
-
 from __future__ import annotations
+
+"""DEPRECATED: Use backtest.history_price.HistoryPriceFeed instead.
+
+This module is retained for backward compatibility only.
+HistoryPriceFeed provides full OHLCV with multi-source fallback (seed/csv/cache/AKShare).
+PriceLoader only provides close-only data without date awareness.
+"""
+import warnings
 
 import csv
 from pathlib import Path
@@ -30,6 +30,14 @@ CSV_LOCAL_CONFIG = MARKET_CONFIG.get("data_sources", {}).get("csv_local", {})
 
 
 class PriceLoader:
+    """DEPRECATED: Use backtest.history_price.HistoryPriceFeed instead."""
+
+    def __init__(self):
+        warnings.warn(
+            "PriceLoader is deprecated. Use backtest.history_price.HistoryPriceFeed for full OHLCV support.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
     """Load historical prices according to market config priority."""
 
     def load_closes(self, instrument: str, frequency: str = "daily") -> List[float]:

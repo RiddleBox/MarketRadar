@@ -165,6 +165,8 @@ class TestActionPlan:
             plan_summary="先观察政策兑现与量价配合，暂不直接入场。",
             primary_instruments=["沪深300ETF"],
             instrument_type=InstrumentType.ETF,
+            direction=Direction.BULLISH,
+            market=Market.A_SHARE,
             position_sizing=PositionSizing(
                 suggested_allocation="0%",
                 max_allocation="0%",
@@ -196,6 +198,8 @@ class TestActionPlan:
             plan_summary="若降息兑现且指数放量突破，则分两阶段建立仓位。",
             primary_instruments=["沪深300ETF"],
             instrument_type=InstrumentType.ETF,
+            direction=Direction.BULLISH,
+            market=Market.A_SHARE,
             position_sizing=PositionSizing(
                 suggested_allocation="3-5%",
                 max_allocation="8%",
