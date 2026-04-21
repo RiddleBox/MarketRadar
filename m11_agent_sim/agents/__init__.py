@@ -4,6 +4,7 @@ from .northbound_agent import NorthboundFollowerAgent
 from .technical_agent import TechnicalAgent
 from .sentiment_agent import SentimentRetailAgent
 from .fundamental_agent import FundamentalAgent
+from .contrarian_agent import ContrarianAgent
 
 __all__ = [
     "PolicySensitiveAgent",
@@ -11,4 +12,5 @@ __all__ = [
     "TechnicalAgent",
     "SentimentRetailAgent",
     "FundamentalAgent",
+    "ContrarianAgent",
 ]

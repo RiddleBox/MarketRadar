@@ -183,8 +183,18 @@ def load_historical_events(price_feed: HistoryPriceFeed,
         # 获取情绪数据
         sentiment_ctx = sentiment_provider.get_sentiment(date_obj, evt["signal_dir"])
 
+        # 根据signal_dir设置bullish/bearish_count，ContrarianAgent需要这些字段
+        if evt["signal_dir"] == "BULLISH":
+            bullish_count, bearish_count = 5, 1
+        elif evt["signal_dir"] == "BEARISH":
+            bullish_count, bearish_count = 1, 5
+        else:
+            bullish_count, bearish_count = 2, 2
+
         signal_ctx = SignalContext(
             dominant_signal_type=evt["signal_dir"],
+            bullish_count=bullish_count,
+            bearish_count=bearish_count,
             avg_intensity=8.0 if "央行" in evt["description"] or "政治局" in evt["description"] else 6.0,
         )
 

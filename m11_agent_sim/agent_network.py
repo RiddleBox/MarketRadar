@@ -42,6 +42,7 @@ def _default_registry() -> Dict[str, Type[BaseMarketAgent]]:
         PolicySensitiveAgent,
         SentimentRetailAgent,
         TechnicalAgent,
+        ContrarianAgent,
     )
     return {
         "policy":           PolicySensitiveAgent,
@@ -49,6 +50,7 @@ def _default_registry() -> Dict[str, Type[BaseMarketAgent]]:
         "technical":        TechnicalAgent,
         "sentiment_retail": SentimentRetailAgent,
         "fundamental":      FundamentalAgent,
+        "contrarian":       ContrarianAgent,
     }
 
 
@@ -122,7 +124,8 @@ class AgentNetwork:
                 AgentConfig(agent_type="northbound",       name="北向跟随者", weight=0.20, sequence_pos=1),
                 AgentConfig(agent_type="technical",        name="技术分析师", weight=0.15, sequence_pos=2),
                 AgentConfig(agent_type="sentiment_retail", name="情绪散户",   weight=0.20, sequence_pos=3),
-                AgentConfig(agent_type="fundamental",      name="基本面分析师", weight=0.25, sequence_pos=4),
+                AgentConfig(agent_type="fundamental",      name="基本面分析师", weight=0.15, sequence_pos=4),
+                AgentConfig(agent_type="contrarian",       name="反向交易员", weight=0.10, sequence_pos=5),
             ],
         )
         return cls(config=config, llm_client=llm_client, use_llm=use_llm, min_confidence=min_confidence)
@@ -284,6 +287,10 @@ class AgentNetwork:
 
         权重来自 AgentConfig.weight × AgentOutput.confidence（双重加权）：
           最终权重 = config_weight × confidence（归一化后）
+        
+        动态权重调整：
+          - ContrarianAgent 在情绪极值时（fear_greed_index > 80 或 < 20）权重提升至 0.25
+          - 其他 Agent 权重按比例缩减，保持总权重 = 1.0
         """
         if not outputs:
             return SentimentDistribution(
@@ -292,10 +299,32 @@ class AgentNetwork:
                 timestamp=market_input.timestamp,
             )
 
-        # 构建权重映射
+        # 构建权重映射（动态调整）
         weight_map: Dict[str, float] = {
             a.agent_type: a.config.weight for a in self._agents
         }
+        
+        # 检查是否需要提升 ContrarianAgent 权重
+        from .agents.contrarian_agent import ContrarianAgent
+        is_extreme_sentiment = ContrarianAgent.should_boost_weight(market_input)
+        if is_extreme_sentiment:
+            if "contrarian" in weight_map:
+                old_contrarian_weight = weight_map["contrarian"]
+                new_contrarian_weight = 0.60  # 情绪极值时给予绝对主导权重
+                weight_boost = new_contrarian_weight - old_contrarian_weight
+
+                # 其他 Agent 按比例缩减
+                other_agents = [k for k in weight_map if k != "contrarian"]
+                total_other_weight = sum(weight_map[k] for k in other_agents)
+                if total_other_weight > 0:
+                    scale_factor = (1.0 - new_contrarian_weight) / total_other_weight
+                    for k in other_agents:
+                        weight_map[k] *= scale_factor
+                weight_map["contrarian"] = new_contrarian_weight
+                logger.info(
+                    f"[AgentNetwork] 情绪极值检测，ContrarianAgent 权重提升: "
+                    f"{old_contrarian_weight:.2f} → {new_contrarian_weight:.2f}"
+                )
 
         total_w = 0.0
         w_bull = 0.0
@@ -308,7 +337,7 @@ class AgentNetwork:
 
         for out in outputs:
             cfg_w = weight_map.get(out.agent_type, 1.0 / len(outputs))
-            effective_w = cfg_w * (0.3 + out.confidence * 0.7)   # 低置信时衰减，不完全忽略
+            effective_w = cfg_w * (0.3 + out.confidence * 0.7)  # 低置信时衰减，不完全忽略
             total_w += effective_w
             w_bull += out.bullish_prob * effective_w
             w_bear += out.bearish_prob * effective_w

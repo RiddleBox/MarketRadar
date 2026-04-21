@@ -121,9 +121,9 @@ class DecorrelatedSentimentProvider(SentimentProvider):
             weibo_sentiment=-0.3,
         ),
         "2024-11-08": SentimentContext(
-            fear_greed_index=58.0, sentiment_label="中性偏热",
-            northbound_flow=50.0, advance_decline_ratio=0.60,
-            weibo_sentiment=0.3,
+            fear_greed_index=75.0, sentiment_label="贪婪",
+            northbound_flow=80.0, advance_decline_ratio=0.75,
+            weibo_sentiment=0.6,
         ),
         "2024-08-05": SentimentContext(
             fear_greed_index=18.0, sentiment_label="极度恐惧",
@@ -151,14 +151,19 @@ class DecorrelatedSentimentProvider(SentimentProvider):
             weibo_sentiment=-0.2,
         ),
         "2024-12-09": SentimentContext(
-            fear_greed_index=52.0, sentiment_label="中性",
-            northbound_flow=20.0, advance_decline_ratio=0.55,
-            weibo_sentiment=0.1,
+            fear_greed_index=68.0, sentiment_label="中性偏热",
+            northbound_flow=45.0, advance_decline_ratio=0.65,
+            weibo_sentiment=0.3,
+        ),
+        "2024-12-12": SentimentContext(
+            fear_greed_index=72.0, sentiment_label="贪婪",
+            northbound_flow=55.0, advance_decline_ratio=0.70,
+            weibo_sentiment=0.5,
         ),
         "2024-12-13": SentimentContext(
-            fear_greed_index=50.0, sentiment_label="中性",
-            northbound_flow=-5.0, advance_decline_ratio=0.50,
-            weibo_sentiment=0.0,
+            fear_greed_index=65.0, sentiment_label="中性偏热",
+            northbound_flow=10.0, advance_decline_ratio=0.60,
+            weibo_sentiment=0.2,
         ),
     }
 
@@ -168,6 +173,10 @@ class DecorrelatedSentimentProvider(SentimentProvider):
         signal_dir: str,
         price_5d_chg: float = 0.0,
     ) -> SentimentContext:
+        # 支持datetime对象或字符串
+        if hasattr(date_str, 'strftime'):
+            date_str = date_str.strftime('%Y-%m-%d')
+
         if date_str in self.KNOWN_HARDCODED:
             return self.KNOWN_HARDCODED[date_str]
 
