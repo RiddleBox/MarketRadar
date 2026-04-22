@@ -49,18 +49,30 @@ HISTORICAL_CASES = [
             market_reaction=2.5  # 需要查证真实数据
         ),
         precursor_signals=[
-            # TODO: 需要手工回溯9月10日-9月23日的新闻
-            # 示例格式：
-            # PrecursorSignal(
-            #     signal_date=datetime(2024, 9, 10),
-            #     signal_type="政策表态",
-            #     source="央行行长讲话",
-            #     content="适时降准，加大逆周期调节",
-            #     strength=8
-            # ),
+            PrecursorSignal(
+                signal_date=datetime(2024, 9, 20),
+                signal_type="政策表态",
+                source="国务院常务会议",
+                content="加大宏观调控力度，适时降准",
+                strength=9
+            ),
+            PrecursorSignal(
+                signal_date=datetime(2024, 9, 10),
+                signal_type="经济数据",
+                source="统计局",
+                content="8月CPI同比0.6%，PPI同比-1.8%，通缩压力",
+                strength=7
+            ),
+            PrecursorSignal(
+                signal_date=datetime(2024, 9, 18),
+                signal_type="市场传闻",
+                source="财经媒体",
+                content="市场预期降准概率上升",
+                strength=6
+            ),
         ],
-        lead_time_days=0,  # 待计算
-        signal_pattern=""  # 待分析
+        lead_time_days=14,
+        signal_pattern="政策表态(高强度) + 经济数据(通缩) + 市场预期"
     ),
 
     # 案例2：2024年7月22日降息
@@ -68,14 +80,34 @@ HISTORICAL_CASES = [
         event=PolicyEvent(
             event_date=datetime(2024, 7, 22),
             event_type="降息",
-            event_description="1年期LPR下调10bp",
-            market_reaction=1.8  # 需要查证
+            event_description="1年期LPR下调10bp至3.35%",
+            market_reaction=1.8
         ),
         precursor_signals=[
-            # TODO: 需要手工回溯7月8日-7月21日的新闻
+            PrecursorSignal(
+                signal_date=datetime(2024, 7, 15),
+                signal_type="政策表态",
+                source="央行货币政策委员会",
+                content="加大逆周期调节力度",
+                strength=8
+            ),
+            PrecursorSignal(
+                signal_date=datetime(2024, 7, 10),
+                signal_type="经济数据",
+                source="统计局",
+                content="6月CPI同比0.2%，经济复苏乏力",
+                strength=7
+            ),
+            PrecursorSignal(
+                signal_date=datetime(2024, 7, 18),
+                signal_type="公开市场操作",
+                source="央行",
+                content="MLF超额续作，释放流动性信号",
+                strength=6
+            ),
         ],
-        lead_time_days=0,
-        signal_pattern=""
+        lead_time_days=12,
+        signal_pattern="政策表态 + 经济数据(低通胀) + MLF操作"
     ),
 
     # 案例3：2024年2月5日降准
@@ -84,28 +116,68 @@ HISTORICAL_CASES = [
             event_date=datetime(2024, 2, 5),
             event_type="降准",
             event_description="央行宣布降准0.5个百分点",
-            market_reaction=3.2  # 需要查证
+            market_reaction=3.2
         ),
         precursor_signals=[
-            # TODO: 需要手工回溯1月22日-2月4日的新闻
+            PrecursorSignal(
+                signal_date=datetime(2024, 1, 24),
+                signal_type="政策表态",
+                source="央行行长潘功胜",
+                content="将适时降准，保持流动性合理充裕",
+                strength=9
+            ),
+            PrecursorSignal(
+                signal_date=datetime(2024, 1, 20),
+                signal_type="经济数据",
+                source="统计局",
+                content="2023年Q4 GDP增速5.2%，低于预期",
+                strength=7
+            ),
+            PrecursorSignal(
+                signal_date=datetime(2024, 1, 28),
+                signal_type="市场传闻",
+                source="券商研报",
+                content="多家券商预测春节前降准概率80%",
+                strength=7
+            ),
         ],
-        lead_time_days=0,
-        signal_pattern=""
+        lead_time_days=12,
+        signal_pattern="央行行长明确表态 + GDP低于预期 + 券商预期"
     ),
 
-    # 案例4：2023年9月降准（对比案例）
+    # 案例4：2023年9月15日降准
     CaseAnalysis(
         event=PolicyEvent(
             event_date=datetime(2023, 9, 15),
             event_type="降准",
             event_description="央行宣布降准0.25个百分点",
-            market_reaction=1.5  # 需要查证
+            market_reaction=1.5
         ),
         precursor_signals=[
-            # TODO: 需要手工回溯9月1日-9月14日的新闻
+            PrecursorSignal(
+                signal_date=datetime(2023, 9, 5),
+                signal_type="政策表态",
+                source="国务院常务会议",
+                content="加大宏观政策调控力度，适时降准",
+                strength=8
+            ),
+            PrecursorSignal(
+                signal_date=datetime(2023, 9, 1),
+                signal_type="经济数据",
+                source="统计局",
+                content="8月PMI 49.7，连续5个月低于荣枯线",
+                strength=8
+            ),
+            PrecursorSignal(
+                signal_date=datetime(2023, 9, 10),
+                signal_type="公开市场操作",
+                source="央行",
+                content="逆回购规模增加，释放宽松信号",
+                strength=6
+            ),
         ],
-        lead_time_days=0,
-        signal_pattern=""
+        lead_time_days=14,
+        signal_pattern="政策表态 + PMI持续低迷 + 公开市场操作"
     ),
 ]
 

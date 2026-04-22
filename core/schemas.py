@@ -345,6 +345,14 @@ class OpportunityObject(BaseModel):
         min_length=1,
         description="支撑该机会的相关信号ID列表"
     )
+    inferred_events: List[str] = Field(
+        default_factory=list,
+        description="推理的未来事件ID列表（来自M3推理引擎）"
+    )
+    supporting_cases: List[str] = Field(
+        default_factory=list,
+        description="支撑的历史案例ID列表（来自M2案例库）"
+    )
     supporting_evidence: List[str] = Field(
         ...,
         min_length=1,
@@ -862,3 +870,203 @@ class SentimentSignal(BaseModel):
         description="是否处于情绪极值区间（极度恐惧或极度贪婪），极值往往是反转信号"
     )
     batch_id: Optional[str] = Field(default=None)
+
+
+# ============================================================
+# M2 Inference Support: Causal Patterns & Case Records
+# ============================================================
+
+class CausalPattern(BaseModel):
+    """
+    因果模式 — M2存储，M3推理使用
+
+    记录"信号组合 → 未来事件"的因果关系，用于推理型判断。
+    例如：政策表态 + 经济数据差 → 降准概率80%，14天内
+    """
+    pattern_id: str = Field(
+        default_factory=lambda: f"pattern_{uuid.uuid4().hex[:12]}",
+        description="因果模式唯一标识符"
+    )
+
+    # 前置信号特征
+    precursor_signals: List[str] = Field(
+        ...,
+        description="前置信号特征描述列表，用于模糊匹配当前信号"
+    )
+
+    # 后续事件
+    consequent_event: str = Field(
+        ...,
+        description="后续事件描述，例：'央行降准'"
+    )
+
+    # 统计特征
+    probability: float = Field(
+        ...,
+        ge=0.0, le=1.0,
+        description="历史发生概率 (0-1)"
+    )
+    avg_lead_time_days: int = Field(
+        ...,
+        ge=0,
+        description="平均提前天数（信号出现到事件发生）"
+    )
+    std_lead_time_days: float = Field(
+        default=0.0,
+        ge=0.0,
+        description="提前天数标准差，衡量时间窗口的稳定性"
+    )
+
+    # 支撑证据
+    supporting_cases: List[str] = Field(
+        default_factory=list,
+        description="支撑案例ID列表（来自CaseRecord）"
+    )
+
+    # 元数据
+    confidence: float = Field(
+        ...,
+        ge=0.0, le=1.0,
+        description="模式置信度，基于样本量和一致性"
+    )
+    last_updated: datetime = Field(
+        default_factory=datetime.now,
+        description="最后更新时间"
+    )
+    created_at: datetime = Field(
+        default_factory=datetime.now,
+        description="创建时间"
+    )
+    notes: Optional[str] = Field(
+        default=None,
+        description="备注说明"
+    )
+
+
+class CaseRecord(BaseModel):
+    """
+    历史案例记录 — M2存储，M3推理使用
+
+    记录"信号组合 → 演化过程 → 结果"的完整案例，用于历史相似案例检索。
+    主要来源：M6复盘 + 人工标注重要历史事件
+    """
+    case_id: str = Field(
+        default_factory=lambda: f"case_{uuid.uuid4().hex[:12]}",
+        description="案例唯一标识符"
+    )
+
+    # 时间范围
+    date_range_start: datetime = Field(
+        ...,
+        description="案例起始日期（首个信号出现时间）"
+    )
+    date_range_end: datetime = Field(
+        ...,
+        description="案例结束日期（事件发生或机会结束时间）"
+    )
+
+    # 市场信息
+    market: Market = Field(
+        ...,
+        description="相关市场"
+    )
+
+    # 信号序列
+    signal_sequence: List[str] = Field(
+        ...,
+        description="信号序列（时间顺序），每个元素为信号ID或描述"
+    )
+
+    # 演化过程
+    evolution: str = Field(
+        ...,
+        description="演化过程描述，记录市场如何反应、政策如何落地"
+    )
+
+    # 结果
+    outcome: dict = Field(
+        ...,
+        description="结果字典，包含：event_occurred(bool), market_reaction(float), time_to_event(int)等"
+    )
+
+    # 经验教训
+    lessons: str = Field(
+        ...,
+        description="经验教训，记录判断对错的关键因素"
+    )
+
+    # 标签
+    tags: List[str] = Field(
+        default_factory=list,
+        description="标签列表，用于快速检索，例：['降准', '政策宽松', '通缩']"
+    )
+
+    # 元数据
+    created_at: datetime = Field(
+        default_factory=datetime.now,
+        description="创建时间"
+    )
+    source: str = Field(
+        default="manual",
+        description="来源：manual(人工标注) / m6_retrospective(M6复盘)"
+    )
+    notes: Optional[str] = Field(
+        default=None,
+        description="备注说明"
+    )
+
+
+class InferredEvent(BaseModel):
+    """
+    推理的未来事件 — M3推理引擎输出
+
+    基于当前信号组合和因果图谱，推断可能发生的未来事件。
+    """
+    event_id: str = Field(
+        default_factory=lambda: f"inferred_{uuid.uuid4().hex[:12]}",
+        description="推理事件唯一标识符"
+    )
+
+    # 事件描述
+    event_description: str = Field(
+        ...,
+        description="事件描述，例：'央行降准'"
+    )
+
+    # 概率和时间窗口
+    probability: float = Field(
+        ...,
+        ge=0.0, le=1.0,
+        description="发生概率 (0-1)"
+    )
+    time_window: str = Field(
+        ...,
+        description="时间窗口描述，例：'2周内'、'10-16天'"
+    )
+
+    # 推理依据
+    reasoning: str = Field(
+        ...,
+        description="推理依据说明，解释为什么推断出这个事件"
+    )
+
+    # 支撑证据
+    supporting_pattern_ids: List[str] = Field(
+        default_factory=list,
+        description="支撑的因果模式ID列表"
+    )
+    supporting_cases: List[str] = Field(
+        default_factory=list,
+        description="支撑的历史案例ID列表"
+    )
+
+    # 元数据
+    inferred_at: datetime = Field(
+        default_factory=datetime.now,
+        description="推理时间"
+    )
+    confidence: float = Field(
+        ...,
+        ge=0.0, le=1.0,
+        description="推理置信度"
+    )

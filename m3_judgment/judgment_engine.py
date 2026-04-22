@@ -24,8 +24,11 @@ from core.schemas import (
     PriorityLevel,
     Direction,
     TimeWindow,
+    InferredEvent,
+    CaseRecord,
 )
 from core.llm_client import LLMClient
+from m2_storage.signal_store import SignalStore
 from m3_judgment.prompt_templates import (
     STEP_A_SYSTEM_PROMPT,
     STEP_A_USER_PROMPT,
@@ -49,8 +52,9 @@ class JudgmentEngine:
     "不构成机会"是合法输出，返回空列表，不抛异常。
     """
 
-    def __init__(self, llm_client: Optional[LLMClient] = None, version: str = "v1.0"):
+    def __init__(self, llm_client: Optional[LLMClient] = None, signal_store: Optional[SignalStore] = None, version: str = "v1.0"):
         self.llm = llm_client or LLMClient()
+        self.signal_store = signal_store or SignalStore()
         self.version = version
 
     def judge(
@@ -91,10 +95,14 @@ class JudgmentEngine:
                 logger.info("[M3] Step A 未识别出有效场景，不构成机会")
                 return []
 
+        # Inference Engine: 推理未来事件和检索相似案例
+        inferred_events = self._infer_future_events(all_signals)
+        similar_cases = self._retrieve_similar_cases(all_signals, limit=5)
+
         # Step B：对每个场景判断是否构成机会
         opportunities = []
         for scenario in scenarios:
-            result = self._judge_opportunity(scenario, all_signals, batch_id)
+            result = self._judge_opportunity(scenario, all_signals, batch_id, inferred_events, similar_cases)
             if result is not None:
                 opportunities.append(result)
 
@@ -128,6 +136,147 @@ class JudgmentEngine:
             return []
 
     # ------------------------------------------------------------------
+    # Inference Engine (新增)
+    # ------------------------------------------------------------------
+
+    def _infer_future_events(self, signals: List[MarketSignal]) -> List[InferredEvent]:
+        """推理未来事件（基于因果图谱和历史案例）
+
+        流程：
+          1. 从M2查询匹配的因果模式
+          2. 用LLM评估当前信号与历史模式的相似度
+          3. 计算未来事件的发生概率和时间窗口
+
+        Returns:
+            List[InferredEvent]，可能为空
+        """
+        if not signals:
+            return []
+
+        # Query causal patterns from M2
+        patterns = self.signal_store.query_causal_patterns(min_probability=0.5, min_confidence=0.5)
+        if not patterns:
+            logger.info("[M3 Inference] 因果图谱为空，跳过推理")
+            return []
+
+        # Build signal summary for LLM
+        signal_features = []
+        for s in signals:
+            signal_features.append(f"- {s.signal_type.value}: {s.signal_label} ({s.description[:100]})")
+        signal_summary = "\n".join(signal_features)
+
+        # Build pattern summary
+        pattern_summary = []
+        for p in patterns:
+            pattern_summary.append(
+                f"模式ID: {p.pattern_id}\n"
+                f"前置信号: {', '.join(p.precursor_signals)}\n"
+                f"后续事件: {p.consequent_event}\n"
+                f"概率: {p.probability:.0%}\n"
+                f"平均提前时间: {p.avg_lead_time_days}天\n"
+                f"置信度: {p.confidence:.0%}\n"
+            )
+        patterns_text = "\n---\n".join(pattern_summary)
+
+        # LLM inference prompt
+        inference_prompt = f"""你是一个因果推理引擎。基于当前信号和历史因果模式，推断未来可能发生的事件。
+
+当前信号：
+{signal_summary}
+
+历史因果模式：
+{patterns_text}
+
+任务：
+1. 识别当前信号与哪些历史模式匹配（相似度>60%）
+2. 对于匹配的模式，推断未来事件的发生概率和时间窗口
+3. 输出JSON格式：
+
+{{
+  "inferred_events": [
+    {{
+      "event_description": "事件描述",
+      "probability": 0.75,
+      "time_window": "2周内",
+      "reasoning": "推理依据",
+      "supporting_pattern_ids": ["pattern_id1", "pattern_id2"],
+      "confidence": 0.80
+    }}
+  ]
+}}
+
+如果没有匹配的模式，返回空数组。只返回JSON，不要解释。"""
+
+        try:
+            messages = [
+                {"role": "system", "content": "你是因果推理专家，基于历史模式推断未来事件。"},
+                {"role": "user", "content": inference_prompt}
+            ]
+            raw = self.llm.chat_completion(messages, module_name="m3_inference")
+            data = self._parse_json_response(raw, expected_key="inferred_events")
+
+            # Build InferredEvent objects
+            inferred_events = []
+            for item in data:
+                event = InferredEvent(
+                    event_id=f"inferred_{uuid.uuid4().hex[:8]}",
+                    event_description=item.get("event_description", ""),
+                    probability=float(item.get("probability", 0.5)),
+                    time_window=item.get("time_window", "未知"),
+                    reasoning=item.get("reasoning", ""),
+                    supporting_pattern_ids=item.get("supporting_pattern_ids", []),
+                    supporting_cases=[],
+                    inferred_at=datetime.now(),
+                    confidence=float(item.get("confidence", 0.5)),
+                )
+                inferred_events.append(event)
+
+            logger.info(f"[M3 Inference] 推理未来事件数={len(inferred_events)}")
+            return inferred_events
+
+        except Exception as e:
+            logger.error(f"[M3 Inference] 推理失败: {e}")
+            return []
+
+    def _retrieve_similar_cases(self, signals: List[MarketSignal], limit: int = 5) -> List[CaseRecord]:
+        """检索相似历史案例
+
+        Args:
+            signals: 当前信号列表
+            limit: 返回数量
+
+        Returns:
+            List[CaseRecord]，可能为空
+        """
+        if not signals:
+            return []
+
+        # Extract tags from signals for matching
+        tags = []
+        for s in signals:
+            if "降准" in s.signal_label or "降准" in s.description:
+                tags.append("降准")
+            if "降息" in s.signal_label or "降息" in s.description:
+                tags.append("降息")
+            if "政策" in s.signal_label or "政策" in s.description:
+                tags.append("政策宽松")
+            if "通缩" in s.description or "CPI" in s.description:
+                tags.append("通缩压力")
+
+        if not tags:
+            logger.info("[M3 Case Retrieval] 无法提取标签，跳过案例检索")
+            return []
+
+        # Query similar cases from M2
+        try:
+            cases = self.signal_store.query_similar_cases(tags=tags, limit=limit)
+            logger.info(f"[M3 Case Retrieval] 检索相似案例数={len(cases)}")
+            return cases
+        except Exception as e:
+            logger.error(f"[M3 Case Retrieval] 检索失败: {e}")
+            return []
+
+    # ------------------------------------------------------------------
     # Step B：机会升级判断
     # ------------------------------------------------------------------
 
@@ -136,8 +285,17 @@ class JudgmentEngine:
         scenario: dict,
         all_signals: List[MarketSignal],
         batch_id: str,
+        inferred_events: Optional[List[InferredEvent]] = None,
+        similar_cases: Optional[List[CaseRecord]] = None,
     ) -> Optional[OpportunityObject]:
         """Step B：判断一个场景是否构成机会
+
+        Args:
+            scenario: 场景描述
+            all_signals: 所有信号
+            batch_id: 批次ID
+            inferred_events: 推理的未来事件（新增）
+            similar_cases: 相似历史案例（新增）
 
         Returns:
             OpportunityObject（构成机会）或 None（不构成）
@@ -148,6 +306,30 @@ class JudgmentEngine:
 
         signals_detail = self._signals_to_detail(scenario_signals)
 
+        # Build inference context
+        inference_context = ""
+        if inferred_events:
+            inference_context += "\n\n## 推理的未来事件\n\n"
+            for event in inferred_events:
+                inference_context += (
+                    f"- **{event.event_description}**\n"
+                    f"  - 概率: {event.probability:.0%}\n"
+                    f"  - 时间窗口: {event.time_window}\n"
+                    f"  - 推理依据: {event.reasoning}\n"
+                    f"  - 置信度: {event.confidence:.0%}\n\n"
+                )
+
+        if similar_cases:
+            inference_context += "\n\n## 相似历史案例\n\n"
+            for case in similar_cases:
+                inference_context += (
+                    f"- **{case.case_id}** ({case.date_range_start.date()} ~ {case.date_range_end.date()})\n"
+                    f"  - 信号序列: {', '.join(case.signal_sequence[:3])}...\n"
+                    f"  - 演化: {case.evolution[:100]}...\n"
+                    f"  - 结果: {case.outcome.get('event_occurred', 'N/A')}\n"
+                    f"  - 经验教训: {case.lessons[:100]}...\n\n"
+                )
+
         messages = [
             {"role": "system", "content": STEP_B_SYSTEM_PROMPT},
             {
@@ -155,7 +337,7 @@ class JudgmentEngine:
                 "content": STEP_B_USER_PROMPT.format(
                     scenario_description=scenario.get("description", ""),
                     signals_detail=signals_detail,
-                ),
+                ) + inference_context,
             },
         ]
 
@@ -187,7 +369,7 @@ class JudgmentEngine:
                 return None
 
             try:
-                return self._build_opportunity(data, scenario_signals, batch_id)
+                return self._build_opportunity(data, scenario_signals, batch_id, inferred_events, similar_cases)
             except Exception as build_err:
                 logger.error(
                     "[M3 Step B] LLM 已返回机会对象，但构建 OpportunityObject 失败 | "
@@ -332,6 +514,8 @@ class JudgmentEngine:
         data: dict,
         signals: List[MarketSignal],
         batch_id: str,
+        inferred_events: Optional[List[InferredEvent]] = None,
+        similar_cases: Optional[List[CaseRecord]] = None,
     ) -> OpportunityObject:
         """从 LLM 输出构建 OpportunityObject"""
         now = datetime.now()
@@ -495,6 +679,8 @@ class JudgmentEngine:
             opportunity_window=opportunity_window,
             why_now=data.get("why_now") or data.get("reason", ""),
             related_signals=[s.signal_id for s in signals],
+            inferred_events=[e.event_id for e in (inferred_events or [])],
+            supporting_cases=[c.case_id for c in (similar_cases or [])],
             supporting_evidence=supporting_evidence,
             counter_evidence=data.get("counter_evidence", []),
             key_assumptions=key_assumptions,

@@ -19,7 +19,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Optional
 
-from core.schemas import MarketSignal, Market, SignalType
+from core.schemas import MarketSignal, Market, SignalType, CausalPattern, CaseRecord
 
 logger = logging.getLogger(__name__)
 
@@ -146,6 +146,161 @@ class SignalStore:
         logger.info(f"[M2] 检索 {start.date()}~{end.date()} | 结果={len(signals)} 条")
         return signals
 
+    # ------------------------------------------------------------------
+    # Causal Pattern Storage
+    # ------------------------------------------------------------------
+
+    def save_causal_pattern(self, pattern: CausalPattern) -> bool:
+        """保存因果模式"""
+        try:
+            with self._conn() as conn:
+                conn.execute(
+                    """
+                    INSERT OR REPLACE INTO causal_patterns
+                      (pattern_id, precursor_signals, consequent_event, probability,
+                       avg_lead_time_days, std_lead_time_days, supporting_cases,
+                       confidence, last_updated, created_at, notes, raw_json)
+                    VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
+                    """,
+                    (
+                        pattern.pattern_id,
+                        json.dumps(pattern.precursor_signals),
+                        pattern.consequent_event,
+                        pattern.probability,
+                        pattern.avg_lead_time_days,
+                        pattern.std_lead_time_days,
+                        json.dumps(pattern.supporting_cases),
+                        pattern.confidence,
+                        pattern.last_updated.isoformat(),
+                        pattern.created_at.isoformat(),
+                        pattern.notes,
+                        pattern.model_dump_json(),
+                    ),
+                )
+            logger.info(f"[M2] 保存因果模式 {pattern.pattern_id}")
+            return True
+        except Exception as e:
+            logger.error(f"[M2] 保存因果模式失败: {e}")
+            return False
+
+    def query_causal_patterns(
+        self,
+        consequent_event: Optional[str] = None,
+        min_probability: float = 0.0,
+        min_confidence: float = 0.0,
+    ) -> List[CausalPattern]:
+        """查询因果模式
+
+        Args:
+            consequent_event: 过滤后续事件（模糊匹配）
+            min_probability: 最低概率
+            min_confidence: 最低置信度
+        """
+        query = """
+            SELECT raw_json FROM causal_patterns
+            WHERE probability >= ? AND confidence >= ?
+        """
+        params: list = [min_probability, min_confidence]
+
+        if consequent_event:
+            query += " AND consequent_event LIKE ?"
+            params.append(f"%{consequent_event}%")
+
+        query += " ORDER BY probability DESC, confidence DESC"
+
+        with self._conn() as conn:
+            rows = conn.execute(query, params).fetchall()
+
+        patterns = [CausalPattern.model_validate_json(r[0]) for r in rows]
+        logger.info(f"[M2] 查询因果模式 | 结果={len(patterns)} 条")
+        return patterns
+
+    # ------------------------------------------------------------------
+    # Case Record Storage
+    # ------------------------------------------------------------------
+
+    def save_case_record(self, case: CaseRecord) -> bool:
+        """保存案例记录"""
+        try:
+            with self._conn() as conn:
+                conn.execute(
+                    """
+                    INSERT OR REPLACE INTO case_records
+                      (case_id, date_range_start, date_range_end, market,
+                       signal_sequence, evolution, outcome, lessons, tags,
+                       created_at, source, notes, raw_json)
+                    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
+                    """,
+                    (
+                        case.case_id,
+                        case.date_range_start.isoformat(),
+                        case.date_range_end.isoformat(),
+                        case.market.value,
+                        json.dumps(case.signal_sequence),
+                        case.evolution,
+                        json.dumps(case.outcome),
+                        case.lessons,
+                        json.dumps(case.tags),
+                        case.created_at.isoformat(),
+                        case.source,
+                        case.notes,
+                        case.model_dump_json(),
+                    ),
+                )
+            logger.info(f"[M2] 保存案例记录 {case.case_id}")
+            return True
+        except Exception as e:
+            logger.error(f"[M2] 保存案例记录失败: {e}")
+            return False
+
+    def query_similar_cases(
+        self,
+        tags: Optional[List[str]] = None,
+        market: Optional[Market] = None,
+        start_date: Optional[datetime] = None,
+        end_date: Optional[datetime] = None,
+        limit: int = 10,
+    ) -> List[CaseRecord]:
+        """查询相似案例
+
+        Args:
+            tags: 标签过滤（任一匹配）
+            market: 市场过滤
+            start_date: 开始日期
+            end_date: 结束日期
+            limit: 返回数量
+        """
+        query = "SELECT raw_json FROM case_records WHERE 1=1"
+        params: list = []
+
+        if market:
+            query += " AND market = ?"
+            params.append(market.value)
+
+        if start_date:
+            query += " AND date_range_start >= ?"
+            params.append(start_date.isoformat())
+
+        if end_date:
+            query += " AND date_range_end <= ?"
+            params.append(end_date.isoformat())
+
+        query += " ORDER BY date_range_start DESC LIMIT ?"
+        params.append(limit)
+
+        with self._conn() as conn:
+            rows = conn.execute(query, params).fetchall()
+
+        cases = [CaseRecord.model_validate_json(r[0]) for r in rows]
+
+        # Tag filtering in Python (JSON array)
+        if tags:
+            tag_set = set(tags)
+            cases = [c for c in cases if any(t in tag_set for t in c.tags)]
+
+        logger.info(f"[M2] 查询相似案例 | 结果={len(cases)} 条")
+        return cases
+
     def search_by_label(self, keyword: str, limit: int = 20) -> List[MarketSignal]:
         """按标签/描述关键词模糊检索"""
         with self._conn() as conn:
@@ -207,6 +362,46 @@ class SignalStore:
             conn.execute("CREATE INDEX IF NOT EXISTS idx_event_time ON signals(event_time)")
             conn.execute("CREATE INDEX IF NOT EXISTS idx_batch_id ON signals(batch_id)")
             conn.execute("CREATE INDEX IF NOT EXISTS idx_signal_type ON signals(signal_type)")
+
+            # Causal patterns table
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS causal_patterns (
+                    pattern_id TEXT PRIMARY KEY,
+                    precursor_signals TEXT,
+                    consequent_event TEXT,
+                    probability REAL,
+                    avg_lead_time_days INTEGER,
+                    std_lead_time_days REAL,
+                    supporting_cases TEXT,
+                    confidence REAL,
+                    last_updated TEXT,
+                    created_at TEXT,
+                    notes TEXT,
+                    raw_json TEXT
+                )
+            """)
+            conn.execute("CREATE INDEX IF NOT EXISTS idx_consequent_event ON causal_patterns(consequent_event)")
+
+            # Case records table
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS case_records (
+                    case_id TEXT PRIMARY KEY,
+                    date_range_start TEXT,
+                    date_range_end TEXT,
+                    market TEXT,
+                    signal_sequence TEXT,
+                    evolution TEXT,
+                    outcome TEXT,
+                    lessons TEXT,
+                    tags TEXT,
+                    created_at TEXT,
+                    source TEXT,
+                    notes TEXT,
+                    raw_json TEXT
+                )
+            """)
+            conn.execute("CREATE INDEX IF NOT EXISTS idx_case_date ON case_records(date_range_start)")
+            conn.execute("CREATE INDEX IF NOT EXISTS idx_case_market ON case_records(market)")
 
     def _conn(self) -> sqlite3.Connection:
         return sqlite3.connect(str(self.db_file))
