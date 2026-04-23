@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 MarketRadar 每日自动化流程
 
@@ -26,8 +27,15 @@ MarketRadar 每日自动化流程
   30 15 * * 1-5 cd /path/to/MarketRadar && python run_daily_pipeline.py --mode postmarket
 """
 import sys
+import os
 from datetime import datetime
 from pathlib import Path
+
+# 设置Windows控制台UTF-8编码
+if sys.platform == 'win32':
+    os.system('chcp 65001 > nul')
+    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stderr.reconfigure(encoding='utf-8')
 
 import click
 from rich.console import Console
@@ -47,7 +55,7 @@ from m0_collector.normalizer import Normalizer
 from m1_decoder.decoder import SignalDecoder
 from m2_storage.signal_store import SignalStore
 from m3_judgment.judgment_engine import JudgmentEngine
-from m10_sentiment.sentiment_provider import SentimentProvider
+from m10_sentiment.sentiment_engine import SentimentEngine
 
 console = Console()
 
@@ -89,9 +97,20 @@ def step_m0_collect(limit: int = None) -> int:
         raw_items = provider.fetch(**fetch_kwargs)
         console.print(f"  ✓ 抓取到 {len(raw_items)} 条原始数据")
 
+        if not raw_items:
+            console.print("  [yellow]无新数据，跳过后续步骤[/yellow]")
+            return 0
+
         # 去重
         dedup = DedupIndex(index_path=DEDUP_INDEX_PATH)
-        unique_items = dedup.filter_new(raw_items)
+        unique_items = []
+        for item in raw_items:
+            url = getattr(item, 'url', '')
+            content = getattr(item, 'content', '') or getattr(item, 'text', '')
+            if not dedup.is_duplicate(url, content):
+                unique_items.append(item)
+                dedup.add(url, content)
+
         console.print(f"  ✓ 去重后剩余 {len(unique_items)} 条")
 
         if not unique_items:
@@ -111,8 +130,7 @@ def step_m0_collect(limit: int = None) -> int:
 
         console.print(f"  ✓ 写入 {len(normalized)} 个文件到 {INCOMING_DIR}")
 
-        # 更新去重索引
-        dedup.add_batch(unique_items)
+        # 保存去重索引
         dedup.save()
 
         return len(normalized)
@@ -127,16 +145,20 @@ def step_m10_sentiment() -> dict:
     console.print("\n[bold cyan]步骤 2/5: M10 情绪面快照[/bold cyan]")
 
     try:
-        provider = SentimentProvider()
-        snapshot = provider.get_latest_snapshot()
+        engine = SentimentEngine()
+        signal_data = engine.run()
 
-        console.print(f"  ✓ 恐贪指数: {snapshot.fear_greed_index}")
-        console.print(f"  ✓ 北向资金: {snapshot.northbound_flow_1d:+.2f}亿")
+        if signal_data:
+            console.print(f"  ✓ 恐贪指数: {signal_data.fear_greed_index}")
+            console.print(f"  ✓ 北向资金: {signal_data.northbound_flow_1d:+.2f}亿")
 
-        return {
-            "fear_greed_index": snapshot.fear_greed_index,
-            "northbound_flow": snapshot.northbound_flow_1d,
-        }
+            return {
+                "fear_greed_index": signal_data.fear_greed_index,
+                "northbound_flow": signal_data.northbound_flow_1d,
+            }
+        else:
+            console.print(f"  [yellow]⚠ M10 采集失败（非致命）[/yellow]")
+            return {}
 
     except Exception as e:
         console.print(f"  [yellow]⚠ M10 采集失败（非致命）: {e}[/yellow]")
