@@ -158,6 +158,152 @@ class AKShareRealtimeFeed(PriceFeed):
 
 
 # ─────────────────────────────────────────────────────────────
+# yfinance (Yahoo Finance)
+# ─────────────────────────────────────────────────────────────
+
+class YFinanceFeed(PriceFeed):
+    """yfinance 数据源（Yahoo Finance）。
+
+    优势：全球股票（港股/美股/A股）、免费、无需 API Key。
+    劣势：实时行情有 15 分钟延迟（免费版）。
+    """
+
+    def __init__(self):
+        self._cache: Dict[str, PriceSnapshot] = {}
+        self._cache_ttl_sec = 60
+
+    def get_price(self, instrument: str, dt: Optional[date] = None) -> Optional[PriceSnapshot]:
+        if dt is not None:
+            return self._get_daily(instrument, dt)
+        return self._get_realtime(instrument)
+
+    def _get_realtime(self, instrument: str) -> Optional[PriceSnapshot]:
+        """获取实时行情（15 分钟延迟）"""
+        try:
+            import yfinance as yf
+            
+            # 转换股票代码格式
+            symbol = self._convert_symbol(instrument)
+            if not symbol:
+                return None
+            
+            ticker = yf.Ticker(symbol)
+            info = ticker.info
+            
+            # 检查数据有效性
+            if not info or "currentPrice" not in info:
+                logger.warning(f"[YFinanceFeed] no data for {instrument} ({symbol})")
+                return None
+            
+            now = datetime.now()
+            
+            return PriceSnapshot(
+                instrument=instrument,
+                price=float(info.get("currentPrice", 0)),
+                open_price=float(info.get("open", 0)),
+                high=float(info.get("dayHigh", 0)),
+                low=float(info.get("dayLow", 0)),
+                volume=float(info.get("volume", 0)),
+                amount=0.0,  # yfinance 不提供成交额
+                timestamp=now,
+                source="yfinance_realtime",
+                prev_close=float(info.get("previousClose", 0)),
+                change_pct=float(info.get("regularMarketChangePercent", 0)),
+            )
+        except ImportError:
+            logger.error("[YFinanceFeed] yfinance not installed: pip install yfinance")
+            return None
+        except Exception as e:
+            logger.warning(f"[YFinanceFeed] realtime failed {instrument}: {e}")
+            return None
+
+    def _get_daily(self, instrument: str, dt: date) -> Optional[PriceSnapshot]:
+        """获取历史日线数据"""
+        try:
+            import yfinance as yf
+            
+            # 转换股票代码格式
+            symbol = self._convert_symbol(instrument)
+            if not symbol:
+                return None
+            
+            ticker = yf.Ticker(symbol)
+            
+            # 获取指定日期的数据（前后各取 1 天，确保能取到数据）
+            start = dt - timedelta(days=1)
+            end = dt + timedelta(days=1)
+            hist = ticker.history(start=start.isoformat(), end=end.isoformat())
+            
+            if hist is None or hist.empty:
+                return None
+            
+            # 找到最接近目标日期的数据
+            hist.index = hist.index.tz_localize(None)  # 移除时区信息
+            target_rows = hist[hist.index.date == dt]
+            
+            if target_rows.empty:
+                # 如果目标日期没有数据，取最接近的日期
+                logger.warning(f"[YFinanceFeed] no data for {dt}, using closest date")
+                row = hist.iloc[-1]
+            else:
+                row = target_rows.iloc[0]
+            
+            return PriceSnapshot(
+                instrument=instrument,
+                price=float(row["Close"]),
+                open_price=float(row["Open"]),
+                high=float(row["High"]),
+                low=float(row["Low"]),
+                volume=float(row["Volume"]),
+                amount=0.0,  # yfinance 不提供成交额
+                timestamp=datetime.combine(dt, datetime.min.time()),
+                source="yfinance_daily",
+            )
+        except ImportError:
+            logger.error("[YFinanceFeed] yfinance not installed: pip install yfinance")
+            return None
+        except Exception as e:
+            logger.warning(f"[YFinanceFeed] daily failed {instrument} {dt}: {e}")
+            return None
+
+    def _convert_symbol(self, instrument: str) -> Optional[str]:
+        """转换股票代码格式：MarketRadar 格式 → yfinance 格式
+        
+        MarketRadar 格式：
+        - A股：600519.SH, 000858.SZ
+        - 港股：0700.HK, 09988.HK
+        - 美股：AAPL.US, TSLA.US
+        
+        yfinance 格式：
+        - A股：600519.SS (上交所), 000858.SZ (深交所)
+        - 港股：0700.HK, 9988.HK (去掉前导 0)
+        - 美股：AAPL, TSLA (不需要后缀)
+        """
+        if "." not in instrument:
+            return instrument  # 已经是正确格式
+        
+        code, suffix = instrument.split(".")
+        suffix = suffix.upper()
+        
+        if suffix == "SH":
+            # 上交所：SH → SS
+            return f"{code}.SS"
+        elif suffix == "SZ":
+            # 深交所：保持 SZ
+            return f"{code}.SZ"
+        elif suffix == "HK":
+            # 港股：去掉前导 0
+            code_int = int(code)
+            return f"{code_int}.HK"
+        elif suffix == "US":
+            # 美股：去掉后缀
+            return code
+        else:
+            # 其他市场：保持原样
+            return instrument
+
+
+# ─────────────────────────────────────────────────────────────
 # TuShare Pro
 # ─────────────────────────────────────────────────────────────
 
@@ -518,16 +664,44 @@ class EquityCurveTracker:
 # ─────────────────────────────────────────────────────────────
 
 def make_price_feed(mode: str = "akshare", csv_path: str = "",
-                    tushare_token: str = "") -> PriceFeed:
+                    tushare_token: str = "",
+                    alltick_key: str = "",
+                    itick_key: str = "") -> PriceFeed:
     if mode == "csv":
         return CSVPriceFeed(csv_path)
     if mode == "tushare":
         return TushareFeed(token=tushare_token)
+    if mode == "yfinance":
+        return YFinanceFeed()
+    if mode == "alltick":
+        from m9_paper_trader.alltick_feed import AllTickFeed
+        return AllTickFeed(api_key=alltick_key)
+    if mode == "itick":
+        from m9_paper_trader.itick_feed import ITickFeed
+        return ITickFeed(api_key=itick_key)
     if mode == "composite":
         feeds = []
+        
+        # 优先级 1: iTick（实时，免费7天）
+        if itick_key:
+            from m9_paper_trader.itick_feed import ITickFeed
+            feeds.append(ITickFeed(api_key=itick_key))
+        
+        # 优先级 2: AllTick（实时，免费7天）
+        if alltick_key:
+            from m9_paper_trader.alltick_feed import AllTickFeed
+            feeds.append(AllTickFeed(api_key=alltick_key))
+        
+        # 优先级 3: TuShare（实时，需付费）
         tf = TushareFeed(token=tushare_token)
         if tf.available:
             feeds.append(tf)
+        
+        # 优先级 4: AKShare（3-5分钟延迟，免费）
         feeds.append(AKShareRealtimeFeed())
+        
+        # 优先级 5: YFinance（15分钟延迟，免费）
+        feeds.append(YFinanceFeed())
+        
         return CompositeFeed(feeds)
     return AKShareRealtimeFeed()
