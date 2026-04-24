@@ -1,0 +1,79 @@
+{
+  "batch_id": "sentiment_20260424_155542",
+  "snapshot_time": "2026-04-24T15:55:42.721955",
+  "fear_greed_score": 53.67142857142858,
+  "sentiment_label": "中性",
+  "direction": "NEUTRAL",
+  "northbound_net_flow": 0.0,
+  "advance_decline_ratio": 0.0,
+  "avg_comprehensive_score": 59.58,
+  "high_score_count": 441,
+  "baidu_hot_stocks": [
+    [
+      "京东方Ａ",
+      362283.0
+    ],
+    [
+      "中国能建",
+      323903.0
+    ],
+    [
+      "包钢股份",
+      313352.0
+    ],
+    [
+      "永泰能源",
+      217867.0
+    ],
+    [
+      "华电能源",
+      74759.0
+    ]
+  ],
+  "weibo_sentiment": [
+    [
+      "比亚迪",
+      -0.75
+    ],
+    [
+      "士兰微",
+      0.14
+    ],
+    [
+      "格林美",
+      -0.43
+    ],
+    [
+      "立讯精密",
+      3.22
+    ],
+    [
+      "通威股份",
+      -1.26
+    ],
+    [
+      "深圳能源",
+      -0.64
+    ],
+    [
+      "长电科技",
+      -1.7
+    ],
+    [
+      "洛阳钼业",
+      1.44
+    ],
+    [
+      "节能风电",
+      0.18
+    ],
+    [
+      "包钢股份",
+      -1.56
+    ]
+  ],
+  "errors": [
+    "northbound: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?reportName=RPT_MUTUAL_QUOTA&columns=TRADE_DATE%2CMUTUAL_TYPE%2CBOARD_TYPE%2CMUTUAL_TYPE_NAME%2CFUNDS_DIRECTION%2CINDEX_CODE%2CINDEX_NAME%2CBOARD_CODE&quoteColumns=status~07~BOARD_CODE%2CdayNetAmtIn~07~BOARD_CODE%2CdayAmtRemain~07~BOARD_CODE%2CdayAmtThreshold~07~BOARD_CODE%2Cf104~07~BOARD_CODE%2Cf105~07~BOARD_CODE%2Cf106~07~BOARD_CODE%2Cf3~03~INDEX_CODE~INDEX_f3%2CnetBuyAmt~07~BOARD_CODE&quoteType=0&pageNumber=1&pageSize=2000&sortTypes=1&sortColumns=MUTUAL_TYPE&source=WEB&client=WEB (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)')))"
+  ],
+  "partial": true
+}

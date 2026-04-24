@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 完整流程演示：M0→M1→M2→M3
-使用模拟新闻数据，展示系统如何生成投资机会
+使用真实AKShare数据源，展示系统如何生成投资机会
 """
 import sys
 import os
@@ -17,7 +17,7 @@ if sys.platform == 'win32':
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from m0_collector.models import RawArticle, CollectedItem
+from m0_collector.providers.akshare_news import AkshareNewsProvider
 from m0_collector.dedup import DedupIndex
 from m0_collector.normalizer import Normalizer
 from m1_decoder.decoder import SignalDecoder
@@ -28,63 +28,18 @@ import uuid
 
 def main():
     print("=" * 80)
-    print("MarketRadar 完整流程演示")
+    print("MarketRadar 完整流程演示（真实数据）")
     print("=" * 80)
 
-    # 模拟新闻数据
-    mock_news = [
-        {
-            "title": "央行宣布降准0.5个百分点 释放长期资金约1万亿元",
-            "content": "中国人民银行决定于2026年4月25日下调金融机构存款准备金率0.5个百分点，此次降准将释放长期资金约1万亿元。央行表示，此举旨在保持流动性合理充裕，支持实体经济发展。",
-            "source": "中国人民银行",
-            "url": "http://www.pbc.gov.cn/news/2026/04/24/001.html",
-        },
-        {
-            "title": "12月CPI同比下降0.3% 通缩压力显现",
-            "content": "国家统计局公布，12月CPI同比下降0.3%，环比下降0.5%。PPI同比下降2.7%，连续15个月负增长。分析认为，需求不足导致价格持续低迷。",
-            "source": "国家统计局",
-            "url": "http://www.stats.gov.cn/news/2026/04/24/002.html",
-        },
-        {
-            "title": "12月PMI为49.0 连续3个月低于荣枯线",
-            "content": "制造业PMI为49.0，连续3个月位于收缩区间。新订单指数48.5，生产指数49.8，均低于临界点。经济下行压力加大。",
-            "source": "国家统计局",
-            "url": "http://www.stats.gov.cn/news/2026/04/24/003.html",
-        },
-        {
-            "title": "新能源汽车购置税减免政策延续至2027年",
-            "content": "财政部、税务总局联合发布公告，新能源汽车购置税减免政策延续至2027年底。业内预计此举将提振新能源汽车销量。",
-            "source": "财政部",
-            "url": "http://www.mof.gov.cn/news/2026/04/24/004.html",
-        },
-        {
-            "title": "某半导体龙头Q1业绩预增150%-180%",
-            "content": "某半导体公司发布业绩预告，预计Q1净利润同比增长150%-180%，主要受益于AI芯片需求爆发和产能利用率提升。",
-            "source": "上交所",
-            "url": "http://www.sse.com.cn/news/2026/04/24/005.html",
-        },
-    ]
-
-    # M0: 数据采集与标准化
+    # ========== M0: 数据采集 ==========
     print("\n[M0] 数据采集与标准化")
     print("-" * 80)
 
-    raw_articles = []
-    for news in mock_news:
-        article = RawArticle(
-            title=news["title"],
-            content=news["content"],
-            raw_published_at=datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            source_name=news["source"],
-            source_url=news["url"],
-            provider_id="manual",
-            language="zh",
-        )
-        raw_articles.append(article)
-
+    provider = AkshareNewsProvider()
+    raw_articles = provider.fetch()
     print(f"✓ 采集到 {len(raw_articles)} 篇新闻")
 
-    # 标准化
+    # 去重和标准化
     dedup = DedupIndex()
     normalizer = Normalizer(dedup_index=dedup)
     normalized = normalizer.normalize(raw_articles)
@@ -99,7 +54,7 @@ def main():
 
     print(f"✓ 标准化后 {len(all_items)} 条")
 
-    # M1: 信号解码
+    # ========== M1: 信号解码 ==========
     print("\n[M1] 信号解码")
     print("-" * 80)
 
@@ -119,7 +74,7 @@ def main():
 
     print(f"\n✓ 总共解码出 {len(all_signals)} 个信号")
 
-    # M2: 信号存储
+    # ========== M2: 信号存储 ==========
     print("\n[M2] 信号存储")
     print("-" * 80)
 
@@ -130,7 +85,7 @@ def main():
     stats = store.stats()
     print(f"✓ 数据库统计: 总计 {stats['total']} 条信号")
 
-    # M3: 机会判断
+    # ========== M3: 机会判断 ==========
     print("\n[M3] 机会判断")
     print("-" * 80)
 

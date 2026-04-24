@@ -26,7 +26,25 @@
       "Bash(python demo_full_pipeline.py)",
       "Bash(python -c \"from m3_judgment.judgment_engine import JudgmentEngine; engine = JudgmentEngine\\(\\); methods = [m for m in dir\\(engine\\) if not m.startswith\\('_'\\) and 'judge' in m.lower\\(\\)]; print\\('\\\\n'.join\\(methods\\)\\)\")",
       "Bash(python -c \"from core.schemas import OpportunityObject; import inspect; fields = [f for f in OpportunityObject.model_fields.keys\\(\\)]; print\\('\\\\n'.join\\(fields\\)\\)\")",
-      "Bash(git commit -m 'fix: 完成M0→M1→M2→M3完整流程调试 *)"
+      "Bash(git commit -m 'fix: 完成M0→M1→M2→M3完整流程调试 *)",
+      "Bash(sqlite3 market_radar.db \"SELECT DISTINCT affected_markets FROM signals WHERE affected_markets != '[]' LIMIT 20;\")",
+      "Bash(sqlite3 data/signals/signal_store.db \"SELECT DISTINCT affected_markets FROM signals WHERE affected_markets != '[]' LIMIT 20;\")",
+      "Bash(sqlite3 data/signals/signal_store.db \"SELECT signal_label, affected_markets, affected_instruments FROM signals ORDER BY created_at DESC LIMIT 10;\")",
+      "Bash(sqlite3 data/signals/signal_store.db \"SELECT COUNT\\(*\\) as total, affected_markets FROM signals GROUP BY affected_markets;\")",
+      "WebSearch",
+      "Bash(python -c \"import akshare as ak; import inspect; funcs = [name for name in dir\\(ak\\) if 'news' in name.lower\\(\\) or 'hk' in name.lower\\(\\) and not name.startswith\\('_'\\)]; print\\('\\\\n'.join\\(sorted\\(funcs\\)[:30]\\)\\)\")",
+      "Bash(python test_akshare_news_sources.py)",
+      "Bash(echo \"export NEWSAPI_KEY=6wB0t_ne7CjozVmoTWP_LZlcGxpqsvDB\")",
+      "Bash(echo \"export FINNHUB_API_KEY=d7lhlbhr01qm7o0bsj30d7lhlbhr01qm7o0bsj3g\")",
+      "Bash(export NEWSAPI_KEY=6wB0t_ne7CjozVmoTWP_LZlcGxpqsvDB)",
+      "Bash(export FINNHUB_API_KEY=d7lhlbhr01qm7o0bsj30d7lhlbhr01qm7o0bsj3g)",
+      "Bash(python test_international_news.py)",
+      "Bash(NEWSAPI_KEY=6wB0t_ne7CjozVmoTWP_LZlcGxpqsvDB FINNHUB_API_KEY=d7lhlbhr01qm7o0bsj30d7lhlbhr01qm7o0bsj3g python test_international_news.py)",
+      "Bash(curl -s -H \"X-Api-Key: 6wB0t_ne7CjozVmoTWP_LZlcGxpqsvDB\" \"https://newsapi.org/v2/top-headlines?country=us&pageSize=1\")",
+      "Bash(python -m json.tool)",
+      "Bash(python test_multi_source_integration.py)",
+      "Bash(python run_daily_pipeline.py --mode premarket --market A_SHARE,HK,US --limit 5)",
+      "Bash(FINNHUB_API_KEY=d7lhlbhr01qm7o0bsj30d7lhlbhr01qm7o0bsj3g python run_daily_pipeline.py --mode premarket --market A_SHARE,HK,US --limit 3)"
     ]
   }
 }

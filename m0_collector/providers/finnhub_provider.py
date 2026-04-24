@@ -40,13 +40,16 @@ class FinnhubProvider(ProviderAdapter):
 
     def fetch(self,
               category: str = "general",
-              min_id: int = 0) -> List[RawArticle]:
+              min_id: int = 0,
+              limit: Optional[int] = None,
+              **kwargs) -> List[RawArticle]:
         """
         获取市场新闻
 
         Args:
             category: 新闻类别 (general, forex, crypto, merger)
             min_id: 最小新闻ID（用于分页）
+            limit: 限制返回数量
 
         Returns:
             新闻文章列表
@@ -89,6 +92,10 @@ class FinnhubProvider(ProviderAdapter):
                 )
                 articles.append(article)
 
+                # 应用limit限制
+                if limit and len(articles) >= limit:
+                    break
+
             return articles
 
         except requests.exceptions.RequestException as e:
@@ -98,7 +105,8 @@ class FinnhubProvider(ProviderAdapter):
     def fetch_company_news(self,
                           symbol: str,
                           from_date: Optional[datetime] = None,
-                          to_date: Optional[datetime] = None) -> List[RawArticle]:
+                          to_date: Optional[datetime] = None,
+                          limit: Optional[int] = None) -> List[RawArticle]:
         """
         获取特定公司的新闻
 
@@ -106,6 +114,7 @@ class FinnhubProvider(ProviderAdapter):
             symbol: 股票代码（如 AAPL, 0700.HK）
             from_date: 开始日期
             to_date: 结束日期
+            limit: 限制返回数量
 
         Returns:
             新闻文章列表
@@ -154,28 +163,32 @@ class FinnhubProvider(ProviderAdapter):
                 )
                 articles.append(article)
 
+                # 应用limit限制
+                if limit and len(articles) >= limit:
+                    break
+
             return articles
 
         except requests.exceptions.RequestException as e:
             print(f"Finnhub请求失败: {e}")
             return []
 
-    def fetch_market_news(self, category: str = "general") -> List[RawArticle]:
+    def fetch_market_news(self, category: str = "general", limit: Optional[int] = None) -> List[RawArticle]:
         """获取市场新闻（通用）"""
-        return self.fetch(category=category)
+        return self.fetch(category=category, limit=limit)
 
-    def fetch_us_stock_news(self) -> List[RawArticle]:
+    def fetch_us_stock_news(self, limit: Optional[int] = None) -> List[RawArticle]:
         """获取美股市场新闻"""
-        return self.fetch(category="general")
+        return self.fetch(category="general", limit=limit)
 
-    def fetch_forex_news(self) -> List[RawArticle]:
+    def fetch_forex_news(self, limit: Optional[int] = None) -> List[RawArticle]:
         """获取外汇新闻"""
-        return self.fetch(category="forex")
+        return self.fetch(category="forex", limit=limit)
 
-    def fetch_crypto_news(self) -> List[RawArticle]:
+    def fetch_crypto_news(self, limit: Optional[int] = None) -> List[RawArticle]:
         """获取加密货币新闻"""
-        return self.fetch(category="crypto")
+        return self.fetch(category="crypto", limit=limit)
 
-    def fetch_merger_news(self) -> List[RawArticle]:
+    def fetch_merger_news(self, limit: Optional[int] = None) -> List[RawArticle]:
         """获取并购新闻"""
-        return self.fetch(category="merger")
+        return self.fetch(category="merger", limit=limit)

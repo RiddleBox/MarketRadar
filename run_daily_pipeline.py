@@ -78,64 +78,75 @@ def print_header(phase: str):
     ))
 
 
-def step_m0_collect(limit: int = None) -> int:
+def step_m0_collect(limit: int = None, markets: list[Market] = None) -> int:
     """M0: 采集隔夜新闻和公告"""
     console.print("\n[bold cyan]步骤 1/5: M0 采集隔夜信号[/bold cyan]")
 
     INCOMING_DIR.mkdir(parents=True, exist_ok=True)
+    markets = markets or [Market.A_SHARE]
 
-    # 数据源降级策略: RSS → AKShare
+    # 多数据源策略: AKShare(A股) + Finnhub(港股/美股)
     providers = []
-    
-    # 尝试 RSS Provider
-    try:
-        provider = RssProvider()
-        providers.append((provider, "RSS"))
-    except Exception as e:
-        console.print(f"  [yellow]⚠ RSS Provider 加载失败: {e}[/yellow]")
-    
-    # 尝试 AKShare Provider
-    try:
-        from m0_collector.providers.akshare_news import AkshareNewsProvider
-        akshare_provider = AkshareNewsProvider()
-        if akshare_provider.is_available():
-            providers.append((akshare_provider, "AKShare"))
-    except Exception as e:
-        console.print(f"  [yellow]⚠ AKShare Provider 加载失败: {e}[/yellow]")
-    
+
+    # A股数据源: AKShare
+    if Market.A_SHARE in markets:
+        try:
+            from m0_collector.providers.akshare_news import AkshareNewsProvider
+            akshare_provider = AkshareNewsProvider()
+            if akshare_provider.is_available():
+                providers.append((akshare_provider, "AKShare(A股)", {}))
+        except Exception as e:
+            console.print(f"  [yellow]⚠ AKShare Provider 加载失败: {e}[/yellow]")
+
+    # 港股/美股数据源: Finnhub
+    if Market.HK in markets or Market.US in markets:
+        try:
+            from m0_collector.providers.finnhub_provider import FinnhubProvider
+            finnhub_provider = FinnhubProvider()
+
+            # 港股新闻 (使用市场新闻)
+            if Market.HK in markets:
+                providers.append((finnhub_provider, "Finnhub(港股)", {"category": "general"}))
+
+            # 美股新闻 (使用市场新闻)
+            if Market.US in markets:
+                providers.append((finnhub_provider, "Finnhub(美股)", {"category": "general"}))
+
+        except Exception as e:
+            console.print(f"  [yellow]⚠ Finnhub Provider 加载失败: {e}[/yellow]")
+
     if not providers:
         console.print("  [red]✗ 无可用数据源,跳过采集[/red]")
         return 0
-    
-    console.print(f"  可用数据源: {', '.join([name for _, name in providers])}")
+
+    console.print(f"  可用数据源: {', '.join([name for _, name, _ in providers])}")
 
     all_raw_items = []
-    
+
     # 依次尝试每个数据源
-    for provider, name in providers:
+    for provider, name, fetch_kwargs in providers:
         try:
             console.print(f"  尝试数据源: {name}")
-            
-            fetch_kwargs = {}
+
             if limit:
                 fetch_kwargs["limit"] = limit
-            
+
             raw_items = provider.fetch(**fetch_kwargs)
-            
+
             if raw_items:
                 console.print(f"  ✓ {name} 抓取到 {len(raw_items)} 条数据")
                 all_raw_items.extend(raw_items)
             else:
                 console.print(f"  [yellow]⚠ {name} 返回空数据[/yellow]")
-                
+
         except Exception as e:
             console.print(f"  [yellow]⚠ {name} 抓取失败: {e}[/yellow]")
             continue
-    
+
     if not all_raw_items:
         console.print("  [yellow]所有数据源均失败,无新数据[/yellow]")
         return 0
-    
+
     console.print(f"  ✓ 总计抓取: {len(all_raw_items)} 条")
 
     try:
@@ -143,8 +154,8 @@ def step_m0_collect(limit: int = None) -> int:
         dedup = DedupIndex(index_path=DEDUP_INDEX_PATH)
         unique_items = []
         for item in all_raw_items:
-            url = getattr(item, 'url', '')
-            content = getattr(item, 'content', '') or getattr(item, 'text', '')
+            url = getattr(item, 'source_url', '')
+            content = getattr(item, 'content', '')
             if not dedup.is_duplicate(url, content):
                 unique_items.append(item)
                 dedup.add(url, content)
@@ -156,15 +167,22 @@ def step_m0_collect(limit: int = None) -> int:
             return 0
 
         # 标准化
-        normalizer = Normalizer()
-        normalized = [normalizer.normalize(item) for item in unique_items]
+        dedup_for_normalizer = DedupIndex(index_path=DEDUP_INDEX_PATH)
+        normalizer = Normalizer(dedup_index=dedup_for_normalizer)
+        normalized, skip_count, error_count = normalizer.normalize(unique_items)
+
+        console.print(f"  ✓ 标准化完成: {len(normalized)} 条 (跳过{skip_count}, 错误{error_count})")
+
+        if not normalized:
+            console.print("  [yellow]标准化后无有效数据，跳过后续步骤[/yellow]")
+            return 0
 
         # 写入文件
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         for i, doc in enumerate(normalized):
             filename = f"{timestamp}_{i:03d}.txt"
             filepath = INCOMING_DIR / filename
-            filepath.write_text(doc.content, encoding="utf-8")
+            filepath.write_text(doc.to_text(), encoding="utf-8")
 
         console.print(f"  ✓ 写入 {len(normalized)} 个文件到 {INCOMING_DIR}")
 
@@ -323,7 +341,7 @@ def run_premarket(markets: list[Market], limit: int = None):
     print_header("premarket")
 
     # Step 1: M0 采集
-    collected = step_m0_collect(limit=limit)
+    collected = step_m0_collect(limit=limit, markets=markets)
     if collected == 0:
         console.print("\n[yellow]无新数据，流程结束[/yellow]")
         return
