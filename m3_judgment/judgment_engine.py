@@ -251,25 +251,48 @@ class JudgmentEngine:
         if not signals:
             return []
 
-        # Extract tags from signals for matching
-        tags = []
+        # Tag synonym mapping for better matching
+        TAG_SYNONYMS = {
+            "降准": ["降准", "货币政策", "流动性"],
+            "降息": ["降息", "货币政策", "利率", "LPR"],
+            "政策宽松": ["政策宽松", "货币政策", "政策利好"],
+            "通缩压力": ["通缩压力", "CPI", "通缩"],
+            "新能源": ["新能源", "政策利好", "补贴"],
+            "半导体": ["半导体", "芯片", "技术突破"],
+            "业绩": ["业绩预增", "业绩爆雷", "超预期"],
+            "地缘政治": ["地缘政治", "避险", "黄金"],
+            "北向资金": ["北向资金", "外资", "白马股"],
+            "监管": ["监管政策", "风险规避"],
+            "并购": ["并购重组", "资产注入", "小盘股"],
+            "技术突破": ["技术突破", "放量", "趋势跟踪"],
+        }
+
+        # Extract tags from signals with synonym expansion
+        tags = set()
         for s in signals:
-            if "降准" in s.signal_label or "降准" in s.description:
-                tags.append("降准")
-            if "降息" in s.signal_label or "降息" in s.description:
-                tags.append("降息")
-            if "政策" in s.signal_label or "政策" in s.description:
-                tags.append("政策宽松")
-            if "通缩" in s.description or "CPI" in s.description:
-                tags.append("通缩压力")
+            text = s.signal_label + " " + s.description
+
+            # Check each keyword and add synonyms
+            for keyword, synonyms in TAG_SYNONYMS.items():
+                if keyword in text:
+                    tags.update(synonyms)
+
+            # Direct keyword extraction (fallback)
+            for keyword in ["降准", "降息", "政策", "CPI", "新能源", "半导体", "业绩",
+                           "地缘", "北向", "监管", "并购", "技术"]:
+                if keyword in text:
+                    tags.add(keyword)
 
         if not tags:
             logger.info("[M3 Case Retrieval] 无法提取标签，跳过案例检索")
             return []
 
+        tags_list = list(tags)
+        logger.info(f"[M3 Case Retrieval] 提取标签: {tags_list[:10]}...")
+
         # Query similar cases from M2
         try:
-            cases = self.signal_store.query_similar_cases(tags=tags, limit=limit)
+            cases = self.signal_store.query_similar_cases(tags=tags_list, limit=limit)
             logger.info(f"[M3 Case Retrieval] 检索相似案例数={len(cases)}")
             return cases
         except Exception as e:
