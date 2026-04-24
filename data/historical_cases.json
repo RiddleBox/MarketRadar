@@ -1,0 +1,116 @@
+[
+  {
+    "case_id": "case_001",
+    "event_type": "diplomatic_event",
+    "event_description": "2023年沙特王储访华，签署新能源合作备忘录",
+    "predicted_outcome": "光伏组件出口订单增长",
+    "actual_outcome": "6个月后隆基绿能获得10亿美元订单",
+    "success": true,
+    "timeframe": "mid_term",
+    "confidence_at_prediction": 0.7,
+    "created_at": "2023-06-15T00:00:00",
+    "metadata": {
+      "affected_companies": ["隆基绿能", "通威股份"],
+      "order_amount": "10亿美元"
+    }
+  },
+  {
+    "case_id": "case_002",
+    "event_type": "diplomatic_event",
+    "event_description": "2022年印度总理访华，讨论能源合作",
+    "predicted_outcome": "光伏设备出口增长",
+    "actual_outcome": "未获得实质性订单",
+    "success": false,
+    "timeframe": "mid_term",
+    "confidence_at_prediction": 0.6,
+    "created_at": "2022-09-20T00:00:00",
+    "metadata": {
+      "reason": "印度本土保护政策"
+    }
+  },
+  {
+    "case_id": "case_003",
+    "event_type": "policy_driven",
+    "event_description": "2021年国家发布碳中和行动方案",
+    "predicted_outcome": "光伏装机需求大幅增长",
+    "actual_outcome": "2022年光伏装机量同比增长60%",
+    "success": true,
+    "timeframe": "short_term",
+    "confidence_at_prediction": 0.9,
+    "created_at": "2021-10-24T00:00:00",
+    "metadata": {
+      "policy_impact": "强制性政策",
+      "growth_rate": "60%"
+    }
+  },
+  {
+    "case_id": "case_004",
+    "event_type": "tech_breakthrough",
+    "event_description": "2020年钙钛矿电池效率突破20%",
+    "predicted_outcome": "钙钛矿电池商业化加速",
+    "actual_outcome": "仍处于实验室阶段，未商业化",
+    "success": false,
+    "timeframe": "long_term",
+    "confidence_at_prediction": 0.5,
+    "created_at": "2020-03-15T00:00:00",
+    "metadata": {
+      "reason": "稳定性问题未解决"
+    }
+  },
+  {
+    "case_id": "case_005",
+    "event_type": "policy_driven",
+    "event_description": "2022年新能源车补贴政策延续",
+    "predicted_outcome": "新能源车销量持续增长",
+    "actual_outcome": "2022年新能源车销量同比增长90%",
+    "success": true,
+    "timeframe": "short_term",
+    "confidence_at_prediction": 0.85,
+    "created_at": "2022-01-10T00:00:00",
+    "metadata": {
+      "sales_growth": "90%"
+    }
+  },
+  {
+    "case_id": "case_006",
+    "event_type": "tech_breakthrough",
+    "event_description": "2021年固态电池能量密度突破400Wh/kg",
+    "predicted_outcome": "固态电池2年内商业化",
+    "actual_outcome": "仍在中试阶段，成本过高",
+    "success": false,
+    "timeframe": "mid_term",
+    "confidence_at_prediction": 0.6,
+    "created_at": "2021-08-20T00:00:00",
+    "metadata": {
+      "reason": "成本是传统电池3倍"
+    }
+  },
+  {
+    "case_id": "case_007",
+    "event_type": "diplomatic_event",
+    "event_description": "2023年中东多国领导人访华，签署基建合作",
+    "predicted_outcome": "基建相关产业受益",
+    "actual_outcome": "中国建筑、中国中铁获得多个项目",
+    "success": true,
+    "timeframe": "mid_term",
+    "confidence_at_prediction": 0.75,
+    "created_at": "2023-12-05T00:00:00",
+    "metadata": {
+      "affected_companies": ["中国建筑", "中国中铁"]
+    }
+  },
+  {
+    "case_id": "case_008",
+    "event_type": "social_trend",
+    "event_description": "2022年年轻人养生热潮",
+    "predicted_outcome": "保健品销量增长",
+    "actual_outcome": "保健品板块涨幅有限，健身器材更受益",
+    "success": false,
+    "timeframe": "short_term",
+    "confidence_at_prediction": 0.5,
+    "created_at": "2022-05-10T00:00:00",
+    "metadata": {
+      "reason": "消费偏好转向运动而非保健品"
+    }
+  }
+]
