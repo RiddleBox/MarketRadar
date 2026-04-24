@@ -2,7 +2,31 @@
   "permissions": {
     "allow": [
       "Bash(python -m m10_sentiment.cli --help)",
-      "Bash(python -c \"from m11_agent_sim.event_catalog import ANNOTATED_EVENTS; dates = [e['date'] for e in ANNOTATED_EVENTS]; print\\(f'标注事件时间范围: {min\\(dates\\)} 到 {max\\(dates\\)}'\\); print\\(f'共 {len\\(dates\\)} 个事件'\\)\")"
+      "Bash(python -c \"from m11_agent_sim.event_catalog import ANNOTATED_EVENTS; dates = [e['date'] for e in ANNOTATED_EVENTS]; print\\(f'标注事件时间范围: {min\\(dates\\)} 到 {max\\(dates\\)}'\\); print\\(f'共 {len\\(dates\\)} 个事件'\\)\")",
+      "Bash(git commit -m ' *)",
+      "Bash(python scripts/expand_causal_graph.py)",
+      "Bash(sqlite3 data/signals/signal_store.db \"SELECT COUNT\\(*\\) FROM causal_patterns\")",
+      "Bash(sqlite3 data/signals/signal_store.db \"SELECT COUNT\\(*\\) FROM case_records\")",
+      "Bash(sqlite3 data/signals/signal_store.db \"SELECT pattern_id, consequent_event, confidence FROM causal_patterns LIMIT 10\")",
+      "Bash(sqlite3 data/signals/signal_store.db \"SELECT case_id, date_range_start, date_range_end FROM case_records ORDER BY date_range_start DESC LIMIT 5\")",
+      "Bash(python test_inference_detail.py)",
+      "Bash(python test_case_query.py)",
+      "Bash(sqlite3 m2_storage/market_radar.db \"SELECT case_id, json_extract\\(raw_json, '$.tags'\\) as tags FROM case_records LIMIT 10;\")",
+      "Bash(sqlite3 data/signals/signal_store.db \"SELECT case_id, tags FROM case_records LIMIT 10;\")",
+      "Bash(python test_m3_case_retrieval.py)",
+      "Bash(python -c ' *)",
+      "Bash(python check_db_schema.py)",
+      "Bash(python scripts/build_case_library.py)",
+      "Bash(python -c \"from m0_data_collection.rss_collector import RSSCollector; c = RSSCollector\\(\\); articles = c.fetch_latest\\(hours=24\\); print\\(f'采集到 {len\\(articles\\)} 篇文章'\\)\")",
+      "Bash(grep -v \"^\\\\.$\")",
+      "Bash(python -c \"from m0_collector.providers.rss import RSSProvider; p = RSSProvider\\(\\); articles = p.fetch_articles\\(hours=24\\); print\\(f'采集到 {len\\(articles\\)} 篇文章'\\)\")",
+      "Bash(pip list *)",
+      "Bash(python -c \"from m0_collector.providers.akshare_news import AkshareNewsProvider; p = AkshareNewsProvider\\(\\); articles = p.fetch\\(limit=5\\); print\\(f'采集到 {len\\(articles\\)} 篇文章'\\); [print\\(f'{i+1}. {a.title[:60]}'\\) for i, a in enumerate\\(articles[:3]\\)]\")",
+      "Bash(python -c \"from m2_storage.signal_store import SignalStore; import inspect; store = SignalStore\\(\\); methods = [m for m in dir\\(store\\) if not m.startswith\\('_'\\) and 'signal' in m.lower\\(\\)]; print\\('\\\\n'.join\\(methods\\)\\)\")",
+      "Bash(python demo_full_pipeline.py)",
+      "Bash(python -c \"from m3_judgment.judgment_engine import JudgmentEngine; engine = JudgmentEngine\\(\\); methods = [m for m in dir\\(engine\\) if not m.startswith\\('_'\\) and 'judge' in m.lower\\(\\)]; print\\('\\\\n'.join\\(methods\\)\\)\")",
+      "Bash(python -c \"from core.schemas import OpportunityObject; import inspect; fields = [f for f in OpportunityObject.model_fields.keys\\(\\)]; print\\('\\\\n'.join\\(fields\\)\\)\")",
+      "Bash(git commit -m 'fix: 完成M0→M1→M2→M3完整流程调试 *)"
     ]
   }
 }
