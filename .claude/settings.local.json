@@ -44,7 +44,16 @@
       "Bash(python -m json.tool)",
       "Bash(python test_multi_source_integration.py)",
       "Bash(python run_daily_pipeline.py --mode premarket --market A_SHARE,HK,US --limit 5)",
-      "Bash(FINNHUB_API_KEY=d7lhlbhr01qm7o0bsj30d7lhlbhr01qm7o0bsj3g python run_daily_pipeline.py --mode premarket --market A_SHARE,HK,US --limit 3)"
+      "Bash(FINNHUB_API_KEY=d7lhlbhr01qm7o0bsj30d7lhlbhr01qm7o0bsj3g python run_daily_pipeline.py --mode premarket --market A_SHARE,HK,US --limit 3)",
+      "WebFetch(domain:www.news.cn)",
+      "Bash(python test_xinhua_provider.py)",
+      "Bash(python -c \"import sys; sys.path.insert\\(0, '.'\\); from m2_knowledge_base.industry_graph import IndustryGraph; from m2_knowledge_base.graph_loader import load_core_industry_graph; graph = load_core_industry_graph\\(\\); print\\(f'节点数: {len\\(graph.nodes\\)}'\\); print\\(f'关系数: {len\\(graph.relations\\)}'\\); print\\(f'政策映射数: {len\\(graph.policy_mappings\\)}'\\); print\\(f'事件映射数: {len\\(graph.event_mappings\\)}'\\)\")",
+      "Bash(python test_m1_5_module.py)",
+      "Bash(python test_government_providers.py)",
+      "Bash(python test_tech_media_providers.py)",
+      "Bash(python test_implicit_inference.py)",
+      "Bash(python test_signal_validation.py)",
+      "Bash(python merge_industry_graphs.py)"
     ]
   }
 }

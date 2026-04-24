@@ -1,0 +1,280 @@
+{
+  "nodes": [
+    {
+      "node_id": "semi_upstream_silicon",
+      "name": "硅材料",
+      "sector": "半导体上游",
+      "keywords": ["硅片", "晶圆", "silicon wafer"],
+      "related_symbols": ["688981.SH", "688126.SH"],
+      "description": "半导体硅片/晶圆制造"
+    },
+    {
+      "node_id": "semi_upstream_chemicals",
+      "name": "半导体材料",
+      "sector": "半导体上游",
+      "keywords": ["光刻胶", "电子气体", "靶材"],
+      "related_symbols": ["688396.SH", "300666.SZ"],
+      "description": "光刻胶、电子气体、靶材等半导体材料"
+    },
+    {
+      "node_id": "semi_midstream_design",
+      "name": "芯片设计",
+      "sector": "半导体中游",
+      "keywords": ["芯片设计", "IC设计", "fabless"],
+      "related_symbols": ["688981.SH", "603986.SH"],
+      "description": "集成电路设计"
+    },
+    {
+      "node_id": "semi_midstream_foundry",
+      "name": "晶圆代工",
+      "sector": "半导体中游",
+      "keywords": ["晶圆代工", "foundry", "制造"],
+      "related_symbols": ["688981.SH"],
+      "description": "芯片制造代工"
+    },
+    {
+      "node_id": "semi_midstream_packaging",
+      "name": "封装测试",
+      "sector": "半导体中游",
+      "keywords": ["封装", "测试", "OSAT"],
+      "related_symbols": ["600584.SH", "002185.SZ"],
+      "description": "芯片封装和测试"
+    },
+    {
+      "node_id": "semi_equipment_lithography",
+      "name": "光刻机",
+      "sector": "半导体设备",
+      "keywords": ["光刻机", "lithography"],
+      "related_symbols": ["688012.SH"],
+      "description": "光刻设备"
+    },
+    {
+      "node_id": "semi_equipment_etching",
+      "name": "刻蚀设备",
+      "sector": "半导体设备",
+      "keywords": ["刻蚀", "etching"],
+      "related_symbols": ["688012.SH", "688082.SH"],
+      "description": "刻蚀设备"
+    },
+    {
+      "node_id": "semi_downstream_consumer",
+      "name": "消费电子",
+      "sector": "半导体下游",
+      "keywords": ["手机", "电脑", "消费电子"],
+      "related_symbols": ["002475.SZ"],
+      "description": "手机、电脑等消费电子产品"
+    },
+    {
+      "node_id": "pharma_upstream_api",
+      "name": "原料药",
+      "sector": "医药上游",
+      "keywords": ["原料药", "API", "中间体"],
+      "related_symbols": ["002821.SZ", "300759.SZ"],
+      "description": "药品活性成分和中间体"
+    },
+    {
+      "node_id": "pharma_midstream_formulation",
+      "name": "制剂",
+      "sector": "医药中游",
+      "keywords": ["制剂", "成品药", "药品"],
+      "related_symbols": ["600276.SH", "000538.SZ"],
+      "description": "药品制剂生产"
+    },
+    {
+      "node_id": "pharma_midstream_biotech",
+      "name": "生物药",
+      "sector": "医药中游",
+      "keywords": ["生物药", "抗体", "疫苗"],
+      "related_symbols": ["688185.SH", "300122.SZ"],
+      "description": "生物制药、抗体药物、疫苗"
+    },
+    {
+      "node_id": "pharma_midstream_cro",
+      "name": "CRO/CDMO",
+      "sector": "医药中游",
+      "keywords": ["CRO", "CDMO", "研发外包"],
+      "related_symbols": ["603259.SH", "300759.SZ"],
+      "description": "医药研发和生产外包服务"
+    },
+    {
+      "node_id": "pharma_equipment_reactor",
+      "name": "制药设备",
+      "sector": "医药设备",
+      "keywords": ["反应釜", "制药设备"],
+      "related_symbols": ["300529.SZ"],
+      "description": "制药生产设备"
+    },
+    {
+      "node_id": "pharma_downstream_hospital",
+      "name": "医疗服务",
+      "sector": "医药下游",
+      "keywords": ["医院", "医疗服务", "诊疗"],
+      "related_symbols": ["600763.SH"],
+      "description": "医院和医疗服务机构"
+    },
+    {
+      "node_id": "pharma_downstream_pharmacy",
+      "name": "医药流通",
+      "sector": "医药下游",
+      "keywords": ["药店", "医药流通", "零售"],
+      "related_symbols": ["600056.SH", "603883.SH"],
+      "description": "药品流通和零售"
+    }
+  ],
+  "relations": [
+    {
+      "from": "semi_upstream_silicon",
+      "to": "semi_midstream_foundry",
+      "type": "downstream",
+      "strength": 0.95,
+      "description": "硅片是晶圆代工的基础材料"
+    },
+    {
+      "from": "semi_upstream_chemicals",
+      "to": "semi_midstream_foundry",
+      "type": "downstream",
+      "strength": 0.9,
+      "description": "半导体材料用于芯片制造"
+    },
+    {
+      "from": "semi_midstream_design",
+      "to": "semi_midstream_foundry",
+      "type": "downstream",
+      "strength": 0.95,
+      "description": "芯片设计需要代工厂制造"
+    },
+    {
+      "from": "semi_midstream_foundry",
+      "to": "semi_midstream_packaging",
+      "type": "downstream",
+      "strength": 0.95,
+      "description": "晶圆制造后需要封装测试"
+    },
+    {
+      "from": "semi_midstream_packaging",
+      "to": "semi_downstream_consumer",
+      "type": "downstream",
+      "strength": 0.9,
+      "description": "封装后的芯片用于消费电子"
+    },
+    {
+      "from": "semi_equipment_lithography",
+      "to": "semi_midstream_foundry",
+      "type": "tech_enabled",
+      "strength": 0.95,
+      "description": "光刻机是晶圆制造的核心设备"
+    },
+    {
+      "from": "semi_equipment_etching",
+      "to": "semi_midstream_foundry",
+      "type": "tech_enabled",
+      "strength": 0.9,
+      "description": "刻蚀设备用于芯片制造"
+    },
+    {
+      "from": "pharma_upstream_api",
+      "to": "pharma_midstream_formulation",
+      "type": "downstream",
+      "strength": 0.95,
+      "description": "原料药是制剂的核心原料"
+    },
+    {
+      "from": "pharma_upstream_api",
+      "to": "pharma_midstream_biotech",
+      "type": "downstream",
+      "strength": 0.85,
+      "description": "部分生物药需要原料药"
+    },
+    {
+      "from": "pharma_midstream_formulation",
+      "to": "pharma_downstream_pharmacy",
+      "type": "downstream",
+      "strength": 0.9,
+      "description": "制剂通过流通渠道销售"
+    },
+    {
+      "from": "pharma_midstream_biotech",
+      "to": "pharma_downstream_hospital",
+      "type": "downstream",
+      "strength": 0.9,
+      "description": "生物药主要在医院使用"
+    },
+    {
+      "from": "pharma_midstream_cro",
+      "to": "pharma_midstream_formulation",
+      "type": "tech_enabled",
+      "strength": 0.85,
+      "description": "CRO/CDMO支持药品研发和生产"
+    },
+    {
+      "from": "pharma_equipment_reactor",
+      "to": "pharma_midstream_formulation",
+      "type": "tech_enabled",
+      "strength": 0.85,
+      "description": "制药设备支持药品生产"
+    }
+  ],
+  "policy_mappings": [
+    {
+      "policy_keywords": ["半导体", "芯片", "集成电路", "国产替代"],
+      "target_industries": [
+        "semi_midstream_design",
+        "semi_midstream_foundry",
+        "semi_equipment_lithography",
+        "semi_equipment_etching"
+      ],
+      "impact_type": "direct_support",
+      "confidence": 0.9
+    },
+    {
+      "policy_keywords": ["医保", "集采", "药品降价"],
+      "target_industries": [
+        "pharma_midstream_formulation",
+        "pharma_downstream_pharmacy"
+      ],
+      "impact_type": "regulatory_change",
+      "confidence": 0.85
+    },
+    {
+      "policy_keywords": ["创新药", "生物医药", "研发支持"],
+      "target_industries": [
+        "pharma_midstream_biotech",
+        "pharma_midstream_cro"
+      ],
+      "impact_type": "direct_support",
+      "confidence": 0.85
+    }
+  ],
+  "event_mappings": [
+    {
+      "event_type": "tech_breakthrough",
+      "event_keywords": ["光刻机", "EUV", "先进制程"],
+      "target_industries": [
+        "semi_equipment_lithography",
+        "semi_midstream_foundry"
+      ],
+      "reasoning_template": "光刻技术突破 → 先进制程能力提升 → 晶圆代工和设备厂商受益",
+      "confidence": 0.8
+    },
+    {
+      "event_type": "tech_breakthrough",
+      "event_keywords": ["新药", "临床试验", "FDA批准"],
+      "target_industries": [
+        "pharma_midstream_biotech",
+        "pharma_midstream_cro"
+      ],
+      "reasoning_template": "新药研发成功 → 商业化预期 → 生物药和CRO受益",
+      "confidence": 0.75
+    },
+    {
+      "event_type": "policy_driven",
+      "event_keywords": ["芯片法案", "半导体补贴"],
+      "target_industries": [
+        "semi_midstream_foundry",
+        "semi_equipment_lithography"
+      ],
+      "reasoning_template": "政策补贴 → 产能扩张 → 设备采购增加",
+      "confidence": 0.85
+    }
+  ]
+}

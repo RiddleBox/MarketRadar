@@ -1,0 +1,882 @@
+{
+  "nodes": [
+    {
+      "node_id": "solar_upstream_polysilicon",
+      "name": "多晶硅",
+      "sector": "光伏上游",
+      "keywords": [
+        "多晶硅",
+        "硅料",
+        "polysilicon"
+      ],
+      "related_symbols": [
+        "600438.SH",
+        "603260.SH"
+      ],
+      "description": "光伏产业链最上游，生产太阳能级多晶硅原料"
+    },
+    {
+      "node_id": "solar_upstream_silicon_wafer",
+      "name": "硅片",
+      "sector": "光伏上游",
+      "keywords": [
+        "硅片",
+        "单晶硅",
+        "silicon wafer"
+      ],
+      "related_symbols": [
+        "601012.SH",
+        "688223.SH"
+      ],
+      "description": "将多晶硅加工成硅片"
+    },
+    {
+      "node_id": "solar_midstream_cell",
+      "name": "电池片",
+      "sector": "光伏中游",
+      "keywords": [
+        "电池片",
+        "太阳能电池",
+        "solar cell"
+      ],
+      "related_symbols": [
+        "688599.SH",
+        "002459.SZ"
+      ],
+      "description": "将硅片制成光伏电池片"
+    },
+    {
+      "node_id": "solar_midstream_module",
+      "name": "组件",
+      "sector": "光伏中游",
+      "keywords": [
+        "组件",
+        "光伏组件",
+        "solar module"
+      ],
+      "related_symbols": [
+        "601012.SH",
+        "688599.SH"
+      ],
+      "description": "将电池片封装成光伏组件"
+    },
+    {
+      "node_id": "solar_downstream_power_station",
+      "name": "光伏电站",
+      "sector": "光伏下游",
+      "keywords": [
+        "光伏电站",
+        "太阳能发电",
+        "solar power"
+      ],
+      "related_symbols": [
+        "601222.SH",
+        "600905.SH"
+      ],
+      "description": "光伏发电站运营"
+    },
+    {
+      "node_id": "solar_equipment_polysilicon",
+      "name": "多晶硅设备",
+      "sector": "光伏设备",
+      "keywords": [
+        "多晶硅设备",
+        "还原炉"
+      ],
+      "related_symbols": [
+        "300316.SZ"
+      ],
+      "description": "多晶硅生产设备"
+    },
+    {
+      "node_id": "solar_equipment_cell",
+      "name": "电池片设备",
+      "sector": "光伏设备",
+      "keywords": [
+        "电池片设备",
+        "PECVD",
+        "扩散炉"
+      ],
+      "related_symbols": [
+        "603806.SH",
+        "688390.SH"
+      ],
+      "description": "电池片生产设备"
+    },
+    {
+      "node_id": "ev_upstream_lithium",
+      "name": "锂矿/锂盐",
+      "sector": "新能源车上游",
+      "keywords": [
+        "锂矿",
+        "碳酸锂",
+        "氢氧化锂",
+        "lithium"
+      ],
+      "related_symbols": [
+        "002460.SZ",
+        "002466.SZ"
+      ],
+      "description": "锂电池原材料"
+    },
+    {
+      "node_id": "ev_upstream_cathode",
+      "name": "正极材料",
+      "sector": "新能源车上游",
+      "keywords": [
+        "正极材料",
+        "三元材料",
+        "磷酸铁锂"
+      ],
+      "related_symbols": [
+        "300750.SZ",
+        "688005.SH"
+      ],
+      "description": "锂电池正极材料"
+    },
+    {
+      "node_id": "ev_upstream_anode",
+      "name": "负极材料",
+      "sector": "新能源车上游",
+      "keywords": [
+        "负极材料",
+        "石墨",
+        "硅碳"
+      ],
+      "related_symbols": [
+        "603799.SH",
+        "300068.SZ"
+      ],
+      "description": "锂电池负极材料"
+    },
+    {
+      "node_id": "ev_upstream_electrolyte",
+      "name": "电解液",
+      "sector": "新能源车上游",
+      "keywords": [
+        "电解液",
+        "六氟磷酸锂"
+      ],
+      "related_symbols": [
+        "002812.SZ",
+        "300037.SZ"
+      ],
+      "description": "锂电池电解液"
+    },
+    {
+      "node_id": "ev_upstream_separator",
+      "name": "隔膜",
+      "sector": "新能源车上游",
+      "keywords": [
+        "隔膜",
+        "湿法隔膜",
+        "干法隔膜"
+      ],
+      "related_symbols": [
+        "300568.SZ",
+        "002709.SZ"
+      ],
+      "description": "锂电池隔膜"
+    },
+    {
+      "node_id": "ev_midstream_battery_cell",
+      "name": "电芯",
+      "sector": "新能源车中游",
+      "keywords": [
+        "电芯",
+        "锂电池",
+        "battery cell"
+      ],
+      "related_symbols": [
+        "300750.SZ",
+        "002594.SZ"
+      ],
+      "description": "锂电池电芯制造"
+    },
+    {
+      "node_id": "ev_midstream_battery_pack",
+      "name": "电池包",
+      "sector": "新能源车中游",
+      "keywords": [
+        "电池包",
+        "PACK",
+        "battery pack"
+      ],
+      "related_symbols": [
+        "300750.SZ"
+      ],
+      "description": "电池包集成"
+    },
+    {
+      "node_id": "ev_midstream_motor",
+      "name": "电机电控",
+      "sector": "新能源车中游",
+      "keywords": [
+        "电机",
+        "电控",
+        "驱动系统"
+      ],
+      "related_symbols": [
+        "002664.SZ",
+        "688005.SH"
+      ],
+      "description": "新能源车驱动系统"
+    },
+    {
+      "node_id": "ev_downstream_vehicle",
+      "name": "整车制造",
+      "sector": "新能源车下游",
+      "keywords": [
+        "新能源车",
+        "电动车",
+        "EV"
+      ],
+      "related_symbols": [
+        "002594.SZ",
+        "601633.SH"
+      ],
+      "description": "新能源汽车整车制造"
+    },
+    {
+      "node_id": "ev_downstream_charging",
+      "name": "充电桩",
+      "sector": "新能源车下游",
+      "keywords": [
+        "充电桩",
+        "充电站",
+        "charging"
+      ],
+      "related_symbols": [
+        "300001.SZ",
+        "600482.SH"
+      ],
+      "description": "充电基础设施"
+    },
+    {
+      "node_id": "semi_upstream_silicon",
+      "name": "硅材料",
+      "sector": "半导体上游",
+      "keywords": [
+        "硅片",
+        "晶圆",
+        "silicon wafer"
+      ],
+      "related_symbols": [
+        "688981.SH",
+        "688126.SH"
+      ],
+      "description": "半导体硅片/晶圆制造"
+    },
+    {
+      "node_id": "semi_upstream_chemicals",
+      "name": "半导体材料",
+      "sector": "半导体上游",
+      "keywords": [
+        "光刻胶",
+        "电子气体",
+        "靶材"
+      ],
+      "related_symbols": [
+        "688396.SH",
+        "300666.SZ"
+      ],
+      "description": "光刻胶、电子气体、靶材等半导体材料"
+    },
+    {
+      "node_id": "semi_midstream_design",
+      "name": "芯片设计",
+      "sector": "半导体中游",
+      "keywords": [
+        "芯片设计",
+        "IC设计",
+        "fabless"
+      ],
+      "related_symbols": [
+        "688981.SH",
+        "603986.SH"
+      ],
+      "description": "集成电路设计"
+    },
+    {
+      "node_id": "semi_midstream_foundry",
+      "name": "晶圆代工",
+      "sector": "半导体中游",
+      "keywords": [
+        "晶圆代工",
+        "foundry",
+        "制造"
+      ],
+      "related_symbols": [
+        "688981.SH"
+      ],
+      "description": "芯片制造代工"
+    },
+    {
+      "node_id": "semi_midstream_packaging",
+      "name": "封装测试",
+      "sector": "半导体中游",
+      "keywords": [
+        "封装",
+        "测试",
+        "OSAT"
+      ],
+      "related_symbols": [
+        "600584.SH",
+        "002185.SZ"
+      ],
+      "description": "芯片封装和测试"
+    },
+    {
+      "node_id": "semi_equipment_lithography",
+      "name": "光刻机",
+      "sector": "半导体设备",
+      "keywords": [
+        "光刻机",
+        "lithography"
+      ],
+      "related_symbols": [
+        "688012.SH"
+      ],
+      "description": "光刻设备"
+    },
+    {
+      "node_id": "semi_equipment_etching",
+      "name": "刻蚀设备",
+      "sector": "半导体设备",
+      "keywords": [
+        "刻蚀",
+        "etching"
+      ],
+      "related_symbols": [
+        "688012.SH",
+        "688082.SH"
+      ],
+      "description": "刻蚀设备"
+    },
+    {
+      "node_id": "semi_downstream_consumer",
+      "name": "消费电子",
+      "sector": "半导体下游",
+      "keywords": [
+        "手机",
+        "电脑",
+        "消费电子"
+      ],
+      "related_symbols": [
+        "002475.SZ"
+      ],
+      "description": "手机、电脑等消费电子产品"
+    },
+    {
+      "node_id": "pharma_upstream_api",
+      "name": "原料药",
+      "sector": "医药上游",
+      "keywords": [
+        "原料药",
+        "API",
+        "中间体"
+      ],
+      "related_symbols": [
+        "002821.SZ",
+        "300759.SZ"
+      ],
+      "description": "药品活性成分和中间体"
+    },
+    {
+      "node_id": "pharma_midstream_formulation",
+      "name": "制剂",
+      "sector": "医药中游",
+      "keywords": [
+        "制剂",
+        "成品药",
+        "药品"
+      ],
+      "related_symbols": [
+        "600276.SH",
+        "000538.SZ"
+      ],
+      "description": "药品制剂生产"
+    },
+    {
+      "node_id": "pharma_midstream_biotech",
+      "name": "生物药",
+      "sector": "医药中游",
+      "keywords": [
+        "生物药",
+        "抗体",
+        "疫苗"
+      ],
+      "related_symbols": [
+        "688185.SH",
+        "300122.SZ"
+      ],
+      "description": "生物制药、抗体药物、疫苗"
+    },
+    {
+      "node_id": "pharma_midstream_cro",
+      "name": "CRO/CDMO",
+      "sector": "医药中游",
+      "keywords": [
+        "CRO",
+        "CDMO",
+        "研发外包"
+      ],
+      "related_symbols": [
+        "603259.SH",
+        "300759.SZ"
+      ],
+      "description": "医药研发和生产外包服务"
+    },
+    {
+      "node_id": "pharma_equipment_reactor",
+      "name": "制药设备",
+      "sector": "医药设备",
+      "keywords": [
+        "反应釜",
+        "制药设备"
+      ],
+      "related_symbols": [
+        "300529.SZ"
+      ],
+      "description": "制药生产设备"
+    },
+    {
+      "node_id": "pharma_downstream_hospital",
+      "name": "医疗服务",
+      "sector": "医药下游",
+      "keywords": [
+        "医院",
+        "医疗服务",
+        "诊疗"
+      ],
+      "related_symbols": [
+        "600763.SH"
+      ],
+      "description": "医院和医疗服务机构"
+    },
+    {
+      "node_id": "pharma_downstream_pharmacy",
+      "name": "医药流通",
+      "sector": "医药下游",
+      "keywords": [
+        "药店",
+        "医药流通",
+        "零售"
+      ],
+      "related_symbols": [
+        "600056.SH",
+        "603883.SH"
+      ],
+      "description": "药品流通和零售"
+    }
+  ],
+  "relations": [
+    {
+      "from": "solar_upstream_polysilicon",
+      "to": "solar_upstream_silicon_wafer",
+      "type": "downstream",
+      "strength": 0.95,
+      "description": "多晶硅是硅片的直接原料"
+    },
+    {
+      "from": "solar_upstream_silicon_wafer",
+      "to": "solar_midstream_cell",
+      "type": "downstream",
+      "strength": 0.95,
+      "description": "硅片是电池片的直接原料"
+    },
+    {
+      "from": "solar_midstream_cell",
+      "to": "solar_midstream_module",
+      "type": "downstream",
+      "strength": 0.95,
+      "description": "电池片是组件的核心部件"
+    },
+    {
+      "from": "solar_midstream_module",
+      "to": "solar_downstream_power_station",
+      "type": "downstream",
+      "strength": 0.9,
+      "description": "组件用于建设光伏电站"
+    },
+    {
+      "from": "solar_equipment_polysilicon",
+      "to": "solar_upstream_polysilicon",
+      "type": "tech_enabled",
+      "strength": 0.85,
+      "description": "多晶硅设备支撑多晶硅产能扩张"
+    },
+    {
+      "from": "solar_equipment_cell",
+      "to": "solar_midstream_cell",
+      "type": "tech_enabled",
+      "strength": 0.85,
+      "description": "电池片设备支撑电池片产能扩张"
+    },
+    {
+      "from": "ev_upstream_lithium",
+      "to": "ev_upstream_cathode",
+      "type": "downstream",
+      "strength": 0.9,
+      "description": "锂盐是正极材料的关键原料"
+    },
+    {
+      "from": "ev_upstream_cathode",
+      "to": "ev_midstream_battery_cell",
+      "type": "downstream",
+      "strength": 0.95,
+      "description": "正极材料是电芯的核心材料"
+    },
+    {
+      "from": "ev_upstream_anode",
+      "to": "ev_midstream_battery_cell",
+      "type": "downstream",
+      "strength": 0.95,
+      "description": "负极材料是电芯的核心材料"
+    },
+    {
+      "from": "ev_upstream_electrolyte",
+      "to": "ev_midstream_battery_cell",
+      "type": "downstream",
+      "strength": 0.9,
+      "description": "电解液是电芯的关键材料"
+    },
+    {
+      "from": "ev_upstream_separator",
+      "to": "ev_midstream_battery_cell",
+      "type": "downstream",
+      "strength": 0.9,
+      "description": "隔膜是电芯的关键材料"
+    },
+    {
+      "from": "ev_midstream_battery_cell",
+      "to": "ev_midstream_battery_pack",
+      "type": "downstream",
+      "strength": 0.95,
+      "description": "电芯是电池包的核心部件"
+    },
+    {
+      "from": "ev_midstream_battery_pack",
+      "to": "ev_downstream_vehicle",
+      "type": "downstream",
+      "strength": 0.95,
+      "description": "电池包是新能源车的核心部件"
+    },
+    {
+      "from": "ev_midstream_motor",
+      "to": "ev_downstream_vehicle",
+      "type": "downstream",
+      "strength": 0.9,
+      "description": "电机电控是新能源车的核心部件"
+    },
+    {
+      "from": "ev_downstream_vehicle",
+      "to": "ev_downstream_charging",
+      "type": "complement",
+      "strength": 0.85,
+      "description": "新能源车销量增长带动充电桩需求"
+    },
+    {
+      "from": "semi_upstream_silicon",
+      "to": "semi_midstream_foundry",
+      "type": "downstream",
+      "strength": 0.95,
+      "description": "硅片是晶圆代工的基础材料"
+    },
+    {
+      "from": "semi_upstream_chemicals",
+      "to": "semi_midstream_foundry",
+      "type": "downstream",
+      "strength": 0.9,
+      "description": "半导体材料用于芯片制造"
+    },
+    {
+      "from": "semi_midstream_design",
+      "to": "semi_midstream_foundry",
+      "type": "downstream",
+      "strength": 0.95,
+      "description": "芯片设计需要代工厂制造"
+    },
+    {
+      "from": "semi_midstream_foundry",
+      "to": "semi_midstream_packaging",
+      "type": "downstream",
+      "strength": 0.95,
+      "description": "晶圆制造后需要封装测试"
+    },
+    {
+      "from": "semi_midstream_packaging",
+      "to": "semi_downstream_consumer",
+      "type": "downstream",
+      "strength": 0.9,
+      "description": "封装后的芯片用于消费电子"
+    },
+    {
+      "from": "semi_equipment_lithography",
+      "to": "semi_midstream_foundry",
+      "type": "tech_enabled",
+      "strength": 0.95,
+      "description": "光刻机是晶圆制造的核心设备"
+    },
+    {
+      "from": "semi_equipment_etching",
+      "to": "semi_midstream_foundry",
+      "type": "tech_enabled",
+      "strength": 0.9,
+      "description": "刻蚀设备用于芯片制造"
+    },
+    {
+      "from": "pharma_upstream_api",
+      "to": "pharma_midstream_formulation",
+      "type": "downstream",
+      "strength": 0.95,
+      "description": "原料药是制剂的核心原料"
+    },
+    {
+      "from": "pharma_upstream_api",
+      "to": "pharma_midstream_biotech",
+      "type": "downstream",
+      "strength": 0.85,
+      "description": "部分生物药需要原料药"
+    },
+    {
+      "from": "pharma_midstream_formulation",
+      "to": "pharma_downstream_pharmacy",
+      "type": "downstream",
+      "strength": 0.9,
+      "description": "制剂通过流通渠道销售"
+    },
+    {
+      "from": "pharma_midstream_biotech",
+      "to": "pharma_downstream_hospital",
+      "type": "downstream",
+      "strength": 0.9,
+      "description": "生物药主要在医院使用"
+    },
+    {
+      "from": "pharma_midstream_cro",
+      "to": "pharma_midstream_formulation",
+      "type": "tech_enabled",
+      "strength": 0.85,
+      "description": "CRO/CDMO支持药品研发和生产"
+    },
+    {
+      "from": "pharma_equipment_reactor",
+      "to": "pharma_midstream_formulation",
+      "type": "tech_enabled",
+      "strength": 0.85,
+      "description": "制药设备支持药品生产"
+    }
+  ],
+  "policy_mappings": [
+    {
+      "policy_keywords": [
+        "光伏",
+        "太阳能",
+        "可再生能源",
+        "碳中和",
+        "双碳"
+      ],
+      "target_industries": [
+        "solar_upstream_polysilicon",
+        "solar_upstream_silicon_wafer",
+        "solar_midstream_cell",
+        "solar_midstream_module",
+        "solar_downstream_power_station"
+      ],
+      "impact_type": "direct_support",
+      "confidence": 0.9
+    },
+    {
+      "policy_keywords": [
+        "新能源汽车",
+        "电动车",
+        "充电桩",
+        "新能源车补贴"
+      ],
+      "target_industries": [
+        "ev_upstream_lithium",
+        "ev_upstream_cathode",
+        "ev_midstream_battery_cell",
+        "ev_midstream_battery_pack",
+        "ev_downstream_vehicle",
+        "ev_downstream_charging"
+      ],
+      "impact_type": "direct_support",
+      "confidence": 0.9
+    },
+    {
+      "policy_keywords": [
+        "锂电池",
+        "动力电池",
+        "储能"
+      ],
+      "target_industries": [
+        "ev_upstream_lithium",
+        "ev_upstream_cathode",
+        "ev_upstream_anode",
+        "ev_upstream_electrolyte",
+        "ev_upstream_separator",
+        "ev_midstream_battery_cell"
+      ],
+      "impact_type": "direct_support",
+      "confidence": 0.85
+    },
+    {
+      "policy_keywords": [
+        "高端制造",
+        "智能制造",
+        "装备升级"
+      ],
+      "target_industries": [
+        "solar_equipment_polysilicon",
+        "solar_equipment_cell"
+      ],
+      "impact_type": "indirect_benefit",
+      "confidence": 0.7
+    },
+    {
+      "policy_keywords": [
+        "半导体",
+        "芯片",
+        "集成电路",
+        "国产替代"
+      ],
+      "target_industries": [
+        "semi_midstream_design",
+        "semi_midstream_foundry",
+        "semi_equipment_lithography",
+        "semi_equipment_etching"
+      ],
+      "impact_type": "direct_support",
+      "confidence": 0.9
+    },
+    {
+      "policy_keywords": [
+        "医保",
+        "集采",
+        "药品降价"
+      ],
+      "target_industries": [
+        "pharma_midstream_formulation",
+        "pharma_downstream_pharmacy"
+      ],
+      "impact_type": "regulatory_change",
+      "confidence": 0.85
+    },
+    {
+      "policy_keywords": [
+        "创新药",
+        "生物医药",
+        "研发支持"
+      ],
+      "target_industries": [
+        "pharma_midstream_biotech",
+        "pharma_midstream_cro"
+      ],
+      "impact_type": "direct_support",
+      "confidence": 0.85
+    }
+  ],
+  "event_mappings": [
+    {
+      "event_type": "tech_breakthrough",
+      "event_keywords": [
+        "钙钛矿",
+        "异质结",
+        "TOPCon",
+        "电池效率"
+      ],
+      "target_industries": [
+        "solar_midstream_cell",
+        "solar_equipment_cell"
+      ],
+      "reasoning_template": "电池技术突破 → 电池片效率提升 → 设备更新需求 → 电池片厂商和设备厂商受益",
+      "confidence": 0.8
+    },
+    {
+      "event_type": "tech_breakthrough",
+      "event_keywords": [
+        "固态电池",
+        "钠离子电池",
+        "电池能量密度"
+      ],
+      "target_industries": [
+        "ev_midstream_battery_cell",
+        "ev_upstream_cathode",
+        "ev_upstream_electrolyte"
+      ],
+      "reasoning_template": "电池技术突破 → 材料体系变化 → 新材料需求 → 材料厂商和电池厂商受益",
+      "confidence": 0.75
+    },
+    {
+      "event_type": "diplomatic_event",
+      "event_keywords": [
+        "一带一路",
+        "海外光伏项目",
+        "能源合作"
+      ],
+      "target_industries": [
+        "solar_midstream_module",
+        "solar_downstream_power_station"
+      ],
+      "reasoning_template": "外交合作 → 海外市场开拓 → 组件出口增长 → 组件厂商受益",
+      "confidence": 0.7
+    },
+    {
+      "event_type": "social_trend",
+      "event_keywords": [
+        "绿色出行",
+        "环保意识",
+        "低碳生活"
+      ],
+      "target_industries": [
+        "ev_downstream_vehicle",
+        "ev_downstream_charging"
+      ],
+      "reasoning_template": "社会趋势 → 消费偏好变化 → 新能源车需求增长 → 整车和充电桩受益",
+      "confidence": 0.65
+    },
+    {
+      "event_type": "tech_breakthrough",
+      "event_keywords": [
+        "光刻机",
+        "EUV",
+        "先进制程"
+      ],
+      "target_industries": [
+        "semi_equipment_lithography",
+        "semi_midstream_foundry"
+      ],
+      "reasoning_template": "光刻技术突破 → 先进制程能力提升 → 晶圆代工和设备厂商受益",
+      "confidence": 0.8
+    },
+    {
+      "event_type": "tech_breakthrough",
+      "event_keywords": [
+        "新药",
+        "临床试验",
+        "FDA批准"
+      ],
+      "target_industries": [
+        "pharma_midstream_biotech",
+        "pharma_midstream_cro"
+      ],
+      "reasoning_template": "新药研发成功 → 商业化预期 → 生物药和CRO受益",
+      "confidence": 0.75
+    },
+    {
+      "event_type": "policy_driven",
+      "event_keywords": [
+        "芯片法案",
+        "半导体补贴"
+      ],
+      "target_industries": [
+        "semi_midstream_foundry",
+        "semi_equipment_lithography"
+      ],
+      "reasoning_template": "政策补贴 → 产能扩张 → 设备采购增加",
+      "confidence": 0.85
+    }
+  ]
+}
