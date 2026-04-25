@@ -72,7 +72,9 @@ class SignalStore:
                             json.dumps(sig.affected_instruments),
                             sig.signal_direction.value,
                             sig.event_time.isoformat() if sig.event_time else None,
-                            sig.collected_time.isoformat() if sig.collected_time else None,
+                            sig.collected_time.isoformat()
+                            if sig.collected_time
+                            else None,
                             sig.time_horizon.value,
                             sig.intensity_score,
                             sig.confidence_score,
@@ -139,7 +141,8 @@ class SignalStore:
         if markets:
             market_values = {m.value for m in markets}
             signals = [
-                s for s in signals
+                s
+                for s in signals
                 if any(m.value in market_values for m in s.affected_markets)
             ]
 
@@ -315,6 +318,49 @@ class SignalStore:
             ).fetchall()
         return [MarketSignal.model_validate_json(r[0]) for r in rows]
 
+    def query(
+        self,
+        markets: Optional[List[Market]] = None,
+        limit: int = 100,
+        lookback_days: int = 7,
+    ) -> List[MarketSignal]:
+        """按市场和最近N天检索信号（M3判断用）
+
+        Args:
+            markets: 过滤市场（None = 全部）
+            limit: 返回数量
+            lookback_days: 回溯天数
+        """
+        from datetime import timedelta
+
+        cutoff = datetime.now() - timedelta(days=lookback_days)
+        query_sql = """
+            SELECT raw_json FROM signals
+            WHERE event_time >= ?
+            ORDER BY event_time DESC
+            LIMIT ?
+        """
+        params: list = [cutoff.isoformat(), limit]
+
+        with self._conn() as conn:
+            rows = conn.execute(query_sql, params).fetchall()
+
+        signals = [MarketSignal.model_validate_json(r[0]) for r in rows]
+
+        # 市场过滤
+        if markets:
+            market_values = {m.value for m in markets}
+            signals = [
+                s
+                for s in signals
+                if any(m.value in market_values for m in s.affected_markets)
+            ]
+
+        logger.info(
+            f"[M2] query | markets={[m.value for m in markets] if markets else 'all'} | lookback={lookback_days}d | results={len(signals)}"
+        )
+        return signals
+
     def stats(self) -> dict:
         """信号库统计"""
         with self._conn() as conn:
@@ -359,9 +405,13 @@ class SignalStore:
                     created_at TEXT DEFAULT CURRENT_TIMESTAMP
                 )
             """)
-            conn.execute("CREATE INDEX IF NOT EXISTS idx_event_time ON signals(event_time)")
+            conn.execute(
+                "CREATE INDEX IF NOT EXISTS idx_event_time ON signals(event_time)"
+            )
             conn.execute("CREATE INDEX IF NOT EXISTS idx_batch_id ON signals(batch_id)")
-            conn.execute("CREATE INDEX IF NOT EXISTS idx_signal_type ON signals(signal_type)")
+            conn.execute(
+                "CREATE INDEX IF NOT EXISTS idx_signal_type ON signals(signal_type)"
+            )
 
             # Causal patterns table
             conn.execute("""
@@ -380,7 +430,9 @@ class SignalStore:
                     raw_json TEXT
                 )
             """)
-            conn.execute("CREATE INDEX IF NOT EXISTS idx_consequent_event ON causal_patterns(consequent_event)")
+            conn.execute(
+                "CREATE INDEX IF NOT EXISTS idx_consequent_event ON causal_patterns(consequent_event)"
+            )
 
             # Case records table
             conn.execute("""
@@ -400,8 +452,12 @@ class SignalStore:
                     raw_json TEXT
                 )
             """)
-            conn.execute("CREATE INDEX IF NOT EXISTS idx_case_date ON case_records(date_range_start)")
-            conn.execute("CREATE INDEX IF NOT EXISTS idx_case_market ON case_records(market)")
+            conn.execute(
+                "CREATE INDEX IF NOT EXISTS idx_case_date ON case_records(date_range_start)"
+            )
+            conn.execute(
+                "CREATE INDEX IF NOT EXISTS idx_case_market ON case_records(market)"
+            )
 
     def _conn(self) -> sqlite3.Connection:
         return sqlite3.connect(str(self.db_file))

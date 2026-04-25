@@ -389,3 +389,11 @@ class IndustryGraph:
             graph.add_event_mapping(mapping)
 
         return graph
+
+    @classmethod
+    def load_from_file(cls, filepath: str) -> 'IndustryGraph':
+        """从JSON文件加载图谱"""
+        import json
+        with open(filepath, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return cls.from_dict(data)

@@ -12,6 +12,7 @@ m9_paper_trader/paper_trader.py — 模拟盘核心
 
 与 M5（真实持仓）完全分离，互不干扰。
 """
+
 from __future__ import annotations
 
 import json
@@ -35,6 +36,7 @@ TRADE_LOG_FILE = Path(__file__).parent.parent / "data" / "paper_trade_log.json"
 # ─────────────────────────────────────────────────────────────
 # 数据模型
 # ─────────────────────────────────────────────────────────────
+
 
 class PaperOrder:
     """模拟订单"""
@@ -156,15 +158,25 @@ class PaperPosition:
         self.current_price = price
 
         if self.direction == "BULLISH":
-            pnl_pct = (price - self.entry_price) / self.entry_price if self.entry_price > 0 else 0
+            pnl_pct = (
+                (price - self.entry_price) / self.entry_price
+                if self.entry_price > 0
+                else 0
+            )
         else:
-            pnl_pct = (self.entry_price - price) / self.entry_price if self.entry_price > 0 else 0
+            pnl_pct = (
+                (self.entry_price - price) / self.entry_price
+                if self.entry_price > 0
+                else 0
+            )
 
         self.unrealized_pnl_pct = pnl_pct
         self.max_favorable_excursion = max(self.max_favorable_excursion, pnl_pct)
         self.max_adverse_excursion = min(self.max_adverse_excursion, pnl_pct)
 
-        self.price_updates.append({"price": price, "ts": ts.isoformat(), "pnl_pct": round(pnl_pct, 6)})
+        self.price_updates.append(
+            {"price": price, "ts": ts.isoformat(), "pnl_pct": round(pnl_pct, 6)}
+        )
 
         if self.direction == "BULLISH" and price <= self.stop_loss_price:
             self._close("STOP_LOSS", price, ts)
@@ -182,12 +194,20 @@ class PaperPosition:
         self.exit_price = price
         self.exit_time = ts
         if self.direction == "BULLISH":
-            self.realized_pnl_pct = (price - self.entry_price) / self.entry_price if self.entry_price > 0 else 0
+            self.realized_pnl_pct = (
+                (price - self.entry_price) / self.entry_price
+                if self.entry_price > 0
+                else 0
+            )
         else:
-            self.realized_pnl_pct = (self.entry_price - price) / self.entry_price if self.entry_price > 0 else 0
+            self.realized_pnl_pct = (
+                (self.entry_price - price) / self.entry_price
+                if self.entry_price > 0
+                else 0
+            )
         logger.info(
             f"[M9] 模拟持仓关闭 {self.instrument} | {reason} "
-            f"| pnl={self.realized_pnl_pct*100:+.2f}%"
+            f"| pnl={self.realized_pnl_pct * 100:+.2f}%"
         )
 
     def apply_fees(self, fee_model: FeeModel):
@@ -268,12 +288,18 @@ class PaperPosition:
             prev_close=d.get("prev_close", 0),
             board=d.get("board", "main"),
         )
-        pp.entry_date = date.fromisoformat(d["entry_date"]) if d.get("entry_date") else pp.entry_time.date()
+        pp.entry_date = (
+            date.fromisoformat(d["entry_date"])
+            if d.get("entry_date")
+            else pp.entry_time.date()
+        )
         pp.current_price = d.get("current_price", pp.entry_price)
         pp.unrealized_pnl_pct = d.get("unrealized_pnl_pct", 0)
         pp.status = d.get("status", "OPEN")
         pp.exit_price = d.get("exit_price")
-        pp.exit_time = datetime.fromisoformat(d["exit_time"]) if d.get("exit_time") else None
+        pp.exit_time = (
+            datetime.fromisoformat(d["exit_time"]) if d.get("exit_time") else None
+        )
         pp.realized_pnl_pct = d.get("realized_pnl_pct")
         pp.realized_pnl_after_fees = d.get("realized_pnl_after_fees")
         pp.max_adverse_excursion = d.get("max_adverse_excursion", 0)
@@ -286,6 +312,7 @@ class PaperPosition:
 # ─────────────────────────────────────────────────────────────
 # RiskMonitor
 # ─────────────────────────────────────────────────────────────
+
 
 class RiskMonitor:
     """实时风控监控器（含组合级风控）"""
@@ -316,7 +343,9 @@ class RiskMonitor:
         self._peak_equity = max(self._peak_equity, current_equity)
         self._trading_halted = False
 
-    def check_before_open(self, position_notional: float, current_equity: float) -> tuple:
+    def check_before_open(
+        self, position_notional: float, current_equity: float
+    ) -> tuple:
         """开仓前风控检查。
 
         Returns:
@@ -330,18 +359,33 @@ class RiskMonitor:
 
         single_pct = position_notional / self.initial_capital
         if single_pct > self.max_single_position_pct:
-            return False, f"single position {single_pct:.1%} exceeds limit {self.max_single_position_pct:.1%}"
+            return (
+                False,
+                f"single position {single_pct:.1%} exceeds limit {self.max_single_position_pct:.1%}",
+            )
 
-        total_dd = (self._peak_equity - current_equity) / self._peak_equity if self._peak_equity > 0 else 0
+        total_dd = (
+            (self._peak_equity - current_equity) / self._peak_equity
+            if self._peak_equity > 0
+            else 0
+        )
         if total_dd >= self.max_total_drawdown_pct:
             self._trading_halted = True
-            return False, f"total drawdown {total_dd:.1%} >= limit {self.max_total_drawdown_pct:.1%}"
+            return (
+                False,
+                f"total drawdown {total_dd:.1%} >= limit {self.max_total_drawdown_pct:.1%}",
+            )
 
         if self._daily_start_equity and self._daily_start_equity > 0:
-            daily_dd = (self._daily_start_equity - current_equity) / self._daily_start_equity
+            daily_dd = (
+                self._daily_start_equity - current_equity
+            ) / self._daily_start_equity
             if daily_dd >= self.max_daily_drawdown_pct:
                 self._trading_halted = True
-                return False, f"daily drawdown {daily_dd:.1%} >= limit {self.max_daily_drawdown_pct:.1%}"
+                return (
+                    False,
+                    f"daily drawdown {daily_dd:.1%} >= limit {self.max_daily_drawdown_pct:.1%}",
+                )
 
         return True, ""
 
@@ -374,10 +418,13 @@ class RiskMonitor:
             all_positions.append(new_position)
 
         total_notional = sum(
-            p.current_price * p.quantity for p in all_positions
+            p.current_price * p.quantity
+            for p in all_positions
             if p.status == "OPEN" and p.entry_price > 0
         )
-        total_pct = total_notional / self.initial_capital if self.initial_capital > 0 else 0
+        total_pct = (
+            total_notional / self.initial_capital if self.initial_capital > 0 else 0
+        )
 
         if total_pct > self.max_total_exposure_pct:
             warnings.append(
@@ -391,10 +438,14 @@ class RiskMonitor:
                     continue
                 instrument = p.instrument or ""
                 theme = theme_map.get(instrument, "未分类")
-                theme_notional[theme] = theme_notional.get(theme, 0) + p.current_price * p.quantity
+                theme_notional[theme] = (
+                    theme_notional.get(theme, 0) + p.current_price * p.quantity
+                )
 
             for theme, notional in theme_notional.items():
-                theme_pct = notional / self.initial_capital if self.initial_capital > 0 else 0
+                theme_pct = (
+                    notional / self.initial_capital if self.initial_capital > 0 else 0
+                )
                 if theme_pct > self.max_theme_exposure_pct:
                     warnings.append(
                         f"主题'{theme}'暴露 {theme_pct:.1%} 超过限制 {self.max_theme_exposure_pct:.1%}"
@@ -406,12 +457,15 @@ class RiskMonitor:
                 if p.status != "OPEN" or p.entry_price <= 0:
                     continue
                 existing_inst = p.instrument or ""
-                if new_inst in corr_matrix and existing_inst in corr_matrix.get(new_inst, {}):
+                if new_inst in corr_matrix and existing_inst in corr_matrix.get(
+                    new_inst, {}
+                ):
                     corr = corr_matrix[new_inst].get(existing_inst, 0)
                     if abs(corr) >= self.high_corr_threshold:
                         same_dir = (
                             (new_position.direction == p.direction)
-                            if hasattr(new_position, 'direction') and hasattr(p, 'direction')
+                            if hasattr(new_position, "direction")
+                            and hasattr(p, "direction")
                             else True
                         )
                         if same_dir:
@@ -441,6 +495,7 @@ class RiskMonitor:
 # PaperTrader
 # ─────────────────────────────────────────────────────────────
 
+
 class PaperTrader:
     """
     模拟盘管理器。
@@ -461,7 +516,9 @@ class PaperTrader:
         self._trade_log: List[dict] = []
         self._fee_model = fee_model or DEFAULT_FEE_MODEL
         self._market_rules = market_rules or MARKET_RULES
-        self._risk_monitor = risk_monitor or RiskMonitor(initial_capital=initial_capital)
+        self._risk_monitor = risk_monitor or RiskMonitor(
+            initial_capital=initial_capital
+        )
         self._on_position_closed = on_position_closed
         self._initial_capital = initial_capital
         self._cash = initial_capital
@@ -489,11 +546,19 @@ class PaperTrader:
             sl = plan.stop_loss
             tp = plan.take_profit
             ps = plan.position_sizing
-            market = plan.market.value if hasattr(plan.market, "value") else str(plan.market)
-            direction = plan.direction.value if hasattr(plan.direction, "value") else str(plan.direction)
+            market = (
+                plan.market.value if hasattr(plan.market, "value") else str(plan.market)
+            )
+            direction = (
+                plan.direction.value
+                if hasattr(plan.direction, "value")
+                else str(plan.direction)
+            )
 
             if entry_price <= 0:
-                logger.warning(f"[M9] open_from_plan: entry_price <= 0 for {inst}, skipping")
+                logger.warning(
+                    f"[M9] open_from_plan: entry_price <= 0 for {inst}, skipping"
+                )
                 continue
 
             board = self._infer_board(inst, market)
@@ -516,15 +581,25 @@ class PaperTrader:
             equity = self._risk_monitor.compute_equity(
                 self._positions, self._initial_capital_estimate()
             )
-            allowed, risk_reason = self._risk_monitor.check_before_open(notional, equity)
+            allowed, risk_reason = self._risk_monitor.check_before_open(
+                notional, equity
+            )
             if not allowed:
                 logger.warning(f"[M9] 风控拒绝开仓 {inst}: {risk_reason}")
                 continue
 
-            sl_price = entry_price * (1 - sl.stop_loss_value / 100) if direction == "BULLISH" else entry_price * (1 + sl.stop_loss_value / 100)
+            sl_price = (
+                entry_price * (1 - sl.stop_loss_value / 100)
+                if direction == "BULLISH"
+                else entry_price * (1 + sl.stop_loss_value / 100)
+            )
             tp_price = None
             if tp.take_profit_value > 0:
-                tp_price = entry_price * (1 + tp.take_profit_value / 100) if direction == "BULLISH" else entry_price * (1 - tp.take_profit_value / 100)
+                tp_price = (
+                    entry_price * (1 + tp.take_profit_value / 100)
+                    if direction == "BULLISH"
+                    else entry_price * (1 - tp.take_profit_value / 100)
+                )
 
             pp = PaperPosition(
                 plan_id=plan.plan_id,
@@ -795,7 +870,9 @@ class PaperTrader:
             return None
 
         margin = self._market_rules.futures_margin(symbol, entry_price, quantity) or 0
-        notional = self._market_rules.futures_notional(symbol, entry_price, quantity) or 0
+        notional = (
+            self._market_rules.futures_notional(symbol, entry_price, quantity) or 0
+        )
         equity = self._risk_monitor.compute_equity(self._positions, self._cash)
         allowed, risk_reason = self._risk_monitor.check_before_open(margin, equity)
         if not allowed:
@@ -818,9 +895,11 @@ class PaperTrader:
         )
 
         order = PaperOrder(
-            instrument=symbol, market="A_FUTURES",
+            instrument=symbol,
+            market="A_FUTURES",
             direction="BUY" if direction == "BULLISH" else "SELL",
-            quantity=quantity, price=entry_price,
+            quantity=quantity,
+            price=entry_price,
             paper_position_id=pp.paper_position_id,
         )
         order.status = OrderStatus.FILLED.value
@@ -834,16 +913,22 @@ class PaperTrader:
         self._cash -= margin + order.fee_paid
         self._log_trade("OPEN_FUTURES", pp, order)
         self._save()
-        logger.info(f"[M9] futures position: {symbol} {direction} @ {entry_price} x{quantity} margin={margin:.0f}")
+        logger.info(
+            f"[M9] futures position: {symbol} {direction} @ {entry_price} x{quantity} margin={margin:.0f}"
+        )
         return pp
 
-    def _compute_quantity(self, plan: ActionPlan, entry_price: float, market: str) -> float:
+    def _compute_quantity(
+        self, plan: ActionPlan, entry_price: float, market: str
+    ) -> float:
         ps = plan.position_sizing
         if ps and ps.suggested_allocation_pct and entry_price > 0:
-            notional = ps.suggested_allocation_pct * 1_000_000
+            notional = ps.suggested_allocation_pct * self._initial_capital
             raw_qty = notional / entry_price
             return self._market_rules.round_quantity(market, raw_qty)
-        return self._market_rules.round_quantity(market, 10000 / entry_price if entry_price > 0 else 0)
+        return self._market_rules.round_quantity(
+            market, 10000 / entry_price if entry_price > 0 else 0
+        )
 
     def _infer_board(self, instrument: str, market: str) -> str:
         code = instrument.split(".")[0]
@@ -860,7 +945,9 @@ class PaperTrader:
     def _initial_capital_estimate(self) -> float:
         return self._cash
 
-    def _log_trade(self, event: str, pp: PaperPosition, order: Optional[PaperOrder] = None):
+    def _log_trade(
+        self, event: str, pp: PaperPosition, order: Optional[PaperOrder] = None
+    ):
         entry = {
             "event": event,
             "timestamp": datetime.now().isoformat(),
@@ -887,7 +974,9 @@ class PaperTrader:
         if self._trade_log:
             TRADE_LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
             TRADE_LOG_FILE.write_text(
-                json.dumps(self._trade_log[-500:], ensure_ascii=False, indent=2, default=str),
+                json.dumps(
+                    self._trade_log[-500:], ensure_ascii=False, indent=2, default=str
+                ),
                 encoding="utf-8",
             )
 
