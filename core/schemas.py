@@ -8,7 +8,7 @@ core/schemas.py — MarketRadar 全局数据模型
 from __future__ import annotations
 
 import uuid
-from datetime import datetime
+from datetime import datetime, date
 from enum import Enum
 from typing import List, Optional
 
@@ -48,6 +48,7 @@ class SignalType(str, Enum):
     EVENT_DRIVEN = "event_driven"     # 事件驱动信号
     POLICY = "policy"                 # 政策面信号
     SENTIMENT = "sentiment"           # 情绪面信号（预留给 MarketSentinel）
+    ANOMALOUS_ACTIVITY = "anomalous_activity"  # 价格异动信号（M12补牢）
 
 
 class SourceType(str, Enum):
@@ -59,6 +60,7 @@ class SourceType(str, Enum):
     POLICY_DOCUMENT = "policy_document"  # 政策文件
     SOCIAL_MEDIA = "social_media"     # 社交媒体（主要给 MarketSentinel）
     MANUAL_INPUT = "manual_input"     # 人工输入
+    MARKET_MONITOR = "market_monitor"   # 行情监控（M12补牢）
 
 
 class Direction(str, Enum):
@@ -283,6 +285,22 @@ class OpportunityScore(BaseModel):
     execution_readiness: float = Field(..., ge=0.0, le=1.0, description="执行就绪度，0-1")
 
 
+class EntryConstraint(BaseModel):
+    """入场约束 — 涨停板、T+1限制等暂时无法入场的情况"""
+    reason: str = Field(
+        ...,
+        description="约束原因: limit_up / t_staged / insufficient_data / market_closed"
+    )
+    expected_entry_time: Optional[datetime] = Field(
+        default=None,
+        description="预计可入场时间"
+    )
+    monitoring_fields: dict = Field(
+        default_factory=dict,
+        description="监控字段，如封板强度、打开次数等"
+    )
+
+
 class OpportunityObject(BaseModel):
     """
     市场机会对象 — M3 的核心输出单元。
@@ -423,6 +441,14 @@ class OpportunityObject(BaseModel):
     batch_id: str = Field(
         ...,
         description="所属处理批次ID"
+    )
+    origin: str = Field(
+        default="m3_judgment",
+        description="来源: m3_judgment(正向机会) / opportunity_catcher(补牢机会)"
+    )
+    entry_constraint: Optional[EntryConstraint] = Field(
+        default=None,
+        description="入场约束（涨停/T+1等暂时无法入场的情况）"
     )
 
 
@@ -1069,4 +1095,153 @@ class InferredEvent(BaseModel):
         ...,
         ge=0.0, le=1.0,
         description="推理置信度"
+    )
+
+
+# ─────────────────────────────────────────────────────────────
+# M12 机会补牢模块数据模型
+# ─────────────────────────────────────────────────────────────
+
+class AnomalyType(str, Enum):
+    """价格异动类型"""
+    DAILY_SURGE = "daily_surge"               # 单日大涨
+    N_DAY_BREAKOUT = "n_day_breakout"          # N日累计突破
+    VOLUME_SURGE = "volume_surge"              # 放量异动
+    LIMIT_UP = "limit_up"                      # 涨停
+    LIMIT_DOWN = "limit_down"                  # 跌停（做反向）
+    INTRADAY_SPIKE = "intraday_spike"          # 盘中急涨
+
+
+class TrendStage(str, Enum):
+    """趋势阶段判断"""
+    EARLY = "early"       # 趋势早期：可补
+    MIDDLE = "middle"     # 趋势中期：谨慎
+    LATE = "late"         # 趋势晚期：放弃
+
+
+class CatalystPersistence(str, Enum):
+    """原因持续性"""
+    CONTINUING = "continuing"      # 持续性原因（政策趋势、产业变化）
+    ONE_TIME = "one_time"          # 一次性原因（重组获批、大单签订）
+    UNCERTAIN = "uncertain"        # 不确定
+
+
+class PriceAnomaly(BaseModel):
+    """价格异动事件"""
+    anomaly_id: str = Field(
+        default_factory=lambda: f"ano_{uuid.uuid4().hex[:12]}",
+        description="异动唯一标识"
+    )
+    instrument: str = Field(..., description="股票代码，如 600519.SH")
+    market: Market = Field(..., description="所属市场")
+    anomaly_type: AnomalyType = Field(..., description="异动类型")
+    anomaly_date: date = Field(default_factory=date.today, description="异动日期")
+    price_change_pct: float = Field(..., description="涨幅百分比")
+    atr_multiple: float = Field(..., description="ATR倍数")
+    sigma_multiple: float = Field(..., description="标准差倍数")
+    volume_ratio: float = Field(..., description="量比（当日成交量/20日均量）")
+    baseline_price: float = Field(..., description="异动前基线价格")
+    anomaly_price: float = Field(..., description="异动时价格")
+    n_days: int = Field(default=1, description="累计异动天数")
+    is_limit_up: bool = Field(default=False, description="是否涨停")
+    is_limit_down: bool = Field(default=False, description="是否跌停")
+    detected_at: datetime = Field(default_factory=datetime.now, description="检测时间")
+
+
+class CausationResult(BaseModel):
+    """反向溯源结果"""
+    anomaly: PriceAnomaly = Field(..., description="异动事件")
+    causes: List[MarketSignal] = Field(
+        default_factory=list,
+        description="溯源找到的信号列表"
+    )
+    unexplained_ratio: float = Field(
+        default=1.0,
+        ge=0.0, le=1.0,
+        description="无法解释的涨幅比例 (0=完全解释, 1=完全无法解释)"
+    )
+    confidence: float = Field(
+        default=0.0,
+        ge=0.0, le=1.0,
+        description="溯源置信度"
+    )
+    causation_type: str = Field(
+        default="unexplained",
+        description="原因类型: policy/industry/earnings/capital_flow/technical/unexplained"
+    )
+
+
+class TrendAssessment(BaseModel):
+    """趋势阶段判断"""
+    anomaly: PriceAnomaly = Field(..., description="异动事件")
+    stage: TrendStage = Field(..., description="趋势阶段")
+    remaining_upside_pct: float = Field(
+        default=0.0,
+        ge=0.0,
+        description="估计剩余上涨空间(%)"
+    )
+    catalyst_persistence: CatalystPersistence = Field(
+        default=CatalystPersistence.UNCERTAIN,
+        description="原因持续性"
+    )
+    similar_cases: List[str] = Field(
+        default_factory=list,
+        description="相似历史案例ID列表"
+    )
+    reasoning: str = Field(
+        default="",
+        description="趋势判断推理过程"
+    )
+
+
+class MarketAnomalyStrategy(BaseModel):
+    """市场差异化异动策略配置"""
+    market: Market = Field(..., description="目标市场")
+    scan_mode: str = Field(
+        ...,
+        description="扫描模式: daily / intraday / both"
+    )
+    scan_times: List[str] = Field(
+        default_factory=list,
+        description="扫描时间点列表，如 ['15:30'] 或 ['10:00','14:00']"
+    )
+    price_feed: str = Field(
+        default="baostock",
+        description="价格数据源: baostock / yfinance / composite"
+    )
+    min_atr_multiple: float = Field(default=2.0, description="最低ATR倍数阈值")
+    min_sigma_multiple: float = Field(default=2.0, description="最低σ倍数阈值")
+    min_volume_ratio: float = Field(default=1.5, description="最低量比阈值")
+    lookback_days: int = Field(default=20, description="统计基线回看天数")
+    atr_period: int = Field(default=14, description="ATR计算周期")
+    stop_loss_candidates: List[dict] = Field(
+        default_factory=list,
+        description="止损策略候选列表"
+    )
+    min_holding_period: str = Field(
+        default="1d",
+        description="最短持有期: 1d(A股T+1) / 15m(港股) / 5m(美股)"
+    )
+    entry_timing: str = Field(
+        default="next_open",
+        description="入场时机: next_open / immediate"
+    )
+
+
+class RetroOpportunity(BaseModel):
+    """补牢机会（M12最终输出）"""
+    opportunity: OpportunityObject = Field(
+        ...,
+        description="标准机会对象（复用M3输出结构）"
+    )
+    anomaly: PriceAnomaly = Field(..., description="价格异动事件")
+    causation: CausationResult = Field(..., description="反向溯源结果")
+    trend: TrendAssessment = Field(..., description="趋势阶段判断")
+    origin: str = Field(
+        default="opportunity_catcher",
+        description="来源标记，区分M3正向机会和M12补牢机会"
+    )
+    stop_loss_candidates: List[StopLossConfig] = Field(
+        default_factory=list,
+        description="M12推荐的止损策略候选（M4最终决策）"
     )

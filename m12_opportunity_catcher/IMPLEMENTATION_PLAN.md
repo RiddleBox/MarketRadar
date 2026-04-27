@@ -51,7 +51,16 @@
 - [x] PRINCIPLES.md 第一性原理文档
 - [x] DESIGN.md 设计文档
 - [x] IMPLEMENTATION_PLAN.md 实施计划
-- [ ] 开始实施步骤1
+- [x] 开始实施步骤1
+
+### 2026-04-28 — 步骤1-2 完成
+
+- [x] Bug修：M1.5管道接入 run_daily_pipeline（step_m1_5_implicit + 合并到premarket流程）
+- [x] core/schemas.py 新增：AnomalyType, TrendStage, CatalystPersistence, PriceAnomaly, CausationResult, TrendAssessment, EntryConstraint, MarketAnomalyStrategy, RetroOpportunity
+- [x] SignalType 新增 ANOMALOUS_ACTIVITY
+- [x] SourceType 新增 MARKET_MONITOR
+- [x] OpportunityObject 新增 origin + entry_constraint 字段
+- [x] 所有模型导入验证通过
 
 ---
 

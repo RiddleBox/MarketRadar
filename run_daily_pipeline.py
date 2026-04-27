@@ -280,6 +280,77 @@ def step_m2_store(signals: list) -> int:
         return 0
 
 
+def step_m1_5_implicit(markets: list[Market]) -> list:
+    """M1.5: 隐性信号推理（对非财经新闻做二次推理）"""
+    console.print("\n[bold cyan]步骤 3.5/6: M1.5 隐性信号推理[/bold cyan]")
+
+    try:
+        from m1_5_implicit_reasoner.inferencer import LLMImplicitSignalInferencer
+        from m2_knowledge_base.industry_graph import IndustryGraph
+        from m3_reasoning_engine.signal_validator import ImplicitSignalValidator, CaseLibrary
+        from m3_judgment.implicit_signal_adapter import ImplicitSignalAdapter
+        from core.llm_client import LLMClient
+        import json
+
+        llm_client = LLMClient()
+
+        industry_graph = IndustryGraph.load_from_file('data/industry_graph_full.json')
+        inferencer = LLMImplicitSignalInferencer(
+            llm_client=llm_client,
+            industry_graph=industry_graph,
+        )
+
+        case_library = CaseLibrary()
+        case_file = Path('data/historical_cases_extended.json')
+        if case_file.exists():
+            with open(case_file, 'r', encoding='utf-8') as f:
+                cases_data = json.load(f)
+            case_library.load_from_dict(cases_data)
+
+        validator = ImplicitSignalValidator(case_library)
+        adapter = ImplicitSignalAdapter()
+
+        all_implicit_signals = []
+        files = sorted(INCOMING_DIR.glob("*.txt"))
+
+        if not files:
+            console.print("  [yellow]无待处理文件，跳过M1.5[/yellow]")
+            return []
+
+        for i, file_path in enumerate(files, 1):
+            try:
+                raw_text = file_path.read_text(encoding="utf-8")
+                signals = inferencer.infer({"title": file_path.name, "content": raw_text})
+
+                if signals:
+                    validated = []
+                    for signal in signals:
+                        posterior_conf = validator.validate(signal)
+                        validated.append((signal, posterior_conf))
+
+                    market_signals = []
+                    for signal, posterior_conf in validated:
+                        ms = adapter.convert(signal, posterior_conf)
+                        if ms:
+                            market_signals.append(ms)
+
+                    all_implicit_signals.extend(market_signals)
+                    console.print(f"  [{i}/{len(files)}] {file_path.name}: {len(market_signals)} 条隐性信号")
+                else:
+                    console.print(f"  [{i}/{len(files)}] {file_path.name}: 无隐性信号")
+
+            except Exception as e:
+                console.print(f"  [yellow]⚠ M1.5处理失败 {file_path.name}: {e}[/yellow]")
+                continue
+
+        console.print(f"  ✓ M1.5总计: {len(all_implicit_signals)} 条隐性信号")
+        return all_implicit_signals
+
+    except Exception as e:
+        console.print(f"  [yellow]⚠ M1.5模块加载失败（非致命）: {e}[/yellow]")
+        return []
+
+
 def step_m3_judge(markets: list[Market], lookback_days: int = 7) -> list:
     """M3: 机会判断"""
     console.print("\n[bold cyan]步骤 5/5: M3 机会判断（推理引擎）[/bold cyan]")
@@ -337,7 +408,7 @@ def step_m3_judge(markets: list[Market], lookback_days: int = 7) -> list:
 
 
 def run_premarket(markets: list[Market], limit: int = None):
-    """盘前流程：采集 → 解码 → 判断"""
+    """盘前流程：采集 → 解码 → 隐性推理 → 存储 → 判断"""
     print_header("premarket")
 
     # Step 1: M0 采集
@@ -351,12 +422,16 @@ def run_premarket(markets: list[Market], limit: int = None):
 
     # Step 3: M1 解码
     signals = step_m1_decode(markets=markets)
-    if not signals:
-        console.print("\n[yellow]未提取到信号，流程结束[/yellow]")
-        return
+
+    # Step 3.5: M1.5 隐性信号推理
+    implicit_signals = step_m1_5_implicit(markets=markets)
+
+    # 合并 M1 显性信号 + M1.5 隐性信号
+    all_signals = list(signals) + list(implicit_signals)
+    console.print(f"\n  信号汇总: M1显性 {len(signals)} + M1.5隐性 {len(implicit_signals)} = {len(all_signals)} 条")
 
     # Step 4: M2 存储
-    saved = step_m2_store(signals)
+    saved = step_m2_store(all_signals)
     if saved == 0:
         console.print("\n[yellow]无新信号，流程结束[/yellow]")
         return
@@ -368,7 +443,8 @@ def run_premarket(markets: list[Market], limit: int = None):
     console.print("\n" + "=" * 70)
     console.print("[bold green]盘前流程完成[/bold green]")
     console.print(f"  采集: {collected} 条")
-    console.print(f"  信号: {len(signals)} 条")
+    console.print(f"  M1显性信号: {len(signals)} 条")
+    console.print(f"  M1.5隐性信号: {len(implicit_signals)} 条")
     console.print(f"  存储: {saved} 条")
     console.print(f"  机会: {len(opportunities)} 个")
 
