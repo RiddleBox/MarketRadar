@@ -12,7 +12,7 @@
 """
 import requests
 import logging
-from datetime import datetime
+from datetime import datetime, date
 from typing import Optional
 from m9_paper_trader.price_feed import PriceFeed, PriceSnapshot
 
