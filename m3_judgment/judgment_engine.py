@@ -36,6 +36,16 @@ from m3_judgment.prompt_templates import (
     STEP_B_USER_PROMPT,
 )
 
+# Phase 3.5: Import ImplicitSignal adapter
+try:
+    from m3_judgment.implicit_signal_adapter import ImplicitSignalAdapter
+    from m1_5_implicit_reasoner.models import ImplicitSignal
+    IMPLICIT_SIGNAL_SUPPORT = True
+except ImportError:
+    IMPLICIT_SIGNAL_SUPPORT = False
+    ImplicitSignalAdapter = None
+    ImplicitSignal = None
+
 logger = logging.getLogger(__name__)
 
 SMALL_BATCH_THRESHOLD = 10  # 小批次直接全量送 Step B
@@ -107,6 +117,120 @@ class JudgmentEngine:
                 opportunities.append(result)
 
         logger.info(f"[M3] 判断完成 | 识别机会={len(opportunities)} 个")
+        return opportunities
+
+    def judge_implicit_signals(
+        self,
+        implicit_signals: List,
+        batch_id: Optional[str] = None,
+        lookback_days: int = 90,
+    ) -> List[OpportunityObject]:
+        """判断隐性信号是否构成机会 (Phase 3.5)
+
+        流程:
+        1. 转换ImplicitSignal为MarketSignal格式
+        2. 从M2查询相关历史隐性信号（同板块、同类型）
+        3. 调用现有的judge()方法
+        4. 返回OpportunityObject列表
+
+        Args:
+            implicit_signals: ImplicitSignal对象列表
+            batch_id: 批次标识
+            lookback_days: 历史信号回溯天数
+
+        Returns:
+            List[OpportunityObject]，空列表表示不构成机会
+        """
+        if not IMPLICIT_SIGNAL_SUPPORT:
+            logger.error("[M3] ImplicitSignal支持未启用，无法处理隐性信号")
+            return []
+
+        if not implicit_signals:
+            logger.info("[M3] 空隐性信号列表，跳过判断")
+            return []
+
+        batch_id = batch_id or f"implicit_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+
+        logger.info(
+            f"[M3] 开始判断隐性信号 | 当前批次={len(implicit_signals)} | batch_id={batch_id}"
+        )
+
+        # 1. 转换为MarketSignal格式
+        market_signals = []
+        signal_id_map = {}  # 保存原始signal_id映射
+
+        for imp_sig in implicit_signals:
+            try:
+                market_sig = ImplicitSignalAdapter.to_market_signal(imp_sig)
+                market_signals.append(market_sig)
+                signal_id_map[market_sig.signal_id] = imp_sig.signal_id
+            except Exception as e:
+                logger.error(f"[M3] 转换隐性信号失败 {imp_sig.signal_id}: {e}")
+
+        if not market_signals:
+            logger.warning("[M3] 所有隐性信号转换失败")
+            return []
+
+        logger.info(f"[M3] 成功转换 {len(market_signals)} 个隐性信号")
+
+        # 2. 查询历史隐性信号作为上下文
+        from datetime import timedelta
+        historical_implicit = []
+
+        for imp_sig in implicit_signals:
+            try:
+                hist = self.signal_store.query_implicit_signals(
+                    start_time=datetime.now() - timedelta(days=lookback_days),
+                    end_time=datetime.now(),
+                    industry_sector=imp_sig.industry_sector,
+                    signal_type=imp_sig.signal_type,
+                    min_confidence=0.6,
+                    limit=20,
+                )
+                historical_implicit.extend(hist)
+            except Exception as e:
+                logger.warning(f"[M3] 查询历史隐性信号失败: {e}")
+
+        # 去重
+        seen_ids = set()
+        unique_historical = []
+        for sig in historical_implicit:
+            if sig.signal_id not in seen_ids:
+                seen_ids.add(sig.signal_id)
+                unique_historical.append(sig)
+
+        logger.info(f"[M3] 查询到 {len(unique_historical)} 条历史隐性信号")
+
+        # 转换历史信号
+        historical_market_signals = []
+        for hist_sig in unique_historical:
+            try:
+                hist_market = ImplicitSignalAdapter.to_market_signal(hist_sig)
+                historical_market_signals.append(hist_market)
+            except Exception as e:
+                logger.warning(f"[M3] 转换历史信号失败: {e}")
+
+        # 3. 调用现有判断逻辑
+        opportunities = self.judge(
+            signals=market_signals,
+            historical_signals=historical_market_signals,
+            batch_id=batch_id,
+        )
+
+        # 4. 在metadata中添加原始signal_id追溯
+        for opp in opportunities:
+            if not opp.metadata:
+                opp.metadata = {}
+            opp.metadata["source_signal_ids"] = [
+                signal_id_map.get(sig_id, sig_id)
+                for sig_id in opp.signal_ids
+            ]
+            opp.metadata["signal_source"] = "implicit"
+
+        logger.info(
+            f"[M3] 隐性信号判断完成 | 识别机会={len(opportunities)} 个"
+        )
+
         return opportunities
 
     # ------------------------------------------------------------------

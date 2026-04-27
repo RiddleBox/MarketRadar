@@ -21,7 +21,14 @@ from m1_5_implicit_reasoner.inferencer import LLMImplicitSignalInferencer
 from m1_5_implicit_reasoner.models import ImplicitSignal
 from m2_knowledge_base.industry_graph import IndustryGraph
 from m3_reasoning_engine.signal_validator import ImplicitSignalValidator, CaseLibrary
-from signal_to_paper_trader import SignalToPaperTrader, create_signal_trader
+
+# Phase 3.5: Import M2, M3, M4 for complete pipeline
+from m2_storage.signal_store import SignalStore
+from m3_judgment.judgment_engine import JudgmentEngine
+from m4_action.action_designer import ActionDesigner
+from m9_paper_trader import PaperTrader
+from m9_paper_trader.price_feed import YFinanceFeed, CompositeFeed
+from m9_paper_trader.baostock_feed import BaostockFeed
 
 
 class LiveSignalMonitor:
@@ -52,6 +59,21 @@ class LiveSignalMonitor:
         )
         self.validator = ImplicitSignalValidator(self.case_library)
 
+        # Phase 3.5: Initialize M2, M3, M4
+        print("[初始化] 初始化M2信号存储...")
+        self.signal_store = SignalStore()
+
+        print("[初始化] 初始化M3机会判断引擎...")
+        self.judgment_engine = JudgmentEngine(
+            llm_client=self.llm_client,
+            signal_store=self.signal_store,
+        )
+
+        print("[初始化] 初始化M4行动设计器...")
+        self.action_designer = ActionDesigner(
+            llm_client=self.llm_client,
+        )
+
         # 初始化数据源
         print("[初始化] 初始化数据源...")
         self.providers = {
@@ -60,13 +82,19 @@ class LiveSignalMonitor:
             '36kr': Kr36Provider()
         }
 
-        # 初始化模拟盘交易器（如果启用）
+        # Phase 3.5: Initialize M9 directly (no SignalToPaperTrader)
         if self.enable_paper_trading:
-            print("[初始化] 初始化M9模拟盘交易器...")
-            self.signal_trader = create_signal_trader()
+            print("[初始化] 初始化M9模拟盘...")
+            self.paper_trader = PaperTrader(initial_capital=1_000_000)
         else:
-            self.signal_trader = None
+            self.paper_trader = None
 
+        # 初始化真实行情数据源
+        print("[初始化] 初始化真实行情数据源...")
+        self.price_feed = CompositeFeed([
+            BaostockFeed(),   # A股日线（稳定，已验证）
+            YFinanceFeed(),   # 美股+港股，15分钟延迟
+        ])
         print("[初始化] 完成\n")
 
     def collect_news(self, date: str = None) -> list:
@@ -260,7 +288,7 @@ class LiveSignalMonitor:
         print(f"{'='*80}\n")
 
     def run_daily_monitoring(self, date: str = None):
-        """运行每日监控"""
+        """运行每日监控 - 完整流程：M0→M1.5→M2→M3→M4→M9"""
         if date is None:
             date = datetime.now().strftime('%Y-%m-%d')
 
@@ -268,45 +296,128 @@ class LiveSignalMonitor:
         print(f"实盘信号监控 - {date}")
         print(f"{'='*80}\n")
 
-        # 1. 采集新闻
+        # 阶段1: M0采集新闻
         news_items = self.collect_news(date)
 
         if not news_items:
             print("[警告] 未采集到新闻，跳过处理")
             return
 
-        # 2. 处理新闻，生成信号
+        # 阶段2: M1.5推理 + 生成隐性信号
         signals, signal_objects = self.process_news(news_items)
 
-        # 3. 执行模拟交易（如果启用）
-        if self.signal_trader and signal_objects:
-            print(f"\n[M9模拟盘] 开始执行交易...")
+        if not signal_objects:
+            print("[警告] 未生成任何信号，跳过后续流程")
+            self.save_daily_report(date, news_items, signals)
+            return
 
-            # 需要获取当前价格（这里使用模拟价格，实际应该从行情接口获取）
-            # TODO: 集成真实行情数据源
+        # 阶段3: M2存储隐性信号
+        print(f"\n[M2存储] 保存 {len(signal_objects)} 个隐性信号到数据库...")
+        stored_count = 0
+        for signal_obj in signal_objects:
+            try:
+                self.signal_store.save_implicit_signal(signal_obj)
+                stored_count += 1
+            except Exception as e:
+                print(f"  [警告] 保存信号 {signal_obj.signal_id} 失败: {e}")
+        print(f"[M2存储] 成功保存 {stored_count}/{len(signal_objects)} 个信号\n")
+
+        # 阶段4: M3判断 - 评估机会质量
+        print(f"[M3判断] 开始评估 {len(signal_objects)} 个隐性信号...")
+        judgment_results = self.judgment_engine.judge_implicit_signals(signal_objects)
+
+        # 过滤高质量机会（置信度>=0.6）
+        high_quality_opportunities = [
+            opp for opp in judgment_results
+            if opp.confidence >= 0.6
+        ]
+        print(f"[M3判断] 识别出 {len(high_quality_opportunities)}/{len(judgment_results)} 个高质量机会\n")
+
+        if not high_quality_opportunities:
+            print("[警告] 无高质量机会，跳过行动设计和交易")
+            self.save_daily_report(date, news_items, signals)
+            return
+
+        # 阶段5: M4行动设计 - 生成交易计划
+        print(f"[M4行动] 为 {len(high_quality_opportunities)} 个机会设计行动方案...")
+        action_plans = []
+        for opp in high_quality_opportunities:
+            try:
+                plan = self.action_designer.design_action(opp)
+                if plan:
+                    action_plans.append(plan)
+                    print(f"  - {opp.opportunity_id}: {plan.action_type} {len(plan.target_symbols)} 个标的")
+            except Exception as e:
+                print(f"  [警告] 设计行动失败 {opp.opportunity_id}: {e}")
+        print(f"[M4行动] 生成 {len(action_plans)} 个行动计划\n")
+
+        if not action_plans:
+            print("[警告] 无可执行行动计划，跳过交易")
+            self.save_daily_report(date, news_items, signals)
+            return
+
+        # 阶段6: M9执行模拟交易
+        if self.paper_trader:
+            print(f"[M9模拟盘] 开始执行 {len(action_plans)} 个交易计划...")
+
+            # 获取真实行情价格
             current_prices = {}
-            for signal in signal_objects:
-                for symbol in signal.target_symbols:
-                    # 模拟价格：A股100-300元，港股50-200港币，美股50-500美元
-                    if symbol.endswith('.SH') or symbol.endswith('.SZ'):
-                        current_prices[symbol] = 150.0
-                    elif symbol.endswith('.HK'):
-                        current_prices[symbol] = 100.0
-                    else:
-                        current_prices[symbol] = 200.0
+            price_failures = []
 
-            trade_results = self.signal_trader.process_signals_batch(signal_objects, current_prices)
+            all_symbols = set()
+            for plan in action_plans:
+                all_symbols.update(plan.target_symbols)
 
-            print(f"[M9模拟盘] 共创建 {sum(len(v) for v in trade_results.values())} 个持仓")
+            for symbol in all_symbols:
+                print(f"  [行情] 获取 {symbol} 实时价格...", end=' ')
+                snapshot = self.price_feed.get_price(symbol)
 
-            # 保存交易结果到报告中
-            for signal in signals:
-                signal['paper_trade'] = {
-                    'position_ids': trade_results.get(signal['signal_id'], []),
-                    'position_count': len(trade_results.get(signal['signal_id'], []))
-                }
+                if snapshot and snapshot.price > 0:
+                    current_prices[symbol] = snapshot.price
+                    print(f"{snapshot.price:.3f} ({snapshot.source})")
+                else:
+                    price_failures.append(symbol)
+                    print("失败")
 
-        # 4. 保存报告
+            if price_failures:
+                print(f"\n  [警告] 以下标的无法获取价格: {', '.join(price_failures)}")
+
+            if not current_prices:
+                print(f"\n  [警告] 无法获取任何标的价格，跳过模拟交易")
+            else:
+                print(f"\n  [行情] 成功获取 {len(current_prices)} 个标的价格")
+
+                # 执行交易计划
+                total_positions = 0
+                for plan in action_plans:
+                    try:
+                        # 获取该计划的第一个标的价格作为入场价
+                        entry_symbol = plan.primary_instruments[0] if plan.primary_instruments else None
+                        if not entry_symbol or entry_symbol not in current_prices:
+                            print(f"  [警告] 计划 {plan.plan_id} 无可用价格，跳过")
+                            continue
+
+                        entry_price = current_prices[entry_symbol]
+
+                        # 使用open_from_plan执行
+                        positions = self.paper_trader.open_from_plan(
+                            plan=plan,
+                            signal_ids=plan.metadata.get("source_signal_ids", []) if plan.metadata else [],
+                            opportunity_id=plan.opportunity_id,
+                            entry_price=entry_price,
+                            prev_close=entry_price,  # 简化处理
+                            signal_confidence=0.7,  # 默认值
+                        )
+                        total_positions += len(positions)
+                        print(f"  - {plan.plan_id}: 创建 {len(positions)} 个持仓")
+                    except Exception as e:
+                        print(f"  [警告] 执行计划 {plan.plan_id} 失败: {e}")
+                        import traceback
+                        traceback.print_exc()
+
+                print(f"[M9模拟盘] 共创建 {total_positions} 个持仓\n")
+
+        # 阶段7: 保存报告
         self.save_daily_report(date, news_items, signals)
 
         print(f"[完成] {date} 的监控任务已完成\n")

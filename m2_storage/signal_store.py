@@ -21,6 +21,12 @@ from typing import List, Optional
 
 from core.schemas import MarketSignal, Market, SignalType, CausalPattern, CaseRecord
 
+# Import ImplicitSignal for Phase 3.5
+try:
+    from m1_5_implicit_reasoner.models import ImplicitSignal
+except ImportError:
+    ImplicitSignal = None
+
 logger = logging.getLogger(__name__)
 
 DB_FILE = Path(__file__).parent.parent / "data" / "signals" / "signal_store.db"
@@ -90,6 +96,175 @@ class SignalStore:
 
         logger.info(f"[M2] 保存信号 {saved}/{len(signals)} 条（去重后）")
         return saved
+
+    # ------------------------------------------------------------------
+    # Implicit Signal Storage (Phase 3.5)
+    # ------------------------------------------------------------------
+
+    def save_implicit_signal(self, signal) -> bool:
+        """保存隐性信号
+
+        Args:
+            signal: ImplicitSignal对象
+
+        Returns:
+            是否保存成功
+        """
+        if ImplicitSignal is None:
+            logger.warning("[M2] ImplicitSignal未导入，跳过保存")
+            return False
+
+        try:
+            with self._conn() as conn:
+                conn.execute(
+                    """
+                    INSERT OR REPLACE INTO implicit_signals
+                      (signal_id, signal_type, source_event, industry_sector,
+                       opportunity_description, target_symbols, prior_confidence,
+                       posterior_confidence, expected_impact_timeframe,
+                       generated_at, raw_json)
+                    VALUES (?,?,?,?,?,?,?,?,?,?,?)
+                    """,
+                    (
+                        signal.signal_id,
+                        signal.signal_type,
+                        signal.reasoning_chain.source_event if signal.reasoning_chain else "",
+                        signal.industry_sector,
+                        signal.opportunity_description,
+                        json.dumps(signal.target_symbols),
+                        signal.prior_confidence,
+                        signal.prior_confidence,  # posterior_confidence不存在，使用prior_confidence
+                        signal.expected_impact_timeframe,
+                        signal.created_at.isoformat(),
+                        json.dumps(signal.to_dict()),  # ImplicitSignal是dataclass，使用to_dict()
+                    ),
+                )
+            logger.info(f"[M2] 保存隐性信号 {signal.signal_id}")
+            return True
+        except Exception as e:
+            logger.error(f"[M2] 保存隐性信号失败: {e}")
+            return False
+
+    def save_implicit_signals_batch(self, signals: List) -> int:
+        """批量保存隐性信号
+
+        Args:
+            signals: ImplicitSignal对象列表
+
+        Returns:
+            成功保存的数量
+        """
+        saved = 0
+        for sig in signals:
+            if self.save_implicit_signal(sig):
+                saved += 1
+        logger.info(f"[M2] 批量保存隐性信号 {saved}/{len(signals)} 条")
+        return saved
+
+    def query_implicit_signals(
+        self,
+        start_time: Optional[datetime] = None,
+        end_time: Optional[datetime] = None,
+        industry_sector: Optional[str] = None,
+        signal_type: Optional[str] = None,
+        min_confidence: float = 0.0,
+        limit: int = 100,
+    ) -> List:
+        """查询隐性信号
+
+        Args:
+            start_time: 开始时间
+            end_time: 结束时间
+            industry_sector: 产业板块过滤
+            signal_type: 信号类型过滤
+            min_confidence: 最低置信度（posterior_confidence）
+            limit: 返回数量限制
+
+        Returns:
+            ImplicitSignal对象列表
+        """
+        if ImplicitSignal is None:
+            logger.warning("[M2] ImplicitSignal未导入，返回空列表")
+            return []
+
+        query = """
+            SELECT raw_json FROM implicit_signals
+            WHERE posterior_confidence >= ?
+        """
+        params: list = [min_confidence]
+
+        if start_time:
+            query += " AND generated_at >= ?"
+            params.append(start_time.isoformat())
+
+        if end_time:
+            query += " AND generated_at <= ?"
+            params.append(end_time.isoformat())
+
+        if industry_sector:
+            query += " AND industry_sector = ?"
+            params.append(industry_sector)
+
+        if signal_type:
+            query += " AND signal_type = ?"
+            params.append(signal_type)
+
+        query += " ORDER BY generated_at DESC LIMIT ?"
+        params.append(limit)
+
+        with self._conn() as conn:
+            rows = conn.execute(query, params).fetchall()
+
+        signals = [ImplicitSignal.model_validate_json(r[0]) for r in rows]
+        logger.info(
+            f"[M2] 查询隐性信号 | sector={industry_sector} type={signal_type} | 结果={len(signals)} 条"
+        )
+        return signals
+
+    def get_implicit_signal_by_id(self, signal_id: str):
+        """根据ID获取隐性信号
+
+        Args:
+            signal_id: 信号ID
+
+        Returns:
+            ImplicitSignal对象或None
+        """
+        if ImplicitSignal is None:
+            return None
+
+        with self._conn() as conn:
+            row = conn.execute(
+                "SELECT raw_json FROM implicit_signals WHERE signal_id = ?",
+                (signal_id,)
+            ).fetchone()
+
+        if row:
+            import json
+            data = json.loads(row[0])
+            return ImplicitSignal(**data)
+        return None
+
+    def implicit_signal_stats(self) -> dict:
+        """隐性信号统计"""
+        with self._conn() as conn:
+            total = conn.execute("SELECT COUNT(*) FROM implicit_signals").fetchone()[0]
+            by_type = conn.execute(
+                "SELECT signal_type, COUNT(*) FROM implicit_signals GROUP BY signal_type"
+            ).fetchall()
+            by_sector = conn.execute(
+                "SELECT industry_sector, COUNT(*) FROM implicit_signals GROUP BY industry_sector ORDER BY COUNT(*) DESC LIMIT 10"
+            ).fetchall()
+            avg_confidence = conn.execute(
+                "SELECT AVG(posterior_confidence) FROM implicit_signals"
+            ).fetchone()[0]
+
+        return {
+            "total": total,
+            "by_signal_type": dict(by_type),
+            "top_sectors": dict(by_sector),
+            "avg_confidence": round(avg_confidence, 3) if avg_confidence else 0.0,
+        }
 
     # ------------------------------------------------------------------
     # 检索
@@ -411,6 +586,36 @@ class SignalStore:
             conn.execute("CREATE INDEX IF NOT EXISTS idx_batch_id ON signals(batch_id)")
             conn.execute(
                 "CREATE INDEX IF NOT EXISTS idx_signal_type ON signals(signal_type)"
+            )
+
+            # Implicit signals table (Phase 3.5)
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS implicit_signals (
+                    signal_id TEXT PRIMARY KEY,
+                    signal_type TEXT,
+                    source_event TEXT,
+                    industry_sector TEXT,
+                    opportunity_description TEXT,
+                    target_symbols TEXT,
+                    prior_confidence REAL,
+                    posterior_confidence REAL,
+                    expected_impact_timeframe TEXT,
+                    generated_at TEXT,
+                    raw_json TEXT,
+                    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+                )
+            """)
+            conn.execute(
+                "CREATE INDEX IF NOT EXISTS idx_implicit_generated_at ON implicit_signals(generated_at)"
+            )
+            conn.execute(
+                "CREATE INDEX IF NOT EXISTS idx_implicit_industry ON implicit_signals(industry_sector)"
+            )
+            conn.execute(
+                "CREATE INDEX IF NOT EXISTS idx_implicit_type ON implicit_signals(signal_type)"
+            )
+            conn.execute(
+                "CREATE INDEX IF NOT EXISTS idx_implicit_confidence ON implicit_signals(posterior_confidence)"
             )
 
             # Causal patterns table
