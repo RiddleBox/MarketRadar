@@ -53,14 +53,19 @@
 - [x] IMPLEMENTATION_PLAN.md 实施计划
 - [x] 开始实施步骤1
 
-### 2026-04-28 — 步骤1-2 完成
+### 2026-04-28 — 步骤1-7 完成
 
 - [x] Bug修：M1.5管道接入 run_daily_pipeline（step_m1_5_implicit + 合并到premarket流程）
-- [x] core/schemas.py 新增：AnomalyType, TrendStage, CatalystPersistence, PriceAnomaly, CausationResult, TrendAssessment, EntryConstraint, MarketAnomalyStrategy, RetroOpportunity
-- [x] SignalType 新增 ANOMALOUS_ACTIVITY
-- [x] SourceType 新增 MARKET_MONITOR
-- [x] OpportunityObject 新增 origin + entry_constraint 字段
-- [x] 所有模型导入验证通过
+- [x] core/schemas.py 新增所有M12数据模型
+- [x] anomaly_detector.py 异动检测核心（ATR+σ+量比双重条件，盘后+盘中两种模式）
+- [x] backward_causation.py 反向溯源（M0定向采集+信号匹配+置信度评估）
+- [x] trend_stage.py 趋势阶段判断（early/middle/late三阶段+原因持续性+剩余空间估算）
+- [x] market_strategies.py 三市场差异化策略（A股/港股/美股）
+- [x] catcher_engine.py 主引擎编排（daily_scan+intraday_scan+完整流程）
+- [x] 全部模块导入测试通过
+
+- [ ] 步骤8: pipeline集成到 run_daily_pipeline.py
+- [ ] 步骤9: Dashboard补牢机会tab
 
 ---
 
