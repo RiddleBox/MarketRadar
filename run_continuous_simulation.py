@@ -80,97 +80,57 @@ def detect_a_share_feed():
 signal.signal(signal.SIGINT, _signal_handler)
 
 
-def run_intraday_scan(a_share_feed_cls=None):
+# Removed duplicate function - using the one at line 267 with auto-open logic
+
+
+def _get_feed_configs(a_share_feed_cls=None, is_a_share_trading_fn=None, is_us_trading_fn=None):
+    """获取数据源配置（Futu优先, 降级备选）。支持智能市场选择。"""
     if a_share_feed_cls is None:
         a_share_feed_cls = detect_a_share_feed()
 
-    # Prefer FutuFeed for all markets when available
-    try:
-        from m9_paper_trader.futu_feed import FutuFeed
-        futu_test = FutuFeed()
-        if futu_test._connected:
-            markets_configs = [
-                (Market.A_SHARE, FutuFeed),
-                (Market.HK, FutuFeed),
-                (Market.US, FutuFeed),
-            ]
-            futu_test.close()
-        else:
-            futu_test.close()
-            raise RuntimeError("FutuFeed not connected")
-    except Exception:
-        markets_configs = [
-            (Market.A_SHARE, a_share_feed_cls),
-            (Market.HK, YFinanceFeed),
-            (Market.US, YFinanceFeed),
-        ]
-
-    total = 0
-    for market, feed_cls in markets_configs:
-        try:
-            console.print(f"  [bold]扫描 {market.value}...[/bold]")
-            detector_kwargs = {}
-            if market == Market.A_SHARE:
-                detector_kwargs = dict(
-                    sigma_threshold=2.0,
-                    atr_threshold=2.0,
-                    volume_threshold=1.5,
-                )
-            elif market in (Market.HK, Market.US):
-                detector_kwargs = dict(
-                    sigma_threshold=2.0,
-                    atr_threshold=1.5,
-                    volume_threshold=1.5,
-                )
-
-            detector = AnomalyDetector(**detector_kwargs)
-            engine = OpportunityCatcherEngine(anomaly_detector=detector)
-            pf = feed_cls()
-            results = engine.run_intraday_scan(market=market, price_feed=pf)
-
-            if results:
-                console.print(f"  [green]✓ {market.value}: {len(results)} 个补牢机会[/green]")
-                for r in results[:3]:
-                    a = r.anomaly
-                    console.print(
-                        f"    {a.instrument} {a.price_change_pct:+.1f}% "
-                        f"({a.anomaly_type}) [{r.trend.stage.value}]"
-                    )
-                total += len(results)
-            else:
-                console.print(f"  [dim]{market.value}: 无异动[/dim]")
-        except Exception as e:
-            console.print(f"  [yellow]⚠ {market.value} 扫描失败: {e}[/yellow]")
-
-    console.print(f"\n  [bold]盘中总计: {total} 个补牢机会[/bold]")
-    return total
-
-
-def _get_feed_configs(a_share_feed_cls=None):
-    """获取数据源配置（Futu优先, 降级备选）。"""
-    if a_share_feed_cls is None:
-        a_share_feed_cls = detect_a_share_feed()
+    # Smart market selection based on trading hours
+    now_h = datetime.now().hour
+    is_a_share_hours = is_a_share_trading_fn() if is_a_share_trading_fn else (9 <= now_h < 15)
+    is_us_hours = is_us_trading_fn() if is_us_trading_fn else (21 <= now_h or now_h < 4)
 
     try:
         from m9_paper_trader.futu_feed import FutuFeed
         futu_test = FutuFeed()
         if futu_test._connected:
-            configs = [
-                (Market.A_SHARE, FutuFeed),
-                (Market.HK, FutuFeed),
-                (Market.US, FutuFeed),
-            ]
+            configs = []
+            if is_a_share_hours:
+                configs.append((Market.A_SHARE, FutuFeed))
+                configs.append((Market.HK, FutuFeed))
+            if is_us_hours:
+                configs.append((Market.US, FutuFeed))
+
+            # If no market is trading, scan all (off-hours scan)
+            if not configs:
+                configs = [
+                    (Market.A_SHARE, FutuFeed),
+                    (Market.HK, FutuFeed),
+                    (Market.US, FutuFeed),
+                ]
             futu_test.close()
             return configs, FutuFeed
         futu_test.close()
     except Exception:
         pass
 
-    configs = [
-        (Market.A_SHARE, a_share_feed_cls),
-        (Market.HK, YFinanceFeed),
-        (Market.US, YFinanceFeed),
-    ]
+    configs = []
+    if is_a_share_hours:
+        configs.append((Market.A_SHARE, a_share_feed_cls))
+        configs.append((Market.HK, YFinanceFeed))
+    if is_us_hours:
+        configs.append((Market.US, YFinanceFeed))
+
+    # If no market is trading, scan all
+    if not configs:
+        configs = [
+            (Market.A_SHARE, a_share_feed_cls),
+            (Market.HK, YFinanceFeed),
+            (Market.US, YFinanceFeed),
+        ]
     return configs, None
 
 
@@ -241,11 +201,15 @@ def run_daily_scan(a_share_feed_cls=None):
     return total
 
 
-def run_intraday_scan(a_share_feed_cls=None):
+def run_intraday_scan(a_share_feed_cls=None, is_a_share_trading_fn=None, is_us_trading_fn=None):
     if a_share_feed_cls is None:
         a_share_feed_cls = detect_a_share_feed()
 
-    markets_configs, feed_cls_for_open = _get_feed_configs(a_share_feed_cls)
+    markets_configs, feed_cls_for_open = _get_feed_configs(
+        a_share_feed_cls,
+        is_a_share_trading_fn=is_a_share_trading_fn,
+        is_us_trading_fn=is_us_trading_fn
+    )
 
     all_results = []
     total = 0
@@ -484,14 +448,22 @@ def main():
             if is_a_share_trading() and now - last_a_share_scan >= a_share_intraday_interval:
                 cycle += 1
                 console.print(f"\n[dim]--- 第 {cycle} 轮A股盘中扫描 (A股30min) ---[/dim]")
-                run_intraday_scan(a_share_feed_cls=a_share_feed_cls)
+                run_intraday_scan(
+                    a_share_feed_cls=a_share_feed_cls,
+                    is_a_share_trading_fn=is_a_share_trading,
+                    is_us_trading_fn=is_us_trading
+                )
                 last_a_share_scan = now
                 continue
 
             if is_us_trading() and now - last_us_scan >= us_intraday_interval:
                 cycle += 1
                 console.print(f"\n[dim]--- 第 {cycle} 轮美股盘中扫描 (美股10min) ---[/dim]")
-                run_intraday_scan(a_share_feed_cls=a_share_feed_cls)
+                run_intraday_scan(
+                    a_share_feed_cls=a_share_feed_cls,
+                    is_a_share_trading_fn=is_a_share_trading,
+                    is_us_trading_fn=is_us_trading
+                )
                 last_us_scan = now
                 continue
 
