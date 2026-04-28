@@ -28,9 +28,13 @@ from core.schemas import (
     RetroOpportunity,
 )
 
+from pipeline.decision_log import DecisionLog
+
 logger = logging.getLogger(__name__)
 
 OPPORTUNITY_ARCHIVE = Path("data/opportunities")
+
+_decision_log = DecisionLog()
 
 
 def opportunities_to_positions(
@@ -218,8 +222,28 @@ def _process_single_opportunity(
 
     pos = opened[0]
     logger.info(
-        f"[Bridge] 开仓成功: {pos.instrument} | dir={pos.direction} | "
+        f"[Bridge] opened: {pos.instrument} | dir={pos.direction} | "
         f"entry={pos.entry_price:.2f} | SL={pos.stop_loss_price:.2f} | TP={pos.take_profit_price}"
+    )
+
+    # 记录开仓决策到决策日志
+    _decision_log.record_action(
+        record=_decision_log.record_anomaly(
+            instrument=instrument,
+            market=mkt.value if isinstance(mkt, Market) else str(mkt),
+            anomaly_type="opportunity_action",
+            price_change_pct=0.0,
+            atr_multiple=0.0,
+            sigma_multiple=0.0,
+            volume_ratio=0.0,
+        ),
+        action_taken="OPENED",
+        reason=f"M4 plan SL={plan.stop_loss.stop_loss_value}% TP={plan.take_profit.take_profit_value}%",
+        plan_id=plan.plan_id,
+        stop_loss_pct=plan.stop_loss.stop_loss_value,
+        take_profit_pct=plan.take_profit.take_profit_value,
+        position_id=pos.paper_position_id,
+        entry_price=pos.entry_price,
     )
 
     return {

@@ -46,6 +46,7 @@ from m12_opportunity_catcher.anomaly_detector import AnomalyDetector
 from m12_opportunity_catcher.backward_causation import BackwardCausation
 from m12_opportunity_catcher.trend_stage import TrendAssessor
 from m12_opportunity_catcher.market_strategies import get_strategy, MarketAnomalyStrategy
+from pipeline.decision_log import DecisionLog
 
 logger = logging.getLogger(__name__)
 
@@ -58,6 +59,8 @@ class OpportunityCatcherEngine:
 
     默认自动初始化 JudgmentEngine（M3）和 SignalStore（M2），
     确保每条异动都走完整管线。LLM不可用时降级到硬编码判断。
+
+    每个异动的决策过程通过 DecisionLog 完整记录，供复盘使用。
     """
 
     def __init__(
@@ -68,6 +71,7 @@ class OpportunityCatcherEngine:
         signal_store=None,
         llm_client=None,
         m3_engine=None,
+        decision_log: DecisionLog = None,
     ):
         self.anomaly_detector = anomaly_detector or AnomalyDetector()
         self.llm_client = llm_client
@@ -105,6 +109,9 @@ class OpportunityCatcherEngine:
             m3_engine=self.m3_engine,
             signal_store=self.signal_store,
         )
+
+        # 决策日志：记录每个异动的完整决策链路
+        self.decision_log = decision_log or DecisionLog()
 
     def run_daily_scan(
         self,
@@ -153,6 +160,13 @@ class OpportunityCatcherEngine:
                 continue
 
         logger.info(f"[CatcherEngine] generated {len(opportunities)} retro opportunities")
+
+        # Generate daily decision report
+        try:
+            self.decision_log.generate_daily_report()
+        except Exception as e:
+            logger.warning(f"[CatcherEngine] daily report generation failed: {e}")
+
         return opportunities
 
     def run_intraday_scan(
@@ -213,21 +227,39 @@ class OpportunityCatcherEngine:
     ) -> Optional[RetroOpportunity]:
         """处理单个异动事件：溯源 → M3判断 → 趋势判断 → 生成机会
 
-        完整流程（M12只做检测和收集，判断全交给M3）：
-        1. M12 反向溯源：M0采集 → M1解码 → M2查询 → 有因/无因
-           - 无因 = 放弃（不追高）
-        2. M3 judge：溯源信号送入M3做完整判断
-           - M3返回OpportunityObject（含priority/confidence/direction）
-           - M3返回空列表 = M3认为不构成机会 → 放弃
-        3. M12 趋势阶段判断：基于M3结果 + 价格数据判断early/middle/late
-           - LATE = 放弃
-        4. 生成RetroOpportunity
+        每步决策通过 DecisionLog 完整记录：看到了什么、想了什么、做了什么、为什么。
         """
+        # Step 0: 记录异动发现
+        rec = self.decision_log.record_anomaly(
+            instrument=anomaly.instrument,
+            market=anomaly.market.value,
+            anomaly_type=anomaly.anomaly_type.value if hasattr(anomaly.anomaly_type, 'value') else str(anomaly.anomaly_type),
+            price_change_pct=anomaly.price_change_pct,
+            atr_multiple=anomaly.atr_multiple,
+            sigma_multiple=anomaly.sigma_multiple,
+            volume_ratio=anomaly.volume_ratio,
+            is_limit_up=anomaly.is_limit_up,
+        )
+
         # Step 1: 反向溯源（M0→M1→M2），只找原因，不做判断
         causation = self.backward_causation.trace(
             anomaly=anomaly,
             historical_signals=historical_signals,
             sentiment_data=sentiment_data,
+        )
+
+        # 记录溯源结果
+        signal_summaries = [
+            {"signal_id": s.signal_id, "label": s.signal_label[:60], "type": s.signal_type.value}
+            for s in causation.causes[:5]
+        ]
+        self.decision_log.record_causation(
+            record=rec,
+            causation_type=causation.causation_type,
+            has_cause=causation.confidence > 0.0 and causation.causation_type != "unexplained",
+            signal_count=len(causation.causes),
+            signals=signal_summaries,
+            skip_reason="" if causation.confidence > 0.0 else "no_cause",
         )
 
         # 无因 = 放弃（溯因必须有证据，无因追高=赌博）
@@ -239,8 +271,8 @@ class OpportunityCatcherEngine:
             return None
 
         # Step 2: M3 judge — 信号送入M3做完整判断
-        # M3决定：是否构成机会？什么优先级？什么方向？置信度多少？
         m3_opp = None
+        m3_fallback = False
         if self.m3_engine is not None and causation.causes:
             try:
                 m3_results = self.m3_engine.judge(
@@ -257,20 +289,64 @@ class OpportunityCatcherEngine:
                         f"score={m3_opp.opportunity_score.overall_score if m3_opp.opportunity_score else 'N/A'}"
                     )
                 else:
-                    # M3认为不构成机会 → 放弃
                     logger.info(
                         f"[CatcherEngine] M3 judged {anomaly.instrument}: no opportunity, skipping"
                     )
-                    return None
             except Exception as e:
                 logger.warning(f"[CatcherEngine] M3 judge failed for {anomaly.instrument}: {e}")
-                # M3不可用时，降级到纯趋势判断（此时confidence=1.0表示有因即可继续）
+                m3_fallback = True
+
+        # 记录M3判断结果
+        m3_skip_reason = ""
+        m3_priority = ""
+        m3_direction = ""
+        m3_score = 0.0
+        m3_opp_dict = None
+
+        if m3_opp is not None:
+            m3_priority = m3_opp.priority_level.value if hasattr(m3_opp.priority_level, 'value') else str(m3_opp.priority_level)
+            m3_direction = m3_opp.trade_direction.value if hasattr(m3_opp.trade_direction, 'value') else str(m3_opp.trade_direction)
+            m3_score = m3_opp.opportunity_score.overall_score if m3_opp.opportunity_score else 0.0
+            try:
+                m3_opp_dict = m3_opp.model_dump()
+            except Exception:
+                m3_opp_dict = {"id": m3_opp.opportunity_id, "title": m3_opp.opportunity_title}
+        elif not m3_fallback:
+            m3_skip_reason = "m3_no_opportunity"
+
+        self.decision_log.record_m3_judgment(
+            record=rec,
+            judged=m3_opp is not None or m3_fallback,
+            opportunity=m3_opp_dict,
+            skip_reason=m3_skip_reason,
+            fallback=m3_fallback,
+            priority=m3_priority,
+            direction=m3_direction,
+            score=m3_score,
+        )
+
+        # M3认为不构成机会 → 放弃（M3可用时）
+        if m3_opp is None and not m3_fallback and self.m3_engine is not None:
+            return None
 
         # Step 3: M12趋势阶段判断（基于价格数据 + M3结果）
         trend = self.trend_assessor.assess(
             anomaly=anomaly,
             causation=causation,
             m3_opportunity=m3_opp,
+        )
+
+        # 记录趋势判断
+        trend_persistence = ""
+        if hasattr(trend, 'catalyst_persistence') and trend.catalyst_persistence:
+            trend_persistence = trend.catalyst_persistence.value if hasattr(trend.catalyst_persistence, 'value') else str(trend.catalyst_persistence)
+
+        self.decision_log.record_trend(
+            record=rec,
+            stage=trend.stage.value,
+            remaining_upside_pct=trend.remaining_upside_pct,
+            catalyst_persistence=trend_persistence,
+            skip_reason="trend_LATE" if trend.stage == TrendStage.LATE else "",
         )
 
         # LATE阶段放弃
@@ -280,7 +356,7 @@ class OpportunityCatcherEngine:
             )
             return None
 
-        # Step 3: 生成OpportunityObject
+        # Step 4: 生成OpportunityObject
         # 优先使用M3的OpportunityObject（包含M3的完整判断）
         # M3不可用时降级到M12自建（弱判断）
         if m3_opp is not None:
@@ -338,6 +414,18 @@ class OpportunityCatcherEngine:
         logger.info(
             f"[CatcherEngine] {anomaly.instrument}: stage={trend.stage.value}, "
             f"confidence={causation.confidence:.0%}, upside={trend.remaining_upside_pct:.1f}%"
+        )
+
+        # 记录最终结果
+        sl_pct = stop_loss_candidates[0].stop_loss_value if stop_loss_candidates else 0.0
+        tp_pct = retro.opportunity.risk_reward_profile if hasattr(retro.opportunity, 'risk_reward_profile') else ""
+        self.decision_log.record_action(
+            record=rec,
+            action_taken="PASSED",
+            reason=f"trend={trend.stage.value} upside={trend.remaining_upside_pct:.1f}%",
+            plan_id=opportunity.opportunity_id,
+            stop_loss_pct=sl_pct,
+            take_profit_pct=0.0,
         )
 
         return retro

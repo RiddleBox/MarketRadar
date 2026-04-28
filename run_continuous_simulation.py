@@ -218,6 +218,21 @@ def run_daily_scan(a_share_feed_cls=None):
         _print_open_results(open_results)
 
     _save_results(total)
+
+    # Generate daily decision report
+    try:
+        from pipeline.decision_log import DecisionLog
+        dl = DecisionLog()
+        report = dl.generate_daily_report()
+        summary = report.get("summary", {})
+        console.print(f"\n  [dim]决策报告: 异动{summary.get('total_anomalies',0)} "
+                      f"无因放弃{summary.get('skipped_no_cause',0)} "
+                      f"M3否决{summary.get('skipped_m3_no_opportunity',0)} "
+                      f"趋势晚放弃{summary.get('skipped_trend_late',0)} "
+                      f"开仓{summary.get('opened_positions',0)}[/dim]")
+    except Exception as e:
+        console.print(f"  [yellow]决策报告生成失败: {e}[/yellow]")
+
     return total
 
 
