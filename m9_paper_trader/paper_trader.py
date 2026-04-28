@@ -637,6 +637,9 @@ class PaperTrader:
             pp.orders.append(order)
             pp.fee_paid = order.fee_paid
 
+            notional = entry_price * quantity
+            self._cash -= notional + order.fee_paid
+
             self._positions.append(pp)
             self._log_trade("OPEN", pp, order)
             opened.append(pp)
@@ -721,6 +724,9 @@ class PaperTrader:
         order.fee_paid = self._fee_model.buy_cost(entry_price * quantity)
         pp.orders.append(order)
         pp.fee_paid = order.fee_paid
+
+        notional = entry_price * quantity
+        self._cash -= notional + order.fee_paid
 
         self._positions.append(pp)
         self._log_trade("OPEN", pp, order)
@@ -808,7 +814,12 @@ class PaperTrader:
     # ── 内部方法 ──────────────────────────────────────────────
 
     def _on_close(self, pp: PaperPosition):
-        """平仓后处理：扣费 + 记录 + 风控 + 回调。"""
+        """平仓后处理：归还资金 + 扣费 + 记录 + 风控 + 回调。"""
+        close_price = pp.current_price if pp.current_price > 0 else pp.stop_loss_price
+        if close_price > 0 and pp.quantity > 0:
+            sell_proceeds = close_price * pp.quantity
+            sell_fee = self._fee_model.sell_cost(sell_proceeds)
+            self._cash += sell_proceeds - sell_fee
         pp.apply_fees(self._fee_model)
         self._risk_monitor.on_position_closed(pp, self._fee_model)
         self._closed_today += 1
