@@ -975,7 +975,7 @@ class PaperTrader:
             TRADE_LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
             TRADE_LOG_FILE.write_text(
                 json.dumps(
-                    self._trade_log[-500:], ensure_ascii=False, indent=2, default=str
+                    self._trade_log, ensure_ascii=False, indent=2, default=str
                 ),
                 encoding="utf-8",
             )
