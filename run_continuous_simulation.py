@@ -381,11 +381,13 @@ def main():
     console.print("\n[bold]首次启动：执行盘后全量扫描...[/bold]")
     run_daily_scan(a_share_feed_cls=a_share_feed_cls)
 
-    intraday_interval = 30 * 60
+    a_share_intraday_interval = 30 * 60
+    us_intraday_interval = 10 * 60
     daily_interval = 4 * 60 * 60
     price_update_interval = 60
 
-    last_intraday = time.time()
+    last_a_share_scan = time.time()
+    last_us_scan = time.time()
     last_daily = time.time()
     last_price_update = 0.0
     cycle = 0
@@ -478,18 +480,18 @@ def main():
             continue
 
         if not is_weekend():
-            if is_a_share_trading() and now - last_intraday >= intraday_interval:
+            if is_a_share_trading() and now - last_a_share_scan >= a_share_intraday_interval:
                 cycle += 1
-                console.print(f"\n[dim]--- 第 {cycle} 轮A股盘中扫描 ---[/dim]")
+                console.print(f"\n[dim]--- 第 {cycle} 轮A股盘中扫描 (A股30min) ---[/dim]")
                 run_intraday_scan(a_share_feed_cls=a_share_feed_cls)
-                last_intraday = now
+                last_a_share_scan = now
                 continue
 
-            if is_us_trading() and now - last_intraday >= intraday_interval:
+            if is_us_trading() and now - last_us_scan >= us_intraday_interval:
                 cycle += 1
-                console.print(f"\n[dim]--- 第 {cycle} 轮美股盘中扫描 ---[/dim]")
+                console.print(f"\n[dim]--- 第 {cycle} 轮美股盘中扫描 (美股10min) ---[/dim]")
                 run_intraday_scan(a_share_feed_cls=a_share_feed_cls)
-                last_intraday = now
+                last_us_scan = now
                 continue
 
         if now - last_price_update >= price_update_interval:
