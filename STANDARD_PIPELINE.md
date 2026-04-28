@@ -38,37 +38,38 @@ M8 知识更新
   (教训写入知识库, 反哺M3未来判断)
 ```
 
-### 主线B：补牢驱动（价格验证 → 反向溯源 → 趋势判断）
+### 主线B：补牢驱动（价格驱动，反向溯源）
 
-> **核心原则**: 价格是最终验证。但验证的是"有事情发生了"，不是"还会继续涨"。
+> **核心原则**: M12只是触发层，判断全部交给M0→M1→M2→M3。
+> M12负责检测异动和收集证据，M3负责所有判断。
+> 两条主线共用同一条M0→M1→M2→M3管线，只是触发方式不同。
 
 ```
-M12 异动扫描 (盘中30分钟/盘后4小时)
-  │ AnomalyDetector: ATR×2 + 2σ + 1.5×量比 → PriceAnomaly[]
-  │ 涨停股标记观察池，不入场
+M12 异动检测 (AnomalyDetector) → PriceAnomaly[]
+  ↓ 涨停股标记观察池，不入场
   ↓
-M12 反向溯源 (BackwardCausation)
-  │ Step 1: M2 SignalStore查询近期相关信号
-  │ Step 2: M0定向采集新闻（按股票代码）→ M1 LLM解码为结构化信号
-  │ Step 3: 溯源置信度评估（基于M1信号的intensity/confidence打分）
-  │ *** 无因追高 = 赌博，放弃 *** (confidence < 30%)
-  │ *** 溯因必须有证据 *** (confidence >= 30%才继续)
+M12 反向溯源 (BackwardCausation) — 只找原因，不做判断
+  ↓ Step 1: M2 SignalStore 查已有相关信号
+  ↓ Step 2: M0 定向采集新闻 → M1 LLM解码为结构化信号
+  ↓ Step 3: 原因分类（有因/无因）
+  ↓ ★ 无因 = 放弃（溯因必须有证据）
+  ↓ 有因 → 信号列表
   ↓
-M12 趋势判断 (TrendAssessor, 复用M3 judge)
-  │ M3判断信号持续性（如有m3_engine，深度评估BULLISH/BEARISH）
-  │ EARLY: 原因持续 + 剩余空间>5% + M3确认 → 可补
-  │ MIDDLE: 原因部分持续 + 剩余空间3-5% → 谨慎
-  │ LATE: 原因一次性 + 剩余空间<3% → 放弃
+M3 judge — 与主线A完全相同的判断逻辑
+  ↓ signals → M3 判断是否构成机会
+  ↓ 返回 OpportunityObject（含priority/confidence/direction/score）
+  ↓ ★ M3返回空列表 = 不构成机会 → 放弃
   ↓
-M4 行动设计
-  │ 从M12止损候选中选择策略 + 确定仓位（更紧的止损补偿入场偏晚）
-  │ priority=WATCH → 仅观察不开仓
+M12 趋势判断 (TrendAssessor) — 基于价格数据+M3结果
+  ↓ EARLY (可补) / MIDDLE (谨慎) / LATE (放弃)
+  ↓ LATE = 放弃
+  ↓
+M4 行动设计 — 选择止损策略，更紧止损补偿入场偏晚
+  ↓ priority=WATCH → 仅观察不开仓
   ↓
 M9 模拟开仓 (多策略可平行对比)
-  ↓ (同主线A)
-  ...
-M6 复盘归因
-  │ 按origin/anomaly_type/market/trend_stage交叉统计胜率
+  ↓
+M6 复盘归因 — 按origin/anomaly_type/market/trend_stage交叉统计
   ↓
 M8 知识更新
 ```
