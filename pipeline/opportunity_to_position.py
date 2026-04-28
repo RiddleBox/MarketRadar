@@ -138,6 +138,20 @@ def _process_single_opportunity(
     logger.info(f"[Bridge] processing opportunity: {obj.opportunity_id} | {instrument} | priority={obj.priority_level.value}")
 
     plan = designer.design(obj)
+
+    if isinstance(orig, RetroOpportunity) and orig.stop_loss_candidates:
+        first_sl = orig.stop_loss_candidates[0]
+        if first_sl.stop_loss_type == "percent":
+            original_sl = plan.stop_loss.stop_loss_value
+            plan.stop_loss = first_sl
+            logger.info(
+                f"[Bridge] M12止损覆盖: {original_sl}% → {first_sl.stop_loss_value}% "
+                f"({mkt.value} {first_sl.stop_loss_type})"
+            )
+            if plan.take_profit.take_profit_type == "percent" and plan.take_profit.take_profit_value <= 0:
+                plan.take_profit.take_profit_value = first_sl.stop_loss_value * 2
+                logger.info(f"[Bridge] M12止盈设置: TP={plan.take_profit.take_profit_value}% (2x SL)")
+
     logger.info(f"[Bridge] 行动计划: {plan.plan_id} | SL={plan.stop_loss.stop_loss_value}% | TP={plan.take_profit.take_profit_value}%")
 
     _archive_plan(plan)
