@@ -23,10 +23,12 @@ from m12_opportunity_catcher.anomaly_detector import AnomalyDetector
 from m9_paper_trader.baostock_feed import BaostockFeed
 from m9_paper_trader.eastmoney_feed import EastMoneyFeed
 from m9_paper_trader.price_feed import YFinanceFeed
+from m9_paper_trader.futu_feed import FutuFeed
 
 console = Console()
 
 RUNNING = True
+A_SHARE_FEED = None  # detected at startup
 
 
 def _signal_handler(sig, frame):
@@ -35,15 +37,41 @@ def _signal_handler(sig, frame):
     RUNNING = False
 
 
+def detect_a_share_feed():
+    """自动检测最优A股数据源：Futu > EastMoney > Baostock"""
+    try:
+        futu = FutuFeed()
+        if futu._connected:
+            snap = futu.get_price("000001.SZ")
+            if snap and snap.price > 0:
+                console.print("[bold green]✓ 富途OpenD已连接，使用FutuFeed (实时推流)[/bold green]")
+                return FutuFeed
+        futu.close()
+    except Exception:
+        pass
+
+    try:
+        ef = EastMoneyFeed()
+        snap = ef.get_price("000001.SZ")
+        if snap and snap.price > 0:
+            console.print("[bold green]✓ 东方财富可用，使用EastMoneyFeed (3-5秒延迟)[/bold green]")
+            return EastMoneyFeed
+    except Exception:
+        pass
+
+    console.print("[bold yellow]▽ 回退到Baostock日线 (T+1数据)[/bold yellow]")
+    return BaostockFeed
+
+
 signal.signal(signal.SIGINT, _signal_handler)
 
 
-def run_intraday_scan():
-    now = datetime.now().strftime("%H:%M:%S")
-    console.print(f"\n[bold cyan]═══ 盘中扫描 @ {now} ═══[/bold cyan]")
+def run_intraday_scan(a_share_feed_cls=None):
+    if a_share_feed_cls is None:
+        a_share_feed_cls = detect_a_share_feed()
 
     markets_configs = [
-        (Market.A_SHARE, EastMoneyFeed),
+        (Market.A_SHARE, a_share_feed_cls),
         (Market.HK, YFinanceFeed),
         (Market.US, YFinanceFeed),
     ]
@@ -89,12 +117,15 @@ def run_intraday_scan():
     return total
 
 
-def run_daily_scan():
+def run_daily_scan(a_share_feed_cls=None):
+    if a_share_feed_cls is None:
+        a_share_feed_cls = BaostockFeed
+
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     console.print(f"\n[bold green]═══ 盘后全量扫描 @ {now} ═══[/bold green]")
 
     markets_configs = [
-        (Market.A_SHARE, BaostockFeed),
+        (Market.A_SHARE, a_share_feed_cls),
         (Market.HK, YFinanceFeed),
         (Market.US, YFinanceFeed),
     ]
@@ -166,8 +197,11 @@ def main():
     console.print("[bold green]║  按 Ctrl+C 停止                          ║[/bold green]")
     console.print("[bold green]╚══════════════════════════════════════════╝[/bold green]")
 
+    console.print("[bold]检测数据源...[/bold]")
+    a_share_feed_cls = detect_a_share_feed()
+
     console.print("\n[bold]首次启动：执行盘后全量扫描...[/bold]")
-    run_daily_scan()
+    run_daily_scan(a_share_feed_cls=a_share_feed_cls)
 
     intraday_interval = 30 * 60
     daily_interval = 4 * 60 * 60
@@ -198,14 +232,14 @@ def main():
         if now - last_daily >= daily_interval:
             cycle += 1
             console.print(f"\n[dim]--- 第 {cycle} 轮盘后扫描 ---[/dim]")
-            run_daily_scan()
+            run_daily_scan(a_share_feed_cls=a_share_feed_cls)
             last_daily = now
             last_intraday = now
 
         elif is_trading_time() and now - last_intraday >= intraday_interval:
             cycle += 1
             console.print(f"\n[dim]--- 第 {cycle} 轮盘中扫描 (交易时段) ---[/dim]")
-            run_intraday_scan()
+            run_intraday_scan(a_share_feed_cls=a_share_feed_cls)
             last_intraday = now
 
         if not is_trading_time() and now - last_intraday >= intraday_interval:

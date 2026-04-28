@@ -667,6 +667,12 @@ def make_price_feed(mode: str = "akshare", csv_path: str = "",
                     tushare_token: str = "",
                     alltick_key: str = "",
                     itick_key: str = "") -> PriceFeed:
+    if mode == "futu":
+        from m9_paper_trader.futu_feed import FutuFeed
+        return FutuFeed()
+    if mode == "eastmoney":
+        from m9_paper_trader.eastmoney_feed import EastMoneyFeed
+        return EastMoneyFeed()
     if mode == "csv":
         return CSVPriceFeed(csv_path)
     if mode == "tushare":
@@ -682,11 +688,20 @@ def make_price_feed(mode: str = "akshare", csv_path: str = "",
     if mode == "composite":
         feeds = []
         
-        # 优先级 0: 东方财富实时（免费，A股3-5秒延迟）
+        # 优先级 0: 富途OpenD（实时推流，需开户+A股+港股+美股）
+        try:
+            from m9_paper_trader.futu_feed import FutuFeed
+            futu = FutuFeed()
+            if futu._connected:
+                feeds.append(futu)
+        except Exception:
+            pass
+        
+        # 优先级 1: 东方财富（A股+港股，免费实时）
         from m9_paper_trader.eastmoney_feed import EastMoneyFeed
         feeds.append(EastMoneyFeed())
         
-        # 优先级 1: iTick（实时，免费7天）
+        # 优先级 2: iTick（实时，免费7天）
         if itick_key:
             from m9_paper_trader.itick_feed import ITickFeed
             feeds.append(ITickFeed(api_key=itick_key))
