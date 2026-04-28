@@ -26,6 +26,7 @@ if sys.platform == "win32":
         pass
 
 from rich.console import Console
+from rich import box
 
 from core.schemas import Market, PriorityLevel
 from m12_opportunity_catcher.catcher_engine import OpportunityCatcherEngine
