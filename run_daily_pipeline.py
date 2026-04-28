@@ -351,6 +351,73 @@ def step_m1_5_implicit(markets: list[Market]) -> list:
         return []
 
 
+def step_m12_catch_opportunities(markets: list[Market]) -> list:
+    """M12: 机会补牢 — 价格异动检测+反向溯源+趋势判断"""
+    console.print("\n[bold cyan]步骤 M12: 机会补牢（价格异动扫描）[/bold cyan]")
+
+    try:
+        from m12_opportunity_catcher.catcher_engine import OpportunityCatcherEngine
+        from m12_opportunity_catcher.anomaly_detector import AnomalyDetector
+        from m9_paper_trader.baostock_feed import BaostockFeed
+
+        engine = OpportunityCatcherEngine()
+        price_feed = BaostockFeed()
+
+        all_retro_opps = []
+
+        for market in markets:
+            console.print(f"  [bold]扫描 {market.value} 市场...[/bold]")
+            try:
+                retro_opps = engine.run_daily_scan(
+                    market=market,
+                    price_feed=price_feed,
+                )
+                all_retro_opps.extend(retro_opps)
+            except Exception as e:
+                console.print(f"  [yellow]⚠ {market.value} 扫描失败: {e}[/yellow]")
+                continue
+
+        if not all_retro_opps:
+            console.print("  [yellow]未发现可补牢的机会[/yellow]")
+            return []
+
+        console.print(f"\n  [bold green]发现 {len(all_retro_opps)} 个补牢机会[/bold green]")
+
+        table = Table(title="补牢机会列表", box=box.SIMPLE)
+        table.add_column("标的", style="cyan")
+        table.add_column("涨幅", justify="right")
+        table.add_column("趋势阶段", style="yellow")
+        table.add_column("置信度", justify="right")
+        table.add_column("剩余空间", justify="right")
+        table.add_column("入场约束", style="red")
+
+        for retro in all_retro_opps:
+            entry_info = ""
+            if retro.opportunity.entry_constraint:
+                entry_info = retro.opportunity.entry_constraint.reason
+
+            table.add_row(
+                retro.anomaly.instrument,
+                f"{retro.anomaly.price_change_pct:+.1f}%",
+                retro.trend.stage.value,
+                f"{retro.causation.confidence:.0%}",
+                f"{retro.trend.remaining_upside_pct:.1f}%",
+                entry_info or "-",
+            )
+
+        console.print(table)
+
+        if all_retro_opps:
+            console.print("\n[bold yellow]⚠️  补牢机会需人工确认后执行[/bold yellow]")
+            console.print("   查看详情: python pipeline/dashboard.py")
+
+        return all_retro_opps
+
+    except Exception as e:
+        console.print(f"  [yellow]⚠ M12补牢模块加载失败（非致命）: {e}[/yellow]")
+        return []
+
+
 def step_m3_judge(markets: list[Market], lookback_days: int = 7) -> list:
     """M3: 机会判断"""
     console.print("\n[bold cyan]步骤 5/5: M3 机会判断（推理引擎）[/bold cyan]")
@@ -456,8 +523,38 @@ def run_premarket(markets: list[Market], limit: int = None):
 
 
 def run_intraday(markets: list[Market]):
-    """盘中流程：更新价格 → 检查止损止盈"""
+    """盘中流程：更新价格 → 检查止损止盈 → 机会补牢盘中扫描"""
     print_header("intraday")
+
+    # M12 盘中快速扫描（盘中异动检测）
+    try:
+        from m12_opportunity_catcher.catcher_engine import OpportunityCatcherEngine
+        from m9_paper_trader.price_feed import CompositeFeed
+        from m9_paper_trader.baostock_feed import BaostockFeed
+        from m9_paper_trader.price_feed import YFinanceFeed
+
+        engine = OpportunityCatcherEngine()
+        intraday_opps = []
+        for market in markets:
+            try:
+                if market == Market.A_SHARE:
+                    price_feed = BaostockFeed()
+                else:
+                    price_feed = YFinanceFeed()
+                opps = engine.run_intraday_scan(market=market, price_feed=price_feed)
+                intraday_opps.extend(opps)
+            except Exception as e:
+                console.print(f"  [yellow]⚠ {market.value} 盘中扫描失败: {e}[/yellow]")
+                continue
+
+        if intraday_opps:
+            console.print(f"\n[bold green]盘中发现 {len(intraday_opps)} 个补牢机会[/bold green]")
+            for retro in intraday_opps[:5]:
+                console.print(f"  {retro.anomaly.instrument}: "
+                              f"{retro.anomaly.price_change_pct:+.1f}% "
+                              f"({retro.trend.stage.value})")
+    except Exception as e:
+        console.print(f"  [yellow]⚠ M12盘中扫描跳过: {e}[/yellow]")
 
     console.print("\n[bold cyan]步骤 1/3: 获取当前持仓[/bold cyan]")
     
@@ -550,8 +647,11 @@ def run_intraday(markets: list[Market]):
 
 
 def run_postmarket(markets: list[Market]):
-    """盘后流程：复盘归因 → 更新知识库"""
+    """盘后流程：复盘归因 → 更新知识库 → 机会补牢"""
     print_header("postmarket")
+
+    # M12 机会补牢（先行，结果供复盘参考）
+    retro_opps = step_m12_catch_opportunities(markets=markets)
 
     console.print("\n[bold cyan]步骤 1/4: 获取今日平仓持仓[/bold cyan]")
     

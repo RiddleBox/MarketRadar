@@ -150,10 +150,13 @@ class AnomalyDetector:
         hist_data = self._get_historical_prices(
             instrument, market, price_feed, scan_date
         )
-        if hist_data is None or len(hist_data) < self.lookback_days:
+        if hist_data is None:
             return None
 
         prices, volumes = hist_data
+
+        if len(prices) < self.lookback_days:
+            return None
 
         current_price = prices[-1]
         if current_price < self.min_price:
@@ -320,17 +323,29 @@ class AnomalyDetector:
         price_feed,
         end_date: date,
     ) -> Optional[Tuple[np.ndarray, np.ndarray]]:
-        """获取历史价格数据，返回 (prices, volumes)"""
-        start_date = end_date - timedelta(days=self.lookback_days * 2)
+        """获取历史价格数据，返回 (prices, volumes)
+
+        优先使用 price_feed.get_daily_prices() 批量接口，
+        回退到逐日查询（效率低，但兼容性好）。
+        """
+        if hasattr(price_feed, 'get_daily_prices') and callable(getattr(price_feed, 'get_daily_prices')):
+            result = price_feed.get_daily_prices(
+                instrument, days=self.lookback_days * 2, end_date=end_date
+            )
+            if result is not None and 'prices' in result and 'volumes' in result:
+                prices = result['prices']
+                volumes = result['volumes']
+                if len(prices) >= self.lookback_days:
+                    return (prices, volumes)
 
         prices_list = []
         volumes_list = []
+        start_date = end_date - timedelta(days=self.lookback_days * 3)
 
-        for i in range(self.lookback_days * 2):
+        for i in range(self.lookback_days * 3):
             d = start_date + timedelta(days=i)
             if d > end_date:
                 break
-
             snap = price_feed.get_price(instrument, dt=d)
             if snap is not None and snap.price > 0:
                 prices_list.append(snap.price)

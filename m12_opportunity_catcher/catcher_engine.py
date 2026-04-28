@@ -18,7 +18,7 @@ m12_opportunity_catcher/catcher_engine.py — 机会补牢主引擎
 from __future__ import annotations
 
 import logging
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from typing import Dict, List, Optional
 
 from core.schemas import (
@@ -35,8 +35,11 @@ from core.schemas import (
     SourceType,
     StopLossConfig,
     MarketSignal,
+    OpportunityObject,
+    OpportunityScore,
     TrendAssessment,
     TrendStage,
+    TimeWindow,
 )
 
 from m12_opportunity_catcher.anomaly_detector import AnomalyDetector
@@ -244,7 +247,6 @@ class OpportunityCatcherEngine:
         strategy: MarketAnomalyStrategy,
     ) -> Optional[object]:
         """构建OpportunityObject"""
-        from core.schemas import OpportunityObject, OpportunityScore
 
         # 优先级取决于趋势阶段
         if trend.stage == TrendStage.EARLY:
@@ -262,7 +264,7 @@ class OpportunityCatcherEngine:
             entry_constraint = EntryConstraint(
                 reason="limit_up",
                 expected_entry_time=datetime.combine(
-                    anomaly.anomaly_date.replace(day=anomaly.anomaly_date.day + 1)
+                    anomaly.anomaly_date + timedelta(days=1)
                     if hasattr(anomaly.anomaly_date, 'day') else date.today(),
                     datetime.min.time()
                 ),
@@ -288,21 +290,29 @@ class OpportunityCatcherEngine:
             target_instruments=[anomaly.instrument],
             trade_direction=Direction.BULLISH if anomaly.price_change_pct > 0 else Direction.BEARISH,
             instrument_types=[InstrumentType.STOCK],
-            opportunity_window={
-                "start": anomaly.anomaly_date.isoformat(),
-                "confidence_level": str(trend.stage.value),
-            },
+            opportunity_window=TimeWindow(
+                start=datetime.combine(anomaly.anomaly_date, datetime.min.time()),
+                end=datetime.combine(anomaly.anomaly_date + timedelta(days=7), datetime.min.time()),
+                confidence_level=0.7 if trend.stage == TrendStage.EARLY else 0.5,
+            ),
             why_now=f"价格异动验证（{anomaly.sigma_multiple:.1f}σ，{anomaly.atr_multiple:.1f}×ATR，量比{anomaly.volume_ratio:.1f}），"
                     f"溯源找到{len(causation.causes)}条相关信号",
             related_signals=[s.signal_id for s in causation.causes[:5]],
             supporting_evidence=[f"ATR倍数: {anomaly.atr_multiple:.2f}"] + [f"σ倍数: {anomaly.sigma_multiple:.2f}"],
             counter_evidence=[f"无法解释比例: {causation.unexplained_ratio:.0%}"] if causation.unexplained_ratio > 0.2 else [],
             key_assumptions=[f"原因({causation.causation_type})持续性: {trend.catalyst_persistence.value}"],
+            uncertainty_map=[f"原因不确定性: {causation.unexplained_ratio:.0%}"],
             priority_level=priority,
             opportunity_score=OpportunityScore(
-                overall=score_overall,
-                confidence=causation.confidence,
-                timeliness=9.0 if trend.stage == TrendStage.EARLY else 6.0,
+                overall_score=score_overall,
+                confidence_score=causation.confidence,
+                catalyst_strength=7 if trend.stage == TrendStage.EARLY else 5,
+                timeliness=9 if trend.stage == TrendStage.EARLY else 6,
+                market_confirmation=int(anomaly.volume_ratio),
+                tradability=8 if not anomaly.is_limit_up else 3,
+                risk_clarity=7 if causation.confidence >= 0.5 else 4,
+                consensus_gap=5,
+                signal_consistency=min(len(causation.causes) + 3, 10),
                 execution_readiness=0.8 if not anomaly.is_limit_up else 0.2,
             ),
             risk_reward_profile=f"止损{strategy.stop_loss_candidates[0].stop_loss_value if strategy.stop_loss_candidates else 5}%/"
@@ -311,6 +321,10 @@ class OpportunityCatcherEngine:
             invalidation_conditions=[
                 f"原因反转（{causation.causation_type}证伪）",
                 f"价格跌破基线价{anomaly.baseline_price:.2f}",
+            ],
+            next_validation_questions=[
+                f"{anomaly.instrument}趋势能否延续？",
+                f"原因({causation.causation_type})是否有新证据？",
             ],
             must_watch_indicators=[anomaly.instrument, f"恐贪指数"],
             origin="opportunity_catcher",

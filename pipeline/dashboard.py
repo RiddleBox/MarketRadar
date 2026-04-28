@@ -383,8 +383,8 @@ with st.sidebar:
 # 主页 Tabs
 # ─────────────────────────────────────────────────────────────
 
-tab_opp, tab_signals, tab_paper, tab_sentiment, tab_system, tab_control = st.tabs([
-    "🎯 机会", "📶 信号", "📊 模拟盘", "🧠 情绪面", "⚙️ 系统", "🎛️ 工作流"
+tab_opp, tab_signals, tab_paper, tab_sentiment, tab_catch, tab_system, tab_control = st.tabs([
+    "🎯 机会", "📶 信号", "📊 模拟盘", "🧠 情绪面", "🔍 补牢", "⚙️ 系统", "🎛️ 工作流"
 ])
 
 
@@ -1025,7 +1025,155 @@ with tab_sentiment:
 
 
 # ═══════════════════════════════════════════════════════════════
-# TAB 5: 系统（M7 调度器 + 数据文件）
+# TAB 5: 补牢机会（M12 价格异动扫描）
+# ═══════════════════════════════════════════════════════════════
+
+with tab_catch:
+    st.header("🔍 补牢机会（价格异动扫描）")
+    st.markdown("**M12 Opportunity Catcher** — 价格是最终验证，反向溯源找原因，判断趋势能否延续")
+
+    col_c1, col_c2 = st.columns([1, 2])
+
+    with col_c1:
+        st.subheader("扫描配置")
+        scan_market = st.selectbox("扫描市场", ["A_SHARE", "HK", "US"], index=0, key="catch_market")
+        scan_mode = st.radio("扫描模式", ["盘后全量", "盘中快速"], index=0, key="catch_mode")
+
+        st.markdown("---")
+        st.subheader("阈值设置")
+        sigma_th = st.slider("sigma 倍数阈值", 1.0, 4.0, 2.0, 0.1, key="catch_sigma")
+        atr_th = st.slider("ATR 倍数阈值", 1.0, 4.0, 2.0, 0.1, key="catch_atr")
+        vol_th = st.slider("最低量比", 1.0, 5.0, 1.5, 0.1, key="catch_vol")
+
+        st.markdown("---")
+        if st.button("开始扫描", key="catch_scan_btn", use_container_width=True):
+            with st.spinner("正在扫描价格异动..."):
+                try:
+                    from core.schemas import Market as MarketEnum
+                    from m12_opportunity_catcher.catcher_engine import OpportunityCatcherEngine
+                    from m12_opportunity_catcher.anomaly_detector import AnomalyDetector
+                    from m9_paper_trader.baostock_feed import BaostockFeed
+                    from m9_paper_trader.price_feed import YFinanceFeed
+                    from datetime import date as dt_date
+
+                    market_enum = MarketEnum(scan_market)
+                    detector = AnomalyDetector(
+                        sigma_threshold=sigma_th,
+                        atr_threshold=atr_th,
+                        volume_threshold=vol_th,
+                    )
+
+                    if market_enum == MarketEnum.A_SHARE:
+                        pf = BaostockFeed()
+                    else:
+                        pf = YFinanceFeed()
+
+                    engine = OpportunityCatcherEngine(anomaly_detector=detector)
+
+                    if scan_mode == "盘后全量":
+                        results = engine.run_daily_scan(
+                            market=market_enum,
+                            price_feed=pf,
+                            scan_date=dt_date.today(),
+                        )
+                    else:
+                        results = engine.run_intraday_scan(
+                            market=market_enum,
+                            price_feed=pf,
+                        )
+
+                    st.session_state["catch_results"] = results
+                    st.success(f"扫描完成! 发现 {len(results)} 个补牢机会")
+                except Exception as e:
+                    st.error(f"扫描失败: {e}")
+
+    with col_c2:
+        st.subheader("扫描结果")
+        catch_results = st.session_state.get("catch_results", [])
+
+        if not catch_results:
+            st.info("点击左侧「开始扫描」查看补牢机会")
+        else:
+            for i, retro in enumerate(catch_results):
+                anomaly = retro.anomaly
+                trend = retro.trend
+                causation = retro.causation
+                opp = retro.opportunity
+
+                stage_icons = {"early": "🟢", "middle": "🟡", "late": "🔴"}
+                stage_icon = stage_icons.get(trend.stage.value, "⚪")
+
+                with st.expander(
+                    f"{stage_icon} {anomaly.instrument} | "
+                    f"{anomaly.price_change_pct:+.1f}% | {anomaly.anomaly_type} | "
+                    f"{trend.stage.value}",
+                    expanded=(i == 0)
+                ):
+                    col_a, col_b = st.columns(2)
+                    with col_a:
+                        st.markdown("**异动详情**")
+                        st.write(f"- 标的: {anomaly.instrument} ({anomaly.market.value})")
+                        st.write(f"- 涨幅: {anomaly.price_change_pct:+.1f}%")
+                        st.write(f"- ATR倍数: {anomaly.atr_multiple:.1f}x")
+                        st.write(f"- sigma倍数: {anomaly.sigma_multiple:.1f}x")
+                        st.write(f"- 量比: {anomaly.volume_ratio:.1f}x")
+                        if anomaly.is_limit_up:
+                            st.warning("涨停板，无法入场")
+                    with col_b:
+                        st.markdown("**趋势判断**")
+                        st.write(f"- 阶段: **{trend.stage.value}**")
+                        st.write(f"- 剩余空间: {trend.remaining_upside_pct:.1f}%")
+                        st.write(f"- 原因持续性: {trend.catalyst_persistence.value}")
+                        st.write(f"- 溯源置信度: {causation.confidence:.0%}")
+                        st.write(f"- 原因类型: {causation.causation_type}")
+
+                    if causation.causes:
+                        st.markdown("**相关信号**")
+                        for sig in causation.causes[:3]:
+                            st.write(f"- [{sig.signal_type.value}] {sig.signal_label[:40]}")
+
+                    st.markdown("**推理过程**")
+                    st.text(trend.reasoning)
+
+                    if retro.stop_loss_candidates:
+                        st.markdown("**推荐止损策略**")
+                        for j, sl in enumerate(retro.stop_loss_candidates):
+                            st.write(f"  策略{j+1}: {sl.stop_loss_type} {sl.stop_loss_value}%")
+
+                    if opp.entry_constraint:
+                        st.warning(f"入场约束: {opp.entry_constraint.reason}")
+                        if opp.entry_constraint.expected_entry_time:
+                            st.write(f"   预计可入场: {opp.entry_constraint.expected_entry_time}")
+
+    if catch_results:
+        st.markdown("---")
+        st.subheader("补牢机会汇总")
+        catch_table_data = []
+        for retro in catch_results:
+            a = retro.anomaly
+            t = retro.trend
+            c = retro.causation
+            entry_info = ""
+            if retro.opportunity.entry_constraint:
+                entry_info = retro.opportunity.entry_constraint.reason
+            catch_table_data.append({
+                "标的": a.instrument,
+                "市场": a.market.value,
+                "涨幅": f"{a.price_change_pct:+.1f}%",
+                "ATR": f"{a.atr_multiple:.1f}x",
+                "sigma": f"{a.sigma_multiple:.1f}x",
+                "量比": f"{a.volume_ratio:.1f}x",
+                "阶段": t.stage.value,
+                "置信度": f"{c.confidence:.0%}",
+                "空间": f"{t.remaining_upside_pct:.1f}%",
+                "原因": c.causation_type,
+                "约束": entry_info or "-",
+            })
+        st.dataframe(catch_table_data, use_container_width=True)
+
+
+# ═══════════════════════════════════════════════════════════════
+# TAB 6: 系统（M7 调度器 + 数据文件）
 # ═══════════════════════════════════════════════════════════════
 
 with tab_system:

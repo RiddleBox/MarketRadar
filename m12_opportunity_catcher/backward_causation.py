@@ -25,6 +25,8 @@ from core.schemas import (
     SignalType,
     SourceType,
     MarketSignal,
+    SignalLogicFrame,
+    TimeHorizon,
 )
 
 logger = logging.getLogger(__name__)
@@ -181,6 +183,8 @@ class BackwardCausation:
 
             source_url = getattr(article, 'source_url', '') or ''
 
+            direction = Direction.BULLISH if anomaly.price_change_pct > 0 else Direction.BEARISH
+
             sig = MarketSignal(
                 signal_type=SignalType.EVENT_DRIVEN,
                 signal_label=title[:80],
@@ -188,14 +192,20 @@ class BackwardCausation:
                 evidence_text=content[:300],
                 affected_markets=[anomaly.market],
                 affected_instruments=[anomaly.instrument],
-                signal_direction=Direction.BULLISH if anomaly.price_change_pct > 0 else Direction.BEARISH,
+                signal_direction=direction,
                 event_time=datetime.now(),
                 collected_time=datetime.now(),
+                time_horizon=TimeHorizon.SHORT,
                 intensity_score=6,
                 confidence_score=5,
                 timeliness_score=8,
                 source_type=SourceType.NEWS,
                 source_ref=source_url or "targeted_news",
+                logic_frame=SignalLogicFrame(
+                    what_changed=title[:60],
+                    change_direction=direction,
+                    affects=[anomaly.instrument],
+                ),
             )
             signals.append(sig)
 
