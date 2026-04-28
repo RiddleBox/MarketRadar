@@ -598,10 +598,11 @@ def run_intraday(markets: list[Market]):
         console.print("\n[bold cyan]步骤 2/3: 更新持仓价格[/bold cyan]")
         
         try:
-            price_feed = AKShareRealtimeFeed()
+            from m9_paper_trader.eastmoney_feed import EastMoneyFeed
+            price_feed = EastMoneyFeed()
             result = trader.update_all_prices(price_feed)
         except Exception:
-            console.print("  [yellow]AKShare实时行情不可用，回退到Baostock日线[/yellow]")
+            console.print("  [yellow]东方财富实时行情不可用，回退到Baostock日线[/yellow]")
             price_feed = BaostockFeed()
             result = trader.update_all_prices(price_feed)
         

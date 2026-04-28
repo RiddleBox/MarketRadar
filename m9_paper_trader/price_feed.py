@@ -682,6 +682,10 @@ def make_price_feed(mode: str = "akshare", csv_path: str = "",
     if mode == "composite":
         feeds = []
         
+        # 优先级 0: 东方财富实时（免费，A股3-5秒延迟）
+        from m9_paper_trader.eastmoney_feed import EastMoneyFeed
+        feeds.append(EastMoneyFeed())
+        
         # 优先级 1: iTick（实时，免费7天）
         if itick_key:
             from m9_paper_trader.itick_feed import ITickFeed
