@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 class FutuFeed(PriceFeed):
     """富途OpenD实时行情 Feed — A股+港股+美股"""
 
-    def __init__(self, host: str = "127.0.0.1", port: int = 33333):
+    def __init__(self, host: str = "127.0.0.1", port: int = 11111):
         self._host = host
         self._port = port
         self._quote_ctx = None
@@ -76,7 +76,7 @@ class FutuFeed(PriceFeed):
         if suffix in ("SH", "SZ"):
             return f"{suffix}.{code}"
         elif suffix == "HK":
-            return f"HK.{code}"
+            return f"HK.{int(code):05d}"
         elif suffix == "US":
             return f"US.{code}"
         return instrument
@@ -137,7 +137,7 @@ class FutuFeed(PriceFeed):
                 return None
 
             row = df.iloc[0]
-            price = float(row.get("cur_price", 0))
+            price = float(row.get("last_price", 0))
             if price <= 0:
                 return None
 
@@ -147,7 +147,13 @@ class FutuFeed(PriceFeed):
             low = float(row.get("low_price", 0))
             volume = float(row.get("volume", 0))
             turnover = float(row.get("turnover", 0))
-            change_pct = float(row.get("change_rate", 0))
+            change_rate_raw = row.get("pre_change_rate", row.get("change_rate", None))
+            if change_rate_raw is not None and change_rate_raw != "N/A":
+                change_pct = float(change_rate_raw)
+            elif prev_close > 0 and price > 0:
+                change_pct = round((price - prev_close) / prev_close * 100, 2)
+            else:
+                change_pct = None
 
             return PriceSnapshot(
                 instrument=instrument,
@@ -160,7 +166,7 @@ class FutuFeed(PriceFeed):
                 timestamp=datetime.now(),
                 source="futu_realtime",
                 prev_close=prev_close if prev_close > 0 else None,
-                change_pct=change_pct if change_pct != 0 else None,
+                change_pct=change_pct,
             )
         except Exception as e:
             logger.warning(f"[FutuFeed] realtime {instrument} failed: {e}")
@@ -295,11 +301,18 @@ class FutuFeed(PriceFeed):
             for _, row in df.iterrows():
                 code = str(row.get("code", ""))
                 instrument = self._from_futu_code(code)
-                price = float(row.get("cur_price", 0))
+                price = float(row.get("last_price", 0))
                 if price <= 0:
                     continue
 
                 prev_close = float(row.get("prev_close_price", 0))
+                change_rate_raw = row.get("pre_change_rate", row.get("change_rate", None))
+                if change_rate_raw is not None and change_rate_raw != "N/A":
+                    change_pct = float(change_rate_raw)
+                elif prev_close > 0 and price > 0:
+                    change_pct = round((price - prev_close) / prev_close * 100, 2)
+                else:
+                    change_pct = None
                 result[instrument] = PriceSnapshot(
                     instrument=instrument,
                     price=price,
@@ -311,7 +324,7 @@ class FutuFeed(PriceFeed):
                     timestamp=datetime.now(),
                     source="futu_realtime",
                     prev_close=prev_close if prev_close > 0 else None,
-                    change_pct=float(row.get("change_rate", 0)),
+                    change_pct=change_pct,
                 )
         except Exception as e:
             logger.warning(f"[FutuFeed] batch failed: {e}")
