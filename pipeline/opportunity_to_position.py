@@ -44,6 +44,7 @@ def opportunities_to_positions(
     max_positions: int = 3,
     min_priority: PriorityLevel = PriorityLevel.RESEARCH,
     dry_run: bool = False,
+    trader: "PaperTrader" = None,
 ) -> List[dict]:
     """将机会列表转为模拟持仓（核心桥接函数）。
 
@@ -54,6 +55,7 @@ def opportunities_to_positions(
         max_positions: 单次最多开仓数
         min_priority: 最低优先级（低于此级别不开仓）
         dry_run: True则只打印不做实际开仓
+        trader: 外部传入的PaperTrader实例（共享持仓状态）
 
     Returns:
         每个开仓结果的摘要列表
@@ -62,7 +64,8 @@ def opportunities_to_positions(
     from m9_paper_trader.paper_trader import PaperTrader
 
     designer = ActionDesigner()
-    trader = PaperTrader()
+    if trader is None:
+        trader = PaperTrader()
 
     PRIORITY_ORDER = {
         PriorityLevel.WATCH: 0,

@@ -2,9 +2,10 @@
 """
 MarketRadar 持续模拟运行
 
-交易时段(9:30-15:00)每30分钟执行盘中扫描，
+A股交易时段(9:30-15:00)每30分钟执行盘中扫描，
+美股交易时段(21:30-04:00)每30分钟执行盘中扫描，
 每4小时执行一次盘后全量扫描。
-非交易时段自动跳过盘中扫描。
+持仓价格每60秒更新一次，触发止损止盈。
 按 Ctrl+C 停止。
 
 启动：
@@ -33,11 +34,14 @@ from m9_paper_trader.baostock_feed import BaostockFeed
 from m9_paper_trader.eastmoney_feed import EastMoneyFeed
 from m9_paper_trader.price_feed import YFinanceFeed
 from m9_paper_trader.futu_feed import FutuFeed
+from m9_paper_trader.paper_trader import PaperTrader
 
 console = Console()
 
 RUNNING = True
-A_SHARE_FEED = None  # detected at startup
+A_SHARE_FEED = None
+
+_trader = PaperTrader()
 
 
 def _signal_handler(sig, frame):
@@ -300,6 +304,7 @@ def _auto_open_from_opportunities(results, feed_cls, max_positions=3):
             feed_cls=feed_cls,
             max_positions=max_positions,
             min_priority=PriorityLevel.RESEARCH,
+            trader=_trader,
         )
     except Exception as e:
         console.print(f"  [red]自动开仓失败: {e}[/red]")
@@ -363,11 +368,12 @@ def _save_results(total_count):
 
 
 def main():
-    console.print("[bold green]╔══════════════════════════════════════════╗[/bold green]")
-    console.print("[bold green]║  MarketRadar 持续模拟运行              ║[/bold green]")
-    console.print("[bold green]║  盘中: 交易时段每30分钟 | 盘后: 每4小时  ║[/bold green]")
-    console.print("[bold green]║  按 Ctrl+C 停止                          ║[/bold green]")
-    console.print("[bold green]╚══════════════════════════════════════════╝[/bold green]")
+    console.print("[bold green]╔══════════════════════════════════════════════════╗[/bold green]")
+    console.print("[bold green]║  MarketRadar 持续模拟运行                        ║[/bold green]")
+    console.print("[bold green]║  A股: 9:30-15:00 | 美股: 21:30-04:00              ║[/bold green]")
+    console.print("[bold green]║  价格更新: 每60秒 | 盘中扫描: 每30分 | 盘后: 每4h  ║[/bold green]")
+    console.print("[bold green]║  按 Ctrl+C 停止                                   ║[/bold green]")
+    console.print("[bold green]╚══════════════════════════════════════════════════╝[/bold green]")
 
     console.print("[bold]检测数据源...[/bold]")
     a_share_feed_cls = detect_a_share_feed()
@@ -377,29 +383,91 @@ def main():
 
     intraday_interval = 30 * 60
     daily_interval = 4 * 60 * 60
+    price_update_interval = 60
 
     last_intraday = time.time()
     last_daily = time.time()
+    last_price_update = 0.0
     cycle = 0
 
     a_share_trading_hours = (
-        (9, 30),   # 9:30 开盘
-        (15, 0),   # 15:00 收盘
+        (9, 30),
+        (15, 0),
     )
     us_trading_hours = (
-        (21, 30),  # 21:30 美股开盘 (北京时间)
-        (4, 0),    # 4:00  美股收盘 (北京时间，次日)
+        (21, 30),
+        (4, 0),
     )
 
-    def is_trading_time():
+    def _is_in_range(now_h: int, now_m: int, start: tuple, end: tuple) -> bool:
+        start_min = start[0] * 60 + start[1]
+        end_min = end[0] * 60 + end[1]
+        now_min = now_h * 60 + now_m
+        if start_min <= end_min:
+            return start_min <= now_min <= end_min
+        else:
+            return now_min >= start_min or now_min <= end_min
+
+    def is_a_share_trading():
         now_h, now_m = datetime.now().hour, datetime.now().minute
-        now_minutes = now_h * 60 + now_m
-        start, end = a_share_trading_hours
-        return start[0] * 60 + start[1] <= now_minutes <= end[0] * 60 + end[1]
+        return _is_in_range(now_h, now_m, a_share_trading_hours[0], a_share_trading_hours[1])
+
+    def is_us_trading():
+        now_h, now_m = datetime.now().hour, datetime.now().minute
+        return _is_in_range(now_h, now_m, us_trading_hours[0], us_trading_hours[1])
+
+    def is_weekend():
+        return datetime.now().weekday() >= 5
+
+    def update_open_positions():
+        open_positions = _trader.list_open()
+        if not open_positions:
+            return
+        try:
+            feed_cls_for_update = _get_feed_for_positions(open_positions)
+            if feed_cls_for_update is None:
+                return
+            feed = feed_cls_for_update() if callable(feed_cls_for_update) else feed_cls_for_update
+            result = _trader.update_all_prices(feed)
+            if result.get("updated", 0) > 0:
+                closed = result.get("closed", [])
+                if closed:
+                    for pid in closed:
+                        console.print(f"  [bold red]⚡ 止损/止盈触发: {pid}[/bold red]")
+                now_str = datetime.now().strftime("%H:%M:%S")
+                console.print(
+                    f"  [dim]{now_str} 价格更新: {result['updated']}个持仓"
+                    f"{f' | 平仓{len(closed)}个' if closed else ''}[/dim]"
+                )
+        except Exception as e:
+            console.print(f"  [yellow]价格更新失败: {e}[/yellow]")
+
+    def _get_feed_for_positions(positions):
+        instruments = {p.instrument for p in positions}
+        has_us = any(i.endswith(".US") for i in instruments)
+        has_hk = any(i.endswith(".HK") for i in instruments)
+        has_a = any(i.endswith((".SH", ".SZ")) for i in instruments)
+
+        try:
+            from m9_paper_trader.futu_feed import FutuFeed
+            futu_test = FutuFeed()
+            if futu_test._connected:
+                futu_test.close()
+                return FutuFeed
+            futu_test.close()
+        except Exception:
+            pass
+
+        if has_us or has_hk:
+            return YFinanceFeed
+        return a_share_feed_cls
+
+    console.print("[bold green]持续运行中... (Ctrl+C 停止)[/bold green]")
 
     while RUNNING:
         time.sleep(10)
         now = time.time()
+        now_dt = datetime.now()
 
         if now - last_daily >= daily_interval:
             cycle += 1
@@ -407,16 +475,26 @@ def main():
             run_daily_scan(a_share_feed_cls=a_share_feed_cls)
             last_daily = now
             last_intraday = now
+            continue
 
-        elif is_trading_time() and now - last_intraday >= intraday_interval:
-            cycle += 1
-            console.print(f"\n[dim]--- 第 {cycle} 轮盘中扫描 (交易时段) ---[/dim]")
-            run_intraday_scan(a_share_feed_cls=a_share_feed_cls)
-            last_intraday = now
+        if not is_weekend():
+            if is_a_share_trading() and now - last_intraday >= intraday_interval:
+                cycle += 1
+                console.print(f"\n[dim]--- 第 {cycle} 轮A股盘中扫描 ---[/dim]")
+                run_intraday_scan(a_share_feed_cls=a_share_feed_cls)
+                last_intraday = now
+                continue
 
-        if not is_trading_time() and now - last_intraday >= intraday_interval:
-            console.print(f"  [dim]{datetime.now().strftime('%H:%M')} 非交易时段，跳过盘中扫描[/dim]")
-            last_intraday = now
+            if is_us_trading() and now - last_intraday >= intraday_interval:
+                cycle += 1
+                console.print(f"\n[dim]--- 第 {cycle} 轮美股盘中扫描 ---[/dim]")
+                run_intraday_scan(a_share_feed_cls=a_share_feed_cls)
+                last_intraday = now
+                continue
+
+        if now - last_price_update >= price_update_interval:
+            update_open_positions()
+            last_price_update = now
 
     console.print("\n[yellow]模拟运行已停止[/yellow]")
 
