@@ -597,8 +597,13 @@ def run_intraday(markets: list[Market]):
         # 步骤 2: 更新价格
         console.print("\n[bold cyan]步骤 2/3: 更新持仓价格[/bold cyan]")
         
-        price_feed = AKShareRealtimeFeed()
-        result = trader.update_all_prices(price_feed)
+        try:
+            price_feed = AKShareRealtimeFeed()
+            result = trader.update_all_prices(price_feed)
+        except Exception:
+            console.print("  [yellow]AKShare实时行情不可用，回退到Baostock日线[/yellow]")
+            price_feed = BaostockFeed()
+            result = trader.update_all_prices(price_feed)
         
         console.print(f"  ✓ 更新成功: {result['updated']} 个持仓")
         

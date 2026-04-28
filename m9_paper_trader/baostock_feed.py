@@ -33,6 +33,7 @@ class BaostockFeed(PriceFeed):
         now = datetime.now()
 
         if dt is None:
+            dt = now.date()
             if self._cache_time and (now - self._cache_time).total_seconds() < self._cache_ttl_sec:
                 if instrument in self._cache:
                     return self._cache[instrument]
@@ -40,7 +41,6 @@ class BaostockFeed(PriceFeed):
             cache_key = f"{instrument}_{dt.isoformat()}"
             if cache_key in self._cache:
                 return self._cache[cache_key]
-            dt = now.date()
 
         try:
             bs_code = self._convert_to_baostock(instrument)
@@ -66,6 +66,13 @@ class BaostockFeed(PriceFeed):
                 row = data.iloc[-1]
                 close_price = float(row['close'])
 
+                prev_close = None
+                change_pct = None
+                if len(data) >= 2:
+                    prev_close = float(data.iloc[-2]['close'])
+                    if prev_close > 0:
+                        change_pct = round((close_price - prev_close) / prev_close * 100, 2)
+
                 snapshot = PriceSnapshot(
                     instrument=instrument,
                     price=close_price,
@@ -76,6 +83,8 @@ class BaostockFeed(PriceFeed):
                     amount=0.0,
                     timestamp=now,
                     source="baostock_daily",
+                    prev_close=prev_close,
+                    change_pct=change_pct,
                 )
 
                 if dt == now.date():
