@@ -70,11 +70,26 @@ def run_intraday_scan(a_share_feed_cls=None):
     if a_share_feed_cls is None:
         a_share_feed_cls = detect_a_share_feed()
 
-    markets_configs = [
-        (Market.A_SHARE, a_share_feed_cls),
-        (Market.HK, YFinanceFeed),
-        (Market.US, YFinanceFeed),
-    ]
+    # Prefer FutuFeed for all markets when available
+    try:
+        from m9_paper_trader.futu_feed import FutuFeed
+        futu_test = FutuFeed()
+        if futu_test._connected:
+            markets_configs = [
+                (Market.A_SHARE, FutuFeed),
+                (Market.HK, FutuFeed),
+                (Market.US, FutuFeed),
+            ]
+            futu_test.close()
+        else:
+            futu_test.close()
+            raise RuntimeError("FutuFeed not connected")
+    except Exception:
+        markets_configs = [
+            (Market.A_SHARE, a_share_feed_cls),
+            (Market.HK, YFinanceFeed),
+            (Market.US, YFinanceFeed),
+        ]
 
     total = 0
     for market, feed_cls in markets_configs:
@@ -124,11 +139,27 @@ def run_daily_scan(a_share_feed_cls=None):
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     console.print(f"\n[bold green]═══ 盘后全量扫描 @ {now} ═══[/bold green]")
 
-    markets_configs = [
-        (Market.A_SHARE, a_share_feed_cls),
-        (Market.HK, YFinanceFeed),
-        (Market.US, YFinanceFeed),
-    ]
+    # FutuFeed covers all 3 markets; fall back per-market
+    try:
+        from m9_paper_trader.futu_feed import FutuFeed
+        futu_test = FutuFeed()
+        futu_available = futu_test._connected
+        futu_test.close()
+    except Exception:
+        futu_available = False
+
+    if futu_available:
+        markets_configs = [
+            (Market.A_SHARE, FutuFeed),
+            (Market.HK, FutuFeed),
+            (Market.US, FutuFeed),
+        ]
+    else:
+        markets_configs = [
+            (Market.A_SHARE, a_share_feed_cls),
+            (Market.HK, YFinanceFeed),
+            (Market.US, YFinanceFeed),
+        ]
 
     total = 0
     for market, feed_cls in markets_configs:
