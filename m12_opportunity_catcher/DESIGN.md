@@ -330,6 +330,9 @@ m12_opportunity_catcher/
 | 止损策略推荐 | ✅ 已实现 | MarketAnomalyStrategy提供候选列表 |
 | M12→M4→M9桥接 | ✅ 已实现 | pipeline/opportunity_to_position.py |
 | M12→M4止损委托 | ✅ 已实现 | stop_loss_candidates传给M4 |
+| 决策日志系统 | ✅ 已实现 | pipeline/decision_log.py 全链路5步记录+每日结构化报告 |
+| Dashboard补牢tab决策链路 | ✅ 已实现 | 每个异动expander内显示5步决策链+结果 |
+| Dashboard决策追踪tab | ✅ 已实现 | 每日报告概览+筛选+汇总表 |
 
 ### 架构决策记录
 
@@ -358,4 +361,6 @@ m12_opportunity_catcher/
 | M10情绪面作为趋势判断输入 | ⚠️ 部分实现 | TrendAssessor接收sentiment_data但未深度集成 |
 | M6按origin/anomaly_type/market交叉统计 | ❌ 未实现 | M6复盘接口存在但未接入M12标签 |
 | 涨停股隔日开盘挂单 | ❌ 未实现 | EntryConstraint有expected_entry_time但未接入M9 |
+| 决策追踪Dashboard | ✅ 已实现 | 新增决策追踪tab + 补牢tab显示决策链路 |
+| 决策日志系统 | ✅ 已实现 | pipeline/decision_log.py 全链路记录+每日报告 |
 - 新数据模型定义以外的schemas变更

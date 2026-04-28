@@ -192,6 +192,44 @@ def load_sentiment_stats() -> dict:
         return {}
 
 
+@st.cache_data(ttl=30)
+def load_decision_records(date_str: str | None = None) -> list[dict]:
+    """pipeline/decision_log — 每日决策记录"""
+    try:
+        from pipeline.decision_log import DecisionLog
+        dl = DecisionLog()
+        target = date_str or dl.today
+        data = dl.load_decisions(target)
+        return data if isinstance(data, list) else []
+    except Exception:
+        return []
+
+
+@st.cache_data(ttl=30)
+def load_daily_report(date_str: str | None = None) -> dict:
+    """pipeline/decision_log — 每日结构化报告"""
+    try:
+        from pipeline.decision_log import DecisionLog
+        dl = DecisionLog()
+        target = date_str or dl.today
+        return dl.load_report(target) or {}
+    except Exception:
+        return {}
+
+
+@st.cache_data(ttl=300)
+def list_available_decision_dates() -> list[str]:
+    """列出有决策数据的日期"""
+    reports_dir = ROOT / "data" / "daily_reports"
+    if not reports_dir.exists():
+        return []
+    dates = sorted(
+        f.stem.replace("report_", "")
+        for f in reports_dir.glob("report_*.json")
+    )
+    return dates
+
+
 def clear_cache():
     st.cache_data.clear()
 
@@ -383,8 +421,8 @@ with st.sidebar:
 # 主页 Tabs
 # ─────────────────────────────────────────────────────────────
 
-tab_opp, tab_signals, tab_paper, tab_sentiment, tab_catch, tab_system, tab_control = st.tabs([
-    "🎯 机会", "📶 信号", "📊 模拟盘", "🧠 情绪面", "🔍 补牢", "⚙️ 系统", "🎛️ 工作流"
+tab_opp, tab_signals, tab_paper, tab_sentiment, tab_catch, tab_decisions, tab_system, tab_control = st.tabs([
+    "🎯 机会", "📶 信号", "📊 模拟盘", "🧠 情绪面", "🔍 补牢", "🧾 决策追踪", "⚙️ 系统", "🎛️ 工作流"
 ])
 
 
@@ -1083,6 +1121,8 @@ with tab_catch:
                         )
 
                     st.session_state["catch_results"] = results
+                    from datetime import date as _date
+                    st.session_state["catch_scan_date"] = _date.today().isoformat()
                     st.success(f"扫描完成! 发现 {len(results)} 个补牢机会")
                 except Exception as e:
                     st.error(f"扫描失败: {e}")
@@ -1135,6 +1175,42 @@ with tab_catch:
                     st.markdown("**推理过程**")
                     st.text(trend.reasoning)
 
+                    dec_date = st.session_state.get("catch_scan_date", "")
+                    if dec_date:
+                        dec_records = load_decision_records(dec_date)
+                    else:
+                        dec_records = load_decision_records()
+                    matched_dec = [
+                        r for r in dec_records
+                        if r.get("instrument") == anomaly.instrument
+                        and r.get("anomaly_detected", False)
+                    ]
+                    if matched_dec:
+                        rec = matched_dec[0]
+                        st.markdown("**决策链路**")
+                        chain = rec.get("full_chain", [])
+                        for step in chain:
+                            step_num = step.split(":")[0] if ":" in step else ""
+                            if "ANOMALY" in step_num:
+                                st.markdown(f"🟡 `{step}`")
+                            elif "CAUSATION" in step_num:
+                                st.markdown(f"🔵 `{step}`")
+                            elif "M3" in step_num:
+                                st.markdown(f"🟣 `{step}`")
+                            elif "TREND" in step_num:
+                                st.markdown(f"🟠 `{step}`")
+                            elif "ACTION" in step_num:
+                                action = rec.get("action_taken", "")
+                                icon = "✅" if action == "OPENED" else "👁️" if action == "WATCH" else "❌"
+                                st.markdown(f"{icon} `{step}`")
+                            else:
+                                st.markdown(f"⚪ `{step}`")
+                        outcome = rec.get("outcome", "")
+                        reason = rec.get("reason", "")
+                        outcome_colors = {"OPENED": "🟢", "WATCH": "🟡", "REJECTED": "🔴", "SKIPPED": "⚪"}
+                        oc = outcome_colors.get(outcome, "⚪")
+                        st.markdown(f"**结果**: {oc} {outcome} — {reason}")
+
                     if retro.stop_loss_candidates:
                         st.markdown("**推荐止损策略**")
                         for j, sl in enumerate(retro.stop_loss_candidates):
@@ -1173,7 +1249,195 @@ with tab_catch:
 
 
 # ═══════════════════════════════════════════════════════════════
-# TAB 6: 系统（M7 调度器 + 数据文件）
+# TAB 6: 决策追踪（M12→M3 决策日志）
+# ═══════════════════════════════════════════════════════════════
+
+with tab_decisions:
+    st.header("🧾 决策追踪 — M12→M3 全链路")
+
+    available_dates = list_available_decision_dates()
+
+    if not available_dates:
+        st.info("暂无决策记录。运行扫描后自动生成。")
+    else:
+        col_d1, col_d2 = st.columns([1, 3])
+
+        with col_d1:
+            st.subheader("日期选择")
+            selected_date = st.selectbox(
+                "选择报告日期",
+                available_dates,
+                index=0,
+                key="dec_date",
+            )
+            report = load_daily_report(selected_date)
+            records = load_decision_records(selected_date)
+
+            if report:
+                summary = report.get("summary", {})
+                st.markdown("---")
+                st.subheader("每日概览")
+                st.metric("异动总数", summary.get("total_anomalies", 0))
+                st.metric("开仓", summary.get("opened_positions", 0))
+                st.metric("观察", summary.get("watch_only", 0))
+                st.metric("无因放弃", summary.get("skipped_no_cause", 0))
+                st.metric("M3否决", summary.get("skipped_m3_no_opportunity", 0))
+                st.metric("趋势晚放弃", summary.get("skipped_trend_late", 0))
+                st.metric("M3兜底使用", summary.get("m3_fallback_used", 0))
+
+                by_outcome = report.get("by_outcome", {})
+                if by_outcome:
+                    st.markdown("---")
+                    st.subheader("结果分布")
+                    outcome_icons = {
+                        "OPENED": "🟢 开仓",
+                        "WATCH": "🟡 观察",
+                        "REJECTED": "🔴 拒绝",
+                        "SKIPPED": "⚪ 跳过",
+                    }
+                    for outcome_key, count in by_outcome.items():
+                        label = outcome_icons.get(outcome_key, outcome_key)
+                        st.write(f"- {label}: {count}")
+
+                by_trend = report.get("by_trend_stage", {})
+                if by_trend:
+                    st.markdown("---")
+                    st.subheader("趋势阶段分布")
+                    stage_labels = {"early": "🟢 早期", "middle": "🟡 中期", "late": "🔴 晚期"}
+                    for stage_key, count in by_trend.items():
+                        label = stage_labels.get(stage_key, stage_key)
+                        st.write(f"- {label}: {count}")
+
+                by_market = report.get("by_market", {})
+                if by_market:
+                    st.markdown("---")
+                    st.subheader("市场分布")
+                    for mkt_key, count in by_market.items():
+                        st.write(f"- {mkt_key}: {count}")
+
+        with col_d2:
+            if not records:
+                st.info(f"日期 {selected_date} 无决策记录")
+            else:
+                filter_outcome = st.multiselect(
+                    "筛选结果",
+                    ["OPENED", "WATCH", "REJECTED", "SKIPPED"],
+                    default=["OPENED", "WATCH", "REJECTED", "SKIPPED"],
+                    key="dec_filter_outcome",
+                )
+
+                filtered_recs = [
+                    r for r in records
+                    if r.get("outcome", "") in filter_outcome
+                ]
+
+                st.caption(f"显示 {len(filtered_recs)} / {len(records)} 条决策记录")
+
+                for rec in filtered_recs:
+                    outcome = rec.get("outcome", "UNKNOWN")
+                    outcome_colors = {
+                        "OPENED": "🟢", "WATCH": "🟡",
+                        "REJECTED": "🔴", "SKIPPED": "⚪",
+                    }
+                    oc_icon = outcome_colors.get(outcome, "⚪")
+
+                    instrument = rec.get("instrument", "?")
+                    anomaly_type = rec.get("anomaly_type", "?")
+                    price_change = rec.get("anomaly_price_change_pct", 0)
+                    trend_stage = rec.get("trend_stage", "?")
+                    reason = rec.get("reason", "")
+
+                    trend_icons = {"early": "🟢", "middle": "🟡", "late": "🔴"}
+                    ti = trend_icons.get(trend_stage, "⚪")
+
+                    with st.expander(
+                        f"{oc_icon} {instrument} | {price_change:+.1f}% | {anomaly_type} | "
+                        f"{ti} {trend_stage} | {outcome}",
+                        expanded=False,
+                    ):
+                        chain = rec.get("full_chain", [])
+                        if chain:
+                            st.markdown("**决策链路**")
+                            for step in chain:
+                                step_num = step.split(":")[0] if ":" in step else ""
+                                if "ANOMALY" in step_num:
+                                    st.markdown(f"🟡 `{step}`")
+                                elif "CAUSATION" in step_num:
+                                    st.markdown(f"🔵 `{step}`")
+                                elif "M3" in step_num:
+                                    st.markdown(f"🟣 `{step}`")
+                                elif "TREND" in step_num:
+                                    st.markdown(f"🟠 `{step}`")
+                                elif "ACTION" in step_num:
+                                    st.markdown(f"{oc_icon} `{step}`")
+                                else:
+                                    st.markdown(f"⚪ `{step}`")
+
+                        col_r1, col_r2 = st.columns(2)
+                        with col_r1:
+                            st.markdown("**异动信息**")
+                            st.write(f"- 标的: {instrument} ({rec.get('market', '?')})")
+                            st.write(f"- 类型: {anomaly_type}")
+                            st.write(f"- 涨幅: {price_change:+.1f}%")
+                            st.write(f"- sigma: {rec.get('anomaly_sigma_multiple', 0):.1f}x")
+                            st.write(f"- ATR: {rec.get('anomaly_atr_multiple', 0):.1f}x")
+                            st.write(f"- 量比: {rec.get('anomaly_volume_ratio', 0):.1f}x")
+                            if rec.get("anomaly_is_limit_up"):
+                                st.warning("涨停板")
+
+                        with col_r2:
+                            st.markdown("**决策详情**")
+                            st.write(f"- 原因类型: {rec.get('causation_type', '?')}")
+                            st.write(f"- 有因: {'✅' if rec.get('causation_has_cause') else '❌'}")
+                            st.write(f"- 信号数: {rec.get('causation_signal_count', 0)}")
+                            m3_skip = rec.get("m3_skip_reason", "")
+                            if m3_skip:
+                                st.write(f"- M3跳过: {m3_skip}")
+                            else:
+                                st.write(f"- M3优先级: {rec.get('m3_priority', '?')}")
+                                st.write(f"- M3方向: {rec.get('m3_direction', '?')}")
+                                st.write(f"- M3评分: {rec.get('m3_score', 0):.1f}")
+                                if rec.get("m3_fallback"):
+                                    st.caption("⚠️ M3兜底模式")
+                            st.write(f"- 趋势阶段: {trend_stage}")
+                            upside = rec.get("trend_remaining_upside_pct", 0)
+                            if upside:
+                                st.write(f"- 剩余空间: {upside:.1f}%")
+                            persistence = rec.get("trend_catalyst_persistence", "")
+                            if persistence:
+                                st.write(f"- 原因持续: {persistence}")
+                            trend_skip = rec.get("trend_skip_reason", "")
+                            if trend_skip:
+                                st.write(f"- 趋势跳过: {trend_skip}")
+
+                        st.markdown(f"**结果**: {oc_icon} {outcome} — {reason}")
+                        if rec.get("stop_loss_pct"):
+                            st.write(f"止损: {rec['stop_loss_pct']:.1f}% | 止盈: {rec.get('take_profit_pct', 0):.1f}%")
+                        if rec.get("action_plan_id"):
+                            st.caption(f"计划ID: {rec['action_plan_id']}")
+
+                if filtered_recs:
+                    st.markdown("---")
+                    st.subheader("决策汇总表")
+                    import pandas as pd
+                    table_data = []
+                    for r in filtered_recs:
+                        table_data.append({
+                            "标的": r.get("instrument", "?"),
+                            "市场": r.get("market", "?"),
+                            "类型": r.get("anomaly_type", "?"),
+                            "涨幅": f"{r.get('anomaly_price_change_pct', 0):+.1f}%",
+                            "原因": r.get("causation_type", "?"),
+                            "有因": "✅" if r.get("causation_has_cause") else "❌",
+                            "趋势": r.get("trend_stage", "?"),
+                            "结果": r.get("outcome", "?"),
+                            "理由": r.get("reason", "")[:40],
+                        })
+                    st.dataframe(table_data, use_container_width=True, hide_index=True)
+
+
+# ═══════════════════════════════════════════════════════════════
+# TAB 7: 系统（M7 调度器 + 数据文件）
 # ═══════════════════════════════════════════════════════════════
 
 with tab_system:
