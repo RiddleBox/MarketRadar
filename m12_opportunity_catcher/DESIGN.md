@@ -304,4 +304,58 @@ m12_opportunity_catcher/
 - M6复盘归因逻辑（M6按origin字段统计）
 - M7回测框架（M7职责）
 - M1.5→M3管道Bug修（单独修复）
+
+---
+
+## 十一、实现追踪（对照本设计文档的落实情况）
+
+> 追踪日期：2026-04-28
+> 以下记录当前实现状态与设计目标的对齐情况。
+
+### 数据流实现对照
+
+| 设计目标 | 当前实现状态 | 备注 |
+|----------|-------------|------|
+| M12异动检测 (AnomalyDetector) | ✅ 已实现 | ATR×2 + 2σ + 1.5×量比 |
+| M12反向溯源 (BackwardCausation) | ✅ 已实现 | 编排M0定向采集→M1解码→M2查询 |
+| M0定向采集 | ✅ 已实现 | AKShare(A股)/Finnhub(港股美股) |
+| M1 LLM解码 | ✅ 已实现 | SignalDecoder自动初始化；LLM不可用时降级到简化信号 |
+| M2存储 | ✅ 已实现 | BackwardCausation._save_signals_to_store()写回M2 |
+| M3判断 (JudgmentEngine) | ✅ 已实现 | CatcherEngine自动初始化JudgmentEngine，有因信号送M3 judge |
+| M3认为不是机会时放弃 | ✅ 已实现 | m3_results为空列表时return None |
+| M3不可用时降级 | ✅ 已实现 | _build_opportunity()作为降级路径，log标注"M12 fallback" |
+| 趋势阶段判断 (TrendAssessor) | ✅ 已实现 | early/middle/late三阶段 |
+| LATE阶段放弃 | ✅ 已实现 | |
+| 无因放弃 | ✅ 已实现 | confidence=0.0 或 causation_type=="unexplained" |
+| 止损策略推荐 | ✅ 已实现 | MarketAnomalyStrategy提供候选列表 |
+| M12→M4→M9桥接 | ✅ 已实现 | pipeline/opportunity_to_position.py |
+| M12→M4止损委托 | ✅ 已实现 | stop_loss_candidates传给M4 |
+
+### 架构决策记录
+
+**决策1：M12置信度评估 → 改为有因/无因二分**
+- 设计文档不包含_confidence打分，当前实现已改为binary:
+  - 有因 = confidence=1.0 → 信号送M3量化
+  - 无因 = confidence=0.0 → 放弃
+- 理由：置信度打分是M3的职责，M12不应越俎代庖
+
+**决策2：M3为主路径，_build_opportunity为降级路径**
+- 默认自动初始化JudgmentEngine（M3）和SignalStore（M2）
+- LLM不可用（超时/额度不足）时降级到硬编码规则
+- 降级路径_build_opportunity()标注为fallback，log明确提示
+
+**决策3：溯源信号写回M2**
+- BackwardCausation._save_signals_to_store()将M0采集+M1解码的信号写回SignalStore
+- 后续M3 judge可查询这些历史信号做判断
+
+### 待完善项
+
+| 项目 | 状态 | 说明 |
+|------|------|------|
+| M9多策略平行模拟对比 | ❌ 未实现 | 设计文档要求多止损候选平行模拟，当前M4只选一个策略 |
+| 盘中A股涨停→观察池标记 | ✅ 已实现 | is_limit_up时标记EntryConstraint |
+| 港股/美股盘中扫描 | ✅ 已实现 | market_strategies.py有差异化配置 |
+| M10情绪面作为趋势判断输入 | ⚠️ 部分实现 | TrendAssessor接收sentiment_data但未深度集成 |
+| M6按origin/anomaly_type/market交叉统计 | ❌ 未实现 | M6复盘接口存在但未接入M12标签 |
+| 涨停股隔日开盘挂单 | ❌ 未实现 | EntryConstraint有expected_entry_time但未接入M9 |
 - 新数据模型定义以外的schemas变更

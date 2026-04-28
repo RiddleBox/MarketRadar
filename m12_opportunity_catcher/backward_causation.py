@@ -89,7 +89,10 @@ class BackwardCausation:
         # 去重
         causes = self._deduplicate_signals(causes)
 
-        # Step 4: 原因分类（只分类，不打分）
+        # Step 4: 溯源信号写回M2（供后续M3查询历史）
+        self._save_signals_to_store(causes, anomaly)
+
+        # Step 5: 原因分类（只分类，不打分）
         causation_type = self._classify_causation_type(causes)
 
         # Step 5: 有因/无因（binary）
@@ -167,6 +170,24 @@ class BackwardCausation:
         except Exception as e:
             logger.debug(f"[BackwardCausation] SignalStore query failed: {e}")
             return []
+
+    def _save_signals_to_store(self, signals: List[MarketSignal], anomaly: PriceAnomaly):
+        """将溯源信号写回M2 SignalStore，供后续M3查询。
+
+        只保存M0定向采集+M1解码产生的新信号，不重复保存已有信号。
+        """
+        if not self.signal_store or not signals:
+            return
+
+        try:
+            saved = self.signal_store.save(signals)
+            if saved > 0:
+                logger.info(
+                    f"[BackwardCausation] Saved {saved} traced signals to M2 "
+                    f"for {anomaly.instrument}"
+                )
+        except Exception as e:
+            logger.debug(f"[BackwardCausation] SignalStore save failed: {e}")
 
     # ── M0 采集 + M1 解码 ──────────────────────────────────
 

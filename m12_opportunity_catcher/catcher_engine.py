@@ -51,7 +51,14 @@ logger = logging.getLogger(__name__)
 
 
 class OpportunityCatcherEngine:
-    """机会补牢主引擎"""
+    """机会补牢主引擎
+
+    编排流程（按 DESIGN.md）：
+    异动检测 → 反向溯源(M0采集+M1解码+M2存储) → M3判断 → 趋势判断 → 机会生成
+
+    默认自动初始化 JudgmentEngine（M3）和 SignalStore（M2），
+    确保每条异动都走完整管线。LLM不可用时降级到硬编码判断。
+    """
 
     def __init__(
         self,
@@ -63,14 +70,41 @@ class OpportunityCatcherEngine:
         m3_engine=None,
     ):
         self.anomaly_detector = anomaly_detector or AnomalyDetector()
-        self.backward_causation = backward_causation or BackwardCausation(llm_client=llm_client)
-        self.trend_assessor = trend_assessor or TrendAssessor(
-            m3_engine=m3_engine,
-            signal_store=signal_store,
-        )
-        self.signal_store = signal_store
         self.llm_client = llm_client
+
+        # M2 SignalStore：存储溯源信号，供M3查询历史
+        self.signal_store = signal_store
+        if self.signal_store is None:
+            try:
+                from m2_storage.signal_store import SignalStore
+                self.signal_store = SignalStore()
+            except Exception as e:
+                logger.warning(f"[CatcherEngine] SignalStore init failed: {e}")
+
+        # M3 JudgmentEngine：对溯源信号做完整判断（主路径）
         self.m3_engine = m3_engine
+        if self.m3_engine is None:
+            try:
+                from m3_judgment.judgment_engine import JudgmentEngine
+                from core.llm_client import LLMClient
+                _llm = llm_client or LLMClient()
+                self.m3_engine = JudgmentEngine(
+                    llm_client=_llm,
+                    signal_store=self.signal_store,
+                )
+                logger.info("[CatcherEngine] M3 JudgmentEngine initialized (primary path)")
+            except Exception as e:
+                logger.warning(f"[CatcherEngine] M3 JudgmentEngine init failed: {e}, will use fallback")
+
+        # M12 子模块
+        self.backward_causation = backward_causation or BackwardCausation(
+            llm_client=self.llm_client,
+            signal_store=self.signal_store,
+        )
+        self.trend_assessor = trend_assessor or TrendAssessor(
+            m3_engine=self.m3_engine,
+            signal_store=self.signal_store,
+        )
 
     def run_daily_scan(
         self,
