@@ -177,26 +177,50 @@ class OpportunityCatcherEngine:
         sentiment_data: Optional[Dict],
         strategy: MarketAnomalyStrategy,
     ) -> Optional[RetroOpportunity]:
-        """处理单个异动事件：溯源 → 判断 → 生成机会"""
-        # Step 1: 反向溯源
+        """处理单个异动事件：溯源 → 判断 → 生成机会
+
+        完整流程：
+        1. M12反向溯源（M0定向采集 → M1解码 → M2查询）
+        2. M3趋势持续性判断（如有m3_engine，复用M3 judge）
+        3. 趋势阶段判断 → 生成机会 or 放弃
+        """
+        # Step 1: 反向溯源（M0定向采集 → M1解码 → M2查询 → 置信度评估）
         causation = self.backward_causation.trace(
             anomaly=anomaly,
             historical_signals=historical_signals,
             sentiment_data=sentiment_data,
         )
 
-        # 溯源置信度太低，放弃
+        # 溯源置信度太低，放弃（无因追高=赌博）
         if causation.confidence < 0.3:
             logger.info(
                 f"[CatcherEngine] {anomaly.instrument} causation confidence "
-                f"{causation.confidence:.0%} < 30%, skipping"
+                f"{causation.confidence:.0%} < 30%, skipping (no cause found)"
             )
             return None
 
-        # Step 2: 趋势阶段判断
+        # Step 2: 趋势阶段判断（复用M3 judge做持续性判断）
+        m3_opp = None
+        if self.m3_engine is not None and causation.causes:
+            try:
+                m3_results = self.m3_engine.judge(
+                    signals=causation.causes[:5],
+                    historical_signals=historical_signals,
+                    batch_id=f"m12_{anomaly.instrument}_{anomaly.anomaly_date.isoformat()}",
+                )
+                if m3_results:
+                    m3_opp = m3_results[0]
+                    logger.info(
+                        f"[CatcherEngine] M3 judged {anomaly.instrument}: "
+                        f"priority={m3_opp.priority_level}, dir={m3_opp.trade_direction}"
+                    )
+            except Exception as e:
+                logger.warning(f"[CatcherEngine] M3 judge failed for {anomaly.instrument}: {e}")
+
         trend = self.trend_assessor.assess(
             anomaly=anomaly,
             causation=causation,
+            m3_opportunity=m3_opp,
         )
 
         # LATE阶段放弃
