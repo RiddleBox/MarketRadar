@@ -250,7 +250,7 @@ class EastMoneyFeed(PriceFeed):
             return None
 
     def _fetch_hk_single(self, instrument: str) -> Optional[PriceSnapshot]:
-        code = instrument.split(".")[0]
+        code = instrument.split(".")[0].zfill(5)
         secid = f"116.{code}"
 
         try:
@@ -392,7 +392,7 @@ class EastMoneyFeed(PriceFeed):
             return None
 
     def _get_hk_kline(self, instrument: str, dt: date) -> Optional[PriceSnapshot]:
-        code = instrument.split(".")[0]
+        code = instrument.split(".")[0].zfill(5)
         secid = f"116.{code}"
 
         try:
@@ -533,7 +533,7 @@ class EastMoneyFeed(PriceFeed):
             return None
 
     def _get_hk_kline_batch(self, instrument: str, days: int, end_date: date) -> Optional[dict]:
-        code = instrument.split(".")[0]
+        code = instrument.split(".")[0].zfill(5)
         secid = f"116.{code}"
         start_date = end_date - timedelta(days=int(days * 2))
 
