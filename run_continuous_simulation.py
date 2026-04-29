@@ -17,6 +17,7 @@ import time
 import signal
 import os
 from datetime import datetime
+from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 if sys.platform == "win32":
@@ -364,6 +365,176 @@ def _record_price_snapshots(market, stock_list, price_feed):
         console.print(f"  [dim]价格快照记录失败: {e}[/dim]")
 
 
+def run_signal_pipeline(batch_id: str = None) -> dict:
+    """
+    信号管道：扫描 data/incoming/ 新文件 → M1解码 → M2存储 → M3判断 → 返回机会列表
+
+    Args:
+        batch_id: 批次ID（可选）
+
+    Returns:
+        {
+            "processed_files": int,
+            "total_opportunities": int,
+            "opportunities": List[OpportunityObject],
+        }
+    """
+    from m1_decoder.decoder import SignalDecoder
+    from m2_storage.signal_store import SignalStore
+    from m3_judgment.judgment_engine import JudgmentEngine
+    from core.llm_client import LLMClient
+    from core.schemas import SourceType
+    from datetime import timedelta
+
+    incoming_dir = Path("data/incoming")
+    processed_dir = Path("data/processed")
+    incoming_dir.mkdir(parents=True, exist_ok=True)
+    processed_dir.mkdir(parents=True, exist_ok=True)
+
+    files = sorted(incoming_dir.glob("*.txt"))
+    if not files:
+        return {"processed_files": 0, "total_opportunities": 0, "opportunities": []}
+
+    llm_client = LLMClient()
+    decoder = SignalDecoder(llm_client=llm_client)
+    store = SignalStore()
+    engine = JudgmentEngine(llm_client=llm_client)
+
+    all_opportunities = []
+    processed_count = 0
+
+    # 限制每次最多处理5个文件
+    for f in files[:5]:
+        try:
+            raw_text = f.read_text(encoding="utf-8")
+            batch_id = batch_id or f"signal_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+
+            # M1 解码
+            signals = decoder.decode(
+                raw_text=raw_text,
+                source_ref=f.name,
+                source_type=SourceType("news"),
+                batch_id=batch_id,
+            )
+
+            if not signals:
+                f.rename(processed_dir / f.name)
+                processed_count += 1
+                continue
+
+            # M2 存储
+            store.save(signals)
+
+            # M3 判断（查询90天历史信号）
+            hist = store.get_by_time_range(
+                start=datetime.now() - timedelta(days=90),
+                end=datetime.now(),
+                markets=[Market.A_SHARE, Market.HK, Market.US],
+                min_intensity=5,
+            )
+            cur_ids = {s.signal_id for s in signals}
+            hist = [s for s in hist if s.signal_id not in cur_ids]
+
+            opportunities = engine.judge(
+                signals=signals,
+                historical_signals=hist or None,
+                batch_id=batch_id
+            )
+
+            # 记录来源信息（通过opportunity_id后缀标记）
+            for opp in opportunities:
+                # 在opportunity_id中添加来源标记
+                if not opp.opportunity_id.endswith("_signal"):
+                    opp.opportunity_id = f"{opp.opportunity_id}_signal"
+
+            all_opportunities.extend(opportunities)
+
+            # 移动到已处理
+            f.rename(processed_dir / f.name)
+            processed_count += 1
+
+            console.print(f"  [green]✓ {f.name}: {len(signals)}信号 → {len(opportunities)}机会[/green]")
+
+        except Exception as e:
+            console.print(f"  [yellow]⚠ 处理失败 {f.name}: {e}[/yellow]")
+            continue
+
+    return {
+        "processed_files": processed_count,
+        "total_opportunities": len(all_opportunities),
+        "opportunities": all_opportunities
+    }
+
+
+def _process_signal_pipeline(branch_manager):
+    """处理信号管道并通过BranchManager评估机会。"""
+    try:
+        result = run_signal_pipeline()
+        if result["processed_files"] == 0:
+            return
+
+        console.print(f"\n[bold cyan]信号管道: {result['processed_files']}文件 → {result['total_opportunities']}机会[/bold cyan]")
+
+        # 通过BranchManager处理每个机会
+        for opp in result["opportunities"]:
+            try:
+                branch_result = branch_manager.process_opportunity(opp, source="signal_pipeline")
+                if branch_result["selected_branch"]:
+                    # 自动开仓
+                    _open_single_opportunity(
+                        opportunity=branch_result["opportunity"],
+                        branch_id=branch_result["selected_branch"],
+                        branch_manager=branch_manager
+                    )
+            except Exception as e:
+                console.print(f"  [yellow]⚠ 处理机会失败 {opp.instrument}: {e}[/yellow]")
+
+    except Exception as e:
+        console.print(f"  [red]信号管道处理失败: {e}[/red]")
+
+
+def _open_single_opportunity(opportunity, branch_id: str, branch_manager):
+    """为单个机会开仓并记录到分支。"""
+    try:
+        from m4_action.action_plan import ActionPlan
+        from core.schemas import Direction
+
+        # 从OpportunityObject提取信息
+        # 注意：OpportunityObject是M3的输出，需要转换为M4的输入
+        instrument = opportunity.target_instruments[0] if opportunity.target_instruments else None
+        if not instrument:
+            console.print(f"  [yellow]⚠ 机会无具体标的，跳过[/yellow]")
+            return
+
+        # 创建ActionPlan
+        plan = ActionPlan(
+            instrument=instrument,
+            direction=opportunity.trade_direction,
+            entry_price=0.0,  # 将由trader获取实时价格
+            stop_loss_price=0.0,  # 将由M4计算
+            take_profit_price=0.0,  # 将由M4计算
+            priority=opportunity.priority_level,
+            reasoning=opportunity.opportunity_thesis,
+            metadata={
+                "branch_id": branch_id,
+                "opportunity_id": opportunity.opportunity_id,
+                "source": "signal_pipeline" if "_signal" in opportunity.opportunity_id else "m12_anomaly"
+            }
+        )
+
+        # 执行开仓
+        position = _trader.open_position(plan)
+        if position:
+            # 记录到分支
+            branch_manager.branches[branch_id].position_ids.append(position.position_id)
+            console.print(f"  [green]✓ 开仓成功: {instrument} ({branch_id})[/green]")
+        else:
+            console.print(f"  [yellow]⚠ 开仓被拒绝: {instrument}[/yellow]")
+
+    except Exception as e:
+        console.print(f"  [red]开仓失败: {e}[/red]")
+
+
 def _auto_open_from_opportunities(results, feed_cls, max_positions=3):
     """M12 RetroOpportunity → M4 ActionPlan → M9 PaperTrader 自动开仓。"""
     try:
@@ -446,6 +617,11 @@ def main():
 
     console.print("[bold]检测数据源...[/bold]")
     a_share_feed_cls = detect_a_share_feed()
+
+    # 初始化多分支A/B测试管理器
+    from pipeline.branch_manager import BranchManager
+    branch_manager = BranchManager()
+    console.print(f"[bold cyan]多分支测试已启用: {len(branch_manager.branches)}个分支[/bold cyan]")
 
     # 交易时段定义
     a_share_trading_hours = ((9, 30), (15, 0))
@@ -545,10 +721,19 @@ def main():
 
     console.print("[bold green]持续运行中... (Ctrl+C 停止)[/bold green]")
 
+    # 信号管道处理间隔（每5分钟检查一次incoming目录）
+    signal_pipeline_interval = 5 * 60
+    last_signal_pipeline = 0.0
+
     while RUNNING:
         time.sleep(10)
         now = time.time()
         now_dt = datetime.now()
+
+        # 信号管道处理：定期检查incoming目录
+        if now - last_signal_pipeline >= signal_pipeline_interval:
+            _process_signal_pipeline(branch_manager)
+            last_signal_pipeline = now
 
         # 盘后扫描：仅在所有市场闭市时执行
         if now - last_daily >= daily_interval and not is_any_market_trading():

@@ -166,6 +166,173 @@ class KnowledgeBase:
             by_market[mkt] = by_market.get(mkt, 0) + 1
         return {"total": total, "by_content_type": by_type, "by_market": by_market}
 
+    def get_stock_history(self, stock_code: str, market: str) -> Optional[dict]:
+        """
+        获取标的历史表现（用于BranchManager）。
+
+        Args:
+            stock_code: 股票代码（如 "000651.SZ"）
+            market: 市场（A_SHARE / HK / US）
+
+        Returns:
+            {
+                "stock_code": str,
+                "total_trades": int,
+                "win_rate": float,  # 0.0~1.0
+                "avg_return": float,  # 平均收益率
+                "max_drawdown": float,  # 最大回撤
+                "last_trade_date": str,
+            }
+            或 None（无历史数据）
+        """
+        # 搜索该标的的历史交易记录
+        results = self.search(
+            query=stock_code,
+            filters={"market": market, "content_type": "case_record"},
+            top_k=100,
+            min_trust_level=1,
+        )
+
+        if not results:
+            return None
+
+        # 解析交易记录，计算统计数据
+        trades = []
+        for doc in results:
+            content = doc["content"]
+            # 简单解析：假设content包含 "收益率: +5.2%" 或 "收益率: -3.1%"
+            if "收益率" in content:
+                try:
+                    # 提取收益率数字
+                    import re
+                    match = re.search(r"收益率[：:]\s*([+-]?\d+\.?\d*)%", content)
+                    if match:
+                        return_pct = float(match.group(1))
+                        trades.append({
+                            "return": return_pct,
+                            "date": doc["metadata"].get("created_at", ""),
+                        })
+                except Exception:
+                    continue
+
+        if not trades:
+            return None
+
+        # 计算统计指标
+        total_trades = len(trades)
+        win_count = sum(1 for t in trades if t["return"] > 0)
+        win_rate = win_count / total_trades if total_trades > 0 else 0.0
+        avg_return = sum(t["return"] for t in trades) / total_trades if total_trades > 0 else 0.0
+        max_drawdown = min((t["return"] for t in trades), default=0.0)
+        last_trade_date = max((t["date"] for t in trades), default="")
+
+        return {
+            "stock_code": stock_code,
+            "total_trades": total_trades,
+            "win_rate": win_rate,
+            "avg_return": avg_return,
+            "max_drawdown": max_drawdown,
+            "last_trade_date": last_trade_date,
+        }
+
+    def query_lessons(
+        self,
+        signal_type: str = None,
+        instrument: str = None,
+        limit: int = 5
+    ) -> List[dict]:
+        """
+        查询历史教训（用于BranchManager）。
+
+        Args:
+            signal_type: 信号类型（如 "policy_change", "price_surge"）
+            instrument: 标的代码（如 "000001.SZ"）
+            limit: 返回数量
+
+        Returns:
+            [
+                {
+                    "signal_type": str,
+                    "win_rate": float,  # 0.0~1.0
+                    "avg_pnl": float,  # 平均盈亏
+                    "sample_size": int,
+                    "recommendation": str,
+                },
+                ...
+            ]
+        """
+        # 构建查询
+        query_parts = []
+        if signal_type:
+            query_parts.append(signal_type)
+        if instrument:
+            query_parts.append(instrument)
+
+        if not query_parts:
+            return []
+
+        query = " ".join(query_parts)
+
+        # 搜索相关案例
+        results = self.search(
+            query=query,
+            filters={"content_type": "mini_review"},
+            top_k=limit * 5,  # 多取一些，后续聚合
+            min_trust_level=1,
+        )
+
+        if not results:
+            return []
+
+        # 按signal_type聚合统计
+        stats_by_type: Dict[str, List[float]] = {}
+
+        for doc in results:
+            try:
+                # 解析JSON内容
+                content = json.loads(doc["content"])
+                sig_type = content.get("signal_type", "unknown")
+                pnl = content.get("realized_pnl_pct", 0.0)
+
+                if sig_type not in stats_by_type:
+                    stats_by_type[sig_type] = []
+                stats_by_type[sig_type].append(pnl)
+
+            except Exception as e:
+                logger.warning(f"[M8] 解析教训失败: {e}")
+                continue
+
+        # 生成教训列表
+        lessons = []
+        for sig_type, pnls in stats_by_type.items():
+            sample_size = len(pnls)
+            if sample_size == 0:
+                continue
+
+            win_count = sum(1 for p in pnls if p > 0)
+            win_rate = win_count / sample_size
+            avg_pnl = sum(pnls) / sample_size
+
+            # 生成建议
+            if win_rate < 0.4:
+                recommendation = f"此类信号({sig_type})胜率低({win_rate:.1%})，建议降低权重或观察"
+            elif win_rate > 0.6:
+                recommendation = f"此类信号({sig_type})胜率高({win_rate:.1%})，可继续使用"
+            else:
+                recommendation = f"此类信号({sig_type})胜率中等({win_rate:.1%})，谨慎使用"
+
+            lessons.append({
+                "signal_type": sig_type,
+                "win_rate": win_rate,
+                "avg_pnl": avg_pnl,
+                "sample_size": sample_size,
+                "recommendation": recommendation,
+            })
+
+        # 按样本量排序，返回top N
+        lessons.sort(key=lambda x: x["sample_size"], reverse=True)
+        return lessons[:limit]
+
     def _load(self):
         if self.kb_file.exists():
             try:

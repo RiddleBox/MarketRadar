@@ -188,3 +188,30 @@ class SentimentStore:
             "avg_fear_greed": round(avg_fg, 1),
             "latest_snapshot": latest_time[0] if latest_time else None,
         }
+
+    def get_latest_snapshot(self) -> Optional[dict]:
+        """
+        获取最新情绪快照（用于BranchManager）。
+
+        Returns:
+            {
+                "timestamp": str,
+                "fear_greed_index": float,
+                "sentiment_label": str,
+                "northbound_direction": str,
+                "market_heat": float,
+            }
+            或 None（无数据）
+        """
+        rows = self.latest(n=1)
+        if not rows:
+            return None
+
+        row = rows[0]
+        return {
+            "timestamp": row["snapshot_time"],
+            "fear_greed_index": row["fear_greed"],
+            "sentiment_label": row["label"],
+            "northbound_direction": row["direction"],
+            "market_heat": row["avg_score"],
+        }
