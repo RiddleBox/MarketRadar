@@ -1,0 +1,308 @@
+╔══════════════════════════════════════════════════╗
+║  MarketRadar 持续模拟运行                        ║
+║  A股: 9:30-15:00 | 港股: 9:30-16:00              ║
+║  美股: 21:30-04:00 | 并行扫描 | 智能调度          ║
+║  按 Ctrl+C 停止                                   ║
+╚══════════════════════════════════════════════════╝
+检测数据源...
+2026-04-29 11:51:14,133 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455101363445645766(1) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B5F31FD0>
+2026-04-29 11:51:14,136 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(1) reason=CallClose
+-- Back to Baostock daily (T+1 data)
+
+首次启动：市场开盘中，跳过盘后扫描
+持续运行中... (Ctrl+C 停止)
+
+--- 第 1 轮A股盘中扫描 (30min) ---
+2026-04-29 11:51:26,127 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455101413757668530(2) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B66D1D10>
+  2026-04-29 11:51:26,129 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(2) reason=CallClose
+扫描 A_SHARE...
+2026-04-29 11:51:26,830 | 34020 | 5000 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455101416658833382(3) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B85CB250>
+  扫描 A_SHARE 第 2 批: 500-1000/4093
+  2026-04-29 11:54:16,085 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(3) reason=CallClose
+A_SHARE: 无异动
+
+  盘中总计: 0 个补牢机会
+
+--- 第 2 轮港股盘中扫描 (30min) ---
+2026-04-29 11:54:16,100 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455102126665992667(4) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B88FC180>
+  2026-04-29 11:54:16,105 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(4) reason=CallClose
+扫描 HK...
+2026-04-29 11:54:16,133 | 34020 | 29760 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455102126803375564(5) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FC770>
+  扫描 HK 第 4 批: 600-800/1338
+  HK: 无异动
+2026-04-29 11:54:19,057 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(5) reason=CallClose
+
+  盘中总计: 0 个补牢机会
+2026-04-29 11:54:19,073 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455102139100807502(6) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B660BCE0>
+2026-04-29 11:54:19,074 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(6) reason=CallClose
+2026-04-29 11:54:19,087 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455102139164140671(7) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FDA70>
+2026-04-29 11:54:19,089 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(7) reason=CallClose
+2026-04-29 11:54:29,102 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455102181164723120(8) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FDBA0>
+2026-04-29 11:54:29,103 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(8) reason=CallClose
+2026-04-29 11:54:29,105 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455102181223497077(9) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FC510>
+  11:54:29 价格更新: 1个持仓
+2026-04-29 11:54:29,148 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(9) reason=CallClose
+2026-04-29 11:55:29,163 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455102433080952076(10) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FC3E0>
+2026-04-29 11:55:29,164 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(10) reason=CallClose
+2026-04-29 11:55:29,177 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455102433138924322(11) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FC2B0>
+  11:55:29 价格更新: 1个持仓
+2026-04-29 11:55:29,216 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(11) reason=CallClose
+2026-04-29 11:56:29,235 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455102685037580190(12) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FC180>
+2026-04-29 11:56:29,244 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(12) reason=CallClose
+2026-04-29 11:56:29,256 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455102685133330459(13) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FC640>
+  11:56:29 价格更新: 1个持仓
+2026-04-29 11:56:29,337 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(13) reason=CallClose
+2026-04-29 11:57:29,354 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455102937198681966(14) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FDCD0>
+2026-04-29 11:57:29,363 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(14) reason=CallClose
+2026-04-29 11:57:29,366 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455102937288122268(15) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FDE00>
+  11:57:29 价格更新: 1个持仓
+2026-04-29 11:57:29,410 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(15) reason=CallClose
+2026-04-29 11:58:29,414 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455103189154630989(16) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FDF30>
+2026-04-29 11:58:29,416 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(16) reason=CallClose
+2026-04-29 11:58:29,418 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455103189168269480(17) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FE190>
+  11:58:29 价格更新: 1个持仓
+2026-04-29 11:58:29,451 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(17) reason=CallClose
+2026-04-29 11:59:29,467 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455103440982948959(18) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FE2C0>
+2026-04-29 11:59:29,475 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(18) reason=CallClose
+2026-04-29 11:59:29,477 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455103441077645361(19) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FE3F0>
+  11:59:29 价格更新: 1个持仓
+2026-04-29 11:59:29,515 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(19) reason=CallClose
+2026-04-29 12:00:29,532 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455103692916164021(20) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FE520>
+2026-04-29 12:00:29,541 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(20) reason=CallClose
+2026-04-29 12:00:29,554 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455103693011382080(21) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FE650>
+  12:00:29 价格更新: 1个持仓
+2026-04-29 12:00:29,593 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(21) reason=CallClose
+2026-04-29 12:01:29,598 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455103944899052619(22) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FE780>
+2026-04-29 12:01:29,607 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(22) reason=CallClose
+2026-04-29 12:01:29,609 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455103944942458602(23) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FE8B0>
+  12:01:29 价格更新: 1个持仓
+2026-04-29 12:01:29,657 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(23) reason=CallClose
+2026-04-29 12:02:29,662 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455104196825738202(24) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FE9E0>
+2026-04-29 12:02:29,663 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(24) reason=CallClose
+2026-04-29 12:02:29,676 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455104196837226727(25) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FEB10>
+  12:02:29 价格更新: 1个持仓
+2026-04-29 12:02:29,706 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(25) reason=CallClose
+2026-04-29 12:03:29,726 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455104448703906081(26) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FEC40>
+2026-04-29 12:03:29,727 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(26) reason=CallClose
+2026-04-29 12:03:29,729 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455104448767635519(27) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FED70>
+  12:03:29 价格更新: 1个持仓
+2026-04-29 12:03:29,766 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(27) reason=CallClose
+2026-04-29 12:04:29,773 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455104700604251391(28) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FEEA0>
+2026-04-29 12:04:29,774 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(28) reason=CallClose
+2026-04-29 12:04:29,775 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455104700622662353(29) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FEFD0>
+  12:04:29 价格更新: 1个持仓
+2026-04-29 12:04:29,973 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(29) reason=CallClose
+2026-04-29 12:05:29,988 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455104953123539306(30) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FF100>
+2026-04-29 12:05:29,989 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(30) reason=CallClose
+2026-04-29 12:05:29,991 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455104953178188402(31) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FF230>
+  12:05:30 价格更新: 1个持仓
+2026-04-29 12:05:30,040 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(31) reason=CallClose
+2026-04-29 12:06:30,057 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455105205067622720(32) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FF360>
+2026-04-29 12:06:30,066 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(32) reason=CallClose
+2026-04-29 12:06:30,068 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455105205163468470(33) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FF490>
+  12:06:30 价格更新: 1个持仓
+2026-04-29 12:06:30,160 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(33) reason=CallClose
+2026-04-29 12:07:30,166 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455105457231026304(34) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FF5C0>
+2026-04-29 12:07:30,175 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(34) reason=CallClose
+2026-04-29 12:07:30,177 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455105457279723973(35) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FF6F0>
+  12:07:30 价格更新: 1个持仓
+2026-04-29 12:07:30,207 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(35) reason=CallClose
+2026-04-29 12:08:30,221 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455105709075841689(36) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FF820>
+2026-04-29 12:08:30,230 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(36) reason=CallClose
+2026-04-29 12:08:30,232 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455105709166561172(37) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FF950>
+  12:08:30 价格更新: 1个持仓
+2026-04-29 12:08:30,277 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(37) reason=CallClose
+2026-04-29 12:09:30,294 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455105961035244797(38) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FFA80>
+2026-04-29 12:09:30,303 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(38) reason=CallClose
+2026-04-29 12:09:30,304 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455105961126090970(39) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FFBB0>
+  12:09:30 价格更新: 1个持仓
+2026-04-29 12:09:30,335 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(39) reason=CallClose
+2026-04-29 12:10:30,341 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455106212937481449(40) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FFCE0>
+2026-04-29 12:10:30,350 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(40) reason=CallClose
+2026-04-29 12:10:30,352 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455106212984542038(41) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B87FFE10>
+  12:10:30 价格更新: 1个持仓
+2026-04-29 12:10:30,500 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(41) reason=CallClose
+2026-04-29 12:11:30,505 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455106465290921253(42) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A8050>
+2026-04-29 12:11:30,514 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(42) reason=CallClose
+2026-04-29 12:11:30,516 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455106465334168436(43) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A8180>
+  12:11:30 价格更新: 1个持仓
+2026-04-29 12:11:30,551 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(43) reason=CallClose
+2026-04-29 12:12:30,566 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455106717155686458(44) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A82B0>
+2026-04-29 12:12:30,575 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(44) reason=CallClose
+2026-04-29 12:12:30,586 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455106717248574042(45) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A83E0>
+  12:12:30 价格更新: 1个持仓
+2026-04-29 12:12:30,618 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(45) reason=CallClose
+2026-04-29 12:13:30,636 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455106969101754851(46) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A8510>
+2026-04-29 12:13:30,645 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(46) reason=CallClose
+2026-04-29 12:13:30,646 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455106969192529017(47) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A8640>
+  12:13:30 价格更新: 1个持仓
+2026-04-29 12:13:30,690 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(47) reason=CallClose
+2026-04-29 12:14:30,705 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455107221055283801(48) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A8770>
+2026-04-29 12:14:30,714 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(48) reason=CallClose
+2026-04-29 12:14:30,728 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455107221145487101(49) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A88A0>
+  12:14:30 价格更新: 1个持仓
+2026-04-29 12:14:30,761 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(49) reason=CallClose
+2026-04-29 12:15:30,776 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455107473010126400(50) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A89D0>
+2026-04-29 12:15:30,777 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(50) reason=CallClose
+2026-04-29 12:15:30,790 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455107473063950584(51) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A8B00>
+  12:15:30 价格更新: 1个持仓
+2026-04-29 12:15:30,820 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(51) reason=CallClose
+2026-04-29 12:16:30,835 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455107724914094878(52) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A8C30>
+2026-04-29 12:16:30,836 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(52) reason=CallClose
+2026-04-29 12:16:30,837 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455107724973137717(53) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A8D60>
+2026-04-29 12:16:30,839 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(53) reason=CallClose
+2026-04-29 12:17:30,843 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455107976654084289(54) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A8E90>
+2026-04-29 12:17:30,844 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(54) reason=CallClose
+2026-04-29 12:17:30,847 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455107976670590812(55) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A8FC0>
+  12:17:30 价格更新: 1个持仓
+2026-04-29 12:17:30,897 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(55) reason=CallClose
+2026-04-29 12:18:30,900 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455108228550792713(56) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A90F0>
+2026-04-29 12:18:30,909 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(56) reason=CallClose
+2026-04-29 12:18:30,922 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455108228602075155(57) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A9220>
+  12:18:31 价格更新: 1个持仓
+2026-04-29 12:18:31,050 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(57) reason=CallClose
+2026-04-29 12:19:31,055 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455108480860161156(58) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A9350>
+2026-04-29 12:19:31,056 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(58) reason=CallClose
+2026-04-29 12:19:31,058 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455108480872050835(59) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A9480>
+  12:19:31 价格更新: 1个持仓
+2026-04-29 12:19:31,096 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(59) reason=CallClose
+2026-04-29 12:20:31,101 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455108732711215117(60) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A95B0>
+2026-04-29 12:20:31,102 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(60) reason=CallClose
+2026-04-29 12:20:31,104 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455108732724799466(61) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A96E0>
+  12:20:31 价格更新: 1个持仓
+2026-04-29 12:20:31,134 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(61) reason=CallClose
+
+--- 第 3 轮A股盘中扫描 (30min) ---
+2026-04-29 12:21:31,155 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455108984541379839(62) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A9810>
+  扫描 A_SHARE...
+2026-04-29 12:21:31,156 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(62) reason=CallClose
+2026-04-29 12:21:31,180 | 34020 | 28488 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455108984655084336(63) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AA060>
+  扫描 A_SHARE 第 8 批: 3500-4000/4093
+  A_SHARE: 无异动
+2026-04-29 12:21:35,888 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(63) reason=CallClose
+
+  盘中总计: 0 个补牢机会
+
+--- 第 4 轮港股盘中扫描 (30min) ---
+2026-04-29 12:21:35,911 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455109004498472343(64) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A9940>
+  2026-04-29 12:21:35,912 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(64) reason=CallClose
+扫描 HK...
+2026-04-29 12:21:35,935 | 34020 | 19332 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455109004597971241(65) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AB360>
+  扫描 HK 第 3 批: 400-600/1338
+  2026-04-29 12:21:35,999 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(65) reason=CallClose
+HK: 无异动
+
+  盘中总计: 0 个补牢机会
+2026-04-29 12:21:36,017 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455109004934066775(66) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A9F30>
+2026-04-29 12:21:36,018 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(66) reason=CallClose
+2026-04-29 12:21:36,030 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455109005001288608(67) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A9E00>
+2026-04-29 12:21:36,032 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(67) reason=CallClose
+2026-04-29 12:22:36,049 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455109256734671384(68) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A9CD0>
+2026-04-29 12:22:36,050 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(68) reason=CallClose
+2026-04-29 12:22:36,052 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455109256792819939(69) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A9A70>
+  12:22:36 价格更新: 1个持仓
+2026-04-29 12:22:36,088 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(69) reason=CallClose
+2026-04-29 12:23:36,106 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455109508620704339(70) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AA2C0>
+2026-04-29 12:23:36,107 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(70) reason=CallClose
+2026-04-29 12:23:36,119 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455109508684287821(71) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67A9BA0>
+  12:23:36 价格更新: 1个持仓
+2026-04-29 12:23:36,154 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(71) reason=CallClose
+2026-04-29 12:24:36,160 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455109760556756065(72) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AA190>
+2026-04-29 12:24:36,161 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(72) reason=CallClose
+2026-04-29 12:24:36,163 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455109760573601159(73) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AA3F0>
+  12:24:36 价格更新: 1个持仓
+2026-04-29 12:24:36,193 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(73) reason=CallClose
+2026-04-29 12:25:36,208 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455110012376177242(74) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AA520>
+2026-04-29 12:25:36,209 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(74) reason=CallClose
+2026-04-29 12:25:36,212 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455110012440133494(75) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AAB10>
+  12:25:36 价格更新: 1个持仓
+2026-04-29 12:25:36,256 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(75) reason=CallClose
+2026-04-29 12:26:36,259 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455110264295960577(76) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AA650>
+2026-04-29 12:26:36,268 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(76) reason=CallClose
+2026-04-29 12:26:36,282 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455110264341886946(77) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AA8B0>
+  12:26:36 价格更新: 1个持仓
+2026-04-29 12:26:36,320 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(77) reason=CallClose
+2026-04-29 12:27:36,324 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455110516226123375(78) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AA780>
+2026-04-29 12:27:36,332 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(78) reason=CallClose
+2026-04-29 12:27:36,345 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455110516266814097(79) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AAC40>
+  12:27:36 价格更新: 1个持仓
+2026-04-29 12:27:36,433 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(79) reason=CallClose
+2026-04-29 12:28:36,438 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455110768359961702(80) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AB230>
+2026-04-29 12:28:36,446 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(80) reason=CallClose
+2026-04-29 12:28:36,448 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455110768403315127(81) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AB100>
+  12:28:36 价格更新: 1个持仓
+2026-04-29 12:28:36,493 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(81) reason=CallClose
+2026-04-29 12:29:36,498 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455111020268667832(82) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AAFD0>
+2026-04-29 12:29:36,507 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(82) reason=CallClose
+2026-04-29 12:29:36,509 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455111020316511696(83) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AAEA0>
+  12:29:36 价格更新: 1个持仓
+2026-04-29 12:29:36,544 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(83) reason=CallClose
+2026-04-29 12:30:36,561 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455111272142463840(84) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AAD70>
+2026-04-29 12:30:36,570 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(84) reason=CallClose
+2026-04-29 12:30:36,582 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455111272238296918(85) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AA9E0>
+2026-04-29 12:30:36,584 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(85) reason=CallClose
+2026-04-29 12:31:36,588 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455111523967102920(86) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AB490>
+2026-04-29 12:31:36,590 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(86) reason=CallClose
+2026-04-29 12:31:36,603 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455111523980097500(87) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AB5C0>
+  12:31:36 价格更新: 1个持仓
+2026-04-29 12:31:36,641 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(87) reason=CallClose
+2026-04-29 12:32:36,659 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455111775869394949(88) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AB6F0>
+2026-04-29 12:32:36,667 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(88) reason=CallClose
+2026-04-29 12:32:36,681 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455111775961741404(89) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AB820>
+  12:32:37 价格更新: 1个持仓
+2026-04-29 12:32:37,037 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(89) reason=CallClose
+2026-04-29 12:33:37,052 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455112029181015774(90) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67AB950>
+2026-04-29 12:33:37,053 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(90) reason=CallClose
+2026-04-29 12:33:37,056 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455112029240569386(91) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67ABA80>
+  12:33:37 价格更新: 1个持仓
+2026-04-29 12:33:37,094 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(91) reason=CallClose
+2026-04-29 12:34:37,100 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455112281088739847(92) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67ABBB0>
+2026-04-29 12:34:37,109 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(92) reason=CallClose
+2026-04-29 12:34:37,111 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455112281136595281(93) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67ABCE0>
+  12:34:37 价格更新: 1个持仓
+2026-04-29 12:34:37,145 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(93) reason=CallClose
+2026-04-29 12:35:37,150 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455112532953017606(94) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126B67ABE10>
+2026-04-29 12:35:37,151 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(94) reason=CallClose
+2026-04-29 12:35:37,153 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455112532967506289(95) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB188050>
+  12:35:37 价格更新: 1个持仓
+2026-04-29 12:35:37,183 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(95) reason=CallClose
+2026-04-29 12:36:37,189 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455112784775229989(96) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB188180>
+2026-04-29 12:36:37,190 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(96) reason=CallClose
+2026-04-29 12:36:37,204 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455112784786422098(97) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB1882B0>
+  12:36:37 价格更新: 1个持仓
+2026-04-29 12:36:37,233 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(97) reason=CallClose
+2026-04-29 12:37:37,239 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455113036645239304(98) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB1883E0>
+2026-04-29 12:37:37,241 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(98) reason=CallClose
+2026-04-29 12:37:37,255 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455113036661676003(99) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB188510>
+  12:37:37 价格更新: 1个持仓
+2026-04-29 12:37:37,308 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(99) reason=CallClose
+2026-04-29 12:38:37,324 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455113288610185005(100) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB188640>
+2026-04-29 12:38:37,332 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(100) reason=CallClose
+2026-04-29 12:38:37,345 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455113288701902665(101) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB188770>
+  12:38:37 价格更新: 1个持仓
+2026-04-29 12:38:37,375 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(101) reason=CallClose
+2026-04-29 12:39:37,379 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455113540550119226(102) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB1888A0>
+2026-04-29 12:39:37,380 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(102) reason=CallClose
+2026-04-29 12:39:37,382 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455113540557060701(103) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB1889D0>
+  12:39:37 价格更新: 1个持仓
+2026-04-29 12:39:37,413 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(103) reason=CallClose
+2026-04-29 12:40:37,421 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455113792384370615(104) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB188B00>
+2026-04-29 12:40:37,422 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(104) reason=CallClose
+2026-04-29 12:40:37,434 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455113792395424562(105) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB188C30>
+  12:40:37 价格更新: 1个持仓
+2026-04-29 12:40:37,469 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(105) reason=CallClose
+2026-04-29 12:41:37,493 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455114044295223340(106) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB188D60>
+2026-04-29 12:41:37,496 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(106) reason=CallClose
+2026-04-29 12:41:37,507 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455114044365951872(107) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB188E90>
+  12:41:37 价格更新: 1个持仓
+2026-04-29 12:41:37,538 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(107) reason=CallClose
+2026-04-29 12:42:37,562 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455114296242948279(108) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB188FC0>
+2026-04-29 12:42:37,562 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(108) reason=CallClose
+2026-04-29 12:42:37,575 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455114296299076899(109) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB1890F0>
+  12:42:37 价格更新: 1个持仓
+2026-04-29 12:42:37,605 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(109) reason=CallClose
+2026-04-29 12:43:37,615 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455114548171763184(110) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB189220>
+2026-04-29 12:43:37,618 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(110) reason=CallClose
+2026-04-29 12:43:37,631 | 34020 | 32316 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7455114548193935225(111) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x00000126FB189350>
+  12:43:37 价格更新: 1个持仓
+2026-04-29 12:43:37,661 | 34020 | 29488 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(111) reason=CallClose

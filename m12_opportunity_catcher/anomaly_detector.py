@@ -26,6 +26,7 @@ from core.schemas import (
     Market,
     PriceAnomaly,
 )
+from m12_opportunity_catcher.stock_universe import StockUniverse
 
 logger = logging.getLogger(__name__)
 
@@ -41,6 +42,7 @@ class AnomalyDetector:
         atr_threshold: float = 2.0,
         volume_threshold: float = 1.5,
         min_price: float = 1.0,
+        stock_universe: Optional[StockUniverse] = None,
     ):
         self.atr_period = atr_period
         self.lookback_days = lookback_days
@@ -48,6 +50,7 @@ class AnomalyDetector:
         self.atr_threshold = atr_threshold
         self.volume_threshold = volume_threshold
         self.min_price = min_price
+        self.stock_universe = stock_universe or StockUniverse()
 
     def scan_daily(
         self,
@@ -357,32 +360,9 @@ class AnomalyDetector:
         return (np.array(prices_list), np.array(volumes_list, dtype=float))
 
     def _get_default_stock_list(self, market: Market) -> List[str]:
-        """获取默认股票列表（主要指数成分股）"""
-        if market == Market.A_SHARE:
-            return [
-                "000001.SZ", "000002.SZ", "000063.SZ", "000333.SZ",
-                "000338.SZ", "000425.SZ", "000568.SZ", "000625.SZ",
-                "000651.SZ", "000725.SZ", "000776.SZ", "000858.SZ",
-                "600000.SH", "600009.SH", "600010.SH", "600016.SH",
-                "600019.SH", "600025.SH", "600028.SH", "600029.SH",
-                "600030.SH", "600031.SH", "600036.SH", "600048.SH",
-                "600050.SH", "600104.SH", "600519.SH", "600585.SH",
-                "600887.SH", "601012.SH", "601088.SH", "601111.SH",
-                "601166.SH", "601211.SH", "601225.SH", "601288.SH",
-                "601318.SH", "601336.SH", "601398.SH", "601601.SH",
-                "601628.SH", "601688.SH", "601728.SH", "601766.SH",
-                "601857.SH", "601888.SH", "601899.SH", "601919.SH",
-                "601985.SH", "601988.SH", "603259.SH",
-                "510050.SH", "510300.SH", "510500.SH", "159915.SZ",
-            ]
-        elif market == Market.HK:
-            return [
-                "00700.HK", "00005.HK", "00941.HK", "01299.HK",
-                "02318.HK", "02382.HK", "03988.HK", "09988.HK",
-            ]
-        elif market == Market.US:
-            return [
-                "AAPL", "MSFT", "GOOGL", "AMZN", "NVDA",
-                "META", "TSLA", "BRK-B", "JPM", "V",
-            ]
-        return []
+        """获取股票列表（从StockUniverse动态获取）"""
+        try:
+            return self.stock_universe.get_stock_list(market)
+        except Exception as e:
+            logger.error(f"Failed to get stock list for {market}: {e}")
+            return []

@@ -1,0 +1,59 @@
+{
+  "plan_id": "plan_6e9c942d29b4",
+  "opportunity_id": "retro_000651.SZ_2026-04-28",
+  "plan_summary": "BULLISH | 000651.SZ",
+  "primary_instruments": [
+    "000651.SZ"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破入场价下方5.0%的价位"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "目标价基于剩余空间1.0%，即入场价×1.01"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入000651.SZ，仓位为总资金的30%（侦察仓上限）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "满足所有入场条件（价格异动+量比2.3+无利空）"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总资金的60%（主仓上限），但总仓位不超过60%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 浮盈达到0.5%后，且价格未触发止损"
+    }
+  ],
+  "valid_until": "2026-05-19 14:19:20.147938",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-04-28 14:19:20.147938",
+  "opportunity_priority": "research"
+}

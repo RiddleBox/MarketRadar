@@ -3,8 +3,9 @@
 MarketRadar 持续模拟运行
 
 A股交易时段(9:30-15:00)每30分钟执行盘中扫描，
-美股交易时段(21:30-04:00)每30分钟执行盘中扫描，
-每4小时执行一次盘后全量扫描。
+美股交易时段(21:30-04:00)每10分钟执行盘中扫描，
+港股交易时段(9:30-16:00)每30分钟执行盘中扫描，
+每4小时执行一次盘后全量扫描（仅在所有市场闭市时）。
 持仓价格每60秒更新一次，触发止损止盈。
 按 Ctrl+C 停止。
 
@@ -16,6 +17,7 @@ import time
 import signal
 import os
 from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 if sys.platform == "win32":
     os.environ.setdefault("PYTHONIOENCODING", "utf-8")
@@ -31,11 +33,13 @@ from rich import box
 from core.schemas import Market, PriorityLevel
 from m12_opportunity_catcher.catcher_engine import OpportunityCatcherEngine
 from m12_opportunity_catcher.anomaly_detector import AnomalyDetector
+from m12_opportunity_catcher.stock_universe import get_stock_universe
 from m9_paper_trader.baostock_feed import BaostockFeed
 from m9_paper_trader.eastmoney_feed import EastMoneyFeed
 from m9_paper_trader.price_feed import YFinanceFeed
 from m9_paper_trader.futu_feed import FutuFeed
 from m9_paper_trader.paper_trader import PaperTrader
+from m9_paper_trader.price_snapshot_logger import PriceSnapshotLogger
 
 console = Console()
 
@@ -43,6 +47,7 @@ RUNNING = True
 A_SHARE_FEED = None
 
 _trader = PaperTrader()
+_price_logger = PriceSnapshotLogger()
 
 
 def _signal_handler(sig, frame):
@@ -135,6 +140,7 @@ def _get_feed_configs(a_share_feed_cls=None, is_a_share_trading_fn=None, is_us_t
 
 
 def run_daily_scan(a_share_feed_cls=None):
+    """盘后全量扫描（仅在所有市场闭市时执行）"""
     if a_share_feed_cls is None:
         a_share_feed_cls = BaostockFeed
 
@@ -145,35 +151,35 @@ def run_daily_scan(a_share_feed_cls=None):
 
     all_results = []
     total = 0
-    for market, feed_cls in markets_configs:
-        try:
-            console.print(f"  [bold]扫描 {market.value}...[/bold]")
-            detector = AnomalyDetector(
-                sigma_threshold=2.0,
-                atr_threshold=2.0,
-                volume_threshold=1.5,
-            )
-            engine = OpportunityCatcherEngine(anomaly_detector=detector)
-            pf = feed_cls()
-            results = engine.run_daily_scan(market=market, price_feed=pf)
 
-            if results:
-                console.print(f"\n  [bold green]{market.value}: {len(results)} 个补牢机会[/bold green]")
-                for r in results:
-                    a = r.anomaly
-                    t = r.trend
-                    c = r.causation
-                    console.print(
-                        f"    {a.instrument} {a.price_change_pct:+.1f}% | "
-                        f"{a.anomaly_type} | {t.stage.value} | "
-                        f"conf={c.confidence:.0%} | upside={t.remaining_upside_pct:.1f}%"
-                    )
-                total += len(results)
-                all_results.extend(results)
-            else:
-                console.print(f"  [dim]{market.value}: 无异动[/dim]")
-        except Exception as e:
-            console.print(f"  [yellow]⚠ {market.value} 扫描失败: {e}[/yellow]")
+    # 并行扫描多个市场
+    with ThreadPoolExecutor(max_workers=3) as executor:
+        futures = {}
+        for market, feed_cls in markets_configs:
+            future = executor.submit(_scan_single_market, market, feed_cls, is_intraday=False)
+            futures[future] = market
+
+        for future in as_completed(futures):
+            market = futures[future]
+            try:
+                results = future.result()
+                if results:
+                    console.print(f"\n  [bold green]{market.value}: {len(results)} 个补牢机会[/bold green]")
+                    for r in results:
+                        a = r.anomaly
+                        t = r.trend
+                        c = r.causation
+                        console.print(
+                            f"    {a.instrument} {a.price_change_pct:+.1f}% | "
+                            f"{a.anomaly_type} | {t.stage.value} | "
+                            f"conf={c.confidence:.0%} | upside={t.remaining_upside_pct:.1f}%"
+                        )
+                    total += len(results)
+                    all_results.extend(results)
+                else:
+                    console.print(f"  [dim]{market.value}: 无异动[/dim]")
+            except Exception as e:
+                console.print(f"  [yellow]⚠ {market.value} 扫描失败: {e}[/yellow]")
 
     console.print(f"\n  [bold]盘后总计: {total} 个补牢机会[/bold]")
 
@@ -201,54 +207,109 @@ def run_daily_scan(a_share_feed_cls=None):
     return total
 
 
-def run_intraday_scan(a_share_feed_cls=None, is_a_share_trading_fn=None, is_us_trading_fn=None):
+def _scan_single_market(market, feed_cls, is_intraday=True):
+    """扫描单个市场（用于并行执行）"""
+    try:
+        console.print(f"  [bold]扫描 {market.value}...[/bold]")
+        detector_kwargs = {}
+        if market == Market.A_SHARE:
+            detector_kwargs = dict(
+                sigma_threshold=2.0,
+                atr_threshold=2.0,
+                volume_threshold=1.5,
+            )
+        elif market in (Market.HK, Market.US):
+            detector_kwargs = dict(
+                sigma_threshold=2.0,
+                atr_threshold=1.5,
+                volume_threshold=1.5,
+            )
+
+        detector = AnomalyDetector(**detector_kwargs)
+        engine = OpportunityCatcherEngine(anomaly_detector=detector)
+        pf = feed_cls()
+
+        if is_intraday:
+            # 盘中扫描：记录价格快照
+            stock_universe = get_stock_universe()
+            stock_list = stock_universe.get_stock_list(market)
+            _record_price_snapshots(market, stock_list, pf)
+            results = engine.run_intraday_scan(market=market, price_feed=pf)
+        else:
+            # 盘后扫描
+            results = engine.run_daily_scan(market=market, price_feed=pf)
+
+        return results
+    except Exception as e:
+        console.print(f"  [yellow]⚠ {market.value} 扫描失败: {e}[/yellow]")
+        return []
+
+
+def run_intraday_scan(markets_to_scan=None, a_share_feed_cls=None):
+    """盘中扫描（支持指定市场列表，并行执行）"""
     if a_share_feed_cls is None:
         a_share_feed_cls = detect_a_share_feed()
 
-    markets_configs, feed_cls_for_open = _get_feed_configs(
-        a_share_feed_cls,
-        is_a_share_trading_fn=is_a_share_trading_fn,
-        is_us_trading_fn=is_us_trading_fn
-    )
+    # 如果未指定市场，根据交易时段自动选择
+    if markets_to_scan is None:
+        now_h = datetime.now().hour
+        markets_to_scan = []
+        if 9 <= now_h < 15:  # A股时段
+            markets_to_scan.append(Market.A_SHARE)
+        if 9 <= now_h < 16:  # 港股时段
+            markets_to_scan.append(Market.HK)
+        if 21 <= now_h or now_h < 4:  # 美股时段
+            markets_to_scan.append(Market.US)
+
+    if not markets_to_scan:
+        return 0
+
+    # 获取数据源配置
+    feed_map = {
+        Market.A_SHARE: a_share_feed_cls,
+        Market.HK: FutuFeed,
+        Market.US: FutuFeed,
+    }
+
+    # 尝试使用Futu统一数据源
+    try:
+        futu_test = FutuFeed()
+        if futu_test._connected:
+            feed_map = {m: FutuFeed for m in markets_to_scan}
+            feed_cls_for_open = FutuFeed
+        futu_test.close()
+    except:
+        feed_cls_for_open = a_share_feed_cls
 
     all_results = []
     total = 0
-    for market, feed_cls in markets_configs:
-        try:
-            console.print(f"  [bold]扫描 {market.value}...[/bold]")
-            detector_kwargs = {}
-            if market == Market.A_SHARE:
-                detector_kwargs = dict(
-                    sigma_threshold=2.0,
-                    atr_threshold=2.0,
-                    volume_threshold=1.5,
-                )
-            elif market in (Market.HK, Market.US):
-                detector_kwargs = dict(
-                    sigma_threshold=2.0,
-                    atr_threshold=1.5,
-                    volume_threshold=1.5,
-                )
 
-            detector = AnomalyDetector(**detector_kwargs)
-            engine = OpportunityCatcherEngine(anomaly_detector=detector)
-            pf = feed_cls()
-            results = engine.run_intraday_scan(market=market, price_feed=pf)
+    # 并行扫描多个市场
+    with ThreadPoolExecutor(max_workers=len(markets_to_scan)) as executor:
+        futures = {}
+        for market in markets_to_scan:
+            feed_cls = feed_map.get(market, a_share_feed_cls)
+            future = executor.submit(_scan_single_market, market, feed_cls, is_intraday=True)
+            futures[future] = market
 
-            if results:
-                console.print(f"  [green]✓ {market.value}: {len(results)} 个补牢机会[/green]")
-                for r in results[:3]:
-                    a = r.anomaly
-                    console.print(
-                        f"    {a.instrument} {a.price_change_pct:+.1f}% "
-                        f"({a.anomaly_type}) [{r.trend.stage.value}]"
-                    )
-                total += len(results)
-                all_results.extend(results)
-            else:
-                console.print(f"  [dim]{market.value}: 无异动[/dim]")
-        except Exception as e:
-            console.print(f"  [yellow]⚠ {market.value} 扫描失败: {e}[/yellow]")
+        for future in as_completed(futures):
+            market = futures[future]
+            try:
+                results = future.result()
+                if results:
+                    console.print(f"  [green]✓ {market.value}: {len(results)} 个补牢机会[/green]")
+                    for r in results[:3]:
+                        a = r.anomaly
+                        console.print(
+                            f"    {a.instrument} {a.price_change_pct:+.1f}% "
+                            f"({a.anomaly_type}) [{r.trend.stage.value}]"
+                        )
+                    total += len(results)
+                    all_results.extend(results)
+                else:
+                    console.print(f"  [dim]{market.value}: 无异动[/dim]")
+            except Exception as e:
+                console.print(f"  [yellow]⚠ {market.value} 扫描失败: {e}[/yellow]")
 
     console.print(f"\n  [bold]盘中总计: {total} 个补牢机会[/bold]")
 
@@ -258,6 +319,49 @@ def run_intraday_scan(a_share_feed_cls=None, is_a_share_trading_fn=None, is_us_t
         _print_open_results(open_results)
 
     return total
+
+
+def _record_price_snapshots(market, stock_list, price_feed):
+    """记录价格快照（批量获取，避免逐个查询）。"""
+    try:
+        from m9_paper_trader.price_snapshot_logger import get_price_snapshot_logger
+        logger = get_price_snapshot_logger()
+
+        # 限制每次扫描数量，避免API超时
+        # A股: 最多500只 (5128只 -> 每10次扫描覆盖全部)
+        # 美股: 最多200只 (12790只 -> 每64次扫描覆盖全部)
+        max_stocks = 500 if market == Market.A_SHARE else 200
+
+        # 轮转扫描：使用时间戳作为偏移量，确保每次扫描不同的股票
+        import time
+        offset = int(time.time() / 300) % (len(stock_list) // max_stocks + 1)  # 每5分钟轮转
+        start_idx = offset * max_stocks
+        end_idx = min(start_idx + max_stocks, len(stock_list))
+        stock_batch = stock_list[start_idx:end_idx]
+
+        console.print(f"  [dim]扫描 {market.value} 第 {offset+1} 批: {start_idx}-{end_idx}/{len(stock_list)}[/dim]")
+
+        # 批量获取价格数据
+        snapshots = []
+        for symbol in stock_batch:
+            try:
+                bars = price_feed.get_bars(symbol, period="1d", count=1)
+                if bars and len(bars) > 0:
+                    bar = bars[-1]
+                    snapshots.append({
+                        'symbol': symbol,
+                        'price': bar.close,
+                        'change_pct': ((bar.close - bar.open) / bar.open * 100) if bar.open > 0 else 0,
+                        'volume': bar.volume
+                    })
+            except:
+                continue
+
+        if snapshots:
+            logger.log_batch(market.value, snapshots)
+            console.print(f"  [dim]已记录 {len(snapshots)} 个标的价格快照[/dim]")
+    except Exception as e:
+        console.print(f"  [dim]价格快照记录失败: {e}[/dim]")
 
 
 def _auto_open_from_opportunities(results, feed_cls, max_positions=3):
@@ -335,36 +439,18 @@ def _save_results(total_count):
 def main():
     console.print("[bold green]╔══════════════════════════════════════════════════╗[/bold green]")
     console.print("[bold green]║  MarketRadar 持续模拟运行                        ║[/bold green]")
-    console.print("[bold green]║  A股: 9:30-15:00 | 美股: 21:30-04:00              ║[/bold green]")
-    console.print("[bold green]║  价格更新: 每60秒 | 盘中扫描: 每30分 | 盘后: 每4h  ║[/bold green]")
+    console.print("[bold green]║  A股: 9:30-15:00 | 港股: 9:30-16:00              ║[/bold green]")
+    console.print("[bold green]║  美股: 21:30-04:00 | 并行扫描 | 智能调度          ║[/bold green]")
     console.print("[bold green]║  按 Ctrl+C 停止                                   ║[/bold green]")
     console.print("[bold green]╚══════════════════════════════════════════════════╝[/bold green]")
 
     console.print("[bold]检测数据源...[/bold]")
     a_share_feed_cls = detect_a_share_feed()
 
-    console.print("\n[bold]首次启动：执行盘后全量扫描...[/bold]")
-    run_daily_scan(a_share_feed_cls=a_share_feed_cls)
-
-    a_share_intraday_interval = 30 * 60
-    us_intraday_interval = 10 * 60
-    daily_interval = 4 * 60 * 60
-    price_update_interval = 60
-
-    last_a_share_scan = time.time()
-    last_us_scan = time.time()
-    last_daily = time.time()
-    last_price_update = 0.0
-    cycle = 0
-
-    a_share_trading_hours = (
-        (9, 30),
-        (15, 0),
-    )
-    us_trading_hours = (
-        (21, 30),
-        (4, 0),
-    )
+    # 交易时段定义
+    a_share_trading_hours = ((9, 30), (15, 0))
+    hk_trading_hours = ((9, 30), (16, 0))
+    us_trading_hours = ((21, 30), (4, 0))
 
     def _is_in_range(now_h: int, now_m: int, start: tuple, end: tuple) -> bool:
         start_min = start[0] * 60 + start[1]
@@ -379,12 +465,40 @@ def main():
         now_h, now_m = datetime.now().hour, datetime.now().minute
         return _is_in_range(now_h, now_m, a_share_trading_hours[0], a_share_trading_hours[1])
 
+    def is_hk_trading():
+        now_h, now_m = datetime.now().hour, datetime.now().minute
+        return _is_in_range(now_h, now_m, hk_trading_hours[0], hk_trading_hours[1])
+
     def is_us_trading():
         now_h, now_m = datetime.now().hour, datetime.now().minute
         return _is_in_range(now_h, now_m, us_trading_hours[0], us_trading_hours[1])
 
+    def is_any_market_trading():
+        return is_a_share_trading() or is_hk_trading() or is_us_trading()
+
     def is_weekend():
         return datetime.now().weekday() >= 5
+
+    # 首次启动：仅在闭市时执行盘后扫描
+    if not is_any_market_trading():
+        console.print("\n[bold]首次启动：执行盘后全量扫描...[/bold]")
+        run_daily_scan(a_share_feed_cls=a_share_feed_cls)
+    else:
+        console.print("\n[bold]首次启动：市场开盘中，跳过盘后扫描[/bold]")
+
+    # 扫描间隔
+    a_share_intraday_interval = 10 * 60  # A股10分钟
+    hk_intraday_interval = 10 * 60       # 港股10分钟
+    us_intraday_interval = 10 * 60       # 美股10分钟
+    daily_interval = 4 * 60 * 60         # 盘后4小时
+    price_update_interval = 60           # 价格更新60秒
+
+    last_a_share_scan = 0.0
+    last_hk_scan = 0.0
+    last_us_scan = 0.0
+    last_daily = time.time()
+    last_price_update = 0.0
+    cycle = 0
 
     def update_open_positions():
         open_positions = _trader.list_open()
@@ -436,37 +550,37 @@ def main():
         now = time.time()
         now_dt = datetime.now()
 
-        if now - last_daily >= daily_interval:
+        # 盘后扫描：仅在所有市场闭市时执行
+        if now - last_daily >= daily_interval and not is_any_market_trading():
             cycle += 1
-            console.print(f"\n[dim]--- 第 {cycle} 轮盘后扫描 ---[/dim]")
+            console.print(f"\n[dim]--- 第 {cycle} 轮盘后扫描（所有市场闭市）---[/dim]")
             run_daily_scan(a_share_feed_cls=a_share_feed_cls)
             last_daily = now
-            last_intraday = now
             continue
 
         if not is_weekend():
+            # A股盘中扫描
             if is_a_share_trading() and now - last_a_share_scan >= a_share_intraday_interval:
                 cycle += 1
-                console.print(f"\n[dim]--- 第 {cycle} 轮A股盘中扫描 (A股30min) ---[/dim]")
-                run_intraday_scan(
-                    a_share_feed_cls=a_share_feed_cls,
-                    is_a_share_trading_fn=is_a_share_trading,
-                    is_us_trading_fn=is_us_trading
-                )
+                console.print(f"\n[dim]--- 第 {cycle} 轮A股盘中扫描 (10min) ---[/dim]")
+                run_intraday_scan(markets_to_scan=[Market.A_SHARE], a_share_feed_cls=a_share_feed_cls)
                 last_a_share_scan = now
-                continue
 
+            # 港股盘中扫描
+            if is_hk_trading() and now - last_hk_scan >= hk_intraday_interval:
+                cycle += 1
+                console.print(f"\n[dim]--- 第 {cycle} 轮港股盘中扫描 (10min) ---[/dim]")
+                run_intraday_scan(markets_to_scan=[Market.HK], a_share_feed_cls=a_share_feed_cls)
+                last_hk_scan = now
+
+            # 美股盘中扫描
             if is_us_trading() and now - last_us_scan >= us_intraday_interval:
                 cycle += 1
-                console.print(f"\n[dim]--- 第 {cycle} 轮美股盘中扫描 (美股10min) ---[/dim]")
-                run_intraday_scan(
-                    a_share_feed_cls=a_share_feed_cls,
-                    is_a_share_trading_fn=is_a_share_trading,
-                    is_us_trading_fn=is_us_trading
-                )
+                console.print(f"\n[dim]--- 第 {cycle} 轮美股盘中扫描 (10min) ---[/dim]")
+                run_intraday_scan(markets_to_scan=[Market.US], a_share_feed_cls=a_share_feed_cls)
                 last_us_scan = now
-                continue
 
+        # 价格更新
         if now - last_price_update >= price_update_interval:
             update_open_positions()
             last_price_update = now

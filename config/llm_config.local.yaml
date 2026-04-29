@@ -1,0 +1,10 @@
+# LLM 本地配置（不提交到 Git）
+# 此文件覆盖 llm_config.yaml 中的默认值
+# 用途：在本地机器上设置默认 provider 和 API Key
+
+default_provider: deepseek
+
+providers:
+  deepseek:
+    api_key: "sk-63086f70fc0f4284a4a0358a933a4e70"
+    model: "deepseek-chat"

@@ -1,0 +1,11 @@
+[EastMoneyFeed] A-share single 000001.SZ failed: 502 Server Error: Bad Gateway for url: https://push2.eastmoney.com/api/qt/stock/get?secid=0.000001&fields=f43%2Cf44%2Cf45%2Cf46%2Cf47%2Cf48%2Cf50%2Cf51%2Cf52%2Cf55%2Cf57%2Cf58%2Cf60%2Cf116%2Cf117%2Cf162%2Cf170%2Cf171&ut=fa5fd1943c7b386f172d6893dbfba10b
+[M0] AKShare 新闻采集失败: Invalid regular expression: invalid escape sequence: \u
+[M0] AKShare 新闻采集失败: Invalid regular expression: invalid escape sequence: \u
+[BackwardCausation] Finnhub news failed for 0038.HK: 需要提供Finnhub API密钥，请设置环境变量FINNHUB_API_KEY或传入api_key参数
+[BackwardCausation] Finnhub news failed for 0078.HK: 需要提供Finnhub API密钥，请设置环境变量FINNHUB_API_KEY或传入api_key参数
+[BackwardCausation] Finnhub news failed for 0081.HK: 需要提供Finnhub API密钥，请设置环境变量FINNHUB_API_KEY或传入api_key参数
+[BackwardCausation] Finnhub news failed for 0133.HK: 需要提供Finnhub API密钥，请设置环境变量FINNHUB_API_KEY或传入api_key参数
+[M9] 无法获取价格: 000651.SZ
+[M9] 无法获取价格: 000651.SZ
+[M9] 无法获取价格: 000651.SZ
+[M9] 无法获取价格: 000651.SZ

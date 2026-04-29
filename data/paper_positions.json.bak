@@ -1,0 +1,1989 @@
+[
+  {
+    "paper_position_id": "pp_b9bafc3996",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688012.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 150.5,
+    "stop_loss_price": 138.46,
+    "take_profit_price": 173.075,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:54.444424",
+    "entry_date": "2026-04-25",
+    "prev_close": 150.5,
+    "board": "star",
+    "current_price": 366.61,
+    "unrealized_pnl_pct": 1.4359468438538208,
+    "status": "TAKE_PROFIT",
+    "exit_price": 366.61,
+    "exit_time": "2026-04-28T10:57:17.485173",
+    "realized_pnl_pct": 1.4359468438538208,
+    "realized_pnl_after_fees": 1.4307299136212626,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 1.4359468438538208,
+    "fee_paid": 78.51480000000001,
+    "price_updates": [
+      {
+        "price": 366.61,
+        "ts": "2026-04-28T10:57:17.485173",
+        "pnl_pct": 1.435947
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_243a50a8b9",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "002371.SZ",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 150.5,
+    "stop_loss_price": 138.46,
+    "take_profit_price": 173.075,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:54.444424",
+    "entry_date": "2026-04-25",
+    "prev_close": 150.5,
+    "board": "main",
+    "current_price": 519.39,
+    "unrealized_pnl_pct": 2.45109634551495,
+    "status": "TAKE_PROFIT",
+    "exit_price": 519.39,
+    "exit_time": "2026-04-28T11:01:07.217766",
+    "realized_pnl_pct": 2.45109634551495,
+    "realized_pnl_after_fees": 2.444052146179402,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 2.45109634551495,
+    "fee_paid": 106.01520000000001,
+    "price_updates": [
+      {
+        "price": 519.39,
+        "ts": "2026-04-28T11:01:07.217766",
+        "pnl_pct": 2.451096
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_a409890596",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688037.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 150.5,
+    "stop_loss_price": 138.46,
+    "take_profit_price": 173.075,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:54.444424",
+    "entry_date": "2026-04-25",
+    "prev_close": 150.5,
+    "board": "star",
+    "current_price": 150.5,
+    "unrealized_pnl_pct": 0.0,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.0,
+    "fee_paid": 12.525,
+    "price_updates": [],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_db2afd0efe",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688012.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 200.3,
+    "stop_loss_price": 184.276,
+    "take_profit_price": 230.345,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:54.447457",
+    "entry_date": "2026-04-25",
+    "prev_close": 200.3,
+    "board": "star",
+    "current_price": 200.3,
+    "unrealized_pnl_pct": 0.0,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.0,
+    "fee_paid": 16.024,
+    "price_updates": [],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_207670ff14",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "002371.SZ",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 200.3,
+    "stop_loss_price": 184.276,
+    "take_profit_price": 230.345,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:54.447457",
+    "entry_date": "2026-04-25",
+    "prev_close": 200.3,
+    "board": "main",
+    "current_price": 200.3,
+    "unrealized_pnl_pct": 0.0,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.0,
+    "fee_paid": 16.024,
+    "price_updates": [],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_5bb088da13",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688037.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 200.3,
+    "stop_loss_price": 184.276,
+    "take_profit_price": 230.345,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:54.448426",
+    "entry_date": "2026-04-25",
+    "prev_close": 200.3,
+    "board": "star",
+    "current_price": 200.3,
+    "unrealized_pnl_pct": 0.0,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.0,
+    "fee_paid": 16.024,
+    "price_updates": [],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_e477e009bb",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688012.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 180.0,
+    "stop_loss_price": 165.6,
+    "take_profit_price": 206.99999999999997,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:54.451460",
+    "entry_date": "2026-04-25",
+    "prev_close": 180.0,
+    "board": "star",
+    "current_price": 366.43,
+    "unrealized_pnl_pct": 1.0357222222222222,
+    "status": "TAKE_PROFIT",
+    "exit_price": 366.43,
+    "exit_time": "2026-04-28T11:09:07.005427",
+    "realized_pnl_pct": 1.0357222222222222,
+    "realized_pnl_after_fees": 1.0312579222222222,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 1.0357222222222222,
+    "fee_paid": 80.35740000000001,
+    "price_updates": [
+      {
+        "price": 366.43,
+        "ts": "2026-04-28T11:09:07.005427",
+        "pnl_pct": 1.035722
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_2c28a88e1f",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "002371.SZ",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 180.0,
+    "stop_loss_price": 165.6,
+    "take_profit_price": 206.99999999999997,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:54.451460",
+    "entry_date": "2026-04-25",
+    "prev_close": 180.0,
+    "board": "main",
+    "current_price": 519.16,
+    "unrealized_pnl_pct": 1.884222222222222,
+    "status": "TAKE_PROFIT",
+    "exit_price": 519.16,
+    "exit_time": "2026-04-28T11:13:38.928672",
+    "realized_pnl_pct": 1.884222222222222,
+    "realized_pnl_after_fees": 1.8782306222222223,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 1.884222222222222,
+    "fee_paid": 107.84880000000001,
+    "price_updates": [
+      {
+        "price": 519.16,
+        "ts": "2026-04-28T11:13:38.928672",
+        "pnl_pct": 1.884222
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_fb6eb19e10",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688037.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 180.0,
+    "stop_loss_price": 165.6,
+    "take_profit_price": 206.99999999999997,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:54.451460",
+    "entry_date": "2026-04-25",
+    "prev_close": 180.0,
+    "board": "star",
+    "current_price": 204.88,
+    "unrealized_pnl_pct": 0.1382222222222222,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.1382222222222222,
+    "fee_paid": 14.399999999999999,
+    "price_updates": [
+      {
+        "price": 204.88,
+        "ts": "2026-04-28T11:17:36.929288",
+        "pnl_pct": 0.138222
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_3df7b1e363",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688012.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 150.5,
+    "stop_loss_price": 138.46,
+    "take_profit_price": 173.075,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:55.140919",
+    "entry_date": "2026-04-25",
+    "prev_close": 150.5,
+    "board": "star",
+    "current_price": 150.5,
+    "unrealized_pnl_pct": 0.0,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.0,
+    "fee_paid": 12.525,
+    "price_updates": [],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_0b8577f33e",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "002371.SZ",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 150.5,
+    "stop_loss_price": 138.46,
+    "take_profit_price": 173.075,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:55.140919",
+    "entry_date": "2026-04-25",
+    "prev_close": 150.5,
+    "board": "main",
+    "current_price": 150.5,
+    "unrealized_pnl_pct": 0.0,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.0,
+    "fee_paid": 12.525,
+    "price_updates": [],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_ba1c4a6461",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688037.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 150.5,
+    "stop_loss_price": 138.46,
+    "take_profit_price": 173.075,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:55.141919",
+    "entry_date": "2026-04-25",
+    "prev_close": 150.5,
+    "board": "star",
+    "current_price": 150.5,
+    "unrealized_pnl_pct": 0.0,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.0,
+    "fee_paid": 12.525,
+    "price_updates": [],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_0200c4ad9c",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688012.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 200.3,
+    "stop_loss_price": 184.276,
+    "take_profit_price": 230.345,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:55.147534",
+    "entry_date": "2026-04-25",
+    "prev_close": 200.3,
+    "board": "star",
+    "current_price": 367.5,
+    "unrealized_pnl_pct": 0.8347478781827258,
+    "status": "TAKE_PROFIT",
+    "exit_price": 367.5,
+    "exit_time": "2026-04-28T11:25:05.467231",
+    "realized_pnl_pct": 0.8347478781827258,
+    "realized_pnl_after_fees": 0.8306453320019969,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.8347478781827258,
+    "fee_paid": 82.174,
+    "price_updates": [
+      {
+        "price": 367.5,
+        "ts": "2026-04-28T11:25:05.467231",
+        "pnl_pct": 0.834748
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_9c4956c1d3",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "002371.SZ",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 200.3,
+    "stop_loss_price": 184.276,
+    "take_profit_price": 230.345,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:55.147534",
+    "entry_date": "2026-04-25",
+    "prev_close": 200.3,
+    "board": "main",
+    "current_price": 522.47,
+    "unrealized_pnl_pct": 1.608437343984024,
+    "status": "TAKE_PROFIT",
+    "exit_price": 522.47,
+    "exit_time": "2026-04-28T11:30:22.397669",
+    "realized_pnl_pct": 1.608437343984024,
+    "realized_pnl_after_fees": 1.6029421567648527,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 1.608437343984024,
+    "fee_paid": 110.0686,
+    "price_updates": [
+      {
+        "price": 522.47,
+        "ts": "2026-04-28T11:30:22.397669",
+        "pnl_pct": 1.608437
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_e5ed7ade57",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688037.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 200.3,
+    "stop_loss_price": 184.276,
+    "take_profit_price": 230.345,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:55.147534",
+    "entry_date": "2026-04-25",
+    "prev_close": 200.3,
+    "board": "star",
+    "current_price": 205.3,
+    "unrealized_pnl_pct": 0.02496255616575137,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.02496255616575137,
+    "fee_paid": 16.024,
+    "price_updates": [
+      {
+        "price": 205.3,
+        "ts": "2026-04-28T11:34:12.623176",
+        "pnl_pct": 0.024963
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_10b7694502",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688012.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 180.0,
+    "stop_loss_price": 165.6,
+    "take_profit_price": 206.99999999999997,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:55.154575",
+    "entry_date": "2026-04-25",
+    "prev_close": 180.0,
+    "board": "star",
+    "current_price": 367.33,
+    "unrealized_pnl_pct": 1.040722222222222,
+    "status": "TAKE_PROFIT",
+    "exit_price": 367.33,
+    "exit_time": "2026-04-28T11:37:15.002602",
+    "realized_pnl_pct": 1.040722222222222,
+    "realized_pnl_after_fees": 1.036248922222222,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 1.040722222222222,
+    "fee_paid": 80.51940000000002,
+    "price_updates": [
+      {
+        "price": 367.33,
+        "ts": "2026-04-28T11:37:15.002602",
+        "pnl_pct": 1.040722
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_5e3b54e1bd",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "002371.SZ",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 180.0,
+    "stop_loss_price": 165.6,
+    "take_profit_price": 206.99999999999997,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:55.155167",
+    "entry_date": "2026-04-25",
+    "prev_close": 180.0,
+    "board": "main",
+    "current_price": 522.47,
+    "unrealized_pnl_pct": 1.9026111111111113,
+    "status": "TAKE_PROFIT",
+    "exit_price": 522.47,
+    "exit_time": "2026-04-28T11:40:00.418104",
+    "realized_pnl_pct": 1.9026111111111113,
+    "realized_pnl_after_fees": 1.896586411111111,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 1.9026111111111113,
+    "fee_paid": 108.44460000000001,
+    "price_updates": [
+      {
+        "price": 522.47,
+        "ts": "2026-04-28T11:40:00.418104",
+        "pnl_pct": 1.902611
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_440b9c950a",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688037.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 180.0,
+    "stop_loss_price": 165.6,
+    "take_profit_price": 206.99999999999997,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:12:55.155167",
+    "entry_date": "2026-04-25",
+    "prev_close": 180.0,
+    "board": "star",
+    "current_price": 180.0,
+    "unrealized_pnl_pct": 0.0,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.0,
+    "fee_paid": 14.399999999999999,
+    "price_updates": [],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_1659ccec28",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688012.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 150.5,
+    "stop_loss_price": 138.46,
+    "take_profit_price": 173.075,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:16:09.490726",
+    "entry_date": "2026-04-25",
+    "prev_close": 150.5,
+    "board": "star",
+    "current_price": 367.33,
+    "unrealized_pnl_pct": 1.4407308970099666,
+    "status": "TAKE_PROFIT",
+    "exit_price": 367.33,
+    "exit_time": "2026-04-28T11:44:42.821835",
+    "realized_pnl_pct": 1.4407308970099666,
+    "realized_pnl_after_fees": 1.4355053554817272,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 1.4407308970099666,
+    "fee_paid": 78.64440000000002,
+    "price_updates": [
+      {
+        "price": 155.0,
+        "ts": "2026-04-25T11:16:09.505726",
+        "pnl_pct": 0.0299
+      },
+      {
+        "price": 367.33,
+        "ts": "2026-04-28T11:44:42.821835",
+        "pnl_pct": 1.440731
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_cb8d3ed378",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "002371.SZ",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 150.5,
+    "stop_loss_price": 138.46,
+    "take_profit_price": 173.075,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:16:09.490726",
+    "entry_date": "2026-04-25",
+    "prev_close": 150.5,
+    "board": "main",
+    "current_price": 206.3,
+    "unrealized_pnl_pct": 0.370764119601329,
+    "status": "TAKE_PROFIT",
+    "exit_price": 206.3,
+    "exit_time": "2026-04-25T11:16:09.505726",
+    "realized_pnl_pct": 0.370764119601329,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.370764119601329,
+    "fee_paid": 12.525,
+    "price_updates": [
+      {
+        "price": 206.3,
+        "ts": "2026-04-25T11:16:09.505726",
+        "pnl_pct": 0.370764
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_907f00784d",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688037.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 150.5,
+    "stop_loss_price": 138.46,
+    "take_profit_price": 173.075,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:16:09.491726",
+    "entry_date": "2026-04-25",
+    "prev_close": 150.5,
+    "board": "star",
+    "current_price": 185.4,
+    "unrealized_pnl_pct": 0.23189368770764124,
+    "status": "TAKE_PROFIT",
+    "exit_price": 185.4,
+    "exit_time": "2026-04-25T11:16:09.505726",
+    "realized_pnl_pct": 0.23189368770764124,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.23189368770764124,
+    "fee_paid": 12.525,
+    "price_updates": [
+      {
+        "price": 185.4,
+        "ts": "2026-04-25T11:16:09.505726",
+        "pnl_pct": 0.231894
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_997be2db7a",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688012.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 200.3,
+    "stop_loss_price": 184.276,
+    "take_profit_price": 230.345,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:16:09.495727",
+    "entry_date": "2026-04-25",
+    "prev_close": 200.3,
+    "board": "star",
+    "current_price": 155.0,
+    "unrealized_pnl_pct": -0.22616075886170747,
+    "status": "STOP_LOSS",
+    "exit_price": 155.0,
+    "exit_time": "2026-04-25T11:16:09.505726",
+    "realized_pnl_pct": -0.22616075886170747,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": -0.22616075886170747,
+    "max_favorable_excursion": 0.0,
+    "fee_paid": 16.024,
+    "price_updates": [
+      {
+        "price": 155.0,
+        "ts": "2026-04-25T11:16:09.505726",
+        "pnl_pct": -0.226161
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_bca42632b9",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "002371.SZ",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 200.3,
+    "stop_loss_price": 184.276,
+    "take_profit_price": 230.345,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:16:09.495727",
+    "entry_date": "2026-04-25",
+    "prev_close": 200.3,
+    "board": "main",
+    "current_price": 206.3,
+    "unrealized_pnl_pct": 0.029955067398901646,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.029955067398901646,
+    "fee_paid": 16.024,
+    "price_updates": [
+      {
+        "price": 206.3,
+        "ts": "2026-04-25T11:16:09.505726",
+        "pnl_pct": 0.029955
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_4dd3bb9d6d",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688037.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 200.3,
+    "stop_loss_price": 184.276,
+    "take_profit_price": 230.345,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:16:09.495727",
+    "entry_date": "2026-04-25",
+    "prev_close": 200.3,
+    "board": "star",
+    "current_price": 185.4,
+    "unrealized_pnl_pct": -0.07438841737393911,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": -0.07438841737393911,
+    "max_favorable_excursion": 0.0,
+    "fee_paid": 16.024,
+    "price_updates": [
+      {
+        "price": 185.4,
+        "ts": "2026-04-25T11:16:09.505726",
+        "pnl_pct": -0.074388
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_b612bdbf44",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688012.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 180.0,
+    "stop_loss_price": 165.6,
+    "take_profit_price": 206.99999999999997,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:16:09.500723",
+    "entry_date": "2026-04-25",
+    "prev_close": 180.0,
+    "board": "star",
+    "current_price": 155.0,
+    "unrealized_pnl_pct": -0.1388888888888889,
+    "status": "STOP_LOSS",
+    "exit_price": 155.0,
+    "exit_time": "2026-04-25T11:16:09.505726",
+    "realized_pnl_pct": -0.1388888888888889,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": -0.1388888888888889,
+    "max_favorable_excursion": 0.0,
+    "fee_paid": 14.399999999999999,
+    "price_updates": [
+      {
+        "price": 155.0,
+        "ts": "2026-04-25T11:16:09.505726",
+        "pnl_pct": -0.138889
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_5b2278c8ea",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "002371.SZ",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 180.0,
+    "stop_loss_price": 165.6,
+    "take_profit_price": 206.99999999999997,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:16:09.500723",
+    "entry_date": "2026-04-25",
+    "prev_close": 180.0,
+    "board": "main",
+    "current_price": 206.3,
+    "unrealized_pnl_pct": 0.14611111111111116,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.14611111111111116,
+    "fee_paid": 14.399999999999999,
+    "price_updates": [
+      {
+        "price": 206.3,
+        "ts": "2026-04-25T11:16:09.505726",
+        "pnl_pct": 0.146111
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_aee7c08078",
+    "plan_id": "plan_test_signal_001",
+    "opportunity_id": "test_signal_001",
+    "signal_ids": [
+      "test_signal_001"
+    ],
+    "instrument": "688037.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 180.0,
+    "stop_loss_price": 165.6,
+    "take_profit_price": 206.99999999999997,
+    "quantity": 100,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.82,
+    "signal_type": "policy_driven",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T11:16:09.500723",
+    "entry_date": "2026-04-25",
+    "prev_close": 180.0,
+    "board": "star",
+    "current_price": 185.4,
+    "unrealized_pnl_pct": 0.03000000000000003,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.03000000000000003,
+    "fee_paid": 14.399999999999999,
+    "price_updates": [
+      {
+        "price": 185.4,
+        "ts": "2026-04-25T11:16:09.505726",
+        "pnl_pct": 0.03
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_65fb4e4541",
+    "plan_id": "plan_7150eab17aeb",
+    "opportunity_id": "demo_opp_510300.SH",
+    "signal_ids": [
+      "demo_signal_510300.SH"
+    ],
+    "instrument": "510300.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 4.782,
+    "stop_loss_price": 4.63854,
+    "take_profit_price": 5.021100000000001,
+    "quantity": 10400,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.0,
+    "signal_type": "",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T12:07:42.717859",
+    "entry_date": "2026-04-25",
+    "prev_close": 4.782,
+    "board": "main",
+    "current_price": 4.782,
+    "unrealized_pnl_pct": 0.0,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": -0.004794499271579287,
+    "max_favorable_excursion": 0.012173900348446322,
+    "fee_paid": 39.78624,
+    "price_updates": [
+      {
+        "price": 4.805747935130724,
+        "ts": "2026-04-25T12:07:42.736007",
+        "pnl_pct": 0.004966
+      },
+      {
+        "price": 4.797372906157456,
+        "ts": "2026-04-25T12:07:44.746304",
+        "pnl_pct": 0.003215
+      },
+      {
+        "price": 4.775004578480655,
+        "ts": "2026-04-25T12:07:46.771374",
+        "pnl_pct": -0.001463
+      },
+      {
+        "price": 4.759072704483308,
+        "ts": "2026-04-25T12:07:48.794708",
+        "pnl_pct": -0.004794
+      },
+      {
+        "price": 4.772257485303479,
+        "ts": "2026-04-25T12:07:50.814344",
+        "pnl_pct": -0.002037
+      },
+      {
+        "price": 4.775755948568541,
+        "ts": "2026-04-25T12:07:52.839882",
+        "pnl_pct": -0.001306
+      },
+      {
+        "price": 4.778872812793112,
+        "ts": "2026-04-25T12:07:54.861115",
+        "pnl_pct": -0.000654
+      },
+      {
+        "price": 4.789209517072423,
+        "ts": "2026-04-25T12:07:56.884363",
+        "pnl_pct": 0.001508
+      },
+      {
+        "price": 4.767127615207511,
+        "ts": "2026-04-25T12:07:58.906483",
+        "pnl_pct": -0.00311
+      },
+      {
+        "price": 4.784048903633357,
+        "ts": "2026-04-25T12:08:00.925263",
+        "pnl_pct": 0.000428
+      },
+      {
+        "price": 4.796964363906929,
+        "ts": "2026-04-25T12:08:02.947112",
+        "pnl_pct": 0.003129
+      },
+      {
+        "price": 4.774674101628023,
+        "ts": "2026-04-25T12:08:04.970352",
+        "pnl_pct": -0.001532
+      },
+      {
+        "price": 4.769440303812977,
+        "ts": "2026-04-25T12:08:06.990737",
+        "pnl_pct": -0.002626
+      },
+      {
+        "price": 4.782199836660091,
+        "ts": "2026-04-25T12:08:09.006631",
+        "pnl_pct": 4.2e-05
+      },
+      {
+        "price": 4.761878898885447,
+        "ts": "2026-04-25T12:08:11.023877",
+        "pnl_pct": -0.004208
+      },
+      {
+        "price": 4.783641172447419,
+        "ts": "2026-04-25T12:08:13.048088",
+        "pnl_pct": 0.000343
+      },
+      {
+        "price": 4.77989679140107,
+        "ts": "2026-04-25T12:08:15.069146",
+        "pnl_pct": -0.00044
+      },
+      {
+        "price": 4.802509940287731,
+        "ts": "2026-04-25T12:08:17.092136",
+        "pnl_pct": 0.004289
+      },
+      {
+        "price": 4.824525385116404,
+        "ts": "2026-04-25T12:08:19.104370",
+        "pnl_pct": 0.008893
+      },
+      {
+        "price": 4.84021559146627,
+        "ts": "2026-04-25T12:08:21.124279",
+        "pnl_pct": 0.012174
+      },
+      {
+        "price": 4.821085343226164,
+        "ts": "2026-04-25T12:08:23.146071",
+        "pnl_pct": 0.008173
+      },
+      {
+        "price": 4.805013262481909,
+        "ts": "2026-04-25T12:08:25.170317",
+        "pnl_pct": 0.004812
+      },
+      {
+        "price": 4.7829840277216755,
+        "ts": "2026-04-25T12:08:27.190929",
+        "pnl_pct": 0.000206
+      },
+      {
+        "price": 4.78770619511721,
+        "ts": "2026-04-25T12:08:29.211332",
+        "pnl_pct": 0.001193
+      },
+      {
+        "price": 4.79728979077388,
+        "ts": "2026-04-25T12:08:31.223868",
+        "pnl_pct": 0.003197
+      },
+      {
+        "price": 4.8002005328626405,
+        "ts": "2026-04-25T12:08:33.244198",
+        "pnl_pct": 0.003806
+      },
+      {
+        "price": 4.788461813798618,
+        "ts": "2026-04-25T12:08:35.266139",
+        "pnl_pct": 0.001351
+      },
+      {
+        "price": 4.7914940569059326,
+        "ts": "2026-04-25T12:08:37.291617",
+        "pnl_pct": 0.001985
+      },
+      {
+        "price": 4.782525150867054,
+        "ts": "2026-04-25T12:08:39.307819",
+        "pnl_pct": 0.00011
+      },
+      {
+        "price": 4.775284964594753,
+        "ts": "2026-04-25T12:08:41.331892",
+        "pnl_pct": -0.001404
+      },
+      {
+        "price": 4.782,
+        "ts": "2026-04-27T10:20:01.477032",
+        "pnl_pct": 0.0
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_8421d5eac1",
+    "plan_id": "plan_3eebfbeb1e01",
+    "opportunity_id": "demo_opp_159915.SZ",
+    "signal_ids": [
+      "demo_signal_159915.SZ"
+    ],
+    "instrument": "159915.SZ",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 3.674,
+    "stop_loss_price": 3.56378,
+    "take_profit_price": 3.8577,
+    "quantity": 13600,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.0,
+    "signal_type": "",
+    "time_horizon": "",
+    "entry_time": "2026-04-25T12:07:42.730125",
+    "entry_date": "2026-04-25",
+    "prev_close": 3.674,
+    "board": "main",
+    "current_price": 3.7386636617428115,
+    "unrealized_pnl_pct": 0.01760034342482623,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": -0.009178663000612885,
+    "max_favorable_excursion": 0.01760034342482623,
+    "fee_paid": 39.97312,
+    "price_updates": [
+      {
+        "price": 3.6577190806365447,
+        "ts": "2026-04-25T12:07:42.739963",
+        "pnl_pct": -0.004431
+      },
+      {
+        "price": 3.640277592135748,
+        "ts": "2026-04-25T12:07:44.753518",
+        "pnl_pct": -0.009179
+      },
+      {
+        "price": 3.641647536786588,
+        "ts": "2026-04-25T12:07:46.776302",
+        "pnl_pct": -0.008806
+      },
+      {
+        "price": 3.6595553292102387,
+        "ts": "2026-04-25T12:07:48.800547",
+        "pnl_pct": -0.003932
+      },
+      {
+        "price": 3.6682148348972317,
+        "ts": "2026-04-25T12:07:50.826908",
+        "pnl_pct": -0.001575
+      },
+      {
+        "price": 3.6785237822267502,
+        "ts": "2026-04-25T12:07:52.844829",
+        "pnl_pct": 0.001231
+      },
+      {
+        "price": 3.668835641150742,
+        "ts": "2026-04-25T12:07:54.865040",
+        "pnl_pct": -0.001406
+      },
+      {
+        "price": 3.652506566766025,
+        "ts": "2026-04-25T12:07:56.889863",
+        "pnl_pct": -0.00585
+      },
+      {
+        "price": 3.6610136173879875,
+        "ts": "2026-04-25T12:07:58.911196",
+        "pnl_pct": -0.003535
+      },
+      {
+        "price": 3.6648863504831874,
+        "ts": "2026-04-25T12:08:00.929956",
+        "pnl_pct": -0.002481
+      },
+      {
+        "price": 3.6640467595168427,
+        "ts": "2026-04-25T12:08:02.952060",
+        "pnl_pct": -0.002709
+      },
+      {
+        "price": 3.670471002977011,
+        "ts": "2026-04-25T12:08:04.975271",
+        "pnl_pct": -0.000961
+      },
+      {
+        "price": 3.6666693321935457,
+        "ts": "2026-04-25T12:08:06.996490",
+        "pnl_pct": -0.001995
+      },
+      {
+        "price": 3.663125041090083,
+        "ts": "2026-04-25T12:08:09.010558",
+        "pnl_pct": -0.00296
+      },
+      {
+        "price": 3.6778491238155167,
+        "ts": "2026-04-25T12:08:11.027723",
+        "pnl_pct": 0.001048
+      },
+      {
+        "price": 3.6757831074247664,
+        "ts": "2026-04-25T12:08:13.053607",
+        "pnl_pct": 0.000485
+      },
+      {
+        "price": 3.681332171365321,
+        "ts": "2026-04-25T12:08:15.074042",
+        "pnl_pct": 0.001996
+      },
+      {
+        "price": 3.6922273186142918,
+        "ts": "2026-04-25T12:08:17.096679",
+        "pnl_pct": 0.004961
+      },
+      {
+        "price": 3.6877019392809087,
+        "ts": "2026-04-25T12:08:19.110576",
+        "pnl_pct": 0.003729
+      },
+      {
+        "price": 3.6998413842589426,
+        "ts": "2026-04-25T12:08:21.128991",
+        "pnl_pct": 0.007034
+      },
+      {
+        "price": 3.710437305639685,
+        "ts": "2026-04-25T12:08:23.151966",
+        "pnl_pct": 0.009918
+      },
+      {
+        "price": 3.7058290718604256,
+        "ts": "2026-04-25T12:08:25.175205",
+        "pnl_pct": 0.008663
+      },
+      {
+        "price": 3.7024910884832263,
+        "ts": "2026-04-25T12:08:27.195520",
+        "pnl_pct": 0.007755
+      },
+      {
+        "price": 3.692992592701808,
+        "ts": "2026-04-25T12:08:29.216161",
+        "pnl_pct": 0.005169
+      },
+      {
+        "price": 3.698503801663985,
+        "ts": "2026-04-25T12:08:31.228837",
+        "pnl_pct": 0.00667
+      },
+      {
+        "price": 3.708233128139557,
+        "ts": "2026-04-25T12:08:33.249046",
+        "pnl_pct": 0.009318
+      },
+      {
+        "price": 3.7074002456784014,
+        "ts": "2026-04-25T12:08:35.271528",
+        "pnl_pct": 0.009091
+      },
+      {
+        "price": 3.716974401337933,
+        "ts": "2026-04-25T12:08:37.297557",
+        "pnl_pct": 0.011697
+      },
+      {
+        "price": 3.728007492800841,
+        "ts": "2026-04-25T12:08:39.312752",
+        "pnl_pct": 0.0147
+      },
+      {
+        "price": 3.7386636617428115,
+        "ts": "2026-04-25T12:08:41.337781",
+        "pnl_pct": 0.0176
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_a33b02925c",
+    "plan_id": "plan_4569724dac4c",
+    "opportunity_id": "demo_opp_510300.SH",
+    "signal_ids": [
+      "demo_signal_510300.SH"
+    ],
+    "instrument": "510300.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 4.782,
+    "stop_loss_price": 4.63854,
+    "take_profit_price": 5.021100000000001,
+    "quantity": 10400,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.0,
+    "signal_type": "",
+    "time_horizon": "",
+    "entry_time": "2026-04-27T09:52:53.611659",
+    "entry_date": "2026-04-27",
+    "prev_close": 4.782,
+    "board": "main",
+    "current_price": 4.782,
+    "unrealized_pnl_pct": 0.0,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": -0.004038470654068342,
+    "max_favorable_excursion": 0.029498253995184645,
+    "fee_paid": 39.78624,
+    "price_updates": [
+      {
+        "price": 4.766368888544859,
+        "ts": "2026-04-27T09:52:53.624652",
+        "pnl_pct": -0.003269
+      },
+      {
+        "price": 4.7806149121007495,
+        "ts": "2026-04-27T09:52:55.639216",
+        "pnl_pct": -0.00029
+      },
+      {
+        "price": 4.793176808715445,
+        "ts": "2026-04-27T09:52:57.655567",
+        "pnl_pct": 0.002337
+      },
+      {
+        "price": 4.785828145492158,
+        "ts": "2026-04-27T09:52:59.679757",
+        "pnl_pct": 0.000801
+      },
+      {
+        "price": 4.795244010455374,
+        "ts": "2026-04-27T09:53:01.701907",
+        "pnl_pct": 0.00277
+      },
+      {
+        "price": 4.788835106283121,
+        "ts": "2026-04-27T09:53:03.720251",
+        "pnl_pct": 0.001429
+      },
+      {
+        "price": 4.804017184673401,
+        "ts": "2026-04-27T09:53:05.734346",
+        "pnl_pct": 0.004604
+      },
+      {
+        "price": 4.788027080572275,
+        "ts": "2026-04-27T09:53:07.758716",
+        "pnl_pct": 0.00126
+      },
+      {
+        "price": 4.7775475479177665,
+        "ts": "2026-04-27T09:53:09.772875",
+        "pnl_pct": -0.000931
+      },
+      {
+        "price": 4.771693957658354,
+        "ts": "2026-04-27T09:53:11.799103",
+        "pnl_pct": -0.002155
+      },
+      {
+        "price": 4.762688033332245,
+        "ts": "2026-04-27T09:53:13.826730",
+        "pnl_pct": -0.004038
+      },
+      {
+        "price": 4.778556140985184,
+        "ts": "2026-04-27T09:53:15.854020",
+        "pnl_pct": -0.00072
+      },
+      {
+        "price": 4.797883829624129,
+        "ts": "2026-04-27T09:53:17.871347",
+        "pnl_pct": 0.003322
+      },
+      {
+        "price": 4.808120819831377,
+        "ts": "2026-04-27T09:53:19.895388",
+        "pnl_pct": 0.005462
+      },
+      {
+        "price": 4.830137946224294,
+        "ts": "2026-04-27T09:53:21.918273",
+        "pnl_pct": 0.010066
+      },
+      {
+        "price": 4.815783623030315,
+        "ts": "2026-04-27T09:53:23.942254",
+        "pnl_pct": 0.007065
+      },
+      {
+        "price": 4.837402379338751,
+        "ts": "2026-04-27T09:53:25.962599",
+        "pnl_pct": 0.011586
+      },
+      {
+        "price": 4.840502228430935,
+        "ts": "2026-04-27T09:53:27.985751",
+        "pnl_pct": 0.012234
+      },
+      {
+        "price": 4.847525759750827,
+        "ts": "2026-04-27T09:53:30.003586",
+        "pnl_pct": 0.013703
+      },
+      {
+        "price": 4.868965304796095,
+        "ts": "2026-04-27T09:53:32.032878",
+        "pnl_pct": 0.018186
+      },
+      {
+        "price": 4.872003102724514,
+        "ts": "2026-04-27T09:53:34.058060",
+        "pnl_pct": 0.018821
+      },
+      {
+        "price": 4.895869066798493,
+        "ts": "2026-04-27T09:53:36.077556",
+        "pnl_pct": 0.023812
+      },
+      {
+        "price": 4.903971881558325,
+        "ts": "2026-04-27T09:53:38.102006",
+        "pnl_pct": 0.025506
+      },
+      {
+        "price": 4.887224217191932,
+        "ts": "2026-04-27T09:53:40.128089",
+        "pnl_pct": 0.022004
+      },
+      {
+        "price": 4.910265373382742,
+        "ts": "2026-04-27T09:53:42.150672",
+        "pnl_pct": 0.026823
+      },
+      {
+        "price": 4.892635068072881,
+        "ts": "2026-04-27T09:53:44.176717",
+        "pnl_pct": 0.023136
+      },
+      {
+        "price": 4.912693525487355,
+        "ts": "2026-04-27T09:53:46.197754",
+        "pnl_pct": 0.02733
+      },
+      {
+        "price": 4.923060650604973,
+        "ts": "2026-04-27T09:53:48.217144",
+        "pnl_pct": 0.029498
+      },
+      {
+        "price": 4.902618556165978,
+        "ts": "2026-04-27T09:53:50.230516",
+        "pnl_pct": 0.025223
+      },
+      {
+        "price": 4.887945350688994,
+        "ts": "2026-04-27T09:53:52.250978",
+        "pnl_pct": 0.022155
+      },
+      {
+        "price": 4.782,
+        "ts": "2026-04-27T10:20:01.483003",
+        "pnl_pct": 0.0
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_55a2d626c2",
+    "plan_id": "plan_19678158621a",
+    "opportunity_id": "demo_opp_159915.SZ",
+    "signal_ids": [
+      "demo_signal_159915.SZ"
+    ],
+    "instrument": "159915.SZ",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 3.674,
+    "stop_loss_price": 3.56378,
+    "take_profit_price": 3.8577,
+    "quantity": 13600,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.0,
+    "signal_type": "",
+    "time_horizon": "",
+    "entry_time": "2026-04-27T09:52:53.618731",
+    "entry_date": "2026-04-27",
+    "prev_close": 3.674,
+    "board": "main",
+    "current_price": 3.6741352414610042,
+    "unrealized_pnl_pct": 3.6810413991371385e-05,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": -0.010245475583473345,
+    "max_favorable_excursion": 0.0009601324054410639,
+    "fee_paid": 39.97312,
+    "price_updates": [
+      {
+        "price": 3.6633964070187153,
+        "ts": "2026-04-27T09:52:53.630653",
+        "pnl_pct": -0.002886
+      },
+      {
+        "price": 3.649774331443501,
+        "ts": "2026-04-27T09:52:55.646263",
+        "pnl_pct": -0.006594
+      },
+      {
+        "price": 3.659357528843691,
+        "ts": "2026-04-27T09:52:57.664540",
+        "pnl_pct": -0.003985
+      },
+      {
+        "price": 3.6538397460412124,
+        "ts": "2026-04-27T09:52:59.685758",
+        "pnl_pct": -0.005487
+      },
+      {
+        "price": 3.644392066516274,
+        "ts": "2026-04-27T09:53:01.708892",
+        "pnl_pct": -0.008059
+      },
+      {
+        "price": 3.6548179896996933,
+        "ts": "2026-04-27T09:53:03.728209",
+        "pnl_pct": -0.005221
+      },
+      {
+        "price": 3.651175731078446,
+        "ts": "2026-04-27T09:53:05.741347",
+        "pnl_pct": -0.006212
+      },
+      {
+        "price": 3.636358122706319,
+        "ts": "2026-04-27T09:53:07.763667",
+        "pnl_pct": -0.010245
+      },
+      {
+        "price": 3.646833082211722,
+        "ts": "2026-04-27T09:53:09.782877",
+        "pnl_pct": -0.007394
+      },
+      {
+        "price": 3.661385886732308,
+        "ts": "2026-04-27T09:53:11.808162",
+        "pnl_pct": -0.003433
+      },
+      {
+        "price": 3.677425570769286,
+        "ts": "2026-04-27T09:53:13.842727",
+        "pnl_pct": 0.000932
+      },
+      {
+        "price": 3.671019891920678,
+        "ts": "2026-04-27T09:53:15.859065",
+        "pnl_pct": -0.000811
+      },
+      {
+        "price": 3.6600167059066555,
+        "ts": "2026-04-27T09:53:17.878348",
+        "pnl_pct": -0.003806
+      },
+      {
+        "price": 3.6766468086213093,
+        "ts": "2026-04-27T09:53:19.904638",
+        "pnl_pct": 0.00072
+      },
+      {
+        "price": 3.6684874366423754,
+        "ts": "2026-04-27T09:53:21.925308",
+        "pnl_pct": -0.0015
+      },
+      {
+        "price": 3.665717295960212,
+        "ts": "2026-04-27T09:53:23.950229",
+        "pnl_pct": -0.002254
+      },
+      {
+        "price": 3.6601897060049344,
+        "ts": "2026-04-27T09:53:25.971595",
+        "pnl_pct": -0.003759
+      },
+      {
+        "price": 3.6775275264575904,
+        "ts": "2026-04-27T09:53:27.990753",
+        "pnl_pct": 0.00096
+      },
+      {
+        "price": 3.6628877552923687,
+        "ts": "2026-04-27T09:53:30.013098",
+        "pnl_pct": -0.003025
+      },
+      {
+        "price": 3.671774662160014,
+        "ts": "2026-04-27T09:53:32.040918",
+        "pnl_pct": -0.000606
+      },
+      {
+        "price": 3.667147410978479,
+        "ts": "2026-04-27T09:53:34.063059",
+        "pnl_pct": -0.001865
+      },
+      {
+        "price": 3.6552529936728204,
+        "ts": "2026-04-27T09:53:36.082599",
+        "pnl_pct": -0.005103
+      },
+      {
+        "price": 3.666830270169468,
+        "ts": "2026-04-27T09:53:38.114639",
+        "pnl_pct": -0.001951
+      },
+      {
+        "price": 3.6716490937185604,
+        "ts": "2026-04-27T09:53:40.134101",
+        "pnl_pct": -0.00064
+      },
+      {
+        "price": 3.670405274155524,
+        "ts": "2026-04-27T09:53:42.157616",
+        "pnl_pct": -0.000978
+      },
+      {
+        "price": 3.6536145554899653,
+        "ts": "2026-04-27T09:53:44.181713",
+        "pnl_pct": -0.005549
+      },
+      {
+        "price": 3.653090319269527,
+        "ts": "2026-04-27T09:53:46.203586",
+        "pnl_pct": -0.005691
+      },
+      {
+        "price": 3.664429564679709,
+        "ts": "2026-04-27T09:53:48.222146",
+        "pnl_pct": -0.002605
+      },
+      {
+        "price": 3.6587504742739347,
+        "ts": "2026-04-27T09:53:50.237463",
+        "pnl_pct": -0.004151
+      },
+      {
+        "price": 3.6741352414610042,
+        "ts": "2026-04-27T09:53:52.255861",
+        "pnl_pct": 3.7e-05
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_06e4b93f82",
+    "plan_id": "plan_0120ec47c56b",
+    "opportunity_id": "test_000001.SZ",
+    "signal_ids": [
+      "test_000001.SZ"
+    ],
+    "instrument": "000001.SZ",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 11.0,
+    "stop_loss_price": 10.45,
+    "take_profit_price": 12.100000000000001,
+    "quantity": 4500,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.0,
+    "signal_type": "",
+    "time_horizon": "",
+    "entry_time": "2026-04-27T10:19:22.220215",
+    "entry_date": "2026-04-27",
+    "prev_close": 11.0,
+    "board": "main",
+    "current_price": 11.39,
+    "unrealized_pnl_pct": 0.03545454545454551,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.03545454545454551,
+    "fee_paid": 39.599999999999994,
+    "price_updates": [
+      {
+        "price": 11.0,
+        "ts": "2026-04-27T10:20:01.463046",
+        "pnl_pct": 0.0
+      },
+      {
+        "price": 11.39,
+        "ts": "2026-04-28T12:10:49.099928",
+        "pnl_pct": 0.035455
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_76cbee1fab",
+    "plan_id": "plan_a9d01682f84b",
+    "opportunity_id": "test_510300.SH",
+    "signal_ids": [
+      "test_510300.SH"
+    ],
+    "instrument": "510300.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 4.782,
+    "stop_loss_price": 4.5428999999999995,
+    "take_profit_price": 5.2602,
+    "quantity": 10400,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.0,
+    "signal_type": "",
+    "time_horizon": "",
+    "entry_time": "2026-04-27T10:19:22.226215",
+    "entry_date": "2026-04-27",
+    "prev_close": 4.782,
+    "board": "main",
+    "current_price": 4.782,
+    "unrealized_pnl_pct": 0.0,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.0,
+    "fee_paid": 39.78624,
+    "price_updates": [
+      {
+        "price": 4.782,
+        "ts": "2026-04-27T10:20:01.489033",
+        "pnl_pct": 0.0
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_3550d635f6",
+    "plan_id": "plan_777e7867c161",
+    "opportunity_id": "test_000001.SZ",
+    "signal_ids": [
+      "test_000001.SZ"
+    ],
+    "instrument": "000001.SZ",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 11.0,
+    "stop_loss_price": 10.45,
+    "take_profit_price": 12.100000000000001,
+    "quantity": 4500,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.0,
+    "signal_type": "",
+    "time_horizon": "",
+    "entry_time": "2026-04-27T10:20:01.452007",
+    "entry_date": "2026-04-27",
+    "prev_close": 11.0,
+    "board": "main",
+    "current_price": 11.0,
+    "unrealized_pnl_pct": 0.0,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.0,
+    "fee_paid": 39.599999999999994,
+    "price_updates": [
+      {
+        "price": 11.0,
+        "ts": "2026-04-27T10:20:01.471029",
+        "pnl_pct": 0.0
+      }
+    ],
+    "orders": []
+  },
+  {
+    "paper_position_id": "pp_b66be03d7f",
+    "plan_id": "plan_ce963283efdb",
+    "opportunity_id": "test_510300.SH",
+    "signal_ids": [
+      "test_510300.SH"
+    ],
+    "instrument": "510300.SH",
+    "market": "A_SHARE",
+    "direction": "BULLISH",
+    "entry_price": 4.782,
+    "stop_loss_price": 4.5428999999999995,
+    "take_profit_price": 5.2602,
+    "quantity": 10400,
+    "signal_intensity": 0.0,
+    "signal_confidence": 0.0,
+    "signal_type": "",
+    "time_horizon": "",
+    "entry_time": "2026-04-27T10:20:01.457029",
+    "entry_date": "2026-04-27",
+    "prev_close": 4.782,
+    "board": "main",
+    "current_price": 4.782,
+    "unrealized_pnl_pct": 0.0,
+    "status": "OPEN",
+    "exit_price": null,
+    "exit_time": null,
+    "realized_pnl_pct": null,
+    "realized_pnl_after_fees": null,
+    "max_adverse_excursion": 0.0,
+    "max_favorable_excursion": 0.0,
+    "fee_paid": 39.78624,
+    "price_updates": [
+      {
+        "price": 4.782,
+        "ts": "2026-04-27T10:20:01.495036",
+        "pnl_pct": 0.0
+      }
+    ],
+    "orders": []
+  }
+]

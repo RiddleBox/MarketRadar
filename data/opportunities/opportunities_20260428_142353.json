@@ -1,0 +1,317 @@
+[
+  {
+    "opportunity": {
+      "opportunity_id": "retro_000651.SZ_2026-04-28",
+      "opportunity_title": "[补牢] 000651.SZ 看多 | 原因未明 | middle阶段",
+      "opportunity_thesis": "异动补牢：000651.SZ +2.4% (daily_surge)，原因:原因未明，趋势:middle，剩余空间1.0%，置信度80%",
+      "target_markets": [
+        "A_SHARE"
+      ],
+      "target_instruments": [
+        "000651.SZ"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-04-28 00:00:00",
+        "end": "2026-05-05 00:00:00",
+        "confidence_level": 0.5
+      },
+      "why_now": "价格异动验证（2.6σ，5.2×ATR，量比2.4），溯源找到5条相关信号",
+      "related_signals": [
+        "sig_283b75e2949e",
+        "sig_b205b0aca18e",
+        "sig_bb3267098d7b",
+        "sig_f774bfcc29c6",
+        "sig_7c6be9afd60d"
+      ],
+      "inferred_events": [],
+      "supporting_cases": [],
+      "supporting_evidence": [
+        "ATR倍数: 5.18",
+        "σ倍数: 2.64"
+      ],
+      "counter_evidence": [],
+      "key_assumptions": [
+        "原因(unexplained)持续性: uncertain"
+      ],
+      "uncertainty_map": [
+        "原因不确定性: 10%"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 5,
+        "timeliness": 6,
+        "market_confirmation": 2,
+        "tradability": 8,
+        "risk_clarity": 7,
+        "consensus_gap": 5,
+        "signal_consistency": 8,
+        "overall_score": 5.0,
+        "confidence_score": 0.8,
+        "execution_readiness": 0.8
+      },
+      "risk_reward_profile": "止损5.0%/目标1.0% (middle阶段补牢)",
+      "next_validation_questions": [
+        "000651.SZ趋势能否延续？",
+        "原因(unexplained)是否有新证据？"
+      ],
+      "invalidation_conditions": [
+        "原因反转（unexplained证伪）",
+        "价格跌破基线价37.51"
+      ],
+      "must_watch_indicators": [
+        "000651.SZ",
+        "恐贪指数"
+      ],
+      "kill_switch_signals": [],
+      "warnings": null,
+      "judgment_version": "v1",
+      "created_at": "2026-04-28 14:23:43.389157",
+      "batch_id": "retro_2026-04-28",
+      "origin": "opportunity_catcher",
+      "entry_constraint": null
+    },
+    "anomaly": {
+      "anomaly_id": "ano_208ebaa18643",
+      "instrument": "000651.SZ",
+      "market": "A_SHARE",
+      "anomaly_type": "daily_surge",
+      "anomaly_date": "2026-04-28",
+      "price_change_pct": 2.43,
+      "atr_multiple": 5.18,
+      "sigma_multiple": 2.64,
+      "volume_ratio": 2.35,
+      "baseline_price": 37.51,
+      "anomaly_price": 38.42,
+      "n_days": 1,
+      "is_limit_up": false,
+      "is_limit_down": false,
+      "detected_at": "2026-04-28 14:23:40.084856"
+    },
+    "causation": {
+      "anomaly": {
+        "anomaly_id": "ano_208ebaa18643",
+        "instrument": "000651.SZ",
+        "market": "A_SHARE",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-04-28",
+        "price_change_pct": 2.43,
+        "atr_multiple": 5.18,
+        "sigma_multiple": 2.64,
+        "volume_ratio": 2.35,
+        "baseline_price": 37.51,
+        "anomaly_price": 38.42,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-04-28 14:23:40.084856"
+      },
+      "causes": [
+        {
+          "signal_id": "sig_283b75e2949e",
+          "signal_type": "event_driven",
+          "signal_label": "解密主力资金出逃股 连续5日净流出646股",
+          "description": "10.26 8.29 -17.61 600362 江西铜业 6 9.98 10.48 -5.15 603306 华懋科技 5 9.97 11.92 -10.83 300115 长盈精密 8 9.01 7.24 -3.91 603687 大胜达 7 8.79 5.90 -7.43 000651",
+          "evidence_text": "10.26 8.29 -17.61 600362 江西铜业 6 9.98 10.48 -5.15 603306 华懋科技 5 9.97 11.92 -10.83 300115 长盈精密 8 9.01 7.24 -3.91 603687 大胜达 7 8.79 5.90 -7.43 000651",
+          "affected_markets": [
+            "A_SHARE"
+          ],
+          "affected_instruments": [
+            "000651.SZ"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-04-28 14:23:43.388162",
+          "collected_time": "2026-04-28 14:23:43.388162",
+          "time_horizon": "SHORT",
+          "intensity_score": 6,
+          "confidence_score": 5,
+          "timeliness_score": 8,
+          "source_type": "news",
+          "source_ref": "http://finance.eastmoney.com/a/202604243718083653.html",
+          "logic_frame": {
+            "what_changed": "解密主力资金出逃股 连续5日净流出646股",
+            "change_direction": "BULLISH",
+            "affects": [
+              "000651.SZ"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_b205b0aca18e",
+          "signal_type": "event_driven",
+          "signal_label": "解密主力资金出逃股 连续5日净流出643股",
+          "description": "9.52 4.60 -4.23 600893 航发动力 11 9.40 4.87 -0.06 600362 江西铜业 5 9.32 11.44 -5.42 002083 孚日股份 7 9.28 13.55 -23.88 300115 长盈精密 7 8.49 7.56 -2.84 000651",
+          "evidence_text": "9.52 4.60 -4.23 600893 航发动力 11 9.40 4.87 -0.06 600362 江西铜业 5 9.32 11.44 -5.42 002083 孚日股份 7 9.28 13.55 -23.88 300115 长盈精密 7 8.49 7.56 -2.84 000651",
+          "affected_markets": [
+            "A_SHARE"
+          ],
+          "affected_instruments": [
+            "000651.SZ"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-04-28 14:23:43.388162",
+          "collected_time": "2026-04-28 14:23:43.388162",
+          "time_horizon": "SHORT",
+          "intensity_score": 6,
+          "confidence_score": 5,
+          "timeliness_score": 8,
+          "source_type": "news",
+          "source_ref": "http://finance.eastmoney.com/a/202604233716059125.html",
+          "logic_frame": {
+            "what_changed": "解密主力资金出逃股 连续5日净流出643股",
+            "change_direction": "BULLISH",
+            "affects": [
+              "000651.SZ"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_bb3267098d7b",
+          "signal_type": "event_driven",
+          "signal_label": "“真铜实料” 之争再有新剧情！海信空调回应：三两铜多卖500元的时代已终结",
+          "description": "针对格力电器（SZ000651，股价36.94元，市值2069亿元）4月20日午间就“铝线电机空调”事件作出的回应，当日下午，在对《每日经济新闻》记者的文字回复中，海信空气事业部品牌总监杨祥玺表示：一台空调靠多三两铜就多卖500元的时代一去不复返了。 这场行业风波始于一周前。",
+          "evidence_text": "针对格力电器（SZ000651，股价36.94元，市值2069亿元）4月20日午间就“铝线电机空调”事件作出的回应，当日下午，在对《每日经济新闻》记者的文字回复中，海信空气事业部品牌总监杨祥玺表示：一台空调靠多三两铜就多卖500元的时代一去不复返了。 这场行业风波始于一周前。",
+          "affected_markets": [
+            "A_SHARE"
+          ],
+          "affected_instruments": [
+            "000651.SZ"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-04-28 14:23:43.388162",
+          "collected_time": "2026-04-28 14:23:43.388162",
+          "time_horizon": "SHORT",
+          "intensity_score": 6,
+          "confidence_score": 5,
+          "timeliness_score": 8,
+          "source_type": "news",
+          "source_ref": "http://finance.eastmoney.com/a/202604213711222965.html",
+          "logic_frame": {
+            "what_changed": "“真铜实料” 之争再有新剧情！海信空调回应：三两铜多卖500元的时代已终结",
+            "change_direction": "BULLISH",
+            "affects": [
+              "000651.SZ"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_f774bfcc29c6",
+          "signal_type": "event_driven",
+          "signal_label": "解密主力资金出逃股 连续5日净流出507股",
+          "description": "9.39 8.42 -2.32 000858 五粮液 5 9.22 14.47 -2.81 002083 孚日股份 6 8.84 14.02 -21.82 300468 四方精创 8 8.58 10.55 -9.37 600893 航发动力 10 8.43 5.33 -3.69 000651",
+          "evidence_text": "9.39 8.42 -2.32 000858 五粮液 5 9.22 14.47 -2.81 002083 孚日股份 6 8.84 14.02 -21.82 300468 四方精创 8 8.58 10.55 -9.37 600893 航发动力 10 8.43 5.33 -3.69 000651",
+          "affected_markets": [
+            "A_SHARE"
+          ],
+          "affected_instruments": [
+            "000651.SZ"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-04-28 14:23:43.388162",
+          "collected_time": "2026-04-28 14:23:43.388162",
+          "time_horizon": "SHORT",
+          "intensity_score": 6,
+          "confidence_score": 5,
+          "timeliness_score": 8,
+          "source_type": "news",
+          "source_ref": "http://finance.eastmoney.com/a/202604223714153160.html",
+          "logic_frame": {
+            "what_changed": "解密主力资金出逃股 连续5日净流出507股",
+            "change_direction": "BULLISH",
+            "affects": [
+              "000651.SZ"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_7c6be9afd60d",
+          "signal_type": "event_driven",
+          "signal_label": "解密主力资金出逃股 连续5日净流出464股",
+          "description": "9 7.70 5.31 -3.33 601399 国机重装 7 7.10 20.94 -8.70 688110 东芯股份 5 6.51 8.25 -2.29 300505 川金诺 16 6.50 7.04 -17.86 002714 牧原股份 5 6.48 7.48 -0.66 000651",
+          "evidence_text": "9 7.70 5.31 -3.33 601399 国机重装 7 7.10 20.94 -8.70 688110 东芯股份 5 6.51 8.25 -2.29 300505 川金诺 16 6.50 7.04 -17.86 002714 牧原股份 5 6.48 7.48 -0.66 000651",
+          "affected_markets": [
+            "A_SHARE"
+          ],
+          "affected_instruments": [
+            "000651.SZ"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-04-28 14:23:43.388162",
+          "collected_time": "2026-04-28 14:23:43.388162",
+          "time_horizon": "SHORT",
+          "intensity_score": 6,
+          "confidence_score": 5,
+          "timeliness_score": 8,
+          "source_type": "news",
+          "source_ref": "http://finance.eastmoney.com/a/202604213712345457.html",
+          "logic_frame": {
+            "what_changed": "解密主力资金出逃股 连续5日净流出464股",
+            "change_direction": "BULLISH",
+            "affects": [
+              "000651.SZ"
+            ]
+          },
+          "batch_id": null
+        }
+      ],
+      "unexplained_ratio": 0.1,
+      "confidence": 0.8,
+      "causation_type": "unexplained"
+    },
+    "trend": {
+      "anomaly": {
+        "anomaly_id": "ano_208ebaa18643",
+        "instrument": "000651.SZ",
+        "market": "A_SHARE",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-04-28",
+        "price_change_pct": 2.43,
+        "atr_multiple": 5.18,
+        "sigma_multiple": 2.64,
+        "volume_ratio": 2.35,
+        "baseline_price": 37.51,
+        "anomaly_price": 38.42,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-04-28 14:23:40.084856"
+      },
+      "stage": "middle",
+      "remaining_upside_pct": 1.0,
+      "catalyst_persistence": "uncertain",
+      "similar_cases": [],
+      "reasoning": "000651.SZ 1日涨幅+2.4%（daily_surge）\n趋势阶段判断: 趋势中期（谨慎）\n原因类型: unexplained，持续性: 不确定\n溯源置信度: 80%，无法解释比例: 10%\n估算剩余空间: 1.0%\n主要原因: event_driven: 解密主力资金出逃股 连续5日净流出646; event_driven: 解密主力资金出逃股 连续5日净流出643\n建议: 紧止损谨慎参与"
+    },
+    "origin": "opportunity_catcher",
+    "stop_loss_candidates": [
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 5.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 8.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "atr",
+        "stop_loss_value": 2.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,668 @@
+[
+  {
+    "id": "dec_4fa72fdb0d",
+    "timestamp": "2026-04-28T17:35:17.759487",
+    "instrument": "000651.SZ",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "daily_surge",
+    "anomaly_price_change_pct": 2.0,
+    "anomaly_atr_multiple": 2.1,
+    "anomaly_sigma_multiple": 1.8,
+    "anomaly_volume_ratio": 1.5,
+    "anomaly_is_limit_up": false,
+    "causation_type": "policy",
+    "causation_has_cause": true,
+    "causation_signal_count": 3,
+    "causation_signals": [
+      {
+        "signal_id": "s1",
+        "label": "Policy cut",
+        "type": "policy"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "id": "opp_001"
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "POSITION",
+    "m3_direction": "BULLISH",
+    "m3_score": 7.5,
+    "m3_fallback": false,
+    "trend_stage": "middle",
+    "trend_remaining_upside_pct": 3.2,
+    "trend_catalyst_persistence": "continuing",
+    "trend_skip_reason": "",
+    "action_taken": "OPENED",
+    "action_plan_id": "plan_abc",
+    "stop_loss_pct": 5.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "OPENED",
+    "reason": "trend=middle upside=3.2%",
+    "full_chain": [
+      "1.ANOMALY: 000651.SZ +2.0% type=daily_surge sigma=1.8 atr=2.1 vol=1.5",
+      "2.CAUSATION: has_cause type=policy signals=3 labels=['?']",
+      "3.M3: opportunity found priority=POSITION dir=BULLISH score=7.5",
+      "4.TREND: middle upside=3.2% persistence=continuing",
+      "5.ACTION: OPENED reason=trend=middle upside=3.2% plan=plan_abc SL=5.0% TP=0.0%"
+    ]
+  },
+  {
+    "id": "dec_7587a30ea4",
+    "timestamp": "2026-04-28T23:32:19.816457",
+    "instrument": "000651.SZ",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "daily_surge",
+    "anomaly_price_change_pct": 2.48,
+    "anomaly_atr_multiple": 5.29,
+    "anomaly_sigma_multiple": 2.69,
+    "anomaly_volume_ratio": 2.91,
+    "anomaly_is_limit_up": false,
+    "causation_type": "earnings",
+    "causation_has_cause": true,
+    "causation_signal_count": 5,
+    "causation_signals": [
+      {
+        "signal_id": "sig_77e33acaca10",
+        "label": "保利发展成功发行85亿元定向可转债",
+        "type": "event_driven"
+      },
+      {
+        "signal_id": "sig_54824aaef7dc",
+        "label": "保利发展2025年销售签约金额2530亿元",
+        "type": "event_driven"
+      },
+      {
+        "signal_id": "sig_b146ce2efab7",
+        "label": "保利发展经营现金流大幅增长",
+        "type": "event_driven"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_4c0c0e7a",
+      "opportunity_title": "保利发展现金流改善",
+      "opportunity_thesis": "保利发展在行业下行周期中展现出强大的经营韧性：融资成本创历史新低、经营现金流暴增423%、销售回笼率连续3年超100%，这些信号表明公司基本面正在发生结构性改善。一季度净利润大幅下滑是行业整体承压的滞后反映，但现金流和融资能力的改善才是领先指标，市场可能过度关注短期利润下滑而忽视了公司长期竞争力的提升。当前时点，保利发展作为行业龙头的融资优势和现金流优势正在扩大，有望在行业出清后获得更大市场份额。",
+      "target_markets": [
+        "A_SHARE"
+      ],
+      "target_instruments": [
+        "保利发展(600048.SH)"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-04-29 00:00:00",
+        "end": "2026-07-28 00:00:00",
+        "confidence_level": 0.65
+      },
+      "why_now": "一季报净利润大幅下滑的利空已释放，市场情绪处于低点；同时现金流暴增和低成本融资等利好信号集中出现，形成预期差。央行降准概率高达85%，有望进一步改善房地产行业融资环境，保利发展作为龙头将率先受益。",
+      "related_signals": [
+        "sig_77e33acaca10",
+        "sig_54824aaef7dc",
+        "sig_b146ce2efab7",
+        "sig_77e33acaca10",
+        "sig_54824aaef7dc",
+        "sig_dc0079649df5",
+        "sig_b146ce2efab7",
+        "sig_deee36561d85"
+      ],
+      "inferred_events": [
+        "inferred_e84ae153",
+        "inferred_21dd40a4",
+        "inferred_cf8d54ca",
+        "inferred_7dacbe11",
+        "inferred_2ce677fc"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout",
+        "case_2024_rate_cut"
+      ],
+      "supporting_evidence": [
+        "保利发展成功发行国内首单现金类定向可转债85亿元，融资成本创历史新低",
+        "2026年一季度经营现金流净额86.73亿元，同比增长423.0%",
+        "2025年全年销售签约金额2530亿元，连续三年行业第一，销售回笼率连续3年超100%",
+        "央行降准概率85%，货币政策宽松预期利好地产龙头"
+      ],
+      "counter_evidence": [
+        "2026年一季报净利润同比下降57%，营收同比下降15.7%，基本面短期承压",
+        "房地产行业整体仍处于下行周期，需求端恢复不确定"
+      ],
+      "key_assumptions": [
+        "假设1：保利发展现金流改善趋势可持续，并非一次性因素",
+        "假设2：行业下行周期不会进一步恶化至系统性风险",
+        "假设3：市场将逐步认识到现金流和融资能力比短期利润更重要"
+      ],
+      "uncertainty_map": [
+        "最大不确定性：房地产行业销售端能否企稳（影响程度：高）",
+        "不确定性2：保利发展净利润下滑是否会持续多个季度（影响程度：中）",
+        "不确定性3：市场对地产板块的情绪修复速度（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 7,
+        "timeliness": 7,
+        "market_confirmation": 5,
+        "tradability": 8,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 6,
+        "overall_score": 6.6,
+        "confidence_score": 0.7,
+        "execution_readiness": 0.75
+      },
+      "risk_reward_profile": "潜在收益：保利发展作为行业龙头，在行业出清后估值修复空间较大，叠加融资成本优势，有望实现20-30%的涨幅。潜在风险：若行业销售持续恶化，净利润下滑超预期，股价可能继续下跌10-15%。风险收益比约2:1。",
+      "next_validation_questions": [
+        "保利发展4月销售数据是否出现边际改善？",
+        "央行降准具体落地时间和幅度如何？",
+        "保利发展2026年全年业绩指引是否已下调？",
+        "行业其他龙头（如万科、招商蛇口）的现金流和融资情况如何对比？"
+      ],
+      "invalidation_conditions": [
+        "保利发展二季度销售数据继续恶化，同比降幅扩大",
+        "央行降准预期落空或政策力度不及预期",
+        "保利发展出现债务违约或融资渠道受阻"
+      ],
+      "must_watch_indicators": [
+        "保利发展月度销售签约金额及同比变化",
+        "央行降准/降息政策落地情况",
+        "保利发展融资成本变化及新债发行情况",
+        "房地产行业政策（如限购放松、房贷利率）变化"
+      ],
+      "kill_switch_signals": [
+        "保利发展出现债务展期或违约传闻",
+        "保利发展二季度经营现金流大幅转负",
+        "行业出现系统性风险事件（如大型房企违约）"
+      ],
+      "warnings": [
+        "注意：一季报净利润大幅下滑是客观事实，短期可能压制股价表现",
+        "注意：房地产行业政策风险仍存，需密切关注政策变化"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-04-28 23:32:56.114380",
+      "batch_id": "m12_000651.SZ_2026-04-28",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 6.6,
+    "m3_fallback": false,
+    "trend_stage": "late",
+    "trend_remaining_upside_pct": 0.5,
+    "trend_catalyst_persistence": "one_time",
+    "trend_skip_reason": "trend_LATE",
+    "action_taken": "",
+    "action_plan_id": "",
+    "stop_loss_pct": 0.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "",
+    "reason": "",
+    "full_chain": [
+      "1.ANOMALY: 000651.SZ +2.5% type=daily_surge sigma=2.7 atr=5.3 vol=2.9",
+      "2.CAUSATION: has_cause type=earnings signals=5 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=6.6",
+      "4.TREND: late upside=0.5% persistence=one_time"
+    ]
+  },
+  {
+    "id": "dec_379b5b2bc7",
+    "timestamp": "2026-04-28T23:33:41.143433",
+    "instrument": "000776.SZ",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "limit_up",
+    "anomaly_price_change_pct": 6.03,
+    "anomaly_atr_multiple": 3.61,
+    "anomaly_sigma_multiple": 3.39,
+    "anomaly_volume_ratio": 3.03,
+    "anomaly_is_limit_up": true,
+    "causation_type": "earnings",
+    "causation_has_cause": true,
+    "causation_signal_count": 5,
+    "causation_signals": [
+      {
+        "signal_id": "sig_77e33acaca10",
+        "label": "保利发展成功发行85亿元定向可转债",
+        "type": "event_driven"
+      },
+      {
+        "signal_id": "sig_54824aaef7dc",
+        "label": "保利发展2025年销售签约金额2530亿元",
+        "type": "event_driven"
+      },
+      {
+        "signal_id": "sig_781fda7e246d",
+        "label": "广发证券2026年一季报净利润47.07亿元",
+        "type": "event_driven"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": false,
+    "m3_opportunity": null,
+    "m3_skip_reason": "",
+    "m3_priority": "",
+    "m3_direction": "",
+    "m3_score": 0.0,
+    "m3_fallback": false,
+    "trend_stage": "",
+    "trend_remaining_upside_pct": 0.0,
+    "trend_catalyst_persistence": "",
+    "trend_skip_reason": "",
+    "action_taken": "",
+    "action_plan_id": "",
+    "stop_loss_pct": 0.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "",
+    "reason": "",
+    "full_chain": [
+      "1.ANOMALY: 000776.SZ +6.0% type=limit_up sigma=3.4 atr=3.6 vol=3.0",
+      "2.CAUSATION: has_cause type=earnings signals=5 labels=['?', '?', '?']"
+    ]
+  },
+  {
+    "id": "dec_e524375917",
+    "timestamp": "2026-04-28T23:34:10.609102",
+    "instrument": "000651.SZ",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "daily_surge",
+    "anomaly_price_change_pct": 2.48,
+    "anomaly_atr_multiple": 5.29,
+    "anomaly_sigma_multiple": 2.69,
+    "anomaly_volume_ratio": 2.91,
+    "anomaly_is_limit_up": false,
+    "causation_type": "earnings",
+    "causation_has_cause": true,
+    "causation_signal_count": 5,
+    "causation_signals": [
+      {
+        "signal_id": "sig_77e33acaca10",
+        "label": "保利发展成功发行85亿元定向可转债",
+        "type": "event_driven"
+      },
+      {
+        "signal_id": "sig_54824aaef7dc",
+        "label": "保利发展2025年销售签约金额2530亿元",
+        "type": "event_driven"
+      },
+      {
+        "signal_id": "sig_b146ce2efab7",
+        "label": "保利发展经营现金流大幅增长",
+        "type": "event_driven"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": false,
+    "m3_opportunity": null,
+    "m3_skip_reason": "m3_no_opportunity",
+    "m3_priority": "",
+    "m3_direction": "",
+    "m3_score": 0.0,
+    "m3_fallback": false,
+    "trend_stage": "",
+    "trend_remaining_upside_pct": 0.0,
+    "trend_catalyst_persistence": "",
+    "trend_skip_reason": "",
+    "action_taken": "",
+    "action_plan_id": "",
+    "stop_loss_pct": 0.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "SKIPPED",
+    "reason": "m3_no_opportunity",
+    "full_chain": [
+      "1.ANOMALY: 000651.SZ +2.5% type=daily_surge sigma=2.7 atr=5.3 vol=2.9",
+      "2.CAUSATION: has_cause type=earnings signals=5 labels=['?', '?', '?']",
+      "3.M3: judged no opportunity, SKIPPED (m3_no_opportunity)"
+    ]
+  },
+  {
+    "id": "dec_1fee799296",
+    "timestamp": "2026-04-28T23:34:24.089526",
+    "instrument": "000776.SZ",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "limit_up",
+    "anomaly_price_change_pct": 6.03,
+    "anomaly_atr_multiple": 3.61,
+    "anomaly_sigma_multiple": 3.39,
+    "anomaly_volume_ratio": 3.03,
+    "anomaly_is_limit_up": true,
+    "causation_type": "earnings",
+    "causation_has_cause": true,
+    "causation_signal_count": 5,
+    "causation_signals": [
+      {
+        "signal_id": "sig_77e33acaca10",
+        "label": "保利发展成功发行85亿元定向可转债",
+        "type": "event_driven"
+      },
+      {
+        "signal_id": "sig_54824aaef7dc",
+        "label": "保利发展2025年销售签约金额2530亿元",
+        "type": "event_driven"
+      },
+      {
+        "signal_id": "sig_781fda7e246d",
+        "label": "广发证券2026年一季报净利润47.07亿元",
+        "type": "event_driven"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_03827e55",
+      "opportunity_title": "保利发展财务韧性",
+      "opportunity_thesis": "保利发展在行业下行期展现出极强的融资能力和现金流管理能力，成功发行国内首单现金类定向可转债且融资成本创历史新低，经营现金流暴增423%，销售回笼率连续3年超100%。尽管短期业绩因行业周期承压（净利润同比降57%），但财务稳健性已显著领先同行，市场可能低估其穿越周期的能力。当前股价已部分反映业绩利空，而融资优势与现金流改善尚未被充分定价，存在预期差修复机会。",
+      "target_markets": [
+        "A_SHARE"
+      ],
+      "target_instruments": [
+        "600048.SH"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-04-29 00:00:00",
+        "end": "2026-07-28 00:00:00",
+        "confidence_level": 0.7
+      },
+      "why_now": "一季报业绩利空已落地（净利润同比降57%），市场短期反应后，融资创新（85亿可转债成本新低）和现金流暴增（经营现金流+423%）等积极信号形成对冲。同时央行降准概率高达85%（2周内），地产板块政策预期升温，保利作为龙头将率先受益。当前是业绩利空出尽与积极因素发酵的交叉窗口。",
+      "related_signals": [
+        "sig_77e33acaca10",
+        "sig_54824aaef7dc",
+        "sig_b146ce2efab7",
+        "sig_77e33acaca10",
+        "sig_54824aaef7dc",
+        "sig_dc0079649df5",
+        "sig_b146ce2efab7",
+        "sig_deee36561d85"
+      ],
+      "inferred_events": [
+        "inferred_0ed5a155",
+        "inferred_5414c1c8",
+        "inferred_c0470daa",
+        "inferred_d6400e34"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout",
+        "case_2024_rate_cut"
+      ],
+      "supporting_evidence": [
+        "成功发行国内首单现金类定向可转债85亿元，融资成本创历史新低，体现资本市场对公司信用高度认可",
+        "2026年一季度经营现金流净额86.73亿元，同比增长423%，现金回笼能力极强",
+        "2025年销售签约金额2530亿元，连续三年行业第一，销售回笼率超100%",
+        "央行降准概率85%（2周内），地产政策宽松预期升温"
+      ],
+      "counter_evidence": [
+        "2026年一季报净利润同比降57%，营收降15.7%，盈利压力持续",
+        "房地产行业整体销售尚未企稳，行业beta风险仍存"
+      ],
+      "key_assumptions": [
+        "假设1：保利发展融资成本优势能持续转化为拿地和项目储备优势",
+        "假设2：行业政策宽松（降准等）不会落空，且能有效提振市场情绪",
+        "假设3：业绩下滑主要因行业周期而非公司经营恶化，现金流改善是先行指标"
+      ],
+      "uncertainty_map": [
+        "最大不确定性：行业销售何时见底（影响程度：高）",
+        "不确定性2：业绩下滑幅度是否超预期（影响程度：中）",
+        "不确定性3：融资创新能否转化为实际利润增长（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 7,
+        "timeliness": 7,
+        "market_confirmation": 5,
+        "tradability": 8,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 6,
+        "overall_score": 6.6,
+        "confidence_score": 0.72,
+        "execution_readiness": 0.75
+      },
+      "risk_reward_profile": "潜在收益：若市场重新定价保利财务韧性+政策催化，估值修复空间约15-25%；风险：行业持续恶化导致业绩进一步下滑，最大回撤约10-15%。风险收益比约1.5:1至2:1。",
+      "next_validation_questions": [
+        "保利发展2026年4月销售数据是否环比改善？",
+        "央行降准是否在2周内落地？",
+        "保利发展近期是否有新增拿地或项目收购动作？",
+        "行业其他龙头（如万科、招商蛇口）的现金流和融资情况是否同步改善？"
+      ],
+      "invalidation_conditions": [
+        "保利发展二季度销售数据同比继续恶化超过10%",
+        "央行降准预期落空或政策转向收紧",
+        "保利发展出现债务展期或信用评级下调"
+      ],
+      "must_watch_indicators": [
+        "保利发展月度销售金额及同比增速",
+        "央行公开市场操作及降准落地情况",
+        "保利发展融资成本变化（新发债利率）",
+        "房地产板块整体资金流向（北向资金、ETF份额）"
+      ],
+      "kill_switch_signals": [
+        "保利发展出现债券价格异常下跌或信用利差大幅走阔",
+        "行业出现系统性风险事件（如头部房企违约）",
+        "保利发展二季度净利润同比降幅超过70%"
+      ],
+      "warnings": [
+        "注意：业绩下滑幅度较大，短期股价可能继续承压，需耐心等待催化剂",
+        "注意：行业beta风险不可忽视，即使公司alpha优秀，板块系统性下跌仍可能拖累"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-04-28 23:34:56.881744",
+      "batch_id": "m12_000776.SZ_2026-04-28",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 6.6,
+    "m3_fallback": false,
+    "trend_stage": "late",
+    "trend_remaining_upside_pct": 1.2,
+    "trend_catalyst_persistence": "one_time",
+    "trend_skip_reason": "trend_LATE",
+    "action_taken": "",
+    "action_plan_id": "",
+    "stop_loss_pct": 0.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "",
+    "reason": "",
+    "full_chain": [
+      "1.ANOMALY: 000776.SZ +6.0% type=limit_up sigma=3.4 atr=3.6 vol=3.0",
+      "2.CAUSATION: has_cause type=earnings signals=5 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=6.6",
+      "4.TREND: late upside=1.2% persistence=one_time"
+    ]
+  },
+  {
+    "id": "dec_1000bc5fe8",
+    "timestamp": "2026-04-28T23:35:55.284505",
+    "instrument": "600048.SH",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "n_day_breakout",
+    "anomaly_price_change_pct": 4.33,
+    "anomaly_atr_multiple": 2.73,
+    "anomaly_sigma_multiple": 2.54,
+    "anomaly_volume_ratio": 2.13,
+    "anomaly_is_limit_up": false,
+    "causation_type": "earnings",
+    "causation_has_cause": true,
+    "causation_signal_count": 5,
+    "causation_signals": [
+      {
+        "signal_id": "sig_77e33acaca10",
+        "label": "保利发展成功发行85亿元定向可转债",
+        "type": "event_driven"
+      },
+      {
+        "signal_id": "sig_54824aaef7dc",
+        "label": "保利发展2025年销售签约金额2530亿元",
+        "type": "event_driven"
+      },
+      {
+        "signal_id": "sig_dc0079649df5",
+        "label": "保利发展一季报净利润同比降57%",
+        "type": "event_driven"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_6de5ceaa",
+      "opportunity_title": "保利融资韧性",
+      "opportunity_thesis": "保利发展在行业下行周期中展现出极强融资能力和经营韧性：成功发行国内首单现金类定向可转债85亿元且融资成本创历史新低，经营现金流同比暴增423%，销售回笼率连续3年超100%。虽然一季报净利润同比大幅下滑57%，但市场已充分预期行业下行，而保利在融资端和现金流端的结构性优势尚未被充分定价，构成预期差机会。",
+      "target_markets": [
+        "A_SHARE"
+      ],
+      "target_instruments": [
+        "600048.SH"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-04-29 00:00:00",
+        "end": "2026-07-28 00:00:00",
+        "confidence_level": 0.65
+      },
+      "why_now": "一季报净利润大幅下滑57%已落地，市场短期悲观情绪释放；同时融资创新（首单现金类定向可转债）和经营现金流暴增423%等利好信号集中释放，形成多空交织下的认知差窗口。央行降准预期（概率85%）若兑现，将进一步强化保利融资成本优势。",
+      "related_signals": [
+        "sig_77e33acaca10",
+        "sig_54824aaef7dc",
+        "sig_dc0079649df5",
+        "sig_b146ce2efab7",
+        "sig_deee36561d85",
+        "sig_77e33acaca10",
+        "sig_54824aaef7dc",
+        "sig_dc0079649df5",
+        "sig_b146ce2efab7",
+        "sig_deee36561d85"
+      ],
+      "inferred_events": [
+        "inferred_38c194da",
+        "inferred_4ca223bb",
+        "inferred_7b25bfeb",
+        "inferred_158e3269",
+        "inferred_4e626306"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout",
+        "case_2024_rate_cut"
+      ],
+      "supporting_evidence": [
+        "成功发行国内首单现金类定向可转债85亿元，融资成本创历史新低",
+        "2026年一季度经营现金流净额86.73亿元，同比增长423%",
+        "2025年全年销售签约金额2530亿元，连续三年行业第一，销售回笼率连续3年超100%",
+        "央行降准概率85%，政策宽松预期支撑地产龙头融资环境"
+      ],
+      "counter_evidence": [
+        "2026年一季报净利润9.16亿元，同比大幅下降57.06%",
+        "营收同比下降15.74%，行业基本面尚未见底"
+      ],
+      "key_assumptions": [
+        "假设1：保利发展融资成本优势可持续，不会因行业风险溢价上升而收窄",
+        "假设2：行业下行周期不会进一步恶化至保利现金流断裂的程度",
+        "假设3：市场对一季报利空的定价已基本充分，后续将更多关注结构性优势"
+      ],
+      "uncertainty_map": [
+        "行业基本面下行速度（影响程度：高）：若房地产销售持续恶化，保利现金流优势可能被侵蚀",
+        "政策宽松兑现节奏（影响程度：中）：央行降准/降息若推迟，融资成本优势的边际效应减弱",
+        "市场情绪修复速度（影响程度：中）：一季报利空可能持续压制股价，短期难以快速反转"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 7,
+        "timeliness": 7,
+        "market_confirmation": 4,
+        "tradability": 8,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 6,
+        "overall_score": 6.4,
+        "confidence_score": 0.65,
+        "execution_readiness": 0.7
+      },
+      "risk_reward_profile": "潜在收益：保利作为行业龙头，融资成本优势+现金流韧性若被市场重新定价，估值修复空间约15-25%；潜在风险：行业下行超预期导致净利润继续大幅下滑，股价可能再跌10-15%。风险收益比约1:1.5至1:2。",
+      "next_validation_questions": [
+        "保利发展当前估值（PE/PB）相对于历史及行业可比公司处于什么水平？",
+        "85亿元定向可转债的具体条款（转股价、期限、利率）是什么？是否对现有股东有稀释压力？",
+        "一季报净利润大幅下滑的具体原因（毛利率下降/减值/费用增加）？是一次性还是持续性？",
+        "近期是否有其他房企出现融资困难或违约，可能引发板块系统性风险？"
+      ],
+      "invalidation_conditions": [
+        "保利发展出现债务展期或融资成本大幅上升",
+        "行业销售数据连续2个月加速下滑，且保利市场份额不升反降",
+        "央行明确表态不会进一步宽松，政策预期落空"
+      ],
+      "must_watch_indicators": [
+        "保利发展月度销售签约金额及回笼率",
+        "房地产行业月度销售面积及投资数据",
+        "央行公开市场操作及降准/降息动态",
+        "保利发展债券收益率及信用利差变化"
+      ],
+      "kill_switch_signals": [
+        "保利发展出现债务违约或评级下调",
+        "一季报后管理层大幅下调全年业绩指引",
+        "行业出现系统性信用事件（如大型房企违约）"
+      ],
+      "warnings": [
+        "注意：一季报净利润大幅下滑是实质性利空，短期可能压制股价，机会需要时间验证",
+        "注意：信号来源均为公司公告，但市场对利好（融资创新、现金流）的反应可能滞后"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-04-28 23:36:32.384343",
+      "batch_id": "m12_600048.SH_2026-04-28",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 6.4,
+    "m3_fallback": false,
+    "trend_stage": "late",
+    "trend_remaining_upside_pct": 0.9,
+    "trend_catalyst_persistence": "one_time",
+    "trend_skip_reason": "trend_LATE",
+    "action_taken": "",
+    "action_plan_id": "",
+    "stop_loss_pct": 0.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "",
+    "reason": "",
+    "full_chain": [
+      "1.ANOMALY: 600048.SH +4.3% type=n_day_breakout sigma=2.5 atr=2.7 vol=2.1",
+      "2.CAUSATION: has_cause type=earnings signals=5 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=6.4",
+      "4.TREND: late upside=0.9% persistence=one_time"
+    ]
+  }
+]
