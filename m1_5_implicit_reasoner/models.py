@@ -2,10 +2,10 @@
 M1.5 隐性信号推理数据模型
 """
 
-from dataclasses import dataclass, field
 from typing import List, Dict, Optional
 from datetime import datetime
 from enum import Enum
+from pydantic import BaseModel, Field
 
 
 class ReasoningStage(Enum):
@@ -16,27 +16,25 @@ class ReasoningStage(Enum):
     TARGET_IDENTIFICATION = "target_identification"  # 标的识别
 
 
-@dataclass
-class CausalLink:
+class CausalLink(BaseModel):
     """因果链条中的单个环节"""
     from_concept: str  # 起始概念
     to_concept: str  # 目标概念
     relation_type: str  # 关系类型: policy_drives, tech_enables, demand_shifts
     confidence: float  # 该环节置信度 [0-1]
     reasoning: str  # 推理依据
-    supporting_facts: List[str] = field(default_factory=list)  # 支撑事实
+    supporting_facts: List[str] = Field(default_factory=list)  # 支撑事实
 
 
-@dataclass
-class ReasoningChain:
+class ReasoningChain(BaseModel):
     """完整推理链"""
     chain_id: str
     source_event: str  # 源事件描述
     target_opportunity: str  # 目标机会描述
     causal_links: List[CausalLink]  # 因果链条
-    reasoning_stages: Dict[ReasoningStage, str]  # 各阶段推理过程
+    reasoning_stages: Dict[str, str]  # 各阶段推理过程 (改为 str key 以兼容 JSON)
     overall_confidence: float  # 整体置信度
-    created_at: datetime = field(default_factory=datetime.now)
+    created_at: datetime = Field(default_factory=datetime.now)
 
     def get_chain_strength(self) -> float:
         """计算推理链强度 (所有环节置信度的几何平均)"""
@@ -48,8 +46,7 @@ class ReasoningChain:
         return product ** (1.0 / len(self.causal_links))
 
 
-@dataclass
-class ImplicitSignal:
+class ImplicitSignal(BaseModel):
     """隐性信号 (M1.5输出)"""
     signal_id: str
     signal_type: str  # policy_driven, tech_breakthrough, social_trend
@@ -68,7 +65,7 @@ class ImplicitSignal:
     expected_impact_timeframe: str  # 预期影响时间: immediate, short_term, mid_term, long_term
 
     # 元数据
-    created_at: datetime = field(default_factory=datetime.now)
+    created_at: datetime = Field(default_factory=datetime.now)
     requires_m3_validation: bool = True  # 是否需要M3验证
 
     def to_dict(self) -> Dict:
