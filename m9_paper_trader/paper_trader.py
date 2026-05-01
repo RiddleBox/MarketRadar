@@ -578,9 +578,18 @@ class PaperTrader:
         signal_confidence: float = 0.0,
         signal_type: str = "",
     ) -> List[PaperPosition]:
-        """从 ActionPlan 批量开立模拟持仓"""
+        """从 ActionPlan 批量开立模拟持仓（带双轨协同检查）"""
         opened = []
         for inst in plan.primary_instruments:
+            # Phase 3: 双轨协同检查 - 避免重复开仓同一标的
+            existing_position = self._find_open_position(inst)
+            if existing_position:
+                logger.warning(
+                    f"[M9] 双轨协同拒绝: {inst} 已有持仓 "
+                    f"(position_id={existing_position.paper_position_id}, "
+                    f"plan_id={existing_position.plan_id})"
+                )
+                continue
             sl = plan.stop_loss
             tp = plan.take_profit
             ps = plan.position_sizing
@@ -1062,6 +1071,21 @@ class PaperTrader:
         return self._market_rules.round_quantity(
             market, 10000 / entry_price if entry_price > 0 else 0
         )
+
+    def _find_open_position(self, instrument: str) -> Optional[PaperPosition]:
+        """
+        查找指定标的的未平仓持仓（用于双轨协同检查）
+        
+        Args:
+            instrument: 标的代码（如 "600519.SH"）
+            
+        Returns:
+            如果存在未平仓持仓，返回 PaperPosition 对象；否则返回 None
+        """
+        for pos in self._positions:
+            if pos.instrument == instrument and pos.status == "OPEN":
+                return pos
+        return None
 
     def _infer_board(self, instrument: str, market: str) -> str:
         code = instrument.split(".")[0]
