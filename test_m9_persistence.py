@@ -114,7 +114,10 @@ def test_persistence():
     # 步骤5：更新价格，触发止盈
     print("\n[步骤5] 更新价格，触发止盈...")
     pos = recovered_positions[0]
-    pos.update_price(11.5)  # 超过止盈价 11.0
+    
+    # 使用 trader2.update_price() 而非直接调用 pos.update_price()
+    # 这样会自动更新数据库
+    trader2.update_price(pos.paper_position_id, 11.5)  # 超过止盈价 11.0
     
     print(f"  当前价格: {pos.current_price}")
     print(f"  持仓状态: {pos.status}")
@@ -123,17 +126,15 @@ def test_persistence():
         print(f"  ✓ 止盈触发")
         print(f"    实现盈亏: {pos.realized_pnl_pct * 100:+.2f}%")
         
-        # 手动调用 _on_close 更新数据库
-        trader2._on_close(pos)
-        
         # 验证数据库更新
         db_positions = db.load_open_positions()
         print(f"  数据库中未平仓数: {len(db_positions)}")
         
-        if len(db_positions) == 0:
-            print("  ✅ 数据库已更新，持仓已平仓")
+        # 初始有2个持仓，新开1个，平仓1个，剩余2个
+        if len(db_positions) == 2:
+            print("  ✅ 数据库已更新，第一个持仓已平仓")
         else:
-            print("  ✗ 数据库未更新")
+            print(f"  ✗ 数据库状态异常: {len(db_positions)} 个未平仓（预期2个）")
             return False
     else:
         print(f"  ✗ 止盈未触发，状态: {pos.status}")
