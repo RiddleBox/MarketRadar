@@ -221,6 +221,15 @@ class Scheduler:
             **_c("sentiment_collect", 30),      # 每 30 分钟一次
         ))
 
+        self.register(ScheduledTask(
+            name="m12_intraday_scan",
+            fn=self._task_m12_intraday_scan,
+            description="M12盘中异动扫描：全景价格扫描→异动检测→反向溯源→趋势判断→机会生成",
+            run_at_start=False,
+            time_window=("09:30", "15:00"),   # A股交易时段
+            **_c("m12_intraday_scan", 10),     # 每 10 分钟一次
+        ))
+
     # ── 启停 ─────────────────────────────────────────────────
 
     def start(self, background: bool = True):
@@ -555,4 +564,112 @@ class Scheduler:
             return result
         except Exception as e:
             logger.error(f"[M7/sentiment_collect] 失败: {e}")
+            return {"error": str(e)}
+
+    def _task_m12_intraday_scan(self, run_id: str = "") -> dict:
+        """
+        M12 盘中异动扫描任务：
+          1. 全景价格扫描（A股/港股/美股）
+          2. 异动检测（ATR/σ倍数+量比）
+          3. 反向溯源（M0→M1→M2）
+          4. M3判断（推理引擎）
+          5. 趋势判断（EARLY/MIDDLE/LATE）
+          6. 机会生成（RetroOpportunity）
+
+        涨停股标记观察池，不生成入场机会。
+        """
+        import sys
+        sys.path.insert(0, str(ROOT))
+        try:
+            from m12_opportunity_catcher.catcher_engine import OpportunityCatcherEngine
+            from core.schemas import Market
+            from m9_paper_trader.price_feed import CompositeFeed
+            from m9_paper_trader.baostock_feed import BaostockFeed
+            from m9_paper_trader.price_feed import YFinanceFeed
+
+            engine = OpportunityCatcherEngine()
+            batch_id = f"sched_m12_{run_id or datetime.now().strftime('%Y%m%d_%H%M%S')}"
+
+            # 扫描三个市场
+            markets_to_scan = [Market.A_SHARE, Market.HK, Market.US]
+            all_retro_opps = []
+            scan_results = {}
+
+            for market in markets_to_scan:
+                try:
+                    # 选择价格源
+                    if market == Market.A_SHARE:
+                        price_feed = BaostockFeed()
+                    else:
+                        price_feed = YFinanceFeed()
+
+                    # 执行盘中扫描
+                    retro_opps = engine.run_intraday_scan(
+                        market=market,
+                        price_feed=price_feed,
+                    )
+
+                    all_retro_opps.extend(retro_opps)
+                    scan_results[market.value] = {
+                        "opportunities": len(retro_opps),
+                        "instruments": [r.anomaly.instrument for r in retro_opps[:5]],
+                    }
+
+                    logger.info(
+                        f"[M7/m12_intraday_scan] {market.value}: "
+                        f"{len(retro_opps)} 个机会"
+                    )
+
+                except Exception as e:
+                    logger.warning(f"[M7/m12_intraday_scan] {market.value} 扫描失败: {e}")
+                    scan_results[market.value] = {"error": str(e)}
+                    continue
+
+            # 保存机会到文件（供dashboard读取）
+            if all_retro_opps:
+                retro_dir = ROOT / "data" / "retro_opportunities"
+                retro_dir.mkdir(parents=True, exist_ok=True)
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                retro_file = retro_dir / f"intraday_{timestamp}.json"
+
+                retro_data = []
+                for retro in all_retro_opps:
+                    retro_data.append({
+                        "instrument": retro.anomaly.instrument,
+                        "market": retro.anomaly.market.value,
+                        "price_change_pct": retro.anomaly.price_change_pct,
+                        "trend_stage": retro.trend.stage.value,
+                        "causation_confidence": retro.causation.confidence,
+                        "remaining_upside_pct": retro.trend.remaining_upside_pct,
+                        "opportunity_id": retro.opportunity.opportunity_id,
+                        "priority": retro.opportunity.priority_level.value,
+                        "entry_constraint": retro.opportunity.entry_constraint.reason if retro.opportunity.entry_constraint else None,
+                    })
+
+                retro_file.write_text(
+                    json.dumps(retro_data, ensure_ascii=False, indent=2, default=str),
+                    encoding="utf-8",
+                )
+
+                logger.info(
+                    f"[M7/m12_intraday_scan] 保存 {len(all_retro_opps)} 个机会到 {retro_file.name}"
+                )
+
+            result = {
+                "total_opportunities": len(all_retro_opps),
+                "by_market": scan_results,
+                "batch_id": batch_id,
+            }
+
+            logger.info(
+                f"[M7/m12_intraday_scan] 完成：{len(all_retro_opps)} 个机会 "
+                f"(A股:{scan_results.get('A_SHARE', {}).get('opportunities', 0)}, "
+                f"港股:{scan_results.get('HK', {}).get('opportunities', 0)}, "
+                f"美股:{scan_results.get('US', {}).get('opportunities', 0)})"
+            )
+
+            return result
+
+        except Exception as e:
+            logger.error(f"[M7/m12_intraday_scan] 失败: {e}")
             return {"error": str(e)}
