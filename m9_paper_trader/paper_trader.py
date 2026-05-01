@@ -26,6 +26,7 @@ from core.fee_model import FeeModel, DEFAULT_FEE_MODEL
 from core.market_rules import MarketRules, OrderStatus, MARKET_RULES
 from core.schemas import ActionPlan, Direction, Market
 from m9_paper_trader.price_feed import EquityCurveTracker
+from m9_paper_trader.portfolio_db import PortfolioDB
 
 logger = logging.getLogger(__name__)
 
@@ -149,6 +150,11 @@ class PaperPosition:
         self.max_favorable_excursion: float = 0.0
         self.fee_paid: float = 0.0
         self.orders: List[PaperOrder] = []
+
+    @property
+    def current_value(self) -> float:
+        """当前持仓市值"""
+        return self.current_price * self.quantity
 
     def update_price(self, price: float, ts: Optional[datetime] = None):
         """更新当前价，计算浮盈，检查止损/止盈"""
@@ -509,23 +515,55 @@ class PaperTrader:
         risk_monitor: Optional[RiskMonitor] = None,
         on_position_closed: Optional[Callable] = None,
         initial_capital: float = 1_000_000,
+        db_path: str = "data/portfolio.db",
     ):
         self._save_path = save_path
         self._save_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        # 初始化数据库
+        self._db = PortfolioDB(db_path)
+        
+        # 从数据库恢复账户状态
+        db_cash, db_total_value = self._db.load_account()
+        if db_cash > 0:
+            # 数据库中有账户记录，恢复状态
+            self._cash = db_cash
+            self._initial_capital = db_total_value  # 使用总资产作为初始资本
+            logger.info(f"[M9] 从数据库恢复账户: cash={db_cash:,.0f}, total_value={db_total_value:,.0f}")
+        else:
+            # 首次启动，初始化账户
+            self._cash = initial_capital
+            self._initial_capital = initial_capital
+            self._db.save_account(self._cash, initial_capital)
+            logger.info(f"[M9] 初始化账户: initial_capital={initial_capital:,.0f}")
+        
+        # 从数据库恢复持仓
         self._positions: List[PaperPosition] = []
+        db_positions = self._db.load_open_positions()
+        for pos_dict in db_positions:
+            try:
+                pp = PaperPosition.from_dict(pos_dict)
+                self._positions.append(pp)
+            except Exception as e:
+                logger.error(f"[M9] 恢复持仓失败 {pos_dict.get('paper_position_id')}: {e}")
+        
+        logger.info(f"[M9] 从数据库恢复 {len(self._positions)} 个持仓")
+        
         self._trade_log: List[dict] = []
         self._fee_model = fee_model or DEFAULT_FEE_MODEL
         self._market_rules = market_rules or MARKET_RULES
         self._risk_monitor = risk_monitor or RiskMonitor(
-            initial_capital=initial_capital
+            initial_capital=self._initial_capital
         )
         self._on_position_closed = on_position_closed
-        self._initial_capital = initial_capital
-        self._cash = initial_capital
         self._closed_today = 0
         self._daily_pnl = 0.0
         self._equity_tracker = EquityCurveTracker()
-        self._load()
+        
+        # 兼容旧的 JSON 文件加载（如果数据库为空但 JSON 存在）
+        if not db_positions and self._save_path.exists():
+            logger.info("[M9] 数据库为空，尝试从 JSON 文件迁移...")
+            self._load_from_json()
 
     # ── 开仓 ──────────────────────────────────────────────────
 
@@ -642,10 +680,18 @@ class PaperTrader:
 
             self._positions.append(pp)
             self._log_trade("OPEN", pp, order)
+            
+            # 保存到数据库
+            self._db.save_position(pp)
+            
             opened.append(pp)
             logger.info(f"[M9] 模拟仓已创建: {inst} | {direction} @ {entry_price}")
 
-        self._save()
+        # 更新账户状态到数据库
+        total_value = self._cash + sum(p.current_value for p in self._positions)
+        self._db.save_account(self._cash, total_value)
+        
+        self._save()  # 兼容旧的 JSON 保存
         return opened
 
     def open_manual(
@@ -730,7 +776,24 @@ class PaperTrader:
 
         self._positions.append(pp)
         self._log_trade("OPEN", pp, order)
-        self._save()
+        
+        # 保存到数据库
+        self._db.save_position(pp.to_dict())
+        self._db.log_trade(
+            action="OPEN",
+            position_id=pp.paper_position_id,
+            instrument=instrument,
+            market=market,
+            direction=direction,
+            price=entry_price,
+            quantity=quantity,
+            reason="MANUAL",
+            fee_paid=order.fee_paid,
+        )
+        total_value = self._cash + sum(p.current_value for p in self._positions if p.status == "OPEN")
+        self._db.save_account(self._cash, total_value)
+        
+        self._save()  # 兼容旧的 JSON 保存
         logger.info(f"[M9] 手动模拟仓: {instrument} {direction} @ {entry_price}")
         return pp
 
@@ -748,6 +811,15 @@ class PaperTrader:
                 was_open = pp.status == "OPEN"
                 pp.update_price(snapshot.price, snapshot.timestamp)
                 updated += 1
+                
+                # 更新数据库中的价格
+                self._db.update_position(
+                    pp.paper_position_id,
+                    current_price=pp.current_price,
+                    unrealized_pnl_pct=pp.unrealized_pnl_pct,
+                    status=pp.status,
+                )
+                
                 if pp.status != "OPEN" and was_open:
                     self._on_close(pp)
                     closed.append(pp.paper_position_id)
@@ -755,7 +827,10 @@ class PaperTrader:
                 logger.warning(f"[M9] 无法获取价格: {pp.instrument}")
 
         if updated > 0:
-            self._save()
+            # 更新账户状态
+            total_value = self._cash + sum(p.current_value for p in self._positions if p.status == "OPEN")
+            self._db.save_account(self._cash, total_value)
+            self._save()  # 兼容旧的 JSON 保存
 
         return {"updated": updated, "closed": closed}
 
@@ -827,6 +902,36 @@ class PaperTrader:
             notional = pp.entry_price * pp.quantity
             self._daily_pnl += notional * pp.realized_pnl_pct - pp.fee_paid
         self._log_trade("CLOSE", pp)
+        
+        # 更新数据库：标记为已平仓
+        self._db.update_position(
+            pp.paper_position_id,
+            status=pp.status,
+            exit_price=pp.exit_price,
+            exit_time=pp.exit_time.isoformat() if pp.exit_time else None,
+            realized_pnl_pct=pp.realized_pnl_pct,
+            realized_pnl_after_fees=pp.realized_pnl_after_fees,
+            fee_paid=pp.fee_paid,
+        )
+        
+        # 记录交易日志到数据库
+        self._db.log_trade(
+            action=pp.status,  # STOP_LOSS, TAKE_PROFIT, MANUAL, EXPIRED
+            position_id=pp.paper_position_id,
+            instrument=pp.instrument,
+            market=pp.market,
+            direction=pp.direction,
+            price=pp.exit_price or pp.current_price,
+            quantity=pp.quantity,
+            reason=pp.status,
+            fee_paid=pp.fee_paid,
+            realized_pnl_pct=pp.realized_pnl_pct,
+            realized_pnl_after_fees=pp.realized_pnl_after_fees,
+        )
+        
+        # 更新账户状态
+        total_value = self._cash + sum(p.current_value for p in self._positions if p.status == "OPEN")
+        self._db.save_account(self._cash, total_value)
 
         if self._on_position_closed:
             try:
@@ -923,7 +1028,24 @@ class PaperTrader:
         self._positions.append(pp)
         self._cash -= margin + order.fee_paid
         self._log_trade("OPEN_FUTURES", pp, order)
-        self._save()
+        
+        # 保存到数据库
+        self._db.save_position(pp.to_dict())
+        self._db.log_trade(
+            action="OPEN_FUTURES",
+            position_id=pp.paper_position_id,
+            instrument=symbol,
+            market="A_FUTURES",
+            direction=direction,
+            price=entry_price,
+            quantity=quantity,
+            reason="FUTURES",
+            fee_paid=order.fee_paid,
+        )
+        total_value = self._cash + sum(p.current_value for p in self._positions if p.status == "OPEN")
+        self._db.save_account(self._cash, total_value)
+        
+        self._save()  # 兼容旧的 JSON 保存
         logger.info(
             f"[M9] futures position: {symbol} {direction} @ {entry_price} x{quantity} margin={margin:.0f}"
         )
@@ -991,17 +1113,19 @@ class PaperTrader:
                 encoding="utf-8",
             )
 
-    def _load(self):
+    def _load_from_json(self):
+        """从旧的 JSON 文件加载持仓（仅用于数据迁移）"""
         if self._save_path.exists():
             try:
                 data = json.loads(self._save_path.read_text(encoding="utf-8"))
-                self._positions = [PaperPosition.from_dict(d) for d in data]
-                logger.info(f"[M9] 加载 {len(self._positions)} 条模拟持仓")
+                for pos_dict in data:
+                    pp = PaperPosition.from_dict(pos_dict)
+                    self._positions.append(pp)
+                    # 迁移到数据库
+                    self._db.save_position(pp.to_dict())
+                logger.info(f"[M9] 从 JSON 迁移 {len(data)} 条持仓到数据库")
             except Exception as e:
-                logger.error(f"[M9] 加载失败: {e}")
-                self._positions = []
-        else:
-            self._positions = []
+                logger.error(f"[M9] JSON 迁移失败: {e}")
         if TRADE_LOG_FILE.exists():
             try:
                 self._trade_log = json.loads(TRADE_LOG_FILE.read_text(encoding="utf-8"))
