@@ -221,13 +221,32 @@ class Scheduler:
             **_c("sentiment_collect", 30),      # 每 30 分钟一次
         ))
 
+        # M12 分轨制：A股/港股/美股各自独立扫描
         self.register(ScheduledTask(
-            name="m12_intraday_scan",
-            fn=self._task_m12_intraday_scan,
-            description="M12盘中异动扫描：全景价格扫描→异动检测→反向溯源→趋势判断→机会生成",
+            name="m12_a_share_scan",
+            fn=lambda run_id: self._task_m12_market_scan(Market.A_SHARE, run_id),
+            description="M12 A股轨道：全景价格扫描→异动检测→反向溯源→趋势判断→机会生成",
             run_at_start=False,
             time_window=("09:30", "15:00"),   # A股交易时段
-            **_c("m12_intraday_scan", 10),     # 每 10 分钟一次
+            **_c("m12_a_share_scan", 10),      # 每 10 分钟一次
+        ))
+
+        self.register(ScheduledTask(
+            name="m12_hk_scan",
+            fn=lambda run_id: self._task_m12_market_scan(Market.HK, run_id),
+            description="M12 港股轨道：全景价格扫描→异动检测→反向溯源→趋势判断→机会生成",
+            run_at_start=False,
+            time_window=("09:30", "16:00"),   # 港股交易时段
+            **_c("m12_hk_scan", 10),           # 每 10 分钟一次
+        ))
+
+        self.register(ScheduledTask(
+            name="m12_us_scan",
+            fn=lambda run_id: self._task_m12_market_scan(Market.US, run_id),
+            description="M12 美股轨道：全景价格扫描→异动检测→反向溯源→趋势判断→机会生成",
+            run_at_start=False,
+            time_window=("21:30", "04:00"),   # 美股交易时段（跨日）
+            **_c("m12_us_scan", 10),           # 每 10 分钟一次
         ))
 
     # ── 启停 ─────────────────────────────────────────────────
@@ -566,10 +585,10 @@ class Scheduler:
             logger.error(f"[M7/sentiment_collect] 失败: {e}")
             return {"error": str(e)}
 
-    def _task_m12_intraday_scan(self, run_id: str = "") -> dict:
+    def _task_m12_market_scan(self, market: "Market", run_id: str = "") -> dict:
         """
-        M12 盘中异动扫描任务：
-          1. 全景价格扫描（A股/港股/美股）
+        M12 单市场盘中异动扫描任务（分轨制）：
+          1. 全景价格扫描（单个市场）
           2. 异动检测（ATR/σ倍数+量比）
           3. 反向溯源（M0→M1→M2）
           4. M3判断（推理引擎）
@@ -583,57 +602,33 @@ class Scheduler:
         try:
             from m12_opportunity_catcher.catcher_engine import OpportunityCatcherEngine
             from core.schemas import Market
-            from m9_paper_trader.price_feed import CompositeFeed
             from m9_paper_trader.baostock_feed import BaostockFeed
             from m9_paper_trader.price_feed import YFinanceFeed
 
             engine = OpportunityCatcherEngine()
-            batch_id = f"sched_m12_{run_id or datetime.now().strftime('%Y%m%d_%H%M%S')}"
+            batch_id = f"sched_m12_{market.value}_{run_id or datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
-            # 扫描三个市场
-            markets_to_scan = [Market.A_SHARE, Market.HK, Market.US]
-            all_retro_opps = []
-            scan_results = {}
+            # 选择价格源
+            if market == Market.A_SHARE:
+                price_feed = BaostockFeed()
+            else:
+                price_feed = YFinanceFeed()
 
-            for market in markets_to_scan:
-                try:
-                    # 选择价格源
-                    if market == Market.A_SHARE:
-                        price_feed = BaostockFeed()
-                    else:
-                        price_feed = YFinanceFeed()
-
-                    # 执行盘中扫描
-                    retro_opps = engine.run_intraday_scan(
-                        market=market,
-                        price_feed=price_feed,
-                    )
-
-                    all_retro_opps.extend(retro_opps)
-                    scan_results[market.value] = {
-                        "opportunities": len(retro_opps),
-                        "instruments": [r.anomaly.instrument for r in retro_opps[:5]],
-                    }
-
-                    logger.info(
-                        f"[M7/m12_intraday_scan] {market.value}: "
-                        f"{len(retro_opps)} 个机会"
-                    )
-
-                except Exception as e:
-                    logger.warning(f"[M7/m12_intraday_scan] {market.value} 扫描失败: {e}")
-                    scan_results[market.value] = {"error": str(e)}
-                    continue
+            # 执行盘中扫描
+            retro_opps = engine.run_intraday_scan(
+                market=market,
+                price_feed=price_feed,
+            )
 
             # 保存机会到文件（供dashboard读取）
-            if all_retro_opps:
+            if retro_opps:
                 retro_dir = ROOT / "data" / "retro_opportunities"
                 retro_dir.mkdir(parents=True, exist_ok=True)
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                retro_file = retro_dir / f"intraday_{timestamp}.json"
+                retro_file = retro_dir / f"{market.value.lower()}_{timestamp}.json"
 
                 retro_data = []
-                for retro in all_retro_opps:
+                for retro in retro_opps:
                     retro_data.append({
                         "instrument": retro.anomaly.instrument,
                         "market": retro.anomaly.market.value,
@@ -652,24 +647,22 @@ class Scheduler:
                 )
 
                 logger.info(
-                    f"[M7/m12_intraday_scan] 保存 {len(all_retro_opps)} 个机会到 {retro_file.name}"
+                    f"[M7/m12_{market.value.lower()}_scan] 保存 {len(retro_opps)} 个机会到 {retro_file.name}"
                 )
 
             result = {
-                "total_opportunities": len(all_retro_opps),
-                "by_market": scan_results,
+                "market": market.value,
+                "opportunities": len(retro_opps),
+                "instruments": [r.anomaly.instrument for r in retro_opps[:5]],
                 "batch_id": batch_id,
             }
 
             logger.info(
-                f"[M7/m12_intraday_scan] 完成：{len(all_retro_opps)} 个机会 "
-                f"(A股:{scan_results.get('A_SHARE', {}).get('opportunities', 0)}, "
-                f"港股:{scan_results.get('HK', {}).get('opportunities', 0)}, "
-                f"美股:{scan_results.get('US', {}).get('opportunities', 0)})"
+                f"[M7/m12_{market.value.lower()}_scan] 完成：{len(retro_opps)} 个机会"
             )
 
             return result
 
         except Exception as e:
-            logger.error(f"[M7/m12_intraday_scan] 失败: {e}")
-            return {"error": str(e)}
+            logger.error(f"[M7/m12_{market.value.lower()}_scan] 失败: {e}")
+            return {"error": str(e), "market": market.value}
