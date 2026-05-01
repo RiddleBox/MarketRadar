@@ -17,6 +17,7 @@ from llm_config_loader import create_llm_from_config
 from m0_collector.providers.xinhua_provider import XinhuaProvider
 from m0_collector.providers.ndrc_provider import NDRCProvider
 from m0_collector.providers.tech_media_provider import Kr36Provider
+from m0_collector.deduplicator import NewsDeduplicator
 from m1_5_implicit_reasoner.inferencer import LLMImplicitSignalInferencer
 from m1_5_implicit_reasoner.models import ImplicitSignal
 from m2_knowledge_base.industry_graph import IndustryGraph
@@ -82,6 +83,10 @@ class LiveSignalMonitor:
             '36kr': Kr36Provider()
         }
 
+        # 初始化去重器
+        print("[初始化] 初始化新闻去重器...")
+        self.deduplicator = NewsDeduplicator()
+
         # Phase 3.5: Initialize M9 directly (no SignalToPaperTrader)
         if self.enable_paper_trading:
             print("[初始化] 初始化M9模拟盘...")
@@ -98,37 +103,65 @@ class LiveSignalMonitor:
         print("[初始化] 完成\n")
 
     def collect_news(self, date: str = None) -> list:
-        """采集当天新闻"""
+        """采集当天新闻（带去重）"""
         if date is None:
             date = datetime.now().strftime('%Y-%m-%d')
 
         print(f"[采集] 开始采集 {date} 的新闻...")
         all_news = []
+        duplicate_count = 0
 
         for provider_name, provider in self.providers.items():
             try:
                 print(f"  - {provider_name}...", end=' ')
                 news_items = provider.fetch()
 
-                # 转换为字典格式
+                # 转换为字典格式 + 去重
                 today_news = []
                 for item in news_items:
                     # 处理 RawArticle 对象
                     if hasattr(item, 'title'):
                         pub_at = getattr(item, 'raw_published_at', '')
                         if pub_at.startswith(date):
-                            today_news.append({
+                            news_dict = {
                                 'title': item.title,
                                 'content': item.content,
                                 'source': item.source_name,
                                 'url': item.source_url,
                                 'published_at': pub_at,
                                 'provider_id': item.provider_id,
-                            })
+                            }
+                            # 去重检查
+                            if not self.deduplicator.is_duplicate(
+                                url=news_dict['url'],
+                                title=news_dict['title'],
+                                source=news_dict['source']
+                            ):
+                                today_news.append(news_dict)
+                                self.deduplicator.mark_processed(
+                                    url=news_dict['url'],
+                                    title=news_dict['title'],
+                                    source=news_dict['source']
+                                )
+                            else:
+                                duplicate_count += 1
                     # 处理字典
                     elif isinstance(item, dict):
                         if item.get('published_at', '').startswith(date):
-                            today_news.append(item)
+                            # 去重检查
+                            if not self.deduplicator.is_duplicate(
+                                url=item.get('url', ''),
+                                title=item.get('title', ''),
+                                source=item.get('source', '')
+                            ):
+                                today_news.append(item)
+                                self.deduplicator.mark_processed(
+                                    url=item.get('url', ''),
+                                    title=item.get('title', ''),
+                                    source=item.get('source', '')
+                                )
+                            else:
+                                duplicate_count += 1
 
                 all_news.extend(today_news)
                 print(f"获取 {len(today_news)} 条")
@@ -136,7 +169,7 @@ class LiveSignalMonitor:
             except Exception as e:
                 print(f"失败: {e}")
 
-        print(f"[采集] 共获取 {len(all_news)} 条新闻\n")
+        print(f"[采集] 共获取 {len(all_news)} 条新闻（过滤 {duplicate_count} 条重复）\n")
         return all_news
 
     def process_news(self, news_items: list) -> tuple:
