@@ -12,5 +12,19 @@
       "source": "",
       "created_at": "2026-05-02T16:13:34.440950"
     }
+  },
+  {
+    "doc_id": "kb_31f5f865",
+    "content": "{\n  \"date\": \"2026-05-02\",\n  \"run_id\": \"daily_review_20260502_174729_cdae77\",\n  \"total_closed\": 2,\n  \"signal_grade\": \"N/A\",\n  \"win_rate\": 0,\n  \"recommendations\": [],\n  \"by_signal_type\": {}\n}",
+    "metadata": {
+      "title": "",
+      "market": "CROSS_MARKET",
+      "category": "",
+      "content_type": "",
+      "tags": [],
+      "trust_level": 3,
+      "source": "",
+      "created_at": "2026-05-02T17:47:29.801803"
+    }
   }
 ]
