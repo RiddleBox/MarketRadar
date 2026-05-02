@@ -1,0 +1,16 @@
+[
+  {
+    "doc_id": "kb_12d8cd45",
+    "content": "{\n  \"date\": \"2026-05-02\",\n  \"run_id\": \"daily_review_20260502_161334_065d7d\",\n  \"total_closed\": 2,\n  \"signal_grade\": \"N/A\",\n  \"win_rate\": 0,\n  \"recommendations\": [],\n  \"by_signal_type\": {}\n}",
+    "metadata": {
+      "title": "",
+      "market": "CROSS_MARKET",
+      "category": "",
+      "content_type": "",
+      "tags": [],
+      "trust_level": 3,
+      "source": "",
+      "created_at": "2026-05-02T16:13:34.440950"
+    }
+  }
+]

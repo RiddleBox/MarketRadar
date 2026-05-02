@@ -5,6 +5,7 @@ m7_scheduler/trading_calendar.py — 交易日历判断
 """
 from datetime import date, datetime
 from typing import Optional
+import chinese_calendar
 
 from core.schemas import Market
 
@@ -23,13 +24,19 @@ def is_trading_day(market: Market, check_date: Optional[date] = None) -> bool:
     if check_date is None:
         check_date = date.today()
     
-    # 周末一定休市
-    weekday = check_date.weekday()
-    if weekday >= 5:  # 周六=5, 周日=6
-        return False
+    if market == Market.A_SHARE:
+        # A股：使用 chinese_calendar 库判断（包含法定节假日）
+        return chinese_calendar.is_workday(check_date)
     
-    # TODO: 集成节假日数据（可选用 chinese_calendar 库或 AKShare 接口）
-    # 当前简化版：只判断周末
+    elif market == Market.HK:
+        # 港股：简化处理，只判断周末（TODO: 集成港股节假日）
+        weekday = check_date.weekday()
+        return weekday < 5
+    
+    elif market == Market.US:
+        # 美股：简化处理，只判断周末（TODO: 集成美股节假日）
+        weekday = check_date.weekday()
+        return weekday < 5
     
     return True
 
