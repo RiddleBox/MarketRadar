@@ -1,0 +1,108 @@
+{
+  "opportunity_id": "opp_bf7c6f3f",
+  "opportunity_title": "宽松对冲衰退",
+  "opportunity_thesis": "经济数据持续疲软（PMI连续收缩、通缩压力）已触发央行实质性宽松（降准+降息），政策底与基本面底形成对冲窗口。当前市场尚未充分定价宽松的累积效应，预期差存在于利率敏感型资产（如金融、地产）及高弹性成长板块。历史经验显示，降准降息组合拳在衰退初期能阶段性提振估值，但需警惕基本面恶化超预期。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "沪深300ETF",
+    "中证500ETF",
+    "银行ETF",
+    "地产ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-18T00:00:00",
+    "end": "2026-05-18T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行于4月18日同时宣布降准0.5个百分点和降息10bp，是近期最强宽松信号，而PMI/CPI/PPI数据在4月23日集中公布确认经济疲软，形成'坏数据+好政策'的经典交易窗口。市场短期可能过度悲观，宽松效果尚未被定价。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203"
+  ],
+  "inferred_events": [
+    "inferred_49d48e89",
+    "inferred_3cfa23da",
+    "inferred_64cd79f9",
+    "inferred_e439b0a5",
+    "inferred_13a226a1"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点释放长期资金约1万亿元，直接改善银行体系流动性",
+    "7天逆回购利率下调10bp至1.7%，降低实体经济融资成本",
+    "PMI连续3个月低于荣枯线，倒逼政策加码，宽松预期有基本面支撑",
+    "历史案例case_2024_rate_cut显示降息后银行股估值修复，20天内完成交易"
+  ],
+  "counter_evidence": [
+    "CPI/PPI通缩持续，消费和工业需求疲软可能抵消宽松效果",
+    "地产板块基本面恶化（保利利润大幅下滑），单纯政策难以扭转"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续不会立即收紧，宽松周期至少持续1-2个月",
+    "假设2：经济数据不会在短期内急剧恶化（如PMI跌破48）",
+    "假设3：市场情绪不会因外部冲击（如地缘风险）而全面恐慌"
+  ],
+  "uncertainty_map": [
+    "基本面恶化速度（影响程度：高）——若PMI继续下行至48以下，宽松效果可能被完全抵消",
+    "政策传导效率（影响程度：中）——银行惜贷或实体需求不足可能使宽松资金空转",
+    "市场情绪极端化（影响程度：中）——若恐慌指数持续高位，流动性宽松可能无法提振风险资产"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 9,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 7,
+    "overall_score": 7.1,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.85
+  },
+  "risk_reward_profile": "潜在收益：宽松政策推动估值修复，银行/地产ETF短期涨幅5-10%；潜在风险：基本面恶化超预期导致市场继续下跌，最大回撤约5-8%。收益风险比约1.2:1，中等偏上。",
+  "next_validation_questions": [
+    "降准降息后，银行间市场利率（如DR007）是否显著下行？",
+    "地产销售高频数据（如30城商品房成交面积）是否出现边际改善？",
+    "北向资金在政策公布后是否转为净流入？",
+    "制造业PMI下月能否回升至49.5以上？"
+  ],
+  "invalidation_conditions": [
+    "央行在1个月内释放紧缩信号（如提高公开市场操作利率）",
+    "PMI跌破48，确认经济加速衰退",
+    "市场出现系统性流动性危机（如信用利差急剧走阔）"
+  ],
+  "must_watch_indicators": [
+    "DR007利率",
+    "30城商品房成交面积周度数据",
+    "北向资金周度净流入",
+    "制造业PMI（下期）"
+  ],
+  "kill_switch_signals": [
+    "央行意外上调政策利率或暂停逆回购操作",
+    "PMI跌破48且无企稳迹象",
+    "银行间市场出现流动性分层（如R007与DR007利差急剧扩大）"
+  ],
+  "warnings": [
+    "注意：CPI/PPI数据为12月旧数据，时效性较低，需关注最新通胀数据",
+    "注意：地产板块基本面恶化严重，单纯政策宽松可能不足以扭转趋势"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-02T07:43:17.830861",
+  "batch_id": "sched_signal_pipeline_20260502_073654_8414a2_20260424_155542_004",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

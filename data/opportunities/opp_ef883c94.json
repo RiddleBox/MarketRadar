@@ -1,0 +1,104 @@
+{
+  "opportunity_id": "opp_ef883c94",
+  "opportunity_title": "科技成长轮动机会",
+  "opportunity_thesis": "地产龙头保利发展净利润暴跌79.31%，确认地产板块基本面恶化，资金加速流出地产消费板块。同时，情绪面信号显示资金正流入新能源和半导体，且推理事件显示新能源/半导体板块有望持续走强、业绩超预期。这一结构性轮动叠加货币政策宽松预期，构成明确的板块切换机会，科技成长方向将受益于资金再配置。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "半导体ETF",
+    "科创50ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "保利发展年报净利润暴跌79.31%于4月17日披露，市场消化后资金开始明确流出地产；同日情绪信号显示资金从消费、地产流向新能源、半导体；技术面三大指数翻绿但科技板块相对抗跌，轮动窗口已开启。央行降准降息预期在2周内落地概率85%，将进一步催化科技成长行情。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sent_b3cc88f9",
+    "sig_38049b31fb61"
+  ],
+  "inferred_events": [
+    "inferred_49d48e89",
+    "inferred_3cfa23da",
+    "inferred_64cd79f9",
+    "inferred_e439b0a5",
+    "inferred_13a226a1"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "保利发展2025年净利润同比降79.31%，地产板块基本面恶化确认",
+    "情绪面信号显示资金从消费、地产流向新能源、半导体",
+    "推理事件显示新能源/半导体板块持续走强概率80%，相关龙头业绩超预期",
+    "央行降准降息概率85%，货币政策宽松利好成长股估值"
+  ],
+  "counter_evidence": [
+    "技术面三大指数翻绿，下跌个股近4000只，市场整体情绪偏弱可能拖累板块轮动",
+    "历史案例case_2024_tech_breakthrough显示科技板块炒作缺乏订单验证时容易回落"
+  ],
+  "key_assumptions": [
+    "假设1：地产板块资金流出趋势持续，不会因短期反弹逆转",
+    "假设2：新能源/半导体板块基本面改善（业绩超预期）能够支撑估值",
+    "假设3：央行在2周内实施降准或降息，流动性环境宽松"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：市场整体情绪偏弱，若指数持续下跌可能压制板块轮动效果（影响程度：高）",
+    "不确定性2：新能源/半导体板块业绩超预期能否兑现，若低于预期则轮动可能夭折（影响程度：高）",
+    "不确定性3：地产板块是否出现政策利好反弹，分流资金（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.8
+  },
+  "risk_reward_profile": "潜在收益：若资金轮动持续且货币政策落地，新能源/半导体ETF有望获得10-15%涨幅。潜在风险：市场整体情绪恶化导致轮动失败，最大回撤约5-8%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "新能源/半导体板块近3日资金净流入数据是否持续？",
+    "保利发展年报后地产板块是否有政策利好出台？",
+    "央行降准降息的具体时间表是否明确？"
+  ],
+  "invalidation_conditions": [
+    "地产板块出现重大政策利好（如放松限购、降息），资金回流地产",
+    "新能源/半导体板块龙头业绩低于预期，板块大幅回调",
+    "央行明确表示短期内不降准降息，流动性预期逆转"
+  ],
+  "must_watch_indicators": [
+    "新能源ETF（如515030）和半导体ETF（如512480）的成交量变化",
+    "保利发展股价走势及地产板块资金流向",
+    "央行公开市场操作及降准降息信号",
+    "市场恐贪指数变化，若进入极度贪婪（≥80）则需警惕过热"
+  ],
+  "kill_switch_signals": [
+    "新能源/半导体ETF连续3日资金净流出",
+    "地产板块出现涨停潮，资金明显回流",
+    "央行释放紧缩信号（如加息或提高准备金率）"
+  ],
+  "warnings": [
+    "注意：情绪信号来自M10系统，恐贪指数未明确给出，需结合实时数据判断",
+    "注意：技术面信号显示市场整体偏弱，轮动可能滞后或失败，需设置止损"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-02T07:43:31.024694",
+  "batch_id": "sched_signal_pipeline_20260502_073654_8414a2_20260424_155542_004",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

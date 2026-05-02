@@ -1,0 +1,104 @@
+{
+  "opportunity_id": "opp_d770469a",
+  "opportunity_title": "券商龙头业绩爆发",
+  "opportunity_thesis": "广发证券一季度净利润同比增超70%，营收同步大增，叠加央行降准释放流动性，市场活跃度提升直接利好券商经纪、自营等核心业务。当前券商板块估值处于历史低位，业绩超预期与政策宽松形成共振，预期差较大，具备阶段性配置价值。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "广发证券(000776.SZ)",
+    "证券ETF(512880.SH)",
+    "券商ETF(512000.SH)"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-28T00:00:00",
+    "end": "2026-06-28T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行4月20日降准0.5个百分点已落地，市场流动性改善；广发证券一季报于4月27日发布，业绩超预期信号新鲜；市场对券商板块关注度提升，但股价尚未充分反应，存在时间窗口。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_898af08751f6",
+    "sig_7ae3396ab434",
+    "sig_781fda7e246d"
+  ],
+  "inferred_events": [
+    "inferred_a57d82ba",
+    "inferred_96846854",
+    "inferred_6db4bab4",
+    "inferred_2c582210"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "广发证券一季度归母净利润同比增70.73%，营收同比增64.33%，业绩增速远超行业平均",
+    "央行4月20日下调存款准备金率0.5个百分点，直接增加市场流动性，利好券商经纪和自营业务",
+    "历史案例显示降准后券商板块通常有估值修复行情，且当前券商板块估值处于历史低位"
+  ],
+  "counter_evidence": [
+    "市场整体情绪偏弱，近期指数高开低走，下跌个股近4000只，可能压制券商板块表现",
+    "广发证券业绩高增长部分源于低基数效应，后续季度增速可能放缓"
+  ],
+  "key_assumptions": [
+    "假设1：市场活跃度在降准后持续提升，日均成交额维持或高于当前水平",
+    "假设2：广发证券业绩增长趋势可持续，无重大资产减值或监管风险",
+    "假设3：宏观经济和政策环境不发生超预期恶化"
+  ],
+  "uncertainty_map": [
+    "市场整体情绪脆弱，若指数继续下探，券商板块可能跟随回调（影响程度：高）",
+    "后续货币政策宽松节奏和力度不确定，若降准后无进一步宽松，利好可能被快速消化（影响程度：中）",
+    "广发证券业绩高增长是否可持续，需关注二季度市场成交量和投行业务恢复情况（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：券商板块估值修复+业绩超预期驱动，预计10-20%涨幅空间；潜在风险：市场情绪恶化导致板块跟跌，最大回撤约8-10%，止损点明确（如跌破一季报发布前价格）。",
+  "next_validation_questions": [
+    "广发证券一季报发布后，市场成交量和券商板块资金流向是否持续改善？",
+    "其他头部券商（如中信证券、华泰证券）一季报是否也呈现类似高增长？",
+    "央行后续是否有进一步降息或降准的明确信号？"
+  ],
+  "invalidation_conditions": [
+    "市场日均成交额连续一周低于8000亿元",
+    "广发证券股价跌破一季报发布前收盘价（约15元）",
+    "出现超预期监管政策或行业利空"
+  ],
+  "must_watch_indicators": [
+    "A股日均成交额",
+    "广发证券股价与成交量变化",
+    "证券ETF(512880)份额变化",
+    "央行公开市场操作及政策信号"
+  ],
+  "kill_switch_signals": [
+    "广发证券发布业绩下修或重大风险提示",
+    "市场出现系统性风险事件（如指数单日跌幅超3%）",
+    "监管层出台限制券商业务或收紧杠杆的政策"
+  ],
+  "warnings": [
+    "注意：广发证券一季报业绩高增长部分源于低基数，需关注二季度增速是否回落",
+    "注意：当前市场整体情绪偏弱，券商板块可能滞后反应，需耐心等待催化剂发酵"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-02T07:40:15.553021",
+  "batch_id": "sched_signal_pipeline_20260502_073654_8414a2_20260424_155542_002",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

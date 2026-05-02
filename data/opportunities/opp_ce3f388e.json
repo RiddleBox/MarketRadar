@@ -1,0 +1,110 @@
+{
+  "opportunity_id": "opp_ce3f388e",
+  "opportunity_title": "宽松政策博弈通缩",
+  "opportunity_thesis": "央行已实施降准0.5个百分点和降息10bp，且高层表态将适时进一步宽松，而PMI连续3个月收缩、CPI/PPI负增长确认通缩压力。市场对政策持续发力的预期强烈，但经济数据疲软压制风险偏好，形成'政策底'与'经济底'之间的博弈窗口。短期内流动性改善利好金融和利率敏感板块，但需等待更多经济企稳信号才能确认趋势反转。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "沪深300ETF",
+    "银行ETF",
+    "国债期货"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-25T00:00:00",
+    "end": "2026-06-25T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "降准降息已落地，央行高层明确表态将适时进一步宽松，而4月PMI、CPI、PPI数据均指向经济通缩压力加大，政策宽松预期与基本面疲软形成强烈对比。当前是政策密集出台后的初期窗口，市场尚未充分定价后续宽松力度，预期差存在。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203",
+    "sig_6030bb0be882",
+    "sig_7d650e648a54",
+    "sig_e0e3bf1f136a"
+  ],
+  "inferred_events": [
+    "inferred_a57d82ba",
+    "inferred_96846854",
+    "inferred_6db4bab4",
+    "inferred_2c582210"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行已实施降准0.5个百分点和降息10bp，释放约1万亿长期资金",
+    "央行行长表态将适时降准，政策宽松方向明确",
+    "制造业PMI连续3个月低于荣枯线，经济下行压力加大",
+    "CPI同比下降0.3%、PPI同比下降2.7%，通缩压力持续"
+  ],
+  "counter_evidence": [
+    "经济数据持续疲软，企业盈利预期可能进一步下调",
+    "市场情绪脆弱，指数高开低走，下跌个股近4000只"
+  ],
+  "key_assumptions": [
+    "假设1：央行在未来1-2个月内继续降准或降息，政策宽松力度超预期",
+    "假设2：通缩压力不会急剧恶化导致信用风险爆发",
+    "假设3：市场流动性改善能传导至实体经济，而非仅停留在金融体系"
+  ],
+  "uncertainty_map": [
+    "后续宽松政策力度和节奏不确定（影响程度：高）",
+    "经济数据能否在2-3个月内企稳（影响程度：高）",
+    "外部风险（如地缘政治、全球利率环境）对A股冲击（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.7,
+    "confidence_score": 0.7,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：若后续宽松超预期且经济企稳，沪深300有望反弹10-15%；潜在风险：若通缩持续且政策力度不及预期，指数可能再跌5-8%。风险收益比约2:1，但需严格止损。",
+  "next_validation_questions": [
+    "未来1个月内是否有新的降准或降息公告？",
+    "4月及5月PMI数据是否出现边际改善？",
+    "银行间市场利率（如DR007）是否持续下行？",
+    "北向资金是否持续流入A股？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "PMI继续下滑至48以下，经济加速恶化",
+    "市场出现系统性流动性危机或信用事件"
+  ],
+  "must_watch_indicators": [
+    "DR007利率走势",
+    "制造业PMI月度数据",
+    "央行公开市场操作公告",
+    "北向资金净流入/流出"
+  ],
+  "kill_switch_signals": [
+    "央行意外收紧流动性（如逆回购利率上调）",
+    "CPI转正且快速上升至2%以上",
+    "大型金融机构出现流动性风险事件"
+  ],
+  "warnings": [
+    "注意：经济数据滞后，政策效果需时间验证，短期市场可能继续震荡",
+    "注意：历史案例显示单纯降息降准对地产板块提振有限，需基本面配合"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-02T07:39:48.497771",
+  "batch_id": "sched_signal_pipeline_20260502_073654_8414a2_20260424_155542_002",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

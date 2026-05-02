@@ -1,0 +1,763 @@
+{
+  "metadata": {
+    "generated_at": "2026-05-01T21:14:53.328560",
+    "date": "2026-05-01"
+  },
+  "statistics": {
+    "date": "2026-05-01",
+    "news_count": 3,
+    "signal_count": 13,
+    "high_confidence_signals": 12,
+    "signal_types": {
+      "tech_breakthrough": 4,
+      "policy_driven": 9
+    },
+    "industry_sectors": {
+      "固态电池": 1,
+      "高端激光雷达": 1,
+      "线控底盘": 1,
+      "高速电驱动": 1,
+      "半导体设计/EDA": 1,
+      "AI初创公司（潜在被收购标的）": 1,
+      "苹果供应链（高分红/回购替代标的）": 1,
+      "AI芯片设计": 1,
+      "半导体先进制程代工": 1,
+      "半导体设备": 1,
+      "高带宽内存（HBM）": 1,
+      "数据中心电力及冷却": 1,
+      "光模块（高速互联）": 1
+    }
+  },
+  "signals": [
+    {
+      "signal_id": "implicit_5d78579a",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "追觅造车，从“火箭”开始",
+      "published_at": "2026-05-01T10:26:42",
+      "industry_sector": "固态电池",
+      "opportunity_description": "追觅的‘首款可量产全固态电池’概念为整个固态电池赛道做了巨大的市场教育，降低了不确定性。",
+      "target_symbols": [
+        "未上市企业为主，如清陶能源、卫蓝新能源；上市企业关注宁德时代、比亚迪的固态电池进展"
+      ],
+      "prior_confidence": 0.772977858577842,
+      "posterior_confidence": 0.0,
+      "confidence_change": -0.772977858577842,
+      "reasoning_chain": {
+        "source_event": "追觅造车，从“火箭”开始",
+        "target_opportunity": "追觅的‘首款可量产全固态电池’概念为整个固态电池赛道做了巨大的市场教育，降低了不确定性。",
+        "causal_links": [
+          {
+            "from_concept": "追觅发布‘火箭车’及全栈技术",
+            "to_concept": "市场关注度向高端新能源车技术供应商转移",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "追觅作为新进入者，其技术发布会吸引资本和产业界对上游核心技术（固态电池、高端激光雷达、线控底盘）的关注。"
+          },
+          {
+            "from_concept": "市场关注度向高端技术供应商转移",
+            "to_concept": "固态电池、高线数激光雷达、线控底盘等细分赛道获得资本青睐",
+            "relation_type": "demand_shifts",
+            "confidence": 0.85,
+            "reasoning": "追觅的技术预演强化了这些技术路线的确定性，引导资本流入相关赛道，提升相关企业估值和订单预期。"
+          },
+          {
+            "from_concept": "技术路线确定性增强",
+            "to_concept": "相关技术研发企业的订单预期和估值提升",
+            "relation_type": "tech_enables",
+            "confidence": 0.75,
+            "reasoning": "市场认为这些技术是未来高端车标配时，拥有可量产技术的公司将获得更高的估值和订单。追觅的发布相当于一次技术路线的‘背书’。"
+          },
+          {
+            "from_concept": "追觅跨界造车成功（假设）",
+            "to_concept": "消费电子和汽车产业的技术融合趋势加速",
+            "relation_type": "tech_enables",
+            "confidence": 0.7,
+            "reasoning": "追觅的成功路径证明底层技术在不同领域的通用性，会激励其他拥有核心机电、AI能力的消费电子公司探索跨界。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_8aff2137",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "追觅造车，从“火箭”开始",
+      "published_at": "2026-05-01T10:26:42",
+      "industry_sector": "高端激光雷达",
+      "opportunity_description": "追觅的高性能激光雷达证明了更高端产品的市场需求，做大了整个市场蛋糕。",
+      "target_symbols": [
+        "禾赛科技",
+        "速腾聚创"
+      ],
+      "prior_confidence": 0.772977858577842,
+      "posterior_confidence": 0.772977858577842,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "追觅造车，从“火箭”开始",
+        "target_opportunity": "追觅的高性能激光雷达证明了更高端产品的市场需求，做大了整个市场蛋糕。",
+        "causal_links": [
+          {
+            "from_concept": "追觅发布‘火箭车’及全栈技术",
+            "to_concept": "市场关注度向高端新能源车技术供应商转移",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "追觅作为新进入者，其技术发布会吸引资本和产业界对上游核心技术（固态电池、高端激光雷达、线控底盘）的关注。"
+          },
+          {
+            "from_concept": "市场关注度向高端技术供应商转移",
+            "to_concept": "固态电池、高线数激光雷达、线控底盘等细分赛道获得资本青睐",
+            "relation_type": "demand_shifts",
+            "confidence": 0.85,
+            "reasoning": "追觅的技术预演强化了这些技术路线的确定性，引导资本流入相关赛道，提升相关企业估值和订单预期。"
+          },
+          {
+            "from_concept": "技术路线确定性增强",
+            "to_concept": "相关技术研发企业的订单预期和估值提升",
+            "relation_type": "tech_enables",
+            "confidence": 0.75,
+            "reasoning": "市场认为这些技术是未来高端车标配时，拥有可量产技术的公司将获得更高的估值和订单。追觅的发布相当于一次技术路线的‘背书’。"
+          },
+          {
+            "from_concept": "追觅跨界造车成功（假设）",
+            "to_concept": "消费电子和汽车产业的技术融合趋势加速",
+            "relation_type": "tech_enables",
+            "confidence": 0.7,
+            "reasoning": "追觅的成功路径证明底层技术在不同领域的通用性，会激励其他拥有核心机电、AI能力的消费电子公司探索跨界。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_0e658b42",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "追觅造车，从“火箭”开始",
+      "published_at": "2026-05-01T10:26:42",
+      "industry_sector": "线控底盘",
+      "opportunity_description": "追觅的‘全线控’概念加速了行业对线控底盘的采用。",
+      "target_symbols": [
+        "伯特利",
+        "亚太股份",
+        "拓普集团"
+      ],
+      "prior_confidence": 0.772977858577842,
+      "posterior_confidence": 0.772977858577842,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "追觅造车，从“火箭”开始",
+        "target_opportunity": "追觅的‘全线控’概念加速了行业对线控底盘的采用。",
+        "causal_links": [
+          {
+            "from_concept": "追觅发布‘火箭车’及全栈技术",
+            "to_concept": "市场关注度向高端新能源车技术供应商转移",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "追觅作为新进入者，其技术发布会吸引资本和产业界对上游核心技术（固态电池、高端激光雷达、线控底盘）的关注。"
+          },
+          {
+            "from_concept": "市场关注度向高端技术供应商转移",
+            "to_concept": "固态电池、高线数激光雷达、线控底盘等细分赛道获得资本青睐",
+            "relation_type": "demand_shifts",
+            "confidence": 0.85,
+            "reasoning": "追觅的技术预演强化了这些技术路线的确定性，引导资本流入相关赛道，提升相关企业估值和订单预期。"
+          },
+          {
+            "from_concept": "技术路线确定性增强",
+            "to_concept": "相关技术研发企业的订单预期和估值提升",
+            "relation_type": "tech_enables",
+            "confidence": 0.75,
+            "reasoning": "市场认为这些技术是未来高端车标配时，拥有可量产技术的公司将获得更高的估值和订单。追觅的发布相当于一次技术路线的‘背书’。"
+          },
+          {
+            "from_concept": "追觅跨界造车成功（假设）",
+            "to_concept": "消费电子和汽车产业的技术融合趋势加速",
+            "relation_type": "tech_enables",
+            "confidence": 0.7,
+            "reasoning": "追觅的成功路径证明底层技术在不同领域的通用性，会激励其他拥有核心机电、AI能力的消费电子公司探索跨界。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_af727199",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "追觅造车，从“火箭”开始",
+      "published_at": "2026-05-01T10:26:42",
+      "industry_sector": "高速电驱动",
+      "opportunity_description": "追觅的20万转马达技术推动行业向更高转速发展。",
+      "target_symbols": [
+        "汇川技术",
+        "英搏尔"
+      ],
+      "prior_confidence": 0.772977858577842,
+      "posterior_confidence": 0.772977858577842,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "追觅造车，从“火箭”开始",
+        "target_opportunity": "追觅的20万转马达技术推动行业向更高转速发展。",
+        "causal_links": [
+          {
+            "from_concept": "追觅发布‘火箭车’及全栈技术",
+            "to_concept": "市场关注度向高端新能源车技术供应商转移",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "追觅作为新进入者，其技术发布会吸引资本和产业界对上游核心技术（固态电池、高端激光雷达、线控底盘）的关注。"
+          },
+          {
+            "from_concept": "市场关注度向高端技术供应商转移",
+            "to_concept": "固态电池、高线数激光雷达、线控底盘等细分赛道获得资本青睐",
+            "relation_type": "demand_shifts",
+            "confidence": 0.85,
+            "reasoning": "追觅的技术预演强化了这些技术路线的确定性，引导资本流入相关赛道，提升相关企业估值和订单预期。"
+          },
+          {
+            "from_concept": "技术路线确定性增强",
+            "to_concept": "相关技术研发企业的订单预期和估值提升",
+            "relation_type": "tech_enables",
+            "confidence": 0.75,
+            "reasoning": "市场认为这些技术是未来高端车标配时，拥有可量产技术的公司将获得更高的估值和订单。追觅的发布相当于一次技术路线的‘背书’。"
+          },
+          {
+            "from_concept": "追觅跨界造车成功（假设）",
+            "to_concept": "消费电子和汽车产业的技术融合趋势加速",
+            "relation_type": "tech_enables",
+            "confidence": 0.7,
+            "reasoning": "追觅的成功路径证明底层技术在不同领域的通用性，会激励其他拥有核心机电、AI能力的消费电子公司探索跨界。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_f4fb5a38",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "苹果现金战略重大转向",
+      "published_at": "2026-05-01T09:58:30",
+      "industry_sector": "半导体设计/EDA",
+      "opportunity_description": "苹果若增加现金储备并用于自研芯片或收购，将提升对先进制程和EDA工具的需求。",
+      "target_symbols": [
+        "ARM（未上市）",
+        "Synopsys（SNPS）",
+        "Cadence（CDNS）",
+        "台积电（TSM）"
+      ],
+      "prior_confidence": 0.7523057787044624,
+      "posterior_confidence": 0.7523057787044624,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "苹果现金战略重大转向",
+        "target_opportunity": "苹果若增加现金储备并用于自研芯片或收购，将提升对先进制程和EDA工具的需求。",
+        "causal_links": [
+          {
+            "from_concept": "苹果放弃净现金中性策略",
+            "to_concept": "苹果未来将大幅增加现金储备",
+            "relation_type": "policy_drives",
+            "confidence": 0.9,
+            "reasoning": "净现金中性策略意味着苹果过去倾向于将多余现金返还股东（回购、分红），放弃该策略则表明管理层意图保留更多现金，以应对不确定性或进行战略储备。"
+          },
+          {
+            "from_concept": "苹果大幅增加现金储备",
+            "to_concept": "苹果减少股票回购和分红规模",
+            "relation_type": "policy_drives",
+            "confidence": 0.85,
+            "reasoning": "现金储备增加意味着用于回购和分红的资金比例下降，现金流出将更保守。"
+          },
+          {
+            "from_concept": "苹果减少股票回购和分红",
+            "to_concept": "苹果股价短期承压，科技股估值逻辑变化",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "市场此前将苹果视为稳定分红+回购标的，策略转向可能导致部分投资者重新评估其价值，引发抛售或估值下调。"
+          },
+          {
+            "from_concept": "苹果增加现金储备",
+            "to_concept": "苹果可能为大规模并购或防御性投资做准备",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "保留大量现金通常用于收购关键技术、应对供应链风险或布局新业务（如AI、芯片制造、医疗）。"
+          },
+          {
+            "from_concept": "苹果可能进行大规模并购",
+            "to_concept": "被收购标的（如AI初创、芯片设计公司）估值提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.6,
+            "reasoning": "苹果若成为潜在买家，市场会提前炒作相关领域公司，尤其是与苹果战略契合的标的。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_ff2b2cc9",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "苹果现金战略重大转向",
+      "published_at": "2026-05-01T09:58:30",
+      "industry_sector": "AI初创公司（潜在被收购标的）",
+      "opportunity_description": "苹果现金储备增加可能用于收购AI领域技术，市场会提前炒作相关标的。",
+      "target_symbols": [
+        "未上市公司（如Anthropic、Cohere等）",
+        "上市AI公司（如C3.ai AI）"
+      ],
+      "prior_confidence": 0.7523057787044624,
+      "posterior_confidence": 0.7523057787044624,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "苹果现金战略重大转向",
+        "target_opportunity": "苹果现金储备增加可能用于收购AI领域技术，市场会提前炒作相关标的。",
+        "causal_links": [
+          {
+            "from_concept": "苹果放弃净现金中性策略",
+            "to_concept": "苹果未来将大幅增加现金储备",
+            "relation_type": "policy_drives",
+            "confidence": 0.9,
+            "reasoning": "净现金中性策略意味着苹果过去倾向于将多余现金返还股东（回购、分红），放弃该策略则表明管理层意图保留更多现金，以应对不确定性或进行战略储备。"
+          },
+          {
+            "from_concept": "苹果大幅增加现金储备",
+            "to_concept": "苹果减少股票回购和分红规模",
+            "relation_type": "policy_drives",
+            "confidence": 0.85,
+            "reasoning": "现金储备增加意味着用于回购和分红的资金比例下降，现金流出将更保守。"
+          },
+          {
+            "from_concept": "苹果减少股票回购和分红",
+            "to_concept": "苹果股价短期承压，科技股估值逻辑变化",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "市场此前将苹果视为稳定分红+回购标的，策略转向可能导致部分投资者重新评估其价值，引发抛售或估值下调。"
+          },
+          {
+            "from_concept": "苹果增加现金储备",
+            "to_concept": "苹果可能为大规模并购或防御性投资做准备",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "保留大量现金通常用于收购关键技术、应对供应链风险或布局新业务（如AI、芯片制造、医疗）。"
+          },
+          {
+            "from_concept": "苹果可能进行大规模并购",
+            "to_concept": "被收购标的（如AI初创、芯片设计公司）估值提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.6,
+            "reasoning": "苹果若成为潜在买家，市场会提前炒作相关领域公司，尤其是与苹果战略契合的标的。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_49b53650",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "苹果现金战略重大转向",
+      "published_at": "2026-05-01T09:58:30",
+      "industry_sector": "苹果供应链（高分红/回购替代标的）",
+      "opportunity_description": "部分资金从苹果流出后可能转向其他高回购或高分红科技股，尤其是苹果供应链中现金流稳定的公司。",
+      "target_symbols": [
+        "Broadcom（AVGO）",
+        "高通（QCOM）",
+        "Skyworks（SWKS）"
+      ],
+      "prior_confidence": 0.7523057787044624,
+      "posterior_confidence": 0.7523057787044624,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "苹果现金战略重大转向",
+        "target_opportunity": "部分资金从苹果流出后可能转向其他高回购或高分红科技股，尤其是苹果供应链中现金流稳定的公司。",
+        "causal_links": [
+          {
+            "from_concept": "苹果放弃净现金中性策略",
+            "to_concept": "苹果未来将大幅增加现金储备",
+            "relation_type": "policy_drives",
+            "confidence": 0.9,
+            "reasoning": "净现金中性策略意味着苹果过去倾向于将多余现金返还股东（回购、分红），放弃该策略则表明管理层意图保留更多现金，以应对不确定性或进行战略储备。"
+          },
+          {
+            "from_concept": "苹果大幅增加现金储备",
+            "to_concept": "苹果减少股票回购和分红规模",
+            "relation_type": "policy_drives",
+            "confidence": 0.85,
+            "reasoning": "现金储备增加意味着用于回购和分红的资金比例下降，现金流出将更保守。"
+          },
+          {
+            "from_concept": "苹果减少股票回购和分红",
+            "to_concept": "苹果股价短期承压，科技股估值逻辑变化",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "市场此前将苹果视为稳定分红+回购标的，策略转向可能导致部分投资者重新评估其价值，引发抛售或估值下调。"
+          },
+          {
+            "from_concept": "苹果增加现金储备",
+            "to_concept": "苹果可能为大规模并购或防御性投资做准备",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "保留大量现金通常用于收购关键技术、应对供应链风险或布局新业务（如AI、芯片制造、医疗）。"
+          },
+          {
+            "from_concept": "苹果可能进行大规模并购",
+            "to_concept": "被收购标的（如AI初创、芯片设计公司）估值提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.6,
+            "reasoning": "苹果若成为潜在买家，市场会提前炒作相关领域公司，尤其是与苹果战略契合的标的。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_3ece75b2",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "美银：全球超大规模云计算企业2027年AI资本开支或达1万亿美元",
+      "published_at": "2026-05-01T09:39:33",
+      "industry_sector": "AI芯片设计",
+      "opportunity_description": "AI服务器GPU需求持续增长，NVDA在训练/推理端保持垄断地位，AMD在推理端份额提升。",
+      "target_symbols": [
+        "NVDA",
+        "AMD"
+      ],
+      "prior_confidence": 0.837936366023697,
+      "posterior_confidence": 0.837936366023697,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "美银：全球超大规模云计算企业2027年AI资本开支或达1万亿美元",
+        "target_opportunity": "AI服务器GPU需求持续增长，NVDA在训练/推理端保持垄断地位，AMD在推理端份额提升。",
+        "causal_links": [
+          {
+            "from_concept": "美银上调资本开支预测（2026年8000亿美元，2027年1万亿美元）",
+            "to_concept": "AI服务器及算力基础设施需求爆发",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "资本开支中大部分用于采购AI服务器（GPU、CPU、存储）及配套网络设备，预测增速远超历史均值，直接拉动上游硬件需求。"
+          },
+          {
+            "from_concept": "AI服务器需求爆发",
+            "to_concept": "半导体先进制程（如3nm/5nm）及HBM内存供不应求",
+            "relation_type": "supply_constrains",
+            "confidence": 0.85,
+            "reasoning": "AI训练芯片（如NVIDIA H100/B200、AMD MI300等）依赖台积电先进制程，且HBM（高带宽内存）产能有限，需求暴增将加剧产能瓶颈。"
+          },
+          {
+            "from_concept": "半导体先进制程供不应求",
+            "to_concept": "光刻机、刻蚀设备等半导体设备采购加速",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "为满足AI芯片产能，晶圆厂必须加大设备采购，尤其是ASML的EUV光刻机及应用材料、东京电子的薄膜沉积/刻蚀设备。"
+          },
+          {
+            "from_concept": "AI算力需求爆发",
+            "to_concept": "数据中心电力及散热需求激增",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "单台AI服务器功耗可达700W-1000W，大规模部署导致数据中心电力需求井喷，带动冷却系统（液冷）和电力设备（UPS、变压器）升级。"
+          },
+          {
+            "from_concept": "电力需求激增",
+            "to_concept": "可再生能源及核电项目加速落地",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "科技巨头为满足ESG目标及稳定供电，将大量采购可再生能源（风电/光伏）并与核电站签订长期购电协议（如微软与Constellation Energy合作）。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "immediate"
+    },
+    {
+      "signal_id": "implicit_18612b1a",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "美银：全球超大规模云计算企业2027年AI资本开支或达1万亿美元",
+      "published_at": "2026-05-01T09:39:33",
+      "industry_sector": "半导体先进制程代工",
+      "opportunity_description": "台积电为AI芯片唯一大规模量产代工厂，3nm/5nm产能满载。",
+      "target_symbols": [
+        "TSM"
+      ],
+      "prior_confidence": 0.837936366023697,
+      "posterior_confidence": 0.837936366023697,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "美银：全球超大规模云计算企业2027年AI资本开支或达1万亿美元",
+        "target_opportunity": "台积电为AI芯片唯一大规模量产代工厂，3nm/5nm产能满载。",
+        "causal_links": [
+          {
+            "from_concept": "美银上调资本开支预测（2026年8000亿美元，2027年1万亿美元）",
+            "to_concept": "AI服务器及算力基础设施需求爆发",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "资本开支中大部分用于采购AI服务器（GPU、CPU、存储）及配套网络设备，预测增速远超历史均值，直接拉动上游硬件需求。"
+          },
+          {
+            "from_concept": "AI服务器需求爆发",
+            "to_concept": "半导体先进制程（如3nm/5nm）及HBM内存供不应求",
+            "relation_type": "supply_constrains",
+            "confidence": 0.85,
+            "reasoning": "AI训练芯片（如NVIDIA H100/B200、AMD MI300等）依赖台积电先进制程，且HBM（高带宽内存）产能有限，需求暴增将加剧产能瓶颈。"
+          },
+          {
+            "from_concept": "半导体先进制程供不应求",
+            "to_concept": "光刻机、刻蚀设备等半导体设备采购加速",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "为满足AI芯片产能，晶圆厂必须加大设备采购，尤其是ASML的EUV光刻机及应用材料、东京电子的薄膜沉积/刻蚀设备。"
+          },
+          {
+            "from_concept": "AI算力需求爆发",
+            "to_concept": "数据中心电力及散热需求激增",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "单台AI服务器功耗可达700W-1000W，大规模部署导致数据中心电力需求井喷，带动冷却系统（液冷）和电力设备（UPS、变压器）升级。"
+          },
+          {
+            "from_concept": "电力需求激增",
+            "to_concept": "可再生能源及核电项目加速落地",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "科技巨头为满足ESG目标及稳定供电，将大量采购可再生能源（风电/光伏）并与核电站签订长期购电协议（如微软与Constellation Energy合作）。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "immediate"
+    },
+    {
+      "signal_id": "implicit_8a3f035f",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "美银：全球超大规模云计算企业2027年AI资本开支或达1万亿美元",
+      "published_at": "2026-05-01T09:39:33",
+      "industry_sector": "半导体设备",
+      "opportunity_description": "台积电、三星为扩产需采购EUV光刻机及刻蚀/沉积设备。",
+      "target_symbols": [
+        "ASML",
+        "AMAT",
+        "LRCX"
+      ],
+      "prior_confidence": 0.837936366023697,
+      "posterior_confidence": 0.837936366023697,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "美银：全球超大规模云计算企业2027年AI资本开支或达1万亿美元",
+        "target_opportunity": "台积电、三星为扩产需采购EUV光刻机及刻蚀/沉积设备。",
+        "causal_links": [
+          {
+            "from_concept": "美银上调资本开支预测（2026年8000亿美元，2027年1万亿美元）",
+            "to_concept": "AI服务器及算力基础设施需求爆发",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "资本开支中大部分用于采购AI服务器（GPU、CPU、存储）及配套网络设备，预测增速远超历史均值，直接拉动上游硬件需求。"
+          },
+          {
+            "from_concept": "AI服务器需求爆发",
+            "to_concept": "半导体先进制程（如3nm/5nm）及HBM内存供不应求",
+            "relation_type": "supply_constrains",
+            "confidence": 0.85,
+            "reasoning": "AI训练芯片（如NVIDIA H100/B200、AMD MI300等）依赖台积电先进制程，且HBM（高带宽内存）产能有限，需求暴增将加剧产能瓶颈。"
+          },
+          {
+            "from_concept": "半导体先进制程供不应求",
+            "to_concept": "光刻机、刻蚀设备等半导体设备采购加速",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "为满足AI芯片产能，晶圆厂必须加大设备采购，尤其是ASML的EUV光刻机及应用材料、东京电子的薄膜沉积/刻蚀设备。"
+          },
+          {
+            "from_concept": "AI算力需求爆发",
+            "to_concept": "数据中心电力及散热需求激增",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "单台AI服务器功耗可达700W-1000W，大规模部署导致数据中心电力需求井喷，带动冷却系统（液冷）和电力设备（UPS、变压器）升级。"
+          },
+          {
+            "from_concept": "电力需求激增",
+            "to_concept": "可再生能源及核电项目加速落地",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "科技巨头为满足ESG目标及稳定供电，将大量采购可再生能源（风电/光伏）并与核电站签订长期购电协议（如微软与Constellation Energy合作）。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "immediate"
+    },
+    {
+      "signal_id": "implicit_8aba649a",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "美银：全球超大规模云计算企业2027年AI资本开支或达1万亿美元",
+      "published_at": "2026-05-01T09:39:33",
+      "industry_sector": "高带宽内存（HBM）",
+      "opportunity_description": "HBM3/3E是AI芯片标配，供需缺口持续至2027年。",
+      "target_symbols": [
+        "MU",
+        "SK Hynix (000660.KS)"
+      ],
+      "prior_confidence": 0.837936366023697,
+      "posterior_confidence": 0.837936366023697,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "美银：全球超大规模云计算企业2027年AI资本开支或达1万亿美元",
+        "target_opportunity": "HBM3/3E是AI芯片标配，供需缺口持续至2027年。",
+        "causal_links": [
+          {
+            "from_concept": "美银上调资本开支预测（2026年8000亿美元，2027年1万亿美元）",
+            "to_concept": "AI服务器及算力基础设施需求爆发",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "资本开支中大部分用于采购AI服务器（GPU、CPU、存储）及配套网络设备，预测增速远超历史均值，直接拉动上游硬件需求。"
+          },
+          {
+            "from_concept": "AI服务器需求爆发",
+            "to_concept": "半导体先进制程（如3nm/5nm）及HBM内存供不应求",
+            "relation_type": "supply_constrains",
+            "confidence": 0.85,
+            "reasoning": "AI训练芯片（如NVIDIA H100/B200、AMD MI300等）依赖台积电先进制程，且HBM（高带宽内存）产能有限，需求暴增将加剧产能瓶颈。"
+          },
+          {
+            "from_concept": "半导体先进制程供不应求",
+            "to_concept": "光刻机、刻蚀设备等半导体设备采购加速",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "为满足AI芯片产能，晶圆厂必须加大设备采购，尤其是ASML的EUV光刻机及应用材料、东京电子的薄膜沉积/刻蚀设备。"
+          },
+          {
+            "from_concept": "AI算力需求爆发",
+            "to_concept": "数据中心电力及散热需求激增",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "单台AI服务器功耗可达700W-1000W，大规模部署导致数据中心电力需求井喷，带动冷却系统（液冷）和电力设备（UPS、变压器）升级。"
+          },
+          {
+            "from_concept": "电力需求激增",
+            "to_concept": "可再生能源及核电项目加速落地",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "科技巨头为满足ESG目标及稳定供电，将大量采购可再生能源（风电/光伏）并与核电站签订长期购电协议（如微软与Constellation Energy合作）。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "immediate"
+    },
+    {
+      "signal_id": "implicit_ea8491db",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "美银：全球超大规模云计算企业2027年AI资本开支或达1万亿美元",
+      "published_at": "2026-05-01T09:39:33",
+      "industry_sector": "数据中心电力及冷却",
+      "opportunity_description": "液冷系统（VRT）、燃气轮机/变压器（GEV）及可再生能源（NEE）需求激增。",
+      "target_symbols": [
+        "VRT",
+        "GEV",
+        "NEE"
+      ],
+      "prior_confidence": 0.837936366023697,
+      "posterior_confidence": 0.837936366023697,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "美银：全球超大规模云计算企业2027年AI资本开支或达1万亿美元",
+        "target_opportunity": "液冷系统（VRT）、燃气轮机/变压器（GEV）及可再生能源（NEE）需求激增。",
+        "causal_links": [
+          {
+            "from_concept": "美银上调资本开支预测（2026年8000亿美元，2027年1万亿美元）",
+            "to_concept": "AI服务器及算力基础设施需求爆发",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "资本开支中大部分用于采购AI服务器（GPU、CPU、存储）及配套网络设备，预测增速远超历史均值，直接拉动上游硬件需求。"
+          },
+          {
+            "from_concept": "AI服务器需求爆发",
+            "to_concept": "半导体先进制程（如3nm/5nm）及HBM内存供不应求",
+            "relation_type": "supply_constrains",
+            "confidence": 0.85,
+            "reasoning": "AI训练芯片（如NVIDIA H100/B200、AMD MI300等）依赖台积电先进制程，且HBM（高带宽内存）产能有限，需求暴增将加剧产能瓶颈。"
+          },
+          {
+            "from_concept": "半导体先进制程供不应求",
+            "to_concept": "光刻机、刻蚀设备等半导体设备采购加速",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "为满足AI芯片产能，晶圆厂必须加大设备采购，尤其是ASML的EUV光刻机及应用材料、东京电子的薄膜沉积/刻蚀设备。"
+          },
+          {
+            "from_concept": "AI算力需求爆发",
+            "to_concept": "数据中心电力及散热需求激增",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "单台AI服务器功耗可达700W-1000W，大规模部署导致数据中心电力需求井喷，带动冷却系统（液冷）和电力设备（UPS、变压器）升级。"
+          },
+          {
+            "from_concept": "电力需求激增",
+            "to_concept": "可再生能源及核电项目加速落地",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "科技巨头为满足ESG目标及稳定供电，将大量采购可再生能源（风电/光伏）并与核电站签订长期购电协议（如微软与Constellation Energy合作）。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "immediate"
+    },
+    {
+      "signal_id": "implicit_a44b8d5a",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "美银：全球超大规模云计算企业2027年AI资本开支或达1万亿美元",
+      "published_at": "2026-05-01T09:39:33",
+      "industry_sector": "光模块（高速互联）",
+      "opportunity_description": "AI集群内部互联需要800G/1.6T光模块，需求增速超50%。",
+      "target_symbols": [
+        "LITE",
+        "COHR"
+      ],
+      "prior_confidence": 0.837936366023697,
+      "posterior_confidence": 0.837936366023697,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "美银：全球超大规模云计算企业2027年AI资本开支或达1万亿美元",
+        "target_opportunity": "AI集群内部互联需要800G/1.6T光模块，需求增速超50%。",
+        "causal_links": [
+          {
+            "from_concept": "美银上调资本开支预测（2026年8000亿美元，2027年1万亿美元）",
+            "to_concept": "AI服务器及算力基础设施需求爆发",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "资本开支中大部分用于采购AI服务器（GPU、CPU、存储）及配套网络设备，预测增速远超历史均值，直接拉动上游硬件需求。"
+          },
+          {
+            "from_concept": "AI服务器需求爆发",
+            "to_concept": "半导体先进制程（如3nm/5nm）及HBM内存供不应求",
+            "relation_type": "supply_constrains",
+            "confidence": 0.85,
+            "reasoning": "AI训练芯片（如NVIDIA H100/B200、AMD MI300等）依赖台积电先进制程，且HBM（高带宽内存）产能有限，需求暴增将加剧产能瓶颈。"
+          },
+          {
+            "from_concept": "半导体先进制程供不应求",
+            "to_concept": "光刻机、刻蚀设备等半导体设备采购加速",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "为满足AI芯片产能，晶圆厂必须加大设备采购，尤其是ASML的EUV光刻机及应用材料、东京电子的薄膜沉积/刻蚀设备。"
+          },
+          {
+            "from_concept": "AI算力需求爆发",
+            "to_concept": "数据中心电力及散热需求激增",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "单台AI服务器功耗可达700W-1000W，大规模部署导致数据中心电力需求井喷，带动冷却系统（液冷）和电力设备（UPS、变压器）升级。"
+          },
+          {
+            "from_concept": "电力需求激增",
+            "to_concept": "可再生能源及核电项目加速落地",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "科技巨头为满足ESG目标及稳定供电，将大量采购可再生能源（风电/光伏）并与核电站签订长期购电协议（如微软与Constellation Energy合作）。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "immediate"
+    }
+  ]
+}

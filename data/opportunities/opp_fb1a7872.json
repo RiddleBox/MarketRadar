@@ -1,0 +1,105 @@
+{
+  "opportunity_id": "opp_fb1a7872",
+  "opportunity_title": "金融地产背离交易",
+  "opportunity_thesis": "广发证券一季度净利润同比增70.73%与保利发展净利润同比降57.06%形成鲜明对比，反映金融与地产板块景气度持续背离。在央行降准降息预期下，资金将从地产板块流出，进一步向券商等金融板块集中，形成结构性机会。当前市场尚未充分定价这一分化，存在预期差。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "券商ETF",
+    "广发证券",
+    "保利发展"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-29T00:00:00",
+    "end": "2026-06-29T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "一季报集中披露期，广发证券与保利发展业绩反差为最新数据，市场尚未充分反应。央行降准降息预期在2周内落地概率85%，将强化金融板块相对优势。地产板块持续承压，资金流出趋势明确。",
+  "related_signals": [
+    "sig_898af08751f6",
+    "sig_dc0079649df5"
+  ],
+  "inferred_events": [
+    "inferred_49d48e89",
+    "inferred_3cfa23da",
+    "inferred_64cd79f9",
+    "inferred_e439b0a5",
+    "inferred_13a226a1"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "广发证券一季度净利润同比增70.73%，营收增64.33%，业绩超预期",
+    "保利发展一季度净利润同比降57.06%，营收降15.74%，地产板块持续恶化",
+    "央行降准降息预期概率85%，利好金融板块，利空地产板块",
+    "历史案例显示降息后银行股估值修复，地产股反弹乏力"
+  ],
+  "counter_evidence": [
+    "券商板块已有所上涨，部分利好可能已被定价",
+    "市场整体技术面偏弱，三大指数高开回落，可能拖累板块表现"
+  ],
+  "key_assumptions": [
+    "假设1：央行降准降息在2周内落地，且幅度符合预期",
+    "假设2：地产板块基本面继续恶化，无超预期政策刺激",
+    "假设3：市场资金继续从地产流向金融板块"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：央行宽松政策力度不及预期或延迟（影响程度：高）",
+    "不确定性2：地产板块出现超预期政策利好，扭转市场预期（影响程度：中）",
+    "不确定性3：市场整体系统性风险导致板块联动下跌（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：券商板块在宽松预期和业绩驱动下有望上涨10%-15%；潜在风险：央行政策不及预期或地产政策反转导致板块回调5%-8%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "央行降准降息的具体时间表和幅度预期如何？",
+    "券商板块当前估值水平是否合理，是否已充分反映业绩增长？",
+    "地产板块是否有潜在政策利好可能扭转市场预期？",
+    "市场整体资金流向是否已开始从地产转向金融？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表示短期内不会进一步降准降息",
+    "地产板块出现重大政策利好，如放松限购或提供资金支持",
+    "券商板块出现集体业绩低于预期或监管利空"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作及政策表态",
+    "券商板块成交量及资金流向",
+    "保利发展及地产板块后续业绩及政策动态",
+    "市场整体指数走势及情绪指标"
+  ],
+  "kill_switch_signals": [
+    "央行降准降息预期落空或明确推迟",
+    "地产板块出现超预期政策利好，板块大幅反弹",
+    "券商板块出现重大利空，如监管收紧或业绩变脸"
+  ],
+  "warnings": [
+    "注意：当前市场整体技术面偏弱，短期回调风险可能影响板块表现",
+    "注意：券商板块已有所上涨，需警惕追高风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-02T07:43:53.968377",
+  "batch_id": "sched_signal_pipeline_20260502_073654_8414a2_20260424_155542_004",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}
