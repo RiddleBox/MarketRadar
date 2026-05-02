@@ -8,8 +8,8 @@
       "enabled": true,
       "interval_minutes": 30,
       "time_window": null,
-      "last_run": "2026-05-02T10:48:40.374928",
-      "run_count": 7,
+      "last_run": "2026-05-02T11:48:22.618023",
+      "run_count": 2,
       "error_count": 0,
       "last_status": "ok"
     },
@@ -22,8 +22,8 @@
         "09:25",
         "15:05"
       ],
-      "last_run": "2026-05-02T11:05:14.126882",
-      "run_count": 11,
+      "last_run": "2026-05-02T11:58:25.105674",
+      "run_count": 5,
       "error_count": 0,
       "last_status": "ok"
     },
@@ -47,8 +47,8 @@
       "enabled": true,
       "interval_minutes": 15,
       "time_window": null,
-      "last_run": "2026-05-02T11:03:44.104539",
-      "run_count": 14,
+      "last_run": "2026-05-02T12:03:25.110742",
+      "run_count": 4,
       "error_count": 0,
       "last_status": "ok"
     },
@@ -61,8 +61,8 @@
         "09:00",
         "22:00"
       ],
-      "last_run": "2026-05-02T11:00:44.102612",
-      "run_count": 6,
+      "last_run": "2026-05-02T11:48:25.084222",
+      "run_count": 2,
       "error_count": 0,
       "last_status": "ok"
     },
@@ -75,9 +75,9 @@
         "09:30",
         "15:00"
       ],
-      "last_run": "2026-05-02T11:00:10.401257",
+      "last_run": "2026-05-02T11:58:25.106442",
       "run_count": 0,
-      "error_count": 10,
+      "error_count": 5,
       "last_status": "error"
     },
     "m12_hk_scan": {
@@ -89,9 +89,9 @@
         "09:30",
         "16:00"
       ],
-      "last_run": "2026-05-02T11:00:10.402156",
+      "last_run": "2026-05-02T11:58:25.107638",
       "run_count": 0,
-      "error_count": 10,
+      "error_count": 5,
       "last_status": "error"
     },
     "m12_us_scan": {
@@ -107,21 +107,123 @@
       "run_count": 0,
       "error_count": 0,
       "last_status": null
+    },
+    "m12_premarket_a_share": {
+      "name": "m12_premarket_a_share",
+      "description": "M12 A股盘前扫描：隔夜信号收集+情绪面分析→开盘交易依据",
+      "enabled": true,
+      "interval_minutes": 1440,
+      "time_window": [
+        "09:00",
+        "09:00"
+      ],
+      "last_run": null,
+      "run_count": 0,
+      "error_count": 0,
+      "last_status": null
+    },
+    "m12_premarket_hk": {
+      "name": "m12_premarket_hk",
+      "description": "M12 港股盘前扫描：隔夜信号收集+情绪面分析→开盘交易依据",
+      "enabled": true,
+      "interval_minutes": 1440,
+      "time_window": [
+        "09:00",
+        "09:00"
+      ],
+      "last_run": null,
+      "run_count": 0,
+      "error_count": 0,
+      "last_status": null
+    },
+    "m12_premarket_us": {
+      "name": "m12_premarket_us",
+      "description": "M12 美股盘前扫描：隔夜信号收集+情绪面分析→开盘交易依据",
+      "enabled": true,
+      "interval_minutes": 1440,
+      "time_window": [
+        "21:00",
+        "21:00"
+      ],
+      "last_run": null,
+      "run_count": 0,
+      "error_count": 0,
+      "last_status": null
+    },
+    "m12_postmarket_a_share": {
+      "name": "m12_postmarket_a_share",
+      "description": "M12 A股盘后扫描：全量价格扫描→异动发现→扩展监控池",
+      "enabled": true,
+      "interval_minutes": 1440,
+      "time_window": [
+        "15:30",
+        "15:30"
+      ],
+      "last_run": null,
+      "run_count": 0,
+      "error_count": 0,
+      "last_status": null
+    },
+    "m12_postmarket_hk": {
+      "name": "m12_postmarket_hk",
+      "description": "M12 港股盘后扫描：全量价格扫描→异动发现→扩展监控池",
+      "enabled": true,
+      "interval_minutes": 1440,
+      "time_window": [
+        "16:30",
+        "16:30"
+      ],
+      "last_run": null,
+      "run_count": 0,
+      "error_count": 0,
+      "last_status": null
+    },
+    "m12_postmarket_us": {
+      "name": "m12_postmarket_us",
+      "description": "M12 美股盘后扫描：全量价格扫描→异动发现→扩展监控池",
+      "enabled": true,
+      "interval_minutes": 1440,
+      "time_window": [
+        "05:00",
+        "05:00"
+      ],
+      "last_run": null,
+      "run_count": 0,
+      "error_count": 0,
+      "last_status": null
     }
   },
   "recent_runs": [
     {
+      "task": "news_collect",
+      "at": "2026-05-02T11:18:22.558126",
+      "run_id": "news_collect_20260502_111822_09db4c",
+      "status": "ok",
+      "duration_s": 0.0,
+      "result": {
+        "error": "AKShareNewsProvider() takes no arguments"
+      }
+    },
+    {
+      "task": "m12_a_share_scan",
+      "at": "2026-05-02T11:18:22.558739",
+      "run_id": "m12_a_share_scan_20260502_111822_16375b",
+      "status": "error",
+      "error": "name 'Market' is not defined",
+      "duration_s": 0.0
+    },
+    {
       "task": "m12_hk_scan",
-      "at": "2026-05-02T10:20:07.440355",
-      "run_id": "m12_hk_scan_20260502_102007_0d5752",
+      "at": "2026-05-02T11:18:22.559696",
+      "run_id": "m12_hk_scan_20260502_111822_a2e395",
       "status": "error",
       "error": "name 'Market' is not defined",
       "duration_s": 0.0
     },
     {
       "task": "price_update",
-      "at": "2026-05-02T10:25:07.459703",
-      "run_id": "price_update_20260502_102507_20b34d",
+      "at": "2026-05-02T11:28:22.586576",
+      "run_id": "price_update_20260502_112822_52048e",
       "status": "ok",
       "duration_s": 0.02,
       "result": {
@@ -132,39 +234,24 @@
     },
     {
       "task": "m12_a_share_scan",
-      "at": "2026-05-02T10:30:07.462196",
-      "run_id": "m12_a_share_scan_20260502_103007_a81f0c",
+      "at": "2026-05-02T11:28:22.587237",
+      "run_id": "m12_a_share_scan_20260502_112822_507650",
       "status": "error",
       "error": "name 'Market' is not defined",
       "duration_s": 0.0
     },
     {
       "task": "m12_hk_scan",
-      "at": "2026-05-02T10:30:07.463015",
-      "run_id": "m12_hk_scan_20260502_103007_d12939",
+      "at": "2026-05-02T11:28:22.588265",
+      "run_id": "m12_hk_scan_20260502_112822_1833ef",
       "status": "error",
       "error": "name 'Market' is not defined",
       "duration_s": 0.0
     },
     {
-      "task": "sentiment_collect",
-      "at": "2026-05-02T10:30:40.331150",
-      "run_id": "sentiment_collect_20260502_103037_5ab264",
-      "status": "ok",
-      "duration_s": 2.87,
-      "result": {
-        "fear_greed": 50.7,
-        "label": "中性",
-        "direction": "NEUTRAL",
-        "intensity": 2.1,
-        "batch_id": "sched_sent_sentiment_collect_20260502_103037_5ab264",
-        "errors": []
-      }
-    },
-    {
       "task": "news_collect",
-      "at": "2026-05-02T10:33:40.332875",
-      "run_id": "news_collect_20260502_103340_f54340",
+      "at": "2026-05-02T11:33:22.591059",
+      "run_id": "news_collect_20260502_113322_76a52d",
       "status": "ok",
       "duration_s": 0.0,
       "result": {
@@ -173,8 +260,8 @@
     },
     {
       "task": "price_update",
-      "at": "2026-05-02T10:35:10.349568",
-      "run_id": "price_update_20260502_103510_85d305",
+      "at": "2026-05-02T11:38:22.610833",
+      "run_id": "price_update_20260502_113822_7cded3",
       "status": "ok",
       "duration_s": 0.02,
       "result": {
@@ -185,36 +272,24 @@
     },
     {
       "task": "m12_a_share_scan",
-      "at": "2026-05-02T10:40:10.352114",
-      "run_id": "m12_a_share_scan_20260502_104010_5e40f6",
+      "at": "2026-05-02T11:38:22.611563",
+      "run_id": "m12_a_share_scan_20260502_113822_9622a8",
       "status": "error",
       "error": "name 'Market' is not defined",
       "duration_s": 0.0
     },
     {
       "task": "m12_hk_scan",
-      "at": "2026-05-02T10:40:10.353028",
-      "run_id": "m12_hk_scan_20260502_104010_0a1c5b",
+      "at": "2026-05-02T11:38:22.612982",
+      "run_id": "m12_hk_scan_20260502_113822_3d6b24",
       "status": "error",
       "error": "name 'Market' is not defined",
       "duration_s": 0.0
     },
     {
-      "task": "price_update",
-      "at": "2026-05-02T10:45:10.372859",
-      "run_id": "price_update_20260502_104510_87fb97",
-      "status": "ok",
-      "duration_s": 0.02,
-      "result": {
-        "open_positions": 0,
-        "updated": 0,
-        "closed": 0
-      }
-    },
-    {
       "task": "signal_pipeline",
-      "at": "2026-05-02T10:48:40.374948",
-      "run_id": "signal_pipeline_20260502_104840_c0373c",
+      "at": "2026-05-02T11:48:22.618045",
+      "run_id": "signal_pipeline_20260502_114822_931fdb",
       "status": "ok",
       "duration_s": 0.0,
       "result": {
@@ -222,37 +297,11 @@
       }
     },
     {
-      "task": "news_collect",
-      "at": "2026-05-02T10:48:40.375731",
-      "run_id": "news_collect_20260502_104840_c3a632",
-      "status": "ok",
-      "duration_s": 0.0,
-      "result": {
-        "error": "AKShareNewsProvider() takes no arguments"
-      }
-    },
-    {
-      "task": "m12_a_share_scan",
-      "at": "2026-05-02T10:50:10.377696",
-      "run_id": "m12_a_share_scan_20260502_105010_443eb6",
-      "status": "error",
-      "error": "name 'Market' is not defined",
-      "duration_s": 0.0
-    },
-    {
-      "task": "m12_hk_scan",
-      "at": "2026-05-02T10:50:10.378550",
-      "run_id": "m12_hk_scan_20260502_105010_8da4be",
-      "status": "error",
-      "error": "name 'Market' is not defined",
-      "duration_s": 0.0
-    },
-    {
       "task": "price_update",
-      "at": "2026-05-02T10:55:10.398711",
-      "run_id": "price_update_20260502_105510_ca8c99",
+      "at": "2026-05-02T11:48:22.633695",
+      "run_id": "price_update_20260502_114822_2adb04",
       "status": "ok",
-      "duration_s": 0.02,
+      "duration_s": 0.01,
       "result": {
         "open_positions": 0,
         "updated": 0,
@@ -260,56 +309,82 @@
       }
     },
     {
-      "task": "m12_a_share_scan",
-      "at": "2026-05-02T11:00:10.401396",
-      "run_id": "m12_a_share_scan_20260502_110010_753052",
-      "status": "error",
-      "error": "name 'Market' is not defined",
-      "duration_s": 0.0
-    },
-    {
-      "task": "m12_hk_scan",
-      "at": "2026-05-02T11:00:10.402242",
-      "run_id": "m12_hk_scan_20260502_110010_a68003",
-      "status": "error",
-      "error": "name 'Market' is not defined",
-      "duration_s": 0.0
+      "task": "news_collect",
+      "at": "2026-05-02T11:48:22.634459",
+      "run_id": "news_collect_20260502_114822_428707",
+      "status": "ok",
+      "duration_s": 0.0,
+      "result": {
+        "error": "AKShareNewsProvider() takes no arguments"
+      }
     },
     {
       "task": "sentiment_collect",
-      "at": "2026-05-02T11:00:44.102619",
-      "run_id": "sentiment_collect_20260502_110040_2b3547",
+      "at": "2026-05-02T11:48:25.084227",
+      "run_id": "sentiment_collect_20260502_114822_843ca0",
       "status": "ok",
-      "duration_s": 3.7,
+      "duration_s": 2.45,
       "result": {
         "fear_greed": 50.7,
         "label": "中性",
         "direction": "NEUTRAL",
         "intensity": 2.1,
-        "batch_id": "sched_sent_sentiment_collect_20260502_110040_2b3547",
+        "batch_id": "sched_sent_sentiment_collect_20260502_114822_843ca0",
         "errors": []
       }
     },
     {
-      "task": "news_collect",
-      "at": "2026-05-02T11:03:44.104554",
-      "run_id": "news_collect_20260502_110344_4e0799",
-      "status": "ok",
-      "duration_s": 0.0,
-      "result": {
-        "error": "AKShareNewsProvider() takes no arguments"
-      }
+      "task": "m12_a_share_scan",
+      "at": "2026-05-02T11:48:25.084982",
+      "run_id": "m12_a_share_scan_20260502_114825_ee748e",
+      "status": "error",
+      "error": "name 'Market' is not defined",
+      "duration_s": 0.0
+    },
+    {
+      "task": "m12_hk_scan",
+      "at": "2026-05-02T11:48:25.086141",
+      "run_id": "m12_hk_scan_20260502_114825_7fed5a",
+      "status": "error",
+      "error": "name 'Market' is not defined",
+      "duration_s": 0.0
     },
     {
       "task": "price_update",
-      "at": "2026-05-02T11:05:14.126912",
-      "run_id": "price_update_20260502_110514_5187bb",
+      "at": "2026-05-02T11:58:25.105690",
+      "run_id": "price_update_20260502_115825_4d7af3",
       "status": "ok",
-      "duration_s": 0.02,
+      "duration_s": 0.01,
       "result": {
         "open_positions": 0,
         "updated": 0,
         "closed": 0
+      }
+    },
+    {
+      "task": "m12_a_share_scan",
+      "at": "2026-05-02T11:58:25.106541",
+      "run_id": "m12_a_share_scan_20260502_115825_307e7e",
+      "status": "error",
+      "error": "name 'Market' is not defined",
+      "duration_s": 0.0
+    },
+    {
+      "task": "m12_hk_scan",
+      "at": "2026-05-02T11:58:25.107695",
+      "run_id": "m12_hk_scan_20260502_115825_c07299",
+      "status": "error",
+      "error": "name 'Market' is not defined",
+      "duration_s": 0.0
+    },
+    {
+      "task": "news_collect",
+      "at": "2026-05-02T12:03:25.110760",
+      "run_id": "news_collect_20260502_120325_f5d5bf",
+      "status": "ok",
+      "duration_s": 0.0,
+      "result": {
+        "error": "AKShareNewsProvider() takes no arguments"
       }
     }
   ]

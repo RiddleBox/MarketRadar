@@ -79,3 +79,113 @@
   0%|          | 0/11 [00:00<?, ?it/s]  9%|▉         | 1/11 [00:00<00:01,  5.03it/s] 18%|█▊        | 2/11 [00:00<00:01,  4.89it/s] 27%|██▋       | 3/11 [00:00<00:01,  4.72it/s] 36%|███▋      | 4/11 [00:00<00:01,  4.86it/s] 45%|████▌     | 5/11 [00:01<00:01,  4.73it/s] 55%|█████▍    | 6/11 [00:01<00:01,  2.64it/s] 64%|██████▎   | 7/11 [00:01<00:01,  3.11it/s] 73%|███████▎  | 8/11 [00:02<00:00,  3.63it/s] 82%|████████▏ | 9/11 [00:02<00:00,  4.12it/s] 91%|█████████ | 10/11 [00:02<00:00,  4.20it/s]100%|██████████| 11/11 [00:02<00:00,  4.57it/s]                                               [Sentiment] 百度热搜采集失败: list indices must be integers or slices, not str
 [SentimentEngine] 部分指标失败: ['baidu_hot: list indices must be integers or slices, not str']
 [M7/news_collect] 失败: AKShareNewsProvider() takes no arguments
+[M7] ✗ 任务失败: m12_a_share_scan | name 'Market' is not defined
+[M7] ✗ 任务失败: m12_hk_scan | name 'Market' is not defined
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ M7 调度器启动                                                                │
+│ 任务数: 14 | tick: 30s                                                       │
+│ Ctrl+C 停止                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+                                   已注册任务                                   
+                                                                                
+  任务名                     间隔   时段          状态   描述                   
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+  signal_pipeline           30min   全天          启用   M0收集→M1解码→M2存储…  
+                                                         data/incomin           
+  price_update              10min   09:25~15:05   启用   M9模拟仓价格更新（盘…  
+  daily_review            1440min   15:30~23:59   启用   M6收盘复盘归因→M8写 …  
+  news_collect              15min   全天          启用   M0                     
+                                                         AKShare新闻拉取（东 …  
+  sentiment_collect         30min   09:00~22:00   启用   M10情绪采集：恐贪指 …  
+                                                         → 写入 SQLite + 注入   
+  m12_a_share_scan          10min   09:30~15:00   启用   M12                    
+                                                         A股轨道：全景价格扫 …  
+  m12_hk_scan               10min   09:30~16:00   启用   M12                    
+                                                         港股轨道：全景价格扫…  
+  m12_us_scan               10min   21:30~04:00   启用   M12                    
+                                                         美股轨道：全景价格扫…  
+  m12_premarket_a_share   1440min   09:00~09:00   启用   M12                    
+                                                         A股盘前扫描：隔夜信 …  
+  m12_premarket_hk        1440min   09:00~09:00   启用   M12                    
+                                                         港股盘前扫描：隔夜信…  
+  m12_premarket_us        1440min   21:00~21:00   启用   M12                    
+                                                         美股盘前扫描：隔夜信…  
+  m12_postmarket_a_sha…   1440min   15:30~15:30   启用   M12                    
+                                                         A股盘后扫描：全量价 …  
+  m12_postmarket_hk       1440min   16:30~16:30   启用   M12                    
+                                                         港股盘后扫描：全量价…  
+  m12_postmarket_us       1440min   05:00~05:00   启用   M12                    
+                                                         美股盘后扫描：全量价…  
+                                                                                
+  0%|          | 0/11 [00:00<?, ?it/s]  9%|▉         | 1/11 [00:00<00:01,  7.04it/s] 18%|█▊        | 2/11 [00:00<00:01,  6.39it/s] 27%|██▋       | 3/11 [00:00<00:01,  5.77it/s] 36%|███▋      | 4/11 [00:00<00:01,  5.57it/s] 45%|████▌     | 5/11 [00:01<00:01,  4.20it/s] 55%|█████▍    | 6/11 [00:01<00:01,  4.46it/s] 64%|██████▎   | 7/11 [00:01<00:00,  4.61it/s] 73%|███████▎  | 8/11 [00:01<00:00,  3.63it/s] 82%|████████▏ | 9/11 [00:02<00:00,  3.54it/s] 91%|█████████ | 10/11 [00:02<00:00,  4.01it/s]100%|██████████| 11/11 [00:02<00:00,  4.66it/s]                                               [Sentiment] 百度热搜采集失败: list indices must be integers or slices, not str
+[SentimentEngine] 部分指标失败: ['baidu_hot: list indices must be integers or slices, not str']
+[M7/news_collect] 失败: AKShareNewsProvider() takes no arguments
+[M7] ✗ 任务失败: m12_a_share_scan | name 'Market' is not defined
+[M7] ✗ 任务失败: m12_hk_scan | name 'Market' is not defined
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ M7 调度器启动                                                                │
+│ 任务数: 14 | tick: 30s                                                       │
+│ Ctrl+C 停止                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+                                   已注册任务                                   
+                                                                                
+  任务名                     间隔   时段          状态   描述                   
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+  signal_pipeline           30min   全天          启用   M0收集→M1解码→M2存储…  
+                                                         data/incomin           
+  price_update              10min   09:25~15:05   启用   M9模拟仓价格更新（盘…  
+  daily_review            1440min   15:30~23:59   启用   M6收盘复盘归因→M8写 …  
+  news_collect              15min   全天          启用   M0                     
+                                                         AKShare新闻拉取（东 …  
+  sentiment_collect         30min   09:00~22:00   启用   M10情绪采集：恐贪指 …  
+                                                         → 写入 SQLite + 注入   
+  m12_a_share_scan          10min   09:30~15:00   启用   M12                    
+                                                         A股轨道：全景价格扫 …  
+  m12_hk_scan               10min   09:30~16:00   启用   M12                    
+                                                         港股轨道：全景价格扫…  
+  m12_us_scan               10min   21:30~04:00   启用   M12                    
+                                                         美股轨道：全景价格扫…  
+  m12_premarket_a_share   1440min   09:00~09:00   启用   M12                    
+                                                         A股盘前扫描：隔夜信 …  
+  m12_premarket_hk        1440min   09:00~09:00   启用   M12                    
+                                                         港股盘前扫描：隔夜信…  
+  m12_premarket_us        1440min   21:00~21:00   启用   M12                    
+                                                         美股盘前扫描：隔夜信…  
+  m12_postmarket_a_sha…   1440min   15:30~15:30   启用   M12                    
+                                                         A股盘后扫描：全量价 …  
+  m12_postmarket_hk       1440min   16:30~16:30   启用   M12                    
+                                                         港股盘后扫描：全量价…  
+  m12_postmarket_us       1440min   05:00~05:00   启用   M12                    
+                                                         美股盘后扫描：全量价…  
+                                                                                
+  0%|          | 0/11 [00:00<?, ?it/s]  9%|▉         | 1/11 [00:00<00:01,  5.63it/s] 18%|█▊        | 2/11 [00:00<00:01,  6.36it/s] 27%|██▋       | 3/11 [00:00<00:01,  5.52it/s] 36%|███▋      | 4/11 [00:00<00:01,  5.97it/s] 45%|████▌     | 5/11 [00:00<00:00,  6.22it/s] 55%|█████▍    | 6/11 [00:01<00:00,  5.77it/s] 64%|██████▎   | 7/11 [00:01<00:00,  5.61it/s] 73%|███████▎  | 8/11 [00:01<00:00,  6.04it/s] 82%|████████▏ | 9/11 [00:01<00:00,  5.91it/s] 91%|█████████ | 10/11 [00:01<00:00,  5.75it/s]100%|██████████| 11/11 [00:01<00:00,  6.20it/s]                                               [Sentiment] 百度热搜采集失败: list indices must be integers or slices, not str
+[SentimentEngine] 部分指标失败: ['baidu_hot: list indices must be integers or slices, not str']
+[M7/news_collect] 失败: AKShareNewsProvider() takes no arguments
+[M7] ✗ 任务失败: m12_a_share_scan | name 'Market' is not defined
+[M7] ✗ 任务失败: m12_hk_scan | name 'Market' is not defined
+[M7] ✗ 任务失败: m12_a_share_scan | name 'Market' is not defined
+[M7] ✗ 任务失败: m12_hk_scan | name 'Market' is not defined
+[M7] ✗ 任务失败: m12_a_share_scan | name 'Market' is not defined
+[M7] ✗ 任务失败: m12_hk_scan | name 'Market' is not defined
+[M7/news_collect] 失败: AKShareNewsProvider() takes no arguments
+[M7/news_collect] 失败: AKShareNewsProvider() takes no arguments
+[M7] ✗ 任务失败: m12_a_share_scan | name 'Market' is not defined
+[M7] ✗ 任务失败: m12_hk_scan | name 'Market' is not defined
+[M7] ✗ 任务失败: m12_a_share_scan | name 'Market' is not defined
+[M7] ✗ 任务失败: m12_hk_scan | name 'Market' is not defined
+[M7/news_collect] 失败: AKShareNewsProvider() takes no arguments
+  0%|          | 0/11 [00:00<?, ?it/s]  9%|▉         | 1/11 [00:00<00:01,  7.07it/s] 18%|█▊        | 2/11 [00:00<00:01,  6.09it/s] 27%|██▋       | 3/11 [00:00<00:01,  5.32it/s] 36%|███▋      | 4/11 [00:00<00:01,  5.10it/s] 45%|████▌     | 5/11 [00:01<00:01,  3.37it/s] 55%|█████▍    | 6/11 [00:01<00:01,  2.84it/s] 64%|██████▎   | 7/11 [00:01<00:01,  3.07it/s] 73%|███████▎  | 8/11 [00:02<00:00,  3.51it/s] 82%|████████▏ | 9/11 [00:02<00:00,  2.91it/s] 91%|█████████ | 10/11 [00:02<00:00,  3.34it/s]100%|██████████| 11/11 [00:02<00:00,  4.01it/s]                                               [Sentiment] 百度热搜采集失败: list indices must be integers or slices, not str
+[SentimentEngine] 部分指标失败: ['baidu_hot: list indices must be integers or slices, not str']
+[M7] ✗ 任务失败: m12_a_share_scan | name 'Market' is not defined
+[M7] ✗ 任务失败: m12_hk_scan | name 'Market' is not defined
+[M7/news_collect] 失败: AKShareNewsProvider() takes no arguments
+  0%|          | 0/11 [00:00<?, ?it/s]  9%|▉         | 1/11 [00:00<00:01,  7.12it/s] 18%|█▊        | 2/11 [00:00<00:01,  6.52it/s] 27%|██▋       | 3/11 [00:00<00:01,  6.35it/s] 36%|███▋      | 4/11 [00:00<00:01,  6.69it/s] 45%|████▌     | 5/11 [00:00<00:00,  6.35it/s] 55%|█████▍    | 6/11 [00:00<00:00,  6.32it/s] 64%|██████▎   | 7/11 [00:01<00:00,  6.24it/s] 73%|███████▎  | 8/11 [00:01<00:00,  4.86it/s] 82%|████████▏ | 9/11 [00:01<00:00,  4.62it/s] 91%|█████████ | 10/11 [00:01<00:00,  5.16it/s]100%|██████████| 11/11 [00:01<00:00,  5.41it/s]                                               [Sentiment] 百度热搜采集失败: list indices must be integers or slices, not str
+[SentimentEngine] 部分指标失败: ['baidu_hot: list indices must be integers or slices, not str']
+[M7] ✗ 任务失败: m12_a_share_scan | name 'Market' is not defined
+[M7] ✗ 任务失败: m12_hk_scan | name 'Market' is not defined
+[M7] ✗ 任务失败: m12_a_share_scan | name 'Market' is not defined
+[M7] ✗ 任务失败: m12_hk_scan | name 'Market' is not defined
+[M7] ✗ 任务失败: m12_a_share_scan | name 'Market' is not defined
+[M7] ✗ 任务失败: m12_hk_scan | name 'Market' is not defined
+[M7/news_collect] 失败: AKShareNewsProvider() takes no arguments
+[M7/news_collect] 失败: AKShareNewsProvider() takes no arguments
