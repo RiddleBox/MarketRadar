@@ -392,6 +392,7 @@ class Scheduler:
 
     def _loop(self):
         from m7_scheduler.trading_calendar import is_trading_day
+        from core.schemas import Market  # 在方法内部重新导入，确保可用
         
         while not self._stop_event.is_set():
             now = datetime.now()
