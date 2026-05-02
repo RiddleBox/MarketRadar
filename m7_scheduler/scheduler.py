@@ -29,6 +29,11 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Callable, Dict, List, Optional
 
+# 导入 Market 枚举（用于任务注册）
+import sys
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from core.schemas import Market
+
 logger = logging.getLogger(__name__)
 
 ROOT = Path(__file__).parent.parent
