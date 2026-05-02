@@ -143,7 +143,7 @@ class LLMImplicitSignalInferencer(ImplicitSignalInferencer):
 
         # 2. 调用LLM生成推理
         try:
-            llm_response = self.llm_client.chat_json(prompt, temperature=0.7, max_tokens=2000)
+            llm_response = self.llm_client.chat_json(prompt, temperature=0.7, max_tokens=4096)
         except Exception as e:
             print(f"LLM调用失败: {e}")
             return []

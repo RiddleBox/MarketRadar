@@ -1,0 +1,105 @@
+{
+  "opportunity_id": "opp_46e1d289",
+  "opportunity_title": "券商板块双驱动",
+  "opportunity_thesis": "央行降准+降息释放明确宽松信号，叠加广发证券一季度业绩大增70%，验证券商盈利弹性。当前市场对券商板块预期仍偏谨慎，存在预期差，宽松政策持续发酵将驱动板块估值修复和业绩上修。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "证券ETF",
+    "广发证券",
+    "中信证券"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-27T00:00:00",
+    "end": "2026-06-27T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行4月18日宣布降准降息，广发证券4月27日发布超预期一季报，政策与业绩共振窗口打开。后续1-2周内LPR下调概率高，将进一步催化板块。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_898af08751f6"
+  ],
+  "inferred_events": [
+    "inferred_e3fc100f",
+    "inferred_d84781a1",
+    "inferred_fea83a2f",
+    "inferred_5a5e7bbd",
+    "inferred_f7810773"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点+降息10bp，流动性宽松直接利好券商自营和经纪业务",
+    "广发证券一季度净利润同比增70.73%，营收增64.33%，验证券商盈利弹性",
+    "推理显示后续降准概率80%、降息概率75%，宽松周期延续",
+    "历史案例case_2024_rate_cut显示降息后金融板块有估值修复机会"
+  ],
+  "counter_evidence": [
+    "A股市场短期调整风险（推理显示70%概率3天内调整），可能压制板块情绪",
+    "券商板块历史上对政策反应递减，部分利好可能已被定价"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续宽松政策（LPR下调）如期落地",
+    "假设2：市场整体未出现系统性风险（如地缘冲突、信用事件）",
+    "假设3：广发证券业绩增长具有行业代表性，非个案"
+  ],
+  "uncertainty_map": [
+    "后续宽松政策力度和节奏不确定（影响程度：高）",
+    "市场短期调整可能先于板块启动（影响程度：中）",
+    "其他券商一季报是否普遍超预期（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 9,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.85
+  },
+  "risk_reward_profile": "潜在收益：宽松周期+业绩驱动，券商板块有望获得10-20%估值修复；潜在风险：政策不及预期或市场调整，最大回撤约5-8%，止损点明确（板块指数跌破近期低点）。",
+  "next_validation_questions": [
+    "其他头部券商（中信、华泰）一季报是否也超预期？",
+    "LPR下调是否在2周内落地？",
+    "市场短期调整是否已充分释放？"
+  ],
+  "invalidation_conditions": [
+    "LPR下调未在2周内落地或央行释放紧缩信号",
+    "券商板块指数跌破近期低点（如证券ETF跌破0.9元）",
+    "广发证券或其他龙头券商出现业绩变脸或负面事件"
+  ],
+  "must_watch_indicators": [
+    "LPR报价（每月20日）",
+    "证券ETF（512880）价格与成交量",
+    "广发证券（000776）股价走势",
+    "市场恐贪指数（若极度贪婪则警惕过热）"
+  ],
+  "kill_switch_signals": [
+    "央行意外加息或收紧流动性",
+    "券商板块单日放量暴跌超5%",
+    "广发证券发布业绩下修公告"
+  ],
+  "warnings": [
+    "注意：广发证券业绩为个案，需验证行业整体趋势",
+    "注意：市场短期调整风险可能先于板块启动，需控制仓位"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-02T07:46:04.051587",
+  "batch_id": "sched_signal_pipeline_20260502_073654_8414a2_20260425_114744_000",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

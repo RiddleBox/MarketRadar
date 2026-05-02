@@ -118,7 +118,7 @@ class ImplicitSignalAdapter:
             logic_frame=logic_frame,
             tags=tags,
             metadata={
-                "reasoning_chain": asdict(implicit_signal.reasoning_chain) if implicit_signal.reasoning_chain else {},
+                "reasoning_chain": implicit_signal.reasoning_chain.model_dump() if implicit_signal.reasoning_chain else {},
                 "prior_confidence": implicit_signal.prior_confidence,
                 "source_event": implicit_signal.reasoning_chain.source_event if implicit_signal.reasoning_chain else "unknown",
                 "source_info": implicit_signal.source_info,

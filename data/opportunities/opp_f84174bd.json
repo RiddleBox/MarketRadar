@@ -1,0 +1,120 @@
+{
+  "opportunity_id": "opp_f84174bd",
+  "opportunity_title": "AI光模块业绩爆发",
+  "opportunity_thesis": "光模块龙头中际旭创市值突破万亿、新易盛一季报净利润增长76.8%，叠加某半导体龙头Q1业绩预增150%-180%，AI需求驱动的业绩爆发已从个别公司扩散至板块整体。市场对科技成长方向的资金流入加速，但板块整体涨幅尚未完全反映业绩超预期幅度，存在预期差。当前处于业绩验证后的催化窗口，短期有望延续强势。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "中际旭创",
+    "新易盛",
+    "天孚通信",
+    "半导体ETF",
+    "5GETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-23T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "光模块'易中天'三家公司2025年年报及2026年一季报均已披露完毕，业绩全部超预期，且中际旭创市值突破万亿形成标杆效应。某半导体龙头Q1业绩预增150%-180%进一步强化AI产业链景气度。当前处于业绩密集披露后的催化窗口，市场资金正从消费、地产流出转向科技成长，短期情绪和资金面共振。",
+  "related_signals": [
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_c65bd11e442f",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_5a2ec57f6916",
+    "sig_a1d7094e54d1"
+  ],
+  "inferred_events": [
+    "inferred_c3e552ed",
+    "inferred_dab0d059",
+    "inferred_d06ed0a4",
+    "inferred_2455ca81",
+    "inferred_01a44223"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "中际旭创4月23日盘中市值突破万亿，收盘9989亿元，创历史里程碑",
+    "新易盛一季报净利润同比增长76.8%，业绩超预期",
+    "某半导体龙头Q1业绩预增150%-180%，受益于AI芯片需求爆发",
+    "资金持续从消费、地产流向新能源和半导体板块"
+  ],
+  "counter_evidence": [
+    "中际旭创市值突破万亿后收盘回落至万亿以下，显示高位抛压",
+    "市场整体情绪脆弱，三大指数高开回落，下跌个股近4000只"
+  ],
+  "key_assumptions": [
+    "假设1：AI需求持续增长，光模块和半导体订单能见度维持高位",
+    "假设2：市场资金从消费、地产向科技成长切换的趋势延续",
+    "假设3：宏观经济政策宽松（降准已落地）继续支撑市场流动性"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：市场整体调整风险（影响程度：高）——若大盘持续走弱，板块可能被拖累",
+    "不确定性2：AI需求增速边际放缓（影响程度：中）——若后续订单不及预期，估值可能回调",
+    "不确定性3：地缘政治风险（影响程度：中）——美伊局势等外部事件可能打压风险偏好"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.3,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：若AI需求持续超预期，光模块和半导体龙头有望继续上涨10%-20%。风险：大盘调整或AI需求增速放缓可能导致回调5%-10%。盈亏比约2:1。",
+  "next_validation_questions": [
+    "中际旭创、新易盛等龙头后续订单和产能利用率数据是否持续向好？",
+    "半导体龙头业绩预增的具体公司名称和详细数据是否披露？",
+    "市场资金流入科技成长板块的持续性如何？是否有其他板块分流？"
+  ],
+  "invalidation_conditions": [
+    "光模块或半导体龙头发布低于预期的业绩指引或订单数据",
+    "大盘持续下跌，科技板块资金大幅流出",
+    "AI需求出现明显放缓信号（如主要客户削减资本开支）"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛、天孚通信的股价和成交量变化",
+    "半导体ETF和5GETF的资金净流入情况",
+    "AI相关公司后续订单和产能利用率数据",
+    "市场整体情绪指标（如涨跌比、成交量）"
+  ],
+  "kill_switch_signals": [
+    "光模块或半导体龙头出现单日跌幅超过5%且放量",
+    "大盘指数跌破关键支撑位（如上证3000点）",
+    "AI产业链主要公司发布业绩预警或订单取消公告"
+  ],
+  "warnings": [
+    "注意：中际旭创市值突破万亿后收盘回落，短期可能存在获利回吐压力",
+    "注意：某半导体龙头业绩预增的具体公司名称未明确，需确认信息来源可靠性"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-02T07:41:46.289975",
+  "batch_id": "sched_signal_pipeline_20260502_073654_8414a2_20260424_155542_003",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

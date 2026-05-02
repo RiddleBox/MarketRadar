@@ -249,6 +249,62 @@ class Scheduler:
             **_c("m12_us_scan", 10),           # 每 10 分钟一次
         ))
 
+        # M12 盘前扫描：开盘前30分钟，主动信号收集
+        self.register(ScheduledTask(
+            name="m12_premarket_a_share",
+            fn=lambda run_id: self._task_m12_premarket_scan(Market.A_SHARE, run_id),
+            description="M12 A股盘前扫描：隔夜信号收集+情绪面分析→开盘交易依据",
+            run_at_start=False,
+            time_window=("09:00", "09:00"),   # 开盘前30分钟，每天一次
+            **_c("m12_premarket_a_share", 1440),  # 每天一次
+        ))
+
+        self.register(ScheduledTask(
+            name="m12_premarket_hk",
+            fn=lambda run_id: self._task_m12_premarket_scan(Market.HK, run_id),
+            description="M12 港股盘前扫描：隔夜信号收集+情绪面分析→开盘交易依据",
+            run_at_start=False,
+            time_window=("09:00", "09:00"),   # 开盘前30分钟，每天一次
+            **_c("m12_premarket_hk", 1440),       # 每天一次
+        ))
+
+        self.register(ScheduledTask(
+            name="m12_premarket_us",
+            fn=lambda run_id: self._task_m12_premarket_scan(Market.US, run_id),
+            description="M12 美股盘前扫描：隔夜信号收集+情绪面分析→开盘交易依据",
+            run_at_start=False,
+            time_window=("21:00", "21:00"),   # 开盘前30分钟，每天一次
+            **_c("m12_premarket_us", 1440),       # 每天一次
+        ))
+
+        # M12 盘后扫描：全量价格扫描+扩展监控池
+        self.register(ScheduledTask(
+            name="m12_postmarket_a_share",
+            fn=lambda run_id: self._task_m12_postmarket_scan(Market.A_SHARE, run_id),
+            description="M12 A股盘后扫描：全量价格扫描→异动发现→扩展监控池",
+            run_at_start=False,
+            time_window=("15:30", "15:30"),   # 收盘后，每天一次
+            **_c("m12_postmarket_a_share", 1440),  # 每天一次
+        ))
+
+        self.register(ScheduledTask(
+            name="m12_postmarket_hk",
+            fn=lambda run_id: self._task_m12_postmarket_scan(Market.HK, run_id),
+            description="M12 港股盘后扫描：全量价格扫描→异动发现→扩展监控池",
+            run_at_start=False,
+            time_window=("16:30", "16:30"),   # 收盘后，每天一次
+            **_c("m12_postmarket_hk", 1440),       # 每天一次
+        ))
+
+        self.register(ScheduledTask(
+            name="m12_postmarket_us",
+            fn=lambda run_id: self._task_m12_postmarket_scan(Market.US, run_id),
+            description="M12 美股盘后扫描：全量价格扫描→异动发现→扩展监控池",
+            run_at_start=False,
+            time_window=("05:00", "05:00"),   # 收盘后（北京时间次日凌晨5点），每天一次
+            **_c("m12_postmarket_us", 1440),       # 每天一次
+        ))
+
     # ── 启停 ─────────────────────────────────────────────────
 
     def start(self, background: bool = True):
@@ -665,4 +721,204 @@ class Scheduler:
 
         except Exception as e:
             logger.error(f"[M7/m12_{market.value.lower()}_scan] 失败: {e}")
+            return {"error": str(e), "market": market.value}
+
+    def _task_m12_premarket_scan(self, market: "Market", run_id: str = "") -> dict:
+        """
+        M12 盘前扫描任务（开盘前30分钟）：
+          1. 检查是否交易日（排除节假日）
+          2. 主动信号收集（隔夜新闻、情绪面）
+          3. M1解码 → M2存储 → M3判断
+          4. 生成开盘交易依据
+
+        目标：为开盘提供交易计划，减少盘中延迟。
+        """
+        import sys
+        sys.path.insert(0, str(ROOT))
+        try:
+            from m7_scheduler.trading_calendar import is_trading_day
+            from core.schemas import Market
+
+            # 检查是否交易日
+            if not is_trading_day(market):
+                logger.info(f"[M7/m12_premarket_{market.value.lower()}] 今日休市，跳过盘前扫描")
+                return {"skipped": True, "reason": "non_trading_day", "market": market.value}
+
+            batch_id = f"premarket_{market.value}_{run_id or datetime.now().strftime('%Y%m%d_%H%M%S')}"
+
+            # Step 1: 采集隔夜新闻
+            from m0_collector.providers.akshare_news import AkshareNewsProvider
+            news_provider = AkshareNewsProvider()
+            news_items = news_provider.fetch(limit=50)
+            logger.info(f"[M7/m12_premarket_{market.value.lower()}] 采集 {len(news_items)} 条隔夜新闻")
+
+            # Step 2: M1解码 → M2存储
+            from m1_decoder.decoder import SignalDecoder
+            from m2_storage.signal_store import SignalStore
+            from core.llm_client import LLMClient
+            from core.schemas import SourceType
+
+            llm_client = LLMClient()
+            decoder = SignalDecoder(llm_client=llm_client)
+            store = SignalStore()
+
+            all_signals = []
+            for item in news_items[:20]:  # 限制处理数量
+                try:
+                    signals = decoder.decode(
+                        raw_text=item.content,
+                        source_ref=item.source_url or "premarket",
+                        source_type=SourceType.NEWS,
+                        batch_id=batch_id,
+                    )
+                    all_signals.extend(signals)
+                except Exception as e:
+                    logger.debug(f"[M7/m12_premarket] 解码失败: {e}")
+                    continue
+
+            if all_signals:
+                store.save(all_signals)
+                logger.info(f"[M7/m12_premarket_{market.value.lower()}] 解码 {len(all_signals)} 条信号")
+
+            # Step 3: M3判断
+            from m3_judgment.judgment_engine import JudgmentEngine
+            engine = JudgmentEngine(llm_client=llm_client)
+            opportunities = engine.judge(
+                signals=all_signals[:10],  # 限制判断数量
+                batch_id=batch_id,
+            )
+
+            # 保存盘前机会
+            if opportunities:
+                premarket_dir = ROOT / "data" / "premarket_opportunities"
+                premarket_dir.mkdir(parents=True, exist_ok=True)
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                premarket_file = premarket_dir / f"{market.value.lower()}_{timestamp}.json"
+
+                opp_data = []
+                for opp in opportunities:
+                    opp_data.append({
+                        "opportunity_id": opp.opportunity_id,
+                        "title": opp.opportunity_title,
+                        "priority": opp.priority_level.value,
+                        "direction": opp.trade_direction.value,
+                        "instruments": opp.target_instruments,
+                        "score": opp.opportunity_score.overall_score if opp.opportunity_score else 0,
+                    })
+
+                premarket_file.write_text(
+                    json.dumps(opp_data, ensure_ascii=False, indent=2, default=str),
+                    encoding="utf-8",
+                )
+
+                logger.info(
+                    f"[M7/m12_premarket_{market.value.lower()}] 保存 {len(opportunities)} 个盘前机会到 {premarket_file.name}"
+                )
+
+            result = {
+                "market": market.value,
+                "news_count": len(news_items),
+                "signals": len(all_signals),
+                "opportunities": len(opportunities),
+                "batch_id": batch_id,
+            }
+
+            logger.info(
+                f"[M7/m12_premarket_{market.value.lower()}] 完成：{len(news_items)}新闻 → {len(all_signals)}信号 → {len(opportunities)}机会"
+            )
+
+            return result
+
+        except Exception as e:
+            logger.error(f"[M7/m12_premarket_{market.value.lower()}] 失败: {e}")
+            return {"error": str(e), "market": market.value}
+
+    def _task_m12_postmarket_scan(self, market: "Market", run_id: str = "") -> dict:
+        """
+        M12 盘后扫描任务（收盘后）：
+          1. 检查是否交易日（排除节假日）
+          2. 全量价格扫描（覆盖更大范围）
+          3. 异动发现 → 反向溯源 → 趋势判断
+          4. 扩展监控池（将有价值的未纳入标的加入次日扫描）
+
+        目标：发现被遗漏的异动标的，动态扩展监控范围。
+        """
+        import sys
+        sys.path.insert(0, str(ROOT))
+        try:
+            from m7_scheduler.trading_calendar import is_trading_day
+            from core.schemas import Market
+            from m12_opportunity_catcher.catcher_engine import OpportunityCatcherEngine
+            from m9_paper_trader.baostock_feed import BaostockFeed
+            from m9_paper_trader.price_feed import YFinanceFeed
+
+            # 检查是否交易日
+            if not is_trading_day(market):
+                logger.info(f"[M7/m12_postmarket_{market.value.lower()}] 今日休市，跳过盘后扫描")
+                return {"skipped": True, "reason": "non_trading_day", "market": market.value}
+
+            batch_id = f"postmarket_{market.value}_{run_id or datetime.now().strftime('%Y%m%d_%H%M%S')}"
+
+            engine = OpportunityCatcherEngine()
+
+            # 选择价格源
+            if market == Market.A_SHARE:
+                price_feed = BaostockFeed()
+            else:
+                price_feed = YFinanceFeed()
+
+            # 执行盘后全量扫描（stock_list=None表示全市场）
+            retro_opps = engine.run_daily_scan(
+                market=market,
+                price_feed=price_feed,
+                stock_list=None,  # 全量扫描
+            )
+
+            # 保存盘后机会
+            if retro_opps:
+                postmarket_dir = ROOT / "data" / "postmarket_opportunities"
+                postmarket_dir.mkdir(parents=True, exist_ok=True)
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                postmarket_file = postmarket_dir / f"{market.value.lower()}_{timestamp}.json"
+
+                retro_data = []
+                for retro in retro_opps:
+                    retro_data.append({
+                        "instrument": retro.anomaly.instrument,
+                        "market": retro.anomaly.market.value,
+                        "price_change_pct": retro.anomaly.price_change_pct,
+                        "trend_stage": retro.trend.stage.value,
+                        "causation_confidence": retro.causation.confidence,
+                        "remaining_upside_pct": retro.trend.remaining_upside_pct,
+                        "opportunity_id": retro.opportunity.opportunity_id,
+                        "priority": retro.opportunity.priority_level.value,
+                    })
+
+                postmarket_file.write_text(
+                    json.dumps(retro_data, ensure_ascii=False, indent=2, default=str),
+                    encoding="utf-8",
+                )
+
+                logger.info(
+                    f"[M7/m12_postmarket_{market.value.lower()}] 保存 {len(retro_opps)} 个盘后机会到 {postmarket_file.name}"
+                )
+
+                # TODO: 扩展监控池逻辑（将高价值标的加入次日扫描范围）
+                # 可以写入 data/watch_pool/{market}.json
+
+            result = {
+                "market": market.value,
+                "opportunities": len(retro_opps),
+                "instruments": [r.anomaly.instrument for r in retro_opps[:10]],
+                "batch_id": batch_id,
+            }
+
+            logger.info(
+                f"[M7/m12_postmarket_{market.value.lower()}] 完成：{len(retro_opps)} 个盘后机会"
+            )
+
+            return result
+
+        except Exception as e:
+            logger.error(f"[M7/m12_postmarket_{market.value.lower()}] 失败: {e}")
             return {"error": str(e), "market": market.value}

@@ -1,0 +1,3504 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-30T11:55:30.677657",
+    "date": "2026-04-30"
+  },
+  "statistics": {
+    "date": "2026-04-30",
+    "news_count": 25,
+    "signal_count": 67,
+    "high_confidence_signals": 41,
+    "signal_types": {
+      "tech_breakthrough": 24,
+      "social_trend": 12,
+      "policy_driven": 31
+    },
+    "industry_sectors": {
+      "人形机器人核心零部件供应商（中国A股）": 1,
+      "AI算力与数据中心（美股）": 1,
+      "机器人集成与应用（中国A股）": 1,
+      "人形机器人本体企业（美股/一级市场）": 1,
+      "高强度汽车材料": 1,
+      "动力电池安全技术": 1,
+      "电池热管理及防护材料": 1,
+      "复合肥行业": 2,
+      "教育信息化": 1,
+      "教育出版（语言教材）": 1,
+      "教育服务（非学科培训）": 1,
+      "半导体/AI芯片": 1,
+      "房地产/区域城投": 1,
+      "体育/休闲用品": 1,
+      "生猪养殖": 1,
+      "饲料原料（玉米、豆粕）": 1,
+      "动物疫苗/兽药": 1,
+      "华为智能汽车零部件供应商": 1,
+      "奇瑞汽车（智界代工商）": 1,
+      "华为智选车模式受益标的（赛力斯）": 1,
+      "半导体设备": 1,
+      "人工智能算力": 1,
+      "生物医药创新": 1,
+      "AI芯片与算力基础设施": 2,
+      "数据中心与电力设备": 1,
+      "日本半导体产业链": 1,
+      "国产AI芯片设计": 1,
+      "半导体设备与材料": 1,
+      "AI算力服务器/数据中心": 1,
+      "自动驾驶传感器": 1,
+      "汽车芯片": 1,
+      "精密制造与电机": 1,
+      "高端数控机床": 1,
+      "工业自动化（机器人及核心零部件）": 1,
+      "检测与测量设备": 1,
+      "节能环保设备": 1,
+      "动力电池上游材料（锂、镍、硅基负极）": 1,
+      "电动重卡充电基础设施": 1,
+      "特斯拉供应链（中国电池/结构件企业）": 1,
+      "物流与车队运营（TCO受益方）": 1,
+      "企业级AI平台与SaaS": 1,
+      "工业AI与智能制造": 1,
+      "服务机器人平台": 1,
+      "贵金属": 1,
+      "能源": 1,
+      "亚太新兴市场": 1,
+      "美国长期国债": 1,
+      "运动鞋服代工制造": 1,
+      "运动品牌零售与分销": 1,
+      "运动鞋服原料供应商": 1,
+      "纺织自动化设备": 1,
+      "商业航天（火箭制造）": 1,
+      "航天旅游运营与体验": 1,
+      "科普教育与VR/AR内容": 1,
+      "海南本地基建与商业地产": 1,
+      "航天文旅运营": 1,
+      "航天科普研学": 1,
+      "航天发射观礼服务": 1,
+      "航天主题酒店/民宿": 1,
+      "菲律宾银行业": 1,
+      "菲律宾比索汇率相关资产（外汇交易/比索债券）": 1,
+      "菲律宾进口替代行业（本地消费品制造）": 1,
+      "证券": 1,
+      "金融科技": 1,
+      "科技（半导体/芯片）": 1
+    }
+  },
+  "signals": [
+    {
+      "signal_id": "implicit_24586b23",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "Figure：生产效率大幅提升，可每小时生产1台机器人",
+      "published_at": "2026-04-30T03:45:53",
+      "industry_sector": "人形机器人核心零部件供应商（中国A股）",
+      "opportunity_description": "Figure产能扩张将带动对伺服电机、减速器、传感器等核心零部件的需求，国内相关供应商有望进入Figure或类似企业的供应链。",
+      "target_symbols": [
+        "002747",
+        "300124",
+        "002472"
+      ],
+      "prior_confidence": 0.8231010797211804,
+      "posterior_confidence": 0.8231010797211804,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "Figure：生产效率大幅提升，可每小时生产1台机器人",
+        "target_opportunity": "Figure产能扩张将带动对伺服电机、减速器、传感器等核心零部件的需求，国内相关供应商有望进入Figure或类似企业的供应链。",
+        "causal_links": [
+          {
+            "from_concept": "Figure生产效率大幅提升（24倍）",
+            "to_concept": "人形机器人规模化量产能力突破",
+            "relation_type": "tech_enables",
+            "confidence": 0.85,
+            "reasoning": "生产效率的指数级提升（从每天1台到每小时1台）表明Figure在制造工艺、供应链管理或自动化装配线上实现了关键性突破，使得人形机器人从实验室原型进入规模化生产阶段。"
+          },
+          {
+            "from_concept": "人形机器人规模化量产",
+            "to_concept": "海量真实世界数据生成加速AI模型迭代",
+            "relation_type": "tech_enables",
+            "confidence": 0.9,
+            "reasoning": "更多机器人部署到现实环境后，通过传感器和执行器收集的交互数据（如运动、操作、环境反馈）将指数级增长，这些数据直接用于训练Figure的Helix AI模型，形成‘部署-数据-优化’的正反馈循环。"
+          },
+          {
+            "from_concept": "AI模型迭代加速",
+            "to_concept": "人形机器人泛化能力和商业化场景扩展",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "更强大的AI模型将使机器人能适应更复杂的任务（如物流、制造、医疗辅助），从而打开更多商业应用场景，吸引下游客户采购，形成需求拉动。"
+          },
+          {
+            "from_concept": "Figure产能与数据优势",
+            "to_concept": "行业竞争格局加速分化，头部企业获得先发优势",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "Figure率先实现规模化量产和数据闭环，将拉开与竞争对手（如Tesla Optimus、Boston Dynamics）的差距，吸引更多资本和订单向头部集中，形成马太效应。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "immediate"
+    },
+    {
+      "signal_id": "implicit_c00a3be9",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "Figure：生产效率大幅提升，可每小时生产1台机器人",
+      "published_at": "2026-04-30T03:45:53",
+      "industry_sector": "AI算力与数据中心（美股）",
+      "opportunity_description": "Figure的Helix模型训练和推理需要大量GPU算力，其数据生成量增加将间接推动AI芯片和云服务需求。",
+      "target_symbols": [
+        "NVDA",
+        "AMD",
+        "MSFT"
+      ],
+      "prior_confidence": 0.8231010797211804,
+      "posterior_confidence": 0.8231010797211804,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "Figure：生产效率大幅提升，可每小时生产1台机器人",
+        "target_opportunity": "Figure的Helix模型训练和推理需要大量GPU算力，其数据生成量增加将间接推动AI芯片和云服务需求。",
+        "causal_links": [
+          {
+            "from_concept": "Figure生产效率大幅提升（24倍）",
+            "to_concept": "人形机器人规模化量产能力突破",
+            "relation_type": "tech_enables",
+            "confidence": 0.85,
+            "reasoning": "生产效率的指数级提升（从每天1台到每小时1台）表明Figure在制造工艺、供应链管理或自动化装配线上实现了关键性突破，使得人形机器人从实验室原型进入规模化生产阶段。"
+          },
+          {
+            "from_concept": "人形机器人规模化量产",
+            "to_concept": "海量真实世界数据生成加速AI模型迭代",
+            "relation_type": "tech_enables",
+            "confidence": 0.9,
+            "reasoning": "更多机器人部署到现实环境后，通过传感器和执行器收集的交互数据（如运动、操作、环境反馈）将指数级增长，这些数据直接用于训练Figure的Helix AI模型，形成‘部署-数据-优化’的正反馈循环。"
+          },
+          {
+            "from_concept": "AI模型迭代加速",
+            "to_concept": "人形机器人泛化能力和商业化场景扩展",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "更强大的AI模型将使机器人能适应更复杂的任务（如物流、制造、医疗辅助），从而打开更多商业应用场景，吸引下游客户采购，形成需求拉动。"
+          },
+          {
+            "from_concept": "Figure产能与数据优势",
+            "to_concept": "行业竞争格局加速分化，头部企业获得先发优势",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "Figure率先实现规模化量产和数据闭环，将拉开与竞争对手（如Tesla Optimus、Boston Dynamics）的差距，吸引更多资本和订单向头部集中，形成马太效应。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "immediate"
+    },
+    {
+      "signal_id": "implicit_84bd7e51",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "Figure：生产效率大幅提升，可每小时生产1台机器人",
+      "published_at": "2026-04-30T03:45:53",
+      "industry_sector": "机器人集成与应用（中国A股）",
+      "opportunity_description": "Figure机器人商业化后，集成商和解决方案提供商可将其应用于制造、物流场景，带动下游应用市场。",
+      "target_symbols": [
+        "300124",
+        "688165"
+      ],
+      "prior_confidence": 0.8231010797211804,
+      "posterior_confidence": 0.8231010797211804,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "Figure：生产效率大幅提升，可每小时生产1台机器人",
+        "target_opportunity": "Figure机器人商业化后，集成商和解决方案提供商可将其应用于制造、物流场景，带动下游应用市场。",
+        "causal_links": [
+          {
+            "from_concept": "Figure生产效率大幅提升（24倍）",
+            "to_concept": "人形机器人规模化量产能力突破",
+            "relation_type": "tech_enables",
+            "confidence": 0.85,
+            "reasoning": "生产效率的指数级提升（从每天1台到每小时1台）表明Figure在制造工艺、供应链管理或自动化装配线上实现了关键性突破，使得人形机器人从实验室原型进入规模化生产阶段。"
+          },
+          {
+            "from_concept": "人形机器人规模化量产",
+            "to_concept": "海量真实世界数据生成加速AI模型迭代",
+            "relation_type": "tech_enables",
+            "confidence": 0.9,
+            "reasoning": "更多机器人部署到现实环境后，通过传感器和执行器收集的交互数据（如运动、操作、环境反馈）将指数级增长，这些数据直接用于训练Figure的Helix AI模型，形成‘部署-数据-优化’的正反馈循环。"
+          },
+          {
+            "from_concept": "AI模型迭代加速",
+            "to_concept": "人形机器人泛化能力和商业化场景扩展",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "更强大的AI模型将使机器人能适应更复杂的任务（如物流、制造、医疗辅助），从而打开更多商业应用场景，吸引下游客户采购，形成需求拉动。"
+          },
+          {
+            "from_concept": "Figure产能与数据优势",
+            "to_concept": "行业竞争格局加速分化，头部企业获得先发优势",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "Figure率先实现规模化量产和数据闭环，将拉开与竞争对手（如Tesla Optimus、Boston Dynamics）的差距，吸引更多资本和订单向头部集中，形成马太效应。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "immediate"
+    },
+    {
+      "signal_id": "implicit_6da001d5",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "Figure：生产效率大幅提升，可每小时生产1台机器人",
+      "published_at": "2026-04-30T03:45:53",
+      "industry_sector": "人形机器人本体企业（美股/一级市场）",
+      "opportunity_description": "Figure的产能突破验证了人形机器人量产可行性，可能提升市场对整个赛道的估值。",
+      "target_symbols": [
+        "未上市（Figure本身）",
+        "TSLA（Optimus对标）"
+      ],
+      "prior_confidence": 0.8231010797211804,
+      "posterior_confidence": 0.8231010797211804,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "Figure：生产效率大幅提升，可每小时生产1台机器人",
+        "target_opportunity": "Figure的产能突破验证了人形机器人量产可行性，可能提升市场对整个赛道的估值。",
+        "causal_links": [
+          {
+            "from_concept": "Figure生产效率大幅提升（24倍）",
+            "to_concept": "人形机器人规模化量产能力突破",
+            "relation_type": "tech_enables",
+            "confidence": 0.85,
+            "reasoning": "生产效率的指数级提升（从每天1台到每小时1台）表明Figure在制造工艺、供应链管理或自动化装配线上实现了关键性突破，使得人形机器人从实验室原型进入规模化生产阶段。"
+          },
+          {
+            "from_concept": "人形机器人规模化量产",
+            "to_concept": "海量真实世界数据生成加速AI模型迭代",
+            "relation_type": "tech_enables",
+            "confidence": 0.9,
+            "reasoning": "更多机器人部署到现实环境后，通过传感器和执行器收集的交互数据（如运动、操作、环境反馈）将指数级增长，这些数据直接用于训练Figure的Helix AI模型，形成‘部署-数据-优化’的正反馈循环。"
+          },
+          {
+            "from_concept": "AI模型迭代加速",
+            "to_concept": "人形机器人泛化能力和商业化场景扩展",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "更强大的AI模型将使机器人能适应更复杂的任务（如物流、制造、医疗辅助），从而打开更多商业应用场景，吸引下游客户采购，形成需求拉动。"
+          },
+          {
+            "from_concept": "Figure产能与数据优势",
+            "to_concept": "行业竞争格局加速分化，头部企业获得先发优势",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "Figure率先实现规模化量产和数据闭环，将拉开与竞争对手（如Tesla Optimus、Boston Dynamics）的差距，吸引更多资本和订单向头部集中，形成马太效应。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "immediate"
+    },
+    {
+      "signal_id": "implicit_7c2b35dc",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "问界M8荣膺中国电动汽车火灾安全指数五星级成绩，为行业首证",
+      "published_at": "2026-04-30T03:43:09",
+      "industry_sector": "高强度汽车材料",
+      "opportunity_description": "问界M8采用铝合金+高强度钢+热成型钢占比超81%，随着行业安全标准提升，这类材料供应商将受益于需求增长。",
+      "target_symbols": [
+        "600547.SH",
+        "000708.SZ"
+      ],
+      "prior_confidence": 0.7085167717989781,
+      "posterior_confidence": 0.7085167717989781,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "问界M8荣膺中国电动汽车火灾安全指数五星级成绩，为行业首证",
+        "target_opportunity": "问界M8采用铝合金+高强度钢+热成型钢占比超81%，随着行业安全标准提升，这类材料供应商将受益于需求增长。",
+        "causal_links": [
+          {
+            "from_concept": "问界M8获2026版火灾安全指数五星认证",
+            "to_concept": "行业安全标准预期提升，其他车企被迫跟进安全技术升级",
+            "relation_type": "policy_drives",
+            "confidence": 0.7,
+            "reasoning": "首个通过新版高难度安全认证的车型形成标杆效应，可能促使监管机构将新版指数标准作为行业推荐或强制门槛，或消费者将五星认证视为购车关键指标，倒逼竞品车企提升安全配置。"
+          },
+          {
+            "from_concept": "行业安全标准预期提升",
+            "to_concept": "对铝合金、高强度钢、热成型钢等高端材料需求增加",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "问界M8的八横五纵刚性结构及81%以上高强度材料占比表明，要达到新安全标准需要更多轻量化高强度材料。其他车企为竞争将加大此类材料采购，推动上游材料行业需求增长。"
+          },
+          {
+            "from_concept": "行业安全标准预期提升",
+            "to_concept": "电池安全技术（如多层包覆、底部防护）成为差异化竞争重点",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "问界M8通过五层电芯包覆和五层电池包底部防护实现安全，这需要先进的电池封装、热管理及防护材料技术。其他车企会加速采用或研发类似技术，带动电池安全相关产业链。"
+          },
+          {
+            "from_concept": "问界M8认证事件",
+            "to_concept": "消费者对电动汽车火灾安全的关注度提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.6,
+            "reasoning": "媒体广泛报道首个五星认证，会强化公众对电池火灾风险的认知，并促使购车时更看重安全认证。这间接利好安全技术领先的品牌及供应商。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_02693ed0",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "问界M8荣膺中国电动汽车火灾安全指数五星级成绩，为行业首证",
+      "published_at": "2026-04-30T03:43:09",
+      "industry_sector": "动力电池安全技术",
+      "opportunity_description": "五层电芯包覆和五层电池包底部防护技术需要先进的电池封装、热管理及防护材料，相关企业有望获得更多订单。",
+      "target_symbols": [
+        "300750.SZ",
+        "002074.SZ"
+      ],
+      "prior_confidence": 0.7085167717989781,
+      "posterior_confidence": 0.7085167717989781,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "问界M8荣膺中国电动汽车火灾安全指数五星级成绩，为行业首证",
+        "target_opportunity": "五层电芯包覆和五层电池包底部防护技术需要先进的电池封装、热管理及防护材料，相关企业有望获得更多订单。",
+        "causal_links": [
+          {
+            "from_concept": "问界M8获2026版火灾安全指数五星认证",
+            "to_concept": "行业安全标准预期提升，其他车企被迫跟进安全技术升级",
+            "relation_type": "policy_drives",
+            "confidence": 0.7,
+            "reasoning": "首个通过新版高难度安全认证的车型形成标杆效应，可能促使监管机构将新版指数标准作为行业推荐或强制门槛，或消费者将五星认证视为购车关键指标，倒逼竞品车企提升安全配置。"
+          },
+          {
+            "from_concept": "行业安全标准预期提升",
+            "to_concept": "对铝合金、高强度钢、热成型钢等高端材料需求增加",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "问界M8的八横五纵刚性结构及81%以上高强度材料占比表明，要达到新安全标准需要更多轻量化高强度材料。其他车企为竞争将加大此类材料采购，推动上游材料行业需求增长。"
+          },
+          {
+            "from_concept": "行业安全标准预期提升",
+            "to_concept": "电池安全技术（如多层包覆、底部防护）成为差异化竞争重点",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "问界M8通过五层电芯包覆和五层电池包底部防护实现安全，这需要先进的电池封装、热管理及防护材料技术。其他车企会加速采用或研发类似技术，带动电池安全相关产业链。"
+          },
+          {
+            "from_concept": "问界M8认证事件",
+            "to_concept": "消费者对电动汽车火灾安全的关注度提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.6,
+            "reasoning": "媒体广泛报道首个五星认证，会强化公众对电池火灾风险的认知，并促使购车时更看重安全认证。这间接利好安全技术领先的品牌及供应商。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_0b804f0e",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "问界M8荣膺中国电动汽车火灾安全指数五星级成绩，为行业首证",
+      "published_at": "2026-04-30T03:43:09",
+      "industry_sector": "电池热管理及防护材料",
+      "opportunity_description": "多层底部防护需要气凝胶、防火涂层等新型材料，问界认证事件将加速此类材料在电动车中的渗透。",
+      "target_symbols": [
+        "300037.SZ",
+        "688116.SH"
+      ],
+      "prior_confidence": 0.7085167717989781,
+      "posterior_confidence": 0.7085167717989781,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "问界M8荣膺中国电动汽车火灾安全指数五星级成绩，为行业首证",
+        "target_opportunity": "多层底部防护需要气凝胶、防火涂层等新型材料，问界认证事件将加速此类材料在电动车中的渗透。",
+        "causal_links": [
+          {
+            "from_concept": "问界M8获2026版火灾安全指数五星认证",
+            "to_concept": "行业安全标准预期提升，其他车企被迫跟进安全技术升级",
+            "relation_type": "policy_drives",
+            "confidence": 0.7,
+            "reasoning": "首个通过新版高难度安全认证的车型形成标杆效应，可能促使监管机构将新版指数标准作为行业推荐或强制门槛，或消费者将五星认证视为购车关键指标，倒逼竞品车企提升安全配置。"
+          },
+          {
+            "from_concept": "行业安全标准预期提升",
+            "to_concept": "对铝合金、高强度钢、热成型钢等高端材料需求增加",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "问界M8的八横五纵刚性结构及81%以上高强度材料占比表明，要达到新安全标准需要更多轻量化高强度材料。其他车企为竞争将加大此类材料采购，推动上游材料行业需求增长。"
+          },
+          {
+            "from_concept": "行业安全标准预期提升",
+            "to_concept": "电池安全技术（如多层包覆、底部防护）成为差异化竞争重点",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "问界M8通过五层电芯包覆和五层电池包底部防护实现安全，这需要先进的电池封装、热管理及防护材料技术。其他车企会加速采用或研发类似技术，带动电池安全相关产业链。"
+          },
+          {
+            "from_concept": "问界M8认证事件",
+            "to_concept": "消费者对电动汽车火灾安全的关注度提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.6,
+            "reasoning": "媒体广泛报道首个五星认证，会强化公众对电池火灾风险的认知，并促使购车时更看重安全认证。这间接利好安全技术领先的品牌及供应商。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_9b8f9827",
+      "signal_type": "social_trend",
+      "source": "36氪",
+      "title": "史丹利：二季度复合肥销量有望延续稳健增长态势",
+      "published_at": "2026-04-30T03:39:49",
+      "industry_sector": "复合肥行业",
+      "opportunity_description": "史丹利作为复合肥龙头，直接受益于春耕旺季销量增长和行业集中度提升。",
+      "target_symbols": [
+        "002588.SZ"
+      ],
+      "prior_confidence": 0.7363543090585117,
+      "posterior_confidence": 0.7363543090585117,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "史丹利：二季度复合肥销量有望延续稳健增长态势",
+        "target_opportunity": "史丹利作为复合肥龙头，直接受益于春耕旺季销量增长和行业集中度提升。",
+        "causal_links": [
+          {
+            "from_concept": "春耕旺季（4-5月）",
+            "to_concept": "复合肥需求增加",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "春耕是农业生产关键期，农户对复合肥的需求集中释放，历史数据表明该时段销量通常环比显著增长。"
+          },
+          {
+            "from_concept": "原料成本传导顺畅",
+            "to_concept": "复合肥企业毛利率稳定或改善",
+            "relation_type": "supply_constrains",
+            "confidence": 0.7,
+            "reasoning": "如果上游原料（尿素、磷酸一铵、氯化钾）价格波动较小且企业能及时调整终端售价，则成本端压力可控，利于盈利。"
+          },
+          {
+            "from_concept": "行业集中度持续提升",
+            "to_concept": "头部企业（如史丹利）市场份额扩大",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "环保政策趋严、中小产能退出，叠加头部品牌渠道下沉，行业集中度提升有利于龙头企业销量增长。"
+          },
+          {
+            "from_concept": "渠道与产品优势",
+            "to_concept": "史丹利销量增速可能超过行业平均",
+            "relation_type": "tech_enables",
+            "confidence": 0.7,
+            "reasoning": "史丹利在复合肥领域有品牌认知度、覆盖全国的经销商网络以及差异化产品（如缓控释肥），这些使其在旺季更具竞争力。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_92c1945e",
+      "signal_type": "social_trend",
+      "source": "36氪",
+      "title": "史丹利：二季度复合肥销量有望延续稳健增长态势",
+      "published_at": "2026-04-30T03:39:49",
+      "industry_sector": "复合肥行业",
+      "opportunity_description": "新洋丰（000902）和云天化（600096）同为复合肥/磷肥龙头，共享行业景气度提升。",
+      "target_symbols": [
+        "000902.SZ",
+        "600096.SH"
+      ],
+      "prior_confidence": 0.7363543090585117,
+      "posterior_confidence": 0.7363543090585117,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "史丹利：二季度复合肥销量有望延续稳健增长态势",
+        "target_opportunity": "新洋丰（000902）和云天化（600096）同为复合肥/磷肥龙头，共享行业景气度提升。",
+        "causal_links": [
+          {
+            "from_concept": "春耕旺季（4-5月）",
+            "to_concept": "复合肥需求增加",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "春耕是农业生产关键期，农户对复合肥的需求集中释放，历史数据表明该时段销量通常环比显著增长。"
+          },
+          {
+            "from_concept": "原料成本传导顺畅",
+            "to_concept": "复合肥企业毛利率稳定或改善",
+            "relation_type": "supply_constrains",
+            "confidence": 0.7,
+            "reasoning": "如果上游原料（尿素、磷酸一铵、氯化钾）价格波动较小且企业能及时调整终端售价，则成本端压力可控，利于盈利。"
+          },
+          {
+            "from_concept": "行业集中度持续提升",
+            "to_concept": "头部企业（如史丹利）市场份额扩大",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "环保政策趋严、中小产能退出，叠加头部品牌渠道下沉，行业集中度提升有利于龙头企业销量增长。"
+          },
+          {
+            "from_concept": "渠道与产品优势",
+            "to_concept": "史丹利销量增速可能超过行业平均",
+            "relation_type": "tech_enables",
+            "confidence": 0.7,
+            "reasoning": "史丹利在复合肥领域有品牌认知度、覆盖全国的经销商网络以及差异化产品（如缓控释肥），这些使其在旺季更具竞争力。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_1b8c3943",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "新东方在上海成立东方无忧培训学校",
+      "published_at": "2026-04-30T03:34:42",
+      "industry_sector": "教育信息化",
+      "opportunity_description": "新东方线下扩张带动智能教学设备采购，如互动白板、语音评测系统等，利好教育信息化供应商",
+      "target_symbols": [
+        "SEEB",
+        "网龙（港股）",
+        "科大讯飞（002230）"
+      ],
+      "prior_confidence": 0.6246664887306955,
+      "posterior_confidence": 0.6246664887306955,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "新东方在上海成立东方无忧培训学校",
+        "target_opportunity": "新东方线下扩张带动智能教学设备采购，如互动白板、语音评测系统等，利好教育信息化供应商",
+        "causal_links": [
+          {
+            "from_concept": "新东方在上海成立培训学校",
+            "to_concept": "新东方在非学科培训领域（语言能力）的线下扩张加速",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "双减政策后，学科培训受限，新东方转向非学科培训（如语言能力、素质类）是明确的战略转型。上海作为一线城市，家长对语言能力培训需求依然旺盛，成立子公司表明其看好该细分市场并积极布局线下网点。"
+          },
+          {
+            "from_concept": "语言能力培训线下扩张",
+            "to_concept": "对线下教育场地、教具、教材及教师资源的需求增加",
+            "relation_type": "supply_constrains",
+            "confidence": 0.65,
+            "reasoning": "线下培训需要租赁场地、购买教学设备、采购教材以及招聘或培训教师。新东方作为大型机构，其扩张将带动相关供应链需求，尤其是标准化教材、智能教学设备（如互动白板、语音评测系统）等。"
+          },
+          {
+            "from_concept": "新东方线下扩张",
+            "to_concept": "可能引发其他教培机构（如好未来、高途）跟进布局语言培训赛道",
+            "relation_type": "demand_shifts",
+            "confidence": 0.5,
+            "reasoning": "新东方作为行业龙头，其战略动作常被竞争对手视为风向标。若新东方在上海试点成功，其他机构可能模仿其模式，加速在非学科培训领域的竞争，从而扩大整个语言培训市场的供给。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_e15231f2",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "新东方在上海成立东方无忧培训学校",
+      "published_at": "2026-04-30T03:34:42",
+      "industry_sector": "教育出版（语言教材）",
+      "opportunity_description": "语言培训增加对专业教材的需求，尤其是新东方自有教材体系外的外部合作可能",
+      "target_symbols": [
+        "人教社（未上市）",
+        "外研社（未上市）",
+        "世纪天鸿（300654）"
+      ],
+      "prior_confidence": 0.6246664887306955,
+      "posterior_confidence": 0.6246664887306955,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "新东方在上海成立东方无忧培训学校",
+        "target_opportunity": "语言培训增加对专业教材的需求，尤其是新东方自有教材体系外的外部合作可能",
+        "causal_links": [
+          {
+            "from_concept": "新东方在上海成立培训学校",
+            "to_concept": "新东方在非学科培训领域（语言能力）的线下扩张加速",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "双减政策后，学科培训受限，新东方转向非学科培训（如语言能力、素质类）是明确的战略转型。上海作为一线城市，家长对语言能力培训需求依然旺盛，成立子公司表明其看好该细分市场并积极布局线下网点。"
+          },
+          {
+            "from_concept": "语言能力培训线下扩张",
+            "to_concept": "对线下教育场地、教具、教材及教师资源的需求增加",
+            "relation_type": "supply_constrains",
+            "confidence": 0.65,
+            "reasoning": "线下培训需要租赁场地、购买教学设备、采购教材以及招聘或培训教师。新东方作为大型机构，其扩张将带动相关供应链需求，尤其是标准化教材、智能教学设备（如互动白板、语音评测系统）等。"
+          },
+          {
+            "from_concept": "新东方线下扩张",
+            "to_concept": "可能引发其他教培机构（如好未来、高途）跟进布局语言培训赛道",
+            "relation_type": "demand_shifts",
+            "confidence": 0.5,
+            "reasoning": "新东方作为行业龙头，其战略动作常被竞争对手视为风向标。若新东方在上海试点成功，其他机构可能模仿其模式，加速在非学科培训领域的竞争，从而扩大整个语言培训市场的供给。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_63609ba2",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "新东方在上海成立东方无忧培训学校",
+      "published_at": "2026-04-30T03:34:42",
+      "industry_sector": "教育服务（非学科培训）",
+      "opportunity_description": "新东方的扩张可能推动行业竞争加剧，但同时也验证了语言培训赛道的可行性，对已布局该赛道的机构构成正面情绪",
+      "target_symbols": [
+        "好未来（TAL）",
+        "高途（GOTU）"
+      ],
+      "prior_confidence": 0.6246664887306955,
+      "posterior_confidence": 0.6246664887306955,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "新东方在上海成立东方无忧培训学校",
+        "target_opportunity": "新东方的扩张可能推动行业竞争加剧，但同时也验证了语言培训赛道的可行性，对已布局该赛道的机构构成正面情绪",
+        "causal_links": [
+          {
+            "from_concept": "新东方在上海成立培训学校",
+            "to_concept": "新东方在非学科培训领域（语言能力）的线下扩张加速",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "双减政策后，学科培训受限，新东方转向非学科培训（如语言能力、素质类）是明确的战略转型。上海作为一线城市，家长对语言能力培训需求依然旺盛，成立子公司表明其看好该细分市场并积极布局线下网点。"
+          },
+          {
+            "from_concept": "语言能力培训线下扩张",
+            "to_concept": "对线下教育场地、教具、教材及教师资源的需求增加",
+            "relation_type": "supply_constrains",
+            "confidence": 0.65,
+            "reasoning": "线下培训需要租赁场地、购买教学设备、采购教材以及招聘或培训教师。新东方作为大型机构，其扩张将带动相关供应链需求，尤其是标准化教材、智能教学设备（如互动白板、语音评测系统）等。"
+          },
+          {
+            "from_concept": "新东方线下扩张",
+            "to_concept": "可能引发其他教培机构（如好未来、高途）跟进布局语言培训赛道",
+            "relation_type": "demand_shifts",
+            "confidence": 0.5,
+            "reasoning": "新东方作为行业龙头，其战略动作常被竞争对手视为风向标。若新东方在上海试点成功，其他机构可能模仿其模式，加速在非学科培训领域的竞争，从而扩大整个语言培训市场的供给。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_b0228eaf",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "A股三大指数午间休盘涨跌不一，寒武纪涨超17%",
+      "published_at": "2026-04-30T03:31:20",
+      "industry_sector": "半导体/AI芯片",
+      "opportunity_description": "寒武纪大涨可能带动AI芯片产业链及半导体设备材料标的",
+      "target_symbols": [
+        "688256.SH",
+        "688981.SH",
+        "603986.SH"
+      ],
+      "prior_confidence": 0.6191976988439284,
+      "posterior_confidence": 0.6191976988439284,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "A股三大指数午间休盘涨跌不一，寒武纪涨超17%",
+        "target_opportunity": "寒武纪大涨可能带动AI芯片产业链及半导体设备材料标的",
+        "causal_links": [
+          {
+            "from_concept": "寒武纪涨超17%",
+            "to_concept": "半导体板块整体领涨",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "寒武纪作为AI芯片龙头，其大幅上涨通常反映市场对AI算力需求的乐观预期，带动半导体板块情绪"
+          },
+          {
+            "from_concept": "半导体板块领涨",
+            "to_concept": "市场对国产替代和AI算力基础设施投资预期升温",
+            "relation_type": "tech_enables",
+            "confidence": 0.6,
+            "reasoning": "半导体板块走强通常与国产替代政策、AI算力需求增长相关，可能隐含政策或订单利好"
+          },
+          {
+            "from_concept": "房地产板块领涨，津投城开涨停",
+            "to_concept": "房地产政策放松或区域利好预期",
+            "relation_type": "policy_drives",
+            "confidence": 0.5,
+            "reasoning": "房地产板块异动常与政策预期相关，津投城开作为地方城投公司涨停可能暗示区域政策或债务化解进展"
+          },
+          {
+            "from_concept": "燃气、贵金属、汽车板块跌幅居前",
+            "to_concept": "市场资金从防御性板块（黄金、燃气）和前期涨幅较大的汽车板块流出",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "资金轮动迹象明显，从避险品种转向科技和地产等进攻性板块"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_aa562894",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "A股三大指数午间休盘涨跌不一，寒武纪涨超17%",
+      "published_at": "2026-04-30T03:31:20",
+      "industry_sector": "房地产/区域城投",
+      "opportunity_description": "津投城开涨停可能预示天津区域或城投板块政策利好",
+      "target_symbols": [
+        "600322.SH",
+        "600606.SH"
+      ],
+      "prior_confidence": 0.6191976988439284,
+      "posterior_confidence": 0.6191976988439284,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "A股三大指数午间休盘涨跌不一，寒武纪涨超17%",
+        "target_opportunity": "津投城开涨停可能预示天津区域或城投板块政策利好",
+        "causal_links": [
+          {
+            "from_concept": "寒武纪涨超17%",
+            "to_concept": "半导体板块整体领涨",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "寒武纪作为AI芯片龙头，其大幅上涨通常反映市场对AI算力需求的乐观预期，带动半导体板块情绪"
+          },
+          {
+            "from_concept": "半导体板块领涨",
+            "to_concept": "市场对国产替代和AI算力基础设施投资预期升温",
+            "relation_type": "tech_enables",
+            "confidence": 0.6,
+            "reasoning": "半导体板块走强通常与国产替代政策、AI算力需求增长相关，可能隐含政策或订单利好"
+          },
+          {
+            "from_concept": "房地产板块领涨，津投城开涨停",
+            "to_concept": "房地产政策放松或区域利好预期",
+            "relation_type": "policy_drives",
+            "confidence": 0.5,
+            "reasoning": "房地产板块异动常与政策预期相关，津投城开作为地方城投公司涨停可能暗示区域政策或债务化解进展"
+          },
+          {
+            "from_concept": "燃气、贵金属、汽车板块跌幅居前",
+            "to_concept": "市场资金从防御性板块（黄金、燃气）和前期涨幅较大的汽车板块流出",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "资金轮动迹象明显，从避险品种转向科技和地产等进攻性板块"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_8688248e",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "A股三大指数午间休盘涨跌不一，寒武纪涨超17%",
+      "published_at": "2026-04-30T03:31:20",
+      "industry_sector": "体育/休闲用品",
+      "opportunity_description": "舒华体育涨停可能带动体育用品板块",
+      "target_symbols": [
+        "603579.SH",
+        "002832.SZ"
+      ],
+      "prior_confidence": 0.6191976988439284,
+      "posterior_confidence": 0.6191976988439284,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "A股三大指数午间休盘涨跌不一，寒武纪涨超17%",
+        "target_opportunity": "舒华体育涨停可能带动体育用品板块",
+        "causal_links": [
+          {
+            "from_concept": "寒武纪涨超17%",
+            "to_concept": "半导体板块整体领涨",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "寒武纪作为AI芯片龙头，其大幅上涨通常反映市场对AI算力需求的乐观预期，带动半导体板块情绪"
+          },
+          {
+            "from_concept": "半导体板块领涨",
+            "to_concept": "市场对国产替代和AI算力基础设施投资预期升温",
+            "relation_type": "tech_enables",
+            "confidence": 0.6,
+            "reasoning": "半导体板块走强通常与国产替代政策、AI算力需求增长相关，可能隐含政策或订单利好"
+          },
+          {
+            "from_concept": "房地产板块领涨，津投城开涨停",
+            "to_concept": "房地产政策放松或区域利好预期",
+            "relation_type": "policy_drives",
+            "confidence": 0.5,
+            "reasoning": "房地产板块异动常与政策预期相关，津投城开作为地方城投公司涨停可能暗示区域政策或债务化解进展"
+          },
+          {
+            "from_concept": "燃气、贵金属、汽车板块跌幅居前",
+            "to_concept": "市场资金从防御性板块（黄金、燃气）和前期涨幅较大的汽车板块流出",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "资金轮动迹象明显，从避险品种转向科技和地产等进攻性板块"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_593a43e2",
+      "signal_type": "social_trend",
+      "source": "36氪",
+      "title": "生猪期货2701合约涨超3%",
+      "published_at": "2026-04-30T03:24:50",
+      "industry_sector": "生猪养殖",
+      "opportunity_description": "生猪期货远期合约上涨，预示未来猪价可能走高，利好大型养殖企业盈利改善。",
+      "target_symbols": [
+        "牧原股份",
+        "温氏股份",
+        "新希望"
+      ],
+      "prior_confidence": 0.6868630196405033,
+      "posterior_confidence": 0.6868630196405033,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "生猪期货2701合约涨超3%",
+        "target_opportunity": "生猪期货远期合约上涨，预示未来猪价可能走高，利好大型养殖企业盈利改善。",
+        "causal_links": [
+          {
+            "from_concept": "生猪期货2701合约涨超3%",
+            "to_concept": "市场预期2026年末至2027年初生猪供应偏紧",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "期货价格是未来供需预期的折现。远期合约大幅上涨，说明交易者认为届时供给可能不足或需求超预期。结合当前能繁母猪存栏数据（若无明显增长），以及可能出现的疫病或环保限产，供给收缩是合理推测。"
+          },
+          {
+            "from_concept": "生猪供应偏紧预期",
+            "to_concept": "生猪养殖企业补栏意愿增强，仔猪、母猪需求上升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.65,
+            "reasoning": "若养殖户预期未来猪价上涨，会提前增加后备母猪和仔猪采购，以扩大产能。这会导致仔猪和母猪价格短期内上涨。"
+          },
+          {
+            "from_concept": "生猪养殖企业补栏意愿增强",
+            "to_concept": "饲料需求（玉米、豆粕）增加",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "补栏意味着生猪存栏量增加，每头猪的饲料消耗量刚性，从而拉动玉米、豆粕等饲料原料的需求。"
+          },
+          {
+            "from_concept": "饲料需求增加",
+            "to_concept": "玉米、豆粕价格上行压力",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "在供给端相对稳定（如国内玉米产量、大豆进口量未大幅增加）的情况下，需求增加会推高原料价格。"
+          },
+          {
+            "from_concept": "生猪期货价格上涨",
+            "to_concept": "屠宰企业成本压力上升，可能压缩利润或推动终端猪肉涨价",
+            "relation_type": "supply_constrains",
+            "confidence": 0.6,
+            "reasoning": "生猪期货涨价预期会传导至现货收购价，屠宰企业采购成本增加。若终端消费价格无法同步上涨，则屠宰企业毛利承压。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_3e3983e2",
+      "signal_type": "social_trend",
+      "source": "36氪",
+      "title": "生猪期货2701合约涨超3%",
+      "published_at": "2026-04-30T03:24:50",
+      "industry_sector": "饲料原料（玉米、豆粕）",
+      "opportunity_description": "养殖补栏预期带动饲料需求，玉米和豆粕价格有望上涨，利好上游种植及饲料企业。",
+      "target_symbols": [
+        "北大荒（玉米种植）",
+        "大北农（饲料+种业）"
+      ],
+      "prior_confidence": 0.6868630196405033,
+      "posterior_confidence": 0.6868630196405033,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "生猪期货2701合约涨超3%",
+        "target_opportunity": "养殖补栏预期带动饲料需求，玉米和豆粕价格有望上涨，利好上游种植及饲料企业。",
+        "causal_links": [
+          {
+            "from_concept": "生猪期货2701合约涨超3%",
+            "to_concept": "市场预期2026年末至2027年初生猪供应偏紧",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "期货价格是未来供需预期的折现。远期合约大幅上涨，说明交易者认为届时供给可能不足或需求超预期。结合当前能繁母猪存栏数据（若无明显增长），以及可能出现的疫病或环保限产，供给收缩是合理推测。"
+          },
+          {
+            "from_concept": "生猪供应偏紧预期",
+            "to_concept": "生猪养殖企业补栏意愿增强，仔猪、母猪需求上升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.65,
+            "reasoning": "若养殖户预期未来猪价上涨，会提前增加后备母猪和仔猪采购，以扩大产能。这会导致仔猪和母猪价格短期内上涨。"
+          },
+          {
+            "from_concept": "生猪养殖企业补栏意愿增强",
+            "to_concept": "饲料需求（玉米、豆粕）增加",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "补栏意味着生猪存栏量增加，每头猪的饲料消耗量刚性，从而拉动玉米、豆粕等饲料原料的需求。"
+          },
+          {
+            "from_concept": "饲料需求增加",
+            "to_concept": "玉米、豆粕价格上行压力",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "在供给端相对稳定（如国内玉米产量、大豆进口量未大幅增加）的情况下，需求增加会推高原料价格。"
+          },
+          {
+            "from_concept": "生猪期货价格上涨",
+            "to_concept": "屠宰企业成本压力上升，可能压缩利润或推动终端猪肉涨价",
+            "relation_type": "supply_constrains",
+            "confidence": 0.6,
+            "reasoning": "生猪期货涨价预期会传导至现货收购价，屠宰企业采购成本增加。若终端消费价格无法同步上涨，则屠宰企业毛利承压。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_66809fc3",
+      "signal_type": "social_trend",
+      "source": "36氪",
+      "title": "生猪期货2701合约涨超3%",
+      "published_at": "2026-04-30T03:24:50",
+      "industry_sector": "动物疫苗/兽药",
+      "opportunity_description": "补栏增加意味着生猪存栏量上升，疫苗和兽药使用量随之增加。",
+      "target_symbols": [
+        "生物股份",
+        "中牧股份"
+      ],
+      "prior_confidence": 0.6868630196405033,
+      "posterior_confidence": 0.6868630196405033,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "生猪期货2701合约涨超3%",
+        "target_opportunity": "补栏增加意味着生猪存栏量上升，疫苗和兽药使用量随之增加。",
+        "causal_links": [
+          {
+            "from_concept": "生猪期货2701合约涨超3%",
+            "to_concept": "市场预期2026年末至2027年初生猪供应偏紧",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "期货价格是未来供需预期的折现。远期合约大幅上涨，说明交易者认为届时供给可能不足或需求超预期。结合当前能繁母猪存栏数据（若无明显增长），以及可能出现的疫病或环保限产，供给收缩是合理推测。"
+          },
+          {
+            "from_concept": "生猪供应偏紧预期",
+            "to_concept": "生猪养殖企业补栏意愿增强，仔猪、母猪需求上升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.65,
+            "reasoning": "若养殖户预期未来猪价上涨，会提前增加后备母猪和仔猪采购，以扩大产能。这会导致仔猪和母猪价格短期内上涨。"
+          },
+          {
+            "from_concept": "生猪养殖企业补栏意愿增强",
+            "to_concept": "饲料需求（玉米、豆粕）增加",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "补栏意味着生猪存栏量增加，每头猪的饲料消耗量刚性，从而拉动玉米、豆粕等饲料原料的需求。"
+          },
+          {
+            "from_concept": "饲料需求增加",
+            "to_concept": "玉米、豆粕价格上行压力",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "在供给端相对稳定（如国内玉米产量、大豆进口量未大幅增加）的情况下，需求增加会推高原料价格。"
+          },
+          {
+            "from_concept": "生猪期货价格上涨",
+            "to_concept": "屠宰企业成本压力上升，可能压缩利润或推动终端猪肉涨价",
+            "relation_type": "supply_constrains",
+            "confidence": 0.6,
+            "reasoning": "生猪期货涨价预期会传导至现货收购价，屠宰企业采购成本增加。若终端消费价格无法同步上涨，则屠宰企业毛利承压。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_20dbca06",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "智界汽车完成变更，郭锐出任法定代表人",
+      "published_at": "2026-04-30T03:21:45",
+      "industry_sector": "华为智能汽车零部件供应商",
+      "opportunity_description": "智界V9热销拉动鸿蒙智行系统出货，华为系智驾/座舱零部件需求增长。",
+      "target_symbols": [
+        "002920.SZ（德赛西威）",
+        "688005.SH（容百科技）",
+        "002074.SZ（国轩高科）"
+      ],
+      "prior_confidence": 0.772977858577842,
+      "posterior_confidence": 0.772977858577842,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "智界汽车完成变更，郭锐出任法定代表人",
+        "target_opportunity": "智界V9热销拉动鸿蒙智行系统出货，华为系智驾/座舱零部件需求增长。",
+        "causal_links": [
+          {
+            "from_concept": "郭锐出任智界法定代表人/董事长",
+            "to_concept": "智界品牌2.0战略加速推进",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "郭锐在华为、荣耀的消费电子及品牌运营经验，结合宝洁的消费品管理背景，表明智界将强化品牌建设、渠道管理和用户运营，加速2.0战略落地。"
+          },
+          {
+            "from_concept": "智界V9订单突破两万台",
+            "to_concept": "高端MPV细分市场需求被验证，产能与交付压力增大",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "两万台订单对于50万级MPV属于超预期表现，表明商务/家庭高端出行需求旺盛，同时倒逼供应链和制造端加速备货。"
+          },
+          {
+            "from_concept": "智界V9搭载鸿蒙智行系统",
+            "to_concept": "华为智能汽车技术（智驾、座舱、电驱）供应链需求增加",
+            "relation_type": "tech_enables",
+            "confidence": 0.85,
+            "reasoning": "鸿蒙智行是华为核心技术输出，车型热销将带动华为零部件（激光雷达、芯片、电机、鸿蒙OS）采购量上升。"
+          },
+          {
+            "from_concept": "智界品牌2.0战略+高端MPV热销",
+            "to_concept": "华为智选车模式生态伙伴（如奇瑞、赛力斯）估值提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "智界V9的成功将验证华为智选车模式在高端MPV领域的可行性，增强市场对华为整车合作模式的信心，推动相关合作车企的估值修复。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_1ba86e81",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "智界汽车完成变更，郭锐出任法定代表人",
+      "published_at": "2026-04-30T03:21:45",
+      "industry_sector": "奇瑞汽车（智界代工商）",
+      "opportunity_description": "智界品牌成功将直接提升奇瑞在新能源领域的市场地位和利润贡献，但奇瑞未上市，可关注其关联方或代工合作车企。",
+      "target_symbols": [
+        "000625.SZ（长安汽车）",
+        "601238.SH（广汽集团）"
+      ],
+      "prior_confidence": 0.772977858577842,
+      "posterior_confidence": 0.772977858577842,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "智界汽车完成变更，郭锐出任法定代表人",
+        "target_opportunity": "智界品牌成功将直接提升奇瑞在新能源领域的市场地位和利润贡献，但奇瑞未上市，可关注其关联方或代工合作车企。",
+        "causal_links": [
+          {
+            "from_concept": "郭锐出任智界法定代表人/董事长",
+            "to_concept": "智界品牌2.0战略加速推进",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "郭锐在华为、荣耀的消费电子及品牌运营经验，结合宝洁的消费品管理背景，表明智界将强化品牌建设、渠道管理和用户运营，加速2.0战略落地。"
+          },
+          {
+            "from_concept": "智界V9订单突破两万台",
+            "to_concept": "高端MPV细分市场需求被验证，产能与交付压力增大",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "两万台订单对于50万级MPV属于超预期表现，表明商务/家庭高端出行需求旺盛，同时倒逼供应链和制造端加速备货。"
+          },
+          {
+            "from_concept": "智界V9搭载鸿蒙智行系统",
+            "to_concept": "华为智能汽车技术（智驾、座舱、电驱）供应链需求增加",
+            "relation_type": "tech_enables",
+            "confidence": 0.85,
+            "reasoning": "鸿蒙智行是华为核心技术输出，车型热销将带动华为零部件（激光雷达、芯片、电机、鸿蒙OS）采购量上升。"
+          },
+          {
+            "from_concept": "智界品牌2.0战略+高端MPV热销",
+            "to_concept": "华为智选车模式生态伙伴（如奇瑞、赛力斯）估值提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "智界V9的成功将验证华为智选车模式在高端MPV领域的可行性，增强市场对华为整车合作模式的信心，推动相关合作车企的估值修复。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_8014516a",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "智界汽车完成变更，郭锐出任法定代表人",
+      "published_at": "2026-04-30T03:21:45",
+      "industry_sector": "华为智选车模式受益标的（赛力斯）",
+      "opportunity_description": "智界V9验证华为高端MPV能力，强化市场对华为智选车模式的认可，赛力斯作为核心合作伙伴有望获估值溢价。",
+      "target_symbols": [
+        "601127.SH（赛力斯）"
+      ],
+      "prior_confidence": 0.772977858577842,
+      "posterior_confidence": 0.772977858577842,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "智界汽车完成变更，郭锐出任法定代表人",
+        "target_opportunity": "智界V9验证华为高端MPV能力，强化市场对华为智选车模式的认可，赛力斯作为核心合作伙伴有望获估值溢价。",
+        "causal_links": [
+          {
+            "from_concept": "郭锐出任智界法定代表人/董事长",
+            "to_concept": "智界品牌2.0战略加速推进",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "郭锐在华为、荣耀的消费电子及品牌运营经验，结合宝洁的消费品管理背景，表明智界将强化品牌建设、渠道管理和用户运营，加速2.0战略落地。"
+          },
+          {
+            "from_concept": "智界V9订单突破两万台",
+            "to_concept": "高端MPV细分市场需求被验证，产能与交付压力增大",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "两万台订单对于50万级MPV属于超预期表现，表明商务/家庭高端出行需求旺盛，同时倒逼供应链和制造端加速备货。"
+          },
+          {
+            "from_concept": "智界V9搭载鸿蒙智行系统",
+            "to_concept": "华为智能汽车技术（智驾、座舱、电驱）供应链需求增加",
+            "relation_type": "tech_enables",
+            "confidence": 0.85,
+            "reasoning": "鸿蒙智行是华为核心技术输出，车型热销将带动华为零部件（激光雷达、芯片、电机、鸿蒙OS）采购量上升。"
+          },
+          {
+            "from_concept": "智界品牌2.0战略+高端MPV热销",
+            "to_concept": "华为智选车模式生态伙伴（如奇瑞、赛力斯）估值提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "智界V9的成功将验证华为智选车模式在高端MPV领域的可行性，增强市场对华为整车合作模式的信心，推动相关合作车企的估值修复。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_3ffa207c",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "科创50指数涨幅扩大至5%",
+      "published_at": "2026-04-30T03:14:15",
+      "industry_sector": "半导体设备",
+      "opportunity_description": "科创50上涨直接利好半导体设备龙头，因扩产预期和国产替代加速。",
+      "target_symbols": [
+        "688012.SH",
+        "688120.SH"
+      ],
+      "prior_confidence": 0.7140036981921557,
+      "posterior_confidence": 0.7140036981921557,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "科创50指数涨幅扩大至5%",
+        "target_opportunity": "科创50上涨直接利好半导体设备龙头，因扩产预期和国产替代加速。",
+        "causal_links": [
+          {
+            "from_concept": "科创50指数涨幅扩大至5%",
+            "to_concept": "市场对科创板科技企业盈利预期或政策利好集中释放",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "指数单日大幅上涨通常由资金集中买入驱动，而资金行为背后往往是基本面改善预期（如财报超预期、订单增长）或政策催化（如减税、产业基金注资、关键技术突破）。"
+          },
+          {
+            "from_concept": "市场预期改善",
+            "to_concept": "半导体、人工智能、生物医药等硬科技板块获得增量资金",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "科创50成分股集中于半导体、高端制造、生物医药、新能源等硬科技领域。指数上涨表明资金优先流入这些高权重板块，可能因行业景气度拐点或政策扶持预期增强。"
+          },
+          {
+            "from_concept": "硬科技板块获资金流入",
+            "to_concept": "相关产业链上游设备、材料、设计公司订单预期上调",
+            "relation_type": "supply_constrains",
+            "confidence": 0.65,
+            "reasoning": "资金流入提升企业估值，同时市场预期下游需求增长将传导至上游供应链。例如，半导体制造扩产将带动设备、材料需求，AI算力需求提升将拉动芯片设计、封装测试。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_a7e3304f",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "科创50指数涨幅扩大至5%",
+      "published_at": "2026-04-30T03:14:15",
+      "industry_sector": "人工智能算力",
+      "opportunity_description": "AI芯片和算力基础设施是科创板核心标的，受政策和大模型需求驱动。",
+      "target_symbols": [
+        "688041.SH",
+        "688256.SH"
+      ],
+      "prior_confidence": 0.7140036981921557,
+      "posterior_confidence": 0.7140036981921557,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "科创50指数涨幅扩大至5%",
+        "target_opportunity": "AI芯片和算力基础设施是科创板核心标的，受政策和大模型需求驱动。",
+        "causal_links": [
+          {
+            "from_concept": "科创50指数涨幅扩大至5%",
+            "to_concept": "市场对科创板科技企业盈利预期或政策利好集中释放",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "指数单日大幅上涨通常由资金集中买入驱动，而资金行为背后往往是基本面改善预期（如财报超预期、订单增长）或政策催化（如减税、产业基金注资、关键技术突破）。"
+          },
+          {
+            "from_concept": "市场预期改善",
+            "to_concept": "半导体、人工智能、生物医药等硬科技板块获得增量资金",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "科创50成分股集中于半导体、高端制造、生物医药、新能源等硬科技领域。指数上涨表明资金优先流入这些高权重板块，可能因行业景气度拐点或政策扶持预期增强。"
+          },
+          {
+            "from_concept": "硬科技板块获资金流入",
+            "to_concept": "相关产业链上游设备、材料、设计公司订单预期上调",
+            "relation_type": "supply_constrains",
+            "confidence": 0.65,
+            "reasoning": "资金流入提升企业估值，同时市场预期下游需求增长将传导至上游供应链。例如，半导体制造扩产将带动设备、材料需求，AI算力需求提升将拉动芯片设计、封装测试。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_c9ace3b6",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "科创50指数涨幅扩大至5%",
+      "published_at": "2026-04-30T03:14:15",
+      "industry_sector": "生物医药创新",
+      "opportunity_description": "创新药和CXO板块可能因科创板整体情绪改善而补涨。",
+      "target_symbols": [
+        "688180.SH",
+        "688331.SH"
+      ],
+      "prior_confidence": 0.7140036981921557,
+      "posterior_confidence": 0.7140036981921557,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "科创50指数涨幅扩大至5%",
+        "target_opportunity": "创新药和CXO板块可能因科创板整体情绪改善而补涨。",
+        "causal_links": [
+          {
+            "from_concept": "科创50指数涨幅扩大至5%",
+            "to_concept": "市场对科创板科技企业盈利预期或政策利好集中释放",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "指数单日大幅上涨通常由资金集中买入驱动，而资金行为背后往往是基本面改善预期（如财报超预期、订单增长）或政策催化（如减税、产业基金注资、关键技术突破）。"
+          },
+          {
+            "from_concept": "市场预期改善",
+            "to_concept": "半导体、人工智能、生物医药等硬科技板块获得增量资金",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "科创50成分股集中于半导体、高端制造、生物医药、新能源等硬科技领域。指数上涨表明资金优先流入这些高权重板块，可能因行业景气度拐点或政策扶持预期增强。"
+          },
+          {
+            "from_concept": "硬科技板块获资金流入",
+            "to_concept": "相关产业链上游设备、材料、设计公司订单预期上调",
+            "relation_type": "supply_constrains",
+            "confidence": 0.65,
+            "reasoning": "资金流入提升企业估值，同时市场预期下游需求增长将传导至上游供应链。例如，半导体制造扩产将带动设备、材料需求，AI算力需求提升将拉动芯片设计、封装测试。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_82a0aad1",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "市场消息：软银寻求400亿美元贷款用于投资OpenAI的计划吸引了更多银行参与",
+      "published_at": "2026-04-30T02:55:50",
+      "industry_sector": "AI芯片与算力基础设施",
+      "opportunity_description": "软银400亿美元融资将直接用于OpenAI的算力采购，英伟达、AMD等GPU厂商将获得巨额订单，Broadcom作为定制AI芯片供应商也可能受益。",
+      "target_symbols": [
+        "NVDA",
+        "AMD",
+        "AVGO"
+      ],
+      "prior_confidence": 0.7193369511708753,
+      "posterior_confidence": 0.7193369511708753,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "市场消息：软银寻求400亿美元贷款用于投资OpenAI的计划吸引了更多银行参与",
+        "target_opportunity": "软银400亿美元融资将直接用于OpenAI的算力采购，英伟达、AMD等GPU厂商将获得巨额订单，Broadcom作为定制AI芯片供应商也可能受益。",
+        "causal_links": [
+          {
+            "from_concept": "软银大规模融资投资OpenAI",
+            "to_concept": "全球AI算力需求激增及资本密集度提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.85,
+            "reasoning": "OpenAI作为领先AI公司，其模型训练与推理需要大量算力资本开支，软银的巨额投资将直接加速OpenAI的算力采购与基础设施建设，从而推动上游算力硬件需求显著增长。"
+          },
+          {
+            "from_concept": "更多银行参与贷款",
+            "to_concept": "资本市场对AI赛道的信心增强，AI资产估值上升",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "银行愿意参与大额贷款表明金融机构认为OpenAI及AI产业风险可控、回报前景良好，这种信号会引导二级市场资金向AI相关股票集中。"
+          },
+          {
+            "from_concept": "AI资本开支增加",
+            "to_concept": "数据中心、电力、冷却等配套基础设施成本上升",
+            "relation_type": "supply_constrains",
+            "confidence": 0.7,
+            "reasoning": "大规模算力部署需要更多数据中心空间和电力供应，可能引发局部供给紧张，推高相关资源价格。"
+          },
+          {
+            "from_concept": "软银与OpenAI深度绑定",
+            "to_concept": "日本科技企业及日本半导体产业链获得间接利好",
+            "relation_type": "tech_enables",
+            "confidence": 0.6,
+            "reasoning": "软银作为日本企业，其投资可能带动日本半导体、AI芯片设计及封装测试企业（如Rapidus、东京电子）获得更多订单或合作机会。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_c0433913",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "市场消息：软银寻求400亿美元贷款用于投资OpenAI的计划吸引了更多银行参与",
+      "published_at": "2026-04-30T02:55:50",
+      "industry_sector": "数据中心与电力设备",
+      "opportunity_description": "大规模AI训练需要更多数据中心，Vertiv（精密冷却与电源）、NextEra Energy（清洁电力）等将因需求增长而受益。",
+      "target_symbols": [
+        "VRT",
+        "NEE",
+        "CEG"
+      ],
+      "prior_confidence": 0.7193369511708753,
+      "posterior_confidence": 0.7193369511708753,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "市场消息：软银寻求400亿美元贷款用于投资OpenAI的计划吸引了更多银行参与",
+        "target_opportunity": "大规模AI训练需要更多数据中心，Vertiv（精密冷却与电源）、NextEra Energy（清洁电力）等将因需求增长而受益。",
+        "causal_links": [
+          {
+            "from_concept": "软银大规模融资投资OpenAI",
+            "to_concept": "全球AI算力需求激增及资本密集度提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.85,
+            "reasoning": "OpenAI作为领先AI公司，其模型训练与推理需要大量算力资本开支，软银的巨额投资将直接加速OpenAI的算力采购与基础设施建设，从而推动上游算力硬件需求显著增长。"
+          },
+          {
+            "from_concept": "更多银行参与贷款",
+            "to_concept": "资本市场对AI赛道的信心增强，AI资产估值上升",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "银行愿意参与大额贷款表明金融机构认为OpenAI及AI产业风险可控、回报前景良好，这种信号会引导二级市场资金向AI相关股票集中。"
+          },
+          {
+            "from_concept": "AI资本开支增加",
+            "to_concept": "数据中心、电力、冷却等配套基础设施成本上升",
+            "relation_type": "supply_constrains",
+            "confidence": 0.7,
+            "reasoning": "大规模算力部署需要更多数据中心空间和电力供应，可能引发局部供给紧张，推高相关资源价格。"
+          },
+          {
+            "from_concept": "软银与OpenAI深度绑定",
+            "to_concept": "日本科技企业及日本半导体产业链获得间接利好",
+            "relation_type": "tech_enables",
+            "confidence": 0.6,
+            "reasoning": "软银作为日本企业，其投资可能带动日本半导体、AI芯片设计及封装测试企业（如Rapidus、东京电子）获得更多订单或合作机会。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_23345d04",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "市场消息：软银寻求400亿美元贷款用于投资OpenAI的计划吸引了更多银行参与",
+      "published_at": "2026-04-30T02:55:50",
+      "industry_sector": "日本半导体产业链",
+      "opportunity_description": "软银的投资可能带动日本半导体设备（东京电子、迪斯科）及材料企业（信越化学）获得更多AI相关订单。",
+      "target_symbols": [
+        "6857.T",
+        "8035.T",
+        "7735.T"
+      ],
+      "prior_confidence": 0.7193369511708753,
+      "posterior_confidence": 0.7193369511708753,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "市场消息：软银寻求400亿美元贷款用于投资OpenAI的计划吸引了更多银行参与",
+        "target_opportunity": "软银的投资可能带动日本半导体设备（东京电子、迪斯科）及材料企业（信越化学）获得更多AI相关订单。",
+        "causal_links": [
+          {
+            "from_concept": "软银大规模融资投资OpenAI",
+            "to_concept": "全球AI算力需求激增及资本密集度提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.85,
+            "reasoning": "OpenAI作为领先AI公司，其模型训练与推理需要大量算力资本开支，软银的巨额投资将直接加速OpenAI的算力采购与基础设施建设，从而推动上游算力硬件需求显著增长。"
+          },
+          {
+            "from_concept": "更多银行参与贷款",
+            "to_concept": "资本市场对AI赛道的信心增强，AI资产估值上升",
+            "relation_type": "policy_drives",
+            "confidence": 0.75,
+            "reasoning": "银行愿意参与大额贷款表明金融机构认为OpenAI及AI产业风险可控、回报前景良好，这种信号会引导二级市场资金向AI相关股票集中。"
+          },
+          {
+            "from_concept": "AI资本开支增加",
+            "to_concept": "数据中心、电力、冷却等配套基础设施成本上升",
+            "relation_type": "supply_constrains",
+            "confidence": 0.7,
+            "reasoning": "大规模算力部署需要更多数据中心空间和电力供应，可能引发局部供给紧张，推高相关资源价格。"
+          },
+          {
+            "from_concept": "软银与OpenAI深度绑定",
+            "to_concept": "日本科技企业及日本半导体产业链获得间接利好",
+            "relation_type": "tech_enables",
+            "confidence": 0.6,
+            "reasoning": "软银作为日本企业，其投资可能带动日本半导体、AI芯片设计及封装测试企业（如Rapidus、东京电子）获得更多订单或合作机会。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_10c0abbf",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "寒武纪盘中涨超12%，股价刷新历史新高",
+      "published_at": "2026-04-30T02:40:44",
+      "industry_sector": "国产AI芯片设计",
+      "opportunity_description": "寒武纪股价新高可能带动同板块其他AI芯片标的估值修复，尤其是海光信息（CPU+AI加速器）和中科创达（边缘AI芯片设计）。",
+      "target_symbols": [
+        "688256.SH（寒武纪）",
+        "688041.SH（海光信息）",
+        "300496.SZ（中科创达）"
+      ],
+      "prior_confidence": 0.7488872387218507,
+      "posterior_confidence": 0.7488872387218507,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "寒武纪盘中涨超12%，股价刷新历史新高",
+        "target_opportunity": "寒武纪股价新高可能带动同板块其他AI芯片标的估值修复，尤其是海光信息（CPU+AI加速器）和中科创达（边缘AI芯片设计）。",
+        "causal_links": [
+          {
+            "from_concept": "寒武纪股价创历史新高",
+            "to_concept": "市场对AI芯片需求预期进一步强化",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "寒武纪作为国产AI芯片龙头，其股价新高通常被市场视为整个AI算力板块的领先指标，反映了投资者对AI推理/训练芯片需求持续增长的共识。"
+          },
+          {
+            "from_concept": "AI芯片需求预期强化",
+            "to_concept": "上游半导体设备/材料需求增加",
+            "relation_type": "supply_constrains",
+            "confidence": 0.7,
+            "reasoning": "AI芯片制造需要先进制程（如7nm/5nm）产能，寒武纪等公司的扩产将拉动对光刻机、刻蚀设备、硅片、光刻胶等上游材料的采购。"
+          },
+          {
+            "from_concept": "AI芯片需求预期强化",
+            "to_concept": "下游AI应用场景（自动驾驶、机器人、大模型）加速落地",
+            "relation_type": "tech_enables",
+            "confidence": 0.75,
+            "reasoning": "寒武纪芯片主要面向云端推理和边缘计算，其性能提升将降低AI应用成本，推动自动驾驶、工业AI、智能安防等场景的商业化进程。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "immediate"
+    },
+    {
+      "signal_id": "implicit_2182a78e",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "寒武纪盘中涨超12%，股价刷新历史新高",
+      "published_at": "2026-04-30T02:40:44",
+      "industry_sector": "半导体设备与材料",
+      "opportunity_description": "AI芯片扩产将直接拉动刻蚀、薄膜沉积、测试设备需求，北方华创和中微公司是国产设备龙头。",
+      "target_symbols": [
+        "002371.SZ（北方华创）",
+        "688012.SH（中微公司）",
+        "300604.SZ（长川科技）"
+      ],
+      "prior_confidence": 0.7488872387218507,
+      "posterior_confidence": 0.7488872387218507,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "寒武纪盘中涨超12%，股价刷新历史新高",
+        "target_opportunity": "AI芯片扩产将直接拉动刻蚀、薄膜沉积、测试设备需求，北方华创和中微公司是国产设备龙头。",
+        "causal_links": [
+          {
+            "from_concept": "寒武纪股价创历史新高",
+            "to_concept": "市场对AI芯片需求预期进一步强化",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "寒武纪作为国产AI芯片龙头，其股价新高通常被市场视为整个AI算力板块的领先指标，反映了投资者对AI推理/训练芯片需求持续增长的共识。"
+          },
+          {
+            "from_concept": "AI芯片需求预期强化",
+            "to_concept": "上游半导体设备/材料需求增加",
+            "relation_type": "supply_constrains",
+            "confidence": 0.7,
+            "reasoning": "AI芯片制造需要先进制程（如7nm/5nm）产能，寒武纪等公司的扩产将拉动对光刻机、刻蚀设备、硅片、光刻胶等上游材料的采购。"
+          },
+          {
+            "from_concept": "AI芯片需求预期强化",
+            "to_concept": "下游AI应用场景（自动驾驶、机器人、大模型）加速落地",
+            "relation_type": "tech_enables",
+            "confidence": 0.75,
+            "reasoning": "寒武纪芯片主要面向云端推理和边缘计算，其性能提升将降低AI应用成本，推动自动驾驶、工业AI、智能安防等场景的商业化进程。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "immediate"
+    },
+    {
+      "signal_id": "implicit_0e13e33f",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "寒武纪盘中涨超12%，股价刷新历史新高",
+      "published_at": "2026-04-30T02:40:44",
+      "industry_sector": "AI算力服务器/数据中心",
+      "opportunity_description": "寒武纪芯片出货量增长将直接带动AI服务器组装和云服务需求，浪潮信息是国产AI服务器龙头。",
+      "target_symbols": [
+        "000977.SZ（浪潮信息）",
+        "600839.SH（四川长虹）",
+        "688158.SH（优刻得）"
+      ],
+      "prior_confidence": 0.7488872387218507,
+      "posterior_confidence": 0.7488872387218507,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "寒武纪盘中涨超12%，股价刷新历史新高",
+        "target_opportunity": "寒武纪芯片出货量增长将直接带动AI服务器组装和云服务需求，浪潮信息是国产AI服务器龙头。",
+        "causal_links": [
+          {
+            "from_concept": "寒武纪股价创历史新高",
+            "to_concept": "市场对AI芯片需求预期进一步强化",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "寒武纪作为国产AI芯片龙头，其股价新高通常被市场视为整个AI算力板块的领先指标，反映了投资者对AI推理/训练芯片需求持续增长的共识。"
+          },
+          {
+            "from_concept": "AI芯片需求预期强化",
+            "to_concept": "上游半导体设备/材料需求增加",
+            "relation_type": "supply_constrains",
+            "confidence": 0.7,
+            "reasoning": "AI芯片制造需要先进制程（如7nm/5nm）产能，寒武纪等公司的扩产将拉动对光刻机、刻蚀设备、硅片、光刻胶等上游材料的采购。"
+          },
+          {
+            "from_concept": "AI芯片需求预期强化",
+            "to_concept": "下游AI应用场景（自动驾驶、机器人、大模型）加速落地",
+            "relation_type": "tech_enables",
+            "confidence": 0.75,
+            "reasoning": "寒武纪芯片主要面向云端推理和边缘计算，其性能提升将降低AI应用成本，推动自动驾驶、工业AI、智能安防等场景的商业化进程。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "immediate"
+    },
+    {
+      "signal_id": "implicit_a214f4fb",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "俞浩：追觅智能汽车正按640亿估值推进融资",
+      "published_at": "2026-04-30T02:40:27",
+      "industry_sector": "自动驾驶传感器",
+      "opportunity_description": "追觅智能汽车项目的高估值融资将推动其加速研发，对激光雷达、摄像头等传感器需求增加，利好国内头部传感器供应商。",
+      "target_symbols": [
+        "002920.SZ（德赛西威）",
+        "688005.SH（禾赛科技）"
+      ],
+      "prior_confidence": 0.6224885022230943,
+      "posterior_confidence": 0.6224885022230943,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "俞浩：追觅智能汽车正按640亿估值推进融资",
+        "target_opportunity": "追觅智能汽车项目的高估值融资将推动其加速研发，对激光雷达、摄像头等传感器需求增加，利好国内头部传感器供应商。",
+        "causal_links": [
+          {
+            "from_concept": "追觅智能汽车高估值融资",
+            "to_concept": "智能汽车赛道资本热度升温",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "640亿估值（约100亿美元）在新造车企业中属于较高水平（接近头部新势力估值），这表明资本对智能汽车赛道仍有强烈兴趣，尤其是在扫地机器人跨界造车的背景下，可能引发更多跨界企业效仿或资本跟投。"
+          },
+          {
+            "from_concept": "智能汽车赛道资本热度升温",
+            "to_concept": "上游核心零部件（激光雷达、芯片、高精度传感器）需求预期提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.65,
+            "reasoning": "新造车项目扩张（团队扩至2000人）意味着对自动驾驶、智能座舱相关硬件的采购量增加，尤其是追觅在扫地机器人领域积累的传感器和算法能力可能向车载方向迁移，带动对上游激光雷达、毫米波雷达、AI芯片等零部件的需求预期。"
+          },
+          {
+            "from_concept": "追觅智能汽车高估值融资",
+            "to_concept": "消费电子与汽车产业链交叉领域（如智能制造、精密加工）受益",
+            "relation_type": "tech_enables",
+            "confidence": 0.6,
+            "reasoning": "追觅在扫地机器人领域的精密制造、电机、传感器技术可迁移至智能汽车（如线控底盘、驱动电机），这需要与汽车零部件供应商合作，可能带动具备消费电子制造能力的企业切入汽车供应链。"
+          },
+          {
+            "from_concept": "追觅智能汽车高估值融资",
+            "to_concept": "行业竞争加剧，传统车企或现有新势力面临人才和资本争夺压力",
+            "relation_type": "supply_constrains",
+            "confidence": 0.55,
+            "reasoning": "追觅团队从1000人扩至2000人，且估值高达100亿美元，将吸引大量自动驾驶、软件、硬件工程师进入新公司，导致行业人才成本上升；同时，高估值融资可能稀释其他新势力获得后续融资的空间。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_2fe264f6",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "俞浩：追觅智能汽车正按640亿估值推进融资",
+      "published_at": "2026-04-30T02:40:27",
+      "industry_sector": "汽车芯片",
+      "opportunity_description": "智能汽车对AI芯片、模拟芯片需求量大，追觅项目可能带动对国产芯片的验证和采购。",
+      "target_symbols": [
+        "688099.SH（芯原股份）",
+        "300661.SZ（圣邦股份）"
+      ],
+      "prior_confidence": 0.6224885022230943,
+      "posterior_confidence": 0.6224885022230943,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "俞浩：追觅智能汽车正按640亿估值推进融资",
+        "target_opportunity": "智能汽车对AI芯片、模拟芯片需求量大，追觅项目可能带动对国产芯片的验证和采购。",
+        "causal_links": [
+          {
+            "from_concept": "追觅智能汽车高估值融资",
+            "to_concept": "智能汽车赛道资本热度升温",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "640亿估值（约100亿美元）在新造车企业中属于较高水平（接近头部新势力估值），这表明资本对智能汽车赛道仍有强烈兴趣，尤其是在扫地机器人跨界造车的背景下，可能引发更多跨界企业效仿或资本跟投。"
+          },
+          {
+            "from_concept": "智能汽车赛道资本热度升温",
+            "to_concept": "上游核心零部件（激光雷达、芯片、高精度传感器）需求预期提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.65,
+            "reasoning": "新造车项目扩张（团队扩至2000人）意味着对自动驾驶、智能座舱相关硬件的采购量增加，尤其是追觅在扫地机器人领域积累的传感器和算法能力可能向车载方向迁移，带动对上游激光雷达、毫米波雷达、AI芯片等零部件的需求预期。"
+          },
+          {
+            "from_concept": "追觅智能汽车高估值融资",
+            "to_concept": "消费电子与汽车产业链交叉领域（如智能制造、精密加工）受益",
+            "relation_type": "tech_enables",
+            "confidence": 0.6,
+            "reasoning": "追觅在扫地机器人领域的精密制造、电机、传感器技术可迁移至智能汽车（如线控底盘、驱动电机），这需要与汽车零部件供应商合作，可能带动具备消费电子制造能力的企业切入汽车供应链。"
+          },
+          {
+            "from_concept": "追觅智能汽车高估值融资",
+            "to_concept": "行业竞争加剧，传统车企或现有新势力面临人才和资本争夺压力",
+            "relation_type": "supply_constrains",
+            "confidence": 0.55,
+            "reasoning": "追觅团队从1000人扩至2000人，且估值高达100亿美元，将吸引大量自动驾驶、软件、硬件工程师进入新公司，导致行业人才成本上升；同时，高估值融资可能稀释其他新势力获得后续融资的空间。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_eadcdaba",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "俞浩：追觅智能汽车正按640亿估值推进融资",
+      "published_at": "2026-04-30T02:40:27",
+      "industry_sector": "精密制造与电机",
+      "opportunity_description": "追觅在扫地机器人领域的电机技术可迁移至汽车线控底盘、驱动电机，可能需要与专业电机供应商合作。",
+      "target_symbols": [
+        "300124.SZ（汇川技术）",
+        "002851.SZ（麦格米特）"
+      ],
+      "prior_confidence": 0.6224885022230943,
+      "posterior_confidence": 0.6224885022230943,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "俞浩：追觅智能汽车正按640亿估值推进融资",
+        "target_opportunity": "追觅在扫地机器人领域的电机技术可迁移至汽车线控底盘、驱动电机，可能需要与专业电机供应商合作。",
+        "causal_links": [
+          {
+            "from_concept": "追觅智能汽车高估值融资",
+            "to_concept": "智能汽车赛道资本热度升温",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "640亿估值（约100亿美元）在新造车企业中属于较高水平（接近头部新势力估值），这表明资本对智能汽车赛道仍有强烈兴趣，尤其是在扫地机器人跨界造车的背景下，可能引发更多跨界企业效仿或资本跟投。"
+          },
+          {
+            "from_concept": "智能汽车赛道资本热度升温",
+            "to_concept": "上游核心零部件（激光雷达、芯片、高精度传感器）需求预期提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.65,
+            "reasoning": "新造车项目扩张（团队扩至2000人）意味着对自动驾驶、智能座舱相关硬件的采购量增加，尤其是追觅在扫地机器人领域积累的传感器和算法能力可能向车载方向迁移，带动对上游激光雷达、毫米波雷达、AI芯片等零部件的需求预期。"
+          },
+          {
+            "from_concept": "追觅智能汽车高估值融资",
+            "to_concept": "消费电子与汽车产业链交叉领域（如智能制造、精密加工）受益",
+            "relation_type": "tech_enables",
+            "confidence": 0.6,
+            "reasoning": "追觅在扫地机器人领域的精密制造、电机、传感器技术可迁移至智能汽车（如线控底盘、驱动电机），这需要与汽车零部件供应商合作，可能带动具备消费电子制造能力的企业切入汽车供应链。"
+          },
+          {
+            "from_concept": "追觅智能汽车高估值融资",
+            "to_concept": "行业竞争加剧，传统车企或现有新势力面临人才和资本争夺压力",
+            "relation_type": "supply_constrains",
+            "confidence": 0.55,
+            "reasoning": "追觅团队从1000人扩至2000人，且估值高达100亿美元，将吸引大量自动驾驶、软件、硬件工程师进入新公司，导致行业人才成本上升；同时，高估值融资可能稀释其他新势力获得后续融资的空间。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_6dac010b",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "今年第二批，超长期特别国债支持设备更新资金下达",
+      "published_at": "2026-04-30T02:33:48",
+      "industry_sector": "高端数控机床",
+      "opportunity_description": "国产数控机床龙头将直接受益于制造业设备更新订单，尤其是有能力提供高端五轴联动等核心机型的公司。",
+      "target_symbols": [
+        "300124.SZ",
+        "600862.SH",
+        "002747.SZ"
+      ],
+      "prior_confidence": 0.8090257887596309,
+      "posterior_confidence": 0.8090257887596309,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "今年第二批，超长期特别国债支持设备更新资金下达",
+        "target_opportunity": "国产数控机床龙头将直接受益于制造业设备更新订单，尤其是有能力提供高端五轴联动等核心机型的公司。",
+        "causal_links": [
+          {
+            "from_concept": "超长期特别国债支持设备更新资金下达",
+            "to_concept": "企业设备更新投资需求增加",
+            "relation_type": "policy_drives",
+            "confidence": 0.9,
+            "reasoning": "中央财政资金直接注入设备更新项目，降低了企业更新设备的资金成本，加速了设备替换决策。"
+          },
+          {
+            "from_concept": "企业设备更新投资需求增加",
+            "to_concept": "高端装备及工业自动化订单增长",
+            "relation_type": "demand_shifts",
+            "confidence": 0.85,
+            "reasoning": "更新需求指向更高效率、更智能的国产设备，尤其是数控机床、工业机器人、检测设备等，以符合‘新设备’标准。"
+          },
+          {
+            "from_concept": "订单增长",
+            "to_concept": "设备供应商产能利用率提升，盈利改善",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "订单集中释放将推动相关企业提高排产，规模效应下毛利率提升。"
+          },
+          {
+            "from_concept": "设备更新投资增加",
+            "to_concept": "下游行业（如钢铁、化工、电力）生产效率提升与碳排放降低",
+            "relation_type": "tech_enables",
+            "confidence": 0.7,
+            "reasoning": "新设备通常具备更高能效和更低排放，有助于企业满足环保合规要求并降低长期运营成本。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_8c6255d9",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "今年第二批，超长期特别国债支持设备更新资金下达",
+      "published_at": "2026-04-30T02:33:48",
+      "industry_sector": "工业自动化（机器人及核心零部件）",
+      "opportunity_description": "工业机器人和伺服系统供应商将受益于工厂自动化改造需求。",
+      "target_symbols": [
+        "300124.SZ",
+        "688160.SH",
+        "002747.SZ"
+      ],
+      "prior_confidence": 0.8090257887596309,
+      "posterior_confidence": 0.8090257887596309,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "今年第二批，超长期特别国债支持设备更新资金下达",
+        "target_opportunity": "工业机器人和伺服系统供应商将受益于工厂自动化改造需求。",
+        "causal_links": [
+          {
+            "from_concept": "超长期特别国债支持设备更新资金下达",
+            "to_concept": "企业设备更新投资需求增加",
+            "relation_type": "policy_drives",
+            "confidence": 0.9,
+            "reasoning": "中央财政资金直接注入设备更新项目，降低了企业更新设备的资金成本，加速了设备替换决策。"
+          },
+          {
+            "from_concept": "企业设备更新投资需求增加",
+            "to_concept": "高端装备及工业自动化订单增长",
+            "relation_type": "demand_shifts",
+            "confidence": 0.85,
+            "reasoning": "更新需求指向更高效率、更智能的国产设备，尤其是数控机床、工业机器人、检测设备等，以符合‘新设备’标准。"
+          },
+          {
+            "from_concept": "订单增长",
+            "to_concept": "设备供应商产能利用率提升，盈利改善",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "订单集中释放将推动相关企业提高排产，规模效应下毛利率提升。"
+          },
+          {
+            "from_concept": "设备更新投资增加",
+            "to_concept": "下游行业（如钢铁、化工、电力）生产效率提升与碳排放降低",
+            "relation_type": "tech_enables",
+            "confidence": 0.7,
+            "reasoning": "新设备通常具备更高能效和更低排放，有助于企业满足环保合规要求并降低长期运营成本。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_5064f815",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "今年第二批，超长期特别国债支持设备更新资金下达",
+      "published_at": "2026-04-30T02:33:48",
+      "industry_sector": "检测与测量设备",
+      "opportunity_description": "高精度检测设备（如三坐标测量机、光谱仪）在设备更新中属于必须配套的‘新工艺’环节。",
+      "target_symbols": [
+        "300012.SZ",
+        "688528.SH"
+      ],
+      "prior_confidence": 0.8090257887596309,
+      "posterior_confidence": 0.8090257887596309,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "今年第二批，超长期特别国债支持设备更新资金下达",
+        "target_opportunity": "高精度检测设备（如三坐标测量机、光谱仪）在设备更新中属于必须配套的‘新工艺’环节。",
+        "causal_links": [
+          {
+            "from_concept": "超长期特别国债支持设备更新资金下达",
+            "to_concept": "企业设备更新投资需求增加",
+            "relation_type": "policy_drives",
+            "confidence": 0.9,
+            "reasoning": "中央财政资金直接注入设备更新项目，降低了企业更新设备的资金成本，加速了设备替换决策。"
+          },
+          {
+            "from_concept": "企业设备更新投资需求增加",
+            "to_concept": "高端装备及工业自动化订单增长",
+            "relation_type": "demand_shifts",
+            "confidence": 0.85,
+            "reasoning": "更新需求指向更高效率、更智能的国产设备，尤其是数控机床、工业机器人、检测设备等，以符合‘新设备’标准。"
+          },
+          {
+            "from_concept": "订单增长",
+            "to_concept": "设备供应商产能利用率提升，盈利改善",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "订单集中释放将推动相关企业提高排产，规模效应下毛利率提升。"
+          },
+          {
+            "from_concept": "设备更新投资增加",
+            "to_concept": "下游行业（如钢铁、化工、电力）生产效率提升与碳排放降低",
+            "relation_type": "tech_enables",
+            "confidence": 0.7,
+            "reasoning": "新设备通常具备更高能效和更低排放，有助于企业满足环保合规要求并降低长期运营成本。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_13a9ed2f",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "今年第二批，超长期特别国债支持设备更新资金下达",
+      "published_at": "2026-04-30T02:33:48",
+      "industry_sector": "节能环保设备",
+      "opportunity_description": "高效电机、余热锅炉等节能设备供应商将受益于更新项目的绿色化要求。",
+      "target_symbols": [
+        "600481.SH",
+        "300187.SZ"
+      ],
+      "prior_confidence": 0.8090257887596309,
+      "posterior_confidence": 0.8090257887596309,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "今年第二批，超长期特别国债支持设备更新资金下达",
+        "target_opportunity": "高效电机、余热锅炉等节能设备供应商将受益于更新项目的绿色化要求。",
+        "causal_links": [
+          {
+            "from_concept": "超长期特别国债支持设备更新资金下达",
+            "to_concept": "企业设备更新投资需求增加",
+            "relation_type": "policy_drives",
+            "confidence": 0.9,
+            "reasoning": "中央财政资金直接注入设备更新项目，降低了企业更新设备的资金成本，加速了设备替换决策。"
+          },
+          {
+            "from_concept": "企业设备更新投资需求增加",
+            "to_concept": "高端装备及工业自动化订单增长",
+            "relation_type": "demand_shifts",
+            "confidence": 0.85,
+            "reasoning": "更新需求指向更高效率、更智能的国产设备，尤其是数控机床、工业机器人、检测设备等，以符合‘新设备’标准。"
+          },
+          {
+            "from_concept": "订单增长",
+            "to_concept": "设备供应商产能利用率提升，盈利改善",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "订单集中释放将推动相关企业提高排产，规模效应下毛利率提升。"
+          },
+          {
+            "from_concept": "设备更新投资增加",
+            "to_concept": "下游行业（如钢铁、化工、电力）生产效率提升与碳排放降低",
+            "relation_type": "tech_enables",
+            "confidence": 0.7,
+            "reasoning": "新设备通常具备更高能效和更低排放，有助于企业满足环保合规要求并降低长期运营成本。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_b0ba1df3",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "特斯拉：电动卡车Semi进入量产新阶段",
+      "published_at": "2026-04-30T02:28:12",
+      "industry_sector": "动力电池上游材料（锂、镍、硅基负极）",
+      "opportunity_description": "特斯拉Semi量产将大幅增加对高镍三元电池和4680电池的需求，利好锂、镍等关键材料供应商",
+      "target_symbols": [
+        "SQM",
+        "ALB",
+        "LTHM"
+      ],
+      "prior_confidence": 0.8090257887596308,
+      "posterior_confidence": 0.8090257887596308,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "特斯拉：电动卡车Semi进入量产新阶段",
+        "target_opportunity": "特斯拉Semi量产将大幅增加对高镍三元电池和4680电池的需求，利好锂、镍等关键材料供应商",
+        "causal_links": [
+          {
+            "from_concept": "特斯拉Semi进入量产新阶段",
+            "to_concept": "全球电动重卡产能与交付预期提升",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "特斯拉的规模化生产经验（如Model 3/S的产能爬坡）和Semi的工程验证完成，意味着其有能力开始批量交付，直接增加电动重卡供给"
+          },
+          {
+            "from_concept": "电动重卡产能提升",
+            "to_concept": "对高能量密度电池（尤其是4680电池）需求激增",
+            "relation_type": "demand_shifts",
+            "confidence": 0.85,
+            "reasoning": "Semi单辆车电池容量约500-1000kWh，远高于乘用车，量产将拉动对特斯拉自研4680电池及配套材料的需求"
+          },
+          {
+            "from_concept": "电动重卡交付量增加",
+            "to_concept": "干线物流电动化成本下降，加速传统柴油重卡替代",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "Semi的TCO（全生命周期成本）优势（电费低于柴油、维护成本低）将随着量产规模扩大而进一步凸显，促使物流公司采购决策转向"
+          },
+          {
+            "from_concept": "电动重卡规模化普及",
+            "to_concept": "超级充电网络（Megacharger）建设需求爆发",
+            "relation_type": "complement_enables",
+            "confidence": 0.9,
+            "reasoning": "Semi需专用大功率充电桩（1MW级），特斯拉需配套建设Megacharger网络，带动充电设备及电网改造需求"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_a2591c3e",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "特斯拉：电动卡车Semi进入量产新阶段",
+      "published_at": "2026-04-30T02:28:12",
+      "industry_sector": "电动重卡充电基础设施",
+      "opportunity_description": "特斯拉Megacharger网络建设可能外溢至第三方充电运营商，或带动大功率充电标准统一与设备需求",
+      "target_symbols": [
+        "CHPT",
+        "BLNK"
+      ],
+      "prior_confidence": 0.8090257887596308,
+      "posterior_confidence": 0.8090257887596308,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "特斯拉：电动卡车Semi进入量产新阶段",
+        "target_opportunity": "特斯拉Megacharger网络建设可能外溢至第三方充电运营商，或带动大功率充电标准统一与设备需求",
+        "causal_links": [
+          {
+            "from_concept": "特斯拉Semi进入量产新阶段",
+            "to_concept": "全球电动重卡产能与交付预期提升",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "特斯拉的规模化生产经验（如Model 3/S的产能爬坡）和Semi的工程验证完成，意味着其有能力开始批量交付，直接增加电动重卡供给"
+          },
+          {
+            "from_concept": "电动重卡产能提升",
+            "to_concept": "对高能量密度电池（尤其是4680电池）需求激增",
+            "relation_type": "demand_shifts",
+            "confidence": 0.85,
+            "reasoning": "Semi单辆车电池容量约500-1000kWh，远高于乘用车，量产将拉动对特斯拉自研4680电池及配套材料的需求"
+          },
+          {
+            "from_concept": "电动重卡交付量增加",
+            "to_concept": "干线物流电动化成本下降，加速传统柴油重卡替代",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "Semi的TCO（全生命周期成本）优势（电费低于柴油、维护成本低）将随着量产规模扩大而进一步凸显，促使物流公司采购决策转向"
+          },
+          {
+            "from_concept": "电动重卡规模化普及",
+            "to_concept": "超级充电网络（Megacharger）建设需求爆发",
+            "relation_type": "complement_enables",
+            "confidence": 0.9,
+            "reasoning": "Semi需专用大功率充电桩（1MW级），特斯拉需配套建设Megacharger网络，带动充电设备及电网改造需求"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_6e80696e",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "特斯拉：电动卡车Semi进入量产新阶段",
+      "published_at": "2026-04-30T02:28:12",
+      "industry_sector": "特斯拉供应链（中国电池/结构件企业）",
+      "opportunity_description": "特斯拉Semi可能使用宁德时代磷酸铁锂电池（低成本版本）或自产4680电池的结构件，中国供应商有望获得订单",
+      "target_symbols": [
+        "宁德时代",
+        "拓普集团",
+        "旭升股份"
+      ],
+      "prior_confidence": 0.8090257887596308,
+      "posterior_confidence": 0.8090257887596308,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "特斯拉：电动卡车Semi进入量产新阶段",
+        "target_opportunity": "特斯拉Semi可能使用宁德时代磷酸铁锂电池（低成本版本）或自产4680电池的结构件，中国供应商有望获得订单",
+        "causal_links": [
+          {
+            "from_concept": "特斯拉Semi进入量产新阶段",
+            "to_concept": "全球电动重卡产能与交付预期提升",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "特斯拉的规模化生产经验（如Model 3/S的产能爬坡）和Semi的工程验证完成，意味着其有能力开始批量交付，直接增加电动重卡供给"
+          },
+          {
+            "from_concept": "电动重卡产能提升",
+            "to_concept": "对高能量密度电池（尤其是4680电池）需求激增",
+            "relation_type": "demand_shifts",
+            "confidence": 0.85,
+            "reasoning": "Semi单辆车电池容量约500-1000kWh，远高于乘用车，量产将拉动对特斯拉自研4680电池及配套材料的需求"
+          },
+          {
+            "from_concept": "电动重卡交付量增加",
+            "to_concept": "干线物流电动化成本下降，加速传统柴油重卡替代",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "Semi的TCO（全生命周期成本）优势（电费低于柴油、维护成本低）将随着量产规模扩大而进一步凸显，促使物流公司采购决策转向"
+          },
+          {
+            "from_concept": "电动重卡规模化普及",
+            "to_concept": "超级充电网络（Megacharger）建设需求爆发",
+            "relation_type": "complement_enables",
+            "confidence": 0.9,
+            "reasoning": "Semi需专用大功率充电桩（1MW级），特斯拉需配套建设Megacharger网络，带动充电设备及电网改造需求"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_61018b52",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "特斯拉：电动卡车Semi进入量产新阶段",
+      "published_at": "2026-04-30T02:28:12",
+      "industry_sector": "物流与车队运营（TCO受益方）",
+      "opportunity_description": "运营电动重卡车队的企业将享受更低的燃料和运维成本，提升利润率",
+      "target_symbols": [
+        "JBHT",
+        "UPS",
+        "XPO"
+      ],
+      "prior_confidence": 0.8090257887596308,
+      "posterior_confidence": 0.8090257887596308,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "特斯拉：电动卡车Semi进入量产新阶段",
+        "target_opportunity": "运营电动重卡车队的企业将享受更低的燃料和运维成本，提升利润率",
+        "causal_links": [
+          {
+            "from_concept": "特斯拉Semi进入量产新阶段",
+            "to_concept": "全球电动重卡产能与交付预期提升",
+            "relation_type": "tech_enables",
+            "confidence": 0.8,
+            "reasoning": "特斯拉的规模化生产经验（如Model 3/S的产能爬坡）和Semi的工程验证完成，意味着其有能力开始批量交付，直接增加电动重卡供给"
+          },
+          {
+            "from_concept": "电动重卡产能提升",
+            "to_concept": "对高能量密度电池（尤其是4680电池）需求激增",
+            "relation_type": "demand_shifts",
+            "confidence": 0.85,
+            "reasoning": "Semi单辆车电池容量约500-1000kWh，远高于乘用车，量产将拉动对特斯拉自研4680电池及配套材料的需求"
+          },
+          {
+            "from_concept": "电动重卡交付量增加",
+            "to_concept": "干线物流电动化成本下降，加速传统柴油重卡替代",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "Semi的TCO（全生命周期成本）优势（电费低于柴油、维护成本低）将随着量产规模扩大而进一步凸显，促使物流公司采购决策转向"
+          },
+          {
+            "from_concept": "电动重卡规模化普及",
+            "to_concept": "超级充电网络（Megacharger）建设需求爆发",
+            "relation_type": "complement_enables",
+            "confidence": 0.9,
+            "reasoning": "Semi需专用大功率充电桩（1MW级），特斯拉需配套建设Megacharger网络，带动充电设备及电网改造需求"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_97fbf233",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "云迹科技发布2025年报，智能体应用收入增长194%",
+      "published_at": "2026-04-30T02:22:07",
+      "industry_sector": "企业级AI平台与SaaS",
+      "opportunity_description": "关注拥有AI智能体平台、订阅收入占比高的A股软件公司，如用友网络（企业AI助手）、万兴科技（创意AI）、寒武纪（AI算力平台）。",
+      "target_symbols": [
+        "600588.SH",
+        "300624.SZ",
+        "688256.SH"
+      ],
+      "prior_confidence": 0.8614865133077703,
+      "posterior_confidence": 0.8614865133077703,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "云迹科技发布2025年报，智能体应用收入增长194%",
+        "target_opportunity": "关注拥有AI智能体平台、订阅收入占比高的A股软件公司，如用友网络（企业AI助手）、万兴科技（创意AI）、寒武纪（AI算力平台）。",
+        "causal_links": [
+          {
+            "from_concept": "云迹科技智能体应用收入增长194%",
+            "to_concept": "企业级AI智能体商业化加速",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "智能体应用收入高速增长表明市场对AI自主决策、任务执行类产品的需求爆发，企业正从购买硬件转向购买智能服务，推动AI从试点走向规模化部署。"
+          },
+          {
+            "from_concept": "企业级AI智能体商业化加速",
+            "to_concept": "AI软件与订阅服务市场结构重构",
+            "relation_type": "tech_enables",
+            "confidence": 0.85,
+            "reasoning": "智能体平台化（如HDOS）使AI能力可聚合、可订阅，降低了企业部署门槛，推动AI从项目制交付转向SaaS式订阅，改变行业收入模型和估值逻辑。"
+          },
+          {
+            "from_concept": "AI软件与订阅服务市场结构重构",
+            "to_concept": "硬件+软件一体化平台型公司估值提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "投资者重新评估AI公司价值：拥有订阅收入、高客户黏性和平台生态的企业将获得更高估值溢价，类似SaaS公司估值逻辑。"
+          },
+          {
+            "from_concept": "工厂场景增长393%",
+            "to_concept": "工业AI智能体需求爆发",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "工厂场景增速极高，说明制造业智能化转型进入深水区，对AI自主巡检、物流、质检等智能体需求强烈，可能带动工业机器人、边缘计算等产业链。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_3ed030cd",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "云迹科技发布2025年报，智能体应用收入增长194%",
+      "published_at": "2026-04-30T02:22:07",
+      "industry_sector": "工业AI与智能制造",
+      "opportunity_description": "工业机器人及智能物流公司，如埃斯顿（工业机器人）、汇川技术（工业自动化）、绿的谐波（机器人核心部件）。",
+      "target_symbols": [
+        "002747.SZ",
+        "300124.SZ",
+        "688017.SH"
+      ],
+      "prior_confidence": 0.8614865133077703,
+      "posterior_confidence": 0.8614865133077703,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "云迹科技发布2025年报，智能体应用收入增长194%",
+        "target_opportunity": "工业机器人及智能物流公司，如埃斯顿（工业机器人）、汇川技术（工业自动化）、绿的谐波（机器人核心部件）。",
+        "causal_links": [
+          {
+            "from_concept": "云迹科技智能体应用收入增长194%",
+            "to_concept": "企业级AI智能体商业化加速",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "智能体应用收入高速增长表明市场对AI自主决策、任务执行类产品的需求爆发，企业正从购买硬件转向购买智能服务，推动AI从试点走向规模化部署。"
+          },
+          {
+            "from_concept": "企业级AI智能体商业化加速",
+            "to_concept": "AI软件与订阅服务市场结构重构",
+            "relation_type": "tech_enables",
+            "confidence": 0.85,
+            "reasoning": "智能体平台化（如HDOS）使AI能力可聚合、可订阅，降低了企业部署门槛，推动AI从项目制交付转向SaaS式订阅，改变行业收入模型和估值逻辑。"
+          },
+          {
+            "from_concept": "AI软件与订阅服务市场结构重构",
+            "to_concept": "硬件+软件一体化平台型公司估值提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "投资者重新评估AI公司价值：拥有订阅收入、高客户黏性和平台生态的企业将获得更高估值溢价，类似SaaS公司估值逻辑。"
+          },
+          {
+            "from_concept": "工厂场景增长393%",
+            "to_concept": "工业AI智能体需求爆发",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "工厂场景增速极高，说明制造业智能化转型进入深水区，对AI自主巡检、物流、质检等智能体需求强烈，可能带动工业机器人、边缘计算等产业链。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_334f758b",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "云迹科技发布2025年报，智能体应用收入增长194%",
+      "published_at": "2026-04-30T02:22:07",
+      "industry_sector": "服务机器人平台",
+      "opportunity_description": "国内服务机器人龙头，如科大讯飞（AI语音+机器人）、机器人（新松，工业与服务机器人）。",
+      "target_symbols": [
+        "002230.SZ",
+        "300024.SZ"
+      ],
+      "prior_confidence": 0.8614865133077703,
+      "posterior_confidence": 0.8614865133077703,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "云迹科技发布2025年报，智能体应用收入增长194%",
+        "target_opportunity": "国内服务机器人龙头，如科大讯飞（AI语音+机器人）、机器人（新松，工业与服务机器人）。",
+        "causal_links": [
+          {
+            "from_concept": "云迹科技智能体应用收入增长194%",
+            "to_concept": "企业级AI智能体商业化加速",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "智能体应用收入高速增长表明市场对AI自主决策、任务执行类产品的需求爆发，企业正从购买硬件转向购买智能服务，推动AI从试点走向规模化部署。"
+          },
+          {
+            "from_concept": "企业级AI智能体商业化加速",
+            "to_concept": "AI软件与订阅服务市场结构重构",
+            "relation_type": "tech_enables",
+            "confidence": 0.85,
+            "reasoning": "智能体平台化（如HDOS）使AI能力可聚合、可订阅，降低了企业部署门槛，推动AI从项目制交付转向SaaS式订阅，改变行业收入模型和估值逻辑。"
+          },
+          {
+            "from_concept": "AI软件与订阅服务市场结构重构",
+            "to_concept": "硬件+软件一体化平台型公司估值提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "投资者重新评估AI公司价值：拥有订阅收入、高客户黏性和平台生态的企业将获得更高估值溢价，类似SaaS公司估值逻辑。"
+          },
+          {
+            "from_concept": "工厂场景增长393%",
+            "to_concept": "工业AI智能体需求爆发",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "工厂场景增速极高，说明制造业智能化转型进入深水区，对AI自主巡检、物流、质检等智能体需求强烈，可能带动工业机器人、边缘计算等产业链。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_f5879ee1",
+      "signal_type": "tech_breakthrough",
+      "source": "36氪",
+      "title": "云迹科技发布2025年报，智能体应用收入增长194%",
+      "published_at": "2026-04-30T02:22:07",
+      "industry_sector": "AI芯片与算力基础设施",
+      "opportunity_description": "国产AI芯片厂商，如海光信息、兆易创新、圣邦股份（模拟芯片）。",
+      "target_symbols": [
+        "688041.SH",
+        "603986.SH",
+        "300661.SZ"
+      ],
+      "prior_confidence": 0.8614865133077703,
+      "posterior_confidence": 0.8614865133077703,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "云迹科技发布2025年报，智能体应用收入增长194%",
+        "target_opportunity": "国产AI芯片厂商，如海光信息、兆易创新、圣邦股份（模拟芯片）。",
+        "causal_links": [
+          {
+            "from_concept": "云迹科技智能体应用收入增长194%",
+            "to_concept": "企业级AI智能体商业化加速",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "智能体应用收入高速增长表明市场对AI自主决策、任务执行类产品的需求爆发，企业正从购买硬件转向购买智能服务，推动AI从试点走向规模化部署。"
+          },
+          {
+            "from_concept": "企业级AI智能体商业化加速",
+            "to_concept": "AI软件与订阅服务市场结构重构",
+            "relation_type": "tech_enables",
+            "confidence": 0.85,
+            "reasoning": "智能体平台化（如HDOS）使AI能力可聚合、可订阅，降低了企业部署门槛，推动AI从项目制交付转向SaaS式订阅，改变行业收入模型和估值逻辑。"
+          },
+          {
+            "from_concept": "AI软件与订阅服务市场结构重构",
+            "to_concept": "硬件+软件一体化平台型公司估值提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "投资者重新评估AI公司价值：拥有订阅收入、高客户黏性和平台生态的企业将获得更高估值溢价，类似SaaS公司估值逻辑。"
+          },
+          {
+            "from_concept": "工厂场景增长393%",
+            "to_concept": "工业AI智能体需求爆发",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "工厂场景增速极高，说明制造业智能化转型进入深水区，对AI自主巡检、物流、质检等智能体需求强烈，可能带动工业机器人、边缘计算等产业链。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_8ac9a6ae",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "摩根资产管理认为美联储加息的门槛很高",
+      "published_at": "2026-04-30T02:21:03",
+      "industry_sector": "贵金属",
+      "opportunity_description": "全球最大黄金ETF（GLD）和白银ETF（SLV）将直接受益于金价/银价上涨。",
+      "target_symbols": [
+        "GLD",
+        "IAU",
+        "SLV"
+      ],
+      "prior_confidence": 0.6700737917669015,
+      "posterior_confidence": 0.6700737917669015,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "摩根资产管理认为美联储加息的门槛很高",
+        "target_opportunity": "全球最大黄金ETF（GLD）和白银ETF（SLV）将直接受益于金价/银价上涨。",
+        "causal_links": [
+          {
+            "from_concept": "美联储维持利率不变且加息门槛高",
+            "to_concept": "全球流动性环境维持宽松预期",
+            "relation_type": "policy_drives",
+            "confidence": 0.8,
+            "reasoning": "美联储作为全球最重要的央行，其利率政策直接影响全球资本成本和流动性。高加息门槛意味着市场预期利率将长期停留或缓慢下行，从而支撑风险资产估值。"
+          },
+          {
+            "from_concept": "美联储内部缺乏共识且分歧延续",
+            "to_concept": "市场对政策路径的预期波动性降低",
+            "relation_type": "policy_drives",
+            "confidence": 0.6,
+            "reasoning": "内部缺乏共识意味着美联储更倾向于‘等待观察’，而非主动调整。这会降低市场对突然转向紧缩的恐慌，从而稳定长期利率预期。"
+          },
+          {
+            "from_concept": "中东冲突及其对经济和通胀的影响",
+            "to_concept": "大宗商品（尤其是能源和贵金属）供给不确定性增加",
+            "relation_type": "supply_constrains",
+            "confidence": 0.7,
+            "reasoning": "中东是主要石油产区，冲突可能影响原油生产和运输，同时地缘政治风险推高避险情绪，支撑黄金等贵金属价格。"
+          },
+          {
+            "from_concept": "全球流动性宽松预期 + 大宗商品供给不确定性",
+            "to_concept": "通胀预期维持高位，实际利率下行",
+            "relation_type": "demand_shifts",
+            "confidence": 0.6,
+            "reasoning": "流动性宽松支持资产价格，而供给冲击推高商品价格，两者共同导致名义通胀保持韧性。如果名义利率不变而通胀预期上升，实际利率将下降，进一步利好黄金等硬资产。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_b43b9c16",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "摩根资产管理认为美联储加息的门槛很高",
+      "published_at": "2026-04-30T02:21:03",
+      "industry_sector": "能源",
+      "opportunity_description": "原油ETF（USO）和能源板块ETF（XLE）受益于中东供给风险带来的油价上行。",
+      "target_symbols": [
+        "USO",
+        "XLE"
+      ],
+      "prior_confidence": 0.6700737917669015,
+      "posterior_confidence": 0.6700737917669015,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "摩根资产管理认为美联储加息的门槛很高",
+        "target_opportunity": "原油ETF（USO）和能源板块ETF（XLE）受益于中东供给风险带来的油价上行。",
+        "causal_links": [
+          {
+            "from_concept": "美联储维持利率不变且加息门槛高",
+            "to_concept": "全球流动性环境维持宽松预期",
+            "relation_type": "policy_drives",
+            "confidence": 0.8,
+            "reasoning": "美联储作为全球最重要的央行，其利率政策直接影响全球资本成本和流动性。高加息门槛意味着市场预期利率将长期停留或缓慢下行，从而支撑风险资产估值。"
+          },
+          {
+            "from_concept": "美联储内部缺乏共识且分歧延续",
+            "to_concept": "市场对政策路径的预期波动性降低",
+            "relation_type": "policy_drives",
+            "confidence": 0.6,
+            "reasoning": "内部缺乏共识意味着美联储更倾向于‘等待观察’，而非主动调整。这会降低市场对突然转向紧缩的恐慌，从而稳定长期利率预期。"
+          },
+          {
+            "from_concept": "中东冲突及其对经济和通胀的影响",
+            "to_concept": "大宗商品（尤其是能源和贵金属）供给不确定性增加",
+            "relation_type": "supply_constrains",
+            "confidence": 0.7,
+            "reasoning": "中东是主要石油产区，冲突可能影响原油生产和运输，同时地缘政治风险推高避险情绪，支撑黄金等贵金属价格。"
+          },
+          {
+            "from_concept": "全球流动性宽松预期 + 大宗商品供给不确定性",
+            "to_concept": "通胀预期维持高位，实际利率下行",
+            "relation_type": "demand_shifts",
+            "confidence": 0.6,
+            "reasoning": "流动性宽松支持资产价格，而供给冲击推高商品价格，两者共同导致名义通胀保持韧性。如果名义利率不变而通胀预期上升，实际利率将下降，进一步利好黄金等硬资产。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_a47c48a4",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "摩根资产管理认为美联储加息的门槛很高",
+      "published_at": "2026-04-30T02:21:03",
+      "industry_sector": "亚太新兴市场",
+      "opportunity_description": "新兴市场ETF（EEM、VWO）和香港ETF（EWH）受益于全球流动性宽松预期下的资金流入。",
+      "target_symbols": [
+        "EEM",
+        "VWO",
+        "EWH"
+      ],
+      "prior_confidence": 0.6700737917669015,
+      "posterior_confidence": 0.6700737917669015,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "摩根资产管理认为美联储加息的门槛很高",
+        "target_opportunity": "新兴市场ETF（EEM、VWO）和香港ETF（EWH）受益于全球流动性宽松预期下的资金流入。",
+        "causal_links": [
+          {
+            "from_concept": "美联储维持利率不变且加息门槛高",
+            "to_concept": "全球流动性环境维持宽松预期",
+            "relation_type": "policy_drives",
+            "confidence": 0.8,
+            "reasoning": "美联储作为全球最重要的央行，其利率政策直接影响全球资本成本和流动性。高加息门槛意味着市场预期利率将长期停留或缓慢下行，从而支撑风险资产估值。"
+          },
+          {
+            "from_concept": "美联储内部缺乏共识且分歧延续",
+            "to_concept": "市场对政策路径的预期波动性降低",
+            "relation_type": "policy_drives",
+            "confidence": 0.6,
+            "reasoning": "内部缺乏共识意味着美联储更倾向于‘等待观察’，而非主动调整。这会降低市场对突然转向紧缩的恐慌，从而稳定长期利率预期。"
+          },
+          {
+            "from_concept": "中东冲突及其对经济和通胀的影响",
+            "to_concept": "大宗商品（尤其是能源和贵金属）供给不确定性增加",
+            "relation_type": "supply_constrains",
+            "confidence": 0.7,
+            "reasoning": "中东是主要石油产区，冲突可能影响原油生产和运输，同时地缘政治风险推高避险情绪，支撑黄金等贵金属价格。"
+          },
+          {
+            "from_concept": "全球流动性宽松预期 + 大宗商品供给不确定性",
+            "to_concept": "通胀预期维持高位，实际利率下行",
+            "relation_type": "demand_shifts",
+            "confidence": 0.6,
+            "reasoning": "流动性宽松支持资产价格，而供给冲击推高商品价格，两者共同导致名义通胀保持韧性。如果名义利率不变而通胀预期上升，实际利率将下降，进一步利好黄金等硬资产。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_a1c7b0bb",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "摩根资产管理认为美联储加息的门槛很高",
+      "published_at": "2026-04-30T02:21:03",
+      "industry_sector": "美国长期国债",
+      "opportunity_description": "若市场对经济放缓担忧超过通胀担忧，长期国债ETF（TLT）可能上涨。",
+      "target_symbols": [
+        "TLT",
+        "IEF"
+      ],
+      "prior_confidence": 0.6700737917669015,
+      "posterior_confidence": 0.6700737917669015,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "摩根资产管理认为美联储加息的门槛很高",
+        "target_opportunity": "若市场对经济放缓担忧超过通胀担忧，长期国债ETF（TLT）可能上涨。",
+        "causal_links": [
+          {
+            "from_concept": "美联储维持利率不变且加息门槛高",
+            "to_concept": "全球流动性环境维持宽松预期",
+            "relation_type": "policy_drives",
+            "confidence": 0.8,
+            "reasoning": "美联储作为全球最重要的央行，其利率政策直接影响全球资本成本和流动性。高加息门槛意味着市场预期利率将长期停留或缓慢下行，从而支撑风险资产估值。"
+          },
+          {
+            "from_concept": "美联储内部缺乏共识且分歧延续",
+            "to_concept": "市场对政策路径的预期波动性降低",
+            "relation_type": "policy_drives",
+            "confidence": 0.6,
+            "reasoning": "内部缺乏共识意味着美联储更倾向于‘等待观察’，而非主动调整。这会降低市场对突然转向紧缩的恐慌，从而稳定长期利率预期。"
+          },
+          {
+            "from_concept": "中东冲突及其对经济和通胀的影响",
+            "to_concept": "大宗商品（尤其是能源和贵金属）供给不确定性增加",
+            "relation_type": "supply_constrains",
+            "confidence": 0.7,
+            "reasoning": "中东是主要石油产区，冲突可能影响原油生产和运输，同时地缘政治风险推高避险情绪，支撑黄金等贵金属价格。"
+          },
+          {
+            "from_concept": "全球流动性宽松预期 + 大宗商品供给不确定性",
+            "to_concept": "通胀预期维持高位，实际利率下行",
+            "relation_type": "demand_shifts",
+            "confidence": 0.6,
+            "reasoning": "流动性宽松支持资产价格，而供给冲击推高商品价格，两者共同导致名义通胀保持韧性。如果名义利率不变而通胀预期上升，实际利率将下降，进一步利好黄金等硬资产。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_c253c0c7",
+      "signal_type": "social_trend",
+      "source": "36氪",
+      "title": "阿迪达斯全球2026年Q1营收66亿欧元，同比增14%",
+      "published_at": "2026-04-30T02:14:51",
+      "industry_sector": "运动鞋服代工制造",
+      "opportunity_description": "阿迪达斯订单增长将直接带动其核心代工厂的产能利用率和收入提升",
+      "target_symbols": [
+        "申洲国际 (02313.HK)",
+        "裕元集团 (00551.HK)"
+      ],
+      "prior_confidence": 0.7085167717989781,
+      "posterior_confidence": 0.7085167717989781,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "阿迪达斯全球2026年Q1营收66亿欧元，同比增14%",
+        "target_opportunity": "阿迪达斯订单增长将直接带动其核心代工厂的产能利用率和收入提升",
+        "causal_links": [
+          {
+            "from_concept": "阿迪达斯大中华区连续12个季度高质量增长",
+            "to_concept": "中国运动消费品市场结构性需求强劲",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "连续多季度增长表明需求具有持续性，而非一次性促销或基数效应，反映中国消费者对运动品牌（尤其是中高端）的偏好提升和消费升级趋势"
+          },
+          {
+            "from_concept": "大中华区增长快于全球平均（17% vs 14%）",
+            "to_concept": "中国运动产业链上下游企业受益于头部品牌扩张",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "阿迪达斯在中国市场的扩张需要本地化供应链、物流、营销和渠道合作，带动相关服务商和供应商订单增长"
+          },
+          {
+            "from_concept": "全球营收增长14%，营业利润率提升0.8个百分点",
+            "to_concept": "运动鞋服行业整体景气度上行，头部品牌盈利能力改善",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "阿迪达斯作为全球第二大运动品牌，其业绩向好通常反映行业整体需求回暖，尤其是中高端运动鞋服市场"
+          },
+          {
+            "from_concept": "阿迪达斯业绩超预期",
+            "to_concept": "竞争对手（如耐克、安踏等）可能面临市场份额压力或跟随增长",
+            "relation_type": "demand_shifts",
+            "confidence": 0.6,
+            "reasoning": "阿迪达斯强劲表现可能抢占部分竞争对手份额，但同时也可能带动行业整体关注度提升，形成‘水涨船高’效应"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_8175ad7a",
+      "signal_type": "social_trend",
+      "source": "36氪",
+      "title": "阿迪达斯全球2026年Q1营收66亿欧元，同比增14%",
+      "published_at": "2026-04-30T02:14:51",
+      "industry_sector": "运动品牌零售与分销",
+      "opportunity_description": "阿迪达斯在中国市场的高增长将通过分销商渠道实现，分销商将受益于更高的销量和利润率",
+      "target_symbols": [
+        "滔搏国际 (06110.HK)",
+        "宝胜国际 (03813.HK)"
+      ],
+      "prior_confidence": 0.7085167717989781,
+      "posterior_confidence": 0.7085167717989781,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "阿迪达斯全球2026年Q1营收66亿欧元，同比增14%",
+        "target_opportunity": "阿迪达斯在中国市场的高增长将通过分销商渠道实现，分销商将受益于更高的销量和利润率",
+        "causal_links": [
+          {
+            "from_concept": "阿迪达斯大中华区连续12个季度高质量增长",
+            "to_concept": "中国运动消费品市场结构性需求强劲",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "连续多季度增长表明需求具有持续性，而非一次性促销或基数效应，反映中国消费者对运动品牌（尤其是中高端）的偏好提升和消费升级趋势"
+          },
+          {
+            "from_concept": "大中华区增长快于全球平均（17% vs 14%）",
+            "to_concept": "中国运动产业链上下游企业受益于头部品牌扩张",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "阿迪达斯在中国市场的扩张需要本地化供应链、物流、营销和渠道合作，带动相关服务商和供应商订单增长"
+          },
+          {
+            "from_concept": "全球营收增长14%，营业利润率提升0.8个百分点",
+            "to_concept": "运动鞋服行业整体景气度上行，头部品牌盈利能力改善",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "阿迪达斯作为全球第二大运动品牌，其业绩向好通常反映行业整体需求回暖，尤其是中高端运动鞋服市场"
+          },
+          {
+            "from_concept": "阿迪达斯业绩超预期",
+            "to_concept": "竞争对手（如耐克、安踏等）可能面临市场份额压力或跟随增长",
+            "relation_type": "demand_shifts",
+            "confidence": 0.6,
+            "reasoning": "阿迪达斯强劲表现可能抢占部分竞争对手份额，但同时也可能带动行业整体关注度提升，形成‘水涨船高’效应"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_c752e00d",
+      "signal_type": "social_trend",
+      "source": "36氪",
+      "title": "阿迪达斯全球2026年Q1营收66亿欧元，同比增14%",
+      "published_at": "2026-04-30T02:14:51",
+      "industry_sector": "运动鞋服原料供应商",
+      "opportunity_description": "阿迪达斯产量增加将拉动化纤、橡胶等上游原料需求",
+      "target_symbols": [
+        "华峰化学 (002064.SZ)",
+        "台塑 (1301.TW)"
+      ],
+      "prior_confidence": 0.7085167717989781,
+      "posterior_confidence": 0.7085167717989781,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "阿迪达斯全球2026年Q1营收66亿欧元，同比增14%",
+        "target_opportunity": "阿迪达斯产量增加将拉动化纤、橡胶等上游原料需求",
+        "causal_links": [
+          {
+            "from_concept": "阿迪达斯大中华区连续12个季度高质量增长",
+            "to_concept": "中国运动消费品市场结构性需求强劲",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "连续多季度增长表明需求具有持续性，而非一次性促销或基数效应，反映中国消费者对运动品牌（尤其是中高端）的偏好提升和消费升级趋势"
+          },
+          {
+            "from_concept": "大中华区增长快于全球平均（17% vs 14%）",
+            "to_concept": "中国运动产业链上下游企业受益于头部品牌扩张",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "阿迪达斯在中国市场的扩张需要本地化供应链、物流、营销和渠道合作，带动相关服务商和供应商订单增长"
+          },
+          {
+            "from_concept": "全球营收增长14%，营业利润率提升0.8个百分点",
+            "to_concept": "运动鞋服行业整体景气度上行，头部品牌盈利能力改善",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "阿迪达斯作为全球第二大运动品牌，其业绩向好通常反映行业整体需求回暖，尤其是中高端运动鞋服市场"
+          },
+          {
+            "from_concept": "阿迪达斯业绩超预期",
+            "to_concept": "竞争对手（如耐克、安踏等）可能面临市场份额压力或跟随增长",
+            "relation_type": "demand_shifts",
+            "confidence": 0.6,
+            "reasoning": "阿迪达斯强劲表现可能抢占部分竞争对手份额，但同时也可能带动行业整体关注度提升，形成‘水涨船高’效应"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_9c3bd057",
+      "signal_type": "social_trend",
+      "source": "36氪",
+      "title": "阿迪达斯全球2026年Q1营收66亿欧元，同比增14%",
+      "published_at": "2026-04-30T02:14:51",
+      "industry_sector": "纺织自动化设备",
+      "opportunity_description": "代工厂为应对订单增长可能加速自动化设备投资",
+      "target_symbols": [
+        "杰克股份 (603337.SH)",
+        "上工申贝 (600843.SH)"
+      ],
+      "prior_confidence": 0.7085167717989781,
+      "posterior_confidence": 0.7085167717989781,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "阿迪达斯全球2026年Q1营收66亿欧元，同比增14%",
+        "target_opportunity": "代工厂为应对订单增长可能加速自动化设备投资",
+        "causal_links": [
+          {
+            "from_concept": "阿迪达斯大中华区连续12个季度高质量增长",
+            "to_concept": "中国运动消费品市场结构性需求强劲",
+            "relation_type": "demand_shifts",
+            "confidence": 0.8,
+            "reasoning": "连续多季度增长表明需求具有持续性，而非一次性促销或基数效应，反映中国消费者对运动品牌（尤其是中高端）的偏好提升和消费升级趋势"
+          },
+          {
+            "from_concept": "大中华区增长快于全球平均（17% vs 14%）",
+            "to_concept": "中国运动产业链上下游企业受益于头部品牌扩张",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "阿迪达斯在中国市场的扩张需要本地化供应链、物流、营销和渠道合作，带动相关服务商和供应商订单增长"
+          },
+          {
+            "from_concept": "全球营收增长14%，营业利润率提升0.8个百分点",
+            "to_concept": "运动鞋服行业整体景气度上行，头部品牌盈利能力改善",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "阿迪达斯作为全球第二大运动品牌，其业绩向好通常反映行业整体需求回暖，尤其是中高端运动鞋服市场"
+          },
+          {
+            "from_concept": "阿迪达斯业绩超预期",
+            "to_concept": "竞争对手（如耐克、安踏等）可能面临市场份额压力或跟随增长",
+            "relation_type": "demand_shifts",
+            "confidence": 0.6,
+            "reasoning": "阿迪达斯强劲表现可能抢占部分竞争对手份额，但同时也可能带动行业整体关注度提升，形成‘水涨船高’效应"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_2dbf24f0",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "海南：拟布局亚轨道太空旅游中心等前沿设施，做强文昌“航天旅游之都”",
+      "published_at": "2026-04-30T02:12:37",
+      "industry_sector": "商业航天（火箭制造）",
+      "opportunity_description": "亚轨道太空旅游中心需要可重复使用亚轨道火箭，具备该技术的民营火箭公司将获得订单和战略合作机会。",
+      "target_symbols": [
+        "中科宇航（未上市）",
+        "蓝箭航天（未上市）",
+        "星河动力（未上市）"
+      ],
+      "prior_confidence": 0.6964009090454187,
+      "posterior_confidence": 0.6964009090454187,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "海南：拟布局亚轨道太空旅游中心等前沿设施，做强文昌“航天旅游之都”",
+        "target_opportunity": "亚轨道太空旅游中心需要可重复使用亚轨道火箭，具备该技术的民营火箭公司将获得订单和战略合作机会。",
+        "causal_links": [
+          {
+            "from_concept": "海南布局亚轨道太空旅游中心等前沿设施",
+            "to_concept": "中国亚轨道太空旅游产业从概念走向实质落地",
+            "relation_type": "policy_drives",
+            "confidence": 0.8,
+            "reasoning": "政府规划是重大基础设施投资和产业政策的前置信号，亚轨道太空旅游中心作为‘前沿设施’被明确写入省级规划，意味着未来将有土地、资金、审批等配套支持，加速商业航天公司从技术验证转向商业运营。"
+          },
+          {
+            "from_concept": "亚轨道太空旅游中心落地",
+            "to_concept": "航天旅游产业链上游（火箭制造、发射服务）和下游（旅游运营、保险、培训）需求爆发",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "太空旅游中心运营需要持续稳定的亚轨道发射能力，带动火箭制造订单和发射服务需求；同时游客需要安全培训、保险、配套住宿餐饮，形成新消费场景。"
+          },
+          {
+            "from_concept": "做强文昌‘航天旅游之都’",
+            "to_concept": "文昌本地及周边基础设施（交通、酒店、商业）升级，带动土地价值提升",
+            "relation_type": "policy_drives",
+            "confidence": 0.6,
+            "reasoning": "打造旅游之都需要配套城市建设和商业开发，文昌作为县级市将获得省级资源倾斜，基础设施投资将拉动本地地产、商业、服务业增长。"
+          },
+          {
+            "from_concept": "开放火箭总装测试、卫星超级工厂等工业场景",
+            "to_concept": "工业旅游与科普教育成为新增长点，利好相关运营方和内容提供商",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "工业旅游将航天制造过程转化为可参观体验产品，吸引研学团体和科技爱好者，增加航天企业非发射收入，同时需要专业导游、VR/AR内容、互动设备供应商。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_422f9ef6",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "海南：拟布局亚轨道太空旅游中心等前沿设施，做强文昌“航天旅游之都”",
+      "published_at": "2026-04-30T02:12:37",
+      "industry_sector": "航天旅游运营与体验",
+      "opportunity_description": "航天旅游线路开发、主题旅游产品设计将利好有高端旅游运营经验的上市公司。",
+      "target_symbols": [
+        "凯撒旅业（000796.SZ）",
+        "中青旅（600138.SH）"
+      ],
+      "prior_confidence": 0.6964009090454187,
+      "posterior_confidence": 0.6964009090454187,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "海南：拟布局亚轨道太空旅游中心等前沿设施，做强文昌“航天旅游之都”",
+        "target_opportunity": "航天旅游线路开发、主题旅游产品设计将利好有高端旅游运营经验的上市公司。",
+        "causal_links": [
+          {
+            "from_concept": "海南布局亚轨道太空旅游中心等前沿设施",
+            "to_concept": "中国亚轨道太空旅游产业从概念走向实质落地",
+            "relation_type": "policy_drives",
+            "confidence": 0.8,
+            "reasoning": "政府规划是重大基础设施投资和产业政策的前置信号，亚轨道太空旅游中心作为‘前沿设施’被明确写入省级规划，意味着未来将有土地、资金、审批等配套支持，加速商业航天公司从技术验证转向商业运营。"
+          },
+          {
+            "from_concept": "亚轨道太空旅游中心落地",
+            "to_concept": "航天旅游产业链上游（火箭制造、发射服务）和下游（旅游运营、保险、培训）需求爆发",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "太空旅游中心运营需要持续稳定的亚轨道发射能力，带动火箭制造订单和发射服务需求；同时游客需要安全培训、保险、配套住宿餐饮，形成新消费场景。"
+          },
+          {
+            "from_concept": "做强文昌‘航天旅游之都’",
+            "to_concept": "文昌本地及周边基础设施（交通、酒店、商业）升级，带动土地价值提升",
+            "relation_type": "policy_drives",
+            "confidence": 0.6,
+            "reasoning": "打造旅游之都需要配套城市建设和商业开发，文昌作为县级市将获得省级资源倾斜，基础设施投资将拉动本地地产、商业、服务业增长。"
+          },
+          {
+            "from_concept": "开放火箭总装测试、卫星超级工厂等工业场景",
+            "to_concept": "工业旅游与科普教育成为新增长点，利好相关运营方和内容提供商",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "工业旅游将航天制造过程转化为可参观体验产品，吸引研学团体和科技爱好者，增加航天企业非发射收入，同时需要专业导游、VR/AR内容、互动设备供应商。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_1fb3240d",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "海南：拟布局亚轨道太空旅游中心等前沿设施，做强文昌“航天旅游之都”",
+      "published_at": "2026-04-30T02:12:37",
+      "industry_sector": "科普教育与VR/AR内容",
+      "opportunity_description": "沉浸式研学基地和航天博物馆需要大量数字化展示内容，VR/AR技术供应商将受益。",
+      "target_symbols": [
+        "丝路视觉（300556.SZ）",
+        "风语筑（603466.SH）"
+      ],
+      "prior_confidence": 0.6964009090454187,
+      "posterior_confidence": 0.6964009090454187,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "海南：拟布局亚轨道太空旅游中心等前沿设施，做强文昌“航天旅游之都”",
+        "target_opportunity": "沉浸式研学基地和航天博物馆需要大量数字化展示内容，VR/AR技术供应商将受益。",
+        "causal_links": [
+          {
+            "from_concept": "海南布局亚轨道太空旅游中心等前沿设施",
+            "to_concept": "中国亚轨道太空旅游产业从概念走向实质落地",
+            "relation_type": "policy_drives",
+            "confidence": 0.8,
+            "reasoning": "政府规划是重大基础设施投资和产业政策的前置信号，亚轨道太空旅游中心作为‘前沿设施’被明确写入省级规划，意味着未来将有土地、资金、审批等配套支持，加速商业航天公司从技术验证转向商业运营。"
+          },
+          {
+            "from_concept": "亚轨道太空旅游中心落地",
+            "to_concept": "航天旅游产业链上游（火箭制造、发射服务）和下游（旅游运营、保险、培训）需求爆发",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "太空旅游中心运营需要持续稳定的亚轨道发射能力，带动火箭制造订单和发射服务需求；同时游客需要安全培训、保险、配套住宿餐饮，形成新消费场景。"
+          },
+          {
+            "from_concept": "做强文昌‘航天旅游之都’",
+            "to_concept": "文昌本地及周边基础设施（交通、酒店、商业）升级，带动土地价值提升",
+            "relation_type": "policy_drives",
+            "confidence": 0.6,
+            "reasoning": "打造旅游之都需要配套城市建设和商业开发，文昌作为县级市将获得省级资源倾斜，基础设施投资将拉动本地地产、商业、服务业增长。"
+          },
+          {
+            "from_concept": "开放火箭总装测试、卫星超级工厂等工业场景",
+            "to_concept": "工业旅游与科普教育成为新增长点，利好相关运营方和内容提供商",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "工业旅游将航天制造过程转化为可参观体验产品，吸引研学团体和科技爱好者，增加航天企业非发射收入，同时需要专业导游、VR/AR内容、互动设备供应商。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_27f71ee3",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "海南：拟布局亚轨道太空旅游中心等前沿设施，做强文昌“航天旅游之都”",
+      "published_at": "2026-04-30T02:12:37",
+      "industry_sector": "海南本地基建与商业地产",
+      "opportunity_description": "文昌航天旅游之都建设将带动当地交通、酒店、商业设施升级，本地基建和地产公司受益。",
+      "target_symbols": [
+        "海南高速（000886.SZ）",
+        "海南瑞泽（002596.SZ）"
+      ],
+      "prior_confidence": 0.6964009090454187,
+      "posterior_confidence": 0.6964009090454187,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "海南：拟布局亚轨道太空旅游中心等前沿设施，做强文昌“航天旅游之都”",
+        "target_opportunity": "文昌航天旅游之都建设将带动当地交通、酒店、商业设施升级，本地基建和地产公司受益。",
+        "causal_links": [
+          {
+            "from_concept": "海南布局亚轨道太空旅游中心等前沿设施",
+            "to_concept": "中国亚轨道太空旅游产业从概念走向实质落地",
+            "relation_type": "policy_drives",
+            "confidence": 0.8,
+            "reasoning": "政府规划是重大基础设施投资和产业政策的前置信号，亚轨道太空旅游中心作为‘前沿设施’被明确写入省级规划，意味着未来将有土地、资金、审批等配套支持，加速商业航天公司从技术验证转向商业运营。"
+          },
+          {
+            "from_concept": "亚轨道太空旅游中心落地",
+            "to_concept": "航天旅游产业链上游（火箭制造、发射服务）和下游（旅游运营、保险、培训）需求爆发",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "太空旅游中心运营需要持续稳定的亚轨道发射能力，带动火箭制造订单和发射服务需求；同时游客需要安全培训、保险、配套住宿餐饮，形成新消费场景。"
+          },
+          {
+            "from_concept": "做强文昌‘航天旅游之都’",
+            "to_concept": "文昌本地及周边基础设施（交通、酒店、商业）升级，带动土地价值提升",
+            "relation_type": "policy_drives",
+            "confidence": 0.6,
+            "reasoning": "打造旅游之都需要配套城市建设和商业开发，文昌作为县级市将获得省级资源倾斜，基础设施投资将拉动本地地产、商业、服务业增长。"
+          },
+          {
+            "from_concept": "开放火箭总装测试、卫星超级工厂等工业场景",
+            "to_concept": "工业旅游与科普教育成为新增长点，利好相关运营方和内容提供商",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "工业旅游将航天制造过程转化为可参观体验产品，吸引研学团体和科技爱好者，增加航天企业非发射收入，同时需要专业导游、VR/AR内容、互动设备供应商。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_f40eacf8",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "海南：将推进航天旅游平台组建，培育本土特色航天文旅企业",
+      "published_at": "2026-04-30T02:12:05",
+      "industry_sector": "航天文旅运营",
+      "opportunity_description": "拥有主题公园/景区运营经验的企业可能参与海南航天旅游平台运营或输出管理。曲江文旅在西安有航天主题公园运营经验，峨眉山A有文旅综合体开发能力。",
+      "target_symbols": [
+        "600706.SH（曲江文旅）",
+        "000888.SZ（峨眉山A）"
+      ],
+      "prior_confidence": 0.7085167717989781,
+      "posterior_confidence": 0.7085167717989781,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "海南：将推进航天旅游平台组建，培育本土特色航天文旅企业",
+        "target_opportunity": "拥有主题公园/景区运营经验的企业可能参与海南航天旅游平台运营或输出管理。曲江文旅在西安有航天主题公园运营经验，峨眉山A有文旅综合体开发能力。",
+        "causal_links": [
+          {
+            "from_concept": "海南省政府政策规划",
+            "to_concept": "航天旅游平台组建加速",
+            "relation_type": "policy_drives",
+            "confidence": 0.8,
+            "reasoning": "政府规划公开征求意见后，将进入正式实施阶段，地方政府会推动平台公司注册、资源整合、招商引资等动作，加速平台落地。"
+          },
+          {
+            "from_concept": "航天旅游平台组建",
+            "to_concept": "航天旅游产品与服务需求增长",
+            "relation_type": "supply_constrains",
+            "confidence": 0.7,
+            "reasoning": "平台组建后，将系统开发火箭观礼、卫星工厂参观、航天科普等产品，增加供给端，但短期内核心资源（如发射观礼席位、航天专家讲解）有限，会形成供不应求局面，刺激需求。"
+          },
+          {
+            "from_concept": "航天旅游需求增长",
+            "to_concept": "本土航天文旅企业受益",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "需求增长将吸引资本和人才进入航天文旅赛道，已布局或新成立的本土企业（如航天科普研学机构、航天主题酒店、航天文创公司）将获得订单和融资机会。"
+          },
+          {
+            "from_concept": "航天旅游平台组建",
+            "to_concept": "航天技术商业化溢出（如卫星数据应用、航天育种体验）",
+            "relation_type": "tech_enables",
+            "confidence": 0.6,
+            "reasoning": "平台整合卫星超级工厂等资源，可衍生出‘卫星制造观摩+卫星数据应用体验’等产品，推动航天技术向旅游消费场景转化，形成新业态。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_7d0a1d94",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "海南：将推进航天旅游平台组建，培育本土特色航天文旅企业",
+      "published_at": "2026-04-30T02:12:05",
+      "industry_sector": "航天科普研学",
+      "opportunity_description": "航天研学课程开发、营地运营企业将受益。创业黑马旗下有科创教育业务，可切入航天研学赛道；航天创客是国内航天研学头部企业。",
+      "target_symbols": [
+        "300688.SZ（创业黑马）",
+        "未上市：航天创客（北京）科技有限公司"
+      ],
+      "prior_confidence": 0.7085167717989781,
+      "posterior_confidence": 0.7085167717989781,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "海南：将推进航天旅游平台组建，培育本土特色航天文旅企业",
+        "target_opportunity": "航天研学课程开发、营地运营企业将受益。创业黑马旗下有科创教育业务，可切入航天研学赛道；航天创客是国内航天研学头部企业。",
+        "causal_links": [
+          {
+            "from_concept": "海南省政府政策规划",
+            "to_concept": "航天旅游平台组建加速",
+            "relation_type": "policy_drives",
+            "confidence": 0.8,
+            "reasoning": "政府规划公开征求意见后，将进入正式实施阶段，地方政府会推动平台公司注册、资源整合、招商引资等动作，加速平台落地。"
+          },
+          {
+            "from_concept": "航天旅游平台组建",
+            "to_concept": "航天旅游产品与服务需求增长",
+            "relation_type": "supply_constrains",
+            "confidence": 0.7,
+            "reasoning": "平台组建后，将系统开发火箭观礼、卫星工厂参观、航天科普等产品，增加供给端，但短期内核心资源（如发射观礼席位、航天专家讲解）有限，会形成供不应求局面，刺激需求。"
+          },
+          {
+            "from_concept": "航天旅游需求增长",
+            "to_concept": "本土航天文旅企业受益",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "需求增长将吸引资本和人才进入航天文旅赛道，已布局或新成立的本土企业（如航天科普研学机构、航天主题酒店、航天文创公司）将获得订单和融资机会。"
+          },
+          {
+            "from_concept": "航天旅游平台组建",
+            "to_concept": "航天技术商业化溢出（如卫星数据应用、航天育种体验）",
+            "relation_type": "tech_enables",
+            "confidence": 0.6,
+            "reasoning": "平台整合卫星超级工厂等资源，可衍生出‘卫星制造观摩+卫星数据应用体验’等产品，推动航天技术向旅游消费场景转化，形成新业态。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_8edb78cc",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "海南：将推进航天旅游平台组建，培育本土特色航天文旅企业",
+      "published_at": "2026-04-30T02:12:05",
+      "industry_sector": "航天发射观礼服务",
+      "opportunity_description": "直接服务火箭发射观礼的酒店、旅行社、安保公司。上市公司中，中国中免（601888.SH）在海南有免税业务，可能延伸至航天主题消费场景。",
+      "target_symbols": [
+        "未上市：文昌航天发射场周边酒店/旅行社（如文昌鲁能希尔顿、海南航天旅行社）"
+      ],
+      "prior_confidence": 0.7085167717989781,
+      "posterior_confidence": 0.7085167717989781,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "海南：将推进航天旅游平台组建，培育本土特色航天文旅企业",
+        "target_opportunity": "直接服务火箭发射观礼的酒店、旅行社、安保公司。上市公司中，中国中免（601888.SH）在海南有免税业务，可能延伸至航天主题消费场景。",
+        "causal_links": [
+          {
+            "from_concept": "海南省政府政策规划",
+            "to_concept": "航天旅游平台组建加速",
+            "relation_type": "policy_drives",
+            "confidence": 0.8,
+            "reasoning": "政府规划公开征求意见后，将进入正式实施阶段，地方政府会推动平台公司注册、资源整合、招商引资等动作，加速平台落地。"
+          },
+          {
+            "from_concept": "航天旅游平台组建",
+            "to_concept": "航天旅游产品与服务需求增长",
+            "relation_type": "supply_constrains",
+            "confidence": 0.7,
+            "reasoning": "平台组建后，将系统开发火箭观礼、卫星工厂参观、航天科普等产品，增加供给端，但短期内核心资源（如发射观礼席位、航天专家讲解）有限，会形成供不应求局面，刺激需求。"
+          },
+          {
+            "from_concept": "航天旅游需求增长",
+            "to_concept": "本土航天文旅企业受益",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "需求增长将吸引资本和人才进入航天文旅赛道，已布局或新成立的本土企业（如航天科普研学机构、航天主题酒店、航天文创公司）将获得订单和融资机会。"
+          },
+          {
+            "from_concept": "航天旅游平台组建",
+            "to_concept": "航天技术商业化溢出（如卫星数据应用、航天育种体验）",
+            "relation_type": "tech_enables",
+            "confidence": 0.6,
+            "reasoning": "平台整合卫星超级工厂等资源，可衍生出‘卫星制造观摩+卫星数据应用体验’等产品，推动航天技术向旅游消费场景转化，形成新业态。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_e5c56cbc",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "海南：将推进航天旅游平台组建，培育本土特色航天文旅企业",
+      "published_at": "2026-04-30T02:12:05",
+      "industry_sector": "航天主题酒店/民宿",
+      "opportunity_description": "酒店集团可开发航天主题房、太空体验客房等差异化产品。锦江酒店在海南有布局，岭南控股旗下有酒店管理输出能力。",
+      "target_symbols": [
+        "600754.SH（锦江酒店）",
+        "000524.SZ（岭南控股）"
+      ],
+      "prior_confidence": 0.7085167717989781,
+      "posterior_confidence": 0.7085167717989781,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "海南：将推进航天旅游平台组建，培育本土特色航天文旅企业",
+        "target_opportunity": "酒店集团可开发航天主题房、太空体验客房等差异化产品。锦江酒店在海南有布局，岭南控股旗下有酒店管理输出能力。",
+        "causal_links": [
+          {
+            "from_concept": "海南省政府政策规划",
+            "to_concept": "航天旅游平台组建加速",
+            "relation_type": "policy_drives",
+            "confidence": 0.8,
+            "reasoning": "政府规划公开征求意见后，将进入正式实施阶段，地方政府会推动平台公司注册、资源整合、招商引资等动作，加速平台落地。"
+          },
+          {
+            "from_concept": "航天旅游平台组建",
+            "to_concept": "航天旅游产品与服务需求增长",
+            "relation_type": "supply_constrains",
+            "confidence": 0.7,
+            "reasoning": "平台组建后，将系统开发火箭观礼、卫星工厂参观、航天科普等产品，增加供给端，但短期内核心资源（如发射观礼席位、航天专家讲解）有限，会形成供不应求局面，刺激需求。"
+          },
+          {
+            "from_concept": "航天旅游需求增长",
+            "to_concept": "本土航天文旅企业受益",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "需求增长将吸引资本和人才进入航天文旅赛道，已布局或新成立的本土企业（如航天科普研学机构、航天主题酒店、航天文创公司）将获得订单和融资机会。"
+          },
+          {
+            "from_concept": "航天旅游平台组建",
+            "to_concept": "航天技术商业化溢出（如卫星数据应用、航天育种体验）",
+            "relation_type": "tech_enables",
+            "confidence": 0.6,
+            "reasoning": "平台整合卫星超级工厂等资源，可衍生出‘卫星制造观摩+卫星数据应用体验’等产品，推动航天技术向旅游消费场景转化，形成新业态。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "mid_term"
+    },
+    {
+      "signal_id": "implicit_53178647",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "菲律宾央行：2026年4月的通胀率将保持在5.6%至6.4%之间",
+      "published_at": "2026-04-30T02:07:02",
+      "industry_sector": "菲律宾银行业",
+      "opportunity_description": "高利率环境扩大银行净息差，提升盈利能力。",
+      "target_symbols": [
+        "BPI (Bank of the Philippine Islands)",
+        "BDO Unibank"
+      ],
+      "prior_confidence": 0.6964064414341471,
+      "posterior_confidence": 0.6964064414341471,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "菲律宾央行：2026年4月的通胀率将保持在5.6%至6.4%之间",
+        "target_opportunity": "高利率环境扩大银行净息差，提升盈利能力。",
+        "causal_links": [
+          {
+            "from_concept": "菲律宾央行高通胀预测（5.6%-6.4%）",
+            "to_concept": "菲律宾央行可能维持或进一步收紧货币政策（加息/维持高利率）",
+            "relation_type": "policy_drives",
+            "confidence": 0.8,
+            "reasoning": "央行明确表示将关注通胀数据，高通胀预测通常导致央行采取紧缩政策以抑制通胀预期。"
+          },
+          {
+            "from_concept": "菲律宾央行维持高利率",
+            "to_concept": "菲律宾比索汇率可能走强或保持稳定",
+            "relation_type": "policy_drives",
+            "confidence": 0.7,
+            "reasoning": "高利率吸引外资流入，提升本币需求，从而支撑汇率。"
+          },
+          {
+            "from_concept": "菲律宾高通胀和紧缩政策",
+            "to_concept": "菲律宾国内消费和投资活动可能放缓",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "高利率抑制借贷和消费，高通胀侵蚀实际购买力，导致内需降温。"
+          },
+          {
+            "from_concept": "菲律宾内需放缓",
+            "to_concept": "菲律宾对进口商品（尤其是非必需品）的需求下降",
+            "relation_type": "demand_shifts",
+            "confidence": 0.65,
+            "reasoning": "消费能力下降首先影响可选消费品和中间品进口。"
+          },
+          {
+            "from_concept": "菲律宾高通胀与比索汇率稳定",
+            "to_concept": "菲律宾出口竞争力可能受到一定压力（汇率不贬值）",
+            "relation_type": "supply_constrains",
+            "confidence": 0.6,
+            "reasoning": "本币走强使出口商品以外币计价更贵，不利于出口；但高通胀也推高国内生产成本。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_44c71d45",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "菲律宾央行：2026年4月的通胀率将保持在5.6%至6.4%之间",
+      "published_at": "2026-04-30T02:07:02",
+      "industry_sector": "菲律宾比索汇率相关资产（外汇交易/比索债券）",
+      "opportunity_description": "高利率支撑比索汇率，比索资产可能获得升值收益。",
+      "target_symbols": [
+        "USD/PHP 做空美元/做多比索",
+        "菲律宾国债"
+      ],
+      "prior_confidence": 0.6964064414341471,
+      "posterior_confidence": 0.6964064414341471,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "菲律宾央行：2026年4月的通胀率将保持在5.6%至6.4%之间",
+        "target_opportunity": "高利率支撑比索汇率，比索资产可能获得升值收益。",
+        "causal_links": [
+          {
+            "from_concept": "菲律宾央行高通胀预测（5.6%-6.4%）",
+            "to_concept": "菲律宾央行可能维持或进一步收紧货币政策（加息/维持高利率）",
+            "relation_type": "policy_drives",
+            "confidence": 0.8,
+            "reasoning": "央行明确表示将关注通胀数据，高通胀预测通常导致央行采取紧缩政策以抑制通胀预期。"
+          },
+          {
+            "from_concept": "菲律宾央行维持高利率",
+            "to_concept": "菲律宾比索汇率可能走强或保持稳定",
+            "relation_type": "policy_drives",
+            "confidence": 0.7,
+            "reasoning": "高利率吸引外资流入，提升本币需求，从而支撑汇率。"
+          },
+          {
+            "from_concept": "菲律宾高通胀和紧缩政策",
+            "to_concept": "菲律宾国内消费和投资活动可能放缓",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "高利率抑制借贷和消费，高通胀侵蚀实际购买力，导致内需降温。"
+          },
+          {
+            "from_concept": "菲律宾内需放缓",
+            "to_concept": "菲律宾对进口商品（尤其是非必需品）的需求下降",
+            "relation_type": "demand_shifts",
+            "confidence": 0.65,
+            "reasoning": "消费能力下降首先影响可选消费品和中间品进口。"
+          },
+          {
+            "from_concept": "菲律宾高通胀与比索汇率稳定",
+            "to_concept": "菲律宾出口竞争力可能受到一定压力（汇率不贬值）",
+            "relation_type": "supply_constrains",
+            "confidence": 0.6,
+            "reasoning": "本币走强使出口商品以外币计价更贵，不利于出口；但高通胀也推高国内生产成本。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_70dabfcc",
+      "signal_type": "policy_driven",
+      "source": "36氪",
+      "title": "菲律宾央行：2026年4月的通胀率将保持在5.6%至6.4%之间",
+      "published_at": "2026-04-30T02:07:02",
+      "industry_sector": "菲律宾进口替代行业（本地消费品制造）",
+      "opportunity_description": "内需放缓但进口成本高企，本地生产商可能受益于进口替代。",
+      "target_symbols": [
+        "San Miguel Corporation",
+        "Universal Robina Corporation"
+      ],
+      "prior_confidence": 0.6964064414341471,
+      "posterior_confidence": 0.6964064414341471,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "菲律宾央行：2026年4月的通胀率将保持在5.6%至6.4%之间",
+        "target_opportunity": "内需放缓但进口成本高企，本地生产商可能受益于进口替代。",
+        "causal_links": [
+          {
+            "from_concept": "菲律宾央行高通胀预测（5.6%-6.4%）",
+            "to_concept": "菲律宾央行可能维持或进一步收紧货币政策（加息/维持高利率）",
+            "relation_type": "policy_drives",
+            "confidence": 0.8,
+            "reasoning": "央行明确表示将关注通胀数据，高通胀预测通常导致央行采取紧缩政策以抑制通胀预期。"
+          },
+          {
+            "from_concept": "菲律宾央行维持高利率",
+            "to_concept": "菲律宾比索汇率可能走强或保持稳定",
+            "relation_type": "policy_drives",
+            "confidence": 0.7,
+            "reasoning": "高利率吸引外资流入，提升本币需求，从而支撑汇率。"
+          },
+          {
+            "from_concept": "菲律宾高通胀和紧缩政策",
+            "to_concept": "菲律宾国内消费和投资活动可能放缓",
+            "relation_type": "demand_shifts",
+            "confidence": 0.75,
+            "reasoning": "高利率抑制借贷和消费，高通胀侵蚀实际购买力，导致内需降温。"
+          },
+          {
+            "from_concept": "菲律宾内需放缓",
+            "to_concept": "菲律宾对进口商品（尤其是非必需品）的需求下降",
+            "relation_type": "demand_shifts",
+            "confidence": 0.65,
+            "reasoning": "消费能力下降首先影响可选消费品和中间品进口。"
+          },
+          {
+            "from_concept": "菲律宾高通胀与比索汇率稳定",
+            "to_concept": "菲律宾出口竞争力可能受到一定压力（汇率不贬值）",
+            "relation_type": "supply_constrains",
+            "confidence": 0.6,
+            "reasoning": "本币走强使出口商品以外币计价更贵，不利于出口；但高通胀也推高国内生产成本。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "short_term"
+    },
+    {
+      "signal_id": "implicit_c8da01b3",
+      "signal_type": "social_trend",
+      "source": "36氪",
+      "title": "沪深两市成交额突破1万亿元",
+      "published_at": "2026-04-30T02:03:43",
+      "industry_sector": "证券",
+      "opportunity_description": "头部券商在成交放量期间经纪业务收入弹性最大，且具有流动性溢价。",
+      "target_symbols": [
+        "600030.SH（中信证券）",
+        "601211.SH（国泰君安）",
+        "600999.SH（招商证券）"
+      ],
+      "prior_confidence": 0.6726760690480602,
+      "posterior_confidence": 0.6726760690480602,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "沪深两市成交额突破1万亿元",
+        "target_opportunity": "头部券商在成交放量期间经纪业务收入弹性最大，且具有流动性溢价。",
+        "causal_links": [
+          {
+            "from_concept": "沪深两市成交额放量突破1万亿元",
+            "to_concept": "券商经纪业务收入预期提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "成交额是券商佣金收入的核心驱动因子。成交量放大直接增加交易手续费收入，提升券商短期盈利预期。"
+          },
+          {
+            "from_concept": "沪深两市成交额放量突破1万亿元",
+            "to_concept": "市场流动性充裕，增量资金入场",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "在无重大利空背景下，放量通常意味着场外资金（如北向资金、两融资金、散户资金）加速流入，而非存量博弈。"
+          },
+          {
+            "from_concept": "市场流动性充裕，增量资金入场",
+            "to_concept": "高贝塔属性板块（券商、科技、小盘成长股）受追捧",
+            "relation_type": "demand_shifts",
+            "confidence": 0.65,
+            "reasoning": "增量资金通常优先配置弹性大的板块以博取短期收益；券商板块直接受益于流动性，科技股受益于风险偏好提升。"
+          },
+          {
+            "from_concept": "沪深两市成交额放量突破1万亿元",
+            "to_concept": "交易所及金融IT系统扩容需求增加",
+            "relation_type": "supply_constrains",
+            "confidence": 0.5,
+            "reasoning": "持续高成交量可能超出当前交易系统承载能力，促使交易所和券商升级硬件与软件，以保障交易顺畅。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "immediate"
+    },
+    {
+      "signal_id": "implicit_bdc530ca",
+      "signal_type": "social_trend",
+      "source": "36氪",
+      "title": "沪深两市成交额突破1万亿元",
+      "published_at": "2026-04-30T02:03:43",
+      "industry_sector": "金融科技",
+      "opportunity_description": "交易系统供应商和行情软件商受益于交易量放大带来的系统扩容和增值服务需求。",
+      "target_symbols": [
+        "600570.SH（恒生电子）",
+        "300033.SZ（同花顺）"
+      ],
+      "prior_confidence": 0.6726760690480602,
+      "posterior_confidence": 0.6726760690480602,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "沪深两市成交额突破1万亿元",
+        "target_opportunity": "交易系统供应商和行情软件商受益于交易量放大带来的系统扩容和增值服务需求。",
+        "causal_links": [
+          {
+            "from_concept": "沪深两市成交额放量突破1万亿元",
+            "to_concept": "券商经纪业务收入预期提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "成交额是券商佣金收入的核心驱动因子。成交量放大直接增加交易手续费收入，提升券商短期盈利预期。"
+          },
+          {
+            "from_concept": "沪深两市成交额放量突破1万亿元",
+            "to_concept": "市场流动性充裕，增量资金入场",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "在无重大利空背景下，放量通常意味着场外资金（如北向资金、两融资金、散户资金）加速流入，而非存量博弈。"
+          },
+          {
+            "from_concept": "市场流动性充裕，增量资金入场",
+            "to_concept": "高贝塔属性板块（券商、科技、小盘成长股）受追捧",
+            "relation_type": "demand_shifts",
+            "confidence": 0.65,
+            "reasoning": "增量资金通常优先配置弹性大的板块以博取短期收益；券商板块直接受益于流动性，科技股受益于风险偏好提升。"
+          },
+          {
+            "from_concept": "沪深两市成交额放量突破1万亿元",
+            "to_concept": "交易所及金融IT系统扩容需求增加",
+            "relation_type": "supply_constrains",
+            "confidence": 0.5,
+            "reasoning": "持续高成交量可能超出当前交易系统承载能力，促使交易所和券商升级硬件与软件，以保障交易顺畅。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "immediate"
+    },
+    {
+      "signal_id": "implicit_2ccfb913",
+      "signal_type": "social_trend",
+      "source": "36氪",
+      "title": "沪深两市成交额突破1万亿元",
+      "published_at": "2026-04-30T02:03:43",
+      "industry_sector": "科技（半导体/芯片）",
+      "opportunity_description": "市场风险偏好提升时，半导体作为国产替代核心板块通常获得资金青睐。",
+      "target_symbols": [
+        "688981.SH（中芯国际）",
+        "002371.SZ（北方华创）"
+      ],
+      "prior_confidence": 0.6726760690480602,
+      "posterior_confidence": 0.6726760690480602,
+      "confidence_change": 0.0,
+      "reasoning_chain": {
+        "source_event": "沪深两市成交额突破1万亿元",
+        "target_opportunity": "市场风险偏好提升时，半导体作为国产替代核心板块通常获得资金青睐。",
+        "causal_links": [
+          {
+            "from_concept": "沪深两市成交额放量突破1万亿元",
+            "to_concept": "券商经纪业务收入预期提升",
+            "relation_type": "demand_shifts",
+            "confidence": 0.9,
+            "reasoning": "成交额是券商佣金收入的核心驱动因子。成交量放大直接增加交易手续费收入，提升券商短期盈利预期。"
+          },
+          {
+            "from_concept": "沪深两市成交额放量突破1万亿元",
+            "to_concept": "市场流动性充裕，增量资金入场",
+            "relation_type": "demand_shifts",
+            "confidence": 0.7,
+            "reasoning": "在无重大利空背景下，放量通常意味着场外资金（如北向资金、两融资金、散户资金）加速流入，而非存量博弈。"
+          },
+          {
+            "from_concept": "市场流动性充裕，增量资金入场",
+            "to_concept": "高贝塔属性板块（券商、科技、小盘成长股）受追捧",
+            "relation_type": "demand_shifts",
+            "confidence": 0.65,
+            "reasoning": "增量资金通常优先配置弹性大的板块以博取短期收益；券商板块直接受益于流动性，科技股受益于风险偏好提升。"
+          },
+          {
+            "from_concept": "沪深两市成交额放量突破1万亿元",
+            "to_concept": "交易所及金融IT系统扩容需求增加",
+            "relation_type": "supply_constrains",
+            "confidence": 0.5,
+            "reasoning": "持续高成交量可能超出当前交易系统承载能力，促使交易所和券商升级硬件与软件，以保障交易顺畅。"
+          }
+        ]
+      },
+      "expected_impact_timeframe": "immediate"
+    }
+  ]
+}
