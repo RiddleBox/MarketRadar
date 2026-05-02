@@ -73,16 +73,44 @@ class ScheduledTask:
         self.error_count: int = 0
 
     def is_due(self, now: datetime) -> bool:
-        """判断任务是否到执行时间"""
+        """判断任务是否到执行时间
+        
+        对于盘前/盘后任务（time_window 起止相同），判断逻辑：
+        - 当前时间在窗口内
+        - 且今天还未执行过（last_run 不是今天）
+        """
         if not self.enabled:
             return False
+        
+        # 判断时间窗口
         if self.time_window:
             start_h, start_m = map(int, self.time_window[0].split(":"))
             end_h, end_m = map(int, self.time_window[1].split(":"))
             t = now.time()
             from datetime import time as dtime
+            
+            # 盘前/盘后任务：time_window 起止相同，表示单次触发
+            if start_h == end_h and start_m == end_m:
+                # 单次触发逻辑：当前时间在目标时间后 5 分钟内，且今天还未执行
+                target_time = dtime(start_h, start_m)
+                time_diff_minutes = (t.hour * 60 + t.minute) - (target_time.hour * 60 + target_time.minute)
+                
+                # 当前时间在目标时间后 0-5 分钟内
+                if not (0 <= time_diff_minutes <= 5):
+                    return False
+                
+                # 检查今天是否已执行
+                if self.last_run is not None:
+                    if self.last_run.date() == now.date():
+                        return False  # 今天已执行，跳过
+                
+                return True
+            
+            # 周期性任务：判断是否在时间窗口内
             if not (dtime(start_h, start_m) <= t <= dtime(end_h, end_m)):
                 return False
+        
+        # 判断间隔
         if self.last_run is None:
             return True
         return (now - self.last_run).total_seconds() >= self.interval_minutes * 60
@@ -363,10 +391,35 @@ class Scheduler:
     # ── 内部调度循环 ─────────────────────────────────────────
 
     def _loop(self):
+        from m7_scheduler.trading_calendar import is_trading_day
+        
         while not self._stop_event.is_set():
             now = datetime.now()
             with self._lock:
-                due_tasks = [t for t in self.tasks.values() if t.is_due(now)]
+                due_tasks = []
+                for t in self.tasks.values():
+                    if not t.is_due(now):
+                        continue
+                    
+                    # 检查是否需要交易日判断（M12 相关任务）
+                    if t.name.startswith("m12_"):
+                        # 从任务名提取市场
+                        if "_a_share" in t.name:
+                            market = Market.A_SHARE
+                        elif "_hk" in t.name:
+                            market = Market.HK
+                        elif "_us" in t.name:
+                            market = Market.US
+                        else:
+                            market = None
+                        
+                        # 如果是交易相关任务，检查是否为交易日
+                        if market and not is_trading_day(market, now.date()):
+                            logger.info(f"[M7] 跳过任务 {t.name}：今日非交易日")
+                            continue
+                    
+                    due_tasks.append(t)
+            
             for task in due_tasks:
                 result = task.run()
                 self._append_log(task.name, result)
