@@ -545,21 +545,23 @@ class Scheduler:
 
     def _task_price_update(self, run_id: str = "") -> dict:
         """
-        M9 模拟仓价格更新：从 AKShare 拉当日最新实时价，
+        M9 模拟仓价格更新：从配置的数据源拉当日最新实时价，
         对所有 OPEN 状态的 PaperPosition 做 tick 更新（检查止损止盈）。
-        无网络时降级为日线收盘价（backtest HistoryPriceFeed）。
+        失败时自动降级到备用数据源。
         """
         import sys
         sys.path.insert(0, str(ROOT))
         from m9_paper_trader.paper_trader import PaperTrader
-        from m9_paper_trader.price_feed import AKShareRealtimeFeed
+        from m9_paper_trader.feed_factory import get_factory
 
         trader = PaperTrader()
         open_positions = trader.list_open()
         if not open_positions:
             return {"open_positions": 0, "updated": 0, "closed": 0}
 
-        feed = AKShareRealtimeFeed()
+        # 使用配置驱动的数据源工厂（自动降级）
+        factory = get_factory()
+        feed = factory.get_m9_price_update_feed()
         result = trader.update_all_prices(feed)
         updated = result.get("updated", 0)
         closed_ids = result.get("closed", [])
@@ -717,17 +719,14 @@ class Scheduler:
         try:
             from m12_opportunity_catcher.catcher_engine import OpportunityCatcherEngine
             from core.schemas import Market
-            from m9_paper_trader.baostock_feed import BaostockFeed
-            from m9_paper_trader.price_feed import YFinanceFeed
+            from m9_paper_trader.feed_factory import get_factory
 
             engine = OpportunityCatcherEngine()
             batch_id = f"sched_m12_{market.value}_{run_id or datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
-            # 选择价格源
-            if market == Market.A_SHARE:
-                price_feed = BaostockFeed()
-            else:
-                price_feed = YFinanceFeed()
+            # 使用配置驱动的数据源（场景：m7_intraday_scan）
+            factory = get_factory()
+            price_feed = factory.get_feed_with_fallback(market, scenario="m7_intraday_scan")
 
             # 执行盘中扫描
             retro_opps = engine.run_intraday_scan(
@@ -908,8 +907,7 @@ class Scheduler:
             from m7_scheduler.trading_calendar import is_trading_day
             from core.schemas import Market
             from m12_opportunity_catcher.catcher_engine import OpportunityCatcherEngine
-            from m9_paper_trader.baostock_feed import BaostockFeed
-            from m9_paper_trader.price_feed import YFinanceFeed
+            from m9_paper_trader.feed_factory import get_factory
 
             # 检查是否交易日
             if not is_trading_day(market):
@@ -920,11 +918,9 @@ class Scheduler:
 
             engine = OpportunityCatcherEngine()
 
-            # 选择价格源
-            if market == Market.A_SHARE:
-                price_feed = BaostockFeed()
-            else:
-                price_feed = YFinanceFeed()
+            # 使用配置驱动的数据源（场景：m7_premarket_scan，盘后也用历史数据）
+            factory = get_factory()
+            price_feed = factory.get_feed_with_fallback(market, scenario="m7_premarket_scan")
 
             # 执行盘后全量扫描（stock_list=None表示全市场）
             retro_opps = engine.run_daily_scan(

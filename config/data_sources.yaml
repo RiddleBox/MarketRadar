@@ -1,0 +1,65 @@
+# MarketRadar 数据源配置
+# 统一管理所有模块的价格数据源选择
+
+# 主数据源配置
+primary:
+  a_share: futu      # A股：futu（实时） | baostock（日线） | akshare（3-5分钟延迟）
+  hk_share: futu     # 港股：futu（实时） | yfinance（15分钟延迟）
+  us_share: futu     # 美股：futu（15分钟延迟） | yfinance（15分钟延迟）
+
+# 备用数据源（主数据源失败时自动降级）
+fallback:
+  a_share: akshare   # A股备用：akshare | baostock
+  hk_share: yfinance # 港股备用：yfinance
+  us_share: yfinance # 美股备用：yfinance
+
+# 特定场景配置
+scenarios:
+  # M7调度器 - 盘前扫描（使用历史数据）
+  m7_premarket_scan:
+    a_share: baostock  # A股日线数据
+    hk_share: futu     # 港股实时
+    us_share: futu     # 美股实时
+  
+  # M7调度器 - 盘中扫描（使用实时数据）
+  m7_intraday_scan:
+    a_share: futu      # A股实时
+    hk_share: futu     # 港股实时
+    us_share: futu     # 美股实时
+  
+  # M9模拟盘 - 价格更新（使用实时数据）
+  m9_price_update:
+    primary: futu      # 优先FutuFeed
+    fallback: akshare  # 降级到AKShare
+  
+  # M12机会捕捉 - 市场扫描（使用实时数据）
+  m12_market_scan:
+    a_share: baostock  # A股日线（稳定）
+    hk_share: futu     # 港股实时
+    us_share: futu     # 美股实时
+
+# 数据源特性说明（仅供参考，不影响运行）
+characteristics:
+  futu:
+    markets: [a_share, hk_share, us_share]
+    latency: "实时（A股/港股）| 15分钟延迟（美股免费版）"
+    requires: "OpenD进程 + 富途账号"
+    rate_limit: "无明显限制"
+  
+  baostock:
+    markets: [a_share]
+    latency: "日线数据（T+1）"
+    requires: "无"
+    rate_limit: "无明显限制"
+  
+  akshare:
+    markets: [a_share]
+    latency: "3-5分钟延迟"
+    requires: "无"
+    rate_limit: "中等"
+  
+  yfinance:
+    markets: [hk_share, us_share]
+    latency: "15分钟延迟"
+    requires: "无"
+    rate_limit: "严格（容易触发429）"
