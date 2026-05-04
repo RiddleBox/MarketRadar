@@ -650,8 +650,8 @@ class Scheduler:
         sys.path.insert(0, str(ROOT))
         try:
             from m0_collector.providers.akshare_provider import AKShareNewsProvider
-            provider = AKShareNewsProvider(source="all", max_items=30)
-            items = provider.fetch()
+            provider = AKShareNewsProvider()
+            items = provider.fetch(source="all", limit=30)
             written = 0
             incoming_dir = ROOT / "data" / "incoming"
             incoming_dir.mkdir(parents=True, exist_ok=True)
