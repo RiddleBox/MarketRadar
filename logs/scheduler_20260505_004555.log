@@ -1,0 +1,48 @@
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ M7 调度器启动                                                                │
+│ 任务数: 14 | tick: 30s                                                       │
+│ Ctrl+C 停止                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+                                   已注册任务                                   
+                                                                                
+  任务名                     间隔   时段          状态   描述                   
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+  signal_pipeline           30min   全天          启用   M0收集→M1解码→M2存储…  
+                                                         data/incomin           
+  price_update              10min   09:25~15:05   启用   M9模拟仓价格更新（盘…  
+  daily_review            1440min   15:30~23:59   启用   M6收盘复盘归因→M8写 …  
+  news_collect              15min   全天          启用   M0                     
+                                                         AKShare新闻拉取（东 …  
+  sentiment_collect         30min   09:00~22:00   启用   M10情绪采集：恐贪指 …  
+                                                         → 写入 SQLite + 注入   
+  m12_a_share_scan          10min   09:30~15:00   启用   M12                    
+                                                         A股轨道：全景价格扫 …  
+  m12_hk_scan               10min   09:30~16:00   启用   M12                    
+                                                         港股轨道：全景价格扫…  
+  m12_us_scan               10min   21:30~04:00   启用   M12                    
+                                                         美股轨道：全景价格扫…  
+  m12_premarket_a_share   1440min   09:00~09:00   启用   M12                    
+                                                         A股盘前扫描：隔夜信 …  
+  m12_premarket_hk        1440min   09:00~09:00   启用   M12                    
+                                                         港股盘前扫描：隔夜信…  
+  m12_premarket_us        1440min   21:00~21:00   启用   M12                    
+                                                         美股盘前扫描：隔夜信…  
+  m12_postmarket_a_sha…   1440min   15:30~15:30   启用   M12                    
+                                                         A股盘后扫描：全量价 …  
+  m12_postmarket_hk       1440min   16:30~16:30   启用   M12                    
+                                                         港股盘后扫描：全量价…  
+  m12_postmarket_us       1440min   05:00~05:00   启用   M12                    
+                                                         美股盘后扫描：全量价…  
+                                                                                
+  0%|          | 0/11 [00:00<?, ?it/s]  9%|▉         | 1/11 [00:00<00:01,  5.42it/s] 18%|█▊        | 2/11 [00:00<00:01,  6.09it/s] 27%|██▋       | 3/11 [00:00<00:01,  5.66it/s] 36%|███▋      | 4/11 [00:00<00:01,  5.49it/s] 45%|████▌     | 5/11 [00:00<00:00,  6.16it/s] 55%|█████▍    | 6/11 [00:00<00:00,  6.26it/s] 64%|██████▎   | 7/11 [00:01<00:00,  6.40it/s] 73%|███████▎  | 8/11 [00:01<00:00,  6.92it/s] 82%|████████▏ | 9/11 [00:01<00:00,  6.47it/s] 91%|█████████ | 10/11 [00:01<00:00,  6.92it/s]100%|██████████| 11/11 [00:01<00:00,  6.32it/s]                                               [Sentiment] 百度热搜采集失败: list indices must be integers or slices, not str
+[SentimentEngine] 部分指标失败: ['baidu_hot: list indices must be integers or slices, not str']
+[AKShareNewsProvider] 东方财富新闻获取失败: Invalid regular expression: invalid escape sequence: \u
+[AKShareNewsProvider] 财联社快讯获取失败: module 'akshare' has no attribute 'stock_zh_a_alerts_cls'
+[M7/m12_us_scan] 失败: No module named 'm0_core'
+[M7/m12_us_scan] 失败: No module named 'm0_core'
+[AKShareNewsProvider] 东方财富新闻获取失败: Invalid regular expression: invalid escape sequence: \u
+[AKShareNewsProvider] 财联社快讯获取失败: module 'akshare' has no attribute 'stock_zh_a_alerts_cls'
+[M7/m12_us_scan] 失败: No module named 'm0_core'
+[AKShareNewsProvider] 东方财富新闻获取失败: Invalid regular expression: invalid escape sequence: \u
+[AKShareNewsProvider] 财联社快讯获取失败: module 'akshare' has no attribute 'stock_zh_a_alerts_cls'
+[M7/m12_us_scan] 失败: No module named 'm0_core'

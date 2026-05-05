@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Optional, Dict, Any
 from loguru import logger
 
-from m0_core.instrument import Market
+from core.schemas import Market
 from m9_paper_trader.price_feed import PriceFeed
 
 

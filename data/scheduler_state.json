@@ -8,8 +8,8 @@
       "enabled": true,
       "interval_minutes": 30,
       "time_window": null,
-      "last_run": "2026-05-02T18:47:32.642232",
-      "run_count": 3,
+      "last_run": "2026-05-05T01:15:59.108446",
+      "run_count": 2,
       "error_count": 0,
       "last_status": "ok"
     },
@@ -36,10 +36,10 @@
         "15:30",
         "23:59"
       ],
-      "last_run": "2026-05-02T17:47:29.802034",
-      "run_count": 1,
+      "last_run": null,
+      "run_count": 0,
       "error_count": 0,
-      "last_status": "ok"
+      "last_status": null
     },
     "news_collect": {
       "name": "news_collect",
@@ -47,8 +47,8 @@
       "enabled": true,
       "interval_minutes": 15,
       "time_window": null,
-      "last_run": "2026-05-02T18:47:32.643092",
-      "run_count": 5,
+      "last_run": "2026-05-05T01:15:59.140227",
+      "run_count": 3,
       "error_count": 0,
       "last_status": "ok"
     },
@@ -61,8 +61,8 @@
         "09:00",
         "22:00"
       ],
-      "last_run": "2026-05-02T18:47:35.140024",
-      "run_count": 3,
+      "last_run": "2026-05-05T00:45:58.979493",
+      "run_count": 1,
       "error_count": 0,
       "last_status": "ok"
     },
@@ -103,10 +103,10 @@
         "21:30",
         "04:00"
       ],
-      "last_run": null,
-      "run_count": 0,
+      "last_run": "2026-05-05T01:15:59.141577",
+      "run_count": 4,
       "error_count": 0,
-      "last_status": null
+      "last_status": "ok"
     },
     "m12_premarket_a_share": {
       "name": "m12_premarket_a_share",
@@ -196,8 +196,8 @@
   "recent_runs": [
     {
       "task": "signal_pipeline",
-      "at": "2026-05-02T17:47:26.668148",
-      "run_id": "signal_pipeline_20260502_174726_c6c32d",
+      "at": "2026-05-05T00:45:56.070867",
+      "run_id": "signal_pipeline_20260505_004556_58ae7d",
       "status": "ok",
       "duration_s": 0.0,
       "result": {
@@ -206,55 +206,78 @@
     },
     {
       "task": "sentiment_collect",
-      "at": "2026-05-02T17:47:29.752225",
-      "run_id": "sentiment_collect_20260502_174726_ee7a33",
+      "at": "2026-05-05T00:45:58.979504",
+      "run_id": "sentiment_collect_20260505_004556_8bb3a4",
       "status": "ok",
-      "duration_s": 3.08,
+      "duration_s": 2.91,
       "result": {
         "fear_greed": 50.8,
         "label": "中性",
         "direction": "NEUTRAL",
         "intensity": 2.1,
-        "batch_id": "sched_sent_sentiment_collect_20260502_174726_ee7a33",
+        "batch_id": "sched_sent_sentiment_collect_20260505_004556_8bb3a4",
         "errors": []
       }
     },
     {
-      "task": "daily_review",
-      "at": "2026-05-02T17:47:29.802049",
-      "run_id": "daily_review_20260502_174729_cdae77",
+      "task": "news_collect",
+      "at": "2026-05-05T00:45:59.016862",
+      "run_id": "news_collect_20260505_004558_b89dfd",
+      "status": "ok",
+      "duration_s": 0.03,
+      "result": {
+        "fetched": 0,
+        "written": 0
+      }
+    },
+    {
+      "task": "m12_us_scan",
+      "at": "2026-05-05T00:45:59.064721",
+      "run_id": "m12_us_scan_20260505_004559_3a089e",
       "status": "ok",
       "duration_s": 0.05,
       "result": {
-        "reviewed": 2,
-        "grade": "N/A",
-        "win_rate": 0
+        "error": "No module named 'm0_core'",
+        "market": "US"
+      }
+    },
+    {
+      "task": "m12_us_scan",
+      "at": "2026-05-05T00:55:59.069613",
+      "run_id": "m12_us_scan_20260505_005559_7bc6f3",
+      "status": "ok",
+      "duration_s": 0.0,
+      "result": {
+        "error": "No module named 'm0_core'",
+        "market": "US"
       }
     },
     {
       "task": "news_collect",
-      "at": "2026-05-02T17:47:29.803072",
-      "run_id": "news_collect_20260502_174729_5eab56",
+      "at": "2026-05-05T01:00:59.100756",
+      "run_id": "news_collect_20260505_010059_7877f7",
       "status": "ok",
-      "duration_s": 0.0,
+      "duration_s": 0.03,
       "result": {
-        "error": "AKShareNewsProvider() takes no arguments"
+        "fetched": 0,
+        "written": 0
       }
     },
     {
-      "task": "news_collect",
-      "at": "2026-05-02T18:02:29.809422",
-      "run_id": "news_collect_20260502_180229_466ac7",
+      "task": "m12_us_scan",
+      "at": "2026-05-05T01:05:59.103995",
+      "run_id": "m12_us_scan_20260505_010559_f683c5",
       "status": "ok",
       "duration_s": 0.0,
       "result": {
-        "error": "AKShareNewsProvider() takes no arguments"
+        "error": "No module named 'm0_core'",
+        "market": "US"
       }
     },
     {
       "task": "signal_pipeline",
-      "at": "2026-05-02T18:17:29.815963",
-      "run_id": "signal_pipeline_20260502_181729_dbb94f",
+      "at": "2026-05-05T01:15:59.108465",
+      "run_id": "signal_pipeline_20260505_011559_98d46d",
       "status": "ok",
       "duration_s": 0.0,
       "result": {
@@ -263,72 +286,24 @@
     },
     {
       "task": "news_collect",
-      "at": "2026-05-02T18:17:29.816719",
-      "run_id": "news_collect_20260502_181729_c97aca",
+      "at": "2026-05-05T01:15:59.140239",
+      "run_id": "news_collect_20260505_011559_d6281c",
+      "status": "ok",
+      "duration_s": 0.03,
+      "result": {
+        "fetched": 0,
+        "written": 0
+      }
+    },
+    {
+      "task": "m12_us_scan",
+      "at": "2026-05-05T01:15:59.141589",
+      "run_id": "m12_us_scan_20260505_011559_74b4a7",
       "status": "ok",
       "duration_s": 0.0,
       "result": {
-        "error": "AKShareNewsProvider() takes no arguments"
-      }
-    },
-    {
-      "task": "sentiment_collect",
-      "at": "2026-05-02T18:17:32.629471",
-      "run_id": "sentiment_collect_20260502_181729_ab2c46",
-      "status": "ok",
-      "duration_s": 2.81,
-      "result": {
-        "fear_greed": 50.8,
-        "label": "中性",
-        "direction": "NEUTRAL",
-        "intensity": 2.1,
-        "batch_id": "sched_sent_sentiment_collect_20260502_181729_ab2c46",
-        "errors": []
-      }
-    },
-    {
-      "task": "news_collect",
-      "at": "2026-05-02T18:32:32.635780",
-      "run_id": "news_collect_20260502_183232_cb5167",
-      "status": "ok",
-      "duration_s": 0.0,
-      "result": {
-        "error": "AKShareNewsProvider() takes no arguments"
-      }
-    },
-    {
-      "task": "signal_pipeline",
-      "at": "2026-05-02T18:47:32.642250",
-      "run_id": "signal_pipeline_20260502_184732_89520b",
-      "status": "ok",
-      "duration_s": 0.0,
-      "result": {
-        "new_files": 0
-      }
-    },
-    {
-      "task": "news_collect",
-      "at": "2026-05-02T18:47:32.643103",
-      "run_id": "news_collect_20260502_184732_5a9ed0",
-      "status": "ok",
-      "duration_s": 0.0,
-      "result": {
-        "error": "AKShareNewsProvider() takes no arguments"
-      }
-    },
-    {
-      "task": "sentiment_collect",
-      "at": "2026-05-02T18:47:35.140034",
-      "run_id": "sentiment_collect_20260502_184732_b5eca5",
-      "status": "ok",
-      "duration_s": 2.5,
-      "result": {
-        "fear_greed": 50.8,
-        "label": "中性",
-        "direction": "NEUTRAL",
-        "intensity": 2.1,
-        "batch_id": "sched_sent_sentiment_collect_20260502_184732_b5eca5",
-        "errors": []
+        "error": "No module named 'm0_core'",
+        "market": "US"
       }
     }
   ]
