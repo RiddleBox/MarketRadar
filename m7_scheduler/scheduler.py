@@ -41,14 +41,6 @@ LOG_DIR = ROOT / "data" / "logs"
 STATE_FILE = ROOT / "data" / "scheduler_state.json"
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
-# 导入M12统一持久化层
-try:
-    from m12_opportunity_catcher.scan_logger import M12ScanLogger
-    M12_LOGGER = M12ScanLogger()
-except ImportError:
-    logger.warning("[M7] M12ScanLogger导入失败，将使用旧的持久化方式")
-    M12_LOGGER = None
-
 
 # ─────────────────────────────────────────────────────────────
 # 任务定义
@@ -115,18 +107,8 @@ class ScheduledTask:
                 return True
             
             # 周期性任务：判断是否在时间窗口内
-            start_time = dtime(start_h, start_m)
-            end_time = dtime(end_h, end_m)
-
-            # 处理跨日时段（如 21:30~04:00）
-            if start_time > end_time:
-                # 跨日：当前时间 >= 开始时间 或 当前时间 <= 结束时间
-                if not (t >= start_time or t <= end_time):
-                    return False
-            else:
-                # 不跨日：当前时间在开始和结束之间
-                if not (start_time <= t <= end_time):
-                    return False
+            if not (dtime(start_h, start_m) <= t <= dtime(end_h, end_m)):
+                return False
         
         # 判断间隔
         if self.last_run is None:
@@ -215,7 +197,7 @@ class Scheduler:
 
         config 可覆盖各任务的 enabled / interval_minutes：
           {
-            "signal_pipeline": {"enabled": True, "interval_minutes": 15},
+            "signal_pipeline": {"enabled": True, "interval_minutes": 30},
             "price_update":    {"enabled": True, "interval_minutes": 10},
             "daily_review":    {"enabled": True, "interval_minutes": 1440},
           }
@@ -236,8 +218,7 @@ class Scheduler:
             fn=self._task_signal_pipeline,
             description="M0收集→M1解码→M2存储→M3判断→M4行动，处理 data/incoming/ 新文件",
             run_at_start=True,
-            time_window=("09:00", "22:00"),    # 覆盖A股+港股+美股主要时段
-            **_c("signal_pipeline", 15),       # 15分钟间隔，快速响应
+            **_c("signal_pipeline", 30),
         ))
 
         self.register(ScheduledTask(
@@ -753,14 +734,35 @@ class Scheduler:
                 price_feed=price_feed,
             )
 
-            # 使用统一持久化层保存扫描结果
-            scan_logger = M12ScanLogger()
-            scan_logger.log_scan(
-                scan_type="intraday",
-                market=market,
-                opportunities=retro_opps,
-                batch_id=batch_id,
-            )
+            # 保存机会到文件（供dashboard读取）
+            if retro_opps:
+                retro_dir = ROOT / "data" / "retro_opportunities"
+                retro_dir.mkdir(parents=True, exist_ok=True)
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                retro_file = retro_dir / f"{market.value.lower()}_{timestamp}.json"
+
+                retro_data = []
+                for retro in retro_opps:
+                    retro_data.append({
+                        "instrument": retro.anomaly.instrument,
+                        "market": retro.anomaly.market.value,
+                        "price_change_pct": retro.anomaly.price_change_pct,
+                        "trend_stage": retro.trend.stage.value,
+                        "causation_confidence": retro.causation.confidence,
+                        "remaining_upside_pct": retro.trend.remaining_upside_pct,
+                        "opportunity_id": retro.opportunity.opportunity_id,
+                        "priority": retro.opportunity.priority_level.value,
+                        "entry_constraint": retro.opportunity.entry_constraint.reason if retro.opportunity.entry_constraint else None,
+                    })
+
+                retro_file.write_text(
+                    json.dumps(retro_data, ensure_ascii=False, indent=2, default=str),
+                    encoding="utf-8",
+                )
+
+                logger.info(
+                    f"[M7/m12_{market.value.lower()}_scan] 保存 {len(retro_opps)} 个机会到 {retro_file.name}"
+                )
 
             result = {
                 "market": market.value,
@@ -844,14 +846,32 @@ class Scheduler:
                 batch_id=batch_id,
             )
 
-            # 使用统一持久化层保存扫描结果
-            scan_logger = M12ScanLogger()
-            scan_logger.log_scan(
-                scan_type="premarket",
-                market=market,
-                opportunities=opportunities,
-                batch_id=batch_id,
-            )
+            # 保存盘前机会
+            if opportunities:
+                premarket_dir = ROOT / "data" / "premarket_opportunities"
+                premarket_dir.mkdir(parents=True, exist_ok=True)
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                premarket_file = premarket_dir / f"{market.value.lower()}_{timestamp}.json"
+
+                opp_data = []
+                for opp in opportunities:
+                    opp_data.append({
+                        "opportunity_id": opp.opportunity_id,
+                        "title": opp.opportunity_title,
+                        "priority": opp.priority_level.value,
+                        "direction": opp.trade_direction.value,
+                        "instruments": opp.target_instruments,
+                        "score": opp.opportunity_score.overall_score if opp.opportunity_score else 0,
+                    })
+
+                premarket_file.write_text(
+                    json.dumps(opp_data, ensure_ascii=False, indent=2, default=str),
+                    encoding="utf-8",
+                )
+
+                logger.info(
+                    f"[M7/m12_premarket_{market.value.lower()}] 保存 {len(opportunities)} 个盘前机会到 {premarket_file.name}"
+                )
 
             result = {
                 "market": market.value,
@@ -909,17 +929,37 @@ class Scheduler:
                 stock_list=None,  # 全量扫描
             )
 
-            # 使用统一持久化层保存扫描结果
-            scan_logger = M12ScanLogger()
-            scan_logger.log_scan(
-                scan_type="postmarket",
-                market=market,
-                opportunities=retro_opps,
-                batch_id=batch_id,
-            )
+            # 保存盘后机会
+            if retro_opps:
+                postmarket_dir = ROOT / "data" / "postmarket_opportunities"
+                postmarket_dir.mkdir(parents=True, exist_ok=True)
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                postmarket_file = postmarket_dir / f"{market.value.lower()}_{timestamp}.json"
 
-            # TODO: 扩展监控池逻辑（将高价值标的加入次日扫描范围）
-            # 可以写入 data/watch_pool/{market}.json
+                retro_data = []
+                for retro in retro_opps:
+                    retro_data.append({
+                        "instrument": retro.anomaly.instrument,
+                        "market": retro.anomaly.market.value,
+                        "price_change_pct": retro.anomaly.price_change_pct,
+                        "trend_stage": retro.trend.stage.value,
+                        "causation_confidence": retro.causation.confidence,
+                        "remaining_upside_pct": retro.trend.remaining_upside_pct,
+                        "opportunity_id": retro.opportunity.opportunity_id,
+                        "priority": retro.opportunity.priority_level.value,
+                    })
+
+                postmarket_file.write_text(
+                    json.dumps(retro_data, ensure_ascii=False, indent=2, default=str),
+                    encoding="utf-8",
+                )
+
+                logger.info(
+                    f"[M7/m12_postmarket_{market.value.lower()}] 保存 {len(retro_opps)} 个盘后机会到 {postmarket_file.name}"
+                )
+
+                # TODO: 扩展监控池逻辑（将高价值标的加入次日扫描范围）
+                # 可以写入 data/watch_pool/{market}.json
 
             result = {
                 "market": market.value,
