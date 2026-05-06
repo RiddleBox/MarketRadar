@@ -4,5 +4,10 @@ data/signal_position_mapping.json
 data/sentiment/snapshot_*.json
 session-*.md
 
+# Logs
+logs/*.log
+data/logs/*.log
+*.log
+
 # Claude settings
 .claude/settings.json

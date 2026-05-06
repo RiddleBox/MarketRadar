@@ -23,10 +23,6 @@ import sys
 import time
 from pathlib import Path
 
-# 禁用tqdm进度条（必须在导入任何使用tqdm的库之前设置）
-os.environ['TQDM_DISABLE'] = '1'
-os.environ['PYTHONIOENCODING'] = 'utf-8'
-
 import click
 from rich.console import Console
 from rich.table import Table
@@ -39,8 +35,7 @@ sys.path.insert(0, str(ROOT))
 PID_FILE = ROOT / "data" / "scheduler.pid"
 STATE_FILE = ROOT / "data" / "scheduler_state.json"
 
-# Windows GBK终端兼容：禁用fancy字符
-console = Console(legacy_windows=False, force_terminal=False)
+console = Console()
 
 
 @click.group()
@@ -80,12 +75,6 @@ def start(background, tick, config, signal_interval, price_interval, news_interv
     if background:
         # fork 出子进程（Windows 用 subprocess 模拟）
         import subprocess
-
-        # 禁用akshare/tqdm进度条输出
-        env = os.environ.copy()
-        env['TQDM_DISABLE'] = '1'
-        env['PYTHONIOENCODING'] = 'utf-8'
-
         args = [sys.executable, "-m", "m7_scheduler.cli", "start",
                 f"--tick={tick}",
                 f"--signal-interval={signal_interval}",
@@ -96,9 +85,8 @@ def start(background, tick, config, signal_interval, price_interval, news_interv
         proc = subprocess.Popen(
             args,
             cwd=str(ROOT),
-            stdout=subprocess.DEVNULL,  # 丢弃stdout（包括进度条）
-            stderr=open(ROOT / "data" / "logs" / "scheduler.log", "a", encoding='utf-8'),
-            env=env,
+            stdout=open(ROOT / "data" / "logs" / "scheduler.log", "a"),
+            stderr=subprocess.STDOUT,
             creationflags=0x00000008 if sys.platform == "win32" else 0,  # DETACHED_PROCESS
         )
         PID_FILE.parent.mkdir(parents=True, exist_ok=True)

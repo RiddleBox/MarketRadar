@@ -230,40 +230,6 @@ def list_available_decision_dates() -> list[str]:
     return dates
 
 
-@st.cache_data(ttl=60)
-def load_m12_scan_history(market: str | None = None, limit: int = 50) -> list[dict]:
-    """加载M12扫描历史记录（来自M7调度器）"""
-    try:
-        from m12_opportunity_catcher.scan_logger import M12ScanLogger
-        logger = M12ScanLogger()
-
-        if market:
-            records = logger.get_latest_scan(market=market, limit=limit)
-        else:
-            # 加载所有市场的最新记录
-            all_records = []
-            for mkt in ["A_SHARE", "HK", "US"]:
-                all_records.extend(logger.get_latest_scan(market=mkt, limit=limit))
-            # 按时间戳倒序排序
-            records = sorted(all_records, key=lambda x: x.get("timestamp", ""), reverse=True)[:limit]
-
-        return records
-    except Exception as e:
-        st.error(f"加载M12扫描历史失败: {e}")
-        return []
-
-
-@st.cache_data(ttl=300)
-def load_m12_scan_stats() -> dict:
-    """加载M12扫描统计信息"""
-    try:
-        from m12_opportunity_catcher.scan_logger import M12ScanLogger
-        logger = M12ScanLogger()
-        return logger.stats()
-    except Exception:
-        return {}
-
-
 def clear_cache():
     st.cache_data.clear()
 
@@ -1104,86 +1070,21 @@ with tab_catch:
     st.header("🔍 补牢机会（价格异动扫描）")
     st.markdown("**M12 Opportunity Catcher** — 价格是最终验证，反向溯源找原因，判断趋势能否延续")
 
-    # 添加历史记录查看选项
-    view_mode = st.radio(
-        "查看模式",
-        ["手动扫描", "历史记录（M7调度器）"],
-        horizontal=True,
-        key="catch_view_mode"
-    )
+    col_c1, col_c2 = st.columns([1, 2])
 
-    if view_mode == "历史记录（M7调度器）":
-        # 显示M7调度器的扫描历史
+    with col_c1:
+        st.subheader("扫描配置")
+        scan_market = st.selectbox("扫描市场", ["A_SHARE", "HK", "US"], index=0, key="catch_market")
+        scan_mode = st.radio("扫描模式", ["盘后全量", "盘中快速"], index=0, key="catch_mode")
+
         st.markdown("---")
-        col_h1, col_h2 = st.columns([1, 3])
+        st.subheader("阈值设置")
+        sigma_th = st.slider("sigma 倍数阈值", 1.0, 4.0, 2.0, 0.1, key="catch_sigma")
+        atr_th = st.slider("ATR 倍数阈值", 1.0, 4.0, 2.0, 0.1, key="catch_atr")
+        vol_th = st.slider("最低量比", 1.0, 5.0, 1.5, 0.1, key="catch_vol")
 
-        with col_h1:
-            st.subheader("筛选条件")
-            history_market = st.selectbox(
-                "市场",
-                ["全部", "A_SHARE", "HK", "US"],
-                index=0,
-                key="history_market"
-            )
-            history_limit = st.slider("显示记录数", 10, 100, 50, 10, key="history_limit")
-
-            if st.button("刷新", key="history_refresh", use_container_width=True):
-                st.cache_data.clear()
-                st.rerun()
-
-        with col_h2:
-            st.subheader("扫描历史")
-            market_filter = None if history_market == "全部" else history_market
-            history_records = load_m12_scan_history(market=market_filter, limit=history_limit)
-
-            if not history_records:
-                st.info("暂无扫描历史记录")
-            else:
-                for record in history_records:
-                    scan_type = record.get("scan_type", "unknown")
-                    market = record.get("market", "unknown")
-                    timestamp = record.get("timestamp", "")
-                    count = record.get("count", 0)
-                    opportunities = record.get("opportunities", [])
-
-                    type_emoji = {"intraday": "⚡", "premarket": "🌅", "postmarket": "🌙"}.get(scan_type, "📊")
-
-                    with st.expander(
-                        f"{type_emoji} {market} | {timestamp} | {count}个异动",
-                        expanded=False
-                    ):
-                        if count == 0:
-                            st.info("本次扫描未发现异动")
-                        else:
-                            for opp in opportunities[:10]:  # 最多显示10个
-                                if scan_type == "intraday":
-                                    # RetroOpportunity格式
-                                    anomaly = opp.get("anomaly", {})
-                                    instrument = anomaly.get("instrument", "N/A")
-                                    change_pct = anomaly.get("price_change_pct", 0)
-                                    st.write(f"- {instrument}: {change_pct:+.1f}%")
-                                else:
-                                    # OpportunityObject格式
-                                    instrument = opp.get("instrument", "N/A")
-                                    st.write(f"- {instrument}")
-
-    else:
-        # 原有的手动扫描界面
-        col_c1, col_c2 = st.columns([1, 2])
-
-        with col_c1:
-            st.subheader("扫描配置")
-            scan_market = st.selectbox("扫描市场", ["A_SHARE", "HK", "US"], index=0, key="catch_market")
-            scan_mode = st.radio("扫描模式", ["盘后全量", "盘中快速"], index=0, key="catch_mode")
-
-            st.markdown("---")
-            st.subheader("阈值设置")
-            sigma_th = st.slider("sigma 倍数阈值", 1.0, 4.0, 2.0, 0.1, key="catch_sigma")
-            atr_th = st.slider("ATR 倍数阈值", 1.0, 4.0, 2.0, 0.1, key="catch_atr")
-            vol_th = st.slider("最低量比", 1.0, 5.0, 1.5, 0.1, key="catch_vol")
-
-            st.markdown("---")
-            if st.button("开始扫描", key="catch_scan_btn", use_container_width=True):
+        st.markdown("---")
+        if st.button("开始扫描", key="catch_scan_btn", use_container_width=True):
             with st.spinner("正在扫描价格异动..."):
                 try:
                     from core.schemas import Market as MarketEnum
@@ -1226,9 +1127,9 @@ with tab_catch:
                 except Exception as e:
                     st.error(f"扫描失败: {e}")
 
-        with col_c2:
-            st.subheader("扫描结果")
-            catch_results = st.session_state.get("catch_results", [])
+    with col_c2:
+        st.subheader("扫描结果")
+        catch_results = st.session_state.get("catch_results", [])
 
         if not catch_results:
             st.info("点击左侧「开始扫描」查看补牢机会")

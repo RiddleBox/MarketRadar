@@ -107,7 +107,15 @@ class ScheduledTask:
                 return True
             
             # 周期性任务：判断是否在时间窗口内
-            if not (dtime(start_h, start_m) <= t <= dtime(end_h, end_m)):
+            # 处理跨日时段（如21:30~04:00）
+            if end_h < start_h or (end_h == start_h and end_m < start_m):
+                # 跨日时段：当前时间 >= 开始时间 或 当前时间 <= 结束时间
+                in_window = (t >= dtime(start_h, start_m)) or (t <= dtime(end_h, end_m))
+            else:
+                # 同日时段：当前时间在开始和结束之间
+                in_window = dtime(start_h, start_m) <= t <= dtime(end_h, end_m)
+            
+            if not in_window:
                 return False
         
         # 判断间隔

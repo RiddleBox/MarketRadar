@@ -1,30 +1,26 @@
 [
   {
-    "event": "OPEN",
-    "timestamp": "2026-05-06T00:42:40.673352",
-    "paper_position_id": "pp_bac35b72b2",
-    "instrument": "AMD",
-    "market": "US",
+    "event": "CLOSE",
+    "timestamp": "2026-05-01T09:52:32.522415",
+    "paper_position_id": "pp_c8206253f7",
+    "instrument": "000001.SZ",
+    "market": "A_SHARE",
     "direction": "BULLISH",
-    "status": "OPEN",
-    "realized_pnl_pct": null,
-    "realized_pnl_after_fees": null,
-    "fee_paid": 40.7984,
-    "order_id": "ord_d407610314",
-    "order_fee": 40.7984
+    "status": "MANUAL",
+    "realized_pnl_pct": 0.0,
+    "realized_pnl_after_fees": -0.003,
+    "fee_paid": 30.0
   },
   {
-    "event": "OPEN",
-    "timestamp": "2026-05-06T00:52:48.418622",
-    "paper_position_id": "pp_8287adb70c",
-    "instrument": "SMH",
-    "market": "US",
+    "event": "CLOSE",
+    "timestamp": "2026-05-01T09:52:32.543728",
+    "paper_position_id": "pp_310b306b84",
+    "instrument": "000001.SZ",
+    "market": "A_SHARE",
     "direction": "BULLISH",
-    "status": "OPEN",
-    "realized_pnl_pct": null,
-    "realized_pnl_after_fees": null,
-    "fee_paid": 65.27744,
-    "order_id": "ord_652bb800e7",
-    "order_fee": 65.27744
+    "status": "MANUAL",
+    "realized_pnl_pct": 0.0,
+    "realized_pnl_after_fees": -0.003,
+    "fee_paid": 30.0
   }
 ]

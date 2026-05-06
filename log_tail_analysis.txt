@@ -1,106 +1,0 @@
-actory] ���� m7_intraday_scan | a_share -> futu[0m
-[32m2026-05-06 09:40:42.685[0m | [1mINFO    [0m | [36mm9_paper_trader.feed_factory[0m:[36mget_feed[0m:[36m143[0m - [1m[DataFeedFactory] ���� m7_intraday_scan | hk_share -> futu[0m
-[AKShareNewsProvider] �����Ƹ����Ż�ȡʧ��: Invalid regular expression: invalid escape sequence: \u
-[AKShareNewsProvider] �������Ѷ��ȡʧ��: module 'akshare' has no attribute 'stock_zh_a_alerts_cls'
-[32m2026-05-06 09:50:47.040[0m | [1mINFO    [0m | [36mm9_paper_trader.feed_factory[0m:[36mget_feed[0m:[36m143[0m - [1m[DataFeedFactory] ���� m7_intraday_scan | a_share -> futu[0m
-[M0] AKShare ���Ųɼ�ʧ��: Invalid regular expression: invalid escape sequence: \u
-[32m2026-05-06 09:51:01.879[0m | [1mINFO    [0m | [36mm9_paper_trader.feed_factory[0m:[36mget_feed[0m:[36m143[0m - [1m[DataFeedFactory] ���� m7_intraday_scan | hk_share -> futu[0m
-[AKShareNewsProvider] �����Ƹ����Ż�ȡʧ��: Invalid regular expression: invalid escape sequence: \u
-[AKShareNewsProvider] �������Ѷ��ȡʧ��: module 'akshare' has no attribute 'stock_zh_a_alerts_cls'
-[32m2026-05-06 10:01:07.520[0m | [1mINFO    [0m | [36mm9_paper_trader.feed_factory[0m:[36mget_feed[0m:[36m143[0m - [1m[DataFeedFactory] ���� m7_intraday_scan | a_share -> futu[0m
-[M0] AKShare ���Ųɼ�ʧ��: Invalid regular expression: invalid escape sequence: \u
-[32m2026-05-06 10:01:24.937[0m | [1mINFO    [0m | [36mm9_paper_trader.feed_factory[0m:[36mget_feed[0m:[36m143[0m - [1m[DataFeedFactory] ���� m7_intraday_scan | hk_share -> futu[0m
-  0%|          | 0/11 [00:00<?, ?it/s]  9%|��         | 1/11 [00:03<00:30,  3.07s/it] 18%|����        | 2/11 [00:06<00:30,  3.42s/it] 27%|������       | 3/11 [00:10<00:26,  3.37s/it] 36%|��������      | 4/11 [00:14<00:25,  3.65s/it] 45%|����������     | 5/11 [00:17<00:21,  3.60s/it] 55%|������������    | 6/11 [00:21<00:17,  3.53s/it] 64%|��������������   | 7/11 [00:24<00:13,  3.37s/it] 73%|����������������  | 8/11 [00:26<00:09,  3.23s/it] 82%|������������������ | 9/11 [00:35<00:09,  4.73s/it] 91%|������������������ | 10/11 [00:39<00:04,  4.57s/it]100%|��������������������| 11/11 [00:41<00:00,  3.89s/it]                                               [32m2026-05-06 10:11:50.820[0m | [1mINFO    [0m | [36mm9_paper_trader.feed_factory[0m:[36mget_feed[0m:[36m143[0m - [1m[DataFeedFactory] ���� m7_intraday_scan | a_share -> futu[0m
-[M0] AKShare ���Ųɼ�ʧ��: Invalid regular expression: invalid escape sequence: \u
-[32m2026-05-06 10:12:07.672[0m | [1mINFO    [0m | [36mm9_paper_trader.feed_factory[0m:[36mget_feed[0m:[36m143[0m - [1m[DataFeedFactory] ���� m7_intraday_scan | hk_share -> futu[0m
-[AKShareNewsProvider] �����Ƹ����Ż�ȡʧ��: Invalid regular expression: invalid escape sequence: \u
-[AKShareNewsProvider] �������Ѷ��ȡʧ��: module 'akshare' has no attribute 'stock_zh_a_alerts_cls'
-[32m2026-05-06 10:22:12.421[0m | [1mINFO    [0m | [36mm9_paper_trader.feed_factory[0m:[36mget_feed[0m:[36m143[0m - [1m[DataFeedFactory] ���� m7_intraday_scan | a_share -> futu[0m
-[M0] AKShare ���Ųɼ�ʧ��: Invalid regular expression: invalid escape sequence: \u
-[32m2026-05-06 10:22:24.868[0m | [1mINFO    [0m | [36mm9_paper_trader.feed_factory[0m:[36mget_feed[0m:[36m143[0m - [1m[DataFeedFactory] ���� m7_intraday_scan | hk_share -> futu[0m
-98, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "D:\AIProjects\MarketRadar\m7_scheduler\cli.py", line 285, in <module>
-    cli()
-    ~~~^^
-  File "C:\Users\lidaldzhou\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1514, in __call__
-    return self.main(*args, **kwargs)
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "C:\Users\lidaldzhou\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1435, in main
-    rv = self.invoke(ctx)
-  File "C:\Users\lidaldzhou\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1902, in invoke
-    return _process_result(sub_ctx.command.invoke(sub_ctx))
-                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "C:\Users\lidaldzhou\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1298, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\lidaldzhou\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 853, in invoke
-    return callback(*args, **kwargs)
-  File "D:\AIProjects\MarketRadar\m7_scheduler\cli.py", line 127, in start
-    PID_FILE.write_text(str(os.getpid()))
-                            ^^
-UnboundLocalError: cannot access local variable 'os' where it is not associated with a value
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "D:\AIProjects\MarketRadar\m7_scheduler\cli.py", line 289, in <module>
-    cli()
-    ~~~^^
-  File "C:\Users\lidaldzhou\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1514, in __call__
-    return self.main(*args, **kwargs)
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "C:\Users\lidaldzhou\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1435, in main
-    rv = self.invoke(ctx)
-  File "C:\Users\lidaldzhou\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1902, in invoke
-    return _process_result(sub_ctx.command.invoke(sub_ctx))
-                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "C:\Users\lidaldzhou\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1298, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\lidaldzhou\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 853, in invoke
-    return callback(*args, **kwargs)
-  File "D:\AIProjects\MarketRadar\m7_scheduler\cli.py", line 131, in start
-    PID_FILE.write_text(str(os.getpid()))
-                            ^^
-UnboundLocalError: cannot access local variable 'os' where it is not associated with a value
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "D:\AIProjects\MarketRadar\m7_scheduler\cli.py", line 289, in <module>
-    cli()
-    ~~~^^
-  File "C:\Users\lidaldzhou\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1514, in __call__
-    return self.main(*args, **kwargs)
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "C:\Users\lidaldzhou\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1435, in main
-    rv = self.invoke(ctx)
-  File "C:\Users\lidaldzhou\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1902, in invoke
-    return _process_result(sub_ctx.command.invoke(sub_ctx))
-                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "C:\Users\lidaldzhou\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1298, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\lidaldzhou\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 853, in invoke
-    return callback(*args, **kwargs)
-  File "D:\AIProjects\MarketRadar\m7_scheduler\cli.py", line 131, in start
-    PID_FILE.write_text(str(os.getpid()))
-                            ^^
-UnboundLocalError: cannot access local variable 'os' where it is not associated with a value
-[M7] ✗ 任务失败: price_update | No module named 'm0_core'
-[AKShareNewsProvider] 东方财富新闻获取失败: Invalid regular expression: invalid escape sequence: \u
-[AKShareNewsProvider] 财联社快讯获取失败: module 'akshare' has no attribute 'stock_zh_a_alerts_cls'
-[M7/m12_a_share_scan] 失败: No module named 'm0_core'
-[M7/m12_hk_scan] 失败: No module named 'm0_core'
-[M7] ✗ 任务失败: price_update | No module named 'm0_core'
-[M7/m12_a_share_scan] 失败: No module named 'm0_core'
-[M7/m12_hk_scan] 失败: No module named 'm0_core'
-[AKShareNewsProvider] 东方财富新闻获取失败: Invalid regular expression: invalid escape sequence: \u
-[AKShareNewsProvider] 财联社快讯获取失败: module 'akshare' has no attribute 'stock_zh_a_alerts_cls'
-[32m2026-05-06 10:23:04.614[0m | [1mINFO    [0m | [36mm9_paper_trader.feed_factory[0m:[36m_load_config[0m:[36m39[0m - [1m[DataFeedFactory] 加载配置: D:\AIProjects\MarketRadar\config\data_sources.yaml[0m
-[32m2026-05-06 10:23:04.963[0m | [1mINFO    [0m | [36mm9_paper_trader.feed_factory[0m:[36m_create_feed_instance[0m:[36m78[0m - [1m[DataFeedFactory] 创建 FutuFeed[0m
-[AKShareNewsProvider] 东方财富新闻获取失败: Invalid regular expression: invalid escape sequence: \u
-[AKShareNewsProvider] 财联社快讯获取失败: module 'akshare' has no attribute 'stock_zh_a_alerts_cls'
-[32m2026-05-06 10:23:07.407[0m | [1mINFO    [0m | [36mm9_paper_trader.feed_factory[0m:[36mget_feed[0m:[36m143[0m - [1m[DataFeedFactory] 场景 m7_intraday_scan | a_share -> futu[0m
-[32m2026-05-06 10:23:22.601[0m | [1mINFO    [0m | [36mm9_paper_trader.feed_factory[0m:[36mget_feed[0m:[36m143[0m - [1m[DataFeedFactory] 场景 m7_intraday_scan | hk_share -> futu[0m
-[32m2026-05-06 12:51:31.367[0m | [1mINFO    [0m | [36mm9_paper_trader.feed_factory[0m:[36m_load_config[0m:[36m39[0m - [1m[DataFeedFactory] 加载配置: D:\AIProjects\MarketRadar\config\data_sources.yaml[0m
-[32m2026-05-06 12:59:39.614[0m | [1mINFO    [0m | [36mm9_paper_trader.feed_factory[0m:[36m_load_config[0m:[36m39[0m - [1m[DataFeedFactory] 加载配置: D:\AIProjects\MarketRadar\config\data_sources.yaml[0m
