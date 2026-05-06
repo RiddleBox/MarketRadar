@@ -1,0 +1,68 @@
+{
+  "plan_id": "plan_a2d471e8e4b5",
+  "opportunity_id": "opp_5ca0be98",
+  "plan_summary": "BULLISH | AMKR.US, AMKL",
+  "primary_instruments": [
+    "AMKR.US",
+    "AMKL"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "US",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 2.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": null
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "反弹至财报前高点（约31.5-32.0美元）"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0% | Kelly参考=11.9%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入AMKR.US，仓位占总计划资金的25%（上限30%），同时买入等量AMKL作为对冲（占总计划资金5%，总仓位30%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "AMKR股价跌至28.5-29.5美元区间，且AMKL上市首日成交量达标"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓AMKR.US至总计划资金的60%（即追加35%仓位），同时将AMKL仓位调整至总计划资金的10%（总仓位70%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1持仓浮盈达到3%（即AMKR股价从入场价上涨3%），且AMKL连续3日净流入资金为正"
+    },
+    {
+      "phase_name": "Phase 3 满仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总计划资金的100%（即追加30%仓位），全部配置AMKR.US，AMKL仓位平仓转为AMKR（总仓位100%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 2持仓浮盈达到5%（即AMKR股价从Phase 2入场价再涨2%），且半导体板块指数（SOX）未出现单日跌幅超2%"
+    }
+  ],
+  "valid_until": "2026-05-27 02:19:36.399368",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-06 02:19:36.399473",
+  "opportunity_priority": "research"
+}

@@ -1,0 +1,364 @@
+[
+  {
+    "opportunity": {
+      "opportunity_id": "opp_e6a46f61",
+      "opportunity_title": "半导体AI扩散行情",
+      "opportunity_thesis": "半导体ETF SOXX和SMH录得25年来最佳月度表现，且上涨驱动力从Nvidia扩散至Intel、AMD、Micron、Marvell等二线芯片股，表明AI基础设施投资正从硬件龙头向更广泛的供应链和应用端扩散。AOSL发布AI服务器新品并获得机构首次覆盖买入评级，进一步验证了这一扩散趋势。当前市场情绪中性偏乐观，尚未过热，存在预期差，构成结构性做多机会。",
+      "target_markets": [
+        "US"
+      ],
+      "target_instruments": [
+        "SOXX",
+        "SMH",
+        "INTC",
+        "AMD",
+        "MU",
+        "MRVL",
+        "AOSL"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "ETF",
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-06 00:00:00",
+        "end": "2026-08-06 00:00:00",
+        "confidence_level": 0.7
+      },
+      "why_now": "半导体ETF创25年最佳月度表现，上涨结构从Nvidia扩散至Intel、AMD等，表明行情处于早期扩散阶段而非尾声。AOSL新品发布和机构覆盖提供了新的微观催化剂。市场情绪中性，尚未出现极端贪婪，时间窗口仍在。",
+      "related_signals": [
+        "sig_58e10d19832e",
+        "sig_491db8df1dc3",
+        "sig_fa2750224d3c",
+        "sig_4b57983e8d8f",
+        "sig_a36a5311ea5c",
+        "sig_cd3a38daf82e",
+        "sig_b609ce55283b",
+        "sig_1ed504199592",
+        "sig_985bad902eec"
+      ],
+      "inferred_events": [
+        "inferred_02c62b48",
+        "inferred_00b716d5",
+        "inferred_2370744f",
+        "inferred_ac762c4e",
+        "inferred_d7a7726d",
+        "inferred_6ded5200",
+        "inferred_1c58e2fe",
+        "inferred_71f80034",
+        "inferred_b350613d",
+        "inferred_1d3994d2"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout",
+        "case_2024_ma"
+      ],
+      "supporting_evidence": [
+        "SOXX和SMH分别录得25年来最大月度回报和自2003年11月以来最佳月度表现",
+        "上涨驱动力从Nvidia转向Intel、AMD、Micron、Marvell，显示AI投资扩散",
+        "AOSL发布面向AI服务器的SmartClamp DrMOS新品，获得Needham首次覆盖买入评级",
+        "Nasdaq 100突破28000点创历史新高，Nasdaq Composite月度涨幅15.3%为2020年以来最佳"
+      ],
+      "counter_evidence": [
+        "Nvidia作为AI硬件龙头在本轮上涨中表现最慢，可能暗示AI硬件需求增速放缓",
+        "半导体板块已大幅上涨，短期获利回吐压力可能增加"
+      ],
+      "key_assumptions": [
+        "假设1：AI基础设施投资从Nvidia向更广泛供应链扩散的趋势将持续",
+        "假设2：美国经济不出现超预期衰退，企业IT支出保持增长",
+        "假设3：地缘政治风险（如中美科技摩擦）不显著升级"
+      ],
+      "uncertainty_map": [
+        "AI投资扩散速度与持续性（影响程度：高）",
+        "美联储货币政策转向节奏（影响程度：中）",
+        "半导体板块短期估值泡沫风险（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 8,
+        "timeliness": 7,
+        "market_confirmation": 8,
+        "tradability": 9,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 9,
+        "overall_score": 7.7,
+        "confidence_score": 0.78,
+        "execution_readiness": 0.85
+      },
+      "risk_reward_profile": "潜在收益来自AI扩散行情持续，二线芯片股补涨空间较大；风险在于板块短期过热后回调，以及AI投资增速放缓。预期收益/风险比约2:1。",
+      "next_validation_questions": [
+        "Intel、AMD、Micron、Marvell等公司近期是否有明确的AI相关订单或业绩指引上调？",
+        "半导体板块资金流向是否持续，ETF期权隐含波动率是否处于合理水平？",
+        "AOSL新品是否已获得主要服务器厂商的采用？"
+      ],
+      "invalidation_conditions": [
+        "半导体ETF SOXX/SMH出现连续3日以上放量下跌",
+        "Intel、AMD等公司发布低于预期的业绩指引",
+        "美联储意外加息或释放鹰派信号"
+      ],
+      "must_watch_indicators": [
+        "SOXX/SMH价格与成交量变化",
+        "Intel、AMD、MU、MRVL相对Nvidia的股价表现",
+        "美国10年期国债收益率",
+        "AI相关公司财报与订单公告"
+      ],
+      "kill_switch_signals": [
+        "半导体板块单日跌幅超过5%且伴随放量",
+        "主要AI公司（如Nvidia）发布需求放缓预警",
+        "中美科技领域出现重大制裁或禁令"
+      ],
+      "warnings": [
+        "注意：部分信号来源为新闻和机构研报，非官方公告，需进一步验证",
+        "注意：半导体板块已大幅上涨，短期追高存在回调风险"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-06 03:31:58.602797",
+      "batch_id": "m12_AIOS.US_2026-05-06",
+      "origin": "opportunity_catcher",
+      "entry_constraint": null
+    },
+    "anomaly": {
+      "anomaly_id": "ano_bc1d0bd4a170",
+      "instrument": "AIOS.US",
+      "market": "US",
+      "anomaly_type": "daily_surge",
+      "anomaly_date": "2026-05-06",
+      "price_change_pct": 20.23,
+      "atr_multiple": 0.0,
+      "sigma_multiple": 0.0,
+      "volume_ratio": 0.0,
+      "baseline_price": 15.52,
+      "anomaly_price": 18.66,
+      "n_days": 1,
+      "is_limit_up": false,
+      "is_limit_down": false,
+      "detected_at": "2026-05-06 03:25:08.562034"
+    },
+    "causation": {
+      "anomaly": {
+        "anomaly_id": "ano_bc1d0bd4a170",
+        "instrument": "AIOS.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 20.23,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 15.52,
+        "anomaly_price": 18.66,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 03:25:08.562034"
+      },
+      "causes": [
+        {
+          "signal_id": "sig_a4ff28797a08",
+          "signal_type": "event_driven",
+          "signal_label": "Alkermes一季度营收同比增长28.2%",
+          "description": "Alkermes plc公布2026年第一季度财报，营收从去年同期的3.0651亿美元增长至3.9291亿美元，同比增长约28.2%。",
+          "evidence_text": "Alkermes plc reported earnings results for the first quarter ended March 31, 2026. For the first quarter, the company reported revenue was USD 392.91 million compared to USD 306.51 million a year ago.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "ALKS.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 03:23:06",
+          "collected_time": "2026-05-06 03:23:11.598774",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 9,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=23305d73babba26084c134c5f7071a87b19d1b917a78c21470a402b9bfc4c5b7",
+          "logic_frame": {
+            "what_changed": "Alkermes plc 2026年第一季度营收从3.0651亿美元增长至3.9291亿美元，同比增长28.2%。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "ALKS.US"
+            ]
+          },
+          "batch_id": "m12_ALKS.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_794eb0ccd103",
+          "signal_type": "industry",
+          "signal_label": "Akamai报告API安全漏洞增加",
+          "description": "Akamai发布新研究，指出随着组织加速API部署且缺乏足够安全措施，API安全漏洞显著增加。API安全影响调查报告显示，针对API的网络攻击明显上升，大多数组织受到影响。",
+          "evidence_text": "Akamai Technologies (NasdaqGS:AKAM) released new research highlighting significant security gaps as organizations accelerate API deployment without sufficient safeguards. The API Security Impact Survey reports a marked rise in API focused cyberattacks, with incidents affecting a large majority of organizations.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AKAM"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 03:20:01",
+          "collected_time": "2026-05-06 03:20:06.415513",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=22e09976bc2d5bbb9d858fb319384f4ab3c0ed537b3976e7cbf780b31b27e0cd",
+          "logic_frame": {
+            "what_changed": "Akamai发布了关于API安全漏洞增加的新研究报告，指出针对API的网络攻击显著上升。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "Akamai Technologies (AKAM)",
+              "网络安全行业"
+            ]
+          },
+          "batch_id": "m12_AKAM.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_cb7f56afa17c",
+          "signal_type": "event_driven",
+          "signal_label": "Let's have a look at the top gainers and losers in the middle of the day of toda",
+          "description": "Keep an eye on the top gainers and losers in Monday's session, as they reflect the most notable price movements.",
+          "evidence_text": "Keep an eye on the top gainers and losers in Monday's session, as they reflect the most notable price movements.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AIOS.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 03:18:20.099857",
+          "collected_time": "2026-05-06 03:18:20.099857",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 4,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=8682e0542b347facaefcba9eeb62415ffd4fe5e480a7bf885aa2c1e583035764",
+          "logic_frame": {
+            "what_changed": "Let's have a look at the top gainers and losers in the middl",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AIOS.US"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_22c20073107b",
+          "signal_type": "event_driven",
+          "signal_label": "These stocks are moving in today's session",
+          "description": "Keep an eye on the top gainers and losers in Monday's session, as they reflect the most notable price movements.",
+          "evidence_text": "Keep an eye on the top gainers and losers in Monday's session, as they reflect the most notable price movements.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AIOS.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 03:18:20.099841",
+          "collected_time": "2026-05-06 03:18:20.099842",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 4,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=5485de89ed51fd2a0c3b76167b905f1aedb6122d3968df72383cf29a3ad79c07",
+          "logic_frame": {
+            "what_changed": "These stocks are moving in today's session",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AIOS.US"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_e3d66d6a2590",
+          "signal_type": "event_driven",
+          "signal_label": "12 Information Technology Stocks Moving In Tuesday's Intraday Session",
+          "description": " ",
+          "evidence_text": " ",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AIOS.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 03:18:20.099797",
+          "collected_time": "2026-05-06 03:18:20.099800",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 4,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=a058f351672aa3301a3491a01d1c7547dcf25512bec9134ad946e0a27f591411",
+          "logic_frame": {
+            "what_changed": "12 Information Technology Stocks Moving In Tuesday's Intrada",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AIOS.US"
+            ]
+          },
+          "batch_id": null
+        }
+      ],
+      "unexplained_ratio": 0.0,
+      "confidence": 1.0,
+      "causation_type": "earnings"
+    },
+    "trend": {
+      "anomaly": {
+        "anomaly_id": "ano_bc1d0bd4a170",
+        "instrument": "AIOS.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 20.23,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 15.52,
+        "anomaly_price": 18.66,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 03:25:08.562034"
+      },
+      "stage": "middle",
+      "remaining_upside_pct": 4.0,
+      "catalyst_persistence": "one_time",
+      "similar_cases": [],
+      "reasoning": "AIOS.US 1日涨幅+20.2%（AnomalyType.DAILY_SURGE）\n趋势阶段判断: 趋势中期（谨慎）\n原因类型: earnings，持续性: 一次性\n溯源置信度: 100%，无法解释比例: 0%\n估算剩余空间: 4.0%\n主要原因: event_driven: Alkermes一季度营收同比增长28.; industry: Akamai报告API安全漏洞增加\n建议: 紧止损谨慎参与"
+    },
+    "origin": "opportunity_catcher",
+    "stop_loss_candidates": [
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 2.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 4.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "atr",
+        "stop_loss_value": 1.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      }
+    ]
+  }
+]

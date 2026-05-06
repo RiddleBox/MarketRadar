@@ -1,0 +1,830 @@
+[
+  {
+    "opportunity": {
+      "opportunity_id": "opp_61ebc202",
+      "opportunity_title": "AOSL新品+评级催化",
+      "opportunity_thesis": "AOSL发布面向AI服务器和高端GPU的SmartClamp DrMOS新品，属于技术迭代型产品发布，叠加Needham首次覆盖买入评级（目标价50美元），构成短期催化剂共振。AI服务器功率半导体需求持续增长，AOSL作为细分领域供应商有望受益于产品升级周期和机构关注度提升。当前市场对AOSL关注度较低，存在预期差，但需警惕商业化落地速度和竞争格局风险。",
+      "target_markets": [
+        "US"
+      ],
+      "target_instruments": [
+        "AOSL.US"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-06 00:00:00",
+        "end": "2026-06-06 00:00:00",
+        "confidence_level": 0.65
+      },
+      "why_now": "新品发布与分析师首次覆盖同日发生，形成事件驱动共振，短期关注度骤升。AI服务器功率半导体赛道景气度上行，AOSL新品技术指标领先，Needham目标价50美元提供估值锚。当前股价尚未充分反应新品商业化潜力，窗口期约1个月。",
+      "related_signals": [
+        "sig_a36a5311ea5c",
+        "sig_cd3a38daf82e",
+        "sig_b609ce55283b",
+        "sig_a36a5311ea5c",
+        "sig_cd3a38daf82e",
+        "sig_b609ce55283b"
+      ],
+      "inferred_events": [
+        "inferred_7ca17a3e",
+        "inferred_f224b79c",
+        "inferred_823fac37",
+        "inferred_0e3e65eb",
+        "inferred_395bf77a"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout",
+        "case_2024_ma"
+      ],
+      "supporting_evidence": [
+        "AOSL发布SmartClamp DrMOS系列，面向AI服务器和高端GPU，技术指标行业领先",
+        "Needham首次覆盖给予买入评级，目标价50美元，提供估值参考",
+        "AI服务器功率半导体需求持续增长，AOSL作为细分供应商受益于产品升级周期",
+        "多条信号均指向BULLISH方向，信号一致性较高"
+      ],
+      "counter_evidence": [
+        "新品商业化落地时间不确定，需等待客户验证和订单公告",
+        "功率半导体市场竞争激烈，英飞凌、TI等巨头占据主导地位"
+      ],
+      "key_assumptions": [
+        "假设1：AOSL新品能获得主要AI服务器/GPU客户的采用",
+        "假设2：AI服务器功率半导体需求保持增长趋势",
+        "假设3：Needham目标价50美元基于合理估值模型"
+      ],
+      "uncertainty_map": [
+        "新品商业化进度不确定（影响程度：高）",
+        "竞争格局变化，大厂可能推出同类产品（影响程度：中）",
+        "AI服务器投资周期波动风险（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 6,
+        "timeliness": 8,
+        "market_confirmation": 4,
+        "tradability": 7,
+        "risk_clarity": 5,
+        "consensus_gap": 7,
+        "signal_consistency": 8,
+        "overall_score": 6.4,
+        "confidence_score": 0.65,
+        "execution_readiness": 0.7
+      },
+      "risk_reward_profile": "潜在收益：新品商业化成功+机构关注度提升，股价有望向50美元目标价靠拢（约20-30%上行空间）。潜在风险：新品未获大客户采用或竞争加剧，股价可能回落至发布前水平（约10-15%下行风险）。收益风险比约2:1。",
+      "next_validation_questions": [
+        "AOSL新品是否有已公开的客户合作或订单信息？",
+        "Needham目标价50美元基于哪些假设？当前股价与目标价差距多大？",
+        "AOSL近期财报中AI服务器相关收入占比及增长趋势如何？",
+        "竞争对手（如英飞凌、MPS）是否有类似产品发布计划？"
+      ],
+      "invalidation_conditions": [
+        "AOSL发布公告称新品未获得主要客户采用",
+        "Needham或其他机构下调评级或目标价",
+        "AI服务器资本开支出现明显放缓信号"
+      ],
+      "must_watch_indicators": [
+        "AOSL股价与成交量变化",
+        "AI服务器相关ETF（如SMH）走势",
+        "AOSL官方公告或客户合作新闻",
+        "Needham后续研报更新"
+      ],
+      "kill_switch_signals": [
+        "AOSL股价跌破新品发布前低点",
+        "主要竞争对手发布同类产品且技术参数更优",
+        "AI服务器行业出现重大负面事件"
+      ],
+      "warnings": [
+        "注意：新品商业化时间不确定，短期股价可能仅受情绪驱动",
+        "注意：信号来源均为新闻和研报，非官方订单公告"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-06 03:01:55.907724",
+      "batch_id": "m12_AIOS.US_2026-05-06",
+      "origin": "opportunity_catcher",
+      "entry_constraint": null
+    },
+    "anomaly": {
+      "anomaly_id": "ano_02cf37b6fc4e",
+      "instrument": "AIOS.US",
+      "market": "US",
+      "anomaly_type": "daily_surge",
+      "anomaly_date": "2026-05-06",
+      "price_change_pct": 26.74,
+      "atr_multiple": 0.0,
+      "sigma_multiple": 0.0,
+      "volume_ratio": 0.0,
+      "baseline_price": 15.52,
+      "anomaly_price": 19.67,
+      "n_days": 1,
+      "is_limit_up": false,
+      "is_limit_down": false,
+      "detected_at": "2026-05-06 02:55:30.956051"
+    },
+    "causation": {
+      "anomaly": {
+        "anomaly_id": "ano_02cf37b6fc4e",
+        "instrument": "AIOS.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 26.74,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 15.52,
+        "anomaly_price": 19.67,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 02:55:30.956051"
+      },
+      "causes": [
+        {
+          "signal_id": "sig_a36a5311ea5c",
+          "signal_type": "industry",
+          "signal_label": "AOSL发布DrMOS新品",
+          "description": "Alpha and Omega Semiconductor发布了面向AI服务器和高端GPU的SmartClamp™ Protected DrMOS系列，该技术提供行业领先的峰值电流限制，确保高需求AI工作负载的安全可靠运行。",
+          "evidence_text": "Alpha and Omega Semiconductor Unveils SmartClamp™ Protected DrMOS Family for AI Servers and High-End GPUs. New DrMOS technology delivers industry-leading peak-to-peak current limiting, ensuring safe and reliable operation for high-demand AI workloads...",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:55:01",
+          "collected_time": "2026-05-06 02:55:07.109418",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=67b2e6a1c64a3059f46795f85fa8c6ec44ba96552acf1b82620ff26306dfd769",
+          "logic_frame": {
+            "what_changed": "Alpha and Omega Semiconductor发布了面向AI服务器和高端GPU的新一代DrMOS产品系列",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL.US",
+              "AI服务器电源管理芯片市场"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_cd3a38daf82e",
+          "signal_type": "industry",
+          "signal_label": "AOSL发布SmartClamp DrMOS新品",
+          "description": "Alpha and Omega Semiconductor（AOSL）发布了面向AI服务器和高端GPU的SmartClamp Protected DrMOS系列产品，这是一款新的功率管理集成电路产品。",
+          "evidence_text": "Alpha and Omega Semiconductor Unveils SmartClamp Protected DrMOS Family for AI Servers and High-End GPUs",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:54:57",
+          "collected_time": "2026-05-06 02:55:01.695618",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 8,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=8491eb87bb6bbf29595df44ac1cbd403fae28f8902040df3053a9d558a12663c",
+          "logic_frame": {
+            "what_changed": "AOSL发布了面向AI服务器和高端GPU的新一代DrMOS功率管理产品",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL",
+              "功率半导体行业",
+              "AI服务器供应链"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_b609ce55283b",
+          "signal_type": "event_driven",
+          "signal_label": "Needham首次覆盖AOSL给予买入评级",
+          "description": "Needham分析师David Williams首次覆盖Alpha & Omega Semiconductor（AOSL），给予买入评级，目标价50美元。",
+          "evidence_text": "Needham analyst David Williams initiates coverage on Alpha & Omega (NASDAQ:AOSL) with a Buy rating and announces Price Target of $50.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:54:52",
+          "collected_time": "2026-05-06 02:54:57.403014",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 3,
+          "confidence_score": 6,
+          "timeliness_score": 8,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=1baea0c159adda7fe177a377a7749550ab1781bc4fdc9d2057edd2f34b953439",
+          "logic_frame": {
+            "what_changed": "Needham首次覆盖AOSL，给予买入评级和50美元目标价",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_85c1ddaae200",
+          "signal_type": "event_driven",
+          "signal_label": "10 Industrials Stocks Whale Activity In Today's Session",
+          "description": " ",
+          "evidence_text": " ",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AMSC.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:53:25.269846",
+          "collected_time": "2026-05-06 02:53:25.269847",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 4,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=52697546749ea780db7e913a466943e77e932c726ac759ef3c8799c779b6046d",
+          "logic_frame": {
+            "what_changed": "10 Industrials Stocks Whale Activity In Today's Session",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AMSC.US"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_4ac86b38d456",
+          "signal_type": "event_driven",
+          "signal_label": "Energous shares are trading higher after the company announced continued commerc",
+          "description": "Energous shares are trading higher after the company announced continued commercial momentum across its enterprise customer base, including expanding deployments with its two Fortune 10 customers, and",
+          "evidence_text": "Energous shares are trading higher after the company announced continued commercial momentum across its enterprise customer base, including expanding deployments with its two Fortune 10 customers, and a growing proof-of-concept pipeline spanning multiple industries and geographies.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AMSC.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:53:25.269832",
+          "collected_time": "2026-05-06 02:53:25.269833",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 4,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=e173e56ef2522986399f5660d43371d1d98b6c448d192997fed9e676b3ff52e3",
+          "logic_frame": {
+            "what_changed": "Energous shares are trading higher after the company announc",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AMSC.US"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_17da0266f8c8",
+          "signal_type": "event_driven",
+          "signal_label": "12 Information Technology Stocks Moving In Tuesday's Intraday Session",
+          "description": " ",
+          "evidence_text": " ",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AIOS.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 03:01:16.983333",
+          "collected_time": "2026-05-06 03:01:16.983335",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 4,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=a058f351672aa3301a3491a01d1c7547dcf25512bec9134ad946e0a27f591411",
+          "logic_frame": {
+            "what_changed": "12 Information Technology Stocks Moving In Tuesday's Intrada",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AIOS.US"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_34833fb91fd7",
+          "signal_type": "event_driven",
+          "signal_label": "These stocks are moving in today's session",
+          "description": "Keep an eye on the top gainers and losers in Monday's session, as they reflect the most notable price movements.",
+          "evidence_text": "Keep an eye on the top gainers and losers in Monday's session, as they reflect the most notable price movements.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AIOS.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 03:01:16.983385",
+          "collected_time": "2026-05-06 03:01:16.983386",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 4,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=5485de89ed51fd2a0c3b76167b905f1aedb6122d3968df72383cf29a3ad79c07",
+          "logic_frame": {
+            "what_changed": "These stocks are moving in today's session",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AIOS.US"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_2ae376d1b4a0",
+          "signal_type": "event_driven",
+          "signal_label": "Let's have a look at the top gainers and losers in the middle of the day of toda",
+          "description": "Keep an eye on the top gainers and losers in Monday's session, as they reflect the most notable price movements.",
+          "evidence_text": "Keep an eye on the top gainers and losers in Monday's session, as they reflect the most notable price movements.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AIOS.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 03:01:16.983405",
+          "collected_time": "2026-05-06 03:01:16.983406",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 4,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=8682e0542b347facaefcba9eeb62415ffd4fe5e480a7bf885aa2c1e583035764",
+          "logic_frame": {
+            "what_changed": "Let's have a look at the top gainers and losers in the middl",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AIOS.US"
+            ]
+          },
+          "batch_id": null
+        }
+      ],
+      "unexplained_ratio": 0.0,
+      "confidence": 1.0,
+      "causation_type": "earnings"
+    },
+    "trend": {
+      "anomaly": {
+        "anomaly_id": "ano_02cf37b6fc4e",
+        "instrument": "AIOS.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 26.74,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 15.52,
+        "anomaly_price": 19.67,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 02:55:30.956051"
+      },
+      "stage": "middle",
+      "remaining_upside_pct": 5.3,
+      "catalyst_persistence": "one_time",
+      "similar_cases": [],
+      "reasoning": "AIOS.US 1日涨幅+26.7%（AnomalyType.DAILY_SURGE）\n趋势阶段判断: 趋势中期（谨慎）\n原因类型: earnings，持续性: 一次性\n溯源置信度: 100%，无法解释比例: 0%\n估算剩余空间: 5.3%\n主要原因: industry: AOSL发布DrMOS新品; industry: AOSL发布SmartClamp DrM\n建议: 紧止损谨慎参与"
+    },
+    "origin": "opportunity_catcher",
+    "stop_loss_candidates": [
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 2.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 4.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "atr",
+        "stop_loss_value": 1.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "opportunity": {
+      "opportunity_id": "opp_43629af1",
+      "opportunity_title": "AOSL AI功率半导体机会",
+      "opportunity_thesis": "AOSL发布面向AI服务器的SmartClamp DrMOS新品，属于技术迭代和产品升级，叠加Needham首次覆盖买入评级，形成短期催化剂。但信号强度中等，且缺乏商业化订单或营收指引的确认，属于事件驱动型机会，需验证市场反应和后续订单落地。",
+      "target_markets": [
+        "US"
+      ],
+      "target_instruments": [
+        "AOSL.US"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-06 00:00:00",
+        "end": "2026-05-20 00:00:00",
+        "confidence_level": 0.6
+      },
+      "why_now": "新品发布和首次覆盖评级同时发生，形成短期情绪共振，市场可能给予正面反应。但缺乏后续订单或业绩催化，窗口期较短。",
+      "related_signals": [
+        "sig_a36a5311ea5c",
+        "sig_cd3a38daf82e",
+        "sig_b609ce55283b",
+        "sig_a36a5311ea5c",
+        "sig_cd3a38daf82e",
+        "sig_b609ce55283b"
+      ],
+      "inferred_events": [
+        "inferred_ace22a79",
+        "inferred_0c37e733",
+        "inferred_d1cee062",
+        "inferred_294d1af4"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout",
+        "case_2024_ma"
+      ],
+      "supporting_evidence": [
+        "AOSL发布面向AI服务器的SmartClamp DrMOS新品，技术指标领先",
+        "Needham首次覆盖给予买入评级，目标价50美元",
+        "AI服务器功率半导体需求持续增长，行业景气度向上"
+      ],
+      "counter_evidence": [
+        "新品发布和首次覆盖评级均为事件驱动，缺乏商业化验证",
+        "AOSL市值较小，流动性有限，波动风险较大"
+      ],
+      "key_assumptions": [
+        "假设1：市场对AI服务器功率半导体新品给予正面反应",
+        "假设2：AOSL股价未提前price-in该事件",
+        "假设3：后续无负面消息（如竞争对手发布更优产品）"
+      ],
+      "uncertainty_map": [
+        "最大不确定性1：新品商业化进度和订单落地情况（影响程度：高）",
+        "不确定性2：市场整体情绪和半导体板块走势（影响程度：中）",
+        "不确定性3：分析师评级是否为独立判断，是否存在利益冲突（影响程度：低）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 4,
+        "timeliness": 8,
+        "market_confirmation": 3,
+        "tradability": 5,
+        "risk_clarity": 5,
+        "consensus_gap": 5,
+        "signal_consistency": 7,
+        "overall_score": 5.3,
+        "confidence_score": 0.65,
+        "execution_readiness": 0.55
+      },
+      "risk_reward_profile": "潜在收益：短期情绪驱动上涨5-15%；潜在风险：事件驱动后回落，或市场反应平淡，亏损5-10%。",
+      "next_validation_questions": [
+        "AOSL股价在消息发布后如何反应？成交量是否放大？",
+        "是否有其他分析师跟进覆盖或调整评级？",
+        "AOSL是否有后续订单或客户公告？"
+      ],
+      "invalidation_conditions": [
+        "AOSL股价在消息发布后下跌或成交量萎缩",
+        "出现竞争对手发布更优产品的消息",
+        "半导体板块整体走弱"
+      ],
+      "must_watch_indicators": [
+        "AOSL股价和成交量变化",
+        "半导体板块ETF（如SMH）走势",
+        "AI服务器相关公司（如NVDA）股价表现",
+        "AOSL后续公告或新闻"
+      ],
+      "kill_switch_signals": [
+        "AOSL股价跌破消息发布前价格",
+        "出现公司负面新闻（如财务问题、诉讼等）",
+        "分析师下调评级或目标价"
+      ],
+      "warnings": [
+        "注意：信号来源均为新闻和首次覆盖评级，非官方公告或订单确认",
+        "注意：AOSL市值较小，流动性有限，不适合大资金操作"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-06 03:06:49.049773",
+      "batch_id": "m12_ALAB.US_2026-05-06",
+      "origin": "opportunity_catcher",
+      "entry_constraint": null
+    },
+    "anomaly": {
+      "anomaly_id": "ano_851cddd03224",
+      "instrument": "ALAB.US",
+      "market": "US",
+      "anomaly_type": "daily_surge",
+      "anomaly_date": "2026-05-06",
+      "price_change_pct": 8.9,
+      "atr_multiple": 0.0,
+      "sigma_multiple": 0.0,
+      "volume_ratio": 0.0,
+      "baseline_price": 201.25,
+      "anomaly_price": 219.17,
+      "n_days": 1,
+      "is_limit_up": false,
+      "is_limit_down": false,
+      "detected_at": "2026-05-06 02:55:31.177744"
+    },
+    "causation": {
+      "anomaly": {
+        "anomaly_id": "ano_851cddd03224",
+        "instrument": "ALAB.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 8.9,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 201.25,
+        "anomaly_price": 219.17,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 02:55:31.177744"
+      },
+      "causes": [
+        {
+          "signal_id": "sig_a36a5311ea5c",
+          "signal_type": "industry",
+          "signal_label": "AOSL发布DrMOS新品",
+          "description": "Alpha and Omega Semiconductor发布了面向AI服务器和高端GPU的SmartClamp™ Protected DrMOS系列，该技术提供行业领先的峰值电流限制，确保高需求AI工作负载的安全可靠运行。",
+          "evidence_text": "Alpha and Omega Semiconductor Unveils SmartClamp™ Protected DrMOS Family for AI Servers and High-End GPUs. New DrMOS technology delivers industry-leading peak-to-peak current limiting, ensuring safe and reliable operation for high-demand AI workloads...",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:55:01",
+          "collected_time": "2026-05-06 02:55:07.109418",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=67b2e6a1c64a3059f46795f85fa8c6ec44ba96552acf1b82620ff26306dfd769",
+          "logic_frame": {
+            "what_changed": "Alpha and Omega Semiconductor发布了面向AI服务器和高端GPU的新一代DrMOS产品系列",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL.US",
+              "AI服务器电源管理芯片市场"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_cd3a38daf82e",
+          "signal_type": "industry",
+          "signal_label": "AOSL发布SmartClamp DrMOS新品",
+          "description": "Alpha and Omega Semiconductor（AOSL）发布了面向AI服务器和高端GPU的SmartClamp Protected DrMOS系列产品，这是一款新的功率管理集成电路产品。",
+          "evidence_text": "Alpha and Omega Semiconductor Unveils SmartClamp Protected DrMOS Family for AI Servers and High-End GPUs",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:54:57",
+          "collected_time": "2026-05-06 02:55:01.695618",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 8,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=8491eb87bb6bbf29595df44ac1cbd403fae28f8902040df3053a9d558a12663c",
+          "logic_frame": {
+            "what_changed": "AOSL发布了面向AI服务器和高端GPU的新一代DrMOS功率管理产品",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL",
+              "功率半导体行业",
+              "AI服务器供应链"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_b609ce55283b",
+          "signal_type": "event_driven",
+          "signal_label": "Needham首次覆盖AOSL给予买入评级",
+          "description": "Needham分析师David Williams首次覆盖Alpha & Omega Semiconductor（AOSL），给予买入评级，目标价50美元。",
+          "evidence_text": "Needham analyst David Williams initiates coverage on Alpha & Omega (NASDAQ:AOSL) with a Buy rating and announces Price Target of $50.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:54:52",
+          "collected_time": "2026-05-06 02:54:57.403014",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 3,
+          "confidence_score": 6,
+          "timeliness_score": 8,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=1baea0c159adda7fe177a377a7749550ab1781bc4fdc9d2057edd2f34b953439",
+          "logic_frame": {
+            "what_changed": "Needham首次覆盖AOSL，给予买入评级和50美元目标价",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_85c1ddaae200",
+          "signal_type": "event_driven",
+          "signal_label": "10 Industrials Stocks Whale Activity In Today's Session",
+          "description": " ",
+          "evidence_text": " ",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AMSC.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:53:25.269846",
+          "collected_time": "2026-05-06 02:53:25.269847",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 4,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=52697546749ea780db7e913a466943e77e932c726ac759ef3c8799c779b6046d",
+          "logic_frame": {
+            "what_changed": "10 Industrials Stocks Whale Activity In Today's Session",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AMSC.US"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_4ac86b38d456",
+          "signal_type": "event_driven",
+          "signal_label": "Energous shares are trading higher after the company announced continued commerc",
+          "description": "Energous shares are trading higher after the company announced continued commercial momentum across its enterprise customer base, including expanding deployments with its two Fortune 10 customers, and",
+          "evidence_text": "Energous shares are trading higher after the company announced continued commercial momentum across its enterprise customer base, including expanding deployments with its two Fortune 10 customers, and a growing proof-of-concept pipeline spanning multiple industries and geographies.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AMSC.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:53:25.269832",
+          "collected_time": "2026-05-06 02:53:25.269833",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 4,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=e173e56ef2522986399f5660d43371d1d98b6c448d192997fed9e676b3ff52e3",
+          "logic_frame": {
+            "what_changed": "Energous shares are trading higher after the company announc",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AMSC.US"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_fa2750224d3c",
+          "signal_type": "industry",
+          "signal_label": "半导体ETF创历史最佳月度表现",
+          "description": "半导体ETF SOXX录得25年来最大月度回报，SMH录得自2003年11月以来最佳月度表现。本轮上涨由Intel、AMD、Micron和Marvell等芯片股驱动，而非前周期的AI硬件龙头Nvidia。",
+          "evidence_text": "SOXX posts its largest monthly return in 25 years. SMH had its best month since November 2003. Yet Nvidia — the AI hardware leader of the prior cycle — was the slowest-moving mega-cap chipmaker in the basket. Intel, AMD, Micron and Marvell did the work.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "SOXX",
+            "SMH",
+            "INTC",
+            "AMD",
+            "MU",
+            "MRVL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 03:06:08",
+          "collected_time": "2026-05-06 03:06:14.497465",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 8,
+          "confidence_score": 7,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=70158942535031a1e17d6df23ee2023ae3583e2c5008e74dc2f8fdc131761d79",
+          "logic_frame": {
+            "what_changed": "半导体ETF SOXX和SMH分别录得25年来最大月度回报和自2003年11月以来最佳月度表现，且上涨由Intel、AMD、Micron、Marvell驱动，而非Nvidia。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "US半导体行业",
+              "SOXX",
+              "SMH",
+              "INTC",
+              "AMD",
+              "MU",
+              "MRVL"
+            ]
+          },
+          "batch_id": "m12_ALAB.US_2026-05-06"
+        }
+      ],
+      "unexplained_ratio": 0.0,
+      "confidence": 1.0,
+      "causation_type": "industry"
+    },
+    "trend": {
+      "anomaly": {
+        "anomaly_id": "ano_851cddd03224",
+        "instrument": "ALAB.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 8.9,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 201.25,
+        "anomaly_price": 219.17,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 02:55:31.177744"
+      },
+      "stage": "early",
+      "remaining_upside_pct": 7.1,
+      "catalyst_persistence": "continuing",
+      "similar_cases": [],
+      "reasoning": "ALAB.US 1日涨幅+8.9%（AnomalyType.DAILY_SURGE）\n趋势阶段判断: 趋势早期（可补牢）\n原因类型: industry，持续性: 持续\n溯源置信度: 100%，无法解释比例: 0%\n估算剩余空间: 7.1%\n主要原因: industry: AOSL发布DrMOS新品; industry: AOSL发布SmartClamp DrM\n建议: 可按计划补牢入场"
+    },
+    "origin": "opportunity_catcher",
+    "stop_loss_candidates": [
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 2.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 4.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "atr",
+        "stop_loss_value": 1.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,452 @@
+[
+  {
+    "opportunity": {
+      "opportunity_id": "opp_f1a42045",
+      "opportunity_title": "AI电信半导体扩张",
+      "opportunity_thesis": "AI与半导体产业链持续扩张，带动电信/光通信及半导体设备股强劲表现。AAOI获德州政府拨款、Bandwidth业绩超预期、AOSL发布AI服务器新品等多条信号一致指向行业景气上行，且市场尚未充分定价政府补贴和AI语音需求的结构性增量。当前时点催化剂密集，但个股涨幅已高，需精选标的并控制仓位。",
+      "target_markets": [
+        "US"
+      ],
+      "target_instruments": [
+        "AAOI.US",
+        "BAND.US",
+        "AOSL.US",
+        "AMKR.US"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-06 00:00:00",
+        "end": "2026-06-06 00:00:00",
+        "confidence_level": 0.7
+      },
+      "why_now": "AAOI获德州政府拨款、Bandwidth Q1业绩超预期并上调指引、AOSL发布AI服务器新品、Amkor 2倍做多ETF上市，多条信号集中在同一时间窗口，且市场对AI语音需求和政府补贴的定价尚不充分，短期催化剂密集。",
+      "related_signals": [
+        "sig_1f3e597fb7ba",
+        "sig_b68a084a2278",
+        "sig_2a8cb82bf523",
+        "sig_c885b470da07",
+        "sig_6107969bb79c",
+        "sig_64ffacb6a9f8",
+        "sig_2354bf862e6f",
+        "sig_9affe55e2210",
+        "sig_d237eb497074",
+        "sig_fcfc37566e09",
+        "sig_5e0d420b9cdb",
+        "sig_ff1c8b7af5c8",
+        "sig_cb410e6f7b71",
+        "sig_1d77d99abbec"
+      ],
+      "inferred_events": [
+        "inferred_6eec05a4",
+        "inferred_f3bc0115",
+        "inferred_f8e7a157",
+        "inferred_6160ba63",
+        "inferred_401ac761"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout",
+        "case_2024_ma"
+      ],
+      "supporting_evidence": [
+        "AAOI获德州半导体创新基金2085万美元拨款，支持产能扩张",
+        "Bandwidth Q1营收增长20%，EBITDA增长17%，上调全年指引，受AI语音需求驱动",
+        "AOSL发布面向AI服务器和高端GPU的SmartClamp DrMOS新品",
+        "Defiance推出Amkor 2倍做多ETF，显示市场对半导体封装龙头的杠杆需求"
+      ],
+      "counter_evidence": [
+        "三只电信股一年涨超1000%，短期涨幅过大，存在回调风险",
+        "Amkor Q1业绩超预期但股价下跌，因供应链限制和资本支出压力"
+      ],
+      "key_assumptions": [
+        "假设1：AI语音需求持续增长，带动Bandwidth等通信服务商业绩",
+        "假设2：AAOI产能扩张顺利，政府拨款能有效转化为产能提升",
+        "假设3：AOSL新品能获得AI服务器客户采用，推动营收增长"
+      ],
+      "uncertainty_map": [
+        "AAOI产能扩张进度和订单转化速度（影响程度：高）",
+        "AI语音需求增长的可持续性（影响程度：中）",
+        "半导体供应链限制和资本支出压力（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 7,
+        "timeliness": 8,
+        "market_confirmation": 6,
+        "tradability": 7,
+        "risk_clarity": 5,
+        "consensus_gap": 6,
+        "signal_consistency": 8,
+        "overall_score": 6.7,
+        "confidence_score": 0.72,
+        "execution_readiness": 0.65
+      },
+      "risk_reward_profile": "潜在收益来自AI需求持续超预期和政府补贴落地，但个股已大幅上涨，回调风险较高。风险收益比中等偏上，适合小仓位试探。",
+      "next_validation_questions": [
+        "AAOI产能扩张的具体时间表和订单可见度如何？",
+        "Bandwidth AI语音业务的客户集中度和续约率？",
+        "AOSL新品是否已获得主要AI服务器客户订单？",
+        "Amkor亚利桑那州扩张的成本和进度是否可控？"
+      ],
+      "invalidation_conditions": [
+        "AAOI或Bandwidth后续财报指引不及预期",
+        "AI语音需求增速放缓或客户削减资本开支",
+        "半导体行业出现系统性回调或流动性收紧"
+      ],
+      "must_watch_indicators": [
+        "AAOI、BAND、AOSL、AMKR的股价和成交量变化",
+        "AI相关ETF（如SMH、SOXX）的资金流向",
+        "美国半导体行业政策动向（补贴、出口管制）",
+        "半导体设备订单和资本开支数据"
+      ],
+      "kill_switch_signals": [
+        "AAOI或Bandwidth发布盈利预警或下调指引",
+        "AOSL新品被主要客户推迟采用",
+        "Amkor因成本超支大幅下调业绩预期"
+      ],
+      "warnings": [
+        "注意：三只电信股一年涨超1000%，短期追高风险极大，需严格止损",
+        "注意：Amkor股价已反映部分利好，需关注供应链限制是否恶化"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-06 02:50:52.428207",
+      "batch_id": "m12_AIOS.US_2026-05-06",
+      "origin": "opportunity_catcher",
+      "entry_constraint": null
+    },
+    "anomaly": {
+      "anomaly_id": "ano_d7dfd7ed4289",
+      "instrument": "AIOS.US",
+      "market": "US",
+      "anomaly_type": "daily_surge",
+      "anomaly_date": "2026-05-06",
+      "price_change_pct": 28.87,
+      "atr_multiple": 0.0,
+      "sigma_multiple": 0.0,
+      "volume_ratio": 0.0,
+      "baseline_price": 15.52,
+      "anomaly_price": 20.0,
+      "n_days": 1,
+      "is_limit_up": false,
+      "is_limit_down": false,
+      "detected_at": "2026-05-06 02:44:19.595037"
+    },
+    "causation": {
+      "anomaly": {
+        "anomaly_id": "ano_d7dfd7ed4289",
+        "instrument": "AIOS.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 28.87,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 15.52,
+        "anomaly_price": 20.0,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 02:44:19.595037"
+      },
+      "causes": [
+        {
+          "signal_id": "sig_8d634b34f5b8",
+          "signal_type": "industry",
+          "signal_label": "API安全漏洞增加，AI部署扩大风险敞口",
+          "description": "Akamai发布新研究，指出随着组织加速API部署且缺乏足够安全措施，API安全漏洞显著增加。API安全影响调查报告显示，API网络攻击事件明显上升，影响了大多数组织。研究发现API暴露增加与AI驱动平台的广泛部署有关，API通常位于数据访问和模型集成的核心位置。",
+          "evidence_text": "Akamai Technologies (NasdaqGS:AKAM) released new research highlighting significant security gaps as organizations accelerate API deployment without sufficient safeguards. The API Security Impact Survey reports a marked rise in API focused cyberattacks, with incidents affecting a large majority of organizations. The findings link growing API exposure to the broader rollout of AI powered platforms, where APIs often sit at the core of data access and model integration.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AKAM.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:42:30",
+          "collected_time": "2026-05-06 02:42:36.323959",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=22e09976bc2d5bbb9d858fb319384f4ab3c0ed537b3976e7cbf780b31b27e0cd",
+          "logic_frame": {
+            "what_changed": "Akamai发布新研究，揭示API安全漏洞显著增加，且与AI平台部署扩大相关",
+            "change_direction": "BULLISH",
+            "affects": [
+              "Akamai Technologies (AKAM.US)",
+              "网络安全行业"
+            ]
+          },
+          "batch_id": "m12_AKAM.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_266a144ba7d1",
+          "signal_type": "event_driven",
+          "signal_label": "Tech Powers Nasdaq's Best Month Since 2020: These Stocks Are The Silent Performe",
+          "description": "The Nasdaq Composite surged 15.3% in April, marking its strongest monthly gain since the early pandemic, driven by AI-fueled tech earnings.",
+          "evidence_text": "The Nasdaq Composite surged 15.3% in April, marking its strongest monthly gain since the early pandemic, driven by AI-fueled tech earnings.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AEHR.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:38:19.317242",
+          "collected_time": "2026-05-06 02:38:19.317243",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 4,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=d599e02ca247d74c85f7c9bde4a30c4bcd45f0ebcbcb6713e83588b1539863e0",
+          "logic_frame": {
+            "what_changed": "Tech Powers Nasdaq's Best Month Since 2020: These Stocks Are",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AEHR.US"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_aa44275193dd",
+          "signal_type": "event_driven",
+          "signal_label": "Energous shares are trading higher after the company announced continued commerc",
+          "description": "Energous shares are trading higher after the company announced continued commercial momentum across its enterprise customer base, including expanding deployments with its two Fortune 10 customers, and",
+          "evidence_text": "Energous shares are trading higher after the company announced continued commercial momentum across its enterprise customer base, including expanding deployments with its two Fortune 10 customers, and a growing proof-of-concept pipeline spanning multiple industries and geographies.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AGX.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:37:18.790699",
+          "collected_time": "2026-05-06 02:37:18.790699",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 4,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=e173e56ef2522986399f5660d43371d1d98b6c448d192997fed9e676b3ff52e3",
+          "logic_frame": {
+            "what_changed": "Energous shares are trading higher after the company announc",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AGX.US"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_b357d792185a",
+          "signal_type": "event_driven",
+          "signal_label": "Argan: Expanding Margins And A $2.9 Billion Backlog Justify A Strong Buy",
+          "description": "Argan's projected revenue growth and margin expansion justify a fair market cap above current levels. Find out why AGX stock is a strong buy.",
+          "evidence_text": "Argan's projected revenue growth and margin expansion justify a fair market cap above current levels. Find out why AGX stock is a strong buy.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AGX.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:37:18.790655",
+          "collected_time": "2026-05-06 02:37:18.790657",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 4,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=4db8fbdd1c58bd1e72271208ece58d4ed6e91eebddf3198ca6db437a76f3f1e4",
+          "logic_frame": {
+            "what_changed": "Argan: Expanding Margins And A $2.9 Billion Backlog Justify ",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AGX.US"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_ee191fcd78a7",
+          "signal_type": "event_driven",
+          "signal_label": "ADM一季度盈利超预期",
+          "description": "Archer Daniels Midland (ADM) 公布2026年第一季度财报，每股收益（EPS）超出市场预期，主要受益于乙醇业务利润率改善，提振了关键业务板块的表现。",
+          "evidence_text": "ADM beats Q1 EPS estimates as ethanol margins strengthen, boosting key segments even as revenues miss forecasts and Ag Services & Oilseeds lag.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "ADM.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:36:31",
+          "collected_time": "2026-05-06 02:36:35.200655",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 8,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=17781fb31bc057d5399d429feae49d376b243501dd0fa76724c3745f23709550",
+          "logic_frame": {
+            "what_changed": "ADM公布一季度财报，EPS超预期，乙醇利润率改善",
+            "change_direction": "BULLISH",
+            "affects": [
+              "ADM.US",
+              "美股乙醇行业"
+            ]
+          },
+          "batch_id": "m12_ADM.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_cd473cc39093",
+          "signal_type": "event_driven",
+          "signal_label": "12 Information Technology Stocks Moving In Tuesday's Intraday Session",
+          "description": " ",
+          "evidence_text": " ",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AIOS.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:50:15.063955",
+          "collected_time": "2026-05-06 02:50:15.063957",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 4,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=a058f351672aa3301a3491a01d1c7547dcf25512bec9134ad946e0a27f591411",
+          "logic_frame": {
+            "what_changed": "12 Information Technology Stocks Moving In Tuesday's Intrada",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AIOS.US"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_c5949e050c33",
+          "signal_type": "event_driven",
+          "signal_label": "These stocks are moving in today's session",
+          "description": "Keep an eye on the top gainers and losers in Monday's session, as they reflect the most notable price movements.",
+          "evidence_text": "Keep an eye on the top gainers and losers in Monday's session, as they reflect the most notable price movements.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AIOS.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:50:15.063996",
+          "collected_time": "2026-05-06 02:50:15.063997",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 4,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=5485de89ed51fd2a0c3b76167b905f1aedb6122d3968df72383cf29a3ad79c07",
+          "logic_frame": {
+            "what_changed": "These stocks are moving in today's session",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AIOS.US"
+            ]
+          },
+          "batch_id": null
+        },
+        {
+          "signal_id": "sig_1a6802d3afc9",
+          "signal_type": "event_driven",
+          "signal_label": "Let's have a look at the top gainers and losers in the middle of the day of toda",
+          "description": "Keep an eye on the top gainers and losers in Monday's session, as they reflect the most notable price movements.",
+          "evidence_text": "Keep an eye on the top gainers and losers in Monday's session, as they reflect the most notable price movements.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AIOS.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 02:50:15.064015",
+          "collected_time": "2026-05-06 02:50:15.064015",
+          "time_horizon": "SHORT",
+          "intensity_score": 5,
+          "confidence_score": 4,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=8682e0542b347facaefcba9eeb62415ffd4fe5e480a7bf885aa2c1e583035764",
+          "logic_frame": {
+            "what_changed": "Let's have a look at the top gainers and losers in the middl",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AIOS.US"
+            ]
+          },
+          "batch_id": null
+        }
+      ],
+      "unexplained_ratio": 0.0,
+      "confidence": 1.0,
+      "causation_type": "earnings"
+    },
+    "trend": {
+      "anomaly": {
+        "anomaly_id": "ano_d7dfd7ed4289",
+        "instrument": "AIOS.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 28.87,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 15.52,
+        "anomaly_price": 20.0,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 02:44:19.595037"
+      },
+      "stage": "middle",
+      "remaining_upside_pct": 5.8,
+      "catalyst_persistence": "one_time",
+      "similar_cases": [],
+      "reasoning": "AIOS.US 1日涨幅+28.9%（AnomalyType.DAILY_SURGE）\n趋势阶段判断: 趋势中期（谨慎）\n原因类型: earnings，持续性: 一次性\n溯源置信度: 100%，无法解释比例: 0%\n估算剩余空间: 5.8%\n主要原因: industry: API安全漏洞增加，AI部署扩大风险敞口; event_driven: Tech Powers Nasdaq's\n建议: 紧止损谨慎参与"
+    },
+    "origin": "opportunity_catcher",
+    "stop_loss_candidates": [
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 2.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 4.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "atr",
+        "stop_loss_value": 1.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      }
+    ]
+  }
+]

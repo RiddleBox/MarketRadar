@@ -1,0 +1,63 @@
+{
+  "plan_id": "plan_0ca3d5c05564",
+  "opportunity_id": "opp_18c2c522",
+  "plan_summary": "BULLISH | AKAM, CRWD",
+  "primary_instruments": [
+    "AKAM",
+    "CRWD",
+    "ZS",
+    "NET",
+    "CIBR"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "US",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 2.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": null
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "第一目标 230 美元（涨幅 15%），第二目标 260 美元（涨幅 30%）"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0% | Kelly参考=13.7%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入 ZS，仓位占总资金的 20%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "ZS 股价突破 200 美元且成交量放大"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总仓位 50%（即再加仓 30%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 浮盈达到 5%（即股价达到 210 美元）"
+    }
+  ],
+  "valid_until": "2026-05-27 02:44:07.781920",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-06 02:44:07.782018",
+  "opportunity_priority": "research"
+}

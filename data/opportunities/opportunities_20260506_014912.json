@@ -1,0 +1,2422 @@
+[
+  {
+    "opportunity": {
+      "opportunity_id": "opp_4d1c0293",
+      "opportunity_title": "AI电源芯片机会",
+      "opportunity_thesis": "半导体行业整体强势，AI服务器电源管理芯片需求爆发，AOSL发布新一代DrMOS产品并获分析师首次覆盖买入评级，叠加行业ETF创历史最佳表现，构成短期交易机会。市场尚未充分定价AOSL在AI电源管理领域的结构性增长潜力，预期差存在。",
+      "target_markets": [
+        "US"
+      ],
+      "target_instruments": [
+        "AOSL.US"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-06 00:00:00",
+        "end": "2026-05-20 00:00:00",
+        "confidence_level": 0.65
+      },
+      "why_now": "半导体ETF SOXX和SMH刚创历史最佳月度表现，行业情绪高涨；AOSL新品发布与分析师首次覆盖同时发生，形成事件驱动催化剂；AI服务器电源管理芯片需求处于爆发初期，时间窗口紧迫。",
+      "related_signals": [
+        "sig_8bcc99948526",
+        "sig_141182c81107",
+        "sig_2ecac5aac5d3",
+        "sig_7af027b9d310",
+        "sig_8bcc99948526",
+        "sig_141182c81107",
+        "sig_2ecac5aac5d3",
+        "sig_7af027b9d310",
+        "sig_32b785012f2e",
+        "sig_d238c752c534",
+        "sig_32d566d8ee3d"
+      ],
+      "inferred_events": [
+        "inferred_2377f7bd",
+        "inferred_d2fa8c4c",
+        "inferred_1e80fbf5",
+        "inferred_e5e6b837",
+        "inferred_f15667f6"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout"
+      ],
+      "supporting_evidence": [
+        "半导体ETF SOXX录得25年来最大月度回报，SMH创2003年以来最佳月度表现",
+        "AOSL发布面向AI服务器和高端GPU的SmartClamp Protected DrMOS系列，技术领先",
+        "Needham首次覆盖AOSL给予买入评级，目标价50美元",
+        "本轮半导体上涨由Intel、AMD、Micron、Marvell等非Nvidia芯片股驱动，显示行业扩散"
+      ],
+      "counter_evidence": [
+        "AOSL市值较小，流动性有限，可能波动较大",
+        "分析师首次覆盖目标价50美元，但当前股价未知，若已接近目标价则上行空间有限"
+      ],
+      "key_assumptions": [
+        "假设1：AI服务器电源管理芯片需求持续增长，AOSL新品能获得客户订单",
+        "假设2：半导体行业整体强势趋势在短期内不会逆转",
+        "假设3：市场对AOSL的关注度提升将带来资金流入"
+      ],
+      "uncertainty_map": [
+        "AOSL新品商业化进度不确定，订单落地时间可能晚于预期（影响程度：高）",
+        "半导体行业短期涨幅过大，存在回调风险（影响程度：中）",
+        "分析师首次覆盖的独立性和准确性未知（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 6,
+        "timeliness": 8,
+        "market_confirmation": 7,
+        "tradability": 5,
+        "risk_clarity": 5,
+        "consensus_gap": 6,
+        "signal_consistency": 8,
+        "overall_score": 6.4,
+        "confidence_score": 0.65,
+        "execution_readiness": 0.55
+      },
+      "risk_reward_profile": "潜在收益：AOSL新品获大客户订单+行业热度推动股价上涨10-20%；潜在风险：新品商业化不及预期或行业回调导致股价下跌10-15%。风险收益比约1:1.3，中等吸引力。",
+      "next_validation_questions": [
+        "AOSL当前股价与Needham目标价50美元的距离是多少？",
+        "AOSL近期是否有机构持仓变化或成交量放大？",
+        "AOSL的DrMOS产品是否有已知的大客户或合作意向？",
+        "半导体ETF SOXX/SMH的涨势是否出现衰竭信号？"
+      ],
+      "invalidation_conditions": [
+        "AOSL股价跌破近期低点（如40美元）",
+        "半导体ETF SOXX出现连续两日下跌超过3%",
+        "AOSL新品发布后一个月内无客户订单公告"
+      ],
+      "must_watch_indicators": [
+        "AOSL股价与成交量变化",
+        "SOXX/SMH ETF走势",
+        "AI服务器电源管理芯片行业新闻",
+        "AOSL公司公告及客户合作信息"
+      ],
+      "kill_switch_signals": [
+        "AOSL股价单日下跌超过8%",
+        "半导体行业出现重大利空（如出口管制升级）",
+        "AOSL管理层减持公告"
+      ],
+      "warnings": [
+        "注意：AOSL市值较小，流动性风险较高，不适合大仓位操作",
+        "注意：分析师首次覆盖可能带有营销性质，需独立验证"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-06 01:35:55.281729",
+      "batch_id": "m12_AAOI.US_2026-05-06",
+      "origin": "opportunity_catcher",
+      "entry_constraint": null
+    },
+    "anomaly": {
+      "anomaly_id": "ano_795bbe7ccb8a",
+      "instrument": "AAOI.US",
+      "market": "US",
+      "anomaly_type": "daily_surge",
+      "anomaly_date": "2026-05-06",
+      "price_change_pct": 8.5,
+      "atr_multiple": 0.0,
+      "sigma_multiple": 0.0,
+      "volume_ratio": 0.0,
+      "baseline_price": 172.98,
+      "anomaly_price": 187.69,
+      "n_days": 1,
+      "is_limit_up": false,
+      "is_limit_down": false,
+      "detected_at": "2026-05-06 01:34:52.610616"
+    },
+    "causation": {
+      "anomaly": {
+        "anomaly_id": "ano_795bbe7ccb8a",
+        "instrument": "AAOI.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 8.5,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 172.98,
+        "anomaly_price": 187.69,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 01:34:52.610616"
+      },
+      "causes": [
+        {
+          "signal_id": "sig_8bcc99948526",
+          "signal_type": "industry",
+          "signal_label": "半导体ETF创历史最佳月度表现",
+          "description": "半导体ETF SOXX录得25年来最大月度回报，SMH录得自2003年11月以来最佳月度表现。本轮上涨由Intel、AMD、Micron和Marvell等芯片股驱动，而非前周期的AI硬件龙头Nvidia。",
+          "evidence_text": "SOXX posts its largest monthly return in 25 years. SMH had its best month since November 2003. Yet Nvidia — the AI hardware leader of the prior cycle — was the slowest-moving mega-cap chipmaker in the basket. Intel, AMD, Micron and Marvell did the work.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "SOXX",
+            "SMH",
+            "INTC",
+            "AMD",
+            "MU",
+            "MRVL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:33:10",
+          "collected_time": "2026-05-06 01:33:16.226480",
+          "time_horizon": "SHORT",
+          "intensity_score": 8,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=70158942535031a1e17d6df23ee2023ae3583e2c5008e74dc2f8fdc131761d79",
+          "logic_frame": {
+            "what_changed": "半导体ETF SOXX和SMH分别录得25年来最大月度回报和自2003年11月以来最佳月度表现，且上涨由Intel、AMD、Micron、Marvell驱动，而非Nvidia。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "美股半导体行业",
+              "SOXX",
+              "SMH",
+              "Intel",
+              "AMD",
+              "Micron",
+              "Marvell"
+            ]
+          },
+          "batch_id": "m12_ALAB.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_ee846a049753",
+          "signal_type": "industry",
+          "signal_label": "Akamai报告API安全漏洞增加",
+          "description": "Akamai Technologies发布新研究，指出随着组织加速API部署而缺乏足够安全措施，API安全存在显著漏洞。API安全影响调查报告显示，针对API的网络攻击明显增加，大多数组织受到影响。研究将API暴露的增加与AI驱动平台的广泛部署联系起来，API通常位于数据访问和模型集成的核心。",
+          "evidence_text": "Akamai Technologies (NasdaqGS:AKAM) released new research highlighting significant security gaps as organizations accelerate API deployment without sufficient safeguards. The API Security Impact Survey reports a marked rise in API focused cyberattacks, with incidents affecting a large majority of organizations.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AKAM"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:35",
+          "collected_time": "2026-05-06 01:31:40.530988",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=22e09976bc2d5bbb9d858fb319384f4ab3c0ed537b3976e7cbf780b31b27e0cd",
+          "logic_frame": {
+            "what_changed": "Akamai发布新研究，报告API安全漏洞显著增加，且与AI平台部署相关。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "Akamai Technologies (AKAM)",
+              "网络安全行业"
+            ]
+          },
+          "batch_id": "m12_AKAM.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_141182c81107",
+          "signal_type": "industry",
+          "signal_label": "AOSL发布DrMOS新品",
+          "description": "Alpha and Omega Semiconductor发布了面向AI服务器和高端GPU的SmartClamp™ Protected DrMOS系列，该技术提供行业领先的峰值电流限制，确保高需求AI工作负载的安全可靠运行。",
+          "evidence_text": "Alpha and Omega Semiconductor Unveils SmartClamp™ Protected DrMOS Family for AI Servers and High-End GPUs. New DrMOS technology delivers industry-leading peak-to-peak current limiting, ensuring safe and reliable operation for high-demand AI workloads...",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:06",
+          "collected_time": "2026-05-06 01:31:11.416130",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=67b2e6a1c64a3059f46795f85fa8c6ec44ba96552acf1b82620ff26306dfd769",
+          "logic_frame": {
+            "what_changed": "Alpha and Omega Semiconductor发布了面向AI服务器和高端GPU的新一代DrMOS产品SmartClamp™ Protected DrMOS系列",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL.US",
+              "AI服务器电源管理芯片市场"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_2ecac5aac5d3",
+          "signal_type": "event_driven",
+          "signal_label": "AOSL发布SmartClamp DrMOS新品",
+          "description": "Alpha and Omega Semiconductor（AOSL）发布了面向AI服务器和高端GPU的SmartClamp Protected DrMOS系列产品，这是一款新的功率管理芯片产品。",
+          "evidence_text": "Alpha and Omega Semiconductor Unveils SmartClamp Protected DrMOS Family for AI Servers and High-End GPUs",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:02",
+          "collected_time": "2026-05-06 01:31:06.514346",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 8,
+          "timeliness_score": 8,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=8491eb87bb6bbf29595df44ac1cbd403fae28f8902040df3053a9d558a12663c",
+          "logic_frame": {
+            "what_changed": "AOSL发布了面向AI服务器和高端GPU的新一代DrMOS功率管理芯片产品",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL.US",
+              "美国半导体行业"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_7af027b9d310",
+          "signal_type": "event_driven",
+          "signal_label": "Needham首次覆盖AOSL给予买入评级",
+          "description": "Needham分析师David Williams首次覆盖Alpha & Omega Semiconductor（AOSL），给予买入评级，目标价50美元。",
+          "evidence_text": "Needham analyst David Williams initiates coverage on Alpha & Omega (NASDAQ:AOSL) with a Buy rating and announces Price Target of $50.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:30:57",
+          "collected_time": "2026-05-06 01:31:02.144841",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 3,
+          "confidence_score": 6,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=1baea0c159adda7fe177a377a7749550ab1781bc4fdc9d2057edd2f34b953439",
+          "logic_frame": {
+            "what_changed": "Needham首次覆盖AOSL，给予买入评级和50美元目标价",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_b4c55cd4f6a5",
+          "signal_type": "industry",
+          "signal_label": "三只电信股一年涨超1000%",
+          "description": "Lumentum、Ondas和Applied Optoelectronics三只电信股在过去12个月内涨幅超过1000%，而同期Nvidia涨幅为75%。",
+          "evidence_text": "Lumentum, Ondas and Applied Optoelectronics rallied over 1,000% in 12 months.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "Lumentum",
+            "Ondas",
+            "Applied Optoelectronics"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:35:02",
+          "collected_time": "2026-05-06 01:35:08.058669",
+          "time_horizon": "LONG",
+          "intensity_score": 8,
+          "confidence_score": 7,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=8ebbe7f16377f91da9ec251ce7ded20f67dd43b8f79b95c2a8855c1ab032c71b",
+          "logic_frame": {
+            "what_changed": "Lumentum、Ondas和Applied Optoelectronics三只电信股在过去12个月内涨幅超过1000%，远超Nvidia的75%涨幅。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "US电信行业",
+              "Lumentum",
+              "Ondas",
+              "Applied Optoelectronics"
+            ]
+          },
+          "batch_id": "m12_AAOI.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_828ff3365889",
+          "signal_type": "event_driven",
+          "signal_label": "AAOI获德州半导体创新基金资助",
+          "description": "Applied Optoelectronics (AAOI) 获得德克萨斯州半导体创新基金（TSIF）2085.3万美元拨款，用于支持其在德克萨斯州的产能扩张计划。",
+          "evidence_text": "Applied Optoelectronics Receives $20.853M Texas Semiconductor Innovation Fund Grant To Support Its Production Expansion Plan In The State",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AAOI"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:35:18",
+          "collected_time": "2026-05-06 01:35:22.496508",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 5,
+          "confidence_score": 8,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=ae908c0308928bb18106153901dc956acdc9dab42e4f880339e484fa9bd9abea",
+          "logic_frame": {
+            "what_changed": "Applied Optoelectronics 获得了2085.3万美元的政府拨款，用于支持其产能扩张计划。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AAOI",
+              "美国半导体行业"
+            ]
+          },
+          "batch_id": "m12_AAOI.US_2026-05-06"
+        }
+      ],
+      "unexplained_ratio": 0.0,
+      "confidence": 1.0,
+      "causation_type": "industry"
+    },
+    "trend": {
+      "anomaly": {
+        "anomaly_id": "ano_795bbe7ccb8a",
+        "instrument": "AAOI.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 8.5,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 172.98,
+        "anomaly_price": 187.69,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 01:34:52.610616"
+      },
+      "stage": "early",
+      "remaining_upside_pct": 6.8,
+      "catalyst_persistence": "continuing",
+      "similar_cases": [],
+      "reasoning": "AAOI.US 1日涨幅+8.5%（AnomalyType.DAILY_SURGE）\n趋势阶段判断: 趋势早期（可补牢）\n原因类型: industry，持续性: 持续\n溯源置信度: 100%，无法解释比例: 0%\n估算剩余空间: 6.8%\n主要原因: industry: 半导体ETF创历史最佳月度表现; industry: Akamai报告API安全漏洞增加\n建议: 可按计划补牢入场"
+    },
+    "origin": "opportunity_catcher",
+    "stop_loss_candidates": [
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 2.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 4.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "atr",
+        "stop_loss_value": 1.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "opportunity": {
+      "opportunity_id": "opp_b112005f",
+      "opportunity_title": "AI电源芯片扩散机会",
+      "opportunity_thesis": "半导体行业整体强势，但本轮上涨由Intel、AMD等非AI龙头芯片股驱动，显示AI需求正从Nvidia向更广泛的芯片领域扩散。AOSL发布面向AI服务器的DrMOS新品，叠加Needham首次覆盖买入评级，表明AI服务器电源管理芯片细分赛道正获得市场关注和资金流入。这一结构性变化尚未被充分定价，存在预期差。",
+      "target_markets": [
+        "US"
+      ],
+      "target_instruments": [
+        "AOSL.US",
+        "SOXX",
+        "SMH"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK",
+        "ETF"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-06 00:00:00",
+        "end": "2026-06-06 00:00:00",
+        "confidence_level": 0.7
+      },
+      "why_now": "半导体ETF创25年最佳月度表现，且上涨结构从Nvidia扩散至Intel、AMD等，表明AI需求外溢至更广泛的芯片领域。AOSL新品发布和首次覆盖评级同时出现，形成产品+资金的双重催化剂，时间窗口紧迫。",
+      "related_signals": [
+        "sig_8bcc99948526",
+        "sig_141182c81107",
+        "sig_2ecac5aac5d3",
+        "sig_7af027b9d310",
+        "sig_8bcc99948526",
+        "sig_141182c81107",
+        "sig_2ecac5aac5d3",
+        "sig_7af027b9d310",
+        "sig_32b785012f2e",
+        "sig_d238c752c534",
+        "sig_32d566d8ee3d"
+      ],
+      "inferred_events": [
+        "inferred_5a0a5ee9",
+        "inferred_79496fe1",
+        "inferred_75e6e7f5",
+        "inferred_6f0d5646",
+        "inferred_4586ff05",
+        "inferred_fcc12363"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout"
+      ],
+      "supporting_evidence": [
+        "SOXX录得25年来最大月度回报，SMH录得2003年以来最佳月度表现，且上涨由Intel、AMD、Micron、Marvell驱动，而非Nvidia",
+        "AOSL发布面向AI服务器和高端GPU的SmartClamp Protected DrMOS系列，技术领先",
+        "Needham首次覆盖AOSL，给予买入评级和50美元目标价"
+      ],
+      "counter_evidence": [
+        "AOSL新品发布和首次覆盖评级均为单一事件，缺乏订单或业绩验证",
+        "半导体ETF已大幅上涨，短期可能存在获利回吐压力"
+      ],
+      "key_assumptions": [
+        "假设1：AI服务器电源管理芯片需求持续增长，AOSL新品能获得客户订单",
+        "假设2：半导体行业整体强势趋势延续，不会出现系统性回调"
+      ],
+      "uncertainty_map": [
+        "AOSL新品商业化进度和订单获取能力（影响程度：高）",
+        "半导体行业整体估值和资金流向变化（影响程度：中）",
+        "宏观经济或地缘政治风险导致市场风险偏好下降（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 7,
+        "timeliness": 8,
+        "market_confirmation": 6,
+        "tradability": 7,
+        "risk_clarity": 5,
+        "consensus_gap": 7,
+        "signal_consistency": 8,
+        "overall_score": 6.9,
+        "confidence_score": 0.72,
+        "execution_readiness": 0.65
+      },
+      "risk_reward_profile": "潜在收益来自AOSL新品商业化成功和行业扩散效应，风险在于新品订单不及预期或行业整体回调。当前AOSL市值较小，波动性大，潜在收益/风险比约2:1。",
+      "next_validation_questions": [
+        "AOSL是否有已公开的客户或订单信息？",
+        "AOSL当前估值水平如何？与历史区间和可比公司相比是否合理？",
+        "半导体ETF的上涨是否伴随成交量放大和资金持续流入？"
+      ],
+      "invalidation_conditions": [
+        "AOSL新品发布后股价大幅下跌，跌破关键支撑位",
+        "半导体ETF出现连续回调，行业趋势逆转",
+        "AOSL财报或指引低于预期"
+      ],
+      "must_watch_indicators": [
+        "AOSL股价和成交量变化",
+        "SOXX和SMH ETF走势及资金流向",
+        "AI服务器电源管理芯片相关新闻和订单公告",
+        "Needham目标价50美元是否被市场认可"
+      ],
+      "kill_switch_signals": [
+        "AOSL股价跌破近期低点",
+        "半导体行业出现重大利空事件（如出口管制升级）",
+        "AOSL管理层减持或负面新闻"
+      ],
+      "warnings": [
+        "注意：AOSL市值较小，流动性有限，大额交易可能产生较大冲击成本",
+        "注意：信号来源均为新闻和研报，非官方公告或财务数据"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-06 01:37:08.480838",
+      "batch_id": "m12_ABVX.US_2026-05-06",
+      "origin": "opportunity_catcher",
+      "entry_constraint": null
+    },
+    "anomaly": {
+      "anomaly_id": "ano_fe8ec6839b75",
+      "instrument": "ABVX.US",
+      "market": "US",
+      "anomaly_type": "daily_surge",
+      "anomaly_date": "2026-05-06",
+      "price_change_pct": 5.01,
+      "atr_multiple": 0.0,
+      "sigma_multiple": 0.0,
+      "volume_ratio": 0.0,
+      "baseline_price": 117.13,
+      "anomaly_price": 123.0,
+      "n_days": 1,
+      "is_limit_up": false,
+      "is_limit_down": false,
+      "detected_at": "2026-05-06 01:34:52.967124"
+    },
+    "causation": {
+      "anomaly": {
+        "anomaly_id": "ano_fe8ec6839b75",
+        "instrument": "ABVX.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 5.01,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 117.13,
+        "anomaly_price": 123.0,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 01:34:52.967124"
+      },
+      "causes": [
+        {
+          "signal_id": "sig_8bcc99948526",
+          "signal_type": "industry",
+          "signal_label": "半导体ETF创历史最佳月度表现",
+          "description": "半导体ETF SOXX录得25年来最大月度回报，SMH录得自2003年11月以来最佳月度表现。本轮上涨由Intel、AMD、Micron和Marvell等芯片股驱动，而非前周期的AI硬件龙头Nvidia。",
+          "evidence_text": "SOXX posts its largest monthly return in 25 years. SMH had its best month since November 2003. Yet Nvidia — the AI hardware leader of the prior cycle — was the slowest-moving mega-cap chipmaker in the basket. Intel, AMD, Micron and Marvell did the work.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "SOXX",
+            "SMH",
+            "INTC",
+            "AMD",
+            "MU",
+            "MRVL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:33:10",
+          "collected_time": "2026-05-06 01:33:16.226480",
+          "time_horizon": "SHORT",
+          "intensity_score": 8,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=70158942535031a1e17d6df23ee2023ae3583e2c5008e74dc2f8fdc131761d79",
+          "logic_frame": {
+            "what_changed": "半导体ETF SOXX和SMH分别录得25年来最大月度回报和自2003年11月以来最佳月度表现，且上涨由Intel、AMD、Micron、Marvell驱动，而非Nvidia。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "美股半导体行业",
+              "SOXX",
+              "SMH",
+              "Intel",
+              "AMD",
+              "Micron",
+              "Marvell"
+            ]
+          },
+          "batch_id": "m12_ALAB.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_ee846a049753",
+          "signal_type": "industry",
+          "signal_label": "Akamai报告API安全漏洞增加",
+          "description": "Akamai Technologies发布新研究，指出随着组织加速API部署而缺乏足够安全措施，API安全存在显著漏洞。API安全影响调查报告显示，针对API的网络攻击明显增加，大多数组织受到影响。研究将API暴露的增加与AI驱动平台的广泛部署联系起来，API通常位于数据访问和模型集成的核心。",
+          "evidence_text": "Akamai Technologies (NasdaqGS:AKAM) released new research highlighting significant security gaps as organizations accelerate API deployment without sufficient safeguards. The API Security Impact Survey reports a marked rise in API focused cyberattacks, with incidents affecting a large majority of organizations.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AKAM"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:35",
+          "collected_time": "2026-05-06 01:31:40.530988",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=22e09976bc2d5bbb9d858fb319384f4ab3c0ed537b3976e7cbf780b31b27e0cd",
+          "logic_frame": {
+            "what_changed": "Akamai发布新研究，报告API安全漏洞显著增加，且与AI平台部署相关。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "Akamai Technologies (AKAM)",
+              "网络安全行业"
+            ]
+          },
+          "batch_id": "m12_AKAM.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_141182c81107",
+          "signal_type": "industry",
+          "signal_label": "AOSL发布DrMOS新品",
+          "description": "Alpha and Omega Semiconductor发布了面向AI服务器和高端GPU的SmartClamp™ Protected DrMOS系列，该技术提供行业领先的峰值电流限制，确保高需求AI工作负载的安全可靠运行。",
+          "evidence_text": "Alpha and Omega Semiconductor Unveils SmartClamp™ Protected DrMOS Family for AI Servers and High-End GPUs. New DrMOS technology delivers industry-leading peak-to-peak current limiting, ensuring safe and reliable operation for high-demand AI workloads...",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:06",
+          "collected_time": "2026-05-06 01:31:11.416130",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=67b2e6a1c64a3059f46795f85fa8c6ec44ba96552acf1b82620ff26306dfd769",
+          "logic_frame": {
+            "what_changed": "Alpha and Omega Semiconductor发布了面向AI服务器和高端GPU的新一代DrMOS产品SmartClamp™ Protected DrMOS系列",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL.US",
+              "AI服务器电源管理芯片市场"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_2ecac5aac5d3",
+          "signal_type": "event_driven",
+          "signal_label": "AOSL发布SmartClamp DrMOS新品",
+          "description": "Alpha and Omega Semiconductor（AOSL）发布了面向AI服务器和高端GPU的SmartClamp Protected DrMOS系列产品，这是一款新的功率管理芯片产品。",
+          "evidence_text": "Alpha and Omega Semiconductor Unveils SmartClamp Protected DrMOS Family for AI Servers and High-End GPUs",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:02",
+          "collected_time": "2026-05-06 01:31:06.514346",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 8,
+          "timeliness_score": 8,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=8491eb87bb6bbf29595df44ac1cbd403fae28f8902040df3053a9d558a12663c",
+          "logic_frame": {
+            "what_changed": "AOSL发布了面向AI服务器和高端GPU的新一代DrMOS功率管理芯片产品",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL.US",
+              "美国半导体行业"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_7af027b9d310",
+          "signal_type": "event_driven",
+          "signal_label": "Needham首次覆盖AOSL给予买入评级",
+          "description": "Needham分析师David Williams首次覆盖Alpha & Omega Semiconductor（AOSL），给予买入评级，目标价50美元。",
+          "evidence_text": "Needham analyst David Williams initiates coverage on Alpha & Omega (NASDAQ:AOSL) with a Buy rating and announces Price Target of $50.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:30:57",
+          "collected_time": "2026-05-06 01:31:02.144841",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 3,
+          "confidence_score": 6,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=1baea0c159adda7fe177a377a7749550ab1781bc4fdc9d2057edd2f34b953439",
+          "logic_frame": {
+            "what_changed": "Needham首次覆盖AOSL，给予买入评级和50美元目标价",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        }
+      ],
+      "unexplained_ratio": 0.0,
+      "confidence": 1.0,
+      "causation_type": "industry"
+    },
+    "trend": {
+      "anomaly": {
+        "anomaly_id": "ano_fe8ec6839b75",
+        "instrument": "ABVX.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 5.01,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 117.13,
+        "anomaly_price": 123.0,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 01:34:52.967124"
+      },
+      "stage": "middle",
+      "remaining_upside_pct": 4.0,
+      "catalyst_persistence": "continuing",
+      "similar_cases": [],
+      "reasoning": "ABVX.US 1日涨幅+5.0%（AnomalyType.DAILY_SURGE）\n趋势阶段判断: 趋势中期（谨慎）\n原因类型: industry，持续性: 持续\n溯源置信度: 100%，无法解释比例: 0%\n估算剩余空间: 4.0%\n主要原因: industry: 半导体ETF创历史最佳月度表现; industry: Akamai报告API安全漏洞增加\n建议: 紧止损谨慎参与"
+    },
+    "origin": "opportunity_catcher",
+    "stop_loss_candidates": [
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 2.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 4.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "atr",
+        "stop_loss_value": 1.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "opportunity": {
+      "opportunity_id": "opp_33b83784",
+      "opportunity_title": "AI硬件扩散行情",
+      "opportunity_thesis": "半导体ETF创25年最佳月度表现，且上涨结构从Nvidia扩散至Intel、AMD、Micron等二线芯片股，表明AI硬件投资逻辑正从算力龙头向全产业链扩散。AOSL发布面向AI服务器的DrMOS新品叠加分析师首次覆盖买入评级，是电源管理芯片这一细分环节获得市场关注的微观验证。当前处于行业整体强势+个股催化共振的窗口，但需警惕板块短期过热风险。",
+      "target_markets": [
+        "US"
+      ],
+      "target_instruments": [
+        "SOXX",
+        "SMH",
+        "AOSL"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "ETF",
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-06 00:00:00",
+        "end": "2026-06-06 00:00:00",
+        "confidence_level": 0.7
+      },
+      "why_now": "半导体ETF刚刚录得历史级月度涨幅，市场情绪高涨但结构健康（非单一龙头驱动），AOSL新品发布和首次覆盖评级在同一时间窗口内出现，形成行业趋势+个股催化的共振。",
+      "related_signals": [
+        "sig_8bcc99948526",
+        "sig_141182c81107",
+        "sig_2ecac5aac5d3",
+        "sig_7af027b9d310",
+        "sig_8bcc99948526",
+        "sig_141182c81107",
+        "sig_2ecac5aac5d3",
+        "sig_7af027b9d310",
+        "sig_32b785012f2e",
+        "sig_d238c752c534",
+        "sig_32d566d8ee3d"
+      ],
+      "inferred_events": [
+        "inferred_dcffd881",
+        "inferred_eaa9822a",
+        "inferred_23833c03",
+        "inferred_7ead9ce0",
+        "inferred_4bcf8b4f"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout"
+      ],
+      "supporting_evidence": [
+        "SOXX录得25年来最大月度回报，SMH录得2003年以来最佳月度表现，且上涨由Intel、AMD、Micron、Marvell驱动，非仅Nvidia",
+        "AOSL发布面向AI服务器和高端GPU的SmartClamp DrMOS新品，技术指标行业领先",
+        "Needham首次覆盖AOSL给予买入评级，目标价50美元"
+      ],
+      "counter_evidence": [
+        "AOSL市值较小，流动性有限，个股风险较高",
+        "半导体板块短期涨幅已大，存在获利回吐风险"
+      ],
+      "key_assumptions": [
+        "假设1：AI服务器需求持续增长，带动电源管理芯片等配套环节订单落地",
+        "假设2：AOSL新品能获得主要GPU/服务器厂商采用，转化为实际收入",
+        "假设3：半导体行业整体上涨趋势未因宏观或地缘风险逆转"
+      ],
+      "uncertainty_map": [
+        "AOSL新品商业化进度和客户导入速度（影响程度：高）",
+        "半导体板块短期涨幅过大后的回调风险（影响程度：中）",
+        "AI资本开支预期是否出现边际放缓（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 7,
+        "timeliness": 8,
+        "market_confirmation": 8,
+        "tradability": 6,
+        "risk_clarity": 5,
+        "consensus_gap": 6,
+        "signal_consistency": 8,
+        "overall_score": 6.9,
+        "confidence_score": 0.72,
+        "execution_readiness": 0.65
+      },
+      "risk_reward_profile": "潜在收益来自AI硬件扩散行情中二线芯片股和细分环节的补涨，以及AOSL新品商业化带来的个股弹性。风险在于板块短期过热后的回调，以及AOSL新品能否获得市场认可的不确定性。整体风险收益比中等偏上。",
+      "next_validation_questions": [
+        "AOSL新品是否有已公开的客户或合作伙伴？",
+        "SOXX/SMH近期资金流向是否持续净流入？",
+        "Intel、AMD、Micron等驱动股的基本面是否有持续改善的催化剂？",
+        "AI服务器电源管理芯片市场整体规模增速如何？"
+      ],
+      "invalidation_conditions": [
+        "SOXX/SMH出现连续放量下跌，跌破近期关键支撑位",
+        "AOSL新品被主要客户拒绝或延迟采用",
+        "AI资本开支预期出现重大负面变化"
+      ],
+      "must_watch_indicators": [
+        "SOXX/SMH价格走势及成交量",
+        "AOSL股价及成交量变化",
+        "AI服务器相关公司（如NVDA、AMD）的订单/财报指引",
+        "半导体行业库存和资本开支数据"
+      ],
+      "kill_switch_signals": [
+        "SOXX单日跌幅超5%且伴随放量",
+        "AOSL发布新品负面反馈或客户流失公告",
+        "美联储意外转鹰或地缘冲突升级导致科技股系统性下跌"
+      ],
+      "warnings": [
+        "注意：AOSL为小市值股票，流动性有限，仓位需严格控制",
+        "注意：半导体板块短期涨幅已大，追高需谨慎"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-06 01:38:46.751479",
+      "batch_id": "m12_AEHR.US_2026-05-06",
+      "origin": "opportunity_catcher",
+      "entry_constraint": null
+    },
+    "anomaly": {
+      "anomaly_id": "ano_bee05f25722f",
+      "instrument": "AEHR.US",
+      "market": "US",
+      "anomaly_type": "daily_surge",
+      "anomaly_date": "2026-05-06",
+      "price_change_pct": 7.78,
+      "atr_multiple": 0.0,
+      "sigma_multiple": 0.0,
+      "volume_ratio": 0.0,
+      "baseline_price": 85.61,
+      "anomaly_price": 92.27,
+      "n_days": 1,
+      "is_limit_up": false,
+      "is_limit_down": false,
+      "detected_at": "2026-05-06 01:34:53.648785"
+    },
+    "causation": {
+      "anomaly": {
+        "anomaly_id": "ano_bee05f25722f",
+        "instrument": "AEHR.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 7.78,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 85.61,
+        "anomaly_price": 92.27,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 01:34:53.648785"
+      },
+      "causes": [
+        {
+          "signal_id": "sig_8bcc99948526",
+          "signal_type": "industry",
+          "signal_label": "半导体ETF创历史最佳月度表现",
+          "description": "半导体ETF SOXX录得25年来最大月度回报，SMH录得自2003年11月以来最佳月度表现。本轮上涨由Intel、AMD、Micron和Marvell等芯片股驱动，而非前周期的AI硬件龙头Nvidia。",
+          "evidence_text": "SOXX posts its largest monthly return in 25 years. SMH had its best month since November 2003. Yet Nvidia — the AI hardware leader of the prior cycle — was the slowest-moving mega-cap chipmaker in the basket. Intel, AMD, Micron and Marvell did the work.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "SOXX",
+            "SMH",
+            "INTC",
+            "AMD",
+            "MU",
+            "MRVL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:33:10",
+          "collected_time": "2026-05-06 01:33:16.226480",
+          "time_horizon": "SHORT",
+          "intensity_score": 8,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=70158942535031a1e17d6df23ee2023ae3583e2c5008e74dc2f8fdc131761d79",
+          "logic_frame": {
+            "what_changed": "半导体ETF SOXX和SMH分别录得25年来最大月度回报和自2003年11月以来最佳月度表现，且上涨由Intel、AMD、Micron、Marvell驱动，而非Nvidia。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "美股半导体行业",
+              "SOXX",
+              "SMH",
+              "Intel",
+              "AMD",
+              "Micron",
+              "Marvell"
+            ]
+          },
+          "batch_id": "m12_ALAB.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_ee846a049753",
+          "signal_type": "industry",
+          "signal_label": "Akamai报告API安全漏洞增加",
+          "description": "Akamai Technologies发布新研究，指出随着组织加速API部署而缺乏足够安全措施，API安全存在显著漏洞。API安全影响调查报告显示，针对API的网络攻击明显增加，大多数组织受到影响。研究将API暴露的增加与AI驱动平台的广泛部署联系起来，API通常位于数据访问和模型集成的核心。",
+          "evidence_text": "Akamai Technologies (NasdaqGS:AKAM) released new research highlighting significant security gaps as organizations accelerate API deployment without sufficient safeguards. The API Security Impact Survey reports a marked rise in API focused cyberattacks, with incidents affecting a large majority of organizations.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AKAM"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:35",
+          "collected_time": "2026-05-06 01:31:40.530988",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=22e09976bc2d5bbb9d858fb319384f4ab3c0ed537b3976e7cbf780b31b27e0cd",
+          "logic_frame": {
+            "what_changed": "Akamai发布新研究，报告API安全漏洞显著增加，且与AI平台部署相关。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "Akamai Technologies (AKAM)",
+              "网络安全行业"
+            ]
+          },
+          "batch_id": "m12_AKAM.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_141182c81107",
+          "signal_type": "industry",
+          "signal_label": "AOSL发布DrMOS新品",
+          "description": "Alpha and Omega Semiconductor发布了面向AI服务器和高端GPU的SmartClamp™ Protected DrMOS系列，该技术提供行业领先的峰值电流限制，确保高需求AI工作负载的安全可靠运行。",
+          "evidence_text": "Alpha and Omega Semiconductor Unveils SmartClamp™ Protected DrMOS Family for AI Servers and High-End GPUs. New DrMOS technology delivers industry-leading peak-to-peak current limiting, ensuring safe and reliable operation for high-demand AI workloads...",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:06",
+          "collected_time": "2026-05-06 01:31:11.416130",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=67b2e6a1c64a3059f46795f85fa8c6ec44ba96552acf1b82620ff26306dfd769",
+          "logic_frame": {
+            "what_changed": "Alpha and Omega Semiconductor发布了面向AI服务器和高端GPU的新一代DrMOS产品SmartClamp™ Protected DrMOS系列",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL.US",
+              "AI服务器电源管理芯片市场"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_2ecac5aac5d3",
+          "signal_type": "event_driven",
+          "signal_label": "AOSL发布SmartClamp DrMOS新品",
+          "description": "Alpha and Omega Semiconductor（AOSL）发布了面向AI服务器和高端GPU的SmartClamp Protected DrMOS系列产品，这是一款新的功率管理芯片产品。",
+          "evidence_text": "Alpha and Omega Semiconductor Unveils SmartClamp Protected DrMOS Family for AI Servers and High-End GPUs",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:02",
+          "collected_time": "2026-05-06 01:31:06.514346",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 8,
+          "timeliness_score": 8,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=8491eb87bb6bbf29595df44ac1cbd403fae28f8902040df3053a9d558a12663c",
+          "logic_frame": {
+            "what_changed": "AOSL发布了面向AI服务器和高端GPU的新一代DrMOS功率管理芯片产品",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL.US",
+              "美国半导体行业"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_7af027b9d310",
+          "signal_type": "event_driven",
+          "signal_label": "Needham首次覆盖AOSL给予买入评级",
+          "description": "Needham分析师David Williams首次覆盖Alpha & Omega Semiconductor（AOSL），给予买入评级，目标价50美元。",
+          "evidence_text": "Needham analyst David Williams initiates coverage on Alpha & Omega (NASDAQ:AOSL) with a Buy rating and announces Price Target of $50.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:30:57",
+          "collected_time": "2026-05-06 01:31:02.144841",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 3,
+          "confidence_score": 6,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=1baea0c159adda7fe177a377a7749550ab1781bc4fdc9d2057edd2f34b953439",
+          "logic_frame": {
+            "what_changed": "Needham首次覆盖AOSL，给予买入评级和50美元目标价",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_0f2b1e402b8b",
+          "signal_type": "macro",
+          "signal_label": "纳斯达克4月涨15.3%创2020年来最佳月",
+          "description": "纳斯达克综合指数在2026年4月上涨15.3%，创下自2020年初疫情爆发以来最强的月度涨幅，主要受AI驱动的科技股财报推动。",
+          "evidence_text": "The Nasdaq Composite surged 15.3% in April, marking its strongest monthly gain since the early pandemic, driven by AI-fueled tech earnings.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-04-30 16:00:00",
+          "collected_time": "2026-05-06 01:38:11.819010",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 7,
+          "confidence_score": 8,
+          "timeliness_score": 7,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=d599e02ca247d74c85f7c9bde4a30c4bcd45f0ebcbcb6713e83588b1539863e0",
+          "logic_frame": {
+            "what_changed": "纳斯达克综合指数在2026年4月上涨15.3%，创下自2020年初疫情爆发以来最强的月度涨幅。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "US",
+              "纳斯达克综合指数",
+              "科技股"
+            ]
+          },
+          "batch_id": "m12_AEHR.US_2026-05-06"
+        }
+      ],
+      "unexplained_ratio": 0.0,
+      "confidence": 1.0,
+      "causation_type": "industry"
+    },
+    "trend": {
+      "anomaly": {
+        "anomaly_id": "ano_bee05f25722f",
+        "instrument": "AEHR.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 7.78,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 85.61,
+        "anomaly_price": 92.27,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 01:34:53.648785"
+      },
+      "stage": "early",
+      "remaining_upside_pct": 6.2,
+      "catalyst_persistence": "continuing",
+      "similar_cases": [],
+      "reasoning": "AEHR.US 1日涨幅+7.8%（AnomalyType.DAILY_SURGE）\n趋势阶段判断: 趋势早期（可补牢）\n原因类型: industry，持续性: 持续\n溯源置信度: 100%，无法解释比例: 0%\n估算剩余空间: 6.2%\n主要原因: industry: 半导体ETF创历史最佳月度表现; industry: Akamai报告API安全漏洞增加\n建议: 可按计划补牢入场"
+    },
+    "origin": "opportunity_catcher",
+    "stop_loss_candidates": [
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 2.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 4.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "atr",
+        "stop_loss_value": 1.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "opportunity": {
+      "opportunity_id": "opp_633e2479",
+      "opportunity_title": "AI电源芯片机会",
+      "opportunity_thesis": "半导体行业整体强势，ETF创历史最佳月度表现，且上涨结构从Nvidia扩散至Intel、AMD等，显示行业景气度扩散。AOSL发布面向AI服务器的DrMOS新品，叠加分析师首次覆盖买入评级，构成个股层面的催化剂。AI服务器电源管理芯片需求旺盛，AOSL作为细分领域受益者，有望在行业上行周期中获得超额收益。",
+      "target_markets": [
+        "US"
+      ],
+      "target_instruments": [
+        "AOSL.US"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-06 00:00:00",
+        "end": "2026-06-06 00:00:00",
+        "confidence_level": 0.7
+      },
+      "why_now": "半导体ETF创25年最佳月度表现，行业景气度确认上行；AOSL新品发布与分析师首次覆盖买入评级同日出现，形成事件驱动催化剂；AI服务器电源管理芯片需求正处于爆发初期，时间窗口明确。",
+      "related_signals": [
+        "sig_8bcc99948526",
+        "sig_141182c81107",
+        "sig_2ecac5aac5d3",
+        "sig_7af027b9d310",
+        "sig_8bcc99948526",
+        "sig_141182c81107",
+        "sig_2ecac5aac5d3",
+        "sig_7af027b9d310",
+        "sig_32b785012f2e",
+        "sig_d238c752c534",
+        "sig_32d566d8ee3d"
+      ],
+      "inferred_events": [
+        "inferred_69537125",
+        "inferred_9ba00bf9",
+        "inferred_ff52fd94",
+        "inferred_150e0762",
+        "inferred_dd525163",
+        "inferred_789540b5",
+        "inferred_7bad9c02",
+        "inferred_7acf28f7"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout"
+      ],
+      "supporting_evidence": [
+        "半导体ETF SOXX录得25年来最大月度回报，SMH创2003年11月以来最佳月度表现，行业整体强势",
+        "本轮上涨由Intel、AMD、Micron、Marvell驱动，显示AI受益范围从Nvidia扩散至更广泛的半导体公司",
+        "AOSL发布面向AI服务器和高端GPU的SmartClamp DrMOS新品，技术领先",
+        "Needham首次覆盖AOSL，给予买入评级和50美元目标价"
+      ],
+      "counter_evidence": [
+        "AOSL市值较小，流动性有限，可能波动较大",
+        "分析师首次覆盖评级短期影响有限，需关注后续订单和业绩验证"
+      ],
+      "key_assumptions": [
+        "假设1：AI服务器电源管理芯片需求持续增长，AOSL新品能获得客户认可",
+        "假设2：半导体行业整体上行趋势在未来1个月内不会逆转",
+        "假设3：AOSL股价尚未充分反映新品和评级利好"
+      ],
+      "uncertainty_map": [
+        "最大不确定性1：AOSL新品商业化进度和订单量（影响程度：高）",
+        "不确定性2：半导体行业整体回调风险（影响程度：中）",
+        "不确定性3：分析师目标价能否实现（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 7,
+        "timeliness": 8,
+        "market_confirmation": 6,
+        "tradability": 5,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 8,
+        "overall_score": 6.7,
+        "confidence_score": 0.72,
+        "execution_readiness": 0.65
+      },
+      "risk_reward_profile": "潜在收益：AOSL若获得AI服务器客户订单，股价有望向50美元目标价靠拢，上行空间约30-40%。风险：新品商业化不及预期或行业回调，下行风险约15-20%。风险收益比约2:1。",
+      "next_validation_questions": [
+        "AOSL当前股价与50美元目标价的差距是多少？",
+        "AOSL近期是否有机构持仓变化或成交量放大？",
+        "AI服务器电源管理芯片市场的竞争格局如何？AOSL的市占率？",
+        "AOSL即将发布的财报预期如何？"
+      ],
+      "invalidation_conditions": [
+        "AOSL股价跌破近期支撑位（如20日均线）",
+        "半导体ETF SOXX出现连续3日以上回调",
+        "AOSL新品订单或客户公告低于预期"
+      ],
+      "must_watch_indicators": [
+        "AOSL股价与成交量变化",
+        "SOXX/SMH ETF走势",
+        "AI服务器相关公司（如NVDA、AMD）的资本开支指引",
+        "AOSL后续分析师评级变化"
+      ],
+      "kill_switch_signals": [
+        "AOSL发布业绩预警或下调指引",
+        "半导体行业出现系统性利空（如出口管制升级）",
+        "AOSL股价放量跌破关键支撑位"
+      ],
+      "warnings": [
+        "注意：AOSL市值较小，流动性有限，不适合大资金操作",
+        "注意：分析师首次覆盖评级短期影响有限，需关注后续订单验证"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-06 01:43:43.206200",
+      "batch_id": "m12_AIOS.US_2026-05-06",
+      "origin": "opportunity_catcher",
+      "entry_constraint": null
+    },
+    "anomaly": {
+      "anomaly_id": "ano_4d0b806afef9",
+      "instrument": "AIOS.US",
+      "market": "US",
+      "anomaly_type": "daily_surge",
+      "anomaly_date": "2026-05-06",
+      "price_change_pct": 44.91,
+      "atr_multiple": 0.0,
+      "sigma_multiple": 0.0,
+      "volume_ratio": 0.0,
+      "baseline_price": 15.52,
+      "anomaly_price": 22.49,
+      "n_days": 1,
+      "is_limit_up": false,
+      "is_limit_down": false,
+      "detected_at": "2026-05-06 01:34:54.193941"
+    },
+    "causation": {
+      "anomaly": {
+        "anomaly_id": "ano_4d0b806afef9",
+        "instrument": "AIOS.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 44.91,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 15.52,
+        "anomaly_price": 22.49,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 01:34:54.193941"
+      },
+      "causes": [
+        {
+          "signal_id": "sig_8bcc99948526",
+          "signal_type": "industry",
+          "signal_label": "半导体ETF创历史最佳月度表现",
+          "description": "半导体ETF SOXX录得25年来最大月度回报，SMH录得自2003年11月以来最佳月度表现。本轮上涨由Intel、AMD、Micron和Marvell等芯片股驱动，而非前周期的AI硬件龙头Nvidia。",
+          "evidence_text": "SOXX posts its largest monthly return in 25 years. SMH had its best month since November 2003. Yet Nvidia — the AI hardware leader of the prior cycle — was the slowest-moving mega-cap chipmaker in the basket. Intel, AMD, Micron and Marvell did the work.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "SOXX",
+            "SMH",
+            "INTC",
+            "AMD",
+            "MU",
+            "MRVL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:33:10",
+          "collected_time": "2026-05-06 01:33:16.226480",
+          "time_horizon": "SHORT",
+          "intensity_score": 8,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=70158942535031a1e17d6df23ee2023ae3583e2c5008e74dc2f8fdc131761d79",
+          "logic_frame": {
+            "what_changed": "半导体ETF SOXX和SMH分别录得25年来最大月度回报和自2003年11月以来最佳月度表现，且上涨由Intel、AMD、Micron、Marvell驱动，而非Nvidia。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "美股半导体行业",
+              "SOXX",
+              "SMH",
+              "Intel",
+              "AMD",
+              "Micron",
+              "Marvell"
+            ]
+          },
+          "batch_id": "m12_ALAB.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_ee846a049753",
+          "signal_type": "industry",
+          "signal_label": "Akamai报告API安全漏洞增加",
+          "description": "Akamai Technologies发布新研究，指出随着组织加速API部署而缺乏足够安全措施，API安全存在显著漏洞。API安全影响调查报告显示，针对API的网络攻击明显增加，大多数组织受到影响。研究将API暴露的增加与AI驱动平台的广泛部署联系起来，API通常位于数据访问和模型集成的核心。",
+          "evidence_text": "Akamai Technologies (NasdaqGS:AKAM) released new research highlighting significant security gaps as organizations accelerate API deployment without sufficient safeguards. The API Security Impact Survey reports a marked rise in API focused cyberattacks, with incidents affecting a large majority of organizations.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AKAM"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:35",
+          "collected_time": "2026-05-06 01:31:40.530988",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=22e09976bc2d5bbb9d858fb319384f4ab3c0ed537b3976e7cbf780b31b27e0cd",
+          "logic_frame": {
+            "what_changed": "Akamai发布新研究，报告API安全漏洞显著增加，且与AI平台部署相关。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "Akamai Technologies (AKAM)",
+              "网络安全行业"
+            ]
+          },
+          "batch_id": "m12_AKAM.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_141182c81107",
+          "signal_type": "industry",
+          "signal_label": "AOSL发布DrMOS新品",
+          "description": "Alpha and Omega Semiconductor发布了面向AI服务器和高端GPU的SmartClamp™ Protected DrMOS系列，该技术提供行业领先的峰值电流限制，确保高需求AI工作负载的安全可靠运行。",
+          "evidence_text": "Alpha and Omega Semiconductor Unveils SmartClamp™ Protected DrMOS Family for AI Servers and High-End GPUs. New DrMOS technology delivers industry-leading peak-to-peak current limiting, ensuring safe and reliable operation for high-demand AI workloads...",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:06",
+          "collected_time": "2026-05-06 01:31:11.416130",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=67b2e6a1c64a3059f46795f85fa8c6ec44ba96552acf1b82620ff26306dfd769",
+          "logic_frame": {
+            "what_changed": "Alpha and Omega Semiconductor发布了面向AI服务器和高端GPU的新一代DrMOS产品SmartClamp™ Protected DrMOS系列",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL.US",
+              "AI服务器电源管理芯片市场"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_2ecac5aac5d3",
+          "signal_type": "event_driven",
+          "signal_label": "AOSL发布SmartClamp DrMOS新品",
+          "description": "Alpha and Omega Semiconductor（AOSL）发布了面向AI服务器和高端GPU的SmartClamp Protected DrMOS系列产品，这是一款新的功率管理芯片产品。",
+          "evidence_text": "Alpha and Omega Semiconductor Unveils SmartClamp Protected DrMOS Family for AI Servers and High-End GPUs",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:02",
+          "collected_time": "2026-05-06 01:31:06.514346",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 8,
+          "timeliness_score": 8,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=8491eb87bb6bbf29595df44ac1cbd403fae28f8902040df3053a9d558a12663c",
+          "logic_frame": {
+            "what_changed": "AOSL发布了面向AI服务器和高端GPU的新一代DrMOS功率管理芯片产品",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL.US",
+              "美国半导体行业"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_7af027b9d310",
+          "signal_type": "event_driven",
+          "signal_label": "Needham首次覆盖AOSL给予买入评级",
+          "description": "Needham分析师David Williams首次覆盖Alpha & Omega Semiconductor（AOSL），给予买入评级，目标价50美元。",
+          "evidence_text": "Needham analyst David Williams initiates coverage on Alpha & Omega (NASDAQ:AOSL) with a Buy rating and announces Price Target of $50.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:30:57",
+          "collected_time": "2026-05-06 01:31:02.144841",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 3,
+          "confidence_score": 6,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=1baea0c159adda7fe177a377a7749550ab1781bc4fdc9d2057edd2f34b953439",
+          "logic_frame": {
+            "what_changed": "Needham首次覆盖AOSL，给予买入评级和50美元目标价",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_45b1ae94fad4",
+          "signal_type": "event_driven",
+          "signal_label": "AIOS股价盘前暴跌21%",
+          "description": "AIOS股票在盘前交易中下跌21%，投资者正在评估新的投票权变更和近期的股份合并。",
+          "evidence_text": "AIOS shares slide 21% in premarket trading. Investors weigh new voting control changes and recent share consolidation.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AIOS.US"
+          ],
+          "signal_direction": "BEARISH",
+          "event_time": "2026-05-06 01:43:00",
+          "collected_time": "2026-05-06 01:43:04.297163",
+          "time_horizon": "SHORT",
+          "intensity_score": 6,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=a82a7b69043bde60cff88ed2b66d8214e6960fd476ef918d57dc20014642b972",
+          "logic_frame": {
+            "what_changed": "AIOS股票在盘前交易中下跌21%",
+            "change_direction": "BEARISH",
+            "affects": [
+              "AIOS.US"
+            ]
+          },
+          "batch_id": "m12_AIOS.US_2026-05-06"
+        }
+      ],
+      "unexplained_ratio": 0.0,
+      "confidence": 1.0,
+      "causation_type": "industry"
+    },
+    "trend": {
+      "anomaly": {
+        "anomaly_id": "ano_4d0b806afef9",
+        "instrument": "AIOS.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 44.91,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 15.52,
+        "anomaly_price": 22.49,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 01:34:54.193941"
+      },
+      "stage": "early",
+      "remaining_upside_pct": 35.9,
+      "catalyst_persistence": "continuing",
+      "similar_cases": [],
+      "reasoning": "AIOS.US 1日涨幅+44.9%（AnomalyType.DAILY_SURGE）\n趋势阶段判断: 趋势早期（可补牢）\n原因类型: industry，持续性: 持续\n溯源置信度: 100%，无法解释比例: 0%\n估算剩余空间: 35.9%\n主要原因: industry: 半导体ETF创历史最佳月度表现; industry: Akamai报告API安全漏洞增加\n建议: 可按计划补牢入场"
+    },
+    "origin": "opportunity_catcher",
+    "stop_loss_candidates": [
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 2.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 4.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "atr",
+        "stop_loss_value": 1.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "opportunity": {
+      "opportunity_id": "opp_0e308e24",
+      "opportunity_title": "AI电源芯片机会",
+      "opportunity_thesis": "半导体行业整体强势，AI服务器电源管理芯片需求旺盛，AOSL发布新品并获分析师首次覆盖买入评级，构成短期交易机会。市场对AI硬件关注点从GPU向配套芯片扩散，AOSL作为细分领域受益者，存在预期差。",
+      "target_markets": [
+        "US"
+      ],
+      "target_instruments": [
+        "AOSL.US"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-06 00:00:00",
+        "end": "2026-05-20 00:00:00",
+        "confidence_level": 0.7
+      },
+      "why_now": "半导体ETF创25年最佳月度表现，行业情绪高涨；AOSL新品发布和首次覆盖评级同时出现，形成短期催化剂叠加。",
+      "related_signals": [
+        "sig_8bcc99948526",
+        "sig_141182c81107",
+        "sig_2ecac5aac5d3",
+        "sig_7af027b9d310",
+        "sig_8bcc99948526",
+        "sig_141182c81107",
+        "sig_2ecac5aac5d3",
+        "sig_7af027b9d310",
+        "sig_32b785012f2e",
+        "sig_d238c752c534",
+        "sig_32d566d8ee3d"
+      ],
+      "inferred_events": [
+        "inferred_2e1ac8ec",
+        "inferred_52458da2",
+        "inferred_59920c9e",
+        "inferred_70f6e968",
+        "inferred_3f74112e",
+        "inferred_a8f0cf7d",
+        "inferred_d1fa3007"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout"
+      ],
+      "supporting_evidence": [
+        "半导体ETF SOXX和SMH创历史最佳月度表现，行业整体强势",
+        "AOSL发布面向AI服务器的SmartClamp DrMOS新品，技术领先",
+        "Needham首次覆盖AOSL，给予买入评级和50美元目标价",
+        "AI服务器电源管理芯片需求旺盛，AOSL直接受益"
+      ],
+      "counter_evidence": [
+        "AOSL市值较小，流动性有限，可能波动较大",
+        "新品发布和首次覆盖评级强度一般，市场反应可能有限"
+      ],
+      "key_assumptions": [
+        "半导体行业整体强势趋势至少维持1-2周",
+        "AOSL新品能获得市场认可并转化为实际订单",
+        "Needham的买入评级能吸引更多机构关注"
+      ],
+      "uncertainty_map": [
+        "AOSL新品商业化速度不确定（影响程度：中）",
+        "半导体行业短期回调风险（影响程度：中）",
+        "AOSL流动性不足导致交易成本高（影响程度：低）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 6,
+        "timeliness": 8,
+        "market_confirmation": 5,
+        "tradability": 4,
+        "risk_clarity": 5,
+        "consensus_gap": 6,
+        "signal_consistency": 7,
+        "overall_score": 5.9,
+        "confidence_score": 0.65,
+        "execution_readiness": 0.55
+      },
+      "risk_reward_profile": "潜在收益来自短期情绪驱动和评级催化，约10-15%；风险在于流动性不足和行业回调，最大亏损约15-20%。",
+      "next_validation_questions": [
+        "AOSL当前股价与50美元目标价差距多大？",
+        "AOSL近期成交量是否放大？",
+        "是否有其他分析师跟进覆盖？",
+        "AI服务器电源管理芯片市场规模和增速如何？"
+      ],
+      "invalidation_conditions": [
+        "半导体ETF出现连续回调",
+        "AOSL股价跌破近期低点",
+        "Needham下调评级或目标价"
+      ],
+      "must_watch_indicators": [
+        "SOXX和SMH走势",
+        "AOSL成交量",
+        "AOSL股价相对50美元目标价位置",
+        "AI服务器相关新闻"
+      ],
+      "kill_switch_signals": [
+        "半导体行业出现重大利空",
+        "AOSL发布负面公告",
+        "股价跌破关键支撑位"
+      ],
+      "warnings": [
+        "AOSL市值较小，流动性有限，需控制仓位",
+        "信号来源均为新闻，非官方公告，需自行核实"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-06 01:45:19.374475",
+      "batch_id": "m12_AIP.US_2026-05-06",
+      "origin": "opportunity_catcher",
+      "entry_constraint": null
+    },
+    "anomaly": {
+      "anomaly_id": "ano_3d9efa3c2206",
+      "instrument": "AIP.US",
+      "market": "US",
+      "anomaly_type": "daily_surge",
+      "anomaly_date": "2026-05-06",
+      "price_change_pct": 6.03,
+      "atr_multiple": 0.0,
+      "sigma_multiple": 0.0,
+      "volume_ratio": 0.0,
+      "baseline_price": 28.85,
+      "anomaly_price": 30.59,
+      "n_days": 1,
+      "is_limit_up": false,
+      "is_limit_down": false,
+      "detected_at": "2026-05-06 01:34:54.231299"
+    },
+    "causation": {
+      "anomaly": {
+        "anomaly_id": "ano_3d9efa3c2206",
+        "instrument": "AIP.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 6.03,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 28.85,
+        "anomaly_price": 30.59,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 01:34:54.231299"
+      },
+      "causes": [
+        {
+          "signal_id": "sig_8bcc99948526",
+          "signal_type": "industry",
+          "signal_label": "半导体ETF创历史最佳月度表现",
+          "description": "半导体ETF SOXX录得25年来最大月度回报，SMH录得自2003年11月以来最佳月度表现。本轮上涨由Intel、AMD、Micron和Marvell等芯片股驱动，而非前周期的AI硬件龙头Nvidia。",
+          "evidence_text": "SOXX posts its largest monthly return in 25 years. SMH had its best month since November 2003. Yet Nvidia — the AI hardware leader of the prior cycle — was the slowest-moving mega-cap chipmaker in the basket. Intel, AMD, Micron and Marvell did the work.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "SOXX",
+            "SMH",
+            "INTC",
+            "AMD",
+            "MU",
+            "MRVL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:33:10",
+          "collected_time": "2026-05-06 01:33:16.226480",
+          "time_horizon": "SHORT",
+          "intensity_score": 8,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=70158942535031a1e17d6df23ee2023ae3583e2c5008e74dc2f8fdc131761d79",
+          "logic_frame": {
+            "what_changed": "半导体ETF SOXX和SMH分别录得25年来最大月度回报和自2003年11月以来最佳月度表现，且上涨由Intel、AMD、Micron、Marvell驱动，而非Nvidia。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "美股半导体行业",
+              "SOXX",
+              "SMH",
+              "Intel",
+              "AMD",
+              "Micron",
+              "Marvell"
+            ]
+          },
+          "batch_id": "m12_ALAB.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_ee846a049753",
+          "signal_type": "industry",
+          "signal_label": "Akamai报告API安全漏洞增加",
+          "description": "Akamai Technologies发布新研究，指出随着组织加速API部署而缺乏足够安全措施，API安全存在显著漏洞。API安全影响调查报告显示，针对API的网络攻击明显增加，大多数组织受到影响。研究将API暴露的增加与AI驱动平台的广泛部署联系起来，API通常位于数据访问和模型集成的核心。",
+          "evidence_text": "Akamai Technologies (NasdaqGS:AKAM) released new research highlighting significant security gaps as organizations accelerate API deployment without sufficient safeguards. The API Security Impact Survey reports a marked rise in API focused cyberattacks, with incidents affecting a large majority of organizations.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AKAM"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:35",
+          "collected_time": "2026-05-06 01:31:40.530988",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=22e09976bc2d5bbb9d858fb319384f4ab3c0ed537b3976e7cbf780b31b27e0cd",
+          "logic_frame": {
+            "what_changed": "Akamai发布新研究，报告API安全漏洞显著增加，且与AI平台部署相关。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "Akamai Technologies (AKAM)",
+              "网络安全行业"
+            ]
+          },
+          "batch_id": "m12_AKAM.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_141182c81107",
+          "signal_type": "industry",
+          "signal_label": "AOSL发布DrMOS新品",
+          "description": "Alpha and Omega Semiconductor发布了面向AI服务器和高端GPU的SmartClamp™ Protected DrMOS系列，该技术提供行业领先的峰值电流限制，确保高需求AI工作负载的安全可靠运行。",
+          "evidence_text": "Alpha and Omega Semiconductor Unveils SmartClamp™ Protected DrMOS Family for AI Servers and High-End GPUs. New DrMOS technology delivers industry-leading peak-to-peak current limiting, ensuring safe and reliable operation for high-demand AI workloads...",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:06",
+          "collected_time": "2026-05-06 01:31:11.416130",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=67b2e6a1c64a3059f46795f85fa8c6ec44ba96552acf1b82620ff26306dfd769",
+          "logic_frame": {
+            "what_changed": "Alpha and Omega Semiconductor发布了面向AI服务器和高端GPU的新一代DrMOS产品SmartClamp™ Protected DrMOS系列",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL.US",
+              "AI服务器电源管理芯片市场"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_2ecac5aac5d3",
+          "signal_type": "event_driven",
+          "signal_label": "AOSL发布SmartClamp DrMOS新品",
+          "description": "Alpha and Omega Semiconductor（AOSL）发布了面向AI服务器和高端GPU的SmartClamp Protected DrMOS系列产品，这是一款新的功率管理芯片产品。",
+          "evidence_text": "Alpha and Omega Semiconductor Unveils SmartClamp Protected DrMOS Family for AI Servers and High-End GPUs",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:02",
+          "collected_time": "2026-05-06 01:31:06.514346",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 8,
+          "timeliness_score": 8,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=8491eb87bb6bbf29595df44ac1cbd403fae28f8902040df3053a9d558a12663c",
+          "logic_frame": {
+            "what_changed": "AOSL发布了面向AI服务器和高端GPU的新一代DrMOS功率管理芯片产品",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL.US",
+              "美国半导体行业"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_7af027b9d310",
+          "signal_type": "event_driven",
+          "signal_label": "Needham首次覆盖AOSL给予买入评级",
+          "description": "Needham分析师David Williams首次覆盖Alpha & Omega Semiconductor（AOSL），给予买入评级，目标价50美元。",
+          "evidence_text": "Needham analyst David Williams initiates coverage on Alpha & Omega (NASDAQ:AOSL) with a Buy rating and announces Price Target of $50.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:30:57",
+          "collected_time": "2026-05-06 01:31:02.144841",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 3,
+          "confidence_score": 6,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=1baea0c159adda7fe177a377a7749550ab1781bc4fdc9d2057edd2f34b953439",
+          "logic_frame": {
+            "what_changed": "Needham首次覆盖AOSL，给予买入评级和50美元目标价",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_1c48151c7ef1",
+          "signal_type": "event_driven",
+          "signal_label": "Arteris获Stevie技术创新奖",
+          "description": "Arteris, Inc. 宣布其 Cycuity Radix 技术获得 Stevie Award 年度技术创新奖，这是对该公司在半导体领域技术创新的认可。",
+          "evidence_text": "Arteris Wins Stevie Award for Technology Innovation of the Year",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AIP.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-04-30 00:00:00",
+          "collected_time": "2026-05-06 01:44:43.797004",
+          "time_horizon": "SHORT",
+          "intensity_score": 2,
+          "confidence_score": 8,
+          "timeliness_score": 2,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=213ed54604d3db81e671903c9f5bc50a60d541cb535eba8272e43092e2234646",
+          "logic_frame": {
+            "what_changed": "Arteris 的 Cycuity Radix 技术获得了 Stevie Award 年度技术创新奖。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AIP.US"
+            ]
+          },
+          "batch_id": "m12_AIP.US_2026-05-06"
+        }
+      ],
+      "unexplained_ratio": 0.0,
+      "confidence": 1.0,
+      "causation_type": "industry"
+    },
+    "trend": {
+      "anomaly": {
+        "anomaly_id": "ano_3d9efa3c2206",
+        "instrument": "AIP.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 6.03,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 28.85,
+        "anomaly_price": 30.59,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 01:34:54.231299"
+      },
+      "stage": "middle",
+      "remaining_upside_pct": 4.8,
+      "catalyst_persistence": "continuing",
+      "similar_cases": [],
+      "reasoning": "AIP.US 1日涨幅+6.0%（AnomalyType.DAILY_SURGE）\n趋势阶段判断: 趋势中期（谨慎）\n原因类型: industry，持续性: 持续\n溯源置信度: 100%，无法解释比例: 0%\n估算剩余空间: 4.8%\n主要原因: industry: 半导体ETF创历史最佳月度表现; industry: Akamai报告API安全漏洞增加\n建议: 紧止损谨慎参与"
+    },
+    "origin": "opportunity_catcher",
+    "stop_loss_candidates": [
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 2.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 4.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "atr",
+        "stop_loss_value": 1.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "opportunity": {
+      "opportunity_id": "opp_be680980",
+      "opportunity_title": "AI电源芯片机会",
+      "opportunity_thesis": "半导体行业整体强势，AI服务器电源管理芯片需求旺盛，AOSL发布新品并获得分析师首次覆盖买入评级，构成结构性机会。行业ETF创历史最佳月度表现，且上涨由Intel、AMD等芯片股驱动，表明AI需求正从硬件龙头扩散至更广泛的产业链，AOSL作为电源管理芯片供应商直接受益。当前时点新品发布与分析师覆盖形成双重催化剂，市场尚未充分定价AOSL在AI服务器电源管理领域的潜力。",
+      "target_markets": [
+        "US"
+      ],
+      "target_instruments": [
+        "AOSL.US",
+        "SOXX",
+        "SMH"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK",
+        "ETF"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-06 00:00:00",
+        "end": "2026-06-06 00:00:00",
+        "confidence_level": 0.7
+      },
+      "why_now": "半导体ETF创25年最佳月度表现，行业资金流入加速；AOSL同时发布面向AI服务器的DrMOS新品和获得Needham首次覆盖买入评级，双重催化剂叠加，时间窗口紧迫。",
+      "related_signals": [
+        "sig_8bcc99948526",
+        "sig_141182c81107",
+        "sig_2ecac5aac5d3",
+        "sig_7af027b9d310",
+        "sig_8bcc99948526",
+        "sig_141182c81107",
+        "sig_2ecac5aac5d3",
+        "sig_7af027b9d310",
+        "sig_32b785012f2e",
+        "sig_d238c752c534",
+        "sig_32d566d8ee3d"
+      ],
+      "inferred_events": [
+        "inferred_cba37cfb",
+        "inferred_f725c742",
+        "inferred_28266f48",
+        "inferred_24f2b01f",
+        "inferred_49a9a1b7",
+        "inferred_e32eb3b6"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout"
+      ],
+      "supporting_evidence": [
+        "半导体ETF SOXX录得25年来最大月度回报，SMH录得自2003年11月以来最佳月度表现",
+        "AOSL发布面向AI服务器和高端GPU的SmartClamp Protected DrMOS系列新品",
+        "Needham分析师首次覆盖AOSL，给予买入评级，目标价50美元",
+        "本轮半导体上涨由Intel、AMD、Micron、Marvell驱动，AI需求扩散至更广泛产业链"
+      ],
+      "counter_evidence": [
+        "AOSL新品发布和评级覆盖均为单次事件，商业化订单尚未确认",
+        "半导体行业整体估值已处于历史高位，短期回调风险存在"
+      ],
+      "key_assumptions": [
+        "假设1：AI服务器电源管理芯片需求持续增长，AOSL新品能获得客户采用",
+        "假设2：半导体行业整体上涨趋势延续，资金继续流入",
+        "假设3：Needham目标价50美元反映合理估值，市场将逐步认可"
+      ],
+      "uncertainty_map": [
+        "AOSL新品商业化进度和订单规模不确定（影响程度：高）",
+        "半导体行业整体估值回调风险（影响程度：中）",
+        "分析师评级仅为单家观点，市场共识尚未形成（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 7,
+        "timeliness": 8,
+        "market_confirmation": 6,
+        "tradability": 7,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 8,
+        "overall_score": 7.0,
+        "confidence_score": 0.72,
+        "execution_readiness": 0.65
+      },
+      "risk_reward_profile": "潜在收益：AOSL若获得AI服务器客户订单，股价有望向50美元目标价靠拢，上行空间约30-40%。风险：新品商业化不及预期或行业回调，下行风险约15-20%，止损可设在近期低点附近。",
+      "next_validation_questions": [
+        "AOSL近期是否有AI服务器客户订单或合作公告？",
+        "AOSL当前估值水平与同行业可比公司（如Monolithic Power Systems）相比如何？",
+        "半导体ETF资金流入趋势是否持续？",
+        "Needham之外是否有其他分析师跟进覆盖？"
+      ],
+      "invalidation_conditions": [
+        "AOSL新品商业化进展低于预期，无客户订单公告",
+        "半导体行业ETF出现连续大幅回调，趋势逆转",
+        "AOSL股价跌破近期关键支撑位（如30美元）"
+      ],
+      "must_watch_indicators": [
+        "AOSL股价与成交量变化",
+        "SOXX/SMH ETF资金流入流出数据",
+        "AI服务器电源管理芯片行业订单和需求数据",
+        "Needham目标价50美元的市场反应"
+      ],
+      "kill_switch_signals": [
+        "AOSL发布业绩预警或下调指引",
+        "半导体行业出现重大利空政策或需求下滑信号",
+        "AOSL股价放量跌破30美元且无反弹"
+      ],
+      "warnings": [
+        "注意：AOSL新品发布和评级覆盖均为单次事件，商业化验证尚需时间",
+        "注意：半导体行业整体估值已处于历史高位，短期回调风险不可忽视"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-06 01:47:05.715284",
+      "batch_id": "m12_AKAM.US_2026-05-06",
+      "origin": "opportunity_catcher",
+      "entry_constraint": null
+    },
+    "anomaly": {
+      "anomaly_id": "ano_8cd564554f52",
+      "instrument": "AKAM.US",
+      "market": "US",
+      "anomaly_type": "daily_surge",
+      "anomaly_date": "2026-05-06",
+      "price_change_pct": 9.72,
+      "atr_multiple": 0.0,
+      "sigma_multiple": 0.0,
+      "volume_ratio": 0.0,
+      "baseline_price": 105.78,
+      "anomaly_price": 116.06,
+      "n_days": 1,
+      "is_limit_up": false,
+      "is_limit_down": false,
+      "detected_at": "2026-05-06 01:34:54.343446"
+    },
+    "causation": {
+      "anomaly": {
+        "anomaly_id": "ano_8cd564554f52",
+        "instrument": "AKAM.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 9.72,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 105.78,
+        "anomaly_price": 116.06,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 01:34:54.343446"
+      },
+      "causes": [
+        {
+          "signal_id": "sig_8bcc99948526",
+          "signal_type": "industry",
+          "signal_label": "半导体ETF创历史最佳月度表现",
+          "description": "半导体ETF SOXX录得25年来最大月度回报，SMH录得自2003年11月以来最佳月度表现。本轮上涨由Intel、AMD、Micron和Marvell等芯片股驱动，而非前周期的AI硬件龙头Nvidia。",
+          "evidence_text": "SOXX posts its largest monthly return in 25 years. SMH had its best month since November 2003. Yet Nvidia — the AI hardware leader of the prior cycle — was the slowest-moving mega-cap chipmaker in the basket. Intel, AMD, Micron and Marvell did the work.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "SOXX",
+            "SMH",
+            "INTC",
+            "AMD",
+            "MU",
+            "MRVL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:33:10",
+          "collected_time": "2026-05-06 01:33:16.226480",
+          "time_horizon": "SHORT",
+          "intensity_score": 8,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=70158942535031a1e17d6df23ee2023ae3583e2c5008e74dc2f8fdc131761d79",
+          "logic_frame": {
+            "what_changed": "半导体ETF SOXX和SMH分别录得25年来最大月度回报和自2003年11月以来最佳月度表现，且上涨由Intel、AMD、Micron、Marvell驱动，而非Nvidia。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "美股半导体行业",
+              "SOXX",
+              "SMH",
+              "Intel",
+              "AMD",
+              "Micron",
+              "Marvell"
+            ]
+          },
+          "batch_id": "m12_ALAB.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_ee846a049753",
+          "signal_type": "industry",
+          "signal_label": "Akamai报告API安全漏洞增加",
+          "description": "Akamai Technologies发布新研究，指出随着组织加速API部署而缺乏足够安全措施，API安全存在显著漏洞。API安全影响调查报告显示，针对API的网络攻击明显增加，大多数组织受到影响。研究将API暴露的增加与AI驱动平台的广泛部署联系起来，API通常位于数据访问和模型集成的核心。",
+          "evidence_text": "Akamai Technologies (NasdaqGS:AKAM) released new research highlighting significant security gaps as organizations accelerate API deployment without sufficient safeguards. The API Security Impact Survey reports a marked rise in API focused cyberattacks, with incidents affecting a large majority of organizations.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AKAM"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:35",
+          "collected_time": "2026-05-06 01:31:40.530988",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=22e09976bc2d5bbb9d858fb319384f4ab3c0ed537b3976e7cbf780b31b27e0cd",
+          "logic_frame": {
+            "what_changed": "Akamai发布新研究，报告API安全漏洞显著增加，且与AI平台部署相关。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "Akamai Technologies (AKAM)",
+              "网络安全行业"
+            ]
+          },
+          "batch_id": "m12_AKAM.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_141182c81107",
+          "signal_type": "industry",
+          "signal_label": "AOSL发布DrMOS新品",
+          "description": "Alpha and Omega Semiconductor发布了面向AI服务器和高端GPU的SmartClamp™ Protected DrMOS系列，该技术提供行业领先的峰值电流限制，确保高需求AI工作负载的安全可靠运行。",
+          "evidence_text": "Alpha and Omega Semiconductor Unveils SmartClamp™ Protected DrMOS Family for AI Servers and High-End GPUs. New DrMOS technology delivers industry-leading peak-to-peak current limiting, ensuring safe and reliable operation for high-demand AI workloads...",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:06",
+          "collected_time": "2026-05-06 01:31:11.416130",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=67b2e6a1c64a3059f46795f85fa8c6ec44ba96552acf1b82620ff26306dfd769",
+          "logic_frame": {
+            "what_changed": "Alpha and Omega Semiconductor发布了面向AI服务器和高端GPU的新一代DrMOS产品SmartClamp™ Protected DrMOS系列",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL.US",
+              "AI服务器电源管理芯片市场"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_2ecac5aac5d3",
+          "signal_type": "event_driven",
+          "signal_label": "AOSL发布SmartClamp DrMOS新品",
+          "description": "Alpha and Omega Semiconductor（AOSL）发布了面向AI服务器和高端GPU的SmartClamp Protected DrMOS系列产品，这是一款新的功率管理芯片产品。",
+          "evidence_text": "Alpha and Omega Semiconductor Unveils SmartClamp Protected DrMOS Family for AI Servers and High-End GPUs",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:31:02",
+          "collected_time": "2026-05-06 01:31:06.514346",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 8,
+          "timeliness_score": 8,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=8491eb87bb6bbf29595df44ac1cbd403fae28f8902040df3053a9d558a12663c",
+          "logic_frame": {
+            "what_changed": "AOSL发布了面向AI服务器和高端GPU的新一代DrMOS功率管理芯片产品",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL.US",
+              "美国半导体行业"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_7af027b9d310",
+          "signal_type": "event_driven",
+          "signal_label": "Needham首次覆盖AOSL给予买入评级",
+          "description": "Needham分析师David Williams首次覆盖Alpha & Omega Semiconductor（AOSL），给予买入评级，目标价50美元。",
+          "evidence_text": "Needham analyst David Williams initiates coverage on Alpha & Omega (NASDAQ:AOSL) with a Buy rating and announces Price Target of $50.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AOSL"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:30:57",
+          "collected_time": "2026-05-06 01:31:02.144841",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 3,
+          "confidence_score": 6,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=1baea0c159adda7fe177a377a7749550ab1781bc4fdc9d2057edd2f34b953439",
+          "logic_frame": {
+            "what_changed": "Needham首次覆盖AOSL，给予买入评级和50美元目标价",
+            "change_direction": "BULLISH",
+            "affects": [
+              "AOSL"
+            ]
+          },
+          "batch_id": "m12_AOSL.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_699803a0394d",
+          "signal_type": "event_driven",
+          "signal_label": "Akamai推出API安全新产品",
+          "description": "Akamai于2026年5月5日宣布推出Security Posture Center和增强的APIs-from-code功能，旨在帮助组织规模化理解和执行API安全态势，将碎片化的API发现转化为可衡量的安全态势，并将运行时活动与代码所有权关联以加速修复。",
+          "evidence_text": "Akamai (NASDAQ: AKAM) today introduced Security Posture Center and enhanced APIs-from-code capabilities. Together, these innovations translate fragmented API findings into business-aligned controls and link live API activity to code ownership to accelerate remediation.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AKAM.US"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-05 09:00:00",
+          "collected_time": "2026-05-06 01:46:22.035669",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 8,
+          "timeliness_score": 8,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=f2ba7190e7b01bd18541390b1a7f489061daa304b8baab34d4a13c96743a3097",
+          "logic_frame": {
+            "what_changed": "Akamai发布了新的API安全产品Security Posture Center和增强的APIs-from-code功能",
+            "change_direction": "BULLISH",
+            "affects": [
+              "US",
+              "AKAM.US"
+            ]
+          },
+          "batch_id": "m12_AKAM.US_2026-05-06"
+        },
+        {
+          "signal_id": "sig_e596dceec3a2",
+          "signal_type": "industry",
+          "signal_label": "API安全漏洞增加，AI扩张加剧风险",
+          "description": "Akamai发布新研究，指出随着组织加速API部署且缺乏足够安全措施，API安全漏洞显著增加。API安全影响调查报告显示，针对API的网络攻击明显上升，大多数组织受到影响。研究将API暴露增加与AI驱动平台的广泛推广联系起来，API通常位于数据访问和模型集成的核心位置。",
+          "evidence_text": "Akamai Technologies (NasdaqGS:AKAM) released new research highlighting significant security gaps as organizations accelerate API deployment without sufficient safeguards. The API Security Impact Survey reports a marked rise in API focused cyberattacks, with incidents affecting a large majority of organizations. The findings link growing API exposure to the broader rollout of AI powered platforms, where APIs often sit at the core of data access and model integration.",
+          "affected_markets": [
+            "US"
+          ],
+          "affected_instruments": [
+            "AKAM"
+          ],
+          "signal_direction": "BULLISH",
+          "event_time": "2026-05-06 01:46:24",
+          "collected_time": "2026-05-06 01:46:29.800167",
+          "time_horizon": "MEDIUM",
+          "intensity_score": 4,
+          "confidence_score": 7,
+          "timeliness_score": 9,
+          "source_type": "news",
+          "source_ref": "https://finnhub.io/api/news?id=22e09976bc2d5bbb9d858fb319384f4ab3c0ed537b3976e7cbf780b31b27e0cd",
+          "logic_frame": {
+            "what_changed": "Akamai发布新研究，揭示API安全漏洞显著增加，且与AI平台扩张相关。",
+            "change_direction": "BULLISH",
+            "affects": [
+              "US",
+              "AKAM"
+            ]
+          },
+          "batch_id": "m12_AKAM.US_2026-05-06"
+        }
+      ],
+      "unexplained_ratio": 0.0,
+      "confidence": 1.0,
+      "causation_type": "industry"
+    },
+    "trend": {
+      "anomaly": {
+        "anomaly_id": "ano_8cd564554f52",
+        "instrument": "AKAM.US",
+        "market": "US",
+        "anomaly_type": "daily_surge",
+        "anomaly_date": "2026-05-06",
+        "price_change_pct": 9.72,
+        "atr_multiple": 0.0,
+        "sigma_multiple": 0.0,
+        "volume_ratio": 0.0,
+        "baseline_price": 105.78,
+        "anomaly_price": 116.06,
+        "n_days": 1,
+        "is_limit_up": false,
+        "is_limit_down": false,
+        "detected_at": "2026-05-06 01:34:54.343446"
+      },
+      "stage": "early",
+      "remaining_upside_pct": 7.8,
+      "catalyst_persistence": "continuing",
+      "similar_cases": [],
+      "reasoning": "AKAM.US 1日涨幅+9.7%（AnomalyType.DAILY_SURGE）\n趋势阶段判断: 趋势早期（可补牢）\n原因类型: industry，持续性: 持续\n溯源置信度: 100%，无法解释比例: 0%\n估算剩余空间: 7.8%\n主要原因: industry: 半导体ETF创历史最佳月度表现; industry: Akamai报告API安全漏洞增加\n建议: 可按计划补牢入场"
+    },
+    "origin": "opportunity_catcher",
+    "stop_loss_candidates": [
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 2.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "percent",
+        "stop_loss_value": 4.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      },
+      {
+        "stop_loss_type": "atr",
+        "stop_loss_value": 1.0,
+        "stop_loss_price": null,
+        "hard_stop": true,
+        "notes": null
+      }
+    ]
+  }
+]

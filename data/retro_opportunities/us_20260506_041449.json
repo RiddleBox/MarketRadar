@@ -1,0 +1,35 @@
+[
+  {
+    "instrument": "AIOS.US",
+    "market": "US",
+    "price_change_pct": 43.46,
+    "trend_stage": "middle",
+    "causation_confidence": 1.0,
+    "remaining_upside_pct": 8.7,
+    "opportunity_id": "opp_60121928",
+    "priority": "research",
+    "entry_constraint": null
+  },
+  {
+    "instrument": "ALMU.US",
+    "market": "US",
+    "price_change_pct": 20.95,
+    "trend_stage": "middle",
+    "causation_confidence": 1.0,
+    "remaining_upside_pct": 4.2,
+    "opportunity_id": "opp_b93a4834",
+    "priority": "research",
+    "entry_constraint": null
+  },
+  {
+    "instrument": "CIFR.US",
+    "market": "US",
+    "price_change_pct": 20.18,
+    "trend_stage": "middle",
+    "causation_confidence": 1.0,
+    "remaining_upside_pct": 4.0,
+    "opportunity_id": "opp_ce86f420",
+    "priority": "research",
+    "entry_constraint": null
+  }
+]

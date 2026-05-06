@@ -1,0 +1,74 @@
+{
+  "plan_id": "plan_13fe371bf849",
+  "opportunity_id": "opp_5d560ce5",
+  "plan_summary": "BULLISH | SOXX, SMH",
+  "primary_instruments": [
+    "SOXX",
+    "SMH",
+    "INTC",
+    "AMD",
+    "MU",
+    "MRVL",
+    "AAOI",
+    "AOSL"
+  ],
+  "instrument_type": "ETF",
+  "direction": "BULLISH",
+  "market": "US",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 2.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": null
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 10.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "第一目标 240 美元（前高+5%），第二目标 255 美元（历史新高+10%）"
+  },
+  "position_sizing": {
+    "suggested_allocation": "8.0%",
+    "max_allocation": "不超过8.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=5.0% | 仓位=风险预算/止损=8.0% | Kelly参考=16.8%",
+    "suggested_allocation_pct": 0.08,
+    "max_allocation_pct": 0.08
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入 SOXX，仓位 20%（总资金上限 30%），止损设在 50 日均线下方 2%（约 206 美元）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "SOXX 回踩 20 日均线且 RSI 回落至 60-65，同时 INTC 或 AMD 出现放量上涨"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓 SOXX 至总仓位 50%（即再加 30%），止损上移至 Phase 1 入场价（保本）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 浮盈达到 5%（即 SOXX 从入场价上涨 5%），且 SOXX 站稳 20 日均线上方"
+    },
+    {
+      "phase_name": "Phase 3 趋势仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总仓位 70%（即再加 20%），止损上移至 20 日均线（动态调整）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "SOXX 突破前高 228 美元（近期高点）且成交量放大至 20 日均量 1.2 倍以上"
+    }
+  ],
+  "valid_until": "2026-05-27 03:24:56.660612",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-06 03:24:56.660713",
+  "opportunity_priority": "research"
+}

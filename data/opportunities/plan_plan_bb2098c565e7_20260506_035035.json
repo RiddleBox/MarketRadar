@@ -1,0 +1,64 @@
+{
+  "plan_id": "plan_bb2098c565e7",
+  "opportunity_id": "opp_17fff5c6",
+  "plan_summary": "BULLISH | SOXX, SMH",
+  "primary_instruments": [
+    "SOXX",
+    "SMH",
+    "INTC",
+    "AMD",
+    "MU",
+    "MRVL"
+  ],
+  "instrument_type": "ETF",
+  "direction": "BULLISH",
+  "market": "US",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 2.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": null
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 10.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "SOXX目标价240美元（约+10%），SMH目标价220美元（约+10%），二线芯片股目标价+15-20%"
+  },
+  "position_sizing": {
+    "suggested_allocation": "8.0%",
+    "max_allocation": "不超过8.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=5.0% | 仓位=风险预算/止损=8.0% | Kelly参考=14.5%",
+    "suggested_allocation_pct": 0.08,
+    "max_allocation_pct": 0.08
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入SOXX或SMH，仓位占总资金的20%；同时买入INTC、AMD、MU、MRVL各5%仓位（合计20%），总仓位40%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "SOXX或SMH当日收盘价高于前一日收盘价，且成交量大于20日均量，且INTC、AMD、MU、MRVL中至少2只涨幅超过2%"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓SOXX或SMH至总仓位30%，加仓INTC、AMD、MU、MRVL各至总仓位10%（合计40%），总仓位提升至70%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1持仓浮盈超过5%，且SOXX/SMH未跌破20日均线"
+    }
+  ],
+  "valid_until": "2026-05-27 03:50:35.434622",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-06 03:50:35.434722",
+  "opportunity_priority": "research"
+}
