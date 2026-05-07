@@ -51,6 +51,8 @@ class SentimentStore:
 
     def _init_db(self):
         with sqlite3.connect(self.db_path) as conn:
+            conn.text_factory = str
+            conn.execute("PRAGMA encoding = 'UTF-8'")
             conn.execute("""
                 CREATE TABLE IF NOT EXISTS sentiment_snapshots (
                     id              INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -103,6 +105,7 @@ class SentimentStore:
     def latest(self, n: int = 1) -> List[dict]:
         """最近 n 条快照"""
         with sqlite3.connect(self.db_path) as conn:
+            conn.text_factory = str
             conn.row_factory = sqlite3.Row
             rows = conn.execute(
                 "SELECT * FROM sentiment_snapshots ORDER BY snapshot_time DESC LIMIT ?",
@@ -113,6 +116,7 @@ class SentimentStore:
     def query_range(self, start: datetime, end: datetime) -> List[dict]:
         """按时间范围查询"""
         with sqlite3.connect(self.db_path) as conn:
+            conn.text_factory = str
             conn.row_factory = sqlite3.Row
             rows = conn.execute(
                 "SELECT * FROM sentiment_snapshots WHERE snapshot_time BETWEEN ? AND ? "
@@ -124,6 +128,7 @@ class SentimentStore:
     def find_extremes(self, threshold_high: float = 80, threshold_low: float = 20) -> List[dict]:
         """找历史极值点"""
         with sqlite3.connect(self.db_path) as conn:
+            conn.text_factory = str
             conn.row_factory = sqlite3.Row
             rows = conn.execute(
                 "SELECT * FROM sentiment_snapshots "

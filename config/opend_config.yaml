@@ -1,48 +1,31 @@
-# FutuOpenD Configuration
-# 富途OpenD行情网关配置
-
 opend:
-  # OpenD可执行文件路径（根据环境自动选择）
-  executable:
-    # 云服务器路径
-    linux: "/root/futu/Futu_OpenD_10.4.6408_Ubuntu18.04/Futu_OpenD_10.4.6408_Ubuntu18.04/FutuOpenD"
-    # 本地Windows路径（示例）
-    windows: "C:/Program Files/Futu/FutuOpenD/OpenD.exe"
-    # macOS路径（示例）
-    darwin: "/Applications/FutuOpenD.app/Contents/MacOS/FutuOpenD"
-  
-  # 网络配置
-  host: "127.0.0.1"
-  port: 11111
-  
-  # 启动参数
-  startup:
-    auto_start: true  # 调度器启动时自动启动OpenD
-    wait_seconds: 5   # 启动后等待秒数
-    check_interval: 2 # 健康检查间隔（秒）
-    max_retries: 3    # 最大重试次数
-  
-  # 进程管理
-  process:
-    check_command: "pgrep -f FutuOpenD"  # 检查进程是否运行
-    log_file: "logs/opend.log"           # 日志文件路径
-    pid_file: "logs/opend.pid"           # PID文件路径
-  
-  # 数据源优先级
   data_priority:
-    - futu_feed      # 首选：实时行情
-    - yfinance_feed  # 备用：免费但有延迟
-    - akshare_feed   # 兜底：国内数据源
-  
-  # 市场支持
+  - futu_feed
+  - yfinance_feed
+  - akshare_feed
+  executable:
+    darwin: /Applications/FutuOpenD.app/Contents/MacOS/FutuOpenD
+    linux: /root/futu/Futu_OpenD_10.4.6408_Ubuntu18.04/Futu_OpenD_10.4.6408_Ubuntu18.04/FutuOpenD
+    windows: D:\2_Tools\Futu_OpenD_10.4.6408_Windows\Futu_OpenD_10.4.6408_Windows/FutuOpenD.exe
+  host: 127.0.0.1
   markets:
     A_SHARE:
       enabled: true
-      latency: "秒级实时"
+      latency: 秒级实时
     HK:
       enabled: true
-      latency: "秒级实时"
+      latency: 秒级实时
     US:
       enabled: true
-      latency: "15分钟延迟（免费版）"
-      notes: "需要富途牛牛APP扫码授权"
+      latency: 15分钟延迟（免费版）
+      notes: 需要富途牛牛APP扫码授权
+  port: 11111
+  process:
+    check_command: pgrep -f FutuOpenD
+    log_file: logs/opend.log
+    pid_file: logs/opend.pid
+  startup:
+    auto_start: true
+    check_interval: 2
+    max_retries: 3
+    wait_seconds: 5

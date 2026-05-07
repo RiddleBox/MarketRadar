@@ -1,5 +1,5 @@
 {
-  "running": false,
+  "running": true,
   "tick_interval_s": 30,
   "tasks": {
     "signal_pipeline": {
@@ -8,8 +8,8 @@
       "enabled": true,
       "interval_minutes": 30,
       "time_window": null,
-      "last_run": "2026-05-05T01:15:59.108446",
-      "run_count": 2,
+      "last_run": "2026-05-07T15:15:36.282600",
+      "run_count": 4,
       "error_count": 0,
       "last_status": "ok"
     },
@@ -22,10 +22,10 @@
         "09:25",
         "15:05"
       ],
-      "last_run": null,
-      "run_count": 0,
+      "last_run": "2026-05-07T14:58:24.834873",
+      "run_count": 8,
       "error_count": 0,
-      "last_status": null
+      "last_status": "ok"
     },
     "daily_review": {
       "name": "daily_review",
@@ -36,10 +36,10 @@
         "15:30",
         "23:59"
       ],
-      "last_run": null,
-      "run_count": 0,
+      "last_run": "2026-05-07T15:30:27.225785",
+      "run_count": 1,
       "error_count": 0,
-      "last_status": null
+      "last_status": "ok"
     },
     "news_collect": {
       "name": "news_collect",
@@ -47,8 +47,8 @@
       "enabled": true,
       "interval_minutes": 15,
       "time_window": null,
-      "last_run": "2026-05-05T01:15:59.140227",
-      "run_count": 3,
+      "last_run": "2026-05-07T15:19:19.197526",
+      "run_count": 7,
       "error_count": 0,
       "last_status": "ok"
     },
@@ -61,8 +61,8 @@
         "09:00",
         "22:00"
       ],
-      "last_run": "2026-05-05T00:45:58.979493",
-      "run_count": 1,
+      "last_run": "2026-05-07T15:18:49.123609",
+      "run_count": 4,
       "error_count": 0,
       "last_status": "ok"
     },
@@ -75,10 +75,10 @@
         "09:30",
         "15:00"
       ],
-      "last_run": null,
-      "run_count": 0,
+      "last_run": "2026-05-07T14:58:31.154393",
+      "run_count": 8,
       "error_count": 0,
-      "last_status": null
+      "last_status": "ok"
     },
     "m12_hk_scan": {
       "name": "m12_hk_scan",
@@ -89,10 +89,10 @@
         "09:30",
         "16:00"
       ],
-      "last_run": null,
-      "run_count": 0,
+      "last_run": "2026-05-07T15:29:27.180481",
+      "run_count": 11,
       "error_count": 0,
-      "last_status": null
+      "last_status": "ok"
     },
     "m12_us_scan": {
       "name": "m12_us_scan",
@@ -103,10 +103,10 @@
         "21:30",
         "04:00"
       ],
-      "last_run": "2026-05-05T01:15:59.141577",
-      "run_count": 4,
+      "last_run": null,
+      "run_count": 0,
       "error_count": 0,
-      "last_status": "ok"
+      "last_status": null
     },
     "m12_premarket_a_share": {
       "name": "m12_premarket_a_share",
@@ -195,9 +195,47 @@
   },
   "recent_runs": [
     {
+      "task": "price_update",
+      "at": "2026-05-07T14:37:26.371185",
+      "run_id": "price_update_20260507_143726_1c2f9d",
+      "status": "ok",
+      "duration_s": 0.07,
+      "result": {
+        "open_positions": 1,
+        "updated": 1,
+        "closed": 0
+      }
+    },
+    {
+      "task": "m12_a_share_scan",
+      "at": "2026-05-07T14:37:32.645779",
+      "run_id": "m12_a_share_scan_20260507_143726_5486a1",
+      "status": "ok",
+      "duration_s": 6.27,
+      "result": {
+        "market": "A_SHARE",
+        "opportunities": 0,
+        "instruments": [],
+        "batch_id": "sched_m12_A_SHARE_m12_a_share_scan_20260507_143726_5486a1"
+      }
+    },
+    {
+      "task": "m12_hk_scan",
+      "at": "2026-05-07T14:37:33.637702",
+      "run_id": "m12_hk_scan_20260507_143732_f72639",
+      "status": "ok",
+      "duration_s": 0.99,
+      "result": {
+        "market": "HK",
+        "opportunities": 0,
+        "instruments": [],
+        "batch_id": "sched_m12_HK_m12_hk_scan_20260507_143732_f72639"
+      }
+    },
+    {
       "task": "signal_pipeline",
-      "at": "2026-05-05T00:45:56.070867",
-      "run_id": "signal_pipeline_20260505_004556_58ae7d",
+      "at": "2026-05-07T14:45:33.805107",
+      "run_id": "signal_pipeline_20260507_144533_e015f7",
       "status": "ok",
       "duration_s": 0.0,
       "result": {
@@ -206,78 +244,134 @@
     },
     {
       "task": "sentiment_collect",
-      "at": "2026-05-05T00:45:58.979504",
-      "run_id": "sentiment_collect_20260505_004556_8bb3a4",
+      "at": "2026-05-07T14:47:47.245280",
+      "run_id": "sentiment_collect_20260507_144703_23d812",
       "status": "ok",
-      "duration_s": 2.91,
+      "duration_s": 43.41,
       "result": {
-        "fear_greed": 50.8,
-        "label": "中性",
+        "fear_greed": 59.6,
+        "label": "略偏乐观",
         "direction": "NEUTRAL",
-        "intensity": 2.1,
-        "batch_id": "sched_sent_sentiment_collect_20260505_004556_8bb3a4",
+        "intensity": 3.5,
+        "batch_id": "sched_sent_sentiment_collect_20260507_144703_23d812",
         "errors": []
       }
     },
     {
-      "task": "news_collect",
-      "at": "2026-05-05T00:45:59.016862",
-      "run_id": "news_collect_20260505_004558_b89dfd",
+      "task": "price_update",
+      "at": "2026-05-07T14:48:17.329771",
+      "run_id": "price_update_20260507_144817_5e88e3",
       "status": "ok",
-      "duration_s": 0.03,
+      "duration_s": 0.07,
+      "result": {
+        "open_positions": 1,
+        "updated": 1,
+        "closed": 0
+      }
+    },
+    {
+      "task": "news_collect",
+      "at": "2026-05-07T14:48:17.424826",
+      "run_id": "news_collect_20260507_144817_21d829",
+      "status": "ok",
+      "duration_s": 0.09,
       "result": {
         "fetched": 0,
         "written": 0
       }
     },
     {
-      "task": "m12_us_scan",
-      "at": "2026-05-05T00:45:59.064721",
-      "run_id": "m12_us_scan_20260505_004559_3a089e",
+      "task": "m12_a_share_scan",
+      "at": "2026-05-07T14:48:23.626153",
+      "run_id": "m12_a_share_scan_20260507_144817_ea0f00",
+      "status": "ok",
+      "duration_s": 6.2,
+      "result": {
+        "market": "A_SHARE",
+        "opportunities": 0,
+        "instruments": [],
+        "batch_id": "sched_m12_A_SHARE_m12_a_share_scan_20260507_144817_ea0f00"
+      }
+    },
+    {
+      "task": "m12_hk_scan",
+      "at": "2026-05-07T14:48:24.576003",
+      "run_id": "m12_hk_scan_20260507_144823_6de235",
+      "status": "ok",
+      "duration_s": 0.95,
+      "result": {
+        "market": "HK",
+        "opportunities": 0,
+        "instruments": [],
+        "batch_id": "sched_m12_HK_m12_hk_scan_20260507_144823_6de235"
+      }
+    },
+    {
+      "task": "price_update",
+      "at": "2026-05-07T14:58:24.834882",
+      "run_id": "price_update_20260507_145824_fc6efe",
+      "status": "ok",
+      "duration_s": 0.07,
+      "result": {
+        "open_positions": 1,
+        "updated": 1,
+        "closed": 0
+      }
+    },
+    {
+      "task": "m12_a_share_scan",
+      "at": "2026-05-07T14:58:31.154402",
+      "run_id": "m12_a_share_scan_20260507_145824_0e47ec",
+      "status": "ok",
+      "duration_s": 6.32,
+      "result": {
+        "market": "A_SHARE",
+        "opportunities": 0,
+        "instruments": [],
+        "batch_id": "sched_m12_A_SHARE_m12_a_share_scan_20260507_145824_0e47ec"
+      }
+    },
+    {
+      "task": "m12_hk_scan",
+      "at": "2026-05-07T14:58:32.153646",
+      "run_id": "m12_hk_scan_20260507_145831_d351e4",
+      "status": "ok",
+      "duration_s": 1.0,
+      "result": {
+        "market": "HK",
+        "opportunities": 0,
+        "instruments": [],
+        "batch_id": "sched_m12_HK_m12_hk_scan_20260507_145831_d351e4"
+      }
+    },
+    {
+      "task": "news_collect",
+      "at": "2026-05-07T15:03:32.286912",
+      "run_id": "news_collect_20260507_150332_a1de40",
       "status": "ok",
       "duration_s": 0.05,
       "result": {
-        "error": "No module named 'm0_core'",
-        "market": "US"
-      }
-    },
-    {
-      "task": "m12_us_scan",
-      "at": "2026-05-05T00:55:59.069613",
-      "run_id": "m12_us_scan_20260505_005559_7bc6f3",
-      "status": "ok",
-      "duration_s": 0.0,
-      "result": {
-        "error": "No module named 'm0_core'",
-        "market": "US"
-      }
-    },
-    {
-      "task": "news_collect",
-      "at": "2026-05-05T01:00:59.100756",
-      "run_id": "news_collect_20260505_010059_7877f7",
-      "status": "ok",
-      "duration_s": 0.03,
-      "result": {
         "fetched": 0,
         "written": 0
       }
     },
     {
-      "task": "m12_us_scan",
-      "at": "2026-05-05T01:05:59.103995",
-      "run_id": "m12_us_scan_20260505_010559_f683c5",
+      "task": "m12_hk_scan",
+      "at": "2026-05-07T15:08:36.191035",
+      "run_id": "m12_hk_scan_20260507_150832_ffce59",
       "status": "ok",
-      "duration_s": 0.0,
+      "duration_s": 3.84,
       "result": {
-        "error": "No module named 'm0_core'",
-        "market": "US"
+        "market": "HK",
+        "opportunities": 0,
+        "instruments": [],
+        "batch_id": "sched_m12_HK_m12_hk_scan_20260507_150832_ffce59"
       }
     },
     {
       "task": "signal_pipeline",
-      "at": "2026-05-05T01:15:59.108465",
-      "run_id": "signal_pipeline_20260505_011559_98d46d",
+      "at": "2026-05-07T15:15:36.282611",
+      "run_id": "signal_pipeline_20260507_151536_da35b6",
       "status": "ok",
       "duration_s": 0.0,
       "result": {
@@ -285,25 +379,65 @@
       }
     },
     {
-      "task": "news_collect",
-      "at": "2026-05-05T01:15:59.140239",
-      "run_id": "news_collect_20260505_011559_d6281c",
+      "task": "sentiment_collect",
+      "at": "2026-05-07T15:18:49.123615",
+      "run_id": "sentiment_collect_20260507_151806_8e6fa4",
       "status": "ok",
-      "duration_s": 0.03,
+      "duration_s": 42.8,
+      "result": {
+        "fear_greed": 60.3,
+        "label": "略偏乐观",
+        "direction": "BULLISH",
+        "intensity": 3.6,
+        "batch_id": "sched_sent_sentiment_collect_20260507_151806_8e6fa4",
+        "errors": []
+      }
+    },
+    {
+      "task": "news_collect",
+      "at": "2026-05-07T15:19:19.197534",
+      "run_id": "news_collect_20260507_151919_75b4c4",
+      "status": "ok",
+      "duration_s": 0.06,
       "result": {
         "fetched": 0,
         "written": 0
       }
     },
     {
-      "task": "m12_us_scan",
-      "at": "2026-05-05T01:15:59.141589",
-      "run_id": "m12_us_scan_20260505_011559_74b4a7",
+      "task": "m12_hk_scan",
+      "at": "2026-05-07T15:19:23.087920",
+      "run_id": "m12_hk_scan_20260507_151919_807dc4",
       "status": "ok",
-      "duration_s": 0.0,
+      "duration_s": 3.89,
       "result": {
-        "error": "No module named 'm0_core'",
-        "market": "US"
+        "market": "HK",
+        "opportunities": 0,
+        "instruments": [],
+        "batch_id": "sched_m12_HK_m12_hk_scan_20260507_151919_807dc4"
+      }
+    },
+    {
+      "task": "m12_hk_scan",
+      "at": "2026-05-07T15:29:27.180491",
+      "run_id": "m12_hk_scan_20260507_152923_fab464",
+      "status": "ok",
+      "duration_s": 3.93,
+      "result": {
+        "market": "HK",
+        "opportunities": 0,
+        "instruments": [],
+        "batch_id": "sched_m12_HK_m12_hk_scan_20260507_152923_fab464"
+      }
+    },
+    {
+      "task": "daily_review",
+      "at": "2026-05-07T15:30:27.225793",
+      "run_id": "daily_review_20260507_153027_bdbb97",
+      "status": "ok",
+      "duration_s": 0.03,
+      "result": {
+        "reviewed": 0
       }
     }
   ]

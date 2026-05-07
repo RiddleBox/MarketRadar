@@ -255,6 +255,14 @@ class Scheduler:
         ))
 
         self.register(ScheduledTask(
+            name="rss_news_collect",
+            fn=self._task_rss_news_collect,
+            description="M0 RSS新闻拉取（财联社/东财/新浪/华尔街见闻）",
+            run_at_start=True,
+            **_c("rss_news_collect", 10),
+        ))
+
+        self.register(ScheduledTask(
             name="sentiment_collect",
             fn=self._task_sentiment_collect,
             description="M10情绪采集：恐贪指数+北向资金+热搜+微博 → 写入 SQLite + 注入 M2",
@@ -681,6 +689,61 @@ class Scheduler:
         except Exception as e:
             logger.error(f"[M7/news_collect] 失败: {e}")
             return {"error": str(e)}
+
+    def _task_rss_news_collect(self, run_id: str = "") -> dict:
+        """
+        M0 RSS 新闻拉取，写入 data/incoming/ 供 signal_pipeline 消费。
+
+        RSS 源包括:
+        - 财联社
+        - 东方财富
+        - 新浪财经
+        - 华尔街见闻
+        """
+        import sys
+        sys.path.insert(0, str(ROOT))
+        try:
+            from m0_collector.providers.rss import RssProvider
+
+            provider = RssProvider(timeout=15, max_per_feed=20)
+            items = provider.fetch(limit=50)  # 总共最多50条
+
+            written = 0
+            incoming_dir = ROOT / "data" / "incoming"
+            incoming_dir.mkdir(parents=True, exist_ok=True)
+
+            for item in items:
+                fname = incoming_dir / item.filename()
+                if not fname.exists():
+                    fname.write_text(item.content, encoding="utf-8")
+                    written += 1
+
+            logger.info(f"[M7/rss_news_collect] 拉取 {len(items)} 条新闻，写入 {written} 个新文件")
+            return {
+                "fetched": len(items),
+                "written": written,
+                "status": "success"
+            }
+
+        except ImportError as e:
+            error_msg = f"导入失败: {e} - 请运行: pip install feedparser beautifulsoup4"
+            logger.error(f"[M7/rss_news_collect] {error_msg}")
+            return {
+                "error": error_msg,
+                "status": "failed",
+                "fetched": 0,
+                "written": 0
+            }
+
+        except Exception as e:
+            error_msg = f"执行失败: {e}"
+            logger.error(f"[M7/rss_news_collect] {error_msg}", exc_info=True)
+            return {
+                "error": error_msg,
+                "status": "failed",
+                "fetched": 0,
+                "written": 0
+            }
 
     def _task_sentiment_collect(self, run_id: str = "") -> dict:
         """

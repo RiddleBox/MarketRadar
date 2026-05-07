@@ -35,7 +35,8 @@ sys.path.insert(0, str(ROOT))
 PID_FILE = ROOT / "data" / "scheduler.pid"
 STATE_FILE = ROOT / "data" / "scheduler_state.json"
 
-console = Console()
+# Fix Windows GBK encoding issue
+console = Console(force_terminal=True, legacy_windows=False)
 
 
 @click.group()
@@ -170,7 +171,8 @@ def run(task_name, verbose):
         console.print(f"可用任务: {', '.join(scheduler.tasks.keys())}")
         sys.exit(1)
 
-    console.print(f"[cyan]▶ 触发任务: {task_name}[/cyan]")
+    # Use ASCII-safe characters to avoid encoding issues
+    console.print(f"[cyan]> 触发任务: {task_name}[/cyan]")
     result = scheduler.run_now(task_name)
 
     status_color = "green" if result.get("status") == "ok" else "red"

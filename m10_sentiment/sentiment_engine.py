@@ -167,7 +167,7 @@ class SentimentEngine:
         return "；".join(parts) or "情绪数据采集中"
 
     def _save_snapshot(self, snap, signal, batch_id: str):
-        """保存原始快照到 data/sentiment/"""
+        """保存原始快照到 data/sentiment/ 和数据库"""
         try:
             out_dir = ROOT / "data" / "sentiment"
             out_dir.mkdir(parents=True, exist_ok=True)
@@ -190,6 +190,12 @@ class SentimentEngine:
             }
             out_file.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
             logger.info(f"[SentimentEngine] 快照已保存: {out_file.name}")
+
+            # 同时保存到数据库
+            from m10_sentiment.sentiment_store import SentimentStore
+            store = SentimentStore()
+            store.save(data)
+            logger.info(f"[SentimentEngine] 快照已写入数据库")
         except Exception as e:
             logger.warning(f"[SentimentEngine] 快照保存失败: {e}")
 
