@@ -49,10 +49,17 @@ signal_options = {}
 for sig in signals[:50]:  # 最多显示50条
     sig_id = sig.get("signal_id", "")
     sig_type = sig.get("signal_type", "未知")
-    created_at = (sig.get("created_at") or "")[:19]
-    content_preview = (sig.get("content") or "")[:50]
 
-    label = f"[{sig_type}] {created_at} - {content_preview}..."
+    # 使用 event_time，如果没有则使用 collected_time
+    event_time = sig.get("event_time") or sig.get("collected_time") or ""
+    if event_time:
+        event_time = str(event_time)[:19]  # 截取到秒
+
+    # 使用 description 作为预览，如果没有则使用 signal_label
+    content_preview = sig.get("description") or sig.get("signal_label") or sig.get("content") or ""
+    content_preview = str(content_preview)[:50]
+
+    label = f"[{sig_type}] {event_time} - {content_preview}..."
     signal_options[label] = sig_id
 
 selected_label = st.selectbox(
