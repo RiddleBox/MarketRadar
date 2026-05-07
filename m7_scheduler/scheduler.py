@@ -190,6 +190,7 @@ class Scheduler:
         self._stop_event = threading.Event()
         self._lock = threading.Lock()
         self._run_log: List[dict] = []     # 最近 200 条运行记录
+        self._is_running = False            # 标记调度器是否在运行（包括前台模式）
 
     # ── 任务注册 ─────────────────────────────────────────────
 
@@ -354,12 +355,16 @@ class Scheduler:
             logger.warning("[M7] 调度器已在运行")
             return
         self._stop_event.clear()
+        self._is_running = True
 
         # 处理 run_at_start
         for task in self.tasks.values():
             if task.run_at_start and task.enabled:
                 result = task.run()
                 self._append_log(task.name, result)
+
+        # 立即保存初始状态
+        self._save_state()
 
         if background:
             self._thread = threading.Thread(
@@ -374,6 +379,7 @@ class Scheduler:
     def stop(self):
         """停止调度器"""
         self._stop_event.set()
+        self._is_running = False
         if self._thread:
             self._thread.join(timeout=5)
         logger.info("[M7] 调度器已停止")
@@ -390,7 +396,7 @@ class Scheduler:
     def status(self) -> dict:
         """返回所有任务状态"""
         return {
-            "running": self._thread is not None and self._thread.is_alive(),
+            "running": self._is_running and not self._stop_event.is_set(),
             "tick_interval_s": self.tick_interval,
             "tasks": {name: t.status_dict() for name, t in self.tasks.items()},
             "recent_runs": self._run_log[-20:],
@@ -659,8 +665,8 @@ class Scheduler:
         import sys
         sys.path.insert(0, str(ROOT))
         try:
-            from m0_collector.providers.akshare_provider import AKShareNewsProvider
-            provider = AKShareNewsProvider()
+            from m0_collector.providers.akshare_news import AkshareNewsProvider
+            provider = AkshareNewsProvider()
             items = provider.fetch(source="all", limit=30)
             written = 0
             incoming_dir = ROOT / "data" / "incoming"
@@ -786,8 +792,35 @@ class Scheduler:
             return result
 
         except Exception as e:
-            logger.error(f"[M7/m12_{market.value.lower()}_scan] 失败: {e}")
-            return {"error": str(e), "market": market.value}
+            error_msg = str(e)
+            error_type = type(e).__name__
+
+            # 检测是否为 OpenD 连接失败
+            if "WSAECONNREFUSED" in error_msg or "Connection refused" in error_msg:
+                error_detail = "FutuOpenD 连接失败：OpenD 进程未运行或端口不可达"
+                logger.error(f"[M7/m12_{market.value.lower()}_scan] {error_detail}")
+                return {
+                    "error": error_detail,
+                    "error_type": "OpenD_Connection_Failed",
+                    "market": market.value,
+                    "suggestion": "请在 Dashboard 中启动 FutuOpenD 进程"
+                }
+            elif "futu" in error_msg.lower() or "opend" in error_msg.lower():
+                error_detail = f"FutuOpenD 错误: {error_msg}"
+                logger.error(f"[M7/m12_{market.value.lower()}_scan] {error_detail}")
+                return {
+                    "error": error_detail,
+                    "error_type": "OpenD_Error",
+                    "market": market.value,
+                    "suggestion": "请检查 OpenD 状态和配置"
+                }
+            else:
+                logger.error(f"[M7/m12_{market.value.lower()}_scan] 失败: {e}")
+                return {
+                    "error": error_msg,
+                    "error_type": error_type,
+                    "market": market.value
+                }
 
     def _task_m12_premarket_scan(self, market: "Market", run_id: str = "") -> dict:
         """
