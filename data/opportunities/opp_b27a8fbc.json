@@ -1,0 +1,105 @@
+{
+  "opportunity_id": "opp_b27a8fbc",
+  "opportunity_title": "宽松对冲衰退",
+  "opportunity_thesis": "央行降准降息组合拳落地，叠加制造业PMI连续收缩、CPI/PPI负增长，构成典型的政策宽松对抗经济衰退格局。当前市场对通缩和制造业收缩的悲观定价已较充分，而政策力度超预期（降准+降息同时落地），存在预期差修复机会。历史案例显示降息后银行股估值修复确定性高，但地产股需基本面配合，因此优先关注受益于流动性改善且估值低位的金融板块及高股息防御品种。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "沪深300ETF",
+    "银行ETF",
+    "国债期货"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-18T00:00:00",
+    "end": "2026-05-18T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行于4月18日宣布降准降息，政策落地时间窗口已开启；同时4月PMI数据（49.0）和CPI/PPI数据确认经济下行压力，市场悲观情绪达到极值，政策与数据的共振窗口仅限未来1个月。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203"
+  ],
+  "inferred_events": [
+    "inferred_1f9e50b2",
+    "inferred_619db73a",
+    "inferred_ce18a91a",
+    "inferred_1b0a20ca",
+    "inferred_f7a53dcf"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点+降息10bp，宽松力度超预期，直接改善银行净息差和流动性",
+    "制造业PMI连续3个月低于荣枯线，CPI/PPI负增长，经济基本面已充分反映悲观预期",
+    "历史案例case_2024_rate_cut显示降息后银行股估值修复确定性高，20天内完成交易"
+  ],
+  "counter_evidence": [
+    "降准降息已被市场部分预期，短期可能利好出尽",
+    "通缩和制造业收缩若持续恶化，宽松政策效果可能被抵消"
+  ],
+  "key_assumptions": [
+    "假设1：后续无更差的经济数据（如PMI跌破48）出现",
+    "假设2：央行宽松政策能有效传导至实体经济，而非流动性陷阱"
+  ],
+  "uncertainty_map": [
+    "经济下行速度超预期（影响程度：高）",
+    "政策传导效率低，资金淤积在银行间市场（影响程度：中）",
+    "外部风险（如地缘冲突）加剧市场避险情绪（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 7,
+    "overall_score": 7.0,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：银行股估值修复10-15%，高股息板块获得流动性溢价；潜在风险：经济数据进一步恶化导致市场二次探底，最大回撤约5-8%。",
+  "next_validation_questions": [
+    "降准降息后银行间市场利率（如DR007）是否显著下行？",
+    "4月最后一周的信贷数据是否超预期？",
+    "地产板块是否有跟涨迹象，验证政策传导？"
+  ],
+  "invalidation_conditions": [
+    "PMI下月跌破48，确认经济加速恶化",
+    "银行间市场利率不降反升，流动性陷阱出现",
+    "市场出现系统性风险事件（如信用债违约潮）"
+  ],
+  "must_watch_indicators": [
+    "DR007利率",
+    "4月社融数据",
+    "银行板块成交量",
+    "国债收益率曲线"
+  ],
+  "kill_switch_signals": [
+    "PMI跌破48",
+    "银行板块放量下跌",
+    "央行意外收紧流动性"
+  ],
+  "warnings": [
+    "注意：CPI/PPI数据为12月旧数据，时效性较低",
+    "注意：历史案例显示地产股反弹需基本面配合，不宜追高"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:34:52.164024",
+  "batch_id": "sched_manual_test_20260508_astock_skill_ba0ddb05",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

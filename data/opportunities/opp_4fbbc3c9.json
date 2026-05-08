@@ -1,0 +1,116 @@
+{
+  "opportunity_id": "opp_4fbbc3c9",
+  "opportunity_title": "新能源政策+资金共振",
+  "opportunity_thesis": "财政部正式将新能源汽车购置税减免延续至2027年底，政策确定性高且时间窗口长，叠加情绪面资金持续从消费、地产轮入新能源板块，形成政策与资金共振。当前恐贪指数未至极端贪婪，市场尚未完全定价该政策对2026-2027年销量的提振，存在预期差。历史案例显示，政策落地+资金流入的组合在短期内有较高胜率，但需警惕板块内部分化及整体市场回调风险。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源车ETF",
+    "光伏ETF",
+    "锂电池ETF",
+    "新能源汽车板块龙头股"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "政策于4月24日正式发布，是当前最直接的催化剂；情绪面资金已连续多日流入新能源板块，形成趋势；市场整体恐贪指数67，未至极端贪婪，仍有上行空间。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sent_ec6c7cba",
+    "sig_30d3e00700ed",
+    "sig_1c94cfaf9bad",
+    "sig_810b1cc2cedf",
+    "sig_80c24e558ad0",
+    "sig_e552050e5030",
+    "sig_a19c232b39d7"
+  ],
+  "inferred_events": [
+    "inferred_4a728642",
+    "inferred_65a4ac94",
+    "inferred_7aeb0155",
+    "inferred_af96ca6d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "财政部、税务总局联合公告，新能源汽车购置税减免政策延续至2027年底，政策确定性高",
+    "情绪面信号显示资金连续多日从消费、地产流向新能源、半导体，形成板块轮动趋势",
+    "推理事件显示新能源板块持续获得资金流入，龙头股业绩超预期概率80%",
+    "历史案例case_2024_rate_cut显示政策落地+资金流入组合在短期内有较高胜率"
+  ],
+  "counter_evidence": [
+    "推理事件显示A股市场短期回调风险加大，指数可能跌破关键支撑位概率70%",
+    "历史案例case_2024_tech_breakthrough显示缺乏订单验证的概念炒作容易回落"
+  ],
+  "key_assumptions": [
+    "假设1：新能源板块资金流入趋势在未来1-2周内持续，而非短期脉冲",
+    "假设2：购置税减免政策能有效提振2026-2027年新能源汽车销量，带动产业链盈利改善",
+    "假设3：整体市场不出现系统性风险（如指数跌破关键支撑位）"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：整体市场回调风险（影响程度：高）——若A股指数大幅下跌，板块难以独善其身",
+    "不确定性2：板块内部分化（影响程度：中）——政策利好可能集中于整车和电池龙头，部分环节受益有限",
+    "不确定性3：资金轮动持续性（影响程度：中）——若情绪面资金快速切换至其他板块，行情可能夭折"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：政策催化+资金流入推动板块短期上涨5-10%，龙头股可能更高；潜在风险：整体市场回调导致板块同步下跌3-5%，或资金轮动结束导致行情夭折。风险收益比约2:1，适合小仓位试探。",
+  "next_validation_questions": [
+    "新能源板块（如新能源车ETF）今日成交量是否明显放大？",
+    "新能源汽车龙头股（如比亚迪）是否有业绩预告或订单数据支撑？",
+    "恐贪指数是否进一步上升至80以上，提示过热风险？",
+    "是否有其他板块（如AI、半导体）分流资金，削弱新能源板块吸引力？"
+  ],
+  "invalidation_conditions": [
+    "新能源板块指数跌破20日均线，且成交量萎缩",
+    "恐贪指数上升至80以上，市场情绪过热",
+    "政策出现负面变化或执行细则不及预期"
+  ],
+  "must_watch_indicators": [
+    "新能源车ETF（如515030）价格与成交量",
+    "恐贪指数",
+    "北向资金流向（新能源板块）",
+    "新能源汽车月度销量数据"
+  ],
+  "kill_switch_signals": [
+    "A股三大指数集体跌破关键支撑位（如上证指数跌破3200点）",
+    "新能源板块出现单日跌幅超过3%且放量",
+    "政策被撤回或大幅修改"
+  ],
+  "warnings": [
+    "注意：情绪面信号为板块轮动，非基本面改善，需警惕资金快进快出",
+    "注意：整体市场回调风险较高（概率70%），仓位不宜过重"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:30:44.912510",
+  "batch_id": "sched_manual_test_20260508_astock_skill_8f4beaf6",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

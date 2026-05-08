@@ -1,0 +1,7 @@
+【CNBC】AWS data center outage hits trading on Fanduel, Coinbase — recovery to take hours
+
+<!-- source: CNBC | url: https://www.cnbc.com/2026/05/08/aws-outage-data-center-fanduel-coinbase.html | published: 2026-05-08 15:23 | collected: 2026-05-08 23:25 | provider: rss -->
+
+[信号类型: us_market]
+
+The cloud platform says it is currently working to resolve the outage, caused by overheating at a data center in Northern Virginia.

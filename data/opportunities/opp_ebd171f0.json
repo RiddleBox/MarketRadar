@@ -1,0 +1,108 @@
+{
+  "opportunity_id": "opp_ebd171f0",
+  "opportunity_title": "宽松对冲通缩",
+  "opportunity_thesis": "央行已实施降准降息，叠加PMI连续收缩和CPI/PPI通缩，政策宽松与宏观疲软形成典型对冲格局。市场对通缩定价充分，但对后续财政配合和LPR下调预期不足，银行和利率敏感板块存在估值修复机会。当前是政策底确认后的左侧布局窗口。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "银行ETF",
+    "沪深300ETF",
+    "国债期货"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-06-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行已实际降准0.5%并下调逆回购利率10bp，但PMI连续3个月低于荣枯线、CPI/PPI通缩数据刚公布，市场对宽松效果存疑。历史案例显示降息后银行股有估值修复窗口，当前预期差最大，后续LPR下调概率75%是短期催化剂。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_e39115aa3077",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203"
+  ],
+  "inferred_events": [
+    "inferred_4985553f",
+    "inferred_8aebcadb",
+    "inferred_2d7fa914",
+    "inferred_6e809910",
+    "inferred_11a21f3b",
+    "inferred_927ee654"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行已实施降准0.5%和逆回购降息10bp，政策宽松方向明确",
+    "PMI连续3个月低于50，经济下行压力为宽松提供必要性",
+    "CPI/PPI通缩数据强化宽松预期，市场对通缩定价充分",
+    "历史案例case_2024_rate_cut显示降息后银行股有估值修复机会"
+  ],
+  "counter_evidence": [
+    "通缩环境压制企业盈利，宽松传导至实体经济需时间",
+    "市场对宽松已有部分定价，降准消息公布后短期涨幅有限"
+  ],
+  "key_assumptions": [
+    "假设1：后续LPR下调或财政配合政策在1个月内落地",
+    "假设2：通缩压力不进一步恶化至信贷收缩螺旋"
+  ],
+  "uncertainty_map": [
+    "财政政策配合力度和节奏不确定（影响程度：高）",
+    "通缩持续时间超预期，宽松效果钝化（影响程度：中）",
+    "外部风险（如中美关系）干扰市场情绪（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 7,
+    "overall_score": 6.9,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：银行ETF估值修复10-15%，沪深300指数反弹5-8%；风险：通缩持续导致宽松失效，最大回撤5-8%。风险收益比约1:1.5。",
+  "next_validation_questions": [
+    "未来2周内是否有LPR下调或财政刺激政策落地？",
+    "银行板块资金流向是否开始转为净流入？",
+    "PMI下月数据是否企稳或回升？"
+  ],
+  "invalidation_conditions": [
+    "1个月内无进一步宽松或财政政策落地",
+    "PMI跌破48，通缩加速恶化",
+    "银行板块跌破近期低点"
+  ],
+  "must_watch_indicators": [
+    "LPR报价变化",
+    "制造业PMI月度数据",
+    "银行ETF成交量与价格走势",
+    "10年期国债收益率"
+  ],
+  "kill_switch_signals": [
+    "央行意外收紧流动性（如逆回购利率上调）",
+    "PMI跌破48且无政策响应",
+    "银行板块单日跌幅超3%放量破位"
+  ],
+  "warnings": [
+    "注意：通缩环境下宽松政策传导至实体和股市存在时滞，短期可能继续震荡",
+    "历史案例显示地产股在降息后反弹乏力，需聚焦银行和利率敏感板块"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:47:30.971756",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_rss_3e6acf5e",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

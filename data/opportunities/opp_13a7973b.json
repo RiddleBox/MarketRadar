@@ -1,0 +1,104 @@
+{
+  "opportunity_id": "opp_13a7973b",
+  "opportunity_title": "新能源政策资金共振",
+  "opportunity_thesis": "新能源汽车购置税减免政策延续至2027年底，叠加资金从消费、地产轮入新能源板块，形成政策与资金的双重合力。当前市场情绪处于中性偏贪婪区间，尚未完全定价政策长期利好，且板块轮动信号明确，构成结构性做多机会。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "新能源汽车ETF",
+    "宁德时代",
+    "比亚迪"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "政策于4月24日正式发布，时效性极强；同时板块轮动信号显示资金正在流入新能源，市场尚未充分反应政策长期利好，存在预期差。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_30d3e00700ed"
+  ],
+  "inferred_events": [
+    "inferred_ebb6c5a5",
+    "inferred_10d54063",
+    "inferred_e9f4f08c",
+    "inferred_c30b7c9c",
+    "inferred_fffa4131"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "财政部、税务总局联合公告新能源汽车购置税减免延续至2027年底，政策确定性高",
+    "板块轮动信号显示资金从消费、地产流向新能源、半导体，资金面形成支撑",
+    "历史案例显示政策利好叠加资金流入时，板块有持续上涨动力"
+  ],
+  "counter_evidence": [
+    "恐贪指数67处于中性偏贪婪区间，市场情绪尚未极端，但可能限制短期爆发力",
+    "新能源板块前期已有一定涨幅，部分利好可能已被定价"
+  ],
+  "key_assumptions": [
+    "假设1：政策执行力度和细则与公告一致，无意外收紧",
+    "假设2：宏观经济环境未出现超预期恶化，影响汽车消费需求",
+    "假设3：资金轮动趋势可持续，新能源板块未出现新的利空"
+  ],
+  "uncertainty_map": [
+    "宏观经济下行风险（影响程度：高）：若PMI持续低于荣枯线，消费信心不足可能削弱政策效果",
+    "竞争加剧风险（影响程度：中）：行业价格战可能压缩利润，抵消政策利好",
+    "市场情绪过热风险（影响程度：中）：若恐贪指数快速升至80以上，追高风险加大"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.8
+  },
+  "risk_reward_profile": "政策确定性高，资金面配合，潜在收益中等偏上；主要风险在于宏观经济下行和行业竞争，止损点可设于板块指数跌破20日均线，风险可控。",
+  "next_validation_questions": [
+    "新能源板块近期成交量是否持续放大，确认资金流入趋势？",
+    "行业龙头（如比亚迪、宁德时代）的订单和排产数据是否向好？",
+    "恐贪指数是否在短期内快速上升至80以上，提示过热风险？"
+  ],
+  "invalidation_conditions": [
+    "新能源板块指数跌破近期低点，技术面破位",
+    "政策执行细则出现重大不利变化",
+    "资金轮动信号逆转，新能源板块转为资金流出"
+  ],
+  "must_watch_indicators": [
+    "新能源板块成交量变化",
+    "恐贪指数（关注是否快速升至80以上）",
+    "北向资金对新能源板块的净流入情况",
+    "行业龙头公司月度销量/排产数据"
+  ],
+  "kill_switch_signals": [
+    "新能源板块指数单日跌幅超过3%且放量",
+    "政策面出现收紧信号（如补贴退坡提前）",
+    "宏观经济数据超预期恶化（如PMI跌破48）"
+  ],
+  "warnings": [
+    "注意：板块轮动信号时效性高，需持续跟踪确认资金流入持续性",
+    "注意：历史案例显示单纯政策利好若无基本面配合，上涨空间有限"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T10:53:08.363735",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_19000101_astock_skill_4d3d9e95",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

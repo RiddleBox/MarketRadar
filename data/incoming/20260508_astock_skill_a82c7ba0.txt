@@ -1,0 +1,7 @@
+【东方财富】阶跃星辰发布实时语音大模型StepAudio 2.5 Realtime
+
+<!-- source: 东方财富 | url: https://finance.eastmoney.com/a/202605083731849736.html | published: 2026-05-08 22:16 | collected: 2026-05-08 22:31 | provider: astock_skill -->
+
+[信号类型: macro]
+
+【阶跃星辰发布实时语音大模型StepAudio 2.5 Realtime】5月8日，阶跃星辰正式发布新一代实时语音大模型StepAudio 2.5 Realtime，实现真人级深度感知，可自定义人设，并在情商与智商上双重进阶。目前，StepAudio 2.5 Realtime已全量上线。

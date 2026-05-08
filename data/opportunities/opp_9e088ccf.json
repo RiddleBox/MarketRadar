@@ -1,0 +1,124 @@
+{
+  "opportunity_id": "opp_9e088ccf",
+  "opportunity_title": "宽松驱动科技轮动",
+  "opportunity_thesis": "央行连续降准降息释放约1万亿长期资金，叠加PMI连续3个月低于荣枯线确认经济下行压力，货币政策宽松周期明确开启。资金从消费、地产等传统板块持续流向新能源、半导体等科技成长板块，形成结构性轮动机会。当前市场情绪处于恐惧区间，预期差较大，科技板块尚未充分定价宽松红利。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "半导体ETF",
+    "科创50ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-25T00:00:00",
+    "end": "2026-06-25T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "央行降准0.5个百分点于4月25日生效，释放约1万亿长期资金，叠加此前降息10bp，宽松政策密集落地。PMI连续3个月低于荣枯线确认经济下行，政策加码预期升温。资金轮动信号显示新能源、半导体已连续多日获资金流入，而消费、地产持续流出，板块切换正在发生。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_2ba5b3f88b20",
+    "sig_92a136d719dc",
+    "sig_66cd4adf6332",
+    "sig_ea7347bd74cf",
+    "sent_ec6c7cba",
+    "sig_b344dde14d32",
+    "sig_7298dda97ec7",
+    "sig_8a6f0519b08d",
+    "sig_6030bb0be882",
+    "sig_37b8e1ac32b6",
+    "sig_cf855bc992d0",
+    "sig_e0e3bf1f136a",
+    "sig_de08dfbf89a4",
+    "sig_c26c00625075",
+    "sig_7a827ccde515",
+    "sig_dece1006f835"
+  ],
+  "inferred_events": [
+    "inferred_e6f215a4",
+    "inferred_0e8e36e0",
+    "inferred_1d46c346",
+    "inferred_f3a384cd"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点释放约1万亿长期资金，降息10bp至1.7%，宽松力度明确",
+    "PMI连续3个月低于荣枯线（49.0），经济下行压力为政策宽松提供基本面支撑",
+    "资金轮动信号显示新能源、半导体持续获资金流入，消费、地产持续流出",
+    "历史案例case_2024_rate_cut显示降息后科技成长板块估值修复机会显著"
+  ],
+  "counter_evidence": [
+    "市场恐贪指数若处于贪婪区间（>80），可能已部分定价宽松预期",
+    "若后续经济数据超预期改善，宽松逻辑可能减弱"
+  ],
+  "key_assumptions": [
+    "假设1：央行宽松政策将持续加码，至少未来1-2个月内无收紧信号",
+    "假设2：资金从传统板块流向科技成长的趋势不会逆转",
+    "假设3：新能源、半导体板块基本面未出现重大利空"
+  ],
+  "uncertainty_map": [
+    "经济数据超预期改善导致宽松预期减弱（影响程度：高）",
+    "科技板块业绩不及预期或出现监管风险（影响程度：中）",
+    "全球流动性收紧或地缘风险冲击A股整体情绪（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：宽松周期下科技成长板块估值修复+资金流入推动，预期收益10-20%。主要风险：宽松效果不及预期或经济数据改善导致政策转向，最大回撤约8-10%。",
+  "next_validation_questions": [
+    "新能源、半导体板块近期成交量是否持续放大？",
+    "央行后续是否有进一步降准或降息信号？",
+    "科技板块龙头公司Q1业绩是否超预期？"
+  ],
+  "invalidation_conditions": [
+    "央行释放收紧信号或暂停宽松",
+    "资金轮动信号逆转，科技板块出现持续资金流出",
+    "PMI回升至50以上，经济下行压力缓解"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率",
+    "新能源、半导体ETF资金流向",
+    "制造业PMI月度数据",
+    "市场恐贪指数"
+  ],
+  "kill_switch_signals": [
+    "央行意外加息或提高存款准备金率",
+    "科技板块单日资金流出超过前5日累计流入",
+    "PMI大幅反弹至52以上"
+  ],
+  "warnings": [
+    "注意：部分信号来自情绪面系统，恐贪指数若处于贪婪区间需警惕追高风险",
+    "注意：历史案例case_2024_rate_cut显示降息利好可能已被部分定价"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:28:55.366887",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_8f4beaf6",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

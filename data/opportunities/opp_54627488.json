@@ -1,0 +1,104 @@
+{
+  "opportunity_id": "opp_54627488",
+  "opportunity_title": "新能源半导体轮动",
+  "opportunity_thesis": "资金从消费地产持续流出，涌入新能源和半导体板块，叠加新能源汽车购置税减免政策延续至2027年底，形成结构性利好。保利发展净利润暴跌79%确认地产基本面恶化，加速资金撤离。当前时点政策催化剂明确，板块轮动信号强烈，且市场尚未完全定价，存在预期差。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "半导体ETF",
+    "新能源汽车ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-18T00:00:00",
+    "end": "2026-05-18T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "保利发展年报确认地产盈利崩塌（4月17日），资金加速流出地产；新能源汽车购置税减免政策延续至2027年底（4月24日）提供政策催化剂；情绪面资金轮动信号显示新能源/半导体为流入方向，且恐贪指数未过热，存在上行空间。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sent_b3cc88f9",
+    "sig_30d3e00700ed"
+  ],
+  "inferred_events": [
+    "inferred_1f9e50b2",
+    "inferred_619db73a",
+    "inferred_ce18a91a",
+    "inferred_1b0a20ca",
+    "inferred_f7a53dcf"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "保利发展2025年净利润同比降79.31%，地产基本面恶化确认",
+    "新能源汽车购置税减免政策延续至2027年底，政策利好明确",
+    "情绪面信号显示资金从消费地产流向新能源半导体，轮动趋势形成",
+    "推理事件显示新能源和半导体板块业绩超预期概率80%，龙头公司可能发布预增公告"
+  ],
+  "counter_evidence": [
+    "新能源和半导体板块前期已有一定涨幅，部分利好可能已被定价",
+    "整体市场情绪仍偏谨慎，恐贪指数可能处于中性区间，资金持续性存疑"
+  ],
+  "key_assumptions": [
+    "假设1：资金从地产消费流出趋势持续，不会快速回流",
+    "假设2：新能源和半导体板块业绩超预期或政策利好能持续催化股价",
+    "假设3：市场整体未出现系统性风险（如流动性危机）"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：新能源和半导体板块业绩能否兑现超预期（影响程度：高）",
+    "不确定性2：资金轮动持续性，是否仅为短期情绪驱动（影响程度：中）",
+    "不确定性3：地产板块利空是否已充分释放，后续政策对冲可能减弱轮动动力（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：新能源/半导体板块在政策+资金轮动下有望获得10-20%涨幅；潜在风险：业绩不及预期或资金轮动结束导致回撤5-10%，风险收益比约2:1",
+  "next_validation_questions": [
+    "新能源和半导体龙头公司（如宁德时代、中芯国际）近期是否有业绩预增公告或订单指引？",
+    "资金流入新能源/半导体的量能是否持续放大，还是仅单日脉冲？",
+    "地产板块是否有超预期政策出台可能分流资金？"
+  ],
+  "invalidation_conditions": [
+    "新能源和半导体板块出现集体业绩预警或大幅低于预期",
+    "资金重新大幅回流地产或消费板块，轮动趋势逆转",
+    "市场出现系统性风险事件（如流动性危机、地缘冲突升级）"
+  ],
+  "must_watch_indicators": [
+    "新能源ETF（如159752）和半导体ETF（如512480）的成交量与价格走势",
+    "北向资金对新能源和半导体板块的净买入/卖出情况",
+    "保利发展等地产股后续走势是否企稳",
+    "新能源汽车月度销量数据"
+  ],
+  "kill_switch_signals": [
+    "新能源或半导体板块单日跌幅超过3%且放量",
+    "地产板块出现重大政策利好导致资金回流",
+    "央行意外收紧货币政策"
+  ],
+  "warnings": [
+    "注意：情绪面信号为辅助信号，需结合基本面和技术面确认",
+    "注意：新能源和半导体板块估值不低，需警惕追高风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:35:26.251728",
+  "batch_id": "sched_manual_test_20260508_astock_skill_ba0ddb05",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

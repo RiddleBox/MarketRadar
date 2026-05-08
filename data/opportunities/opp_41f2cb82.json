@@ -1,0 +1,107 @@
+{
+  "opportunity_id": "opp_41f2cb82",
+  "opportunity_title": "AI算力应用共振",
+  "opportunity_thesis": "政策、产业、市场三重信号共振，AI应用与算力基础设施正进入加速落地阶段。中国移动推进全国一体化算力网建设是产业资本大规模投入的明确信号，叠加人工智能终端国家标准发布，为产业链提供了标准化和商业化基础。板块已开始走强，但市场对AI应用端的爆发性增长预期仍不充分，存在预期差。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "软件ETF招商(159899)",
+    "中国移动(600941.SH)",
+    "科大讯飞",
+    "金山办公"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "当前时点催化剂密集：中国移动董事长明确表态推进算力网建设（产业龙头背书）、人工智能终端国家标准发布（政策标准化）、AI应用板块已出现资金流入和涨停（市场初步确认）。三者同时发生，形成政策-产业-市场的闭环，时间窗口紧迫。",
+  "related_signals": [
+    "sig_4149b887d9b2",
+    "sig_32c14f9a2017",
+    "sig_050c391c993e"
+  ],
+  "inferred_events": [
+    "inferred_6bed6c00",
+    "inferred_5888e63c",
+    "inferred_b55b1b1c",
+    "inferred_1dc1a57b",
+    "inferred_10334deb"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "中国移动宣布推进全国一体化算力网建设，布局吉瓦级数据园区，是产业资本大规模投入的明确信号",
+    "人工智能终端国家标准发布，为AI终端产业链提供标准化基础，加速商业化落地",
+    "AI应用板块开盘走高，中国软件涨停，软件ETF涨超2%且获资金净流入，市场已开始反应",
+    "推理的未来事件显示AI及算力相关板块有80%概率继续走强"
+  ],
+  "counter_evidence": [
+    "历史案例显示，技术突破或政策发布后，若缺乏商业化订单验证，行情可能短期冲高后回落",
+    "市场整体情绪偏贪婪（恐贪指数67），短期存在回调风险"
+  ],
+  "key_assumptions": [
+    "假设1：中国移动的算力网建设计划将转化为实际的资本开支和订单，而非仅停留在表态层面",
+    "假设2：AI应用端的商业化落地速度将加快，相关公司业绩能逐步兑现",
+    "假设3：市场整体流动性宽松环境（央行降准）能支撑板块估值"
+  ],
+  "uncertainty_map": [
+    "商业化落地速度（影响程度：高）：AI应用能否快速产生实际收入和利润，是行情持续性的关键",
+    "市场整体回调风险（影响程度：中）：若大盘出现系统性回调，板块可能跟随下跌",
+    "政策执行力度（影响程度：中）：国家标准发布后的执行和推广力度存在不确定性"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.6,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：AI应用和算力板块若迎来业绩和估值双击，龙头股可能有20-30%上行空间。潜在风险：若商业化不及预期或市场回调，板块可能回吐涨幅，最大回撤约10-15%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "中国移动的算力网建设计划是否有具体的资本开支预算和时间表？",
+    "AI应用板块中，哪些公司有明确的AI产品商业化进展或订单？",
+    "软件ETF的资金流入是否具有持续性？",
+    "人工智能终端国家标准对产业链的具体影响路径是什么？"
+  ],
+  "invalidation_conditions": [
+    "中国移动或其它运营商未发布具体的算力投资计划",
+    "AI应用板块出现大面积回调，龙头股跌停",
+    "市场整体出现系统性风险，如流动性收紧或重大利空"
+  ],
+  "must_watch_indicators": [
+    "软件ETF(159899)的日成交额和资金净流入",
+    "中国移动(600941.SH)股价走势及成交量",
+    "AI应用板块涨停股数量及持续性",
+    "央行货币政策动向（降准降息）"
+  ],
+  "kill_switch_signals": [
+    "软件ETF单日跌幅超过3%且放量",
+    "中国移动股价跌破关键支撑位（如20日均线）",
+    "市场出现恐慌性抛售，下跌个股超4000只"
+  ],
+  "warnings": [
+    "注意：当前信号主要来自新闻和公开表态，尚未有实际订单或业绩数据验证",
+    "注意：历史案例显示，缺乏商业化验证的AI行情可能短期冲高后回落，需设置止损"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:51:38.045880",
+  "batch_id": "sched_manual_test_20260508_rss_8d036785",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

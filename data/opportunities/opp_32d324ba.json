@@ -1,0 +1,104 @@
+{
+  "opportunity_id": "opp_32d324ba",
+  "opportunity_title": "券商业绩爆发机会",
+  "opportunity_thesis": "广发证券一季度净利润同比增70.73%，叠加沪深两市成交额突破1.5万亿元，显示券商板块基本面与市场活跃度双重共振。当前市场情绪贪婪但尚未极端，预期差在于市场对券商板块的持续性低估，而成交额放量将直接增厚经纪业务收入，形成业绩与估值的正向循环。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "券商ETF",
+    "广发证券",
+    "中信证券"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "广发证券一季报超预期增长是催化剂，叠加成交额突破1.5万亿显示市场活跃度持续提升，当前时点处于业绩验证与情绪升温的初期，尚未被充分定价。",
+  "related_signals": [
+    "sig_898af08751f6",
+    "sent_afb94f7676ae",
+    "sig_a1a728ae8eed"
+  ],
+  "inferred_events": [
+    "inferred_cbb6802a",
+    "inferred_9f250aae",
+    "inferred_121c5da4",
+    "inferred_bb97057f",
+    "inferred_1551e951"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "广发证券一季度净利润同比增70.73%，营收增64.33%",
+    "沪深两市成交额突破1.5万亿元，交易活跃度显著提升",
+    "市场情绪贪婪（恐贪指数67），但未到极端水平，仍有上行空间"
+  ],
+  "counter_evidence": [
+    "市场情绪已处于贪婪区间，若进一步升温可能引发过热回调",
+    "历史案例显示券商板块短期冲高后易出现获利回吐"
+  ],
+  "key_assumptions": [
+    "假设1：成交额维持1.5万亿以上，经纪业务收入持续增长",
+    "假设2：其他券商一季报同样表现强劲，板块整体业绩超预期",
+    "假设3：货币政策宽松（降准降息）预期兑现，进一步提振市场情绪"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：成交额能否持续维持高位，若回落则业绩支撑减弱（影响程度：高）",
+    "不确定性2：市场情绪从贪婪转向恐惧的速度，可能引发快速回调（影响程度：中）",
+    "不确定性3：其他券商一季报若不及预期，将削弱板块整体逻辑（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 6,
+    "tradability": 9,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.85
+  },
+  "risk_reward_profile": "潜在收益：券商板块估值修复叠加业绩增长，预期涨幅10-20%；风险：成交额回落或情绪反转，最大回撤约8-10%，止损点明确。",
+  "next_validation_questions": [
+    "其他头部券商（如中信证券、华泰证券）一季报是否同样超预期？",
+    "成交额能否连续3个交易日维持在1.5万亿以上？",
+    "北向资金近期是否持续净流入券商板块？"
+  ],
+  "invalidation_conditions": [
+    "成交额连续3日跌破1.2万亿",
+    "其他券商一季报净利润增速低于30%",
+    "市场恐贪指数突破85进入极度贪婪"
+  ],
+  "must_watch_indicators": [
+    "沪深两市日成交额",
+    "券商板块ETF资金流向",
+    "广发证券股价是否突破前高",
+    "北向资金净流入/流出"
+  ],
+  "kill_switch_signals": [
+    "成交额跌破1万亿",
+    "券商板块出现单日跌幅超5%",
+    "央行意外收紧流动性"
+  ],
+  "warnings": [
+    "注意：当前仅广发证券一季报数据，板块整体业绩尚未确认",
+    "注意：市场情绪贪婪，若后续无持续催化剂，追高风险较大"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:49:29.271095",
+  "batch_id": "sched_manual_test_20260508_rss_67c4f5e8",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

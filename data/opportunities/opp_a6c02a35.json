@@ -1,0 +1,115 @@
+{
+  "opportunity_id": "opp_a6c02a35",
+  "opportunity_title": "AI半导体景气上行",
+  "opportunity_thesis": "AI/半导体产业链正经历业绩爆发与资金共振：光模块龙头中际旭创市值破万亿、新易盛净利增76.8%，半导体龙头预增150%-180%，叠加中国移动算力网建设政策催化，AI应用板块资金持续流入。这些信号指向产业链从上游算力到下游应用的全面景气上行，且市场尚未完全定价，存在预期差。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "软件ETF招商(159899)",
+    "半导体ETF",
+    "中际旭创",
+    "新易盛",
+    "绿的谐波"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-07-08T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "当前时点催化剂密集：1）一季报业绩集中披露，光模块和半导体龙头超预期增长；2）中国移动5月8日宣布推进算力网建设，政策信号明确；3）AI应用板块5月8日开盘走高，软件ETF资金净流入，显示资金从消费地产向科技板块轮动加速；4）绿的谐波创历史新高，市场情绪积极。",
+  "related_signals": [
+    "sig_e49e84bd5c49",
+    "sent_b3cc88f9",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f",
+    "sig_4149b887d9b2",
+    "sig_de9b85fe30aa"
+  ],
+  "inferred_events": [
+    "inferred_58ff31ec",
+    "inferred_44a4fe0e",
+    "inferred_a1e40447",
+    "inferred_f68d33c7",
+    "inferred_74e83ae3"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "中际旭创4月23日盘中市值突破万亿，创历史里程碑",
+    "新易盛一季报净利润同比增长76.8%",
+    "某半导体龙头Q1净利润预增150%-180%，受益AI芯片需求",
+    "中国移动5月8日宣布推进全国一体化算力网建设",
+    "AI应用板块5月8日走高，软件ETF涨超2%且资金净流入",
+    "资金从消费、地产流向新能源和半导体",
+    "绿的谐波5月8日创历史新高"
+  ],
+  "counter_evidence": [
+    "恐贪指数处于贪婪区间（67），市场情绪可能过热，短期回调风险存在",
+    "历史案例显示技术突破需商业化验证，当前部分标的估值已较高"
+  ],
+  "key_assumptions": [
+    "假设1：AI芯片需求持续增长，带动产业链业绩兑现",
+    "假设2：中国移动算力网建设政策能落地并带动相关投资",
+    "假设3：资金轮动趋势延续，科技板块获得持续流入"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：宏观经济下行压力（PMI连续低于荣枯线）可能压制整体市场风险偏好（影响程度：高）",
+    "不确定性2：部分标的已大幅上涨，估值是否已充分反映业绩预期（影响程度：中）",
+    "不确定性3：地缘政治风险对半导体供应链的潜在冲击（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI/半导体产业链景气上行，业绩超预期叠加政策催化，龙头个股和ETF有望获得10-20%涨幅。潜在风险：市场整体回调或估值泡沫破裂，最大回撤约15%。收益风险比约1.3:1。",
+  "next_validation_questions": [
+    "验证半导体龙头业绩预增的具体公司名称和订单可见性",
+    "跟踪中国移动算力网建设的后续具体投资计划和招标进展",
+    "分析中际旭创、新易盛当前估值与历史分位数，判断是否高估",
+    "观察资金流入科技板块的持续性，确认轮动是否确立"
+  ],
+  "invalidation_conditions": [
+    "AI/半导体龙头公司发布低于预期的二季度业绩指引",
+    "中国移动算力网建设政策推进不及预期或取消",
+    "市场整体出现系统性风险（如流动性危机、地缘冲突升级）"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛、半导体龙头后续季报/月报数据",
+    "中国移动算力网相关招标公告和投资额",
+    "软件ETF(159899)和半导体ETF的资金流入/流出情况",
+    "恐贪指数是否进入极度贪婪（≥80）区域"
+  ],
+  "kill_switch_signals": [
+    "AI/半导体板块出现集体大幅下跌（单日跌幅超5%）",
+    "龙头公司高管减持或业绩预告下修",
+    "政策面出现对AI/半导体行业的重大利空（如出口管制升级）"
+  ],
+  "warnings": [
+    "注意：部分信号来自新闻和情绪面系统，需交叉验证",
+    "注意：历史案例显示概念炒作后需商业化验证，避免追高"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:40:50.229046",
+  "batch_id": "sched_manual_test_20260508_astock_skill_d9620f5c",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

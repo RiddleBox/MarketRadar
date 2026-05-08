@@ -1,0 +1,109 @@
+{
+  "opportunity_id": "opp_0e34a256",
+  "opportunity_title": "宽松博弈衰退",
+  "opportunity_thesis": "央行降准降息已落地，流动性改善预期明确，但PMI连续收缩、CPI/PPI负值显示经济基本面承压。市场将进入'政策宽松对抗经济下行'的博弈阶段，短期流动性改善利好估值修复，但基本面疲软压制上行空间。机会在于博弈政策加码预期（如后续降息、财政刺激），而非基本面反转。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "沪深300ETF",
+    "中证500ETF",
+    "国债期货"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-25T00:00:00",
+    "end": "2026-06-25T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "降准降息已落地，市场对流动性改善的预期正在发酵，但经济数据（PMI、CPI、PPI）持续疲软，形成政策与基本面的短期背离。当前是博弈政策加码（如LPR下调、财政刺激）的最佳窗口，市场尚未完全定价后续宽松。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203",
+    "sig_7298dda97ec7"
+  ],
+  "inferred_events": [
+    "inferred_8ec831f9",
+    "inferred_19641c97",
+    "inferred_d5572327",
+    "inferred_0a62a1ab",
+    "inferred_0859f926",
+    "inferred_4d3ba325"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点+降息10bp，流动性宽松信号明确",
+    "制造业PMI连续3个月低于荣枯线，经济下行压力加大，倒逼政策进一步宽松",
+    "CPI/PPI负值显示通缩压力，为货币政策继续宽松提供空间",
+    "历史案例case_2024_rate_cut显示降息后银行股估值修复，但需基本面配合"
+  ],
+  "counter_evidence": [
+    "经济基本面疲软可能压制市场风险偏好，宽松效果有限",
+    "市场对降准降息已有部分预期，短期利好可能已被消化"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续将继续降息或LPR下调，政策宽松持续",
+    "假设2：经济数据不会进一步恶化至引发系统性风险",
+    "假设3：市场情绪在流动性改善下维持中性偏乐观"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：经济数据持续恶化，宽松政策效果不及预期（影响程度：高）",
+    "不确定性2：政策加码节奏和力度低于市场预期（影响程度：中）",
+    "不确定性3：外部风险（如地缘政治、海外加息）干扰市场（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.7,
+    "confidence_score": 0.7,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：流动性改善推动估值修复，沪深300指数有望反弹5-8%；潜在风险：经济数据恶化导致市场信心崩溃，指数可能下跌3-5%。风险收益比约1.5:1，中等偏上。",
+  "next_validation_questions": [
+    "央行是否在1个月内再次降息或LPR下调？",
+    "4月PMI数据是否企稳或回升？",
+    "市场成交量是否在降准后持续放大？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "PMI数据跌破48，经济加速恶化",
+    "市场出现系统性流动性危机"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率",
+    "制造业PMI月度数据",
+    "沪深300指数成交量",
+    "10年期国债收益率"
+  ],
+  "kill_switch_signals": [
+    "央行意外加息或收紧流动性",
+    "PMI跌破48且无企稳迹象",
+    "市场恐慌指数（如VIX）飙升"
+  ],
+  "warnings": [
+    "注意：经济基本面疲软可能压制宽松效果，不宜重仓追高",
+    "注意：历史案例显示降息后地产股反弹乏力，需基本面配合"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:45:18.231804",
+  "batch_id": "sched_manual_test_20260508_rss_1874d4c9",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

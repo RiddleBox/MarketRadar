@@ -1,0 +1,110 @@
+{
+  "opportunity_id": "opp_3f1a2ff7",
+  "opportunity_title": "中东地缘避险交易",
+  "opportunity_thesis": "美军连续拦截伊朗油轮，中东封锁升级，地缘冲突风险显著升温。叠加A股情绪处于贪婪区间（恐贪指数67），市场脆弱性增加，避险情绪可能快速扩散。短期利好原油、黄金及能源板块，但需警惕情绪过热后的回调风险。\n\n【M13调研】美军拦截伊朗油轮导致中东封锁升级，地缘风险升温，短期利好原油、黄金及能源板块。高盛调查显示霍尔木兹海峡航运不畅预期持续，部分企业转向国内煤炭。A股恐贪指数67，市场脆弱性增加，但无直接研报或行业趋势验证。风险在于冲突缓和及情绪过热后的回调。综合评估机会存在但需谨慎，置信度调整+0.1。\n\n【M13调研】地缘风险升温（霍尔木兹海峡航运不畅预期持续）短期利好原油、黄金及能源板块，部分企业转向国内煤炭验证能源需求。但A股情绪贪婪（恐贪指数67）增加脆弱性，且无直接研报支持。风险在于冲突缓和及情绪过热回调。综合评估机会存在但需谨慎，置信度维持不变。",
+  "target_markets": [
+    "A_SHARE",
+    "HK",
+    "US"
+  ],
+  "target_instruments": [
+    "601857.SH",
+    "600028.SH",
+    "600938.SH",
+    "601899.SH",
+    "600547.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-05-23T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "美军5月6日和8日连续拦截三艘伊朗油轮，封锁行动升级，地缘风险从潜在威胁变为现实事件。韩国股市5月8日开盘大跌1.78%，显示市场已开始反应。当前情绪贪婪（恐贪指数67），市场脆弱性高，地缘冲击易引发快速避险轮动。",
+  "related_signals": [
+    "sig_074e8c030441",
+    "sig_38049b31fb61",
+    "sent_afb94f7676ae",
+    "sig_476a24c2a7b9",
+    "sig_bb9a9c6d60a1"
+  ],
+  "inferred_events": [
+    "inferred_d07b6e34",
+    "inferred_fec5a4b0",
+    "inferred_bae8a328",
+    "inferred_60c9c7c1",
+    "inferred_3606abd4"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "美军5月6日和8日连续拦截三艘伊朗油轮，封锁行动升级",
+    "韩国综合指数5月8日开盘大跌1.78%，三星电子、SK海力士跌超3%",
+    "A股三大指数高开回落，下跌个股近4000只，市场脆弱性高",
+    "恐贪指数67，情绪贪婪，市场对负面消息敏感"
+  ],
+  "counter_evidence": [
+    "伊朗未立即采取报复行动，冲突可能停留在封锁层面",
+    "原油库存仍充裕，短期供应中断风险有限"
+  ],
+  "key_assumptions": [
+    "假设1：伊朗不会立即采取大规模军事报复，冲突可控但持续",
+    "假设2：全球原油供应未出现实质性中断，油价上涨由情绪驱动",
+    "假设3：A股避险情绪不会演变为系统性下跌"
+  ],
+  "uncertainty_map": [
+    "伊朗报复行动规模（影响程度：高）",
+    "国际社会外交干预速度（影响程度：中）",
+    "原油库存数据变化（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 7,
+    "risk_clarity": 5,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.6,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：地缘风险持续发酵，原油和黄金板块短期上涨5-10%。潜在风险：冲突迅速平息，油价回落，板块回调3-5%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "伊朗官方是否发表报复声明或采取军事行动？",
+    "WTI原油期货价格是否突破75美元/桶？",
+    "A股能源板块（如中国石油）是否放量突破近期高点？"
+  ],
+  "invalidation_conditions": [
+    "伊朗明确表示不升级冲突，外交渠道恢复",
+    "WTI原油期货价格跌破70美元/桶",
+    "A股能源板块出现放量下跌"
+  ],
+  "must_watch_indicators": [
+    "WTI原油期货价格",
+    "COMEX黄金期货价格",
+    "A股能源板块成交量",
+    "伊朗官方声明"
+  ],
+  "kill_switch_signals": [
+    "伊朗对美军基地发动直接军事打击",
+    "霍尔木兹海峡通行受阻",
+    "A股能源板块单日跌幅超3%"
+  ],
+  "warnings": [
+    "注意：地缘冲突事件时效性强，窗口期短，需快速决策",
+    "注意：情绪贪婪时追高风险较大，建议小仓位试探"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T23:07:42.460390",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_326abbfb",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

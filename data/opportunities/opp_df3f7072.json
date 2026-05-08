@@ -1,0 +1,105 @@
+{
+  "opportunity_id": "opp_df3f7072",
+  "opportunity_title": "固态电池政策催化",
+  "opportunity_thesis": "新能源汽车购置税减免延续至2027年底，为行业提供长期需求支撑，同时固态电池产业化取得实质性进展——纯锂新能源已完成50Ah全固态电芯量产并达产500MWh产线，2026年将推进GWh级产线。政策端与产业端共振，固态电池从概念炒作进入商业化验证阶段，市场尚未充分定价这一产业化拐点，存在预期差。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源车ETF",
+    "固态电池概念股",
+    "电池ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-08-08T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "政策刚发布实施（2026-04-24），纯锂新能源融资与量产进展信号集中释放（2026-05-08），固态电池从实验室到量产线达产是产业化的关键拐点，当前市场对固态电池的关注度尚未达到高潮，存在提前布局窗口。",
+  "related_signals": [
+    "sig_30d3e00700ed",
+    "sig_1da9f093af7d",
+    "sig_906283b999bb"
+  ],
+  "inferred_events": [
+    "inferred_6bed6c00",
+    "inferred_5888e63c",
+    "inferred_b55b1b1c",
+    "inferred_1dc1a57b",
+    "inferred_10334deb"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "新能源汽车购置税减免延续至2027年底，政策确定性增强行业长期需求",
+    "纯锂新能源完成数千万元Pre-A+轮融资，资金用于研发和产线落地",
+    "纯锂新能源500MWh量产线已达产，正推进GWh级产线，2026年预计营收破亿",
+    "50Ah全固态电芯已量产，通过CNAS安全认证，技术成熟度提升"
+  ],
+  "counter_evidence": [
+    "纯锂新能源为初创公司，营收规模尚小，对行业整体影响有限",
+    "固态电池大规模量产成本仍高于液态锂电池，商业化路径存在不确定性"
+  ],
+  "key_assumptions": [
+    "假设1：固态电池技术路线能够持续降本，2026-2027年实现与液态电池成本接近",
+    "假设2：新能源汽车购置税减免政策执行到位，不会出现地方性配套收紧",
+    "假设3：纯锂新能源等企业的量产进展代表行业趋势，而非个案"
+  ],
+  "uncertainty_map": [
+    "固态电池量产良率和成本控制的不确定性（影响程度：高）",
+    "政策执行力度和补贴退坡节奏的不确定性（影响程度：中）",
+    "行业竞争加剧导致固态电池企业盈利不及预期（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 6.9,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.65
+  },
+  "risk_reward_profile": "潜在收益：固态电池产业化加速带来的估值重塑，龙头标的可能获得30-50%涨幅；潜在风险：量产不及预期或成本下降缓慢，标的回调10-20%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "纯锂新能源的GWh级产线建设进度是否按计划推进？",
+    "其他固态电池企业（如宁德时代、比亚迪）是否有类似量产进展？",
+    "当前固态电池板块的估值水平是否处于历史低位？"
+  ],
+  "invalidation_conditions": [
+    "纯锂新能源GWh级产线延期或量产良率大幅低于预期",
+    "新能源汽车购置税减免政策出现收紧或取消信号",
+    "固态电池板块出现集体大幅上涨后资金流出"
+  ],
+  "must_watch_indicators": [
+    "纯锂新能源GWh产线建设进度公告",
+    "固态电池板块成交量和资金流向",
+    "新能源汽车月度销量数据",
+    "电池级碳酸锂价格走势"
+  ],
+  "kill_switch_signals": [
+    "纯锂新能源或同类企业发布量产延期公告",
+    "新能源汽车销量连续两个月环比下滑",
+    "政策层面出现对固态电池安全性的负面监管信号"
+  ],
+  "warnings": [
+    "注意：纯锂新能源为初创公司，营收和利润数据有限，需警惕估值泡沫",
+    "注意：固态电池板块历史上多次因概念炒作冲高回落，需确认产业化实质进展"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:52:11.405467",
+  "batch_id": "sched_manual_test_20260508_rss_8d036785",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

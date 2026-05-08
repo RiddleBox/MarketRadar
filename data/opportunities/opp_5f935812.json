@@ -1,0 +1,115 @@
+{
+  "opportunity_id": "opp_5f935812",
+  "opportunity_title": "中东冲突推升油价",
+  "opportunity_thesis": "美军在霍尔木兹海峡袭击伊朗民用船只并拦截油轮，伊朗武装力量全面备战，双方发生零星冲突，叠加哈尔克岛疑似石油泄漏，中东地缘冲突实质性升级。这将直接推高布伦特原油价格，并带动国内煤炭等替代能源需求，形成短期确定性较强的做多机会。\n\n【M13调研】机会描述与新闻事实完全脱节：最近20条新闻均为A股公司日常公告，无任何关于霍尔木兹海峡冲突、伊朗油轮拦截或能源供应中断的报道。基本面数据和行业趋势搜索无结果，缺乏第三方验证。市场未出现恐慌或避险情绪，燃料油夜盘仅小幅上涨。因此，该机会缺乏事实基础，风险极高，建议规避。\n\n【M13调研】该机会描述的地缘冲突事件与新闻事实完全不符，最近20条新闻均为A股公司日常公告，无任何相关报道。基本面数据和行业趋势搜索无结果，市场未出现恐慌或避险情绪，燃料油夜盘仅小幅上涨。研报分析无相关报告。因此，该机会缺乏事实基础，风险极高，建议规避。置信度大幅下调。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "601857.SH",
+    "600028.SH",
+    "600188.SH",
+    "601088.SH",
+    "600256.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "美军5月7-8日连续袭击伊朗民用船只和油轮，伊朗武装力量宣布全面备战，双方在霍尔木兹海峡发生零星冲突，冲突已从口头升级为实质性军事摩擦，时间窗口紧迫。",
+  "related_signals": [
+    "sig_73e49b7edba7",
+    "sig_4bdf8baa2d3a",
+    "sig_b3de9b426692",
+    "sig_1fcc386acab4",
+    "sig_82a8c461a4b6",
+    "sig_bb9a9c6d60a1",
+    "sig_2201d7544cad"
+  ],
+  "inferred_events": [
+    "inferred_080cb4c7",
+    "inferred_6314fed0",
+    "inferred_32feee6b",
+    "inferred_45f61517",
+    "inferred_7bdf50a4"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军袭击伊朗民用船只致10伤5失踪，并拦截两艘伊朗油轮",
+    "伊朗武装力量全面备战，双方在霍尔木兹海峡发生零星冲突",
+    "伊朗哈尔克岛附近疑似石油泄漏，影响全球石油供应",
+    "巴克莱维持2026年布伦特原油100美元预测，风险偏向上调",
+    "进口煤价上涨致企业转向国内采购，国内煤炭需求增加"
+  ],
+  "counter_evidence": [
+    "冲突规模目前仍为零星摩擦，未升级为全面战争",
+    "市场可能已部分定价地缘风险，油价已有一定涨幅"
+  ],
+  "key_assumptions": [
+    "假设1：美伊军事摩擦在未来1-2周内不会迅速降温",
+    "假设2：霍尔木兹海峡航运未完全中断，但持续受干扰",
+    "假设3：OPEC+不会立即大幅增产以平抑油价"
+  ],
+  "uncertainty_map": [
+    "冲突迅速缓和或达成停火协议（影响程度：高）",
+    "美国释放战略石油储备或OPEC+增产压制油价（影响程度：中）",
+    "全球经济衰退预期压制原油需求（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": -0.03749999999999999,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：布伦特原油短期冲高至100美元以上，国内煤炭股受益于替代需求，收益空间10-20%。潜在风险：冲突迅速缓和导致油价回落，最大亏损可控在5-8%（止损设在冲突前价格水平）。",
+  "next_validation_questions": [
+    "美伊双方是否有进一步军事动员或外交接触？",
+    "霍尔木兹海峡实际航运通行是否受阻？",
+    "布伦特原油期货持仓量和成交量是否显著放大？",
+    "国内煤炭企业近期是否有提价或订单增加公告？"
+  ],
+  "invalidation_conditions": [
+    "美伊双方宣布停火或达成临时协议",
+    "霍尔木兹海峡航运恢复正常",
+    "OPEC+宣布大幅增产或美国释放战略石油储备"
+  ],
+  "must_watch_indicators": [
+    "布伦特原油期货价格及持仓量",
+    "霍尔木兹海峡航运通行状态",
+    "美伊官方声明及外交动态",
+    "国内动力煤现货价格"
+  ],
+  "kill_switch_signals": [
+    "美伊双方宣布停火或开始谈判",
+    "布伦特原油单日跌幅超过5%",
+    "美国宣布大规模释放战略石油储备"
+  ],
+  "warnings": [
+    "地缘冲突事件具有高度不确定性，冲突可能迅速升级或降温",
+    "历史案例显示地缘风险溢价通常在数周内消退，需及时止盈"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T00:21:53.570338",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_bc594e53",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

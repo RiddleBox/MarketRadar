@@ -1,0 +1,109 @@
+{
+  "opportunity_id": "opp_66654105",
+  "opportunity_title": "地产资金外溢银行",
+  "opportunity_thesis": "保利发展业绩大幅下滑（2025年净利润降79%、2026Q1降53%）确认地产行业持续承压，资金从地产板块流出并轮动至新能源/半导体。同时，7家地方银行一季报营收净利双增，显示银行板块基本面稳健且受益于宽松政策预期。行业分化加剧，资金外溢效应叠加银行股业绩确认，构成做多银行、做空地产的相对价值机会。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "银行ETF",
+    "地产ETF",
+    "南京银行",
+    "成都银行"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-27T00:00:00",
+    "end": "2026-06-27T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "保利发展一季报（4月27日）和7家银行一季报（4月23日）集中披露，业绩分化信号明确；板块轮动信号显示资金已开始从地产流向新能源/半导体，银行作为低估值高股息板块可能承接部分资金；央行降准预期（概率90%）和LPR下调预期（75%）进一步利好银行净息差和资产质量。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sent_b3cc88f9",
+    "sig_f5dc287cf712",
+    "sig_deee36561d85"
+  ],
+  "inferred_events": [
+    "inferred_a3033d7f",
+    "inferred_633edd02",
+    "inferred_74fc2c4b",
+    "inferred_8cb32310",
+    "inferred_e9d37d20",
+    "inferred_c8afb865",
+    "inferred_6da1fa9a"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "保利发展2025年净利润同比降79.31%，2026Q1净利润同比降53.1%，地产行业基本面持续恶化",
+    "7家地方银行一季报营收净利全部正增长，资产质量平稳，银行板块业绩确认",
+    "板块轮动信号显示资金从地产流出，流入新能源/半导体，资金外溢效应明显",
+    "央行降准概率90%、LPR下调概率75%，宽松政策预期利好银行估值修复"
+  ],
+  "counter_evidence": [
+    "银行股一季报仅覆盖7家地方银行，国有大行和股份行业绩尚未披露，可能存在分化",
+    "地产板块已大幅下跌，部分利空可能已被定价，继续做空空间有限"
+  ],
+  "key_assumptions": [
+    "假设1：地产行业下行趋势在2026年下半年不会逆转，资金持续流出",
+    "假设2：央行降准或降息在2周内落地，银行净息差压力可控",
+    "假设3：银行股一季报的正面趋势可扩展到更多银行（国有大行、股份行）"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：银行股一季报的正面趋势是否具有代表性（影响程度：高）",
+    "不确定性2：央行宽松政策落地时间可能晚于预期，或力度不及预期（影响程度：中）",
+    "不确定性3：地产板块超跌反弹可能分流资金，削弱轮动逻辑（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：银行ETF在宽松政策落地后估值修复5-10%，地产ETF继续下跌5-10%，相对收益空间约10-20%。风险：银行一季报不及预期或地产政策超预期反弹，最大亏损约5-8%（止损设于银行ETF跌破20日均线或地产ETF突破前高）。",
+  "next_validation_questions": [
+    "国有大行（如工行、建行）一季报是否也显示营收净利双增？",
+    "央行降准/降息的具体时间表和幅度预期如何？",
+    "地产板块资金流出速度是否在加速（观察地产ETF成交量变化）？"
+  ],
+  "invalidation_conditions": [
+    "国有大行一季报出现大面积净利润下滑",
+    "央行明确表态短期内不降准或不降息",
+    "地产板块出现政策强刺激（如一线城市全面取消限购）"
+  ],
+  "must_watch_indicators": [
+    "银行ETF（512800）价格与成交量",
+    "地产ETF（512200）价格与成交量",
+    "央行公开市场操作和降准公告",
+    "国有大行一季报披露时间表"
+  ],
+  "kill_switch_signals": [
+    "银行ETF单日跌幅超过3%且成交量放大",
+    "地产ETF单日涨幅超过5%且突破前高",
+    "央行意外加息或收紧流动性"
+  ],
+  "warnings": [
+    "注意：银行一季报仅覆盖7家地方银行，国有大行和股份行业绩尚未披露，存在样本偏差风险",
+    "注意：板块轮动信号来自情绪面系统，恐贪指数未显示极端值，轮动持续性需进一步确认"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:16:18.928009",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_276eb148",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

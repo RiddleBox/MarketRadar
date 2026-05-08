@@ -1,0 +1,105 @@
+{
+  "opportunity_id": "opp_9256f7d3",
+  "opportunity_title": "金融一季报超预期",
+  "opportunity_thesis": "7家上市银行及广发证券一季报营收净利双增，广发证券净利润同比增70.73%，显示金融板块基本面改善趋势明确。当前市场对金融板块预期偏低，业绩超预期有望驱动估值修复，叠加央行降准降息预期，金融股具备阶段性配置价值。\n\n【M13调研】地产龙头保利发展净利润暴跌79%，而银行券商一季报普遍增长，广发证券净利润增长超70%，市场资金从地产流向金融板块，形成明确的行业轮动和避险交易机会。当前一季报密集披露，业绩分化信号集中释放，预期差尚未完全price-in。风险在于地产持续恶化可能拖累银行资产质量，且轮动可能已部分反映。整体机会逻辑清晰，但缺乏研报和行业趋势数据支持，置信度中等偏上。\n\n【M13调研】机会描述基于经济疲软和央行超预期宽松，形成短期交易窗口，逻辑成立。但缺乏研报、行业趋势和基本面数据支持，新闻无相关事件，信息不充分。无重大利空，但置信度偏低，建议谨慎参与，关注后续经济数据验证。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601398.SH",
+    "600036.SH",
+    "601166.SH",
+    "000776.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-28T00:00:00",
+    "end": "2026-06-28T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "一季报密集披露期，银行和券商业绩超预期信号集中释放，市场尚未充分定价，且央行降准降息预期升温提供额外催化剂。",
+  "related_signals": [
+    "sig_f5dc287cf712",
+    "sig_898af08751f6",
+    "sig_781fda7e246d"
+  ],
+  "inferred_events": [
+    "inferred_080cb4c7",
+    "inferred_6314fed0",
+    "inferred_32feee6b",
+    "inferred_45f61517",
+    "inferred_7bdf50a4"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "7家地方性上市银行一季报营收净利润全部正增长，资产质量平稳",
+    "广发证券一季度净利润同比增70.73%，营收增64.33%",
+    "央行降准降息概率85%，宽松政策预期利好金融板块"
+  ],
+  "counter_evidence": [
+    "市场整体情绪处于贪婪区间（恐贪指数67），部分利好可能已被定价",
+    "地产板块持续承压，可能拖累银行资产质量预期"
+  ],
+  "key_assumptions": [
+    "假设1：一季报业绩增长趋势可持续，非一次性因素",
+    "假设2：央行降准降息在2周内落地，维持宽松预期",
+    "假设3：宏观经济不出现超预期恶化"
+  ],
+  "uncertainty_map": [
+    "业绩持续性不确定性（影响程度：高）：一季报高增长是否由市场波动等一次性因素驱动",
+    "政策落地节奏不确定性（影响程度：中）：降准降息时间窗口可能延迟或力度不及预期",
+    "地产风险传导不确定性（影响程度：中）：地产板块持续恶化可能拖累银行资产质量"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 7,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 6.7,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：金融板块估值修复10-15%，叠加降准降息催化；潜在风险：业绩增长不可持续或地产风险暴露导致回撤5-8%，风险收益比约2:1",
+  "next_validation_questions": [
+    "其他未披露一季报的银行和券商业绩是否也超预期？",
+    "央行降准降息的具体时间点和幅度预期如何？",
+    "市场对金融板块的持仓和情绪是否处于低位？"
+  ],
+  "invalidation_conditions": [
+    "后续披露的银行/券商一季报大面积不及预期",
+    "央行明确表态短期内不降准降息",
+    "地产板块出现系统性风险事件"
+  ],
+  "must_watch_indicators": [
+    "银行/券商一季报披露进度及业绩同比增速",
+    "央行公开市场操作及降准降息信号",
+    "银行间市场利率（Shibor）走势",
+    "地产板块指数及龙头房企股价表现"
+  ],
+  "kill_switch_signals": [
+    "某大型银行一季报净利润同比下滑",
+    "央行加息或收紧流动性",
+    "地产龙头股单日跌幅超5%"
+  ],
+  "warnings": [
+    "注意：信号来源为已披露一季报，样本仅7家银行和1家券商，代表性有限",
+    "注意：市场情绪处于贪婪区间，追高需谨慎"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T00:34:02.803040",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_bc594e53",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

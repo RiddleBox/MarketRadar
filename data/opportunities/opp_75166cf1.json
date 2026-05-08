@@ -1,0 +1,105 @@
+{
+  "opportunity_id": "opp_75166cf1",
+  "opportunity_title": "金融地产景气分化",
+  "opportunity_thesis": "广发证券一季报净利润同比大增70.73%，而保利发展净利润同比下滑57.06%，两者形成鲜明对比，反映金融与地产板块景气度持续分化。在央行降准、货币政策宽松预期下，金融板块（尤其是券商）受益于流动性改善和市场活跃度提升，而地产板块受制于销售疲弱和利润下滑，资金有望从地产流向金融。当前市场对金融板块的业绩改善尚未充分定价，存在预期差，构成结构性机会。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "券商ETF",
+    "广发证券",
+    "保利发展"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-29T00:00:00",
+    "end": "2026-05-29T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "一季报集中披露期，广发证券与保利发展业绩反差巨大，市场正在重新定价板块预期。央行降准已落地，货币政策宽松预期升温，券商作为流动性敏感板块直接受益。地产板块业绩持续恶化，资金流出压力加大，板块轮动窗口开启。",
+  "related_signals": [
+    "sig_898af08751f6",
+    "sig_dc0079649df5"
+  ],
+  "inferred_events": [
+    "inferred_ebb6c5a5",
+    "inferred_10d54063",
+    "inferred_e9f4f08c",
+    "inferred_c30b7c9c",
+    "inferred_fffa4131"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "广发证券一季报净利润同比增70.73%，营收增64.33%，业绩超预期",
+    "保利发展一季报净利润同比降57.06%，营收降15.74%，业绩恶化",
+    "央行已降准0.5个百分点，后续仍有进一步降准可能（概率80%）",
+    "货币政策宽松预期（降息/LPR下调概率75%）利好金融板块"
+  ],
+  "counter_evidence": [
+    "券商板块前期已有一定涨幅，部分利好可能已被定价",
+    "地产板块若出现政策强力托底，可能扭转分化格局"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续继续实施宽松货币政策（降准/降息）",
+    "假设2：地产板块基本面短期内不会出现V型反转",
+    "假设3：市场情绪维持中性偏积极，资金愿意参与板块轮动"
+  ],
+  "uncertainty_map": [
+    "货币政策宽松力度不及预期（影响程度：高）",
+    "地产板块出现超预期政策利好（影响程度：中）",
+    "市场整体风险偏好下降，资金流出A股（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 6.9,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益来自券商板块估值修复和资金流入，风险在于货币政策宽松不及预期或地产政策超预期导致分化缩小。预计收益风险比约2:1。",
+  "next_validation_questions": [
+    "券商板块当前估值水平如何？是否处于历史低位？",
+    "近期北向资金是否持续流入券商板块？",
+    "地产板块是否有新的政策出台？",
+    "市场整体成交量是否在放大，支持券商盈利改善？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "地产板块出现重大利好政策（如大规模收储、放松限购）",
+    "券商板块业绩被证伪或出现黑天鹅事件"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作及LPR报价",
+    "券商板块成交量及资金流向",
+    "地产板块政策动态",
+    "市场整体成交量变化"
+  ],
+  "kill_switch_signals": [
+    "央行加息或收紧流动性",
+    "地产板块单日涨幅超过5%且持续",
+    "券商板块出现集体业绩预警"
+  ],
+  "warnings": [
+    "注意：信号来源均为公司公告，但一季报数据可能存在季节性因素",
+    "注意：板块轮动速度可能较快，需设置明确止损"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T10:53:23.755754",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_19000101_astock_skill_4d3d9e95",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

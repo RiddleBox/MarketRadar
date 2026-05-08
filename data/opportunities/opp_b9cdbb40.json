@@ -1,0 +1,110 @@
+{
+  "opportunity_id": "opp_b9cdbb40",
+  "opportunity_title": "结构性轮动机会",
+  "opportunity_thesis": "央行密集降准降息释放流动性，但经济基本面（PMI连续收缩）和情绪贪婪导致指数高开低走，资金从地产消费流出，明确流向新能源和半导体。这构成结构性板块轮动机会，而非全面牛市。新能源/半导体受益于政策支持、业绩超预期和资金持续流入，是当前宏观环境下最确定的做多方向。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "半导体ETF",
+    "中际旭创",
+    "新易盛"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-23T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "央行降准降息已落地，但市场反应平淡（高开低走），说明传统宽货币对整体指数拉动有限，资金正在寻找结构性方向。新能源/半导体板块已出现资金持续流入、龙头业绩超预期（新易盛净利润+76.8%、某半导体龙头预增150%-180%），且政策（新能源汽车购置税减免延续至2027年）和产业趋势（AI算力、光模块）形成共振，当前是布局结构性机会的最佳窗口。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_38049b31fb61",
+    "sent_afb94f7676ae"
+  ],
+  "inferred_events": [
+    "inferred_44055654",
+    "inferred_c0e7781a",
+    "inferred_70980184",
+    "inferred_b768d163",
+    "inferred_4ecd38b5"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "板块轮动信号明确显示资金从消费、地产流向新能源、半导体",
+    "新能源/半导体龙头业绩超预期（新易盛净利润+76.8%，某半导体龙头预增150%-180%）",
+    "央行降准降息释放流动性，但资金未流入传统板块，强化结构性轮动",
+    "政策支持：新能源汽车购置税减免延续至2027年底"
+  ],
+  "counter_evidence": [
+    "市场整体情绪贪婪（恐贪指数67），指数高开低走，短期回调风险加大",
+    "PMI连续3个月低于荣枯线，经济下行压力可能压制所有板块估值"
+  ],
+  "key_assumptions": [
+    "假设1：资金从地产消费流向新能源半导体的趋势在未来2-4周内持续",
+    "假设2：新能源/半导体龙头业绩超预期趋势延续，无重大利空",
+    "假设3：央行进一步宽松（降准/降息）在2周内落地，维持流动性充裕"
+  ],
+  "uncertainty_map": [
+    "市场整体回调风险（影响程度：高）：指数高开低走、下跌个股近4000只，若恐慌蔓延可能拖累所有板块",
+    "板块轮动持续性（影响程度：中）：资金流向可能因短期获利了结或新热点出现而逆转",
+    "政策落地节奏（影响程度：中）：央行进一步宽松若推迟或力度不及预期，可能削弱流动性支撑"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：新能源/半导体板块在资金持续流入和业绩超预期驱动下，未来2-4周有10%-20%上行空间。潜在风险：市场整体回调导致板块跟跌，最大回撤约8%-12%。收益风险比约1.5:1至2:1。",
+  "next_validation_questions": [
+    "新能源/半导体板块近3日资金流向是否持续为正？",
+    "新易盛、中际旭创等龙头股是否有新的订单或业绩公告？",
+    "央行是否在2周内宣布进一步降准或降息？",
+    "市场整体成交量是否维持在万亿以上，支撑结构性行情？"
+  ],
+  "invalidation_conditions": [
+    "新能源/半导体板块连续3日资金净流出",
+    "龙头股出现业绩不及预期或重大利空",
+    "央行明确表态不再进一步宽松"
+  ],
+  "must_watch_indicators": [
+    "新能源ETF（516160）和半导体ETF（512480）日成交额及涨跌幅",
+    "中际旭创、新易盛股价走势及资金流向",
+    "央行公开市场操作及降准降息信号",
+    "北向资金净流入/流出情况"
+  ],
+  "kill_switch_signals": [
+    "新能源/半导体板块单日跌幅超过5%且放量",
+    "市场恐慌指数（如VIX）急剧上升，全市场系统性下跌",
+    "央行意外收紧流动性（如加息或提高准备金率）"
+  ],
+  "warnings": [
+    "注意：市场整体情绪贪婪且指数高开低走，短期回调风险不可忽视，需严格设置止损",
+    "注意：板块轮动信号来自情绪面系统，需结合基本面和技术面确认，避免追高"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:51:50.796380",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_rss_e485a93e",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,149 @@
+{
+  "opportunity_id": "opp_178dcc9e",
+  "opportunity_title": "降准催化结构轮动",
+  "opportunity_thesis": "央行降准0.5个百分点+逆回购降息10bp释放明确宽松信号，但经济数据疲弱（PMI连续3个月低于荣枯线、CPI通缩）导致指数高开低走，资金从地产消费加速流向新能源和半导体。这构成结构性机会：宽松流动性+基本面恶化=资金集中追逐景气度相对确定的成长板块，新能源和半导体是当前最受益的方向。\n\n【M13调研】央行降准降息释放万亿流动性，历史经验显示短期估值修复行情可能展开，但PMI连续低于荣枯线、通缩压力加大等基本面疲软因素构成压制。缺乏研报、新闻和基本面数据支持，判断依赖历史规律，不确定性较高。风险在于基本面恶化超预期或政策效果不达预期。综合评估，机会存在但需谨慎，置信度小幅下调。\n\n【M13调研】央行降准降息释放万亿流动性，历史经验显示短期估值修复行情可能展开，但PMI连续低于荣枯线、通缩压力加大等基本面疲软因素构成压制。缺乏研报、新闻和基本面数据支持，判断依赖历史规律，不确定性较高。风险在于基本面恶化超预期或政策效果不达预期。综合评估，机会存在但需谨慎，置信度小幅下调。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "688981.SH",
+    "603501.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行4月24日宣布4月25日降准0.5个百分点+此前已下调逆回购利率10bp，宽松政策密集落地；同时4月23日指数高开低走、近4000只个股下跌，市场对宽松反应钝化，但资金轮动信号明确指向新能源和半导体，说明市场正在结构性调仓而非全面撤退。当前是布局结构性机会的窗口。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_2ba5b3f88b20",
+    "sig_92a136d719dc",
+    "sig_66cd4adf6332",
+    "sig_ea7347bd74cf",
+    "sent_ec6c7cba",
+    "sig_b344dde14d32",
+    "sig_38049b31fb61",
+    "sig_bb3a1ffe4df9",
+    "sig_dca5821f56c7",
+    "sig_f66865eb44db",
+    "sig_e39115aa3077",
+    "sig_7298dda97ec7",
+    "sig_8acb82a65167",
+    "sig_8a6f0519b08d",
+    "sig_9b5f9f0a102a",
+    "sig_6aae84620adb",
+    "sig_edc5b0434f33",
+    "sig_6030bb0be882",
+    "sig_7d650e648a54",
+    "sig_37b8e1ac32b6",
+    "sig_247fd5330706",
+    "sig_cf855bc992d0",
+    "sig_b19ea9e6181e",
+    "sig_3e2b5bd0cd4d",
+    "sig_e0e3bf1f136a",
+    "sig_de08dfbf89a4",
+    "sig_c26c00625075",
+    "sig_4c9e1bba1ed0",
+    "sig_7a827ccde515",
+    "sig_dece1006f835",
+    "sig_b2d9156cf72e",
+    "sig_deee36561d85",
+    "sig_dc0079649df5"
+  ],
+  "inferred_events": [
+    "inferred_64fb8919",
+    "inferred_fad7a54f",
+    "inferred_1a64d214",
+    "inferred_fc345209",
+    "inferred_fdd9179a",
+    "inferred_8bd8ac04",
+    "inferred_9d9d8893"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点+逆回购降息10bp，释放约1万亿长期资金，流动性宽松确认",
+    "板块轮动信号多次显示资金从地产、消费流向新能源、半导体，方向一致且持续",
+    "保利发展净利润同比降79.31%（2025年报）和57%（2026一季报），地产基本面恶化确认，资金流出有基本面支撑",
+    "PMI连续3个月低于荣枯线、CPI同比下降0.3%，经济下行压力大，宽松预期难以证伪"
+  ],
+  "counter_evidence": [
+    "指数高开低走、近4000只个股下跌，市场整体情绪偏弱，可能压制板块涨幅",
+    "新能源和半导体板块本身也面临部分子行业（如锂电池）的调整压力"
+  ],
+  "key_assumptions": [
+    "假设1：央行宽松政策不会在短期内被证伪或逆转",
+    "假设2：新能源和半导体板块的基本面相对优势持续（如业绩超预期或政策支持）",
+    "假设3：资金从地产消费流出是结构性趋势而非短期情绪波动"
+  ],
+  "uncertainty_map": [
+    "经济数据进一步恶化导致系统性风险（影响程度：高）",
+    "新能源/半导体板块出现业绩低于预期的利空（影响程度：中）",
+    "市场整体情绪持续低迷，资金轮动无法形成趋势（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.55,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：新能源和半导体板块在流动性宽松+资金轮动下有望获得相对收益，龙头个股可能上涨10%-20%。潜在风险：若经济数据超预期恶化或板块业绩低于预期，可能回撤5%-10%。整体风险收益比约2:1。",
+  "next_validation_questions": [
+    "新能源和半导体板块近期是否有业绩预告或政策催化？",
+    "资金轮动信号是否在后续交易日持续？",
+    "地产消费板块是否有企稳迹象？"
+  ],
+  "invalidation_conditions": [
+    "央行释放紧缩信号或宽松政策被收回",
+    "新能源/半导体板块出现重大利空（如龙头业绩大幅低于预期）",
+    "资金轮动信号消失，资金重新回流地产消费"
+  ],
+  "must_watch_indicators": [
+    "新能源和半导体板块的成交额占比变化",
+    "保利发展等地产股是否继续下跌",
+    "PMI和CPI等经济数据是否改善",
+    "央行是否进一步宽松或释放鹰派信号"
+  ],
+  "kill_switch_signals": [
+    "新能源/半导体板块出现单日放量大跌超过3%",
+    "地产消费板块出现政策利好导致资金回流",
+    "市场整体出现系统性风险（如指数跌破关键支撑位）"
+  ],
+  "warnings": [
+    "注意：指数高开低走显示市场对宽松反应钝化，结构性机会不等于全面牛市",
+    "注意：板块轮动信号来自情绪面系统，需结合基本面验证"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T23:36:47.580538",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_9f08c71a",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,142 @@
+{
+  "opportunity_id": "opp_b3ff570c",
+  "opportunity_title": "券商业绩爆发",
+  "opportunity_thesis": "广发证券一季度净利润同比增超70%，营收增长超60%，是券商板块业绩高增长的明确信号。叠加市场情绪处于贪婪区间（恐贪指数67）、涨跌比高达75.95%，市场活跃度显著提升，直接利好券商经纪、自营、投行等核心业务。当前市场尚未充分定价券商板块的业绩弹性，存在预期差，且央行后续降准降息概率高（85%），将进一步催化市场活跃度，构成券商板块的阶段性做多机会。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "券商ETF",
+    "广发证券",
+    "中信证券"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-07T00:00:00",
+    "end": "2026-06-07T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "广发证券一季报（4月27日发布）业绩超预期，净利润同比增70.73%，是券商板块业绩爆发的领先指标。当前市场情绪贪婪（恐贪指数67）、涨跌比75.95%，市场活跃度已明显提升，但券商板块尚未充分反应。央行后续降准降息概率高达85%，政策宽松预期将进一步提升市场活跃度，券商作为市场风向标将直接受益。",
+  "related_signals": [
+    "sig_f5dc287cf712",
+    "sig_898af08751f6",
+    "sig_7ae3396ab434",
+    "sig_781fda7e246d",
+    "sent_afb94f7676ae",
+    "sent_9cac65ff6dfb",
+    "sent_1f482f698d3a",
+    "sent_8fde474c010c",
+    "sent_36fce571ca71",
+    "sent_b54e50c8519c",
+    "sent_e48bfda1bc39",
+    "sent_d4d08c6107ce",
+    "sent_e2054d14aa30",
+    "sent_3b1c672be67f",
+    "sent_84e3425ee437",
+    "sent_856b4f0ee323",
+    "sent_a72ae5543573",
+    "sent_10da9375bbda",
+    "sent_2ab140899d34",
+    "sent_5c5e53c2d006",
+    "sent_b6dc4cc2d8cf",
+    "sent_9a7f83ad0db9",
+    "sent_bf7debd820d7",
+    "sent_635414904919",
+    "sent_e0397c231d3f",
+    "sent_7115a7eff621",
+    "sent_0ae4219c102c",
+    "sent_4f0acbb837a8",
+    "sent_5494095bde99",
+    "sent_4b09ba90e339",
+    "sent_7c5a4b44dcaa",
+    "sent_e04a5706a161",
+    "sent_d47ce2494d9e",
+    "sent_7e5641ea219f",
+    "sent_97f4897e13e9",
+    "sent_68b99cf45634",
+    "sent_ba6460ea797d",
+    "sent_9e4cd5a9f444",
+    "sent_6d3b39a4c5c6",
+    "sent_654d7a6caffa"
+  ],
+  "inferred_events": [
+    "inferred_a5dc00dc",
+    "inferred_302169e7",
+    "inferred_eb662a81",
+    "inferred_07eb7bfa",
+    "inferred_c61006fe"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "广发证券2026年一季度净利润同比增70.73%，营收同比增64.33%，业绩增速远超市场预期",
+    "市场情绪处于贪婪区间（恐贪指数67），涨跌比75.95%，市场活跃度显著提升",
+    "央行后续降准降息概率85%，货币政策宽松预期将进一步提升市场流动性",
+    "7家上市银行一季报营收净利双增，金融板块整体业绩向好"
+  ],
+  "counter_evidence": [
+    "券商板块前期已有一定涨幅，部分利好可能已被price-in",
+    "市场情绪处于贪婪区间，若后续情绪回落可能压制板块表现"
+  ],
+  "key_assumptions": [
+    "假设1：广发证券的业绩高增长具有行业代表性，其他券商一季报也将普遍超预期",
+    "假设2：市场活跃度维持或进一步提升，日均成交额不出现大幅萎缩",
+    "假设3：央行后续降准降息政策如期落地，流动性环境持续宽松"
+  ],
+  "uncertainty_map": [
+    "其他券商一季报业绩是否普遍超预期（影响程度：高）",
+    "市场情绪能否维持贪婪区间或进一步升温（影响程度：中）",
+    "央行降准降息政策落地时间是否晚于预期（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.72
+  },
+  "risk_reward_profile": "潜在收益：若券商板块业绩普遍超预期且市场活跃度持续，板块有望获得10-20%的阶段性涨幅。潜在风险：若其他券商一季报不及预期或市场情绪快速回落，板块可能回调5-10%。风险收益比约2:1，具备吸引力。",
+  "next_validation_questions": [
+    "其他头部券商（如中信证券、华泰证券）一季报业绩是否也实现高增长？",
+    "近期A股日均成交额是否维持在1.5万亿以上？",
+    "央行是否在2周内宣布进一步降准或降息？"
+  ],
+  "invalidation_conditions": [
+    "其他券商一季报业绩普遍低于预期，增速远低于广发证券",
+    "A股日均成交额连续一周低于1万亿，市场活跃度显著下降",
+    "央行明确表示短期内不再进一步宽松"
+  ],
+  "must_watch_indicators": [
+    "A股日均成交额",
+    "券商板块一季报披露进度及业绩增速",
+    "央行货币政策信号（降准降息预期）",
+    "券商ETF资金流向"
+  ],
+  "kill_switch_signals": [
+    "券商板块出现单日跌幅超5%的放量下跌",
+    "市场恐贪指数跌破40，进入恐惧区间",
+    "央行释放紧缩信号或政策表态转向"
+  ],
+  "warnings": [
+    "注意：当前市场情绪已处于贪婪区间，若情绪过热后回落，券商板块可能先于市场调整",
+    "注意：广发证券业绩高增长可能包含一次性因素，需关注扣非净利润增速是否可持续"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:32:11.879030",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_9518d971",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

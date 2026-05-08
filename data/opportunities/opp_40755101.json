@@ -1,0 +1,118 @@
+{
+  "opportunity_id": "opp_40755101",
+  "opportunity_title": "新能源车政策+固态电池双驱动",
+  "opportunity_thesis": "新能源汽车购置税减免延续至2027年底，政策超预期延长，直接提振终端需求预期；同时固态电池产业化加速（纯锂新能源500MWh量产线已达产、GWh级产线推进中），技术突破与政策利好形成共振，新能源车产业链迎来估值修复与业绩预期上修的双重机会。当前市场尚未充分定价固态电池商业化进展，预期差较大。\n\n【M13调研】新能源汽车购置税减免延续至2027年底，政策超预期；固态电池产业化加速，纯锂新能源500MWh量产线已达产，GWh级产线推进中。政策与技术共振，产业链迎来估值修复与业绩上修机会。当前市场未充分定价固态电池商业化，预期差较大。宁德时代一季报净利润同比增48.52%，验证行业景气。风险在于政策细则、固态电池量产不确定性及市场情绪。整体机会积极，但需关注后续进展。\n\n【M13调研】新能源汽车购置税减免延续至2027年底，政策超预期；固态电池产业化加速，纯锂新能源500MWh产线已达产。政策与技术共振，产业链迎来估值修复与业绩上修机会。当前市场未充分定价固态电池商业化，预期差较大。宁德时代一季报验证行业景气。风险在于政策细则、固态电池量产不确定性及市场情绪。整体机会积极，但需关注后续进展。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300750.SZ",
+    "002074.SZ",
+    "300274.SZ",
+    "601012.SH",
+    "600438.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "购置税减免政策于4月24日正式发布，时效性极强；纯锂新能源5月8日披露量产线达产及GWh级产线进展，固态电池产业化信号密集释放。政策+技术双催化剂同时出现，且市场对固态电池商业化仍存疑，预期差最大。",
+  "related_signals": [
+    "sig_30d3e00700ed",
+    "sig_1c94cfaf9bad",
+    "sig_810b1cc2cedf",
+    "sig_80c24e558ad0",
+    "sig_e552050e5030",
+    "sig_a19c232b39d7",
+    "sig_1da9f093af7d",
+    "sig_906283b999bb",
+    "sig_3a8e941b3c94",
+    "sig_5c2b6019cab4",
+    "sig_8a44caabf0c3",
+    "sig_58fd56efe3f5",
+    "sig_3e8e8f0e0f71",
+    "sig_14c93523d744"
+  ],
+  "inferred_events": [
+    "inferred_345f159c",
+    "inferred_64665c70",
+    "inferred_4d2c5d5c",
+    "inferred_fa5dfb2a",
+    "inferred_e47275c7"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "新能源汽车购置税减免政策延续至2027年底，政策正式落地，超市场预期",
+    "纯锂新能源500MWh全固态电池量产线已达产，GWh级产线预计2026年投产",
+    "纯锂新能源与国电投、国家电网等储能项目已落地，商业化验证",
+    "纯锂新能源完成数千万元Pre-A+轮融资，国资背景投资方（亦庄国投）背书"
+  ],
+  "counter_evidence": [
+    "纯锂新能源为初创公司，产能规模较小（500MWh），对行业整体影响有限",
+    "固态电池成本仍高，大规模商业化时间表不确定"
+  ],
+  "key_assumptions": [
+    "假设1：购置税减免政策能有效刺激2026-2027年新能源汽车终端销量",
+    "假设2：固态电池产业化进展持续，头部企业（宁德时代等）跟进量产",
+    "假设3：市场情绪未过度透支，板块估值仍有修复空间"
+  ],
+  "uncertainty_map": [
+    "固态电池量产进度不及预期（影响程度：高）",
+    "新能源汽车销量增速放缓（影响程度：中）",
+    "政策利好已被部分定价（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.95,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：政策+技术双驱动下，新能源车板块估值修复10-20%，固态电池概念股弹性更大（20-30%）。潜在风险：固态电池商业化不及预期导致概念退潮，板块回调5-10%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "宁德时代、国轩高科等龙头是否有固态电池量产时间表更新？",
+    "4月/5月新能源汽车销量数据是否超预期？",
+    "板块资金流向是否持续净流入？"
+  ],
+  "invalidation_conditions": [
+    "新能源汽车销量连续两个月同比下滑",
+    "固态电池龙头公司宣布量产延期或放弃",
+    "政策出现收紧信号（如补贴退坡加速）"
+  ],
+  "must_watch_indicators": [
+    "新能源汽车月度销量数据",
+    "宁德时代/国轩高科固态电池相关公告",
+    "新能源车板块ETF资金流向",
+    "纯锂新能源GWh级产线建设进展"
+  ],
+  "kill_switch_signals": [
+    "板块指数跌破20日均线且成交量放大",
+    "龙头公司业绩大幅低于预期",
+    "政策出现负面调整"
+  ],
+  "warnings": [
+    "固态电池信号主要来自初创公司，行业龙头尚未大规模跟进，需警惕概念炒作风险",
+    "购置税减免政策已在市场预期内，实际落地后短期涨幅可能有限"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T00:14:45.272979",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_bc0fab38",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

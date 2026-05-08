@@ -1,0 +1,110 @@
+{
+  "opportunity_id": "opp_9264786e",
+  "opportunity_title": "宽松驱动成长行情",
+  "opportunity_thesis": "央行密集降准降息释放流动性，叠加PMI连续收缩确认经济下行压力，政策宽松预期强化。资金从消费、地产持续流向新能源和半导体，且半导体龙头业绩超预期、光模块龙头市值创新高，形成基本面+资金面共振。当前市场对成长板块定价尚不充分，预期差较大，构成结构性做多机会。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "半导体ETF",
+    "新能源ETF",
+    "中证1000指数期货"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-24T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "央行已宣布4月20日降准0.5个百分点并下调逆回购利率10bp，宽松政策落地后市场尚未充分反应；PMI连续3个月低于荣枯线强化了进一步宽松预期；半导体龙头业绩预增150%-180%和光模块龙头市值突破万亿提供了基本面锚点，资金轮动信号明确指向成长板块，当前是布局窗口。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_7298dda97ec7",
+    "sig_c65bd11e442f"
+  ],
+  "inferred_events": [
+    "inferred_4affd24f",
+    "inferred_fa628278",
+    "inferred_5c9782f0",
+    "inferred_b3d72d54",
+    "inferred_eb3e5441"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点+逆回购利率下调10bp，流动性宽松信号明确",
+    "制造业PMI连续3个月低于荣枯线，经济下行压力加大，政策宽松预期增强",
+    "资金从消费、地产流向新能源和半导体，板块轮动信号清晰",
+    "半导体龙头Q1业绩预增150%-180%，光模块龙头新易盛净利润增长76.8%，中际旭创市值突破万亿"
+  ],
+  "counter_evidence": [
+    "PMI持续收缩表明经济基本面疲弱，可能压制整体市场风险偏好",
+    "恐贪指数67处于贪婪区间，短期情绪过热可能引发回调"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续不会收紧流动性，宽松政策持续",
+    "假设2：半导体和新能源板块业绩增长趋势延续，无重大利空",
+    "假设3：资金轮动趋势不会逆转，消费地产资金持续流出"
+  ],
+  "uncertainty_map": [
+    "经济下行超预期导致系统性风险（影响程度：高）",
+    "政策宽松力度不及预期或提前退出（影响程度：中）",
+    "成长板块估值过高引发获利回吐（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.72
+  },
+  "risk_reward_profile": "潜在收益来自流动性宽松驱动的成长板块估值修复和业绩超预期，潜在风险来自经济下行超预期或政策宽松不及预期，风险收益比约2:1，止损点可设在板块指数跌破20日均线。",
+  "next_validation_questions": [
+    "半导体和新能源板块的成交量是否持续放大？",
+    "是否有更多成长板块公司发布超预期业绩？",
+    "央行是否在2周内进一步释放宽松信号（如降息）？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松或收紧流动性",
+    "半导体/新能源板块出现重大利空（如出口管制、需求下滑）",
+    "资金轮动逆转，成长板块资金大幅流出"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率和MLF利率",
+    "半导体ETF和新能源ETF的成交量和价格走势",
+    "制造业PMI和社融数据",
+    "恐贪指数是否从贪婪区间回落"
+  ],
+  "kill_switch_signals": [
+    "央行意外加息或收紧流动性",
+    "成长板块龙头股业绩大幅低于预期",
+    "市场出现系统性风险事件（如信用危机）"
+  ],
+  "warnings": [
+    "注意：部分信号来自新闻和情绪面系统，需验证官方公告",
+    "注意：历史案例显示技术突破需商业化验证，当前业绩预增需关注可持续性"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:13:30.837396",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_189d5a83",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

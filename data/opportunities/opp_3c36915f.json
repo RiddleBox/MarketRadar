@@ -1,0 +1,139 @@
+{
+  "opportunity_id": "opp_3c36915f",
+  "opportunity_title": "AI算力链景气确认",
+  "opportunity_thesis": "光模块龙头中际旭创市值突破万亿、新易盛一季报净利润增长76.8%、某半导体龙头Q1预增150%-180%，叠加中国移动推进算力网建设、AI终端国标发布，AI/半导体产业链景气度已从预期进入业绩兑现阶段。资金持续流入新能源半导体板块，市场共识正在形成，但板块内部分化仍存预期差，光模块和AI芯片龙头确定性最高。\n\n【M13调研】AI产业链景气度上行获业绩验证，光模块和半导体龙头增长强劲，政策与资金共振。但缺乏研报和新闻佐证，估值高位和持续性风险需警惕。机会窗口明确，但需进一步核实数据。\n\n【M13调研】AI产业链景气度获业绩验证，光模块和半导体龙头增长强劲，政策与资金共振，机会窗口明确。但缺乏研报、新闻和基本面数据佐证，估值高位和业绩持续性风险需警惕。综合评估，机会存在但需谨慎，建议进一步核实数据后再决策。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "688981.SH",
+    "603501.SH",
+    "002371.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "光模块三巨头年报一季报全部披露完毕，业绩高增确认；中际旭创市值突破万亿形成标杆效应；中国移动算力网建设、AI终端国标发布等政策催化密集；资金已从消费地产轮动至科技板块，当前是业绩验证后的加速窗口。",
+  "related_signals": [
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_c65bd11e442f",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_5a2ec57f6916",
+    "sig_a1d7094e54d1",
+    "sig_d9ef44f292bd",
+    "sig_d8cb7635ade9",
+    "sig_39b17c44aba1",
+    "sig_4149b887d9b2",
+    "sig_911415444bf5",
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017",
+    "sig_41c9d0ac13e2",
+    "sig_d36d819acfc5",
+    "sig_e49e84bd5c49",
+    "sig_df713685bee1",
+    "sig_050c391c993e",
+    "sig_80b5ac1dde51"
+  ],
+  "inferred_events": [
+    "inferred_64fb8919",
+    "inferred_fad7a54f",
+    "inferred_1a64d214",
+    "inferred_fc345209",
+    "inferred_fdd9179a",
+    "inferred_8bd8ac04",
+    "inferred_9d9d8893"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，收盘9989亿，创历史里程碑",
+    "新易盛一季报净利润同比增长76.8%，光模块三巨头业绩全部披露",
+    "某半导体龙头Q1业绩预增150%-180%，受益AI芯片需求爆发",
+    "中国移动推进全国一体化算力网建设，布局吉瓦级数据中心",
+    "AI终端智能化分级国家标准发布，明确产业方向",
+    "AI应用板块走高，软件ETF涨超2%且资金净流入"
+  ],
+  "counter_evidence": [
+    "上交所对全球芯片LOF进行重点监控，显示部分标的溢价过高",
+    "市场整体下跌个股近4000只，指数高开回落，情绪可能过热"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，光模块和半导体订单能见度维持高位",
+    "假设2：宏观经济和政策环境不发生重大逆转，流动性保持合理充裕",
+    "假设3：地缘政治风险不显著冲击全球半导体供应链"
+  ],
+  "uncertainty_map": [
+    "全球芯片LOF溢价监控可能引发监管收紧，影响板块情绪（影响程度：中）",
+    "AI板块短期涨幅较大，存在获利回吐和回调风险（影响程度：中）",
+    "半导体龙头业绩预增是否可持续，需关注后续季度订单（影响程度：低）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 5,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.35000000000000003,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：AI算力链业绩持续超预期，龙头股有望继续上行10%-20%；潜在风险：板块已部分定价，若后续订单不及预期或监管收紧，回调幅度可达10%-15%。风险收益比约1:1.5，适合小仓位试探。",
+  "next_validation_questions": [
+    "光模块三巨头2026年二季度订单指引是否继续环比增长？",
+    "某半导体龙头Q1预增的具体公司名称和业务细节？",
+    "中国移动算力网建设的资本开支计划是否超预期？",
+    "全球芯片LOF溢价监控是否会导致更严厉的监管措施？"
+  ],
+  "invalidation_conditions": [
+    "光模块或半导体龙头发布低于预期的二季度业绩预告",
+    "上交所对AI/半导体板块实施更严格的交易限制或窗口指导",
+    "全球半导体需求出现明显放缓信号（如台积电下调资本开支）"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛、天孚通信的日成交额和股价走势",
+    "半导体设备龙头北方华创的订单和产能利用率数据",
+    "中国移动算力网建设的后续公告和资本开支计划",
+    "全球芯片LOF溢价率变化及监管动态"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头单日放量下跌超过5%且无明确利空",
+    "某半导体龙头业绩预告被证伪或大幅低于预期",
+    "上交所对AI/半导体板块发布风险提示或限制交易"
+  ],
+  "warnings": [
+    "注意：信号中某半导体龙头未明确公司名称，需进一步确认",
+    "注意：板块短期涨幅较大，追高需谨慎，建议分批建仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T23:37:05.389152",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_9f08c71a",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

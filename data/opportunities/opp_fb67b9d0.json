@@ -1,0 +1,108 @@
+{
+  "opportunity_id": "opp_fb67b9d0",
+  "opportunity_title": "宽松驱动科技成长",
+  "opportunity_thesis": "央行降准降息组合拳已落地，叠加制造业PMI连续收缩，宽松政策周期明确开启。资金从消费、地产等传统板块持续流出，转向新能源、半导体等科技成长板块，板块轮动趋势已形成。新能源汽车购置税减免延续至2027年底，为新能源产业链提供长期政策支撑。当前是布局科技成长板块的窗口期，预期差在于市场对宽松力度和持续性仍存疑，但实际政策已超预期。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "半导体ETF",
+    "汽车零部件ETF平安"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-20T00:00:00",
+    "end": "2026-07-20T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "央行已于4月20日降准0.5个百分点并下调逆回购利率10bp，宽松政策已落地而非预期；PMI连续3个月低于荣枯线确认经济下行压力，政策宽松必要性高；资金轮动信号显示新能源、半导体已获资金流入，板块轮动正在发生而非尚未启动。",
+  "related_signals": [
+    "sig_936e4bb56f52",
+    "sent_b3cc88f9",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_30d3e00700ed"
+  ],
+  "inferred_events": [
+    "inferred_1976b9f8",
+    "inferred_b481a72d",
+    "inferred_cd49f8be",
+    "inferred_a7fa67b0",
+    "inferred_5e4aec38"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点+降息10bp，流动性宽松确认",
+    "制造业PMI连续3个月低于荣枯线，宽松政策有基本面支撑",
+    "资金从消费、地产流向新能源、半导体，板块轮动趋势明确",
+    "新能源汽车购置税减免延续至2027年底，政策利好长期化",
+    "汽车零部件指数上涨2.31%，ETF冲击5连涨，板块活跃度提升"
+  ],
+  "counter_evidence": [
+    "市场短期已有所上涨，恐贪指数可能偏高，存在回调风险",
+    "经济下行压力持续，企业盈利改善仍需时间验证"
+  ],
+  "key_assumptions": [
+    "假设1：央行宽松政策不会在短期内转向收紧",
+    "假设2：资金从传统板块流向科技成长的趋势不会因短期回调逆转",
+    "假设3：新能源、半导体等板块基本面未出现超预期恶化"
+  ],
+  "uncertainty_map": [
+    "经济下行幅度超预期，企业盈利恶化程度大于预期（影响程度：高）",
+    "市场短期过热后回调，板块轮动节奏被打断（影响程度：中）",
+    "海外市场波动或地缘风险传导至A股（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：科技成长板块在宽松周期中估值修复+业绩增长双击，预期收益15-25%；潜在风险：经济下行超预期导致盈利下修，最大回撤10-15%；风险收益比约1.5:1至2:1。",
+  "next_validation_questions": [
+    "新能源、半导体板块近期成交量是否持续放大，确认资金流入趋势？",
+    "后续是否有更多产业政策出台，强化科技成长主线？",
+    "消费、地产板块资金流出是否加速，验证轮动持续性？"
+  ],
+  "invalidation_conditions": [
+    "央行释放收紧信号，如暂停降准或加息",
+    "新能源、半导体板块出现重大利空，如龙头业绩大幅低于预期",
+    "资金重新回流消费、地产等传统板块，轮动趋势逆转"
+  ],
+  "must_watch_indicators": [
+    "新能源ETF和半导体ETF的日成交额及资金流向",
+    "制造业PMI后续月份是否回升至荣枯线上方",
+    "央行公开市场操作利率及MLF利率变化",
+    "汽车零部件ETF价格走势及成交量"
+  ],
+  "kill_switch_signals": [
+    "央行意外加息或提高存款准备金率",
+    "新能源/半导体板块单日跌幅超5%且放量",
+    "PMI数据大幅低于预期，引发系统性风险"
+  ],
+  "warnings": [
+    "注意：部分信号（如资金轮动）来自情绪面系统，置信度中等，需结合量价数据验证",
+    "注意：市场短期已有所上涨，追高需控制仓位，建议分批建仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:40:47.319262",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_ed62630c",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

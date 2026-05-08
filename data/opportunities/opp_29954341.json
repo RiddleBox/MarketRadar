@@ -1,0 +1,101 @@
+{
+  "opportunity_id": "opp_29954341",
+  "opportunity_title": "新能源政策红利",
+  "opportunity_thesis": "新能源汽车购置税减免延续至2027年底，政策超预期且时间窗口长，叠加资金从消费地产轮入新能源板块，形成政策+资金双驱动。当前市场对政策利好反应尚不充分，存在预期差，新能源板块有望迎来阶段性估值修复行情。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "新能源汽车ETF",
+    "宁德时代",
+    "比亚迪"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "政策于2026年4月24日正式发布，时效性极强；资金轮动信号显示新能源板块正在获得增量资金，市场情绪从恐惧转向贪婪，短期催化窗口打开。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_30d3e00700ed"
+  ],
+  "inferred_events": [
+    "inferred_6f75805d",
+    "inferred_177550a5",
+    "inferred_d33b0301",
+    "inferred_2e229759"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "新能源汽车购置税减免政策延续至2027年底，政策力度超预期",
+    "资金从消费、地产流向新能源、半导体，板块轮动信号明确",
+    "历史案例显示政策利好+资金流入组合在A股有较高胜率"
+  ],
+  "counter_evidence": [
+    "恐贪指数67处于贪婪区间，市场情绪可能过热",
+    "新能源板块前期已有一定涨幅，部分利好可能已被定价"
+  ],
+  "key_assumptions": [
+    "假设1：政策执行细节无重大变化，且后续无利空政策对冲",
+    "假设2：资金流入趋势可持续，而非短期脉冲"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：市场整体情绪过热导致短期回调（影响程度：高）",
+    "不确定性2：新能源板块内部竞争加剧，龙头企业盈利不及预期（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 9,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：政策驱动下板块估值修复10-15%；潜在风险：市场情绪过热导致回调5-8%，或政策执行不及预期。风险收益比约2:1。",
+  "next_validation_questions": [
+    "新能源板块近期成交量是否持续放大？",
+    "龙头企业（如宁德时代、比亚迪）是否有业绩预告或订单公告？",
+    "市场整体恐贪指数是否回落至中性区间？"
+  ],
+  "invalidation_conditions": [
+    "政策被撤回或大幅修改",
+    "新能源板块资金连续3日净流出",
+    "市场出现系统性风险事件（如地缘冲突、流动性危机）"
+  ],
+  "must_watch_indicators": [
+    "新能源ETF成交量",
+    "宁德时代/比亚迪股价走势",
+    "恐贪指数变化",
+    "北向资金流向"
+  ],
+  "kill_switch_signals": [
+    "新能源板块单日跌幅超3%且放量",
+    "政策出现负面解读或利空公告",
+    "资金轮动信号转向流出新能源"
+  ],
+  "warnings": [
+    "注意：市场情绪处于贪婪区间，需警惕短期过热风险",
+    "注意：政策利好已被部分预期，实际涨幅可能有限"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:24:35.413822",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_8a0526b4",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,140 @@
+{
+  "opportunity_id": "opp_b505fa5b",
+  "opportunity_title": "AI算力半导体共振",
+  "opportunity_thesis": "美股存储板块创历史新高、A股光模块龙头业绩爆发（中际旭创市值破万亿、新易盛净利增76.8%）、半导体龙头预增150%-180%，叠加中国移动算力网建设政策与资金持续流入，AI算力与半导体产业链形成基本面+政策+资金三重共振，景气度上行趋势明确，当前是布局窗口。\n\n【M13调研】央行降准降息叠加PMI收缩，宽松周期开启，资金从地产流向科技成长板块，形成结构性机会。保利发展净利润暴跌强化资金迁移逻辑，当前市场尚未充分定价科技板块的流动性溢价。但缺乏具体研报和基本面数据，且科技板块估值不低，需关注盈利修复进度和市场情绪变化。整体机会确定性较高，建议适度参与。\n\n【M13调研】央行降准降息与PMI收缩确认宽松周期，地产恶化推动资金向科技成长板块轮动，当前市场尚未充分定价流动性溢价。但缺乏研报和基本面数据，科技板块估值不低，需警惕盈利不及预期风险。建议适度参与，关注后续数据验证。",
+  "target_markets": [
+    "A_SHARE",
+    "US"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "603501.SH",
+    "688008.SH",
+    "002371.SZ",
+    "002230.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-08-08T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "当前时点催化剂密集：美股存储板块5月8日创新高、中国移动同日宣布算力网建设、AI终端国家标准发布、A股光模块与半导体龙头一季报业绩集中披露且超预期，资金从消费地产持续流入半导体，情绪与基本面共振窗口打开。",
+  "related_signals": [
+    "sig_ccb0b72f8643",
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sent_ec6c7cba",
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_c65bd11e442f",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_5a2ec57f6916",
+    "sig_a1d7094e54d1",
+    "sig_d9ef44f292bd",
+    "sig_d8cb7635ade9",
+    "sig_39b17c44aba1",
+    "sig_4149b887d9b2",
+    "sig_911415444bf5",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017",
+    "sig_df713685bee1",
+    "sig_050c391c993e"
+  ],
+  "inferred_events": [
+    "inferred_9660b3ae",
+    "inferred_a9b8d92e",
+    "inferred_ba62cf72",
+    "inferred_57455744",
+    "inferred_6a5ddb1d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美股存储板块集体上涨，美光科技涨10%创历史新高，HBM需求爆发驱动超级周期",
+    "中际旭创盘中市值突破万亿，新易盛一季报净利润增长76.8%，光模块业绩持续超预期",
+    "某半导体龙头Q1业绩预增150%-180%，受益AI芯片需求爆发",
+    "中国移动推进全国一体化算力网建设，开放万亿级Token服务，政策催化明确",
+    "资金从消费/地产持续流入新能源/半导体板块，板块轮动信号一致"
+  ],
+  "counter_evidence": [
+    "半导体板块已累积一定涨幅，部分预期可能已提前反映",
+    "地缘政治风险（中东冲突）可能引发短期避险情绪，压制风险偏好"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，HBM和光模块订单不出现大幅下滑",
+    "假设2：国内半导体产能利用率维持高位，业绩增长趋势延续",
+    "假设3：宏观流动性保持宽松，无超预期紧缩政策"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：地缘政治冲突升级导致全球市场避险，短期冲击风险偏好（影响程度：高）",
+    "不确定性2：半导体板块短期涨幅过大，获利回吐压力（影响程度：中）",
+    "不确定性3：AI资本开支若出现放缓信号，产业链景气度可能见顶（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.98,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI算力与半导体景气周期持续，龙头股业绩超预期驱动估值上修，预期收益15-25%。潜在风险：地缘冲突或宏观政策收紧导致市场回调，最大回撤约10-15%。风险收益比约1.5:1。",
+  "next_validation_questions": [
+    "半导体龙头（如中芯国际）一季报实际数据是否与预增预告一致？",
+    "美光科技等美股存储公司后续财报指引是否继续上调？",
+    "中国移动算力网建设的具体投资规模和时间表是否明确？"
+  ],
+  "invalidation_conditions": [
+    "半导体龙头一季报实际业绩低于预增预告下限",
+    "美光科技等美股存储龙头股价出现连续下跌，趋势逆转",
+    "AI资本开支出现明显放缓信号（如主要云厂商下调资本开支指引）"
+  ],
+  "must_watch_indicators": [
+    "中芯国际、韦尔股份等A股半导体龙头一季报实际数据",
+    "美光科技、西部数据等美股存储龙头股价走势",
+    "AI相关ETF（如软件ETF）资金流入持续性",
+    "地缘政治风险指标（中东局势、油价）"
+  ],
+  "kill_switch_signals": [
+    "半导体板块单日跌幅超5%且放量",
+    "美光科技跌破20日均线",
+    "央行意外收紧流动性（如加息或提高准备金率）"
+  ],
+  "warnings": [
+    "注意：部分信号（如半导体龙头预增）来源为新闻，非官方公告，需核实",
+    "注意：板块已累积一定涨幅，短期追高需控制仓位"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T23:45:58.710099",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_a9169a80",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

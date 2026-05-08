@@ -1,0 +1,106 @@
+{
+  "opportunity_id": "opp_401617d1",
+  "opportunity_title": "宽松预期博弈",
+  "opportunity_thesis": "通缩压力持续（CPI/PPI双负）叠加央行明确表态将适时降准，形成政策宽松预期与基本面疲弱的博弈窗口。当前市场尚未完全定价降准落地，预期差存在，但需警惕政策落地后利好出尽。\n\n【M13调研】机会基于通缩和降准预期，但缺乏研报、基本面数据和行业趋势支持。新闻分析中无直接相关宏观信息，仅有个股公告。政策预期差存在，但利好出尽风险需警惕。整体置信度较低，建议等待更多数据或政策明确信号后再行决策。\n\n【M13调研】机会描述基于经济疲软和央行超预期宽松，形成短期交易窗口，逻辑成立。但缺乏研报、行业趋势和基本面数据支持，新闻无相关事件，信息不充分。无重大利空，但置信度偏低，建议谨慎参与，关注后续经济数据验证。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601166.SH",
+    "600036.SH",
+    "600030.SH",
+    "601688.SH",
+    "000002.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-15T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行行长在国新办发布会明确表态将适时降准，信号时效性极强（9/10），且通缩数据（CPI/PPI）已公布，市场对宽松政策落地的预期正在升温，但尚未完全price-in。",
+  "related_signals": [
+    "sig_e39115aa3077",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203",
+    "sig_8acb82a65167"
+  ],
+  "inferred_events": [
+    "inferred_080cb4c7",
+    "inferred_6314fed0",
+    "inferred_32feee6b",
+    "inferred_45f61517",
+    "inferred_7bdf50a4"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行行长公开表态将适时降准，释放明确宽松信号",
+    "12月CPI同比下降0.3%，PPI同比下降2.7%，通缩压力加大，政策宽松必要性增强",
+    "历史案例case_2024_rate_cut显示降息后银行股存在估值修复机会"
+  ],
+  "counter_evidence": [
+    "降准表态仅为预期，尚未落地，存在政策不及预期风险",
+    "通缩数据为12月数据，时效性较低（1/10），当前经济状况可能已变化"
+  ],
+  "key_assumptions": [
+    "假设1：央行在未来2周内宣布降准或降息",
+    "假设2：通缩压力未进一步恶化至引发系统性风险"
+  ],
+  "uncertainty_map": [
+    "政策落地时间不确定（影响程度：高）",
+    "降准幅度可能低于市场预期（影响程度：中）",
+    "市场情绪可能因其他利空（如地缘冲突）而抵消宽松利好（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.7,
+    "confidence_score": 0.42000000000000004,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：降准落地后银行、券商板块估值修复，预期涨幅5-10%；潜在风险：政策落空或不及预期，板块回调3-5%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "央行是否在2周内正式宣布降准？",
+    "市场资金面（如SHIBOR、国债收益率）是否已反映宽松预期？",
+    "银行板块近期资金流向是否显示机构加仓？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态近期不降准",
+    "CPI/PPI数据大幅好转，通缩压力缓解",
+    "市场出现系统性风险事件（如地缘冲突升级）"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作公告",
+    "SHIBOR 1周利率",
+    "银行板块指数（申万银行）走势",
+    "沪深两市成交额"
+  ],
+  "kill_switch_signals": [
+    "央行官员发表鹰派言论",
+    "银行板块放量下跌破位",
+    "CPI/PPI超预期回升至正值"
+  ],
+  "warnings": [
+    "信号中通缩数据时效性低，需关注最新经济数据",
+    "历史案例显示降息后地产股反弹乏力，需谨慎选择标的"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T00:25:25.551891",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_bc594e53",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,305 @@
+{
+  "symbol": "SC8888.SHF",
+  "research_level": "deep",
+  "triggered_by": "m3",
+  "reports": [],
+  "news": [
+    {
+      "title": "国内商品期市夜盘收盘多数上涨 能源品涨幅居前",
+      "content": "黑色系品种悉数上涨，焦煤（JM.DCE）上涨4.56%，焦炭（J.DCE）上涨2.83%，铁矿石（I.DCE）上涨1.43%，热轧卷板（HC.SHF）上涨0.78%，螺纹钢（RB.SHF）上涨0.65%。",
+      "source": "财联社",
+      "published_at": "2026-03-06 23:02:51",
+      "url": "http://finance.eastmoney.com/a/202603063664810139.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "国内商品期市夜盘多数下跌 低硫燃料油跌3.70%",
+      "content": "苯乙烯（EB.DCE）上涨1.96%，丁二烯橡胶（BR.SHF）上涨0.44%，20号胶（NR.INE）、PTA（TA.CZC）、橡胶（RU.SHF）均收平，纸浆（SP.SHF）微跌0.11%。",
+      "source": "每日经济新闻",
+      "published_at": "2026-03-04 23:20:33",
+      "url": "http://finance.eastmoney.com/a/202603043662077480.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "贵金属价格惊现“V型”反弹：银价一周跌五成 波动率创45年新高",
+      "content": "根据Wind提供的2月5日上海期货交易所白银期权数据，白银期货（AG.SHF）1个月期平值隐含波动率已达到117.40%，且多个行权价对应的1个月隐含波动率均在104%–120%区间内。据悉，最近一个月，白银单日最大跌幅超30%、全月出现11次单日涨跌幅≥5%的极端行情。",
+      "source": "深圳商报·读创",
+      "published_at": "2026-02-06 17:44:20",
+      "url": "http://finance.eastmoney.com/a/202602063644663046.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "铜价又双叒叕创新高，现在上车还有机会吗？",
+      "content": "对于希望高效参与这一趋势的投资者而言，上期有色金属指数（IMCI.SHF）提供了一条便捷路径——其底层资产配置上海期货交易所的铜、铝、铅、锡、锌、镍有色金属期货，其中铜权重超过50%，高度聚焦于AI基建、能源转型与中有望率先受益的金属品种。",
+      "source": "东方财富证券",
+      "published_at": "2026-01-06 14:00:32",
+      "url": "http://finance.eastmoney.com/a/202601063610085277.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "",
+      "content": "财联社5月8日电，霍尔木兹海峡附近区域在2小时内接连传出交火声。 (央视新闻)",
+      "source": "财联社",
+      "published_at": "23:14:51",
+      "url": "",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "深圳乐动机器人香港IPO面向散户投资者部分获得约6707倍认购",
+      "content": "【深圳乐动机器人香港IPO面向散户投资者部分获得约6707倍认购】财联社5月8日电，香港交易所文件显示，深圳乐动机器人股份有限公司在香港上市筹集资金总额8.787亿港元。香港IPO定价每股26.36港元。面向香港散户投资者的330万股获得6707.66倍认购。分配给国际投资者的3000万股认购倍数为9.54倍。",
+      "source": "财联社",
+      "published_at": "23:08:38",
+      "url": "",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "",
+      "content": "财联社5月8日电，美联储官员古尔斯比表示，有关美国就业市场正在分崩离析的证据并不多。",
+      "source": "财联社",
+      "published_at": "23:08:13",
+      "url": "",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "阿斯麦（ASML）股价创历史新高 成为欧洲首家市值突破6000亿美元的公司",
+      "content": "【阿斯麦（ASML）股价创历史新高 成为欧洲首家市值突破6000亿美元的公司】财联社5月8日电，荷兰半导体设备巨头阿斯麦股价上涨2.82%，报1559.4美元/股，创历史新高，总市值报6010亿美元。阿斯麦成为欧洲首家市值突破6000亿美元的公司。市场普遍认为，随着AI算力需求持续扩张，高端GPU与先进逻辑芯片产能持续紧张，带动对EUV光刻设备的长期需求保持高景气。",
+      "source": "财联社",
+      "published_at": "23:03:39",
+      "url": "",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "国内商品期市夜盘收盘涨跌互现 燃料油涨超2%",
+      "content": "【国内商品期市夜盘收盘涨跌互现 燃料油涨超2%】财联社5月8日电，国内商品期市夜盘收盘涨跌互现，燃料油涨超2%，低硫燃料油（LU）涨近2%，丙烯、聚丙烯（PP）、沥青涨超1%；跌幅方面，纯碱跌超2%，烧碱、丁二烯橡胶跌超1%，乙二醇（EG）、20号胶跌近1%。",
+      "source": "财联社",
+      "published_at": "23:01:26",
+      "url": "",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "",
+      "content": "财联社5月8日电，Moderna股价上涨16.4%。",
+      "source": "财联社",
+      "published_at": "22:57:40",
+      "url": "",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "江苏省增资扩产战新产业基金揭牌",
+      "content": "【江苏省增资扩产战新产业基金揭牌】财联社5月8日电，江苏省增资扩产战新产业基金揭牌仪式8日在苏州举行。该基金总规模100亿元，由江苏省战略性新兴产业母基金与13个设区市共同出资设立。目前，基金已落地苏州东沙湖基金小镇并实质化运作，将聚焦集成电路、生物医药、新能源、高端装备等重点赛道，加快储备、落地一批优质项目，引导资本、人才、技术等创新要素加速集聚，精准赋能新质生产力发展。",
+      "source": "财联社",
+      "published_at": "22:55:51",
+      "url": "",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "",
+      "content": "财联社5月8日电，花旗表示，铜市场短期支撑位在13000美元/吨附近。",
+      "source": "财联社",
+      "published_at": "22:48:19",
+      "url": "",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "高盛调查显示投资者预计霍尔木兹海峡航运不畅将持续到下半年",
+      "content": "【高盛调查显示投资者预计霍尔木兹海峡航运不畅将持续到下半年】财联社5月8日电，高盛集团的一项调查显示，多数受访投资者预计，途经霍尔木兹海峡的航运将在6月底以后继续受到扰乱，43%作出回应的受访者预计航运要到7月份以后才会恢复正常，三分之一回应者预计布伦特原油今年结束时将在每桶80至90美元之间。",
+      "source": "财联社",
+      "published_at": "22:47:23",
+      "url": "",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "部分企业购煤转向国内市场 煤炭市场火爆",
+      "content": "【部分企业购煤转向国内市场 煤炭市场火爆】财联社5月8日电，随着全国迎峰度夏用电储备提前启动，南方沿海电厂集中补仓，终端采购节奏正在大幅提前，煤炭市场需求火热的氛围已经提前显现。我国煤炭进口主要来自印尼、澳大利亚、俄罗斯、蒙古四国，其中，近半数货源来自印尼。但今年以来，受中东局势带来的海运价格上涨等多种因素影响，印尼上调了煤炭出口价格，同时又在一定程度上进行了限产。多位煤炭经销商表示，因进口货源紧张，海运成本上升，直接导致进口煤炭价格大幅走高。数据显示，截至5月6日，印尼3800大卡动力煤华南到岸价为每吨602元，较年初上涨171元。进口煤炭价格走高，还导致今年4月进口煤炭和国内市场煤炭价格出现倒挂，不少原本海外购煤为主的企业，如今纷纷转向国内市场采购。 (央视财经)",
+      "source": "财联社",
+      "published_at": "22:44:27",
+      "url": "",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "东方证券升级两融风控 新增115%“即时平仓线”",
+      "content": "【东方证券升级两融风控 新增115%“即时平仓线”】财联社5月8日电，东方证券升级两融风控。公告显示自2026年5月18日起，在两融业务中新增“即时平仓线”监控指标，参数设定为115%。公告显示，“即时平仓线”为特定维持担保比例值。T日收盘后，若投资者信用账户维持担保比例低于即时平仓线，需在T+1日上午收市前将比例提升至平仓线及以上，否则公司有权在T+1日上午收市后实行强制平仓。据了解，即时平仓线设置区别于常规平仓线（130%），由券商视自身业务风险情况设定，常见数值为110%和115%，也有券商未设置这一指标，各券商命名方式略有不同。（财联社记者 王晨）",
+      "source": "财联社",
+      "published_at": "22:35:05",
+      "url": "",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "AI硬件超级行情还在继续：英伟达5.3万亿、美光8000亿，AI硬件夜涨超10%",
+      "content": "【AI硬件超级行情还在继续：英伟达5.3万亿、美光8000亿，AI硬件夜涨超10%】\n5月8日美股盘初，AI硬件板块狂欢延续，纳斯达克100指数涨幅扩大至1.5%，刷新记录新高，科技股强势领涨。资金正围绕GPU、CPU、存储、光模块及终端生态全面回流，AI硬件狂欢行情貌似不可阻挡。以财联社电报发布时间为例，来看看今晚这波AI硬件行情有多么疯狂：\n\n21:33，存储板块率先异动，美光、闪迪、西部数据、希捷集体上扬，美光科技涨7%，闪迪涨近5%；\n21:44，AMD、英特尔双双涨超5%，二者同创历史新高，总市值合计达到1.3万亿美元，算力主线进一步扩散；\n21:47，英伟达涨2.65%，股价刷新历史新高，总市值升至5.28万亿美元，这超越印度股市总市值或者世界第三大经济体德国GDP，继续扮演市场风向标；\n22:01，美光涨幅扩大至10%，总市值突破8000亿美元，闪迪大涨8%，二者同创历史新高，HBM需求爆发被视为新一轮超级周期的重要催化；\n22:03，纳斯达克100指数涨幅扩大至1.5%，科技风险偏好明显抬升；\n22:07，光通信板块接力走强，AAOI、POET、康宁领涨。与此同时，苹果股价亦创历史新高，总市值达到4.31万亿美元。",
+      "source": "财联社",
+      "published_at": "22:34:43",
+      "url": "",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "俄国家原子能公司：伊朗布什尔核电站施工现场逐步恢复运转",
+      "content": "【俄国家原子能公司：伊朗布什尔核电站施工现场逐步恢复运转】财联社5月8日电，俄罗斯国家原子能公司首席执行官利哈乔夫表示，伊朗布什尔核电站施工现场正逐步恢复运转，已有约2200名员工返回工作岗位。他介绍称，目前核电站周边局势总体平稳，伊朗工人的数量也在继续增加。利哈乔夫补充说，俄国家原子能公司已做好准备，在确信冲突不会再次爆发后，可迅速动员并全面恢复在伊朗的员工配置。自美以对伊朗发动袭击以来，布什尔核电站曾多次遭袭。利哈乔夫还透露，布什尔核电站二号机组反应堆的完工率已超过60%。 (央视新闻)",
+      "source": "财联社",
+      "published_at": "22:34:19",
+      "url": "",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "全球芯片LOF被上交所重点监控 年内已发超百份溢价风险提示公告",
+      "content": "【全球芯片LOF被上交所重点监控 年内已发超百份溢价风险提示公告】财联社5月8日电，据上交所今日消息，2026年4月27日至2026年5月8日，上交所对全球芯片LOF等溢价较高的基金进行重点监控。今年以来芯片投资火热，景顺长城基金旗下的全球芯片LOF已发布超百份溢价风险提示公告。最新公告显示，截至5月8日中午收盘，该基金的二级市场最新成交价为3.765元，而5月6日的基金份额净值仅为2.9526元。对此，基金管理人提醒广大投资者，应密切关注二级市场交易价格溢价风险，审慎做出投资决策，如盲目投资，后续可能遭受重大损失。（财联社记者 李迪）",
+      "source": "财联社",
+      "published_at": "22:32:15",
+      "url": "",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "波兰与欧盟签署“欧洲安全行动”协议",
+      "content": "【波兰与欧盟签署“欧洲安全行动”协议】财联社5月8日电，波兰政府8日在华沙与欧盟委员会正式签署“欧洲安全行动”协议。据波通社报道，波兰是19个“欧洲安全行动”参与国中首个签署协议的国家。根据协议，波兰将获得最多437亿欧元（约合515亿美元）低息贷款，用于国防和安全领域投资。波兰总理图斯克在协议签署后发表讲话称，该协议是“波兰和欧盟历史上的一个分水岭时刻”。他说：“波兰将因这项协议而更加安全，并获得1800亿兹罗提（约合501亿美元）的资金。” (新华社)",
+      "source": "财联社",
+      "published_at": "22:29:38",
+      "url": "",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "Gloom deepens for consumers in early May due to high gas prices",
+      "content": "Consumer sentiment hit a record low in May, the University of Michigan said, and showed the lowest reading among Republicans since President Donald Trump’s 2024 election.",
+      "source": "MarketWatch",
+      "published_at": "2026-05-08 15:47:00",
+      "url": "https://www.marketwatch.com/story/gloom-deepens-for-consumers-in-early-may-due-to-high-gas-prices-e20e31ae?mod=mw_rss_topstories",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Sony Group Corporation (SONY) Q2 2025 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 15:44:45",
+      "url": "https://seekingalpha.com/article/4846320-sony-group-corporation-sony-q2-2025-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Lassonde Industries Inc. 2026 Q1 - Results - Earnings Call Presentation",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 15:44:09",
+      "url": "https://seekingalpha.com/article/4901535-lassonde-industries-inc-2026-q1-results-earnings-call-presentation?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "DraftKings Inc. 2026 Q1 - Results - Earnings Call Presentation",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 15:43:13",
+      "url": "https://seekingalpha.com/article/4901534-draftkings-inc-2026-q1-results-earnings-call-presentation?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "ACI Worldwide, Inc. 2026 Q1 - Results - Earnings Call Presentation",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 15:42:25",
+      "url": "https://seekingalpha.com/article/4901533-aci-worldwide-inc-2026-q1-results-earnings-call-presentation?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Karat Packaging Inc. (KRT) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 15:41:36",
+      "url": "https://seekingalpha.com/article/4901531-karat-packaging-inc-krt-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "DraftKings Inc. (DKNG) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 15:41:34",
+      "url": "https://seekingalpha.com/article/4901421-draftkings-inc-dkng-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Groupon, Inc. (GRPN) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 15:41:32",
+      "url": "https://seekingalpha.com/article/4901382-groupon-inc-grpn-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "NFI Group Inc. (NFI:CA) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 15:41:31",
+      "url": "https://seekingalpha.com/article/4901417-nfi-group-inc-nfi-ca-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Barings BDC Inc (BBDC) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 15:41:30",
+      "url": "https://seekingalpha.com/article/4901441-barings-bdc-inc-bbdc-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Bimini Capital Management, Inc. (BMNM) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 15:41:28",
+      "url": "https://seekingalpha.com/article/4901477-bimini-capital-management-inc-bmnm-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    }
+  ],
+  "fundamentals": {},
+  "quote": {},
+  "semantic_results": [],
+  "summary": "机会描述基于霍尔木兹海峡军事冲突升级，但新闻分析显示市场已部分定价该风险（高盛调查），且缺乏直接冲突升级证据。能源品价格上涨反映市场反应，但波动剧烈，且消费者情绪恶化可能抑制需求。无研报和基本面数据支撑，分析基础薄弱。因此，该机会存在较大不确定性，置信度下调0.2，建议谨慎对待短期做多策略。",
+  "key_findings": [
+    "新闻13显示高盛调查预计霍尔木兹海峡航运不畅持续到下半年，暗示市场已部分定价封锁风险，预期差可能缩小。",
+    "新闻1和9显示国内商品期市夜盘能源品涨幅居前，燃料油涨超2%，反映市场对供应中断的初步反应。",
+    "新闻20显示美国消费者因高油价情绪恶化，表明油价上涨已传导至实体经济，可能抑制需求。",
+    "新闻17提到伊朗布什尔核电站逐步恢复运转，暗示伊朗仍维持部分正常活动，冲突升级可能有限。",
+    "缺乏直接关于军事冲突升级的新闻，现有新闻多为市场反应而非事件本身，信息支撑不足。"
+  ],
+  "risk_factors": [
+    "高盛调查显示市场已预期航运不畅，若冲突未进一步升级，油价可能回落，做多风险较大。",
+    "新闻2显示低硫燃料油曾大幅下跌，市场波动剧烈，短期方向不确定。",
+    "缺乏研报和基本面数据，分析基础薄弱，决策依赖有限信息。"
+  ],
+  "confidence_assessment": "当前信息显示市场已部分定价霍尔木兹海峡风险，且缺乏直接军事冲突升级的确认新闻。高盛调查表明投资者预期持续至下半年，预期差可能已被消化。同时，油价上涨已影响消费者情绪，可能抑制需求。整体上，机会的时效性和确定性较低，置信度需下调。",
+  "confidence_multiplier": 1.0,
+  "confidence_delta": -0.2,
+  "has_major_negative": false,
+  "research_time": "2026-05-08T23:48:55.411327",
+  "data_sources": [
+    "news"
+  ],
+  "cache_hit": false,
+  "timeout": false,
+  "partial_result": false
+}

@@ -1,0 +1,104 @@
+{
+  "opportunity_id": "opp_1ec760e4",
+  "opportunity_title": "新能源政策+资金共振",
+  "opportunity_thesis": "新能源汽车购置税减免延续至2027年底，叠加资金从消费地产持续流入新能源板块，形成政策与资金面的双重共振。同时，半导体龙头业绩超预期强化科技成长主线，板块景气度获政策与业绩双重支撑，短期具备上行驱动。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "半导体ETF",
+    "新能源汽车ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "政策正式发布（4月24日）叠加资金轮动信号持续出现，且半导体业绩预告强化板块信心，当前是政策落地+资金确认的窗口期。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_30d3e00700ed",
+    "sig_c65bd11e442f"
+  ],
+  "inferred_events": [
+    "inferred_1d10e33b",
+    "inferred_f00480ed",
+    "inferred_831b6af4",
+    "inferred_f8f8f3be",
+    "inferred_eb16731b"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "新能源汽车购置税减免政策延续至2027年底，政策确定性高",
+    "资金从消费、地产持续流入新能源和半导体板块（重复出现6次）",
+    "某半导体龙头Q1业绩预增150%-180%，验证行业高景气",
+    "推理事件显示新能源/半导体板块走强概率75%，时间窗口1周内"
+  ],
+  "counter_evidence": [
+    "市场整体情绪贪婪（恐贪指数67），短期可能存在过热风险",
+    "历史案例显示技术突破需商业化验证，政策利好可能已被部分定价"
+  ],
+  "key_assumptions": [
+    "假设1：政策执行力度不变，无后续收紧",
+    "假设2：资金流入趋势持续，未因其他板块分流",
+    "假设3：宏观经济未出现超预期恶化"
+  ],
+  "uncertainty_map": [
+    "市场整体回调风险（概率65%），可能拖累板块表现（影响程度：高）",
+    "政策利好已被部分定价，涨幅空间可能有限（影响程度：中）",
+    "半导体业绩超预期是否具有行业代表性（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 5,
+    "signal_consistency": 8,
+    "overall_score": 6.9,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "政策利好+资金流入提供上行支撑，但市场情绪偏高且存在回调风险，潜在收益约5-10%，最大回撤约3-5%，风险收益比约2:1。",
+  "next_validation_questions": [
+    "新能源ETF近3日成交量是否持续放大？",
+    "是否有更多新能源/半导体公司发布超预期业绩？",
+    "资金流入新能源板块的持续性如何？是否出现流出信号？"
+  ],
+  "invalidation_conditions": [
+    "新能源板块出现连续3日资金净流出",
+    "政策出现收紧或取消信号",
+    "市场整体出现系统性下跌（如指数跌超3%）"
+  ],
+  "must_watch_indicators": [
+    "新能源ETF成交量变化",
+    "北向资金对新能源板块的净买入/卖出",
+    "新能源汽车月度销量数据",
+    "半导体行业月度营收数据"
+  ],
+  "kill_switch_signals": [
+    "新能源ETF跌破20日均线且放量",
+    "政策出现负面调整",
+    "市场恐慌指数快速攀升"
+  ],
+  "warnings": [
+    "注意：情绪信号显示市场贪婪，短期回调风险不可忽视",
+    "注意：历史案例显示政策利好可能已被部分定价，追高需谨慎"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:45:17.541539",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_rss_1874d4c9",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

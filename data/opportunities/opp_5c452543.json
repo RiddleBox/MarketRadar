@@ -1,0 +1,105 @@
+{
+  "opportunity_id": "opp_5c452543",
+  "opportunity_title": "宽松政策博弈窗口",
+  "opportunity_thesis": "经济下行压力（PMI连续收缩）已触发央行明确宽松信号（降准+降息+表态），政策加码预期强烈。当前市场对宽松力度和效果存在分歧，但实际已落地的降准降息提供了流动性支撑，后续财政配合或进一步降息构成短期交易窗口。历史案例显示降息后银行股估值修复有20天左右窗口，但地产股需基本面配合。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "沪深300ETF",
+    "银行ETF",
+    "上证50ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-15T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行已实际降准0.5%并降息10bp，行长表态'适时降准'强化预期，而PMI连续3个月低于荣枯线确认经济下行压力，政策加码窗口已打开。市场尚未完全定价后续财政配合或进一步降息，预期差存在。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_e39115aa3077"
+  ],
+  "inferred_events": [
+    "inferred_eba3b3ef",
+    "inferred_f0adf559",
+    "inferred_cb2727f6",
+    "inferred_f5f70def",
+    "inferred_4e223d9e"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行已下调存款准备金率0.5个百分点（4月20日生效），释放长期流动性",
+    "央行下调7天逆回购利率10bp至1.7%，降低资金成本",
+    "央行行长公开表态将适时降准，政策宽松信号明确",
+    "制造业PMI连续3个月低于50荣枯线，经济下行压力为政策加码提供必要性"
+  ],
+  "counter_evidence": [
+    "PMI持续收缩可能压制企业盈利预期，抵消部分宽松利好",
+    "历史案例显示地产股对单纯政策反应乏力，需基本面配合"
+  ],
+  "key_assumptions": [
+    "假设1：后续1-2周内央行或财政部出台进一步宽松措施（如降准、降息、财政刺激）",
+    "假设2：经济数据未出现超预期恶化（如PMI跌破48）导致市场信心崩溃",
+    "假设3：北向资金在宽松预期下恢复净流入，提供增量资金"
+  ],
+  "uncertainty_map": [
+    "政策力度不确定性（影响程度：高）：后续宽松措施可能低于市场预期，如仅降准不降息",
+    "经济数据恶化风险（影响程度：中）：PMI若继续下行至48以下，宽松效果可能被抵消",
+    "市场情绪过热风险（影响程度：中）：恐贪指数67已偏贪婪，若快速升至80+可能透支涨幅"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.9,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：若后续降准/降息落地，沪深300ETF有望反弹3-5%，银行ETF受益估值修复5-8%。潜在风险：政策低于预期或经济数据恶化，最大回撤约3-4%。风险收益比约1:1.5。",
+  "next_validation_questions": [
+    "未来1周内是否有国常会或政治局会议讨论经济刺激？",
+    "北向资金是否在降准后连续3日净流入？",
+    "银行间市场利率（如DR007）是否持续下行确认流动性宽松？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表示不再进一步宽松",
+    "PMI跌破48或出现其他超预期恶化数据",
+    "北向资金连续3日净流出超50亿"
+  ],
+  "must_watch_indicators": [
+    "DR007利率",
+    "北向资金净流入",
+    "PMI（下月公布值）",
+    "恐贪指数"
+  ],
+  "kill_switch_signals": [
+    "央行官员讲话转向鹰派",
+    "市场出现系统性风险事件（如信用违约）",
+    "恐贪指数突破85且北向资金大幅流出"
+  ],
+  "warnings": [
+    "注意：PMI连续收缩可能压制市场情绪，宽松政策效果需时间传导",
+    "注意：历史案例显示地产股对单纯政策反应有限，避免追高地产板块"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:19:07.846863",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_6a301def",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

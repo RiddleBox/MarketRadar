@@ -1,0 +1,109 @@
+{
+  "opportunity_id": "opp_b8ea51ee",
+  "opportunity_title": "宽松加码修复行情",
+  "opportunity_thesis": "经济数据持续疲弱（PMI连续3个月低于荣枯线、CPI/PPI负增长）倒逼央行连续降准降息，货币政策宽松力度超预期。当前已落地降准0.5个百分点和降息10bp，且央行明确表态将适时进一步宽松，形成政策底+经济底的双重预期。市场对经济悲观定价充分，但政策宽松尚未被完全price-in，存在预期差修复机会。\n\n【M13调研】央行降准降息组合拳超预期，政策宽松意图明确，短期流动性改善和估值修复逻辑成立，但经济基本面疲弱（PMI收缩、通缩压力）且市场已部分定价。缺乏研报、新闻和基本面数据，信息不充分，反弹需经济数据验证。风险在于经济持续恶化或政策传导不畅。综合判断为政策驱动的阶段性反弹机会，但置信度较低，需谨慎参与。\n\n【M13调研】央行降准降息超预期，政策宽松意图明确，短期流动性改善和估值修复逻辑成立。但经济基本面疲弱（PMI收缩、通缩压力），市场已部分定价悲观预期，且缺乏研报、新闻和基本面数据支持。反弹需经济数据验证，风险在于经济持续恶化或政策传导不畅。综合判断为政策驱动的阶段性反弹机会，置信度较低，建议谨慎参与，等待经济数据确认。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "沪深300ETF",
+    "中证500ETF",
+    "国债期货"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行已连续两次降准降息（4月20日降准0.5%、4月18日降息10bp），且4月23日央行行长明确表态将适时进一步降准，政策宽松进入加速期。同时4月23日公布的PMI数据确认经济收缩，市场对政策依赖度达到峰值，当前是政策预期与基本面最背离的窗口期。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_e39115aa3077",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203"
+  ],
+  "inferred_events": [
+    "inferred_5f11df7f",
+    "inferred_94847954",
+    "inferred_86a94a71",
+    "inferred_53048556",
+    "inferred_a0d879ca"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行已实际执行降准0.5个百分点和降息10bp，宽松力度明确",
+    "央行行长公开表态将适时降准，释放后续宽松信号",
+    "PMI连续3个月低于荣枯线，经济下行压力倒逼政策加码",
+    "CPI/PPI负增长，通缩压力为宽松提供空间"
+  ],
+  "counter_evidence": [
+    "经济数据持续恶化可能压制市场风险偏好，宽松效果需时间传导",
+    "市场对宽松已有部分预期，降准降息后短期可能利好出尽"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续将继续降准或降息，宽松周期延续",
+    "假设2：经济数据不会在短期内出现断崖式恶化（如PMI跌破48）",
+    "假设3：外部环境（如美联储政策、地缘风险）不出现重大负面冲击"
+  ],
+  "uncertainty_map": [
+    "宽松政策传导至实体经济的时滞（影响程度：高）",
+    "市场情绪能否从悲观转向乐观（影响程度：中）",
+    "后续经济数据是否超预期恶化（影响程度：高）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 9,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.55,
+    "execution_readiness": 0.8
+  },
+  "risk_reward_profile": "潜在收益：政策宽松推动估值修复，沪深300有望反弹5-10%；潜在风险：经济数据持续恶化导致市场信心崩塌，最大回撤约3-5%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "央行后续是否在1个月内宣布进一步降准或降息？",
+    "4月PMI数据是否企稳或回升？",
+    "北向资金是否在降准后持续净流入？",
+    "国债收益率是否继续下行反映宽松预期？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "经济数据出现断崖式恶化（如PMI跌破48）",
+    "市场出现系统性风险事件（如信用危机）"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率",
+    "制造业PMI月度数据",
+    "北向资金净流入/流出",
+    "10年期国债收益率"
+  ],
+  "kill_switch_signals": [
+    "央行意外收紧流动性（如提高逆回购利率）",
+    "PMI跌破48且无企稳迹象",
+    "市场恐慌指数（如VIX）大幅飙升"
+  ],
+  "warnings": [
+    "注意：经济数据疲弱可能压制短期反弹空间，宽松效果需时间验证",
+    "注意：市场对宽松已有部分预期，需警惕利好出尽风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:44:22.038655",
+  "batch_id": "sched_test_m13_integration_20260508_rss_1874d4c9",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

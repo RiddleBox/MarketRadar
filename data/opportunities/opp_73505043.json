@@ -1,0 +1,133 @@
+{
+  "opportunity_id": "opp_73505043",
+  "opportunity_title": "宽松驱动科技轮动",
+  "opportunity_thesis": "央行已实施降准0.5个百分点并下调逆回购利率，释放约1万亿元长期资金，同时PMI连续3个月低于荣枯线确认经济下行压力，政策宽松预期明确。资金从消费、地产持续流向新能源和半导体，板块轮动信号与宏观宽松形成共振，新能源/半导体有望成为流动性宽松下的结构性受益方向。当前市场恐贪指数处于中性偏贪婪区间，情绪尚未过热，预期差仍存。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "半导体ETF",
+    "创业板ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-25T00:00:00",
+    "end": "2026-06-25T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "央行降准已于4月25日落地，逆回购利率下调已执行，政策宽松从预期转为现实；PMI连续3个月低于荣枯线强化了宽松必要性；资金轮动信号在4月17-18日密集出现，显示资金已开始行动，当前是政策落地+资金确认的共振窗口。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_2ba5b3f88b20",
+    "sig_92a136d719dc",
+    "sig_66cd4adf6332",
+    "sig_ea7347bd74cf",
+    "sent_ec6c7cba",
+    "sig_b344dde14d32",
+    "sig_e39115aa3077",
+    "sig_7298dda97ec7",
+    "sig_8acb82a65167",
+    "sig_8a6f0519b08d",
+    "sig_9b5f9f0a102a",
+    "sig_6aae84620adb",
+    "sig_edc5b0434f33",
+    "sig_6030bb0be882",
+    "sig_7d650e648a54",
+    "sig_37b8e1ac32b6",
+    "sig_247fd5330706",
+    "sig_cf855bc992d0",
+    "sig_b19ea9e6181e",
+    "sig_e0e3bf1f136a",
+    "sig_de08dfbf89a4",
+    "sig_c26c00625075",
+    "sig_7a827ccde515",
+    "sig_dece1006f835"
+  ],
+  "inferred_events": [
+    "inferred_4af9838a",
+    "inferred_77e07565",
+    "inferred_80f39e21",
+    "inferred_21e40594",
+    "inferred_7ff5acc9"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点释放约1万亿元长期资金，已落地执行",
+    "央行下调7天逆回购利率10bp至1.7%，降低短期资金成本",
+    "资金从消费、地产持续流向新能源、半导体，板块轮动信号多次出现",
+    "PMI连续3个月低于荣枯线，经济下行压力为宽松提供必要性"
+  ],
+  "counter_evidence": [
+    "PMI数据偏弱可能压制整体市场风险偏好，科技板块难以独善其身",
+    "历史案例显示降息降准后地产股反弹乏力，科技板块需基本面配合"
+  ],
+  "key_assumptions": [
+    "假设1：后续无超预期利空（如地缘冲突、信用事件）打断宽松逻辑",
+    "假设2：新能源/半导体基本面未出现恶化（如业绩不及预期）",
+    "假设3：资金轮动趋势可持续，非短期情绪脉冲"
+  ],
+  "uncertainty_map": [
+    "经济下行超预期导致市场整体下跌，科技板块亦受拖累（影响程度：高）",
+    "新能源/半导体板块已部分定价宽松预期，涨幅空间有限（影响程度：中）",
+    "后续宽松政策力度不及预期，市场失望回调（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.8
+  },
+  "risk_reward_profile": "潜在收益来自流动性宽松驱动的估值修复和资金轮动，预计新能源/半导体ETF有5-15%上行空间；风险在于经济下行超预期或宽松效果不及预期，最大回撤约8-10%，止损点可设在板块ETF的20日均线下方。",
+  "next_validation_questions": [
+    "新能源/半导体板块近期成交量是否持续放大？",
+    "北向资金是否开始净流入相关板块？",
+    "是否有新能源/半导体龙头公司发布超预期业绩或订单公告？"
+  ],
+  "invalidation_conditions": [
+    "央行释放紧缩信号或暂停宽松节奏",
+    "新能源/半导体板块出现重大利空（如政策转向、龙头业绩暴雷）",
+    "资金轮动信号消失，资金重新流入消费/地产等传统板块"
+  ],
+  "must_watch_indicators": [
+    "新能源ETF和半导体ETF的日成交额变化",
+    "北向资金净流入/流出方向",
+    "央行公开市场操作利率和MLF续作情况",
+    "PMI和社融数据是否边际改善"
+  ],
+  "kill_switch_signals": [
+    "新能源/半导体板块单日跌幅超3%且放量",
+    "央行意外加息或收紧流动性",
+    "PMI跌破48且无企稳迹象"
+  ],
+  "warnings": [
+    "注意：板块轮动信号来自情绪面系统，恐贪指数中性偏贪婪，需警惕追高风险",
+    "历史案例显示单纯政策宽松若无基本面配合，涨幅有限且持续时间短"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T10:59:59.916351",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260507_astock_skill_47c8e42e",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

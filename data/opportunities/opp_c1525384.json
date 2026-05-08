@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_c1525384",
+  "opportunity_title": "AI算力链景气确认",
+  "opportunity_thesis": "中际旭创市值破万亿、新易盛业绩大增、半导体龙头预增150%-180%，叠加中国移动算力网建设、AI终端国标发布，AI算力与光模块产业链景气度已从预期进入业绩兑现期。政策与资金共振，板块有望从光模块扩散至AI应用、国产软件，形成新一轮结构性行情。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "中际旭创",
+    "新易盛",
+    "软件ETF招商(159899)",
+    "中国移动(600941.SH)"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-07-08T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "中际旭创市值破万亿、新易盛业绩大增、半导体龙头预增150%-180%等业绩信号密集释放，叠加中国移动算力网建设、AI终端国标发布等政策催化，板块从概念炒作进入业绩验证阶段，当前是业绩与政策共振的最佳窗口。",
+  "related_signals": [
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f",
+    "sig_4149b887d9b2",
+    "sig_de9b85fe30aa",
+    "sig_050c391c993e"
+  ],
+  "inferred_events": [
+    "inferred_4985553f",
+    "inferred_8aebcadb",
+    "inferred_2d7fa914",
+    "inferred_6e809910",
+    "inferred_11a21f3b",
+    "inferred_927ee654"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，标志性里程碑确认龙头地位",
+    "新易盛一季报净利润同比增长76.8%，业绩强劲",
+    "某半导体龙头Q1预增150%-180%，AI芯片需求爆发",
+    "中国移动推进全国一体化算力网建设，布局吉瓦级数据中心",
+    "AI应用板块走高，软件ETF涨超2%且资金净流入",
+    "人工智能终端国家标准发布，产业规范化利好"
+  ],
+  "counter_evidence": [
+    "中际旭创市值突破后可能面临获利回吐压力",
+    "板块已部分上涨，预期差可能收窄"
+  ],
+  "key_assumptions": [
+    "AI算力需求持续增长，业绩高增长可持续",
+    "政策支持力度不减，算力网建设按计划推进",
+    "市场情绪维持积极，资金持续流入科技板块"
+  ],
+  "uncertainty_map": [
+    "AI算力需求增速是否达预期（影响程度：高）",
+    "中美科技摩擦升级风险（影响程度：中）",
+    "板块短期过热后的回调风险（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI算力链业绩持续超预期，板块估值扩张，龙头股有望再创新高；潜在风险：业绩增速放缓、政策不及预期、市场情绪逆转，回调幅度约10%-15%。",
+  "next_validation_questions": [
+    "中际旭创、新易盛后续季度业绩指引是否继续超预期？",
+    "中国移动算力网建设的具体投资规模和节奏如何？",
+    "AI应用板块的业绩兑现情况如何？"
+  ],
+  "invalidation_conditions": [
+    "中际旭创或新易盛发布低于预期的业绩指引",
+    "AI算力需求出现明显放缓信号",
+    "政策支持力度减弱或转向"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛股价走势与成交量",
+    "AI芯片相关公司季度业绩预告",
+    "中国移动算力网建设相关公告",
+    "软件ETF资金流入流出情况"
+  ],
+  "kill_switch_signals": [
+    "中际旭创单日跌幅超5%且放量",
+    "AI板块集体大幅回调，资金大幅流出",
+    "中美科技领域出现重大制裁事件"
+  ],
+  "warnings": [
+    "注意：部分信号来源为新闻，非官方公告，需核实",
+    "板块已部分上涨，追高需谨慎，建议分批建仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:48:04.456617",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_rss_3e6acf5e",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,169 @@
+{
+  "opportunity_id": "opp_982d3cb8",
+  "opportunity_title": "降准驱动结构轮动",
+  "opportunity_thesis": "央行密集降准降息释放万亿流动性，但经济基本面（PMI连续3个月收缩）压制整体指数，市场呈现高开低走、资金从地产消费流向新能源半导体的结构性轮动。当前市场情绪贪婪但非极端，预期差在于：宽松政策尚未被定价为结构性利好，而资金轮动信号持续强化，新能源/半导体板块有望在流动性宽松+业绩超预期催化下走出独立行情。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "半导体ETF",
+    "科创50ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-25T00:00:00",
+    "end": "2026-05-25T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行降准于4月25日正式落地释放万亿资金，同时PMI数据疲弱强化宽松预期，市场对政策反应钝化（高开低走）反而创造了预期差。新能源/半导体板块已连续多日出现资金流入信号，且推理显示业绩超预期概率高（85%），时间窗口在1周内，当前是布局窗口。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_2ba5b3f88b20",
+    "sig_92a136d719dc",
+    "sig_66cd4adf6332",
+    "sig_ea7347bd74cf",
+    "sent_ec6c7cba",
+    "sig_b344dde14d32",
+    "sig_38049b31fb61",
+    "sig_bb3a1ffe4df9",
+    "sig_dca5821f56c7",
+    "sig_f66865eb44db",
+    "sig_7298dda97ec7",
+    "sig_8a6f0519b08d",
+    "sig_6030bb0be882",
+    "sig_37b8e1ac32b6",
+    "sig_cf855bc992d0",
+    "sig_3e2b5bd0cd4d",
+    "sig_e0e3bf1f136a",
+    "sig_de08dfbf89a4",
+    "sig_c26c00625075",
+    "sig_7a827ccde515",
+    "sig_dece1006f835",
+    "sig_b2d9156cf72e",
+    "sent_afb94f7676ae",
+    "sent_9cac65ff6dfb",
+    "sent_1f482f698d3a",
+    "sent_8fde474c010c",
+    "sent_36fce571ca71",
+    "sent_b54e50c8519c",
+    "sent_e48bfda1bc39",
+    "sent_d4d08c6107ce",
+    "sent_e2054d14aa30",
+    "sent_3b1c672be67f",
+    "sent_84e3425ee437",
+    "sent_856b4f0ee323",
+    "sent_a72ae5543573",
+    "sent_10da9375bbda",
+    "sent_2ab140899d34",
+    "sent_5c5e53c2d006",
+    "sent_b6dc4cc2d8cf",
+    "sent_9a7f83ad0db9",
+    "sent_bf7debd820d7",
+    "sent_635414904919",
+    "sent_e0397c231d3f",
+    "sent_7115a7eff621",
+    "sent_0ae4219c102c",
+    "sent_4f0acbb837a8",
+    "sent_5494095bde99",
+    "sent_4b09ba90e339",
+    "sent_7c5a4b44dcaa",
+    "sent_e04a5706a161",
+    "sent_d47ce2494d9e",
+    "sent_7e5641ea219f",
+    "sent_97f4897e13e9",
+    "sent_68b99cf45634",
+    "sent_ba6460ea797d",
+    "sent_9e4cd5a9f444",
+    "sent_6d3b39a4c5c6",
+    "sent_654d7a6caffa"
+  ],
+  "inferred_events": [
+    "inferred_5f476c22",
+    "inferred_ec77cb74",
+    "inferred_9effed66",
+    "inferred_7b8f9e5f",
+    "inferred_80f2d5af",
+    "inferred_3b8593e4"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5%+降逆回购利率10bp，释放长期资金约1万亿，流动性宽松确定",
+    "PMI连续3个月低于荣枯线（49.0），经济下行压力加大，进一步宽松预期升温",
+    "资金持续从地产/消费流向新能源/半导体，板块轮动信号重复出现且强度稳定",
+    "推理显示新能源/半导体业绩超预期概率85%，地产板块业绩低于预期概率90%"
+  ],
+  "counter_evidence": [
+    "指数高开低走，下跌个股近4000只，市场整体情绪偏弱，短期抛压仍存",
+    "恐贪指数67（贪婪），市场情绪中性偏乐观，部分利好可能已被定价"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续不会收紧流动性，宽松方向维持",
+    "假设2：新能源/半导体板块业绩超预期兑现，而非仅为概念炒作",
+    "假设3：资金轮动趋势可持续，不会因指数下跌而逆转"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：经济下行超预期导致系统性风险，板块轮动失效（影响程度：高）",
+    "不确定性2：新能源/半导体业绩不及预期，资金回流消费/地产（影响程度：中）",
+    "不确定性3：政策利好完全price-in，板块无超额收益（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：新能源/半导体板块在流动性宽松+业绩催化下有望获得10-15%超额收益；潜在风险：指数持续走弱拖累板块，最大回撤约5-8%，止损点明确（板块指数跌破20日均线）。",
+  "next_validation_questions": [
+    "新能源/半导体龙头公司Q1业绩预告是否超预期？",
+    "北向资金是否开始净流入新能源/半导体板块？",
+    "央行是否有进一步降息或定向宽松信号？",
+    "地产/消费板块资金流出是否加速？"
+  ],
+  "invalidation_conditions": [
+    "新能源/半导体板块业绩低于预期，或出现重大利空",
+    "央行释放收紧信号，或流动性环境恶化",
+    "指数持续下跌且板块轮动信号消失，资金回流消费/地产"
+  ],
+  "must_watch_indicators": [
+    "新能源/半导体板块成交量与资金流向",
+    "PMI及CPI/PPI数据变化",
+    "央行公开市场操作利率",
+    "北向资金净流入方向"
+  ],
+  "kill_switch_signals": [
+    "新能源/半导体板块单日跌幅超3%且放量",
+    "央行意外加息或收紧流动性",
+    "PMI跌破48且无企稳迹象"
+  ],
+  "warnings": [
+    "注意：情绪信号显示市场贪婪（恐贪指数67），非极端恐惧，追高需谨慎",
+    "注意：指数高开低走显示市场对利好反应钝化，板块轮动可能为短期行为"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:04:23.236220",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260507_astock_skill_6f8eb84e",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

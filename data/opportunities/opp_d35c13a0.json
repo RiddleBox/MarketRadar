@@ -1,0 +1,101 @@
+{
+  "opportunity_id": "opp_d35c13a0",
+  "opportunity_title": "金融一季报行情",
+  "opportunity_thesis": "7家上市银行及广发证券一季报营收净利双增，基本面改善信号明确，叠加央行降准降息预期（概率85%），金融板块有望迎来估值修复行情。当前市场情绪中性偏谨慎，预期差较大，且板块前期涨幅有限，提供了较好的入场窗口。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "银行ETF",
+    "券商ETF",
+    "沪深300ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-27T00:00:00",
+    "end": "2026-05-27T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "一季报密集披露期，银行和券商业绩超预期信号集中释放，叠加央行降准降息预期（2周内概率85%），形成基本面+政策面的双重催化剂。当前板块估值处于历史低位，市场尚未充分定价，时间窗口紧迫。",
+  "related_signals": [
+    "sig_f5dc287cf712",
+    "sig_898af08751f6"
+  ],
+  "inferred_events": [
+    "inferred_fd46f40f",
+    "inferred_e4485d31",
+    "inferred_9d7eda90",
+    "inferred_ba6f8dcd"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "7家地方性上市银行一季报营收净利全部正增长，资产质量平稳",
+    "广发证券一季度净利润同比增70.73%，营收增64.33%",
+    "央行已表态'适时降准'，且已实施降准降息，经济通缩压力下宽松预期强烈"
+  ],
+  "counter_evidence": [
+    "A股市场短期调整风险，三大指数翻绿，下跌个股近4000只",
+    "恐贪指数处于贪婪区间（67），市场情绪过热可能回调"
+  ],
+  "key_assumptions": [
+    "一季报业绩增长趋势具有行业代表性，非个别现象",
+    "央行降准降息在2周内落地，或维持宽松预期",
+    "市场整体调整幅度有限，不出现系统性风险"
+  ],
+  "uncertainty_map": [
+    "一季报业绩增长是否可持续，二季度是否面临基数效应（影响程度：高）",
+    "央行降准降息是否如期落地，或力度不及预期（影响程度：高）",
+    "市场短期调整是否演变为持续下跌，拖累板块（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：金融板块估值修复10-15%，叠加降准降息催化可能更高；潜在风险：业绩增长不可持续或市场调整导致回撤5-8%，止损点明确（板块指数跌破20日均线）。",
+  "next_validation_questions": [
+    "其他未披露一季报的银行和券商是否也呈现类似增长趋势？",
+    "央行降准降息的具体时间表和力度预期如何？",
+    "当前银行和券商板块的估值水平及历史分位数？"
+  ],
+  "invalidation_conditions": [
+    "后续披露的银行/券商一季报出现大面积不及预期",
+    "央行明确表态短期内不再降准降息",
+    "A股市场出现系统性下跌，金融板块领跌"
+  ],
+  "must_watch_indicators": [
+    "银行ETF和券商ETF的成交量及价格走势",
+    "央行公开市场操作及政策表态",
+    "沪深300指数是否跌破关键支撑位",
+    "恐贪指数是否回落至恐惧区间"
+  ],
+  "kill_switch_signals": [
+    "银行ETF或券商ETF单日跌幅超过3%且放量",
+    "央行释放紧缩信号",
+    "一季报披露完毕，整体金融板块业绩增速低于预期"
+  ],
+  "warnings": [
+    "注意：当前信号仅来自7家地方银行和1家券商，样本有限，需等待更多数据验证",
+    "市场短期调整风险存在，建议分批建仓并设置止损"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:09:35.758438",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_05694c4d",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

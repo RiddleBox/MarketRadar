@@ -1,0 +1,108 @@
+{
+  "opportunity_id": "opp_75b83197",
+  "opportunity_title": "科技成长双轮驱动",
+  "opportunity_thesis": "光模块龙头业绩爆发（中际旭创市值破万亿、新易盛净利增76.8%）叠加新能源购置税减免政策延续至2027年底，形成业绩+政策双催化剂。资金从消费地产持续流入新能源/半导体，板块轮动信号明确。当前市场情绪中性偏乐观（恐贪指数67），未过热，存在预期差——市场对科技成长板块的持续性仍有分歧，但业绩和政策已形成共振，构成中期布局机会。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "半导体ETF",
+    "中际旭创",
+    "新易盛"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "光模块龙头业绩刚发布（4月23日），新能源政策4月24日正式实施，资金轮动信号最新（4月17日），催化剂密集且新鲜。市场尚未充分定价业绩持续性和政策影响，预期差较大。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_30d3e00700ed"
+  ],
+  "inferred_events": [
+    "inferred_0e5b615c",
+    "inferred_64f94b98",
+    "inferred_97fec44a",
+    "inferred_3918b19f",
+    "inferred_faa543e8",
+    "inferred_2a886624"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "中际旭创市值突破万亿，标志性事件强化板块信心",
+    "新易盛一季报净利润增长76.8%，业绩验证行业高景气",
+    "新能源汽车购置税减免延续至2027年底，政策超预期稳定",
+    "资金从消费地产流向新能源/半导体，板块轮动确认"
+  ],
+  "counter_evidence": [
+    "光模块板块已累积较大涨幅，短期获利盘压力",
+    "新能源政策利好已被部分预期，落地后可能利好出尽"
+  ],
+  "key_assumptions": [
+    "假设1：光模块龙头业绩高增长可持续，非一次性因素",
+    "假设2：新能源政策执行力度和效果符合预期，无后续收紧",
+    "假设3：资金轮动趋势延续，无系统性风险逆转"
+  ],
+  "uncertainty_map": [
+    "光模块板块估值是否已透支未来增长（影响程度：高）",
+    "新能源政策落地后市场反应是否正面（影响程度：中）",
+    "宏观经济下行压力是否压制整体市场情绪（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.4,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：科技成长板块在业绩和政策共振下有望延续上涨趋势，龙头股可能继续创新高。潜在风险：板块已部分上涨，若业绩不及预期或政策效果有限，回调幅度可能较大。风险收益比约1:2，适合分批建仓。",
+  "next_validation_questions": [
+    "光模块龙头后续订单和产能指引是否支撑高增长？",
+    "新能源板块资金流入是否持续放大，而非短期轮动？",
+    "市场整体流动性环境是否支持成长股估值扩张？"
+  ],
+  "invalidation_conditions": [
+    "光模块龙头发布低于预期的业绩指引或订单下滑",
+    "新能源政策执行细则出现收紧或取消",
+    "资金从科技成长板块大幅流出，板块轮动逆转"
+  ],
+  "must_watch_indicators": [
+    "中际旭创/新易盛后续订单及产能数据",
+    "新能源ETF资金净流入/流出情况",
+    "恐贪指数是否进入极度贪婪（≥80）",
+    "北向资金对科技成长板块的配置变化"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头单日放量下跌超5%",
+    "新能源板块出现政策利空或行业负面事件",
+    "市场整体出现系统性风险信号（如流动性危机）"
+  ],
+  "warnings": [
+    "注意：光模块板块已累积涨幅，短期追高风险较大，建议等待回调或分批建仓",
+    "注意：新能源政策利好已被部分定价，需关注落地后实际效果"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T10:55:07.490243",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_19000101_astock_skill_527f94e7",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

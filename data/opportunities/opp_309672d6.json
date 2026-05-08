@@ -1,0 +1,109 @@
+{
+  "opportunity_id": "opp_309672d6",
+  "opportunity_title": "AI产业链景气共振",
+  "opportunity_thesis": "美股AI应用软件业绩超预期，验证了AI商业化落地加速，直接拉动上游算力需求。A股光模块龙头（中际旭创、新易盛）和半导体龙头业绩已爆发式增长，形成从应用到算力的完整景气传导链。当前市场尚未充分定价这一跨市场共振的持续性，存在预期差。",
+  "target_markets": [
+    "A_SHARE",
+    "US"
+  ],
+  "target_instruments": [
+    "中际旭创",
+    "新易盛",
+    "半导体ETF",
+    "纳斯达克100ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-06-30T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "美股AI应用软件业绩超预期是即时催化剂，直接强化了AI产业链的盈利预期。A股光模块和半导体龙头已公布的一季报业绩（新易盛+76.8%，某半导体+150%-180%）提供了基本面支撑，且中际旭创市值突破万亿形成市场情绪锚点。当前处于业绩验证后的初期发酵阶段，时间窗口明确。",
+  "related_signals": [
+    "sig_aa5acb6a314f",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f"
+  ],
+  "inferred_events": [
+    "inferred_ebb6c5a5",
+    "inferred_10d54063",
+    "inferred_e9f4f08c",
+    "inferred_c30b7c9c",
+    "inferred_fffa4131"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "美股AI应用软件股（Datadog、Snowflake等）业绩超预期，盘前大涨，验证AI商业化落地",
+    "中际旭创市值突破万亿，新易盛一季报净利润增长76.8%，光模块龙头业绩强劲",
+    "某半导体龙头Q1业绩预增150%-180%，受益于AI芯片需求爆发",
+    "央行降准释放流动性，北向资金有潜在流入空间"
+  ],
+  "counter_evidence": [
+    "A股市场整体情绪中性偏谨慎，北向资金尚未大幅流入",
+    "半导体板块估值已处于历史中高位，部分预期可能已price-in"
+  ],
+  "key_assumptions": [
+    "假设1：美股AI应用软件业绩超预期不是孤立事件，后续更多公司财报将延续这一趋势",
+    "假设2：A股光模块和半导体龙头的高增长可持续，下游需求未出现放缓",
+    "假设3：宏观经济和政策环境（如降准）不会出现超预期收紧"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：AI应用软件业绩超预期的持续性（影响程度：高）",
+    "不确定性2：A股市场整体流动性是否足够支撑板块持续上涨（影响程度：中）",
+    "不确定性3：地缘政治风险对半导体供应链的潜在冲击（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.6,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI产业链景气共振若被市场充分定价，光模块和半导体龙头有望迎来估值和业绩双升，涨幅空间20%-30%。潜在风险：若后续美股AI应用软件业绩不及预期或A股龙头增速放缓，板块可能回调10%-15%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "美股AI应用软件公司（如Datadog、Snowflake）的业绩指引是否上调？",
+    "A股光模块龙头（中际旭创、新易盛）的订单和产能利用率数据如何？",
+    "北向资金近期是否开始净流入AI/半导体板块？",
+    "半导体龙头（如中芯国际）的产能利用率是否持续提升？"
+  ],
+  "invalidation_conditions": [
+    "美股AI应用软件公司后续财报不及预期，股价回落",
+    "A股光模块或半导体龙头发布低于预期的业绩预告或指引",
+    "市场整体出现系统性风险（如流动性急剧收紧）"
+  ],
+  "must_watch_indicators": [
+    "美股AI应用软件板块（如Datadog、Snowflake）股价走势",
+    "中际旭创、新易盛的日成交量和资金流向",
+    "半导体ETF（如512480）的份额变化和溢价率",
+    "北向资金每日净流入/流出数据"
+  ],
+  "kill_switch_signals": [
+    "美股AI应用软件板块出现集体大跌（跌幅>5%）",
+    "A股光模块龙头发布低于预期的月度或季度数据",
+    "央行意外收紧货币政策（如加息或提高存款准备金率）"
+  ],
+  "warnings": [
+    "注意：部分信号（如某半导体龙头业绩预增）来源为新闻，非官方公告，需核实",
+    "注意：板块已部分上涨，追高需谨慎，建议分批建仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T10:52:51.887997",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_19000101_astock_skill_4d3d9e95",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

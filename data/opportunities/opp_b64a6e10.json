@@ -1,0 +1,110 @@
+{
+  "opportunity_id": "opp_b64a6e10",
+  "opportunity_title": "宽松驱动科技轮动",
+  "opportunity_thesis": "央行全面降准降息确认宽松周期，叠加经济下行压力（PMI连续收缩），资金从传统板块（消费、地产）系统性流向科技成长（新能源、半导体）。当前市场情绪尚未完全定价这一结构性轮动，且未来1-2周内LPR下调及行业补贴政策概率高，构成短期催化窗口。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "半导体ETF",
+    "科创50ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-18T00:00:00",
+    "end": "2026-05-18T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行降准（4月20日生效）+降息（逆回购利率下调）已落地，但市场因PMI疲弱和指数高开低走尚未充分反应宽松利好；资金轮动信号明确指向新能源/半导体，且未来1-2周LPR下调及行业补贴政策概率高，时间窗口紧迫。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_38049b31fb61"
+  ],
+  "inferred_events": [
+    "inferred_3cf16c01",
+    "inferred_7808cbfe",
+    "inferred_96e86f10",
+    "inferred_aab685a0",
+    "inferred_1558f493",
+    "inferred_614b2705",
+    "inferred_9390cad1",
+    "inferred_4f7ff073",
+    "inferred_d66b35fd"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点+逆回购利率下调10bp，确认宽松周期",
+    "资金从消费、地产流向新能源、半导体，板块轮动信号明确",
+    "制造业PMI连续3个月低于荣枯线，经济下行压力倒逼政策加码",
+    "历史案例显示降息后科技成长板块估值修复概率高"
+  ],
+  "counter_evidence": [
+    "三大指数高开低走，下跌个股近4000只，短期市场情绪偏弱",
+    "北向资金未出现大幅净流入，外资态度谨慎"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续（1-2周内）继续下调LPR或出台定向宽松政策",
+    "假设2：新能源/半导体板块基本面未出现超预期恶化",
+    "假设3：资金轮动趋势可持续，而非短期情绪脉冲"
+  ],
+  "uncertainty_map": [
+    "经济下行超预期导致市场整体风险偏好急剧下降（影响程度：高）",
+    "科技板块业绩兑现不及预期，估值承压（影响程度：中）",
+    "政策力度不及预期，LPR未跟随下调（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：宽松周期+资金轮动驱动科技板块估值修复，预期收益10-15%；潜在风险：经济下行超预期或政策不及预期导致市场整体下跌，最大回撤5-8%。",
+  "next_validation_questions": [
+    "未来1-2周内LPR是否如期下调？",
+    "新能源/半导体板块近期是否有业绩预告或订单公告支撑？",
+    "北向资金是否开始净流入科技板块？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "新能源/半导体板块出现重大利空（如龙头业绩暴雷）",
+    "资金轮动信号逆转，重新流入消费/地产"
+  ],
+  "must_watch_indicators": [
+    "LPR报价（1年期/5年期）",
+    "新能源ETF（515030）和半导体ETF（512480）量价变化",
+    "北向资金流向（尤其科技板块）",
+    "制造业PMI下期数据"
+  ],
+  "kill_switch_signals": [
+    "央行收紧流动性或释放鹰派信号",
+    "科技板块龙头股单日跌幅超5%且放量",
+    "市场恐慌指数（如VIX）急剧飙升"
+  ],
+  "warnings": [
+    "注意：当前市场指数高开低走，短期情绪偏弱，需警惕假突破风险",
+    "注意：历史案例显示降息后地产股反弹乏力，科技板块需基本面配合"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:20:23.007431",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_702304e0",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

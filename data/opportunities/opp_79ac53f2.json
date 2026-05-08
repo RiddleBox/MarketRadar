@@ -1,0 +1,107 @@
+{
+  "opportunity_id": "opp_79ac53f2",
+  "opportunity_title": "宽松政策驱动结构轮动",
+  "opportunity_thesis": "央行降准降息叠加PMI连续收缩，确认经济下行压力加大，宽松周期开启。资金从地产消费流向新能源半导体，且新能源购置税减免政策落地，形成政策+资金+基本面共振。市场尚未充分定价这一结构轮动的持续性，存在预期差。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "半导体ETF",
+    "新能源汽车ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-25T00:00:00",
+    "end": "2026-07-25T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行降准降息已落地，PMI连续3个月低于荣枯线确认经济下行，宽松政策窗口打开；新能源购置税减免政策刚发布，资金轮动信号明确，市场尚未充分定价结构轮动的持续性。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sent_b3cc88f9",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_30d3e00700ed"
+  ],
+  "inferred_events": [
+    "inferred_177f4bbc",
+    "inferred_ca1e7590",
+    "inferred_34caa169",
+    "inferred_14501c92",
+    "inferred_583a0b8b"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点+降逆回购利率10bp，流动性宽松确认",
+    "PMI连续3个月低于50荣枯线，经济下行压力加大，宽松预期强化",
+    "资金从地产消费流向新能源半导体，板块轮动信号明确",
+    "新能源汽车购置税减免延续至2027年底，政策利好落地"
+  ],
+  "counter_evidence": [
+    "保利发展净利润大降79%，地产链风险可能拖累整体市场情绪",
+    "市场短期回调风险加大，恐贪指数处于贪婪区间，情绪过热"
+  ],
+  "key_assumptions": [
+    "假设1：宽松政策持续加码，后续仍有降息或结构性工具出台",
+    "假设2：新能源/半导体基本面改善（如业绩超预期）支撑资金流入持续性",
+    "假设3：地产链风险不系统性扩散至金融体系"
+  ],
+  "uncertainty_map": [
+    "宽松政策力度不及预期，仅一次降准后无后续（影响程度：高）",
+    "新能源/半导体业绩兑现低于预期，资金轮动仅为短期情绪（影响程度：高）",
+    "地产链风险扩散，引发系统性流动性冲击（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.8
+  },
+  "risk_reward_profile": "潜在收益来自宽松政策驱动的估值修复和资金轮动，目标涨幅10-20%；风险在于政策力度不及预期或地产风险扩散，最大回撤约8-10%，止损点明确。",
+  "next_validation_questions": [
+    "新能源/半导体板块近期是否有业绩预告或机构调研数据支撑？",
+    "央行后续是否有进一步宽松信号（如MLF利率下调）？",
+    "地产链风险是否已传导至银行或保险板块？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "新能源/半导体板块出现集体业绩低于预期",
+    "地产风险扩散引发系统性流动性危机"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率",
+    "新能源/半导体ETF资金流向",
+    "PMI数据是否回升至50以上",
+    "地产板块指数是否企稳"
+  ],
+  "kill_switch_signals": [
+    "央行意外收紧流动性（如正回购）",
+    "新能源/半导体龙头股业绩大幅低于预期",
+    "地产股出现大面积跌停或信用事件"
+  ],
+  "warnings": [
+    "注意：情绪信号显示恐贪指数处于贪婪区间，短期追高风险较大",
+    "注意：地产链风险尚未完全释放，可能拖累整体市场"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:21:45.115289",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_70399093",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

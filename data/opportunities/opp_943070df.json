@@ -1,0 +1,102 @@
+{
+  "opportunity_id": "opp_943070df",
+  "opportunity_title": "新能源政策红利",
+  "opportunity_thesis": "新能源汽车购置税减免延续至2027年底，叠加资金从消费地产轮入新能源板块，形成政策与资金双支撑。当前市场情绪中性偏乐观，预期差在于市场尚未充分定价政策长期利好对产业链盈利的持续提振，而短期板块涨幅有限，存在布局窗口。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源汽车ETF",
+    "宁德时代",
+    "比亚迪"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "政策正式发布实施（2026-04-24），资金轮动信号同步出现，市场尚未充分反应政策长期影响，且央行降准预期提供额外流动性支撑，当前是政策落地+资金流入的共振时点。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_30d3e00700ed"
+  ],
+  "inferred_events": [
+    "inferred_44b733d4",
+    "inferred_ef6b53b7",
+    "inferred_04bd0ea7",
+    "inferred_cdbe0dc0",
+    "inferred_920272dd"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "财政部、税务总局联合公告新能源汽车购置税减免延续至2027年底，政策确定性高",
+    "资金从消费、地产轮入新能源板块，显示机构调仓方向",
+    "央行降准预期（概率85%）将改善市场流动性，利好成长板块估值"
+  ],
+  "counter_evidence": [
+    "板块前期已有一定涨幅，短期可能面临获利回吐压力",
+    "新能源行业竞争加剧，部分企业盈利承压，政策利好可能被竞争抵消"
+  ],
+  "key_assumptions": [
+    "假设1：购置税减免政策执行力度不变，无后续收紧",
+    "假设2：新能源车销量在政策刺激下保持增长，不出现需求大幅下滑"
+  ],
+  "uncertainty_map": [
+    "行业竞争格局恶化导致利润率下降（影响程度：高）",
+    "宏观经济下行超预期，抑制汽车消费（影响程度：中）",
+    "政策执行细节变化或地方配套不足（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "政策确定性高提供下行保护，资金流入提供短期动能，潜在收益来自估值修复和盈利预期上调；主要风险在于竞争加剧和需求不及预期，预计收益风险比约2:1。",
+  "next_validation_questions": [
+    "新能源车4月/5月销量数据是否环比改善？",
+    "主要车企（比亚迪、宁德时代）Q2业绩指引是否上调？",
+    "北向资金是否持续流入新能源板块？"
+  ],
+  "invalidation_conditions": [
+    "新能源车销量连续两个月同比下滑",
+    "政策出现收紧或取消信号",
+    "资金从新能源板块大幅流出"
+  ],
+  "must_watch_indicators": [
+    "新能源汽车月度销量数据",
+    "新能源板块ETF资金流向",
+    "宁德时代/比亚迪股价相对大盘强度",
+    "碳酸锂等关键原材料价格走势"
+  ],
+  "kill_switch_signals": [
+    "购置税减免政策被提前终止或大幅修改",
+    "新能源板块出现单日跌幅超5%且放量",
+    "龙头公司发布盈利预警"
+  ],
+  "warnings": [
+    "注意：政策利好已被部分定价，需关注实际销量验证",
+    "注意：板块轮动信号可能短期，需确认持续性"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:26:41.886959",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_8a4958da",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,105 @@
+{
+  "opportunity_id": "opp_f37a5e44",
+  "opportunity_title": "AI算力链业绩爆发",
+  "opportunity_thesis": "光模块与半导体龙头公司一季报业绩超预期（新易盛+76.8%、某半导体龙头+150%-180%），中际旭创市值突破万亿，验证AI算力需求从预期走向业绩兑现。当前市场对AI产业链的定价仍以概念为主，业绩超预期信号尚未被充分消化，存在预期差。叠加央行降准宽松周期，板块估值有支撑，短期催化剂明确。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "中际旭创",
+    "新易盛",
+    "半导体ETF",
+    "通信ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "一季报密集披露期，新易盛和某半导体龙头业绩超预期信号刚发布，市场尚未充分反应；中际旭创市值突破万亿是情绪催化剂；央行降准释放流动性，为板块提供估值支撑。当前是业绩验证窗口，错过需等下一季报。",
+  "related_signals": [
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f"
+  ],
+  "inferred_events": [
+    "inferred_6f75805d",
+    "inferred_177550a5",
+    "inferred_d33b0301",
+    "inferred_2e229759"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "新易盛一季报净利润同比增长76.8%，业绩强劲",
+    "某半导体龙头Q1净利润预增150%-180%，受益AI芯片需求",
+    "中际旭创盘中市值突破万亿，龙头地位确认",
+    "央行降准释放流动性，宽松周期利好成长板块"
+  ],
+  "counter_evidence": [
+    "中际旭创市值突破万亿后可能面临获利回吐压力",
+    "AI板块前期已有一定涨幅，部分预期可能已price-in"
+  ],
+  "key_assumptions": [
+    "AI算力需求持续增长，下游订单能见度维持高位",
+    "一季报业绩超预期非一次性，二季度景气度延续",
+    "市场情绪未过度贪婪，仍有上行空间"
+  ],
+  "uncertainty_map": [
+    "AI芯片出口管制或地缘政治风险（影响程度：高）",
+    "二季度订单增速不及预期（影响程度：中）",
+    "市场整体回调拖累板块（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益来自业绩超预期驱动的估值修复和情绪溢价，预计上行空间15%-25%；风险在于业绩兑现后市场获利了结或行业景气度拐点，最大回撤约10%-15%，止损点可设在关键支撑位下方。",
+  "next_validation_questions": [
+    "新易盛和某半导体龙头的一季报详细数据是否超市场一致预期？",
+    "中际旭创市值突破万亿后，机构持仓和资金流向是否持续？",
+    "AI算力产业链其他公司（如天孚通信、光迅科技）一季报是否同步超预期？"
+  ],
+  "invalidation_conditions": [
+    "新易盛或某半导体龙头股价放量跌破20日均线",
+    "AI板块整体资金连续3日净流出",
+    "出现AI芯片出口管制升级或行业利空政策"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛每日成交额和资金流向",
+    "AI算力板块ETF（如通信ETF）的份额变化",
+    "北向资金对半导体和通信板块的净买入情况",
+    "一季报披露期内其他光模块/半导体公司业绩"
+  ],
+  "kill_switch_signals": [
+    "中际旭创或新易盛单日跌幅超7%且放量",
+    "AI板块出现集体跌停或恐慌性抛售",
+    "央行意外收紧流动性或加息信号"
+  ],
+  "warnings": [
+    "注意：中际旭创市值突破万亿后短期可能面临技术性回调",
+    "注意：某半导体龙头业绩预告为预增，实际数据可能有偏差"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:24:06.062951",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_8a0526b4",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,115 @@
+{
+  "opportunity_id": "opp_1fec72c4",
+  "opportunity_title": "中东油轮封锁",
+  "opportunity_thesis": "美军连续拦截伊朗油轮，封锁行动升级，中东地缘风险急剧升温。短期将推高原油价格和避险资产，同时冲击全球航运和半导体供应链。韩国股市开盘大跌已初步反应，但市场尚未充分定价后续升级风险，存在预期差。\n\n【M13调研】美军拦截伊朗油轮导致中东封锁升级，地缘风险升温，短期利好原油、黄金及能源板块。高盛调查显示霍尔木兹海峡航运不畅预期持续，部分企业转向国内煤炭。A股恐贪指数67，市场脆弱性增加，但无直接研报或行业趋势验证。风险在于冲突缓和及情绪过热后的回调。综合评估机会存在但需谨慎，置信度调整+0.1。\n\n【M13调研】地缘风险升温（霍尔木兹海峡航运不畅预期持续）短期利好原油、黄金及能源板块，部分企业转向国内煤炭验证能源需求。但A股情绪贪婪（恐贪指数67）增加脆弱性，且无直接研报支持。风险在于冲突缓和及情绪过热回调。综合评估机会存在但需谨慎，置信度维持不变。",
+  "target_markets": [
+    "US",
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "601857.SH",
+    "600028.SH",
+    "600938.SH",
+    "601975.SH",
+    "600026.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "美军连续3天拦截伊朗油轮，封锁行动从单次升级为持续行动，地缘风险从口头警告转为实际军事对抗。韩国股市已率先大跌，但原油和航运板块尚未充分反应，存在时间窗口。",
+  "related_signals": [
+    "sig_476a24c2a7b9",
+    "sig_bb9a9c6d60a1",
+    "sig_074e8c030441"
+  ],
+  "inferred_events": [
+    "inferred_6577bfcb",
+    "inferred_b8029e68",
+    "inferred_b6756f02",
+    "inferred_bbf87a0c",
+    "inferred_7bdc50c0",
+    "inferred_208b710f",
+    "inferred_433bce2d",
+    "inferred_5cb215e3",
+    "inferred_6d09e1af",
+    "inferred_2702e728"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "美军5月6日和8日连续拦截三艘伊朗油轮，封锁行动升级",
+    "韩国综合指数5月8日开盘大跌1.78%，半导体龙头跌超3%",
+    "中东地缘风险升温通常推高原油和航运价格",
+    "历史案例显示军事封锁行动后油价短期上涨概率高"
+  ],
+  "counter_evidence": [
+    "当前原油库存仍处高位，可能抑制油价涨幅",
+    "市场对地缘风险已部分定价，此前已有多次类似事件"
+  ],
+  "key_assumptions": [
+    "假设1：美军封锁行动不会在短期内解除",
+    "假设2：伊朗不会立即采取大规模报复行动导致局势失控",
+    "假设3：全球原油供应不会因其他渠道快速弥补"
+  ],
+  "uncertainty_map": [
+    "伊朗报复行动规模（影响程度：高）",
+    "国际社会外交干预速度（影响程度：中）",
+    "OPEC+增产决策（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.7,
+    "confidence_score": 0.7999999999999999,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：油价上涨10-15%带动能源股和航运股上涨15-20%；潜在风险：局势快速缓和导致油价回落，损失约5-8%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "美军后续是否有更多拦截行动？",
+    "伊朗是否宣布报复措施？",
+    "国际油价开盘后实际涨幅？",
+    "航运板块是否出现异动？"
+  ],
+  "invalidation_conditions": [
+    "美军宣布解除封锁或停止拦截行动",
+    "伊朗同意谈判或局势明显缓和",
+    "OPEC+宣布大幅增产填补供应缺口"
+  ],
+  "must_watch_indicators": [
+    "WTI/布伦特原油期货价格",
+    "波罗的海干散货指数(BDI)",
+    "韩国综合指数走势",
+    "美国国务院/中央司令部声明"
+  ],
+  "kill_switch_signals": [
+    "伊朗宣布停止油轮运输或封锁霍尔木兹海峡",
+    "美军航母撤离阿曼湾",
+    "原油价格单日暴跌超5%"
+  ],
+  "warnings": [
+    "注意：地缘政治事件具有高度不确定性，局势可能快速逆转",
+    "注意：信号来源均为新闻，非官方确认信息"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T23:23:03.826090",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_45ebc010",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

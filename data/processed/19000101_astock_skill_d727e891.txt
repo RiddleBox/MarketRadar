@@ -1,0 +1,7 @@
+【财联社】
+
+<!-- source: 财联社 | url:  | published: 1900-01-01 21:04 | collected: 2026-05-07 21:42 | provider: astock_skill -->
+
+[信号类型: macro]
+
+财联社5月7日电，亚马逊表示，美国银行将利用AWS人工智能进行欺诈检测和合规管理。

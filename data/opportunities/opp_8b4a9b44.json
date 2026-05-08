@@ -1,0 +1,126 @@
+{
+  "opportunity_id": "opp_8b4a9b44",
+  "opportunity_title": "宽松驱动科技成长",
+  "opportunity_thesis": "央行密集降准降息释放约1万亿长期资金，叠加PMI连续3个月低于荣枯线确认经济下行压力，资金正从地产消费等传统板块系统性流向新能源和半导体等科技成长方向。保利发展净利润暴跌79%和一季度再降57%验证地产基本面恶化，而板块轮动信号持续显示资金流入科技成长，形成宏观宽松+基本面分化+资金流向三重共振。当前市场对宽松的定价尚不充分，预期差较大，科技成长板块有望在流动性宽松和产业景气双重驱动下获得超额收益。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "半导体ETF",
+    "科创50ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-25T00:00:00",
+    "end": "2026-07-25T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "央行于4月25日正式降准0.5个百分点释放约1万亿资金，同时7天逆回购利率已下调10bp至1.7%，宽松政策密集落地。PMI连续3个月低于荣枯线（49.0）确认经济下行，保利发展一季报净利润同比降57%进一步强化地产疲弱预期。资金从地产消费流向新能源半导体的板块轮动信号在4月17日至18日多次出现，表明资金迁移正在加速。当前时点是宽松政策生效初期+基本面分化确认+资金流向验证的三重窗口，3个月前宽松尚未落地，3个月后可能已充分定价。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_2ba5b3f88b20",
+    "sig_92a136d719dc",
+    "sig_66cd4adf6332",
+    "sent_ec6c7cba",
+    "sig_b344dde14d32",
+    "sig_7298dda97ec7",
+    "sig_8a6f0519b08d",
+    "sig_6030bb0be882",
+    "sig_37b8e1ac32b6",
+    "sig_cf855bc992d0",
+    "sig_e0e3bf1f136a",
+    "sig_de08dfbf89a4",
+    "sig_c26c00625075",
+    "sig_7a827ccde515",
+    "sig_dece1006f835",
+    "sig_deee36561d85",
+    "sig_dc0079649df5"
+  ],
+  "inferred_events": [
+    "inferred_4a728642",
+    "inferred_65a4ac94",
+    "inferred_7aeb0155",
+    "inferred_af96ca6d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行4月25日降准0.5个百分点，释放长期资金约1万亿元，同时下调7天逆回购利率10bp至1.7%，货币政策明确宽松",
+    "制造业PMI连续3个月低于荣枯线（49.0），经济下行压力加大，宽松政策必要性增强",
+    "保利发展2025年净利润同比降79.31%，2026年一季报净利润同比降57%，地产基本面持续恶化",
+    "板块轮动信号多次显示资金从消费、地产流向新能源、半导体，资金迁移趋势明确"
+  ],
+  "counter_evidence": [
+    "市场恐贪指数若处于贪婪区间（如67），情绪过热可能限制后续上涨空间",
+    "宽松政策已被部分定价，若后续经济数据未改善，市场可能对宽松效果产生怀疑"
+  ],
+  "key_assumptions": [
+    "假设1：央行宽松政策能有效传导至实体经济，改善科技企业融资环境",
+    "假设2：地产消费板块资金流出趋势持续，不会因短期政策刺激逆转",
+    "假设3：新能源和半导体行业基本面保持景气，无重大利空事件"
+  ],
+  "uncertainty_map": [
+    "最大不确定性：宽松政策效果不及预期，经济下行超预期导致市场整体下跌（影响程度：高）",
+    "不确定性：科技成长板块估值已较高，资金流入可能引发短期过热回调（影响程度：中）",
+    "不确定性：地缘政治风险或外部冲击导致市场风险偏好骤降（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.4,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：宽松政策驱动科技成长板块估值修复，叠加资金流入和产业景气，新能源/半导体ETF有望获得15-25%涨幅。潜在风险：若经济下行超预期或宽松效果不达预期，市场整体下跌可能拖累科技板块，最大回撤约10-15%。风险收益比约1.5:1至2:1。",
+  "next_validation_questions": [
+    "新能源和半导体板块近期是否有龙头公司发布超预期业绩或重大订单？",
+    "央行后续是否还有进一步降息或定向宽松政策预期？",
+    "地产板块资金流出是否持续加速，是否有更多房企发布业绩预警？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松，或收紧货币政策",
+    "新能源/半导体板块出现重大利空（如政策转向、技术瓶颈、需求骤降）",
+    "地产消费板块出现超预期政策刺激，资金回流逆转轮动趋势"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率和MLF利率变化",
+    "新能源ETF和半导体ETF的成交量及资金净流入",
+    "保利发展等地产龙头股价走势及资金流向",
+    "制造业PMI是否回升至荣枯线以上"
+  ],
+  "kill_switch_signals": [
+    "央行意外加息或上调存款准备金率",
+    "新能源/半导体板块单日跌幅超5%且放量",
+    "地产板块出现政策强刺激导致资金大幅回流"
+  ],
+  "warnings": [
+    "注意：板块轮动信号来自情绪面系统，恐贪指数若处于贪婪区间需警惕追高风险",
+    "注意：宽松政策效果存在时滞，短期市场可能因经济数据不佳而波动"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:30:12.351502",
+  "batch_id": "sched_manual_test_20260508_astock_skill_8f4beaf6",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

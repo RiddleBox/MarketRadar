@@ -1,0 +1,106 @@
+{
+  "opportunity_id": "opp_dc436372",
+  "opportunity_title": "地产资金外溢科技",
+  "opportunity_thesis": "地产板块业绩持续恶化（保利发展净利润同比降79%+53%）叠加资金流出，形成负反馈，而新能源、半导体等科技板块获得资金持续流入。板块轮动信号明确，地产资金外溢效应将加速科技板块的结构性行情，当前是布局科技板块的窗口期。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "半导体ETF",
+    "新能源ETF",
+    "科创50ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-27T00:00:00",
+    "end": "2026-06-27T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "保利发展一季报（4月27日）确认地产基本面恶化趋势未止，叠加年报利空（4月17日），市场对地产板块信心进一步瓦解。同时资金已开始从地产流向新能源和半导体，板块轮动正在加速，当前是跟随资金流向布局科技板块的早期阶段。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sent_b3cc88f9",
+    "sig_38049b31fb61",
+    "sig_deee36561d85"
+  ],
+  "inferred_events": [
+    "inferred_0da157dd",
+    "inferred_1593239c",
+    "inferred_c317ab3b",
+    "inferred_dd7e5cae",
+    "inferred_33afa225",
+    "inferred_1105a34d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "保利发展2025年净利润同比降79.31%，2026年一季度净利润同比降53.1%，地产龙头业绩持续恶化",
+    "板块轮动信号显示资金从地产流向新能源和半导体，方向明确",
+    "未来事件推理显示科技板块业绩超预期概率85%，行业补贴政策概率75%",
+    "历史案例case_2024_breakout显示技术突破+资金流入可形成趋势行情"
+  ],
+  "counter_evidence": [
+    "A股三大指数高开回落，下跌个股近4000只，市场整体情绪偏弱，可能压制科技板块表现",
+    "地产资金流出可能引发系统性风险，导致全市场流动性收紧"
+  ],
+  "key_assumptions": [
+    "假设1：地产板块资金流出将持续，不会因政策干预而逆转",
+    "假设2：科技板块基本面（业绩/政策）能支撑资金流入，不会出现业绩暴雷",
+    "假设3：市场整体不会出现系统性风险（如流动性危机）"
+  ],
+  "uncertainty_map": [
+    "地产政策超预期宽松（影响程度：高）——若出台强力地产救助政策，可能逆转资金流向",
+    "科技板块业绩证伪（影响程度：高）——若半导体/AI业绩不及预期，资金可能撤离",
+    "市场系统性风险（影响程度：中）——若指数持续下跌，板块轮动逻辑失效"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 5,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 6.9,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：科技板块结构性行情，若资金持续流入+业绩超预期，ETF涨幅可达10-20%。潜在风险：地产资金流出引发系统性风险，或科技板块业绩证伪，最大回撤约5-8%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "科技板块（半导体、新能源）近期是否有业绩预告或政策催化？",
+    "地产板块资金流出是否加速？是否有更多地产公司发布业绩预警？",
+    "市场整体流动性是否充裕？北向资金是否持续流入科技板块？"
+  ],
+  "invalidation_conditions": [
+    "地产板块出现超预期政策利好（如大规模救助计划）",
+    "科技板块龙头公司业绩暴雷或出现重大负面事件",
+    "市场整体进入持续下跌趋势，板块轮动失效"
+  ],
+  "must_watch_indicators": [
+    "保利发展股价及地产板块指数走势",
+    "半导体ETF、新能源ETF资金流向",
+    "北向资金对科技板块的净买入/卖出",
+    "市场恐贪指数（若极度恐惧则需警惕系统性风险）"
+  ],
+  "kill_switch_signals": [
+    "地产板块出现涨停潮或政策利好",
+    "科技板块龙头公司发布业绩预警",
+    "A股三大指数连续3日下跌且跌幅扩大"
+  ],
+  "warnings": [
+    "注意：市场整体情绪偏弱（三大指数翻绿，近4000只个股下跌），科技板块可能受拖累",
+    "注意：板块轮动信号来自情绪面系统，需结合基本面确认，不宜单独作为交易依据"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:33:11.414398",
+  "batch_id": "sched_manual_test_20260508_astock_skill_965a9209",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

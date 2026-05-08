@@ -1,0 +1,105 @@
+{
+  "opportunity_id": "opp_e7baf938",
+  "opportunity_title": "人形机器人主升浪",
+  "opportunity_thesis": "人形机器人板块在2026年5月8日出现集体爆发，龙头股绿的谐波创历史新高，多只个股涨停，显示市场资金高度聚焦。叠加固态电池产业链融资与量产进展，为机器人提供关键零部件技术支撑，板块具备从概念炒作向产业落地过渡的催化条件。当前市场情绪中性偏乐观，预期差仍存，短期有望延续强势。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头创历史新高，资金高度聚焦。固态电池技术提供支撑，IPO认购火爆显示市场关注。但短期涨幅较大，缺乏研报覆盖，产业落地进展不确定。整体机会真实，但需警惕回调风险，建议关注后续产业催化。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "601689.SH",
+    "300124.SZ",
+    "002747.SZ",
+    "603728.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "龙头股绿的谐波创历史新高、多只个股涨停，板块情绪和资金共振，短期动量强劲。固态电池产业链融资与量产进展为机器人提供技术支撑，市场对产业落地预期升温。",
+  "related_signals": [
+    "sig_1da9f093af7d",
+    "sig_906283b999bb",
+    "sig_cc33dd52b601",
+    "sig_41c9d0ac13e2"
+  ],
+  "inferred_events": [
+    "inferred_080cb4c7",
+    "inferred_6314fed0",
+    "inferred_32feee6b",
+    "inferred_45f61517",
+    "inferred_7bdf50a4"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "绿的谐波股价创历史新高，盘中涨超15%",
+    "人形机器人概念股集体上涨，多只个股涨停或创新高",
+    "纯锂新能源固态电池融资与量产线达产，为机器人提供关键零部件技术支撑"
+  ],
+  "counter_evidence": [
+    "板块短期涨幅较大，存在获利回吐风险",
+    "缺乏明确的产业订单或政策催化，上涨以情绪驱动为主"
+  ],
+  "key_assumptions": [
+    "假设1：板块上涨由产业落地预期驱动，而非纯概念炒作",
+    "假设2：市场流动性保持充裕，资金持续流入成长板块"
+  ],
+  "uncertainty_map": [
+    "板块短期涨幅过大，回调风险较高（影响程度：高）",
+    "产业落地进度不及预期，缺乏订单验证（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 8,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "短期动量强劲，但板块已大幅上涨，追高风险较高。若产业落地超预期，龙头股有望继续创新高；若情绪退潮，回调幅度可能较大。潜在收益/风险比约2:1。",
+  "next_validation_questions": [
+    "是否有新的产业订单或政策催化？",
+    "板块成交量是否持续放大？",
+    "龙头股绿的谐波能否站稳新高？"
+  ],
+  "invalidation_conditions": [
+    "板块出现集体跌停或大幅回调",
+    "龙头股绿的谐波跌破关键支撑位",
+    "市场流动性收紧或风险偏好下降"
+  ],
+  "must_watch_indicators": [
+    "绿的谐波股价走势",
+    "人形机器人板块成交量",
+    "市场情绪指标（恐贪指数）",
+    "产业订单或政策新闻"
+  ],
+  "kill_switch_signals": [
+    "板块指数跌破5日均线",
+    "龙头股放量下跌",
+    "市场恐慌情绪急剧上升"
+  ],
+  "warnings": [
+    "板块短期涨幅较大，追高风险较高",
+    "上涨以情绪驱动为主，缺乏基本面验证"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T00:30:40.754721",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_bc594e53",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

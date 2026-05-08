@@ -1,0 +1,107 @@
+{
+  "opportunity_id": "opp_a5ab4233",
+  "opportunity_title": "AI算力景气确认",
+  "opportunity_thesis": "光模块龙头中际旭创市值突破万亿、新易盛净利润增长76.8%、半导体龙头预增150%-180%，叠加中国移动万亿Token服务包和吉瓦级AI数据中心布局，共同确认AI算力产业链景气度进入爆发期。市场对AI算力的需求从概念炒作转向业绩兑现，但当前市场情绪仍处于贪婪区间，预期差在于业绩持续超预期的幅度和持续性尚未被充分定价。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "中际旭创",
+    "新易盛",
+    "AI算力ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "当前时点催化剂密集：中际旭创市值突破万亿（4月23日）、新易盛一季报净利润增长76.8%（4月23日）、半导体龙头预增150%-180%（4月24日）、中国移动万亿Token服务包（5月8日），多个信号在两周内集中释放，形成业绩验证+政策催化共振。央行降准释放流动性（概率85%），为板块提供资金支撑。",
+  "related_signals": [
+    "sig_df713685bee1",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f"
+  ],
+  "inferred_events": [
+    "inferred_44b733d4",
+    "inferred_ef6b53b7",
+    "inferred_04bd0ea7",
+    "inferred_cdbe0dc0",
+    "inferred_920272dd"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，标志AI算力龙头进入新估值阶段",
+    "新易盛一季报净利润增长76.8%，业绩持续高增长",
+    "半导体龙头Q1预增150%-180%，AI芯片需求爆发",
+    "中国移动开放万亿级Token服务包并布局吉瓦级AI数据中心，下游需求明确"
+  ],
+  "counter_evidence": [
+    "市场情绪处于贪婪区间（恐贪指数67），短期可能过热",
+    "历史案例显示技术突破需商业化验证，当前部分标的估值已较高"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，下游资本开支不出现大幅缩减",
+    "假设2：光模块和半导体公司业绩增长可持续，不出现季度性回落",
+    "假设3：央行降准或降息落地，流动性环境保持宽松"
+  ],
+  "uncertainty_map": [
+    "业绩持续性不确定性（影响程度：高）：Q2及下半年订单能否维持高增速",
+    "估值泡沫风险（影响程度：中）：部分龙头已大幅上涨，市场情绪过热可能引发回调",
+    "政策落地节奏（影响程度：中）：中国移动等下游资本开支计划是否如期执行"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 8,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益来自业绩超预期和估值提升，风险在于业绩增速放缓或市场情绪反转。当前信号一致性高，但估值已部分反映预期，收益空间需依赖持续超预期。",
+  "next_validation_questions": [
+    "中际旭创、新易盛等龙头Q2订单指引是否继续超预期？",
+    "中国移动万亿Token服务包的实际落地时间和规模？",
+    "半导体龙头具体是哪家，其产能利用率能否维持高位？",
+    "北向资金近期是否持续流入AI算力板块？"
+  ],
+  "invalidation_conditions": [
+    "光模块或半导体龙头Q2业绩增速明显放缓",
+    "中国移动等下游资本开支计划推迟或缩减",
+    "市场整体出现系统性风险（如流动性收紧）"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛季度订单数据",
+    "中国移动资本开支公告",
+    "AI芯片相关半导体公司产能利用率",
+    "北向资金流向"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头股价跌破20日均线且成交量放大",
+    "行业龙头发布业绩预警或下调指引",
+    "央行意外收紧流动性"
+  ],
+  "warnings": [
+    "注意：部分信号来源为新闻，非官方公告，需核实具体数据",
+    "当前市场情绪贪婪，短期追高风险较大，建议分批建仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:26:13.043314",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_8a4958da",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

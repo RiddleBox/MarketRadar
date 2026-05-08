@@ -1,0 +1,106 @@
+{
+  "opportunity_id": "opp_2e4c6686",
+  "opportunity_title": "新能源政策+资金双驱动",
+  "opportunity_thesis": "新能源汽车购置税减免延续至2027年底的政策利好，叠加资金从消费、地产轮动至新能源板块的情绪信号，形成政策面与资金面的双重支撑。当前市场对新能源板块的预期尚未充分定价，存在预期差，且政策时间窗口明确，板块有望迎来阶段性修复行情。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "新能源汽车ETF",
+    "宁德时代",
+    "比亚迪"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "政策已于4月24日发布实施，资金轮动信号在4月17日出现，当前时点政策刚落地、资金刚流入，市场尚未完全反应，且后续央行降准预期（概率75%）可能进一步提振流动性，形成催化叠加。",
+  "related_signals": [
+    "sig_3797ba94a31c",
+    "sent_b3cc88f9",
+    "sig_30d3e00700ed"
+  ],
+  "inferred_events": [
+    "inferred_0da157dd",
+    "inferred_1593239c",
+    "inferred_c317ab3b",
+    "inferred_dd7e5cae",
+    "inferred_33afa225",
+    "inferred_1105a34d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "新能源汽车购置税减免政策延续至2027年底，政策确定性高，直接利好行业需求",
+    "资金从消费、地产轮动至新能源，显示市场风格切换，增量资金入场",
+    "历史案例显示政策利好叠加资金流入后，板块有阶段性上涨机会"
+  ],
+  "counter_evidence": [
+    "新能源板块前期已有一定涨幅，部分利好可能已被定价",
+    "整体经济数据偏弱（PMI低于荣枯线），需求复苏节奏可能低于预期"
+  ],
+  "key_assumptions": [
+    "假设1：政策执行力度和效果符合预期，不会出现大幅退坡",
+    "假设2：资金轮动趋势持续，新能源板块能吸引更多增量资金",
+    "假设3：宏观经济环境不会出现超预期恶化，影响汽车消费"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：新能源板块内部竞争加剧，价格战可能侵蚀利润（影响程度：高）",
+    "不确定性2：宏观经济复苏力度不足，消费者购车意愿低迷（影响程度：中）",
+    "不确定性3：政策执行细节或地方配套措施不及预期（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 7,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 6.9,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：政策落地+资金流入推动板块估值修复，预计10-15%涨幅空间；潜在风险：政策效果不及预期或资金轮动中断，最大回撤约5-8%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "新能源板块近期成交量是否持续放大，确认资金流入趋势？",
+    "新能源汽车月度销量数据是否出现环比改善？",
+    "是否有更多地方政府出台配套补贴或充电设施建设政策？"
+  ],
+  "invalidation_conditions": [
+    "新能源板块出现连续缩量下跌，资金轮动信号逆转",
+    "新能源汽车月度销量数据连续两个月低于预期",
+    "政策执行出现重大调整或退坡"
+  ],
+  "must_watch_indicators": [
+    "新能源ETF成交量及价格走势",
+    "新能源汽车月度销量数据",
+    "资金流向监测（新能源板块净流入/流出）",
+    "央行降准或降息政策动态"
+  ],
+  "kill_switch_signals": [
+    "新能源板块单日跌幅超过3%且放量",
+    "资金轮动信号显示资金从新能源大幅流出",
+    "政策面出现利空（如补贴退坡提前）"
+  ],
+  "warnings": [
+    "注意：资金轮动信号来自情绪面系统，需结合基本面验证",
+    "注意：板块内部个股分化可能较大，需精选标的"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:33:25.289424",
+  "batch_id": "sched_manual_test_20260508_astock_skill_965a9209",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

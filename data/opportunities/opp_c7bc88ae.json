@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_c7bc88ae",
+  "opportunity_title": "宽松周期下的成长股行情",
+  "opportunity_thesis": "央行密集降准降息释放万亿流动性，叠加PMI连续收缩和通缩压力，确认货币政策进入宽松周期。资金从消费地产持续流入新能源和半导体，且半导体龙头业绩预增150%+、光模块龙头市值破万亿，基本面与流动性共振。当前市场对经济下行过度悲观，但对成长板块的结构性景气定价不足，存在预期差。\n\n【M13调研】央行降准降息叠加PMI收缩，宽松周期开启，资金从地产流向科技成长板块，形成结构性机会。保利发展净利润暴跌强化资金迁移逻辑，当前市场尚未充分定价科技板块的流动性溢价。但缺乏具体研报和基本面数据，且科技板块估值不低，需关注盈利修复进度和市场情绪变化。整体机会确定性较高，建议适度参与。\n\n【M13调研】央行降准降息与PMI收缩确认宽松周期，地产恶化推动资金向科技成长板块轮动，当前市场尚未充分定价流动性溢价。但缺乏研报和基本面数据，科技板块估值不低，需警惕盈利不及预期风险。建议适度参与，关注后续数据验证。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "603501.SH",
+    "002371.SZ",
+    "601012.SH",
+    "300274.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-25T00:00:00",
+    "end": "2026-07-25T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "央行4月18日宣布降准0.5个百分点（4月25日生效）并降息10bp，流动性释放即时落地；同时4月23日PMI数据确认经济收缩，强化宽松预期；半导体龙头业绩预告和光模块市值突破提供基本面催化剂，时间窗口已打开。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203",
+    "sig_30d3e00700ed",
+    "sig_c65bd11e442f",
+    "sig_6030bb0be882"
+  ],
+  "inferred_events": [
+    "inferred_d07b6e34",
+    "inferred_fec5a4b0",
+    "inferred_bae8a328",
+    "inferred_60c9c7c1",
+    "inferred_3606abd4"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点释放约1万亿长期资金，降息10bp降低资金成本",
+    "资金从消费地产轮入新能源和半导体，板块轮动信号明确",
+    "半导体龙头Q1业绩预增150%-180%，新易盛净利增76.8%，中际旭创市值破万亿",
+    "新能源汽车购置税减免延续至2027年底，政策持续支持成长板块"
+  ],
+  "counter_evidence": [
+    "PMI连续3个月低于荣枯线，经济下行压力可能压制整体市场情绪",
+    "CPI/PPI通缩信号显示需求疲软，成长板块盈利持续性存疑"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续仍有进一步宽松动作（降准/降息），流动性环境持续友好",
+    "假设2：新能源和半导体板块的业绩增长趋势在Q2延续，不被宏观拖累",
+    "假设3：资金轮动从消费地产向成长板块的趋势不会逆转"
+  ],
+  "uncertainty_map": [
+    "经济下行超预期导致市场整体风险偏好急剧下降（影响程度：高）",
+    "地缘政治风险升级（如中东局势）引发系统性冲击（影响程度：中）",
+    "成长板块业绩兑现不及预期，估值修复后缺乏进一步催化剂（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.98,
+    "execution_readiness": 0.72
+  },
+  "risk_reward_profile": "潜在收益：流动性宽松+业绩超预期驱动成长板块估值修复，龙头股有望上涨15-25%。潜在风险：经济下行超预期导致市场系统性下跌，最大回撤约10-15%。风险收益比约1.5:1。",
+  "next_validation_questions": [
+    "半导体龙头业绩预增的具体公司名称和订单可见性如何？",
+    "新能源板块（光伏）当前产能过剩情况是否改善？",
+    "后续央行宽松节奏是否如预期（2周内进一步降准/降息）？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态宽松周期结束或不再进一步宽松",
+    "新能源/半导体龙头Q2业绩预告大幅低于预期",
+    "资金从成长板块大幅流出，轮动信号逆转"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率和MLF利率变化",
+    "新能源/半导体板块ETF资金净流入/流出",
+    "半导体龙头（中芯国际、韦尔股份）周度成交量和股价走势",
+    "PMI和社融数据是否企稳"
+  ],
+  "kill_switch_signals": [
+    "央行意外收紧流动性（如提高逆回购利率）",
+    "成长板块龙头出现单日放量暴跌超5%",
+    "地缘政治事件引发全球市场恐慌性抛售"
+  ],
+  "warnings": [
+    "注意：部分信号（如半导体业绩预增）来源为新闻，非官方公告，需核实",
+    "注意：历史案例显示降息利好可能已被部分定价，追高需谨慎"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T23:07:04.069341",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_326abbfb",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

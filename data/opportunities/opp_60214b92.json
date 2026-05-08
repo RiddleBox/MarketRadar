@@ -1,0 +1,109 @@
+{
+  "opportunity_id": "opp_60214b92",
+  "opportunity_title": "券商科技共振",
+  "opportunity_thesis": "市场成交额突破1.5万亿，叠加券商龙头广发证券一季报净利润同比增70.73%，以及光模块龙头中际旭创市值破万亿、新易盛业绩高增，形成券商与科技板块业绩共振。当前市场交投活跃、资金持续流入AI算力方向，且央行降准降息预期强烈，构成短期做多窗口。\n\n【M13调研】市场成交额突破1.5万亿，券商龙头广发证券一季报高增，光模块龙头中际旭创市值破万亿，AI算力方向资金持续流入，叠加降准降息预期，形成短期做多窗口。但需关注两融风控升级、芯片LOF监控及外部经济不确定性等风险。整体看多，置信度中等偏高。\n\n【M13调研】AI产业链景气度上行获业绩验证，光模块和半导体龙头增长强劲，政策与资金共振。但缺乏研报和新闻佐证，估值高位和持续性风险需警惕。机会窗口明确，但需进一步核实数据。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "000776.SZ",
+    "300308.SZ",
+    "300502.SZ",
+    "002281.SZ",
+    "688981.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "沪深两市成交额突破1.5万亿，市场交投活跃度显著提升，直接利好券商经纪业务；同时广发证券一季报净利润同比增70.73%验证券商盈利改善趋势。科技端，中际旭创市值破万亿、新易盛业绩高增，AI算力景气度持续。央行降准降息预期（概率85%）提供流动性支撑，当前是业绩验证+流动性宽松的共振窗口。",
+  "related_signals": [
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_898af08751f6",
+    "sig_781fda7e246d",
+    "sig_cc33dd52b601",
+    "sig_a1a728ae8eed"
+  ],
+  "inferred_events": [
+    "inferred_d07b6e34",
+    "inferred_fec5a4b0",
+    "inferred_bae8a328",
+    "inferred_60c9c7c1",
+    "inferred_3606abd4"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "沪深两市成交额突破1.5万亿，市场交投活跃",
+    "广发证券一季报净利润同比增70.73%，营收增64.33%",
+    "中际旭创市值突破万亿，新易盛净利润增长76.8%",
+    "人形机器人概念股集体上涨，科技板块热度扩散"
+  ],
+  "counter_evidence": [
+    "广发证券一季报数据已发布，部分利好可能已被定价",
+    "历史案例显示技术突破需商业化验证，AI板块存在概念炒作风险"
+  ],
+  "key_assumptions": [
+    "假设1：市场成交额维持1.5万亿以上，券商经纪业务持续受益",
+    "假设2：AI算力需求保持高景气，光模块龙头业绩可持续",
+    "假设3：央行在2周内实施降准或降息，流动性宽松预期兑现"
+  ],
+  "uncertainty_map": [
+    "市场成交额能否持续维持高位（影响程度：高）",
+    "AI板块估值是否已过度透支（影响程度：中）",
+    "地缘政治风险是否升级影响市场情绪（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.6499999999999999,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：券商+科技双主线共振，若成交额持续放大且AI业绩兑现，板块有望获得10-20%涨幅。潜在风险：成交额回落或AI业绩不及预期，回撤约5-8%。",
+  "next_validation_questions": [
+    "未来一周沪深两市成交额能否持续在1.5万亿以上？",
+    "中际旭创、新易盛等AI龙头是否有新的订单或业绩指引？",
+    "央行是否在近期释放明确的降准降息信号？"
+  ],
+  "invalidation_conditions": [
+    "沪深两市成交额连续3日低于1.2万亿",
+    "AI板块龙头出现业绩预警或大股东减持",
+    "央行明确表态短期内不降准降息"
+  ],
+  "must_watch_indicators": [
+    "沪深两市日成交额",
+    "广发证券股价及券商板块指数",
+    "中际旭创、新易盛股价走势",
+    "央行公开市场操作及政策表态"
+  ],
+  "kill_switch_signals": [
+    "市场成交额跌破1万亿",
+    "AI板块出现集体跌停或重大利空",
+    "地缘政治事件引发系统性风险"
+  ],
+  "warnings": [
+    "注意：部分信号（如人形机器人概念上涨）可能为短期情绪炒作，需警惕追高风险",
+    "注意：历史案例显示技术突破需商业化验证，AI板块估值已较高"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T23:13:57.319315",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_326abbfb",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

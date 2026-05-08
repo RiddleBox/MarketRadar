@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_cbba955f",
+  "opportunity_title": "AI算力景气共振",
+  "opportunity_thesis": "AI算力产业链从上游光模块（中际旭创、新易盛）到下游应用（商汤、中国软件）均出现业绩爆发或政策催化信号，且市场成交额放大、板块资金持续流入，形成从基础设施到应用的全面景气共振。当前时点，光模块龙头已创市值里程碑，政策端（中国移动算力网建设）和产业端（商汤Token Plan）同步发力，预期差在于市场尚未充分定价AI应用端的规模化落地，而不仅仅是硬件需求。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "软件ETF招商(159899)",
+    "中际旭创(300308)",
+    "新易盛(300502)",
+    "商汤科技(0020.HK)"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "当前时点催化剂密集：1）中际旭创市值突破万亿、新易盛一季报净利润增长76.8%，光模块业绩持续超预期；2）中国移动宣布推进全国一体化算力网建设，政策加码；3）商汤发布Token Plan，AI应用端商业化加速；4）沪深两市成交额突破1.5万亿，市场情绪活跃，资金持续流入AI板块。这些信号在5月8日集中出现，形成短期共振窗口。",
+  "related_signals": [
+    "sig_70d723271847",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_4149b887d9b2",
+    "sig_cc33dd52b601",
+    "sig_32c14f9a2017",
+    "sig_41c9d0ac13e2",
+    "sig_a1a728ae8eed"
+  ],
+  "inferred_events": [
+    "inferred_1d10e33b",
+    "inferred_f00480ed",
+    "inferred_831b6af4",
+    "inferred_f8f8f3be",
+    "inferred_eb16731b"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，光模块龙头地位确认",
+    "新易盛一季报净利润同比增长76.8%，业绩高增长",
+    "中国移动推进全国一体化算力网建设，政策支持明确",
+    "商汤发布日日新SenseNova Token Plan，AI应用商业化加速",
+    "AI应用板块走高，中国软件涨停，软件ETF涨超2%且获资金净流入",
+    "沪深两市成交额突破1.5万亿，市场活跃度提升"
+  ],
+  "counter_evidence": [
+    "市场情绪贪婪（恐贪指数67），短期可能存在过热风险",
+    "历史案例显示技术突破需商业化验证，概念炒作后可能回落"
+  ],
+  "key_assumptions": [
+    "假设1：光模块龙头业绩高增长趋势可持续，无订单下滑风险",
+    "假设2：AI应用端商业化落地能持续获得市场认可，而非短期炒作",
+    "假设3：宏观流动性宽松（央行降准预期）支撑市场估值"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：AI应用端商业化收入能否快速兑现，影响板块估值持续性（影响程度：高）",
+    "不确定性2：市场短期情绪过热后可能回调，导致板块波动加大（影响程度：中）",
+    "不确定性3：中美科技摩擦升级，可能影响光模块出口和AI芯片供应（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI算力产业链从硬件到应用全面共振，若业绩持续超预期，板块有望迎来主升浪，收益空间较大。潜在风险：市场短期过热后回调、AI应用商业化不及预期、中美科技摩擦升级，最大回撤约15-20%。",
+  "next_validation_questions": [
+    "光模块龙头（中际旭创、新易盛）未来1-2个月订单指引是否继续增长？",
+    "AI应用端（如商汤、中国软件）是否有新的商业化合同或用户增长数据？",
+    "央行降准或降息政策是否在2周内落地，以验证流动性宽松预期？"
+  ],
+  "invalidation_conditions": [
+    "光模块龙头发布低于预期的季度指引或订单下滑",
+    "AI应用板块出现大面积回调，龙头股跌破关键支撑位",
+    "央行明确表态不降准，流动性预期逆转"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛股价走势及成交量",
+    "软件ETF(159899)资金流向",
+    "沪深两市成交额是否持续维持在1.5万亿以上",
+    "央行公开市场操作及降准降息信号"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头单日跌幅超5%且放量",
+    "AI应用板块龙头股集体跌停",
+    "中美科技领域出现重大制裁或限制措施"
+  ],
+  "warnings": [
+    "注意：部分信号（如商汤Token Plan）为新闻公告，需关注实际商业化进展",
+    "注意：市场情绪贪婪，短期追高风险较大，建议分批建仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:44:25.556837",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_rss_1874d4c9",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

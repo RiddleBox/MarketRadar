@@ -1,0 +1,106 @@
+{
+  "opportunity_id": "opp_cfd6cf23",
+  "opportunity_title": "科技成长轮动",
+  "opportunity_thesis": "央行密集降准降息释放流动性，叠加经济下行压力（PMI连续收缩、地产利润暴跌），资金正从传统板块（地产、消费）系统性流向新能源和半导体等科技成长方向。情绪面板块轮动信号与宏观宽松形成共振，且科技板块业绩预期超预期（AI需求驱动），构成结构性机会。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "半导体ETF",
+    "新能源ETF",
+    "科创50ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-18T00:00:00",
+    "end": "2026-05-18T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行4月18日宣布降准降息，政策窗口已打开；PMI连续3个月低于荣枯线确认经济疲弱，资金轮动信号实时出现；科技板块业绩预增（半导体龙头Q1预增150%-180%）提供基本面支撑，当前是政策+资金+业绩三重共振的起点。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sent_b3cc88f9",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32"
+  ],
+  "inferred_events": [
+    "inferred_44b733d4",
+    "inferred_ef6b53b7",
+    "inferred_04bd0ea7",
+    "inferred_cdbe0dc0",
+    "inferred_920272dd"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行下调存款准备金率0.5个百分点+逆回购利率10bp，释放明确宽松信号",
+    "板块轮动信号显示资金从消费、地产流向新能源、半导体",
+    "保利发展净利润暴跌79.31%，地产基本面恶化强化资金流出逻辑",
+    "PMI连续3个月低于荣枯线，经济下行压力倒逼宽松政策持续"
+  ],
+  "counter_evidence": [
+    "市场情绪已偏贪婪（恐贪指数67），部分科技股短期涨幅较大，存在回调风险",
+    "历史案例显示技术突破需商业化验证，当前科技板块业绩预增尚未全面兑现"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续不会收紧流动性，宽松政策持续",
+    "假设2：科技板块业绩预增能如期兑现，无大规模低于预期",
+    "假设3：资金轮动趋势延续，不会因短期情绪逆转回流传统板块"
+  ],
+  "uncertainty_map": [
+    "科技板块业绩兑现程度（影响程度：高）",
+    "政策宽松力度是否超预期或不及预期（影响程度：中）",
+    "外部风险（如地缘政治、美股波动）对A股情绪冲击（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.4,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：科技板块在宽松+轮动下有望获得10-20%超额收益；潜在风险：业绩不及预期或政策转向导致回调5-10%，止损点可设在板块指数跌破20日均线。",
+  "next_validation_questions": [
+    "科技板块（半导体、新能源）近期成交量是否持续放大？",
+    "北向资金是否持续流入科技相关ETF？",
+    "是否有更多科技公司发布超预期业绩预告？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松或收紧流动性",
+    "科技板块龙头公司业绩大幅低于预期",
+    "资金轮动信号逆转，重新流入地产、消费"
+  ],
+  "must_watch_indicators": [
+    "半导体ETF成交量与价格走势",
+    "北向资金净流入/流出方向",
+    "PMI数据是否企稳回升",
+    "央行公开市场操作利率变化"
+  ],
+  "kill_switch_signals": [
+    "央行意外加息或收紧流动性",
+    "科技板块单日跌幅超3%且放量",
+    "板块轮动信号显示资金大幅流出科技"
+  ],
+  "warnings": [
+    "注意：情绪面已偏贪婪，短期追高需谨慎，建议分批建仓",
+    "注意：科技板块估值不低，需严格设置止损"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:25:56.629935",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_8a4958da",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

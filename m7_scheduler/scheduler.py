@@ -1019,13 +1019,26 @@ class Scheduler:
 
             batch_id = f"premarket_{market.value}_{run_id or datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
-            # Step 1: 采集隔夜新闻
-            from m0_collector.providers.akshare_news import AkshareNewsProvider
-            news_provider = AkshareNewsProvider()
-            news_items = news_provider.fetch(limit=50)
-            logger.info(f"[M7/m12_premarket_{market.value.lower()}] 采集 {len(news_items)} 条隔夜新闻")
+            # Step 1: 采集隔夜新闻（使用统一数据提供者架构）
+            from m0_collector.unified_collector import UnifiedNewsCollector
+            collector = UnifiedNewsCollector()
+            if not collector.initialize():
+                logger.error(f"[M7/m12_premarket_{market.value.lower()}] 数据提供者初始化失败")
+                return {
+                    "status": "error",
+                    "market": market.value,
+                    "news_count": 0,
+                    "signals": 0,
+                    "opportunities": 0,
+                    "batch_id": batch_id,
+                }
 
-            # Step 2: M1解码 → M2存储
+            # 采集宏观新闻（包括美股RSS源）
+            result = collector.collect_macro_news(limit=50)
+            news_count = result.get("written", 0)
+            logger.info(f"[M7/m12_premarket_{market.value.lower()}] 采集 {news_count} 条隔夜新闻")
+
+            # Step 2: M1解码 → M2存储（使用pipeline/ingest.py的逻辑）
             from m1_decoder.decoder import SignalDecoder
             from m2_storage.signal_store import SignalStore
             from core.llm_client import LLMClient
@@ -1035,20 +1048,34 @@ class Scheduler:
             decoder = SignalDecoder(llm_client=llm_client)
             store = SignalStore()
 
+            # 读取incoming目录中的最新新闻文件
+            incoming_dir = ROOT / "data" / "incoming"
             all_signals = []
-            for item in news_items[:20]:  # 限制处理数量
-                try:
-                    signals = decoder.decode(
-                        raw_text=item.content,
-                        source_ref=item.source_url or "premarket",
-                        source_type=SourceType.NEWS,
-                        batch_id=batch_id,
-                    )
-                    all_signals.extend(signals)
-                except Exception as e:
-                    logger.debug(f"[M7/m12_premarket] 解码失败: {e}")
-                    continue
+            incoming_files = []
 
+            if incoming_dir.exists():
+                # 获取最近的20个新闻文件
+                incoming_files = sorted(incoming_dir.glob("*.txt"), reverse=True)[:20]
+
+                for file in incoming_files:
+                    try:
+                        # 读取文本内容
+                        text = file.read_text(encoding='utf-8')
+
+                        # M1解码
+                        signals = decoder.decode(
+                            raw_text=text,
+                            source_ref=file.name,  # 使用文件名作为source_ref
+                            source_type=SourceType.NEWS,
+                            batch_id=batch_id,
+                        )
+                        all_signals.extend(signals)
+
+                    except Exception as e:
+                        logger.debug(f"[M7/m12_premarket] 处理文件失败 {file.name}: {e}")
+                        continue
+
+            # 保存信号到M2
             if all_signals:
                 store.save(all_signals)
                 logger.info(f"[M7/m12_premarket_{market.value.lower()}] 解码 {len(all_signals)} 条信号")
@@ -1090,14 +1117,14 @@ class Scheduler:
 
             result = {
                 "market": market.value,
-                "news_count": len(news_items),
+                "news_count": len(incoming_files),
                 "signals": len(all_signals),
                 "opportunities": len(opportunities),
                 "batch_id": batch_id,
             }
 
             logger.info(
-                f"[M7/m12_premarket_{market.value.lower()}] 完成：{len(news_items)}新闻 → {len(all_signals)}信号 → {len(opportunities)}机会"
+                f"[M7/m12_premarket_{market.value.lower()}] 完成：{len(incoming_files)}新闻 → {len(all_signals)}信号 → {len(opportunities)}机会"
             )
 
             return result

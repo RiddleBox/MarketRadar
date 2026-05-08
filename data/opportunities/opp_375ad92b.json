@@ -1,0 +1,108 @@
+{
+  "opportunity_id": "opp_375ad92b",
+  "opportunity_title": "新能源半导体轮动",
+  "opportunity_thesis": "央行密集降准降息释放流动性，但经济基本面疲弱（PMI连续收缩）导致市场整体高开低走，资金从地产消费等传统板块流出，结构性流入新能源和半导体。板块轮动信号与业绩超预期推理（半导体龙头预增150%+）形成共振，构成结构性做多机会，而非全面牛市。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "半导体ETF",
+    "科创50ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-23T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行降准降息已落地，流动性宽松预期兑现，但经济数据（PMI）持续恶化，市场整体承压。资金从地产消费向新能源半导体轮动已启动，叠加半导体业绩超预期推理（概率85%），当前是结构性机会的早期确认窗口。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_38049b31fb61",
+    "sent_afb94f7676ae"
+  ],
+  "inferred_events": [
+    "inferred_0e5b615c",
+    "inferred_64f94b98",
+    "inferred_97fec44a",
+    "inferred_3918b19f",
+    "inferred_faa543e8",
+    "inferred_2a886624"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5%+降逆回购利率10bp，流动性宽松确认",
+    "资金从消费、地产流向新能源、半导体，板块轮动信号明确",
+    "半导体业绩超预期推理概率85%，新能源/半导体板块业绩支撑强",
+    "市场情绪贪婪（恐贪指数67），但指数高开低走，说明整体市场未过热，结构性机会仍有预期差"
+  ],
+  "counter_evidence": [
+    "制造业PMI连续3个月低于荣枯线，经济下行压力压制整体市场",
+    "北向资金净流入为0，外资未确认流入趋势"
+  ],
+  "key_assumptions": [
+    "假设1：新能源/半导体板块业绩超预期兑现，支撑估值",
+    "假设2：资金轮动趋势持续，地产消费资金继续流出",
+    "假设3：央行后续无超预期紧缩政策"
+  ],
+  "uncertainty_map": [
+    "经济下行超预期导致整体市场系统性下跌（影响程度：高）",
+    "新能源/半导体业绩不及预期，轮动逻辑失效（影响程度：高）",
+    "北向资金持续净流出，外资撤离（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益来自结构性轮动和业绩超预期，风险在于经济下行系统性风险。收益空间约10-15%，最大回撤可控在5-8%（止损设于板块支撑位）。",
+  "next_validation_questions": [
+    "新能源/半导体板块近期是否有业绩预告或财报发布？",
+    "北向资金是否开始净流入新能源/半导体板块？",
+    "地产消费板块资金流出是否加速？"
+  ],
+  "invalidation_conditions": [
+    "新能源/半导体板块业绩低于预期",
+    "北向资金连续3日净流出超50亿",
+    "央行释放紧缩信号"
+  ],
+  "must_watch_indicators": [
+    "新能源ETF/半导体ETF成交量",
+    "北向资金流向",
+    "PMI及CPI数据",
+    "板块轮动信号（资金流向）"
+  ],
+  "kill_switch_signals": [
+    "新能源/半导体板块单日跌幅超3%且放量",
+    "北向资金单日净流出超100亿",
+    "央行意外加息或收紧流动性"
+  ],
+  "warnings": [
+    "注意：市场情绪贪婪（恐贪指数67），整体市场高开低走，追高风险存在",
+    "注意：经济基本面疲弱，系统性风险不可忽视"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T10:54:51.466195",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_19000101_astock_skill_527f94e7",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

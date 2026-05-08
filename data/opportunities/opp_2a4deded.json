@@ -1,0 +1,103 @@
+{
+  "opportunity_id": "opp_2a4deded",
+  "opportunity_title": "新能源政策红利",
+  "opportunity_thesis": "新能源汽车购置税减免政策延续至2027年底，叠加资金从消费、地产流入新能源板块，形成政策+资金双轮驱动。市场对政策延续已有预期但未充分定价长期利好，且当前情绪面处于中性偏恐惧区间，存在预期差。历史案例显示，政策落地后若伴随基本面改善（如业绩超预期），板块有望迎来主升浪。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源汽车ETF",
+    "锂电池ETF",
+    "新能源整车龙头股"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "政策刚于4月24日发布，时效性高；资金已开始流入新能源板块，市场确认度提升；未来1个月内可能伴随业绩超预期和进一步补贴政策，催化剂密集。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_30d3e00700ed"
+  ],
+  "inferred_events": [
+    "inferred_7b668107",
+    "inferred_706ffc3b",
+    "inferred_8d7ea184",
+    "inferred_6e17092d",
+    "inferred_b3b92eda"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "财政部、税务总局联合公告，购置税减免延续至2027年底，政策确定性高",
+    "资金从消费、地产流向新能源、半导体，板块轮动信号明确",
+    "未来事件推理显示业绩超预期概率85%，行业补贴政策概率75%"
+  ],
+  "counter_evidence": [
+    "市场对政策延续已有部分预期，可能已部分price-in",
+    "历史案例显示单纯政策刺激若无基本面配合，涨幅有限"
+  ],
+  "key_assumptions": [
+    "假设1：新能源车企销量在政策刺激下持续增长",
+    "假设2：宏观经济不出现超预期恶化，消费信心维持",
+    "假设3：资金流入趋势延续，而非短期轮动"
+  ],
+  "uncertainty_map": [
+    "业绩兑现程度（影响程度：高）：若龙头公司Q2业绩不及预期，板块可能回调",
+    "宏观经济风险（影响程度：中）：若PMI持续低迷，整体市场情绪可能拖累板块",
+    "竞争加剧风险（影响程度：中）：行业价格战可能侵蚀利润，抵消政策利好"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 9,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "政策底明确，下行风险有限（止损可设于政策发布前低点），上行空间取决于业绩兑现和资金持续性，预期收益风险比约2:1至3:1。",
+  "next_validation_questions": [
+    "新能源龙头公司Q2销量及业绩预告是否超预期？",
+    "资金流入新能源板块是否持续放量？",
+    "是否有其他行业补贴政策（如充电桩、电池回收）跟进？"
+  ],
+  "invalidation_conditions": [
+    "新能源板块资金连续3日净流出",
+    "龙头公司发布低于预期的业绩预告",
+    "宏观经济数据大幅恶化，市场系统性下跌"
+  ],
+  "must_watch_indicators": [
+    "新能源汽车月度销量数据",
+    "新能源板块ETF资金流向",
+    "龙头公司业绩预告",
+    "恐贪指数是否进入极度贪婪区间（≥80）"
+  ],
+  "kill_switch_signals": [
+    "政策被突然取消或收紧",
+    "行业出现重大负面事件（如安全事故、大规模召回）",
+    "市场整体情绪转为极度恐惧且无结构性支撑"
+  ],
+  "warnings": [
+    "注意：政策已发布，短期可能已有部分涨幅，追高需谨慎",
+    "注意：历史案例显示单纯政策刺激若无业绩配合，涨幅有限"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:07:13.154095",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_00a89ba5",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

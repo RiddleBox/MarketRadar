@@ -1,0 +1,109 @@
+{
+  "opportunity_id": "opp_dd31a247",
+  "opportunity_title": "科技成长主线",
+  "opportunity_thesis": "光模块/半导体板块业绩爆发（新易盛净利+76.8%、某半导体龙头预增150%-180%）叠加资金从消费地产轮入新能源/半导体，形成明确的科技成长主线。中际旭创市值突破万亿强化了板块龙头效应，市场情绪从恐惧转向积极，但尚未完全price-in后续业绩持续超预期和潜在政策催化，存在预期差。当前时点处于业绩密集披露期和降准窗口，是布局的黄金窗口。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "半导体ETF",
+    "5G通信ETF",
+    "中际旭创",
+    "新易盛"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-06-24T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "业绩密集披露期（新易盛、某半导体龙头已发布超预期业绩）叠加资金轮动信号明确，且央行降准窗口打开（概率80%），政策与基本面共振。市场情绪从恐惧转向积极但尚未过热，预期差仍存。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f"
+  ],
+  "inferred_events": [
+    "inferred_7b668107",
+    "inferred_706ffc3b",
+    "inferred_8d7ea184",
+    "inferred_6e17092d",
+    "inferred_b3b92eda"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "新易盛一季报净利润同比增长76.8%，业绩强劲",
+    "某半导体龙头Q1净利润预增150%-180%，受益AI芯片需求",
+    "中际旭创盘中市值突破万亿，龙头地位确认",
+    "资金从消费/地产轮入新能源/半导体，板块轮动信号明确",
+    "央行降准概率80%，货币政策宽松预期支撑估值"
+  ],
+  "counter_evidence": [
+    "中际旭创市值突破万亿后可能面临获利回吐压力",
+    "历史案例显示技术突破需商业化验证，当前业绩虽好但持续性待观察"
+  ],
+  "key_assumptions": [
+    "假设1：AI芯片需求持续爆发，带动半导体/光模块订单增长",
+    "假设2：央行降准或降息在1个月内落地，流动性宽松",
+    "假设3：资金轮动趋势延续，新能源/半导体板块持续获得增量资金"
+  ],
+  "uncertainty_map": [
+    "业绩持续性不确定性（影响程度：高）：当前业绩高增长是否可持续，需跟踪后续季度订单和产能利用率",
+    "政策落地节奏不确定性（影响程度：中）：降准/降息是否如期落地，若延迟可能影响板块估值",
+    "市场情绪过热风险（影响程度：中）：若板块短期涨幅过大，可能引发获利回吐和回调"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：业绩超预期+政策催化+资金流入，板块有望在2个月内上涨15%-25%。风险：业绩不及预期或政策延迟，最大回撤约10%-15%，止损点可设在板块指数跌破20日均线。",
+  "next_validation_questions": [
+    "某半导体龙头具体是哪家公司？其订单可见度和产能利用率如何？",
+    "中际旭创市值突破万亿后，是否有机构上调目标价或发布看多报告？",
+    "新能源/半导体板块的成交量是否持续放大，确认资金流入趋势？",
+    "央行降准的具体时间表和幅度预期如何？"
+  ],
+  "invalidation_conditions": [
+    "新易盛或某半导体龙头发布业绩下修公告",
+    "央行明确表态短期内不降准/降息",
+    "板块指数跌破60日均线，资金大幅流出"
+  ],
+  "must_watch_indicators": [
+    "半导体ETF（512480）成交量及价格走势",
+    "中际旭创、新易盛每日资金流向",
+    "央行公开市场操作及降准相关新闻",
+    "AI芯片相关订单和产能利用率数据"
+  ],
+  "kill_switch_signals": [
+    "板块单日跌幅超5%且放量",
+    "龙头股（中际旭创）跌破20日均线",
+    "资金从半导体/新能源大幅流出至防御板块"
+  ],
+  "warnings": [
+    "注意：某半导体龙头业绩预告未指明具体公司，需确认其真实性和代表性",
+    "历史案例显示概念炒作后缺乏订单验证可能回落，需持续跟踪商业化进展"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:06:54.255042",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_00a89ba5",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

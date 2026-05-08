@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_af44c8ef",
+  "opportunity_title": "AI产业链景气共振",
+  "opportunity_thesis": "光模块/半导体龙头业绩爆发（中际旭创市值破万亿、新易盛净利增76.8%、某半导体龙头预增150%-180%）叠加AI应用板块走强（软件ETF涨超2%、资金净流入），形成从上游算力到下游应用的产业链景气共振。资金从消费、地产持续流入新能源/半导体，市场情绪从恐惧转向贪婪但尚未过热，预期差仍存，当前是布局AI产业链的窗口期。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "软件ETF招商159899",
+    "半导体ETF",
+    "中际旭创",
+    "新易盛"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "当前时点催化剂密集：中际旭创市值破万亿（4月23日）、新易盛一季报高增长（4月23日）、半导体龙头业绩预增（4月24日）、每日互动AI业务收入爆发（5月7日）、AI应用板块集体走强（5月8日），信号在两周内集中释放，形成共振。资金轮动信号显示资金正从消费地产流向科技，且AI应用板块刚启动，尚未过热。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f",
+    "sig_d9ef44f292bd",
+    "sig_de9b85fe30aa"
+  ],
+  "inferred_events": [
+    "inferred_44055654",
+    "inferred_c0e7781a",
+    "inferred_70980184",
+    "inferred_b768d163",
+    "inferred_4ecd38b5"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，光模块龙头地位确认",
+    "新易盛一季报净利润同比增长76.8%，业绩强劲",
+    "某半导体龙头Q1净利润预增150%-180%，AI芯片需求爆发",
+    "每日互动2026年Q1 AI业务收入接近2025年全年水平",
+    "AI应用板块走高，软件ETF涨超2%且单日净流入近800万元",
+    "资金从消费、地产流向新能源、半导体，板块轮动明确"
+  ],
+  "counter_evidence": [
+    "市场整体恐贪指数67处于贪婪区间，短期回调风险存在",
+    "历史案例显示技术突破需商业化验证，部分AI公司收入仍小"
+  ],
+  "key_assumptions": [
+    "假设1：AI产业链业绩增长趋势可持续，非一次性因素",
+    "假设2：资金轮动从消费地产向科技方向持续，而非短期切换",
+    "假设3：宏观经济不出现超预期恶化，流动性环境维持宽松"
+  ],
+  "uncertainty_map": [
+    "AI应用商业化落地速度不及预期（影响程度：高）",
+    "市场整体回调拖累科技板块（影响程度：中）",
+    "龙头股估值过高引发获利了结（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：AI产业链景气共振下，龙头股和ETF有望延续上涨趋势，软件ETF和半导体ETF弹性较大。潜在风险：市场整体回调或AI商业化不及预期可能导致10-15%回撤。风险收益比约2:1。",
+  "next_validation_questions": [
+    "AI应用板块（软件ETF）资金流入是否持续，而非单日脉冲？",
+    "半导体龙头业绩预增的具体公司是谁？订单可见度如何？",
+    "光模块龙头（中际旭创、新易盛）的估值是否已透支未来增长？",
+    "市场整体流动性（央行降准降息）是否如期落地？"
+  ],
+  "invalidation_conditions": [
+    "AI应用板块出现连续3日资金净流出，涨幅回吐",
+    "龙头股（中际旭创、新易盛）发布低于预期的季度指引",
+    "市场整体出现系统性风险（如政策收紧、地缘冲突）"
+  ],
+  "must_watch_indicators": [
+    "软件ETF（159899）日成交额和资金净流入/流出",
+    "中际旭创、新易盛股价走势及成交量",
+    "半导体ETF资金流向",
+    "恐贪指数是否突破80进入极度贪婪"
+  ],
+  "kill_switch_signals": [
+    "AI应用板块单日跌幅超5%且放量",
+    "龙头股发布业绩预警或下调指引",
+    "市场恐贪指数突破85且指数破位"
+  ],
+  "warnings": [
+    "注意：部分AI公司收入基数低，高增速不代表高绝对利润",
+    "注意：市场整体恐贪指数67，短期回调风险不可忽视"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:52:09.433548",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_rss_e485a93e",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

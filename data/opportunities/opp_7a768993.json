@@ -1,0 +1,106 @@
+{
+  "opportunity_id": "opp_7a768993",
+  "opportunity_title": "A股科技独立行情",
+  "opportunity_thesis": "韩国股市因地缘风险及半导体巨头大跌，而A股AI应用、人形机器人等科技板块逆势走强，资金持续流入，形成结构性独立行情。中际旭创万亿市值里程碑验证AI产业链景气度，叠加央行宽松预期，A股科技板块有望在外部扰动中持续获得资金青睐，走出独立上涨趋势。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "软件ETF招商(159899)",
+    "中证1000ETF",
+    "科创50ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "韩国股市大跌（三星、SK海力士跌超3%）凸显A股科技板块的相对强势，AI应用、人形机器人板块同日集体上涨，资金净流入明显。中际旭创万亿市值里程碑强化AI产业链信心，央行降准降息预期提供流动性支撑，当前是A股科技独立行情的启动窗口。",
+  "related_signals": [
+    "sig_de9b85fe30aa",
+    "sig_4880fa0cb378",
+    "sig_476a24c2a7b9",
+    "sig_cc33dd52b601"
+  ],
+  "inferred_events": [
+    "inferred_6622bcfc",
+    "inferred_57362624",
+    "inferred_43518859",
+    "inferred_688f16cf",
+    "inferred_375eb376"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "AI应用板块开盘走高，软件ETF涨超2%，单日净流入近800万元",
+    "人形机器人概念股集体上涨，多只个股涨停或创新高",
+    "中际旭创盘中市值突破万亿，验证AI产业链景气度",
+    "央行降准已落地，市场预期进一步降息，流动性宽松支撑科技估值"
+  ],
+  "counter_evidence": [
+    "A股三大指数高开回落全部翻绿，市场整体情绪偏弱",
+    "恐贪指数67（贪婪），短期情绪过热可能引发回调"
+  ],
+  "key_assumptions": [
+    "假设1：韩国股市下跌不会引发全球性科技股抛售，A股科技板块能维持相对独立",
+    "假设2：AI应用和人形机器人的上涨有基本面支撑，非纯概念炒作",
+    "假设3：央行宽松政策持续，流动性环境有利于科技成长股"
+  ],
+  "uncertainty_map": [
+    "韩国地缘风险是否扩散至全球半导体供应链（影响程度：高）",
+    "A股科技板块资金流入能否持续，还是短期轮动（影响程度：中）",
+    "AI应用商业化进展是否低于预期（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：A股科技板块在外部扰动下独立走强，若AI应用和人形机器人行情持续，软件ETF等标的有望获得10-15%涨幅。风险：韩国股市下跌引发全球科技股抛售，或A股整体情绪转弱，最大回撤约5-8%。",
+  "next_validation_questions": [
+    "韩国股市大跌的具体原因是什么？是否与AI/半导体行业直接相关？",
+    "AI应用板块的资金流入是否具有持续性？机构持仓变化如何？",
+    "人形机器人概念股的上涨是否有订单或业绩支撑？",
+    "央行进一步降息的时间点和幅度预期如何？"
+  ],
+  "invalidation_conditions": [
+    "韩国股市连续大跌并传导至A股科技板块",
+    "AI应用或人形机器人板块出现集体跌停或资金大幅流出",
+    "央行明确表态不再进一步宽松"
+  ],
+  "must_watch_indicators": [
+    "韩国综合指数及三星电子、SK海力士走势",
+    "软件ETF(159899)资金流向和成交量",
+    "中际旭创、科大讯飞等龙头股走势",
+    "央行公开市场操作及降息预期变化"
+  ],
+  "kill_switch_signals": [
+    "A股科技板块单日跌幅超3%且放量",
+    "软件ETF连续两日资金净流出超千万元",
+    "韩国股市暴跌引发全球性科技股抛售"
+  ],
+  "warnings": [
+    "注意：信号来源均为新闻，非官方公告，需验证数据准确性",
+    "注意：历史案例显示AI概念炒作后缺乏订单支撑可能回落"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:37:13.213059",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_bc9737a3",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

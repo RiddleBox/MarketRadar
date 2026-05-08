@@ -1,0 +1,103 @@
+{
+  "opportunity_id": "opp_9240a441",
+  "opportunity_title": "地产龙头分化机会",
+  "opportunity_thesis": "保利发展净利润大幅下滑但经营现金流暴增423%且成功发行低成本可转债，表明行业正经历出清分化：优质龙头通过融资优势与现金流改善巩固护城河，而尾部企业加速淘汰。当前市场过度聚焦利润下滑的利空，忽视了现金流与融资能力的结构性改善，存在预期差。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "保利发展(600048.SH)"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-28T00:00:00",
+    "end": "2026-07-28T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "年报与一季报集中披露后，市场对地产板块的悲观情绪达到极值，但保利发展同时释放了经营现金流大幅改善和低成本融资落地两个积极信号，形成多空交织的博弈窗口。后续若行业政策进一步宽松（如降准），将催化估值修复。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sig_deee36561d85",
+    "sig_b146ce2efab7",
+    "sig_77e33acaca10"
+  ],
+  "inferred_events": [
+    "inferred_0e5b615c",
+    "inferred_64f94b98",
+    "inferred_97fec44a",
+    "inferred_3918b19f",
+    "inferred_faa543e8",
+    "inferred_2a886624"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "保利发展2026年一季度经营现金流净额86.73亿元，同比增长423%，显示回款能力显著增强",
+    "成功发行国内首单现金类定向可转债85亿元，融资成本创历史新低，体现融资优势",
+    "净利润大幅下滑主要源于前期高价地结转和减值，属于行业共性，而非公司经营恶化"
+  ],
+  "counter_evidence": [
+    "净利润同比降幅高达79.31%，基本面恶化程度超预期，可能压制短期估值",
+    "地产行业整体销售复苏仍不确定，政策效果有待观察"
+  ],
+  "key_assumptions": [
+    "假设1：保利发展经营现金流改善趋势可持续，非一次性因素",
+    "假设2：行业政策不会进一步收紧，且存在宽松预期",
+    "假设3：市场情绪在利润利空消化后，会重新定价现金流与融资优势"
+  ],
+  "uncertainty_map": [
+    "行业销售复苏节奏（影响程度：高）",
+    "后续减值风险是否持续暴露（影响程度：中）",
+    "政策宽松力度与时间点（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 6,
+    "timeliness": 7,
+    "market_confirmation": 4,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 6,
+    "overall_score": 6.3,
+    "confidence_score": 0.65,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益来自悲观情绪修复与估值重定价，预计上行空间15-25%；主要风险为行业销售持续低迷或进一步减值，下行风险约10-15%，风险收益比约1.5:1",
+  "next_validation_questions": [
+    "保利发展4月销售数据是否环比改善？",
+    "其他龙头房企（如万科、招商蛇口）的现金流与融资情况是否同步改善？",
+    "近期是否有地产行业政策宽松信号？"
+  ],
+  "invalidation_conditions": [
+    "保利发展二季度销售数据继续恶化",
+    "行业出现超预期信用事件（如头部房企违约）",
+    "政策明确收紧或宽松预期落空"
+  ],
+  "must_watch_indicators": [
+    "保利发展月度销售金额与面积",
+    "行业融资成本变化（债券发行利率）",
+    "央行降准/降息等宽松政策动态",
+    "地产板块资金流向与相对强弱"
+  ],
+  "kill_switch_signals": [
+    "保利发展经营现金流环比大幅转负",
+    "公司公告新增重大减值或亏损",
+    "行业政策出现严厉收紧信号"
+  ],
+  "warnings": [
+    "注意：净利润大幅下滑是客观事实，市场可能持续抛售，需等待情绪充分释放",
+    "注意：当前信号仅来自保利发展一家公司，行业分化格局需更多数据验证"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T10:55:23.877700",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_19000101_astock_skill_527f94e7",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

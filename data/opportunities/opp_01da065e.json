@@ -1,0 +1,107 @@
+{
+  "opportunity_id": "opp_01da065e",
+  "opportunity_title": "半导体AI景气共振",
+  "opportunity_thesis": "半导体龙头业绩预增150%-180%叠加AI应用板块走强，确认产业链景气度向上。资金从消费地产轮入半导体新能源，中际旭创万亿市值突破强化信心。当前处于业绩验证+资金流入+政策宽松窗口期，预期差仍存，构成结构性做多机会。\n\n【M13调研】机会描述提出资金从地产消费转向新能源/半导体，龙头个股创新高且业绩超预期，但缺乏研报、新闻、基本面数据和行业趋势信息。M13调研确认信息单一，置信度低。无重大利空，但信息不足导致无法确认趋势持续性。建议谨慎对待，待补充数据后再决策。置信度下调0.3。\n\n【M13调研】机会描述基于单一未验证信息，缺乏研报、新闻、基本面数据和行业趋势支持，M13调研确认置信度低。无重大利空，但信息严重不足，无法确认产业链景气度向上和资金轮动逻辑。建议放弃该机会，待补充可靠数据后再行分析。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "半导体ETF",
+    "软件ETF",
+    "中际旭创",
+    "中国软件"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "半导体龙头Q1业绩预增超预期（4月24日）叠加AI应用板块5月8日放量上涨，资金轮入信号明确，央行降准降息预期（2周内概率85%）提供流动性支撑，时间窗口紧凑。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_4880fa0cb378",
+    "sig_c65bd11e442f",
+    "sig_de9b85fe30aa"
+  ],
+  "inferred_events": [
+    "inferred_779ab8d7",
+    "inferred_0992785c",
+    "inferred_43581d9a",
+    "inferred_e6ec7d0e",
+    "inferred_aa92285a"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "某半导体龙头Q1净利润同比增长150%-180%，远超常规水平",
+    "中际旭创盘中市值突破万亿，光模块龙头估值天花板打开",
+    "AI应用板块走高，软件ETF涨超2%且资金净流入近800万",
+    "资金从消费、地产轮入新能源和半导体，板块轮动信号明确"
+  ],
+  "counter_evidence": [
+    "历史案例case_2024_tech_breakthrough显示技术突破需商业化验证，当前AI应用缺乏订单支撑",
+    "恐贪指数未提供，若处于贪婪区间则利好可能已部分定价"
+  ],
+  "key_assumptions": [
+    "假设1：半导体龙头业绩预增真实且可持续，非一次性收益",
+    "假设2：AI应用板块上涨有基本面支撑，非单纯概念炒作",
+    "假设3：央行降准降息在2周内落地，维持宽松流动性"
+  ],
+  "uncertainty_map": [
+    "业绩预增是否包含非经常性损益（影响程度：高）",
+    "AI应用板块上涨持续性，是否缺乏订单验证（影响程度：中）",
+    "宏观经济数据若进一步恶化可能压制风险偏好（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.4,
+    "confidence_score": 0.18000000000000005,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：半导体ETF/龙头个股在业绩验证+资金流入下有望上涨10%-15%；风险：业绩预增若被证伪或AI板块回调，最大回撤约8%-10%，止损点可设在板块指数20日均线。",
+  "next_validation_questions": [
+    "半导体龙头业绩预增的具体来源？是否来自AI芯片订单？",
+    "AI应用板块上涨是否有机构资金持续流入？",
+    "央行降准降息预期是否在2周内兑现？"
+  ],
+  "invalidation_conditions": [
+    "半导体龙头业绩预告被下调或证伪",
+    "AI应用板块放量下跌，资金大幅流出",
+    "央行降准降息预期落空或政策转向收紧"
+  ],
+  "must_watch_indicators": [
+    "半导体ETF（512480）量价走势",
+    "软件ETF（159899）资金净流入/流出",
+    "中际旭创股价是否站稳万亿市值",
+    "央行公开市场操作及降准降息信号"
+  ],
+  "kill_switch_signals": [
+    "半导体龙头发布业绩修正公告，下调预期",
+    "AI应用板块单日跌幅超3%且放量",
+    "资金从半导体板块大幅流出，板块轮动逆转"
+  ],
+  "warnings": [
+    "注意：业绩预增信号来源为新闻，非官方公告，需核实",
+    "历史案例显示AI概念炒作后缺乏订单支撑可能回落"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:48:38.484259",
+  "batch_id": "sched_test_m13_integration_20260508_rss_3e6acf5e",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

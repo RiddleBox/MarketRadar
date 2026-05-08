@@ -1,0 +1,109 @@
+{
+  "opportunity_id": "opp_328da459",
+  "opportunity_title": "宽松对冲衰退",
+  "opportunity_thesis": "央行降准降息释放明确宽松信号，但制造业PMI连续收缩、CPI/PPI通缩显示经济基本面承压。市场预期流动性改善将阶段性提振估值，但盈利下行压制反弹空间，形成'政策底'与'市场底'博弈格局。短期看，流动性驱动的估值修复机会在金融、高股息等防御性板块，但需警惕基本面恶化超预期导致宽松效果打折。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "沪深300ETF",
+    "银行ETF",
+    "国债期货"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-20T00:00:00",
+    "end": "2026-06-20T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "央行降准降息已落地，政策宽松窗口打开，但经济数据（PMI、CPI、PPI）持续疲弱，市场对政策效果存在分歧。当前是政策密集期与数据验证期的交汇点，预期差最大，适合左侧布局。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203",
+    "sig_7298dda97ec7"
+  ],
+  "inferred_events": [
+    "inferred_7b668107",
+    "inferred_706ffc3b",
+    "inferred_8d7ea184",
+    "inferred_6e17092d",
+    "inferred_b3b92eda"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行下调存款准备金率0.5个百分点，释放长期流动性约1万亿元",
+    "7天逆回购利率下调10bp至1.7%，降低银行负债成本",
+    "制造业PMI连续3个月低于荣枯线，政策加码预期增强",
+    "CPI/PPI负增长，通缩压力为宽松提供空间"
+  ],
+  "counter_evidence": [
+    "经济基本面疲软可能抵消宽松效果，盈利下行压制估值",
+    "市场对宽松已有部分定价，降准后短期涨幅有限"
+  ],
+  "key_assumptions": [
+    "假设1：后续仍有进一步宽松政策（如降息、财政加码）出台",
+    "假设2：经济数据不会在短期内急剧恶化（如PMI跌破48）",
+    "假设3：外部环境（如美联储政策、地缘风险）不出现重大扰动"
+  ],
+  "uncertainty_map": [
+    "经济下行速度超预期（影响程度：高）",
+    "宽松政策传导效率低，信贷需求不足（影响程度：中）",
+    "市场情绪修复后获利了结压力（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 6,
+    "overall_score": 6.7,
+    "confidence_score": 0.7,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益来自流动性驱动的估值修复（5-10%），但基本面恶化可能导致收益有限甚至亏损。风险收益比约1:1.5，适合小仓位试探。",
+  "next_validation_questions": [
+    "后续是否有更多宽松政策（如MLF降息、财政刺激）出台？",
+    "4月PMI数据是否企稳或回升？",
+    "信贷数据（社融、M2）是否超预期增长？",
+    "银行间市场利率（DR007）是否持续下行？"
+  ],
+  "invalidation_conditions": [
+    "PMI跌破48，经济加速恶化",
+    "央行暂停宽松或释放紧缩信号",
+    "外部冲击（如贸易摩擦升级）导致风险偏好骤降"
+  ],
+  "must_watch_indicators": [
+    "制造业PMI",
+    "社融和M2增速",
+    "DR007利率",
+    "沪深300指数成交量"
+  ],
+  "kill_switch_signals": [
+    "PMI连续2个月低于48",
+    "央行逆回购利率上调或暂停逆回购",
+    "沪深300指数跌破前低且放量"
+  ],
+  "warnings": [
+    "注意：经济数据滞后，宽松效果需1-2个月才能体现",
+    "注意：市场可能已部分定价降准，短期追高风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:06:38.445853",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_00a89ba5",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,104 @@
+{
+  "opportunity_id": "opp_bd9a9a37",
+  "opportunity_title": "地产分化做空",
+  "opportunity_thesis": "保利发展净利润大幅下滑与资金持续流出地产形成共振，表明行业基本面恶化尚未触底。尽管现金流改善和低成本融资是积极信号，但利润端的崩塌和资金轮出新能源/半导体，强化了地产板块的结构性弱势。当前市场已部分定价悲观预期，但一季报净利润降幅超50%显示恶化加速，预期差仍存，适合做空或回避地产板块。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "地产ETF",
+    "保利发展股票"
+  ],
+  "trade_direction": "BEARISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-27T00:00:00",
+    "end": "2026-06-27T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "保利发展一季报净利润同比降53.1%于4月27日披露，叠加4月17日年报净利润降79.31%，业绩连续恶化；同时资金从地产流向新能源/半导体的轮动信号于4月17日出现，形成基本面+资金面的双重利空共振，时间窗口紧迫。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sent_b3cc88f9",
+    "sig_deee36561d85",
+    "sig_b146ce2efab7",
+    "sig_77e33acaca10"
+  ],
+  "inferred_events": [
+    "inferred_58ff31ec",
+    "inferred_44a4fe0e",
+    "inferred_a1e40447",
+    "inferred_f68d33c7",
+    "inferred_74e83ae3"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "保利发展2025年净利润同比降79.31%，一季报净利润同比降53.1%，业绩恶化加速",
+    "资金从地产板块流出，流入新能源和半导体，板块轮动信号明确",
+    "保利发展经营现金流大增423%和低成本融资85亿元，但未能扭转利润下滑趋势，显示行业困境"
+  ],
+  "counter_evidence": [
+    "保利发展现金流改善和融资成本创新低，可能预示财务底部",
+    "央行降准降息政策可能对地产形成边际利好"
+  ],
+  "key_assumptions": [
+    "假设1：保利发展业绩下滑反映行业整体趋势，非个别公司问题",
+    "假设2：资金从地产流出至新能源/半导体的轮动将持续，而非短期波动"
+  ],
+  "uncertainty_map": [
+    "政策风险：若出台超预期地产刺激政策，可能逆转板块走势（影响程度：高）",
+    "市场情绪：恐贪指数67处于贪婪区间，若情绪极端化可能放大波动（影响程度：中）",
+    "个股分化：保利发展现金流改善可能吸引价值投资者，导致股价抗跌（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 5,
+    "signal_consistency": 7,
+    "overall_score": 6.7,
+    "confidence_score": 0.7,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：地产板块继续下跌10-15%，做空ETF或个股获利；潜在风险：政策刺激或市场情绪反转导致反弹5-10%，止损可控。风险收益比约1.5:1。",
+  "next_validation_questions": [
+    "其他龙头房企（如万科、招商蛇口）一季报是否也出现利润大幅下滑？",
+    "地产板块整体资金流出是否持续，还是短期轮动？",
+    "保利发展现金流改善是否被市场解读为底部信号，从而限制下跌空间？"
+  ],
+  "invalidation_conditions": [
+    "出台超预期地产刺激政策（如降首付、取消限购）",
+    "保利发展股价逆势上涨，突破近期高点",
+    "资金重新流入地产板块，轮动信号反转"
+  ],
+  "must_watch_indicators": [
+    "保利发展日成交量与价格走势",
+    "地产ETF（512200）资金流向",
+    "新能源/半导体板块相对地产板块的强弱比",
+    "央行是否进一步降息或出台地产定向宽松政策"
+  ],
+  "kill_switch_signals": [
+    "保利发展发布回购或大股东增持公告",
+    "地产板块出现单日涨幅超3%的放量反弹",
+    "政策面明确释放地产救助信号"
+  ],
+  "warnings": [
+    "注意：保利发展现金流改善和融资创新低可能被部分投资者视为利好，导致股价短期抗跌",
+    "注意：市场恐贪指数67处于贪婪区间，整体情绪偏乐观，做空需警惕情绪反转风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:41:06.765075",
+  "batch_id": "sched_manual_test_20260508_astock_skill_d9620f5c",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

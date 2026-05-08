@@ -1,0 +1,143 @@
+{
+  "opportunity_id": "opp_0d6402c1",
+  "opportunity_title": "券商业绩爆发",
+  "opportunity_thesis": "广发证券一季度净利润同比暴增70%以上，是市场活跃度提升的直接受益信号。银行板块一季报营收净利双增，验证了金融板块整体盈利改善趋势。当前市场情绪处于贪婪区间（恐贪指数67），但尚未过热，业绩驱动的结构性行情仍有空间，预期差在于市场可能低估了券商板块业绩增长的持续性和弹性。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "证券ETF",
+    "券商ETF",
+    "广发证券"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-27T00:00:00",
+    "end": "2026-06-30T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "广发证券一季报（4月27日发布）是核心催化剂，净利润同比增70.73%远超市场预期，标志着券商板块业绩拐点确认。当前正值一季报密集披露期，其他头部券商（中信、华泰等）的业绩有望接力验证行业高景气。市场情绪处于贪婪但非极端水平，业绩利好尚未被充分定价。",
+  "related_signals": [
+    "sig_f5dc287cf712",
+    "sig_898af08751f6",
+    "sig_7ae3396ab434",
+    "sig_781fda7e246d",
+    "sent_afb94f7676ae",
+    "sent_9cac65ff6dfb",
+    "sent_1f482f698d3a",
+    "sent_8fde474c010c",
+    "sent_36fce571ca71",
+    "sent_b54e50c8519c",
+    "sent_e48bfda1bc39",
+    "sent_d4d08c6107ce",
+    "sent_e2054d14aa30",
+    "sent_3b1c672be67f",
+    "sent_84e3425ee437",
+    "sent_856b4f0ee323",
+    "sent_a72ae5543573",
+    "sent_10da9375bbda",
+    "sent_2ab140899d34",
+    "sent_5c5e53c2d006",
+    "sent_b6dc4cc2d8cf",
+    "sent_9a7f83ad0db9",
+    "sent_bf7debd820d7",
+    "sent_635414904919",
+    "sent_e0397c231d3f",
+    "sent_7115a7eff621",
+    "sent_0ae4219c102c",
+    "sent_4f0acbb837a8",
+    "sent_5494095bde99",
+    "sent_4b09ba90e339",
+    "sent_7c5a4b44dcaa",
+    "sent_e04a5706a161",
+    "sent_d47ce2494d9e",
+    "sent_7e5641ea219f",
+    "sent_97f4897e13e9",
+    "sent_68b99cf45634",
+    "sent_ba6460ea797d",
+    "sent_9e4cd5a9f444",
+    "sent_6d3b39a4c5c6",
+    "sent_654d7a6caffa"
+  ],
+  "inferred_events": [
+    "inferred_6622bcfc",
+    "inferred_57362624",
+    "inferred_43518859",
+    "inferred_688f16cf",
+    "inferred_375eb376"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "广发证券一季度净利润同比增70.73%，营收同比增64.33%，业绩增速远超行业平均水平",
+    "7家上市银行一季报营收净利全部正增长，资产质量平稳，金融板块整体盈利改善",
+    "市场情绪贪婪（恐贪指数67），但涨跌比75.95%，市场赚钱效应良好，有利于券商经纪和自营业务",
+    "历史案例case_2024_breakout显示，基本面改善配合技术突破可形成趋势行情"
+  ],
+  "counter_evidence": [
+    "恐贪指数67处于贪婪区间，市场情绪已偏乐观，部分利好可能已被定价",
+    "广发证券业绩高增可能包含一次性因素（如自营投资收益），可持续性待验证"
+  ],
+  "key_assumptions": [
+    "其他头部券商（中信、华泰、中金等）一季报业绩同样高增长，验证行业景气度",
+    "市场日均成交额维持或高于当前水平，支撑券商经纪和两融业务收入",
+    "宏观经济和政策环境不发生重大负面变化，市场风险偏好维持"
+  ],
+  "uncertainty_map": [
+    "其他券商一季报业绩不及预期（影响程度：高）",
+    "市场成交量快速萎缩，活跃度下降（影响程度：高）",
+    "监管政策收紧或宏观风险事件冲击（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.8
+  },
+  "risk_reward_profile": "潜在收益：券商板块估值修复+业绩增长双击，历史弹性大，若行业景气度持续，板块有15-25%上行空间。主要风险：业绩证伪（其他券商不及预期）或市场成交量萎缩，下行风险约5-10%。",
+  "next_validation_questions": [
+    "中信证券、华泰证券等头部券商一季报何时发布？业绩增速是否与广发证券一致？",
+    "近期A股日均成交额趋势如何？是否维持在万亿以上？",
+    "券商板块当前估值水平（PB）处于历史什么分位？",
+    "市场两融余额是否持续增长？"
+  ],
+  "invalidation_conditions": [
+    "其他头部券商一季报业绩增速低于30%",
+    "A股日均成交额连续一周低于8000亿",
+    "出现重大利空政策或系统性风险事件"
+  ],
+  "must_watch_indicators": [
+    "A股日均成交额",
+    "两融余额变化",
+    "中信证券/华泰证券一季报发布时间及业绩",
+    "证券板块指数（881157）量价关系"
+  ],
+  "kill_switch_signals": [
+    "证券板块指数放量跌破20日均线",
+    "其他头部券商一季报净利润同比增速低于20%",
+    "市场出现恐慌性下跌，恐贪指数跌破30"
+  ],
+  "warnings": [
+    "注意：广发证券业绩高增可能包含自营投资收益等非经常性因素，需关注扣非净利润增速",
+    "情绪信号显示市场已处于贪婪区间，追高需控制仓位，建议分批建仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:36:56.533934",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_bc9737a3",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

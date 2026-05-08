@@ -1,0 +1,105 @@
+{
+  "opportunity_id": "opp_9c89fa93",
+  "opportunity_title": "新能源车政策红利",
+  "opportunity_thesis": "地产链持续承压（保利业绩大幅下滑）与新能源车政策利好（购置税减免延续至2027年底）形成鲜明对比，资金正从地产、消费板块流向新能源、半导体。当前时点，新能源车板块受益于确定性政策支撑和资金轮动，具备结构性机会，而地产板块的负面信号已充分反映，预期差在于市场对新能源车板块的长期增长潜力尚未充分定价。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源汽车ETF",
+    "宁德时代",
+    "比亚迪"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-27T00:00:00",
+    "end": "2026-07-27T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "保利发展一季报（4月27日）确认地产基本面恶化，资金加速流出地产；同时新能源汽车购置税减免政策刚于4月24日发布，政策窗口打开，叠加资金轮动信号，当前是布局新能源车板块的黄金时点。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sent_b3cc88f9",
+    "sig_30d3e00700ed",
+    "sig_deee36561d85"
+  ],
+  "inferred_events": [
+    "inferred_616dc7f3",
+    "inferred_da966deb",
+    "inferred_0edece28",
+    "inferred_801c7f2f",
+    "inferred_a4f66787"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "新能源汽车购置税减免政策延续至2027年底，确定性政策利好",
+    "资金从地产、消费流向新能源、半导体，板块轮动信号明确",
+    "保利发展2025年净利润大降79.31%，2026年一季报再降53.1%，地产链持续承压"
+  ],
+  "counter_evidence": [
+    "新能源车板块前期已有一定涨幅，短期可能面临获利回吐",
+    "市场整体情绪偏谨慎，三大指数高开回落，下跌个股近4000只"
+  ],
+  "key_assumptions": [
+    "新能源汽车购置税减免政策执行力度不减弱",
+    "地产链负面情绪不会系统性蔓延至新能源车板块",
+    "资金轮动趋势持续，新能源车板块获得持续流入"
+  ],
+  "uncertainty_map": [
+    "宏观经济下行压力加大，消费需求可能低于预期（影响程度：高）",
+    "新能源车行业竞争加剧，价格战可能侵蚀利润（影响程度：中）",
+    "政策执行细节或地方配套措施不及预期（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：政策红利+资金轮动推动新能源车板块估值修复，预期收益10%-20%；潜在风险：宏观经济下行或行业竞争加剧导致业绩不及预期，最大回撤约10%-15%。",
+  "next_validation_questions": [
+    "新能源车板块近期成交量是否持续放大，确认资金流入？",
+    "宁德时代、比亚迪等龙头公司一季报业绩是否超预期？",
+    "地产板块负面情绪是否已充分释放，不会进一步拖累大盘？"
+  ],
+  "invalidation_conditions": [
+    "新能源汽车购置税减免政策被取消或大幅缩水",
+    "新能源车板块出现重大负面事件（如龙头公司业绩暴雷）",
+    "资金轮动信号逆转，新能源车板块资金大幅流出"
+  ],
+  "must_watch_indicators": [
+    "新能源汽车ETF成交量与价格走势",
+    "宁德时代、比亚迪股价与资金流向",
+    "地产板块指数与保利发展股价",
+    "市场整体恐贪指数与成交量"
+  ],
+  "kill_switch_signals": [
+    "新能源车板块单日跌幅超过3%且成交量放大",
+    "保利发展等地产股出现系统性信用事件",
+    "政策面出现明确收紧信号"
+  ],
+  "warnings": [
+    "注意：新能源车板块前期已有一定涨幅，短期追高风险较大",
+    "注意：市场整体情绪偏谨慎，需警惕系统性回调风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:38:56.692982",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_d7abe571",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

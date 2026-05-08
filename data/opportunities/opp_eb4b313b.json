@@ -1,0 +1,105 @@
+{
+  "opportunity_id": "opp_eb4b313b",
+  "opportunity_title": "宽松预期交易",
+  "opportunity_thesis": "通缩压力持续（CPI/PPI双负）叠加央行明确表态'适时降准'，且已落地降准0.5个百分点，形成'通缩-宽松-预期强化'的闭环。市场对进一步降准降息的预期强烈（概率85%），但当前A股情绪处于贪婪区间（67），尚未完全定价后续宽松，存在预期差。短期可博弈流动性宽松驱动的估值修复，尤其利好银行、高股息及利率敏感型资产。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "沪深300ETF",
+    "银行ETF",
+    "国债期货"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-08T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行已落地降准0.5个百分点（4月20日），且行长最新表态'适时降准'（4月23日），叠加CPI/PPI数据疲弱，市场对2周内进一步宽松的预期高达85%。当前时点是政策落地+预期强化的共振窗口，3个月前通缩信号未形成政策响应，3个月后若宽松兑现则利好出尽。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_e39115aa3077",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203"
+  ],
+  "inferred_events": [
+    "inferred_fd46f40f",
+    "inferred_e4485d31",
+    "inferred_9d7eda90",
+    "inferred_ba6f8dcd"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行已宣布4月20日起降准0.5个百分点，宽松周期确认开启",
+    "央行行长最新表态'适时降准'，强化后续宽松预期",
+    "12月CPI同比-0.3%、PPI同比-2.7%，通缩压力为政策宽松提供必要性",
+    "市场预期2周内进一步降准降息概率85%，预期差尚未完全price-in"
+  ],
+  "counter_evidence": [
+    "A股恐贪指数67（贪婪区间），市场情绪已部分消化利好，追高风险增加",
+    "历史案例case_2024_rate_cut显示降息后银行股估值修复但地产股反弹乏力，政策效果分化"
+  ],
+  "key_assumptions": [
+    "假设1：央行在2周内兑现进一步降准或降息，不出现政策空窗",
+    "假设2：通缩压力未急剧恶化至引发系统性风险（如信用收缩）",
+    "假设3：市场情绪未从贪婪转为极度贪婪（恐贪指数<80），避免过热回调"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：央行后续宽松力度不及预期（如仅降准不降息），影响程度：高",
+    "不确定性2：通缩压力若持续超预期，可能引发盈利下修抵消流动性利好，影响程度：中",
+    "不确定性3：外部风险（如地缘冲突、汇率波动）干扰国内宽松效果，影响程度：中"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：若2周内降准降息落地，沪深300ETF有望上涨3-5%，银行ETF受益于净息差预期改善涨幅可能更大（5-8%）。潜在风险：若政策空窗或力度不及预期，市场可能回调2-3%，止损点可设在沪深300指数前低支撑位（约-2%）。",
+  "next_validation_questions": [
+    "央行近期是否有公开市场操作或MLF续作信号，验证宽松节奏？",
+    "银行间市场利率（DR007）是否已开始下行，反映流动性宽松预期？",
+    "北向资金近期是否持续流入A股，验证外资对宽松政策的认可？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态短期内不再降准降息，或强调'稳健'基调",
+    "恐贪指数升至80以上，市场情绪极度贪婪，利好出尽风险显著",
+    "通缩数据进一步恶化至CPI同比-1%以下，引发系统性担忧"
+  ],
+  "must_watch_indicators": [
+    "DR007（7天期银行间质押式回购利率）",
+    "恐贪指数（日频）",
+    "沪深300指数成交量",
+    "央行公开市场操作公告"
+  ],
+  "kill_switch_signals": [
+    "央行官员讲话转向鹰派，强调通胀风险或汇率稳定",
+    "A股单日跌幅超2%且成交量放大，恐慌情绪蔓延",
+    "人民币汇率单日贬值超1%，资本外流压力加剧"
+  ],
+  "warnings": [
+    "注意：通缩信号（CPI/PPI）为12月数据，时效性较低，需关注最新月度数据",
+    "注意：市场情绪已处于贪婪区间，追高需控制仓位，建议分批建仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:09:20.655378",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_05694c4d",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

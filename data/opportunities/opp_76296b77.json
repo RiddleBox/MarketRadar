@@ -1,0 +1,108 @@
+{
+  "opportunity_id": "opp_76296b77",
+  "opportunity_title": "金融地产分化套利",
+  "opportunity_thesis": "地产链（以保利发展为代表）业绩持续恶化（2025年净利润降79%、2026Q1降53-57%），资金已开始流出地产板块，形成负反馈；而银行、券商等金融板块一季报营收净利双增（7家银行全部正增长、广发证券净利润增71%），业绩趋势明显分化。当前市场尚未充分定价这一结构性分化，存在板块间资金轮动和估值修复的机会，且央行降准预期（概率85%）将进一步利好金融板块。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "银行ETF",
+    "券商ETF",
+    "地产ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-28T00:00:00",
+    "end": "2026-06-30T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "保利发展一季报（4月27-28日披露）净利润同比降57%，叠加2025年报降79%，地产业绩恶化信号密集释放；同时7家银行一季报（4月23日）和广发证券一季报（4月27日）均超预期，业绩对比达到极致。央行降准预期（2周内概率85%）构成金融板块催化剂，时间窗口紧迫。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sent_b3cc88f9",
+    "sig_f5dc287cf712",
+    "sig_898af08751f6",
+    "sig_deee36561d85",
+    "sig_dc0079649df5"
+  ],
+  "inferred_events": [
+    "inferred_af577f64",
+    "inferred_560d049c",
+    "inferred_829a1280",
+    "inferred_61e1339e",
+    "inferred_2c5c5d49"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "保利发展2025年归母净利润同比降79.31%，2026Q1再降53-57%，地产龙头业绩持续恶化",
+    "7家地方银行一季报营收净利全部正增长，资产质量平稳",
+    "广发证券2026Q1净利润同比增70.73%，营收增64.33%",
+    "资金轮动信号显示资金从地产流向新能源/半导体，地产板块资金持续流出",
+    "央行降准预期（概率85%，2周内）利好金融板块"
+  ],
+  "counter_evidence": [
+    "地产板块已持续下跌，部分利空可能已被定价",
+    "金融板块（尤其是银行）受宏观经济下行和降息预期压制，估值修复空间有限"
+  ],
+  "key_assumptions": [
+    "假设1：地产业绩恶化趋势不会短期逆转，资金流出地产板块持续",
+    "假设2：金融板块一季报业绩增长趋势具有可持续性，非一次性因素",
+    "假设3：央行降准或宽松政策在1个月内落地，提振金融板块情绪"
+  ],
+  "uncertainty_map": [
+    "宏观经济下行超预期，导致金融板块不良率上升（影响程度：高）",
+    "地产政策突然放松，引发地产板块反弹，分流金融板块资金（影响程度：中）",
+    "央行降准预期落空或延迟，金融板块催化剂缺失（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 6.9,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益来自金融板块估值修复和资金轮动，预期收益10-15%；风险在于地产板块超跌反弹或金融板块业绩不及预期，最大回撤5-8%。",
+  "next_validation_questions": [
+    "金融板块（银行/券商）当前估值分位数如何？是否处于历史低位？",
+    "地产板块资金流出是否已加速？是否有更多地产公司发布业绩预警？",
+    "央行降准预期是否有官方表态或市场传闻支撑？"
+  ],
+  "invalidation_conditions": [
+    "地产板块出现政策利好（如放松限购、降息），引发资金回流",
+    "金融板块一季报后续披露出现大面积不及预期",
+    "央行降准预期落空且无其他宽松信号"
+  ],
+  "must_watch_indicators": [
+    "银行ETF（512800）和券商ETF（512000）量价变化",
+    "保利发展股价是否继续创新低或企稳",
+    "央行公开市场操作和降准相关新闻",
+    "地产板块资金流出速度（北向资金/主力资金）"
+  ],
+  "kill_switch_signals": [
+    "金融板块出现单日放量大跌超3%",
+    "地产板块出现政策利好且成交量放大",
+    "央行明确表态短期内不降准"
+  ],
+  "warnings": [
+    "注意：地产业绩恶化信号来自保利发展单一公司，需确认行业整体情况",
+    "注意：金融板块受益于降准预期，若预期落空可能回调"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T10:57:19.171742",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_19000101_astock_skill_d727e891",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

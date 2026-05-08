@@ -1,0 +1,105 @@
+{
+  "opportunity_id": "opp_a4fdd229",
+  "opportunity_title": "券商业绩情绪共振",
+  "opportunity_thesis": "广发证券一季度净利润同比增70.73%是券商板块业绩超预期的明确信号，叠加沪深两市成交额突破1.5万亿、市场情绪贪婪（恐贪指数67），形成业绩改善+交易活跃+情绪正反馈的良性循环。当前市场对券商板块的盈利持续性仍有分歧，预期差较大，且央行降准降息预期（概率85%）提供额外催化剂，券商作为高beta品种将直接受益于流动性宽松和风险偏好提升。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "券商ETF",
+    "广发证券",
+    "中信证券"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "广发证券一季报超预期（4月27日）刚发布，市场仍在消化；成交额突破1.5万亿（5月8日）确认交易活跃度；央行降准降息预期（2周内概率85%）即将落地，当前是业绩验证+流动性预期+情绪共振的最佳窗口，3个月前市场对券商盈利悲观，3个月后若政策落地可能利好出尽。",
+  "related_signals": [
+    "sig_898af08751f6",
+    "sent_afb94f7676ae",
+    "sig_a1a728ae8eed"
+  ],
+  "inferred_events": [
+    "inferred_1d10e33b",
+    "inferred_f00480ed",
+    "inferred_831b6af4",
+    "inferred_f8f8f3be",
+    "inferred_eb16731b"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "广发证券一季度净利润同比增70.73%，营收增64.33%，远超市场预期",
+    "沪深两市成交额突破1.5万亿元，交易活跃度创近期新高",
+    "市场情绪贪婪（恐贪指数66.7），北向资金净流入，涨跌比75.95%",
+    "央行降准降息预期高（概率85%），流动性宽松利好券商"
+  ],
+  "counter_evidence": [
+    "市场短期技术面有回调风险（三大指数高开回落，下跌个股近4000只）",
+    "情绪贪婪可能意味着短期过热，追高风险增加"
+  ],
+  "key_assumptions": [
+    "假设1：券商板块其他龙头公司一季报同样超预期，行业整体盈利改善",
+    "假设2：央行降准降息在2周内落地，流动性宽松预期兑现",
+    "假设3：市场成交额维持1.2万亿以上，交易活跃度不快速萎缩"
+  ],
+  "uncertainty_map": [
+    "最大不确定性：券商板块业绩改善的可持续性（影响程度：高）",
+    "不确定性：央行降准降息落地后市场是否利好出尽（影响程度：中）",
+    "不确定性：市场情绪从贪婪转为恐惧的时点（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.78
+  },
+  "risk_reward_profile": "潜在收益：券商ETF在业绩+流动性+情绪共振下有望上涨10%-15%；风险：若成交额回落至万亿以下或降准落空，回调幅度约5%-8%，止损点明确（券商ETF跌破20日均线）。",
+  "next_validation_questions": [
+    "其他上市券商（如中信证券、华泰证券）一季报是否同样超预期？",
+    "央行近期是否有降准降息的具体表态或行动？",
+    "沪深两市成交额能否连续3日维持在1.3万亿以上？"
+  ],
+  "invalidation_conditions": [
+    "沪深两市成交额连续3日低于1.2万亿",
+    "央行明确表示短期内不降准降息",
+    "券商板块出现集体业绩预警或负面公告"
+  ],
+  "must_watch_indicators": [
+    "沪深两市日成交额",
+    "券商板块指数及龙头股走势",
+    "央行公开市场操作及政策表态",
+    "恐贪指数变化"
+  ],
+  "kill_switch_signals": [
+    "券商板块单日跌幅超3%且成交额萎缩",
+    "央行加息或收紧流动性信号",
+    "市场情绪从贪婪急转恐惧（恐贪指数跌破40）"
+  ],
+  "warnings": [
+    "注意：广发证券一季报超预期可能是个体事件，需验证行业整体情况",
+    "注意：情绪贪婪（恐贪指数66.7）已接近过热区间，追高需控制仓位"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:45:33.912916",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_rss_1874d4c9",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

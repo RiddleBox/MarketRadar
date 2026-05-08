@@ -1,0 +1,108 @@
+{
+  "opportunity_id": "opp_d32dae40",
+  "opportunity_title": "科技成长双轮驱动",
+  "opportunity_thesis": "光模块龙头中际旭创市值破万亿、新易盛Q1净利增76.8%，叠加半导体龙头业绩预增150%-180%，显示AI算力链业绩进入爆发期；同时新能源购置税减免延续至2027年底，政策端提供长期支撑。资金从消费/地产持续流入新能源和半导体，形成业绩+政策+资金共振，科技成长板块具备结构性机会。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "半导体ETF",
+    "新能源车ETF",
+    "中证1000指数期货"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "当前时点催化剂密集：中际旭创市值破万亿（4月23日）、新易盛一季报（4月23日）、半导体业绩预告（4月24日）、新能源政策落地（4月24日），且资金轮动信号同步出现，形成多信号共振窗口。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_30d3e00700ed",
+    "sig_c65bd11e442f"
+  ],
+  "inferred_events": [
+    "inferred_fd46f40f",
+    "inferred_e4485d31",
+    "inferred_9d7eda90",
+    "inferred_ba6f8dcd"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "中际旭创市值突破万亿，光模块龙头地位确认，AI算力需求持续验证",
+    "新易盛Q1净利润增长76.8%，光模块行业高景气度延续",
+    "半导体龙头Q1业绩预增150%-180%，AI芯片需求爆发驱动",
+    "新能源购置税减免延续至2027年底，政策超预期稳定行业预期",
+    "资金从消费/地产流向新能源/半导体，板块轮动信号明确"
+  ],
+  "counter_evidence": [
+    "恐贪指数67处于贪婪区间，市场情绪偏热，短期回调风险存在",
+    "历史案例显示技术突破需商业化验证，当前半导体业绩预增但具体公司未披露，存在不确定性"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，光模块和半导体订单能见度维持高位",
+    "假设2：新能源购置税减免政策执行无变数，行业销量保持增长",
+    "假设3：资金轮动趋势延续，消费/地产流出资金持续进入科技成长"
+  ],
+  "uncertainty_map": [
+    "半导体龙头业绩预增的具体公司未披露，若为小市值公司则代表性不足（影响程度：高）",
+    "市场整体恐贪指数偏高，若短期情绪逆转可能导致科技板块回调（影响程度：中）",
+    "新能源政策利好已被部分定价，后续涨幅依赖销量数据验证（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI算力链业绩爆发+新能源政策催化，若板块轮动持续，科技成长ETF有望在1-3个月内获得10%-20%涨幅。潜在风险：市场情绪过热导致短期回调，或半导体业绩预增不及预期，最大回撤约5%-8%。",
+  "next_validation_questions": [
+    "半导体业绩预增150%-180%的具体公司是哪家？市值和行业地位如何？",
+    "光模块龙头（中际旭创、新易盛）的订单能见度和产能利用率是否持续提升？",
+    "新能源车4月销量数据是否环比改善？购置税减免政策对终端需求的刺激效果如何？",
+    "资金从消费/地产流出的持续性如何？是否有其他板块分流资金？"
+  ],
+  "invalidation_conditions": [
+    "半导体龙头业绩预增被证伪或大幅低于预期",
+    "光模块龙头出现订单下滑或客户砍单信号",
+    "新能源车销量连续两个月环比下滑"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛股价走势及成交量变化",
+    "半导体ETF资金净流入/流出情况",
+    "新能源车月度销量数据",
+    "恐贪指数变化，若持续高于80需警惕过热"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头单日跌幅超5%且放量",
+    "半导体ETF连续3日资金净流出",
+    "新能源政策出现收紧信号"
+  ],
+  "warnings": [
+    "注意：半导体业绩预增来源为新闻，具体公司未披露，需验证真实性",
+    "注意：市场恐贪指数67处于贪婪区间，短期回调风险不可忽视"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:09:01.862713",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_05694c4d",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

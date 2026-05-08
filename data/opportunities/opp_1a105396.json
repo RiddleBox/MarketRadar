@@ -1,0 +1,107 @@
+{
+  "opportunity_id": "opp_1a105396",
+  "opportunity_title": "金融板块业绩驱动",
+  "opportunity_thesis": "多家银行和券商一季报显示营收和净利润双增，尤其是广发证券净利润同比增超70%，银行板块资产质量平稳，基本面改善信号明确。当前市场对金融板块的预期偏低，业绩超预期有望催化估值修复，叠加央行降准释放流动性，金融板块具备短期交易机会。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "券商ETF",
+    "银行ETF",
+    "广发证券",
+    "南京银行"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-28T00:00:00",
+    "end": "2026-05-28T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "一季报集中披露窗口，业绩数据新鲜出炉，市场尚未充分反应；央行降准释放流动性，金融板块直接受益；当前市场情绪中性偏乐观，业绩催化尚未被完全定价。",
+  "related_signals": [
+    "sig_f5dc287cf712",
+    "sig_898af08751f6",
+    "sig_7ae3396ab434",
+    "sig_781fda7e246d"
+  ],
+  "inferred_events": [
+    "inferred_5f476c22",
+    "inferred_ec77cb74",
+    "inferred_9effed66",
+    "inferred_7b8f9e5f",
+    "inferred_80f2d5af",
+    "inferred_3b8593e4"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "7家地方银行一季报营收净利全部正增长，资产质量平稳",
+    "广发证券一季度净利润同比增70.73%，营收增64.33%",
+    "央行已实施降准0.5个百分点，流动性宽松利好金融板块"
+  ],
+  "counter_evidence": [
+    "银行板块前期已有一定涨幅，部分利好可能已被定价",
+    "经济数据疲弱（PMI低于荣枯线、通缩）可能压制银行资产质量预期"
+  ],
+  "key_assumptions": [
+    "假设1：一季报业绩增长趋势在后续披露的银行和券商中延续",
+    "假设2：央行宽松政策持续，市场流动性保持充裕",
+    "假设3：宏观经济未出现超预期恶化，资产质量风险可控"
+  ],
+  "uncertainty_map": [
+    "宏观经济下行超预期，导致银行坏账率上升（影响程度：高）",
+    "后续披露的金融股业绩不及预期，削弱板块整体信心（影响程度：中）",
+    "市场情绪快速转向，资金从金融板块流出（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 7,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 6.7,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：业绩超预期+估值修复，券商ETF和银行ETF有望上涨5-10%；风险：业绩不及预期或宏观恶化，最大回撤约5-8%，止损点可设在支撑位下方。",
+  "next_validation_questions": [
+    "后续披露的银行和券商一季报是否延续增长趋势？",
+    "市场对金融板块的持仓和资金流向是否开始增加？",
+    "央行是否有进一步降息或降准的明确信号？"
+  ],
+  "invalidation_conditions": [
+    "后续金融股一季报出现大面积业绩不及预期",
+    "宏观经济数据大幅恶化，引发系统性风险担忧",
+    "市场资金从金融板块持续流出，板块指数跌破关键支撑"
+  ],
+  "must_watch_indicators": [
+    "金融板块ETF成交量变化",
+    "北向资金对金融股的净买入情况",
+    "银行间市场利率（Shibor）走势",
+    "后续银行和券商一季报披露情况"
+  ],
+  "kill_switch_signals": [
+    "金融板块指数单日跌幅超过3%且放量",
+    "央行释放紧缩信号（如加息或提高准备金率）",
+    "某大型银行或券商一季报净利润同比下滑"
+  ],
+  "warnings": [
+    "注意：当前信号仅覆盖7家银行和1家券商，样本有限，需等待更多披露确认",
+    "注意：经济通缩压力可能压制金融板块长期估值，短期交易需设好止损"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:05:13.076704",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260507_astock_skill_6f8eb84e",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

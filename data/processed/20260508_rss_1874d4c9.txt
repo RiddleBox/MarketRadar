@@ -1,0 +1,7 @@
+【36氪】商汤发布日日新SenseNova Token Plan
+
+<!-- source: 36氪 | url: https://36kr.com/newsflashes/3800042156612871?f=rss | published: 2026-05-08 02:42 | collected: 2026-05-08 10:48 | provider: rss -->
+
+[信号类型: tech]
+
+36氪获悉，商汤发布日日新SenseNova Token Plan，并同步开启限时免费活动。据了解，SenseNova Token Plan全面支持商汤日日新SenseNova系列模型，包括新一代轻量化多模态智能体模型SenseNova 6.7 Flash-Lite，原生理解生成统一多模态模型SenseNova U1 Fast等。

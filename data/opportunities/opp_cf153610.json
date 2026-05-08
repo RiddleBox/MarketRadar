@@ -1,0 +1,123 @@
+{
+  "opportunity_id": "opp_cf153610",
+  "opportunity_title": "AI科技成长主线",
+  "opportunity_thesis": "光模块龙头中际旭创市值突破万亿、新易盛一季报净利润增长76.8%、某半导体龙头Q1业绩预增150%-180%，叠加AI终端国家标准发布及中国移动万亿级Token服务包，形成从硬件到应用的完整AI产业链业绩爆发与政策催化共振。当前市场对AI板块的业绩持续性仍有分歧，但连续超预期的财报数据正在打破质疑，预期差较大，构成中期做多窗口。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "中际旭创",
+    "新易盛",
+    "天孚通信",
+    "半导体ETF",
+    "AI算力ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-23T00:00:00",
+    "end": "2026-07-23T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "光模块三巨头（中际旭创、新易盛、天孚通信）2025年报及2026一季报全部披露完毕，业绩超预期得到确认；半导体龙头Q1预增150%-180%进一步强化AI需求逻辑；AI终端国家标准发布提供政策背书，中国移动万亿级Token服务包显示产业资本持续投入。当前是业绩验证后的预期修正窗口，市场尚未充分定价。",
+  "related_signals": [
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_c65bd11e442f",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_5a2ec57f6916",
+    "sig_a1d7094e54d1",
+    "sig_df713685bee1",
+    "sig_050c391c993e"
+  ],
+  "inferred_events": [
+    "inferred_e6f215a4",
+    "inferred_0e8e36e0",
+    "inferred_1d46c346",
+    "inferred_f3a384cd"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，收盘9989亿，创历史里程碑",
+    "新易盛一季报净利润同比增长76.8%，业绩超预期",
+    "某半导体龙头Q1业绩预增150%-180%，受益AI芯片需求爆发",
+    "工信部等三部门联合发布AI终端智能化分级国家标准",
+    "中国移动开放万亿级Token服务体验包，升级模型服务平台"
+  ],
+  "counter_evidence": [
+    "中际旭创万亿市值后收盘回落，显示高位分歧",
+    "历史案例显示AI概念炒作后缺乏订单验证可能回落"
+  ],
+  "key_assumptions": [
+    "假设1：AI芯片和光模块需求持续增长，Q2业绩能延续高增长",
+    "假设2：宏观经济不出现超预期恶化，市场风险偏好维持",
+    "假设3：美国对华科技制裁不进一步升级"
+  ],
+  "uncertainty_map": [
+    "美国对华半导体出口管制加码（影响程度：高）",
+    "AI资本开支增速放缓（影响程度：中）",
+    "市场整体回调拖累板块（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI产业链业绩持续超预期，板块估值修复空间20%-30%；风险：若Q2业绩不及预期或政策收紧，回调幅度可能达15%-20%，但龙头公司基本面扎实，止损点明确。",
+  "next_validation_questions": [
+    "中际旭创、新易盛Q2订单指引是否环比增长？",
+    "半导体龙头具体是哪家？其下游客户需求是否可持续？",
+    "AI终端国家标准对产业链实际拉动作用有多大？",
+    "当前光模块板块整体估值处于历史什么分位？"
+  ],
+  "invalidation_conditions": [
+    "光模块龙头Q2业绩预告低于预期",
+    "美国对华AI芯片出口管制显著升级",
+    "市场整体出现系统性风险（如流动性危机）"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛股价走势及成交量",
+    "AI芯片相关公司Q2订单/出货量数据",
+    "美国对华科技政策动态",
+    "A股市场整体成交量和风险偏好指标"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头单日放量下跌超5%且无利空",
+    "半导体龙头业绩预告大幅下修",
+    "美国宣布新一轮对华AI技术出口管制"
+  ],
+  "warnings": [
+    "注意：部分信号来源为新闻，非官方公告，需核实具体公司名称",
+    "注意：历史案例显示AI概念炒作后可能缺乏订单验证而回落"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:29:11.521296",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260508_astock_skill_8f4beaf6",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

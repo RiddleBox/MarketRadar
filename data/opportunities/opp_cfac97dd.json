@@ -1,0 +1,110 @@
+{
+  "opportunity_id": "opp_cfac97dd",
+  "opportunity_title": "人形机器人突破",
+  "opportunity_thesis": "人形机器人概念板块出现强势突破，核心零部件龙头绿的谐波创历史新高，多只个股涨停，板块效应显著。当前市场对AI应用落地预期升温，叠加政策支持预期，人形机器人作为AI重要载体，有望迎来新一轮主题投资行情。但需警惕短期情绪过热后的回调风险，以及商业化进展不及预期的可能性。\n\n【M13调研】人形机器人核心零部件龙头绿的谐波创历史新高，板块多股涨停，技术面突破信号强烈，市场对AI及机器人产业化预期升温，板块尚未全面泡沫，存在预期差。未来事件如央行宽松、AI算力走强可能催化结构性行情。但缺乏研报、新闻和基本面数据，信息基础薄弱，短期获利回吐压力及情绪过热风险需关注。综合评估，机会积极但置信度较低，建议谨慎参与。\n\n【M13调研】人形机器人核心零部件龙头绿的谐波创历史新高，板块多股涨停，技术面突破信号强烈，市场对AI及机器人产业化预期升温，存在预期差。未来事件如央行宽松、AI算力走强可能催化结构性行情。但缺乏研报、新闻和基本面数据，信息基础薄弱，短期获利回吐压力及情绪过热风险需关注。综合评估，机会积极但置信度较低，建议谨慎参与，控制仓位。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "002031.SZ",
+    "603667.SH",
+    "002892.SZ",
+    "300124.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.6
+  },
+  "why_now": "板块集体突破、龙头创历史新高、涨停效应明显，显示资金集中涌入，短期情绪和资金面共振。",
+  "related_signals": [
+    "sig_cc33dd52b601",
+    "sig_41c9d0ac13e2",
+    "sig_d36d819acfc5",
+    "sig_e49e84bd5c49"
+  ],
+  "inferred_events": [
+    "inferred_6577bfcb",
+    "inferred_b8029e68",
+    "inferred_b6756f02",
+    "inferred_bbf87a0c",
+    "inferred_7bdc50c0",
+    "inferred_208b710f",
+    "inferred_433bce2d",
+    "inferred_5cb215e3",
+    "inferred_6d09e1af",
+    "inferred_2702e728"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "绿的谐波盘中涨超15%创历史新高，技术面强势突破",
+    "巨轮智能2连板，五洲新春、大业股份涨停，板块内多只个股涨停，板块效应显著",
+    "恒锋工具涨超10%，资金扩散至产业链其他标的"
+  ],
+  "counter_evidence": [
+    "板块短期涨幅过大，存在获利回吐风险",
+    "缺乏明确的业绩或订单催化，主题炒作成分较大"
+  ],
+  "key_assumptions": [
+    "假设1：人形机器人商业化进展或政策催化在近期有进一步消息",
+    "假设2：市场整体风险偏好维持，不会出现系统性下跌"
+  ],
+  "uncertainty_map": [
+    "商业化落地进度不确定（影响程度：高）",
+    "短期情绪过热后回调风险（影响程度：中）",
+    "监管政策变化风险（影响程度：低）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 8,
+    "tradability": 7,
+    "risk_clarity": 5,
+    "consensus_gap": 5,
+    "signal_consistency": 8,
+    "overall_score": 6.9,
+    "confidence_score": 0.25,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益来自主题情绪持续发酵和资金接力，但风险在于缺乏基本面支撑，一旦情绪退潮可能快速回落。盈亏比约1.5:1，适合短线波段操作。",
+  "next_validation_questions": [
+    "是否有新的产业政策或大厂订单/合作公告？",
+    "板块成交量是否持续放大，资金是否继续流入？",
+    "龙头股能否维持强势，是否有新的领涨股出现？"
+  ],
+  "invalidation_conditions": [
+    "板块龙头股出现放量下跌或跌停",
+    "市场整体风险偏好急剧下降",
+    "出现利空政策或行业负面消息"
+  ],
+  "must_watch_indicators": [
+    "绿的谐波股价走势及成交量",
+    "人形机器人板块整体成交额变化",
+    "巨轮智能、五洲新春等涨停股次日表现",
+    "北向资金对板块龙头的买卖情况"
+  ],
+  "kill_switch_signals": [
+    "板块指数单日跌幅超过3%",
+    "龙头股跌破5日均线",
+    "涨停股次日大幅低开"
+  ],
+  "warnings": [
+    "注意：当前信号均为股价上涨的技术面信号，缺乏基本面或政策面催化，主题炒作风险较高",
+    "注意：历史案例显示类似技术突破主题若无订单验证，短期冲高后容易回落"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T23:22:47.348766",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_45ebc010",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

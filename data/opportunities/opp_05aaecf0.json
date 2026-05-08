@@ -1,0 +1,115 @@
+{
+  "opportunity_id": "opp_05aaecf0",
+  "opportunity_title": "新能源政策共振",
+  "opportunity_thesis": "新能源汽车购置税减免政策延续至2027年底，叠加资金从消费、地产持续流入新能源板块，形成政策与资金的双重共振。当前市场恐贪指数处于中性偏贪婪区间，情绪未过热，政策落地后仍有预期差，新能源板块有望迎来一轮中期修复行情。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "新能源ETF",
+    "新能源汽车ETF",
+    "宁德时代",
+    "比亚迪"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "政策于2026年4月24日正式发布，时效性极强；资金已连续多日从消费、地产流入新能源，形成明确的板块轮动趋势；市场对政策延续已有预期但未充分定价，当前恐贪指数未至极端贪婪，仍有上行空间。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sent_ec6c7cba",
+    "sig_30d3e00700ed",
+    "sig_1c94cfaf9bad",
+    "sig_810b1cc2cedf",
+    "sig_80c24e558ad0",
+    "sig_e552050e5030",
+    "sig_a19c232b39d7"
+  ],
+  "inferred_events": [
+    "inferred_a4629735",
+    "inferred_e5cbce80",
+    "inferred_3cafa52e",
+    "inferred_fcf2f26f",
+    "inferred_21caabb3"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "财政部、税务总局联合公告将新能源汽车购置税减免延续至2027年底，政策正式落地",
+    "资金连续多日从消费、地产流向新能源、半导体，板块轮动信号明确",
+    "历史案例显示，政策落地+资金流入共振时，板块中期上涨概率较高"
+  ],
+  "counter_evidence": [
+    "新能源板块前期已有一定涨幅，部分利好可能已被定价",
+    "恐贪指数处于中性偏贪婪区间，若情绪快速过热可能引发回调"
+  ],
+  "key_assumptions": [
+    "假设1：政策执行细节无重大变化，减免幅度和范围符合预期",
+    "假设2：宏观经济环境未出现超预期恶化，消费信心维持稳定",
+    "假设3：资金流入趋势可持续，未因其他板块出现更强势的轮动而中断"
+  ],
+  "uncertainty_map": [
+    "政策执行力度与市场预期之间的差距（影响程度：中）",
+    "宏观经济下行风险对汽车消费的压制（影响程度：中）",
+    "板块内部竞争加剧导致利润空间压缩（影响程度：低）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：政策落地+资金流入推动板块中期上涨10%-20%；潜在风险：政策已被部分定价、情绪过热导致回调，最大回撤约5%-8%。收益风险比约2:1。",
+  "next_validation_questions": [
+    "政策具体减免幅度和条件是否与市场预期一致？",
+    "新能源板块近期成交量是否持续放大？",
+    "龙头公司（比亚迪、宁德时代）是否有业绩或订单层面的正面催化？"
+  ],
+  "invalidation_conditions": [
+    "政策执行细节大幅低于预期（如减免幅度缩水）",
+    "资金从新能源板块明显流出，轮动趋势逆转",
+    "宏观经济数据超预期恶化，汽车消费大幅下滑"
+  ],
+  "must_watch_indicators": [
+    "新能源ETF成交量与价格走势",
+    "比亚迪、宁德时代等龙头股日线趋势",
+    "恐贪指数变化，若快速升至80以上需警惕过热",
+    "汽车月度销量数据"
+  ],
+  "kill_switch_signals": [
+    "新能源板块单日跌幅超过3%且放量",
+    "政策出现负面修订或取消的传闻",
+    "资金连续3日净流出新能源板块"
+  ],
+  "warnings": [
+    "注意：政策落地后短期可能出现'买预期卖事实'的调整",
+    "注意：板块轮动信号来自情绪面系统，需结合基本面验证"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:39:00.895417",
+  "batch_id": "sched_manual_test_20260508_astock_skill_d7abe571",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

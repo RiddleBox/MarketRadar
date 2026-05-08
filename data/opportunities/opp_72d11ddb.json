@@ -1,0 +1,115 @@
+{
+  "opportunity_id": "opp_72d11ddb",
+  "opportunity_title": "地产资金外溢科技",
+  "opportunity_thesis": "保利发展业绩大幅下滑（净利润同比降79%+）确认地产链基本面持续恶化，资金从地产/消费板块系统性流出，同时情绪面信号显示资金持续流入新能源和半导体板块。这一结构性轮动叠加地产利空催化剂，构成科技板块相对收益机会。当前市场尚未充分定价轮动持续性，存在预期差。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "半导体ETF",
+    "新能源ETF",
+    "科创50ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-28T00:00:00",
+    "end": "2026-06-28T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "保利发展一季报（4月27-28日）净利润同比降57%，叠加年报降79%，形成地产利空密集释放窗口。同时情绪面信号连续多日确认资金从地产/消费流向新能源/半导体，轮动趋势已形成而非单日异动。央行降准释放流动性，但地产基本面恶化使资金更倾向流入景气科技板块。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sent_ec6c7cba",
+    "sig_deee36561d85",
+    "sig_b146ce2efab7",
+    "sig_dc0079649df5",
+    "sig_54824aaef7dc",
+    "sig_77e33acaca10"
+  ],
+  "inferred_events": [
+    "inferred_5f476c22",
+    "inferred_ec77cb74",
+    "inferred_9effed66",
+    "inferred_7b8f9e5f",
+    "inferred_80f2d5af",
+    "inferred_3b8593e4"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "保利发展2025年净利润同比降79.31%，一季报净利润同比降57%，营收持续下滑，地产基本面恶化确认",
+    "情绪面信号连续7次显示资金从消费/地产流向新能源/半导体，轮动趋势明确",
+    "保利发展经营现金流同比增423%但利润大幅下滑，反映行业以价换量、利润压缩的困境",
+    "推理未来事件显示新能源/半导体业绩超预期概率85%，地产板块业绩低于预期概率90%"
+  ],
+  "counter_evidence": [
+    "保利发展销售签约金额2530亿元连续三年行业第一，销售回笼率超100%，龙头韧性可能延缓板块整体崩塌速度",
+    "保利发展成功发行85亿元定向可转债且融资成本创新低，显示优质房企仍有融资能力"
+  ],
+  "key_assumptions": [
+    "假设1：地产基本面恶化趋势持续，政策宽松不足以扭转行业利润下行周期",
+    "假设2：新能源/半导体板块业绩兑现或政策催化持续，维持资金吸引力",
+    "假设3：市场整体流动性环境（降准）不会因地产风险而急剧收紧"
+  ],
+  "uncertainty_map": [
+    "地产政策超预期宽松（如一线城市全面取消限购）可能短期提振地产板块，打断资金流出节奏（影响程度：高）",
+    "新能源/半导体板块估值已部分反映乐观预期，若业绩不及预期可能引发资金回流地产（影响程度：中）",
+    "宏观经济通缩压力加剧（CPI/PPI持续负值）可能系统性压制所有板块，轮动逻辑失效（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：科技板块相对地产的超额收益，若轮动持续1-2个月，ETF涨幅5-15%。主要风险：地产政策超预期反弹或科技板块业绩证伪，最大回撤约5-8%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "新能源/半导体板块近期是否有明确的业绩或政策催化事件？",
+    "地产板块资金流出是否已反映在ETF资金流和期权持仓数据中？",
+    "当前恐贪指数具体数值？是否处于极端区间影响轮动持续性？"
+  ],
+  "invalidation_conditions": [
+    "地产板块出现重大政策利好（如一线城市全面放松限购、房贷利率大幅下调）",
+    "新能源/半导体板块出现集体业绩低于预期或监管利空",
+    "市场整体流动性急剧收紧（如央行意外加息或信用事件）"
+  ],
+  "must_watch_indicators": [
+    "保利发展及主要房企后续月度销售数据",
+    "新能源/半导体ETF资金净流入/流出",
+    "北向资金对科技板块的配置变化",
+    "恐贪指数是否进入极度贪婪区间（≥80）"
+  ],
+  "kill_switch_signals": [
+    "地产板块单日涨幅超3%且成交量放大，显示资金回流",
+    "新能源/半导体板块连续3日资金净流出",
+    "央行明确表态不再进一步宽松"
+  ],
+  "warnings": [
+    "注意：情绪面信号为板块轮动信号，非基本面确认，需结合业绩验证",
+    "注意：保利发展经营现金流大幅增长可能被市场解读为积极信号，需关注市场情绪变化"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:04:58.866752",
+  "batch_id": "sched_signal_pipeline_20260508_105144_56a841_20260507_astock_skill_6f8eb84e",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

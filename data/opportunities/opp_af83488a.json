@@ -1,0 +1,111 @@
+{
+  "opportunity_id": "opp_af83488a",
+  "opportunity_title": "中东冲突能源避险",
+  "opportunity_thesis": "美军与伊朗在霍尔木兹海峡的军事冲突升级，包括袭击民用船只、拦截油轮、伊朗全面备战，已实质性威胁全球最关键的石油运输通道。霍尔木兹海峡日均通行约1700万桶原油，任何中断都将导致油价短期暴涨。当前市场尚未完全定价封锁风险，存在显著预期差，是短期做多原油及相关避险资产的窗口。\n\n【M13调研】机会描述基于霍尔木兹海峡军事冲突升级，但新闻分析显示市场已部分定价该风险（高盛调查），且缺乏直接冲突升级证据。能源品价格上涨反映市场反应，但波动剧烈，且消费者情绪恶化可能抑制需求。无研报和基本面数据支撑，分析基础薄弱。因此，该机会存在较大不确定性，置信度下调0.2，建议谨慎对待短期做多策略。\n\n【M13调研】霍尔木兹海峡冲突升级风险推高油价，高盛预计航运不畅持续至下半年，燃料油期货已上涨。市场尚未完全定价，存在预期差。但缺乏研报和基本面数据，且存在缓和及需求疲软风险。整体机会确定性较高，置信度小幅上调至0.1，建议关注能源期货及相关资产。",
+  "target_markets": [
+    "A_FUTURES",
+    "US_FUTURES"
+  ],
+  "target_instruments": [
+    "SC8888.SHF",
+    "CL.NYMEX",
+    "CO.LCO"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-05-22T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "5月7-8日连续发生美军袭击伊朗民用船只、拦截油轮、伊朗全面备战及零星冲突，事件密集且升级速度快。霍尔木兹海峡是原油运输命脉，冲突已从口头威胁转为实际军事行动，市场恐慌情绪尚未完全爆发，当前是布局窗口。",
+  "related_signals": [
+    "sig_4bdf8baa2d3a",
+    "sig_476a24c2a7b9",
+    "sig_b3de9b426692",
+    "sig_1fcc386acab4",
+    "sig_d045354f7ded",
+    "sig_bb9a9c6d60a1",
+    "sig_074e8c030441",
+    "sig_5589fc51bf2b"
+  ],
+  "inferred_events": [
+    "inferred_9660b3ae",
+    "inferred_a9b8d92e",
+    "inferred_ba62cf72",
+    "inferred_57455744",
+    "inferred_6a5ddb1d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军在霍尔木兹海峡袭击伊朗民用船只并造成伤亡，证实误击民用目标",
+    "美军在阿曼湾拦截两艘伊朗油轮，封锁行动升级",
+    "伊朗武装力量宣布全面备战，并已发生零星冲突",
+    "伊朗哈尔克岛附近疑似石油泄漏，该岛是伊朗关键出口枢纽"
+  ],
+  "counter_evidence": [
+    "韩国指数大跌可能更多反映半导体行业风险而非地缘因素",
+    "伊朗布什尔核电站逐步恢复运转，显示部分局势趋于平稳"
+  ],
+  "key_assumptions": [
+    "假设1：冲突不会在短期内迅速降温或达成停火",
+    "假设2：霍尔木兹海峡通行未完全中断，但风险溢价持续上升",
+    "假设3：OPEC+不会立即增产以平抑油价"
+  ],
+  "uncertainty_map": [
+    "冲突快速降温或停火谈判取得进展（影响程度：高）",
+    "美国释放战略石油储备或OPEC+增产（影响程度：中）",
+    "市场已部分定价地缘风险，油价涨幅有限（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.65,
+    "execution_readiness": 0.8
+  },
+  "risk_reward_profile": "潜在收益：若霍尔木兹海峡通行受阻或伊朗出口中断，油价短期可能上涨15-20%。潜在风险：冲突快速缓和或OPEC+增产，油价可能回落5-10%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "霍尔木兹海峡当前通行是否已受影响？是否有油轮绕行或保险费率飙升？",
+    "美国或沙特是否有紧急增产或释放储备的官方表态？",
+    "伊朗是否已实际封锁海峡或攻击美军舰艇？"
+  ],
+  "invalidation_conditions": [
+    "美伊双方宣布停火或进入谈判",
+    "霍尔木兹海峡通行完全恢复正常",
+    "OPEC+宣布大幅增产或美国释放大量战略储备"
+  ],
+  "must_watch_indicators": [
+    "布伦特原油日内价格波动及成交量",
+    "霍尔木兹海峡油轮通行数量及保险费率",
+    "美国战略石油储备（SPR）释放公告",
+    "伊朗官方关于封锁海峡的最新表态"
+  ],
+  "kill_switch_signals": [
+    "美伊双方确认停火协议",
+    "霍尔木兹海峡通行量恢复至冲突前水平",
+    "OPEC+紧急会议宣布增产超过100万桶/日"
+  ],
+  "warnings": [
+    "地缘冲突事件具有高度不确定性，停火或升级均可能快速发生",
+    "原油期货波动大，需严格控制仓位和止损"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T23:46:52.309250",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_a9169a80",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

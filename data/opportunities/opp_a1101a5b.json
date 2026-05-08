@@ -1,0 +1,106 @@
+{
+  "opportunity_id": "opp_a1101a5b",
+  "opportunity_title": "宽松预期交易",
+  "opportunity_thesis": "CPI/PPI双降与PMI连续收缩确认经济疲弱，央行已释放明确降准信号，宽松政策落地概率极高。市场对通缩的悲观定价已充分，但对政策宽松的幅度和节奏尚未完全price-in，存在预期差。当前是博弈政策宽松、做多利率敏感型资产的窗口期。\n\n【M13调研】央行降准降息组合拳超预期，政策宽松意图明确，短期流动性改善和估值修复逻辑成立，但经济基本面疲弱（PMI收缩、通缩压力）且市场已部分定价。缺乏研报、新闻和基本面数据，信息不充分，反弹需经济数据验证。风险在于经济持续恶化或政策传导不畅。综合判断为政策驱动的阶段性反弹机会，但置信度较低，需谨慎参与。\n\n【M13调研】当前机会基于经济疲弱与政策宽松预期差，央行降准信号明确，但市场已部分定价。缺乏研报、新闻和基本面数据，信息不充分，反弹需经济数据验证。风险在于经济持续恶化或政策传导不畅。综合判断为低置信度的阶段性反弹机会，建议谨慎参与。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "沪深300ETF",
+    "10年期国债期货",
+    "银行ETF"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-23T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行行长最新表态'适时降准'，叠加PMI连续3个月低于荣枯线、CPI/PPI双负，宽松政策窗口已打开。市场对通缩的悲观已持续数月，但政策信号刚刚明确，预期差最大。",
+  "related_signals": [
+    "sig_b344dde14d32",
+    "sig_e39115aa3077",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203"
+  ],
+  "inferred_events": [
+    "inferred_7bc519c4",
+    "inferred_05ef2f23",
+    "inferred_1ca7b118",
+    "inferred_294efa33",
+    "inferred_2e58b445"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut"
+  ],
+  "supporting_evidence": [
+    "央行行长明确表态将适时降准，政策信号清晰",
+    "制造业PMI连续3个月低于50荣枯线，经济下行压力确认",
+    "CPI同比下降0.3%，PPI同比下降2.7%，通缩压力加大",
+    "推理事件显示央行进一步降准/降息概率85%，时间窗口2周内"
+  ],
+  "counter_evidence": [
+    "CPI/PPI数据为12月数据，时效性较低，当前物价可能已边际改善",
+    "市场对宽松预期已有部分定价，降准落地后可能'买预期卖事实'"
+  ],
+  "key_assumptions": [
+    "假设1：央行在未来2周内宣布降准或降息",
+    "假设2：通缩压力未进一步恶化至信用收缩",
+    "假设3：外部环境（如美联储政策）不制约国内宽松空间"
+  ],
+  "uncertainty_map": [
+    "央行宽松力度不及预期（影响程度：高）",
+    "通缩向信用收缩传导，企业盈利进一步恶化（影响程度：中）",
+    "市场已提前定价宽松，利好出尽（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.45,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：降准落地后利率敏感资产（银行、地产、债券）估值修复，沪深300指数有望反弹5-8%。潜在风险：降准落空或力度极小，市场失望下跌，最大回撤约3-5%。",
+  "next_validation_questions": [
+    "央行是否在未来1-2周内正式宣布降准？",
+    "近期信贷数据是否显示企业融资需求回暖？",
+    "市场资金面（如DR007）是否已提前反映宽松预期？"
+  ],
+  "invalidation_conditions": [
+    "央行明确否认近期降准可能",
+    "PMI数据意外回升至50以上",
+    "CPI/PPI数据大幅改善，通缩预期消退"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作及政策利率",
+    "制造业PMI月度数据",
+    "CPI/PPI月度数据",
+    "DR007及银行间流动性"
+  ],
+  "kill_switch_signals": [
+    "央行官员讲话转向鹰派",
+    "市场恐慌指数飙升，流动性危机",
+    "信用利差大幅走阔"
+  ],
+  "warnings": [
+    "注意：CPI/PPI数据为12月数据，时效性较低，需关注最新月度数据",
+    "注意：市场对宽松预期已有部分定价，需警惕利好出尽风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-08T11:51:26.547234",
+  "batch_id": "sched_test_m13_integration_20260508_rss_67c4f5e8",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}
