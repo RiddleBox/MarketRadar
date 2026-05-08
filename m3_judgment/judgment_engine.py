@@ -35,6 +35,7 @@ from m3_judgment.prompt_templates import (
     STEP_B_SYSTEM_PROMPT,
     STEP_B_USER_PROMPT,
 )
+from m3_judgment.sector_knowledge import SectorKnowledgeBase
 
 # Phase 3.5: Import ImplicitSignal adapter
 try:
@@ -62,10 +63,12 @@ class JudgmentEngine:
     "不构成机会"是合法输出，返回空列表，不抛异常。
     """
 
-    def __init__(self, llm_client: Optional[LLMClient] = None, signal_store: Optional[SignalStore] = None, version: str = "v1.0"):
+    def __init__(self, llm_client: Optional[LLMClient] = None, signal_store: Optional[SignalStore] = None, version: str = "v1.0", m13_agent=None):
         self.llm = llm_client or LLMClient()
         self.signal_store = signal_store or SignalStore()
         self.version = version
+        self.m13_agent = m13_agent  # M13调研代理
+        self.sector_knowledge = SectorKnowledgeBase()  # 板块知识库
 
     def judge(
         self,
@@ -114,6 +117,39 @@ class JudgmentEngine:
         for scenario in scenarios:
             result = self._judge_opportunity(scenario, all_signals, batch_id, inferred_events, similar_cases)
             if result is not None:
+                # M13深度验证（如果生成了机会且置信度中等）
+                if self.m13_agent and hasattr(result, 'opportunity_score') and result.opportunity_score.confidence_score > 0.5:
+                    try:
+                        # 对机会中的每个标的进行深度调研
+                        for instrument in result.target_instruments[:2]:  # 限制前2个标的
+                            research = self.m13_agent.deep_research(
+                                symbol=instrument,
+                                context=result.opportunity_thesis
+                            )
+
+                            # 调整置信度
+                            result.opportunity_score.confidence_score += research.confidence_delta
+
+                            # 如果发现重大利空，大幅降低置信度
+                            if research.has_major_negative:
+                                result.opportunity_score.confidence_score *= 0.5
+                                logger.warning(
+                                    f"[M3+M13] 发现重大利空: {instrument} - {research.summary}"
+                                )
+
+                            # 添加调研摘要到机会描述
+                            if research.summary and hasattr(result, 'opportunity_thesis'):
+                                result.opportunity_thesis += f"\n\n【M13调研】{research.summary}"
+
+                            logger.info(
+                                f"[M3+M13] 深度调研完成: {instrument} "
+                                f"- 置信度调整: {result.opportunity_score.confidence_score:.2f}"
+                            )
+
+                    except Exception as e:
+                        # M13失败不影响主流程
+                        logger.warning(f"[M3+M13] 调研失败: {e}")
+
                 opportunities.append(result)
 
         logger.info(f"[M3] 判断完成 | 识别机会={len(opportunities)} 个")
@@ -252,7 +288,25 @@ class JudgmentEngine:
 
         try:
             raw = self.llm.chat_completion(messages, module_name="m3_judgment")
-            scenarios = self._parse_json_response(raw, expected_key="scenarios")
+            try:
+                scenarios = self._parse_json_response(raw, expected_key="scenarios")
+            except Exception as parse_err:
+                logger.warning(f"[M3 Step A] 首次 JSON 解析失败，尝试修复重试: {parse_err}")
+                # 重试：要求LLM返回纯JSON
+                repair_messages = messages + [
+                    {"role": "assistant", "content": raw},
+                    {
+                        "role": "user",
+                        "content": (
+                            "你上一条回复不是合法 JSON。请只返回一个 JSON 对象，格式为：\n"
+                            '{"scenarios": [{"scenario_id": "...", "description": "...", "signal_ids": [...]}]}\n'
+                            "不要 markdown、不要解释、不要前后缀文本。"
+                        ),
+                    },
+                ]
+                repaired_raw = self.llm.chat_completion(repair_messages, module_name="m3_judgment")
+                scenarios = self._parse_json_response(repaired_raw, expected_key="scenarios")
+
             logger.info(f"[M3 Step A] 识别场景数={len(scenarios)}")
             return scenarios
         except Exception as e:
@@ -453,8 +507,26 @@ class JudgmentEngine:
 
         signals_detail = self._signals_to_detail(scenario_signals)
 
+        # 提取板块/概念/公司名称，查询知识库
+        sectors = self.sector_knowledge.extract_sectors_from_signals(scenario_signals)
+        sector_stocks_info = self.sector_knowledge.get_leading_stocks(sectors, top_n=5)
+        sector_knowledge_text = self.sector_knowledge.format_for_prompt(sector_stocks_info)
+
+        # 同时提取所有affected_instruments，预先解析为股票代码（供LLM参考）
+        all_instruments = []
+        for sig in scenario_signals:
+            all_instruments.extend(sig.affected_instruments)
+        resolved_instruments = self.sector_knowledge.resolve_instruments(all_instruments)
+
+        if resolved_instruments:
+            sector_knowledge_text += f"\n\n**信号中直接提到的标的（已解析为股票代码）**: {', '.join(resolved_instruments[:10])}"
+
         # Build inference context
         inference_context = ""
+
+        # 注入板块知识库信息
+        if sector_knowledge_text:
+            inference_context += "\n\n" + sector_knowledge_text
         if inferred_events:
             inference_context += "\n\n## 推理的未来事件\n\n"
             for event in inferred_events:

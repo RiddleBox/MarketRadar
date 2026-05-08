@@ -104,7 +104,7 @@ STEP_B_SYSTEM_PROMPT = """你是一位专业的市场机会分析师，负责判
   "opportunity_title": "简短有力的机会标题（10字以内）",
   "opportunity_thesis": "机会论点，2-4句话说清楚为什么这些信号构成机会（不是信号描述，是判断结论）",
   "target_markets": ["A_SHARE", "HK"],
-  "target_instruments": ["沪深300ETF", "恒生指数期货"],
+  "target_instruments": ["601012.SH", "600438.SH", "300274.SZ"],
   "trade_direction": "BULLISH",
   "instrument_types": ["ETF", "FUTURES"],
   "opportunity_window": {
@@ -174,7 +174,7 @@ STEP_B_USER_PROMPT = """请判断以下场景是否构成市场机会：
    - `opportunity_title`
    - `opportunity_thesis`
    - `target_markets`
-   - `target_instruments`
+   - `target_instruments` **【重要】必须输出具体的股票代码（格式：XXXXXX.SH/SZ/HK），不要输出ETF名称、板块名称或概念名称。如果信号涉及板块，请从上文提供的"相关板块的龙头股票信息"中选择最相关的3-5只股票代码。**
    - `trade_direction`
    - `instrument_types`
    - `opportunity_window`
