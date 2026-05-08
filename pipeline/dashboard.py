@@ -230,6 +230,58 @@ def list_available_decision_dates() -> list[str]:
     return dates
 
 
+@st.cache_data(ttl=60)
+def load_m13_cache_stats() -> dict:
+    """M13 CacheManager — 缓存统计"""
+    try:
+        from m13_research.cache_manager import CacheManager
+        from pathlib import Path
+        cache_dir = ROOT / "data" / "m13_cache"
+        if not cache_dir.exists():
+            return {"total_cached": 0, "by_level": {}}
+        manager = CacheManager(cache_dir)
+        return manager.get_cache_stats()
+    except Exception as e:
+        return {"error": str(e), "total_cached": 0, "by_level": {}}
+
+
+@st.cache_data(ttl=60)
+def load_m13_recent_research(limit: int = 20) -> list[dict]:
+    """M13 — 最近的调研记录"""
+    try:
+        from m13_research.cache_manager import CacheManager
+        from pathlib import Path
+        cache_dir = ROOT / "data" / "m13_cache"
+        if not cache_dir.exists():
+            return []
+
+        # 读取最近的缓存文件
+        cache_files = sorted(cache_dir.glob("*.json"), key=lambda f: f.stat().st_mtime, reverse=True)[:limit]
+
+        results = []
+        for cache_file in cache_files:
+            try:
+                import json
+                data = json.loads(cache_file.read_text(encoding="utf-8"))
+                results.append({
+                    "symbol": data.get("symbol", ""),
+                    "level": data.get("research_level", ""),
+                    "triggered_by": data.get("triggered_by", ""),
+                    "summary": data.get("summary", ""),
+                    "confidence_multiplier": data.get("confidence_multiplier", 1.0),
+                    "confidence_delta": data.get("confidence_delta", 0.0),
+                    "has_major_negative": data.get("has_major_negative", False),
+                    "key_findings": data.get("key_findings", []),
+                    "timestamp": cache_file.stem.split("_")[-1] if "_" in cache_file.stem else "",
+                })
+            except Exception:
+                continue
+
+        return results
+    except Exception as e:
+        return []
+
+
 def clear_cache():
     st.cache_data.clear()
 
@@ -421,8 +473,8 @@ with st.sidebar:
 # 主页 Tabs
 # ─────────────────────────────────────────────────────────────
 
-tab_opp, tab_signals, tab_paper, tab_sentiment, tab_catch, tab_decisions, tab_system, tab_control = st.tabs([
-    "🎯 机会", "📶 信号", "📊 模拟盘", "🧠 情绪面", "🔍 补牢", "🧾 决策追踪", "⚙️ 系统", "🎛️ 工作流"
+tab_opp, tab_signals, tab_paper, tab_sentiment, tab_catch, tab_m13, tab_decisions, tab_system, tab_control = st.tabs([
+    "🎯 机会", "📶 信号", "📊 模拟盘", "🧠 情绪面", "🔍 补牢", "🔬 M13调研", "🧾 决策追踪", "⚙️ 系统", "🎛️ 工作流"
 ])
 
 
@@ -1249,7 +1301,228 @@ with tab_catch:
 
 
 # ═══════════════════════════════════════════════════════════════
-# TAB 6: 决策追踪（M12→M3 决策日志）
+# TAB 6: M13 调研监控
+# ═══════════════════════════════════════════════════════════════
+
+with tab_m13:
+    st.header("🔬 M13 Research Agent 监控")
+    st.markdown("**M13 Research Agent** — 三级调研验证，为决策提供充分信息支撑")
+
+    # 顶部统计卡片
+    m13_stats = load_m13_cache_stats()
+
+    col_s1, col_s2, col_s3, col_s4 = st.columns(4)
+
+    with col_s1:
+        st.metric("总调研数", m13_stats.get("total_cached", 0))
+
+    with col_s2:
+        by_level = m13_stats.get("by_level", {})
+        quick_count = by_level.get("QUICK", 0)
+        st.metric("快速验证", quick_count, help="M1.5触发，< 30秒")
+
+    with col_s3:
+        standard_count = by_level.get("STANDARD", 0)
+        st.metric("标准调研", standard_count, help="M12触发，1-2分钟")
+
+    with col_s4:
+        deep_count = by_level.get("DEEP", 0)
+        st.metric("深度验证", deep_count, help="M3触发，3-5分钟")
+
+    st.markdown("---")
+
+    # 手动触发调研
+    col_m1, col_m2 = st.columns([1, 2])
+
+    with col_m1:
+        st.subheader("手动调研")
+
+        manual_symbol = st.text_input("标的代码", placeholder="600000.SH", key="m13_symbol")
+        manual_context = st.text_area("调研背景", placeholder="例如：降息利好银行股", key="m13_context", height=100)
+        manual_level = st.selectbox("调研深度", ["QUICK", "STANDARD", "DEEP"], index=1, key="m13_level")
+
+        if st.button("🔍 开始调研", key="m13_manual_btn", use_container_width=True):
+            if not manual_symbol or not manual_context:
+                st.warning("请输入标的代码和调研背景")
+            else:
+                with st.spinner(f"正在进行{manual_level}调研..."):
+                    try:
+                        from m13_research.research_agent import ResearchAgent
+                        from m13_research.llm_analyzer import LLMAnalyzer
+                        from m13_research.cache_manager import CacheManager
+                        from m13_research.data_manager_adapter import get_m13_data_manager
+                        from core.llm_client import LLMClient
+                        from core.schemas import ResearchLevel
+                        from pathlib import Path
+
+                        # 初始化M13
+                        data_manager = get_m13_data_manager()
+                        llm_client = LLMClient()
+                        llm_analyzer = LLMAnalyzer(llm_client)
+                        cache_manager = CacheManager(Path("data/m13_cache"))
+
+                        agent = ResearchAgent(
+                            data_manager=data_manager,
+                            llm_analyzer=llm_analyzer,
+                            cache_manager=cache_manager
+                        )
+
+                        # 执行调研
+                        if manual_level == "QUICK":
+                            research = agent.quick_research(manual_symbol, manual_context)
+                        elif manual_level == "STANDARD":
+                            research = agent.standard_research(manual_symbol, manual_context)
+                        else:
+                            research = agent.deep_research(manual_symbol, manual_context)
+
+                        st.session_state["m13_manual_result"] = research
+                        st.success(f"调研完成! 置信度调整: {research.confidence_multiplier:.2f}x / {research.confidence_delta:+.2f}")
+                        st.rerun()
+
+                    except Exception as e:
+                        st.error(f"调研失败: {e}")
+                        import traceback
+                        st.code(traceback.format_exc())
+
+    with col_m2:
+        st.subheader("调研结果")
+
+        manual_result = st.session_state.get("m13_manual_result")
+
+        if manual_result:
+            # 显示调研结果
+            col_r1, col_r2, col_r3 = st.columns(3)
+
+            with col_r1:
+                st.metric("置信度乘数", f"{manual_result.confidence_multiplier:.2f}x")
+            with col_r2:
+                st.metric("置信度增量", f"{manual_result.confidence_delta:+.2f}")
+            with col_r3:
+                negative_icon = "⚠️" if manual_result.has_major_negative else "✅"
+                st.metric("重大利空", negative_icon)
+
+            st.markdown("**调研摘要**")
+            st.info(manual_result.summary or "无摘要")
+
+            if manual_result.key_findings:
+                st.markdown("**关键发现**")
+                for finding in manual_result.key_findings:
+                    st.write(f"- {finding}")
+
+            # 数据详情
+            with st.expander("📊 数据详情", expanded=False):
+                col_d1, col_d2 = st.columns(2)
+
+                with col_d1:
+                    st.markdown("**研报数据**")
+                    if manual_result.reports:
+                        for i, report in enumerate(manual_result.reports[:5]):
+                            st.write(f"{i+1}. {report.get('title', '无标题')}")
+                        if len(manual_result.reports) > 5:
+                            st.write(f"... 共{len(manual_result.reports)}篇")
+                    else:
+                        st.write("无研报数据")
+
+                with col_d2:
+                    st.markdown("**新闻数据**")
+                    if manual_result.news:
+                        for i, news in enumerate(manual_result.news[:5]):
+                            st.write(f"{i+1}. {news.get('title', '无标题')}")
+                        if len(manual_result.news) > 5:
+                            st.write(f"... 共{len(manual_result.news)}条")
+                    else:
+                        st.write("无新闻数据")
+
+                st.markdown("**财务数据**")
+                if manual_result.fundamentals:
+                    import json
+                    st.json(manual_result.fundamentals)
+                else:
+                    st.write("无财务数据")
+        else:
+            st.info("在左侧输入标的和背景，点击「开始调研」查看结果")
+
+    st.markdown("---")
+
+    # 最近调研记录
+    st.subheader("📋 最近调研记录")
+
+    recent_research = load_m13_recent_research(limit=20)
+
+    if not recent_research:
+        st.info("暂无调研记录")
+    else:
+        # 筛选器
+        col_f1, col_f2, col_f3 = st.columns(3)
+
+        with col_f1:
+            filter_level = st.multiselect(
+                "调研深度",
+                ["QUICK", "STANDARD", "DEEP"],
+                default=["QUICK", "STANDARD", "DEEP"],
+                key="m13_filter_level"
+            )
+
+        with col_f2:
+            filter_trigger = st.multiselect(
+                "触发来源",
+                ["M1_5", "M12", "M3", "MANUAL"],
+                default=["M1_5", "M12", "M3", "MANUAL"],
+                key="m13_filter_trigger"
+            )
+
+        with col_f3:
+            filter_negative = st.checkbox("只看利空", value=False, key="m13_filter_negative")
+
+        # 过滤
+        filtered_research = [
+            r for r in recent_research
+            if r["level"] in filter_level
+            and r["triggered_by"] in filter_trigger
+            and (not filter_negative or r["has_major_negative"])
+        ]
+
+        st.write(f"显示 {len(filtered_research)} / {len(recent_research)} 条记录")
+
+        # 显示记录
+        for i, research in enumerate(filtered_research[:20]):
+            level_icons = {"QUICK": "⚡", "STANDARD": "📊", "DEEP": "🔬"}
+            trigger_icons = {"M1_5": "🧠", "M12": "📈", "M3": "⚖️", "MANUAL": "👤"}
+
+            level_icon = level_icons.get(research["level"], "⚪")
+            trigger_icon = trigger_icons.get(research["triggered_by"], "⚪")
+            negative_icon = "⚠️" if research["has_major_negative"] else ""
+
+            with st.expander(
+                f"{level_icon} {trigger_icon} {research['symbol']} | "
+                f"×{research['confidence_multiplier']:.2f} / {research['confidence_delta']:+.2f} "
+                f"{negative_icon}",
+                expanded=(i == 0)
+            ):
+                col_a, col_b = st.columns([2, 1])
+
+                with col_a:
+                    st.markdown("**调研摘要**")
+                    st.write(research["summary"] or "无摘要")
+
+                    if research["key_findings"]:
+                        st.markdown("**关键发现**")
+                        for finding in research["key_findings"][:3]:
+                            st.write(f"- {finding}")
+
+                with col_b:
+                    st.markdown("**调研信息**")
+                    st.write(f"- 标的: {research['symbol']}")
+                    st.write(f"- 深度: {research['level']}")
+                    st.write(f"- 触发: {research['triggered_by']}")
+                    st.write(f"- 置信度乘数: {research['confidence_multiplier']:.2f}x")
+                    st.write(f"- 置信度增量: {research['confidence_delta']:+.2f}")
+                    if research["has_major_negative"]:
+                        st.warning("⚠️ 发现重大利空")
+
+
+# ═══════════════════════════════════════════════════════════════
+# TAB 7: 决策追踪（M12→M3 决策日志）
 # ═══════════════════════════════════════════════════════════════
 
 with tab_decisions:

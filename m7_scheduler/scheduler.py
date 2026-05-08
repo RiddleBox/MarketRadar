@@ -249,17 +249,25 @@ class Scheduler:
         self.register(ScheduledTask(
             name="news_collect",
             fn=self._task_news_collect,
-            description="M0 AKShare新闻拉取（东方财富/财联社）",
+            description="M0 AKShare新闻拉取（东方财富/财联社）[已弃用，使用unified_news_collect]",
             run_at_start=False,
-            **_c("news_collect", 15),
+            **_c("news_collect", 15, enabled=False),  # 禁用旧任务
         ))
 
         self.register(ScheduledTask(
             name="rss_news_collect",
             fn=self._task_rss_news_collect,
-            description="M0 RSS新闻拉取（财联社/东财/新浪/华尔街见闻）",
+            description="M0 RSS新闻拉取（财联社/东财/新浪/华尔街见闻）[已弃用，使用unified_news_collect]",
+            run_at_start=False,
+            **_c("rss_news_collect", 10, enabled=False),  # 禁用旧任务
+        ))
+
+        self.register(ScheduledTask(
+            name="unified_news_collect",
+            fn=self._task_unified_news_collect,
+            description="M0 统一新闻采集（Data Provider Architecture）：宏观新闻+个股新闻",
             run_at_start=True,
-            **_c("rss_news_collect", 10),
+            **_c("unified_news_collect", 15),  # 每15分钟一次
         ))
 
         self.register(ScheduledTask(
@@ -490,10 +498,30 @@ class Scheduler:
         from m3_judgment.judgment_engine import JudgmentEngine
         from m4_action.action_designer import ActionDesigner
 
-        llm_client = LLMClient()
+        # 初始化M13调研代理
+        try:
+            from m13_research.research_agent import ResearchAgent
+            from m13_research.llm_analyzer import LLMAnalyzer
+            from m13_research.cache_manager import CacheManager
+            from m13_research.data_manager_adapter import get_m13_data_manager
+
+            data_manager = get_m13_data_manager()
+            llm_client = LLMClient()
+            llm_analyzer = LLMAnalyzer(llm_client)
+            cache_manager = CacheManager(ROOT / "data" / "research_cache")
+            m13_agent = ResearchAgent(
+                data_manager=data_manager,
+                llm_analyzer=llm_analyzer,
+                cache_manager=cache_manager
+            )
+            logger.info("[M7/signal_pipeline] M13调研代理已初始化")
+        except Exception as e:
+            logger.warning(f"[M7/signal_pipeline] M13初始化失败，将跳过调研验证: {e}")
+            m13_agent = None
+
         decoder = SignalDecoder(llm_client=llm_client)
         store = SignalStore()
-        engine = JudgmentEngine(llm_client=llm_client)
+        engine = JudgmentEngine(llm_client=llm_client, m13_agent=m13_agent)
         designer = ActionDesigner(llm_client=llm_client)
 
         total_signals = 0
@@ -503,6 +531,11 @@ class Scheduler:
 
         for f in files:
             try:
+                # 检查文件是否仍然存在（避免并发处理）
+                if not f.exists():
+                    logger.debug(f"[M7/signal_pipeline] 文件已被处理，跳过: {f.name}")
+                    continue
+
                 raw_text = f.read_text(encoding="utf-8")
                 batch_id = f"sched_{run_id}_{f.stem}"
 
@@ -514,7 +547,10 @@ class Scheduler:
                     batch_id=batch_id,
                 )
                 if not signals:
-                    f.rename(processed_dir / f.name)
+                    try:
+                        f.rename(processed_dir / f.name)
+                    except FileNotFoundError:
+                        logger.debug(f"[M7/signal_pipeline] 文件已被移动: {f.name}")
                     continue
 
                 # M2 存储
@@ -548,11 +584,19 @@ class Scheduler:
                         encoding="utf-8",
                     )
 
-                # 处理完成后移动文件
-                f.rename(processed_dir / f.name)
-                processed_files.append(f.name)
-                logger.info(f"[M7/signal_pipeline] {f.name}: {len(signals)}信号 {len(opportunities)}机会")
+                # 处理完成后移动文件（容错处理）
+                try:
+                    if f.exists():
+                        f.rename(processed_dir / f.name)
+                        processed_files.append(f.name)
+                        logger.info(f"[M7/signal_pipeline] {f.name}: {len(signals)}信号 {len(opportunities)}机会")
+                except FileNotFoundError:
+                    logger.debug(f"[M7/signal_pipeline] 文件已被移动: {f.name}")
+                    processed_files.append(f.name)
 
+            except FileNotFoundError:
+                logger.debug(f"[M7/signal_pipeline] 文件不存在，可能已被并发处理: {f.name}")
+                continue
             except Exception as e:
                 logger.error(f"[M7/signal_pipeline] 处理文件失败 {f.name}: {e}")
                 continue
@@ -744,6 +788,73 @@ class Scheduler:
                 "fetched": 0,
                 "written": 0
             }
+
+    def _task_unified_news_collect(self, run_id: str = "") -> dict:
+        """
+        统一新闻采集任务（使用 Data Provider Architecture）
+
+        采集两类信号：
+        1. 宏观新闻（隐式推理信号）- 从 A-stock SKILL + RSS 聚合
+        2. 个股新闻（显式信号）- 从 A-stock SKILL 获取股票池新闻
+
+        替代原有的 _task_news_collect 和 _task_rss_news_collect
+        """
+        import sys
+        sys.path.insert(0, str(ROOT))
+        try:
+            from m0_collector.unified_collector import get_unified_collector
+
+            collector = get_unified_collector()
+
+            # 1. 采集宏观新闻（隐式推理信号）
+            macro_result = collector.collect_macro_news(limit=50)
+
+            # 2. 采集个股新闻（显式信号）- 从股票池读取
+            stock_symbols = self._load_stock_universe()
+            stock_result = collector.collect_stock_news(
+                symbols=stock_symbols[:20],  # 限制前20只股票
+                limit_per_stock=5
+            )
+
+            # 3. 健康检查
+            health = collector.health_check()
+
+            result = {
+                "status": "success",
+                "macro": macro_result,
+                "stock": stock_result,
+                "health": health,
+                "run_id": run_id
+            }
+
+            logger.info(
+                f"[M7/unified_news_collect] "
+                f"宏观: {macro_result.get('written', 0)}条 | "
+                f"个股: {stock_result.get('written', 0)}条 | "
+                f"健康: {sum(1 for v in health.values() if v)}/{len(health)}"
+            )
+
+            return result
+
+        except Exception as e:
+            logger.error(f"[M7/unified_news_collect] 失败: {e}", exc_info=True)
+            return {
+                "status": "failed",
+                "error": str(e)
+            }
+
+    def _load_stock_universe(self) -> List[str]:
+        """加载股票池"""
+        try:
+            universe_file = ROOT / "data" / "stock_universe.json"
+            if universe_file.exists():
+                import json
+                data = json.loads(universe_file.read_text(encoding='utf-8'))
+                return [s['symbol'] for s in data.get('stocks', [])]
+            return []
+        except Exception as e:
+            logger.warning(f"加载股票池失败: {e}")
+            return []
 
     def _task_sentiment_collect(self, run_id: str = "") -> dict:
         """

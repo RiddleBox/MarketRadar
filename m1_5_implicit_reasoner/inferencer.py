@@ -108,7 +108,8 @@ class LLMImplicitSignalInferencer(ImplicitSignalInferencer):
         self,
         llm_client,
         industry_graph,
-        prompt_template: Optional[str] = None
+        prompt_template: Optional[str] = None,
+        m13_agent=None
     ):
         """
         初始化
@@ -117,10 +118,12 @@ class LLMImplicitSignalInferencer(ImplicitSignalInferencer):
             llm_client: LLM客户端 (OpenAI/Anthropic/本地模型)
             industry_graph: 产业链图谱
             prompt_template: 推理提示词模板
+            m13_agent: M13调研代理（可选）
         """
         self.llm_client = llm_client
         self.industry_graph = industry_graph
         self.prompt_template = prompt_template or self._default_prompt_template()
+        self.m13_agent = m13_agent
 
     def infer(self, raw_data: Dict) -> List[ImplicitSignal]:
         """实现推理逻辑"""
@@ -209,6 +212,31 @@ class LLMImplicitSignalInferencer(ImplicitSignalInferencer):
                 prior_confidence=reasoning_chain.get_chain_strength(),
                 expected_impact_timeframe=industry_impact.get('affected_sectors', [{}])[0].get('timeframe', 'mid_term') if industry_impact.get('affected_sectors') else 'mid_term'
             )
+
+            # M13调研验证（如果启用）
+            if self.m13_agent and signal.prior_confidence > 0.5:
+                try:
+                    # 对每个目标标的进行快速验证
+                    for symbol in signal.target_symbols[:3]:  # 限制前3个标的
+                        research = self.m13_agent.quick_research(
+                            symbol=symbol,
+                            context=f"宏观事件: {raw_data.get('title', '')}\n推理: {signal.opportunity_description}"
+                        )
+
+                        # 调整置信度
+                        signal.prior_confidence *= research.confidence_multiplier
+
+                        # 添加调研摘要到推理链
+                        if research.summary:
+                            signal.reasoning_chain.reasoning_stages['m13_research'] = research.summary
+
+                        # 如果发现重大利空，降低置信度
+                        if research.has_major_negative:
+                            signal.prior_confidence *= 0.5
+
+                except Exception as e:
+                    # M13失败不影响主流程
+                    print(f"M13调研失败: {e}")
 
             implicit_signals.append(signal)
 

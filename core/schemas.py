@@ -1245,3 +1245,139 @@ class RetroOpportunity(BaseModel):
         default_factory=list,
         description="M12推荐的止损策略候选（M4最终决策）"
     )
+
+
+# ============================================================
+# M13 Research Agent Models
+# ============================================================
+
+class ResearchLevel(str, Enum):
+    """调研深度级别"""
+    QUICK = "quick"           # Level 1: 快速验证（< 30秒）
+    STANDARD = "standard"     # Level 2: 标准调研（1-2分钟）
+    DEEP = "deep"             # Level 3: 深度调研（3-5分钟）
+
+
+class ResearchTrigger(str, Enum):
+    """调研触发来源"""
+    M1_5 = "m1_5"            # M1.5隐式推理后
+    M12 = "m12"              # M12反向溯源后
+    M3 = "m3"                # M3机会判断后
+    MANUAL = "manual"        # 手动触发
+
+
+class ResearchReport(BaseModel):
+    """
+    调研报告 — M13的核心输出。
+
+    包含原始数据、LLM分析结果和置信度调整建议。
+    """
+    # 基本信息
+    symbol: str = Field(..., description="股票代码")
+    research_level: ResearchLevel = Field(..., description="调研深度级别")
+    triggered_by: ResearchTrigger = Field(..., description="触发来源")
+
+    # 原始数据
+    reports: List[dict] = Field(
+        default_factory=list,
+        description="研报列表"
+    )
+    news: List[dict] = Field(
+        default_factory=list,
+        description="新闻列表"
+    )
+    fundamentals: dict = Field(
+        default_factory=dict,
+        description="基本面数据"
+    )
+    quote: dict = Field(
+        default_factory=dict,
+        description="行情数据"
+    )
+    semantic_results: List[dict] = Field(
+        default_factory=list,
+        description="语义搜索结果"
+    )
+
+    # LLM分析结果
+    summary: str = Field(
+        default="",
+        description="调研摘要（200字内）"
+    )
+    key_findings: List[str] = Field(
+        default_factory=list,
+        description="关键发现（3-5条）"
+    )
+    risk_factors: List[str] = Field(
+        default_factory=list,
+        description="风险因素（2-3条）"
+    )
+    confidence_assessment: str = Field(
+        default="",
+        description="置信度评估说明"
+    )
+
+    # 置信度调整
+    confidence_multiplier: float = Field(
+        default=1.0,
+        ge=0.5,
+        le=2.0,
+        description="置信度乘数（0.5-2.0）"
+    )
+    confidence_delta: float = Field(
+        default=0.0,
+        ge=-0.3,
+        le=0.3,
+        description="置信度增量（-0.3 ~ +0.3）"
+    )
+    has_major_negative: bool = Field(
+        default=False,
+        description="是否发现重大利空"
+    )
+
+    # 元数据
+    research_time: datetime = Field(
+        default_factory=datetime.now,
+        description="调研时间"
+    )
+    data_sources: List[str] = Field(
+        default_factory=list,
+        description="数据来源列表"
+    )
+    cache_hit: bool = Field(
+        default=False,
+        description="是否命中缓存"
+    )
+    timeout: bool = Field(
+        default=False,
+        description="是否超时"
+    )
+    partial_result: bool = Field(
+        default=False,
+        description="是否部分结果（某些数据源失败）"
+    )
+
+
+class ResearchContext(BaseModel):
+    """
+    调研上下文 — M13的输入参数。
+
+    描述调研的目标和背景信息。
+    """
+    symbol: str = Field(..., description="股票代码")
+    opportunity_context: str = Field(
+        ...,
+        description="机会上下文描述，如'价格异动+5%'或'降息推理'"
+    )
+    research_level: ResearchLevel = Field(
+        default=ResearchLevel.STANDARD,
+        description="调研深度级别"
+    )
+    triggered_by: ResearchTrigger = Field(
+        ...,
+        description="触发来源"
+    )
+    timeout_seconds: int = Field(
+        default=120,
+        description="超时时间（秒）"
+    )

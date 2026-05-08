@@ -72,9 +72,11 @@ class OpportunityCatcherEngine:
         llm_client=None,
         m3_engine=None,
         decision_log: DecisionLog = None,
+        m13_agent=None,
     ):
         self.anomaly_detector = anomaly_detector or AnomalyDetector()
         self.llm_client = llm_client
+        self.m13_agent = m13_agent  # M13调研代理
 
         # M2 SignalStore：存储溯源信号，供M3查询历史
         self.signal_store = signal_store
@@ -442,6 +444,33 @@ class OpportunityCatcherEngine:
         注意：这是弱判断，优先级和评分由硬编码规则决定，
         不如M3的LLM判断准确。M3可用时应优先使用M3的结果。
         """
+
+        # M13调研验证（如果溯源置信度不够高）
+        if self.m13_agent and causation.confidence < 0.7:
+            try:
+                research = self.m13_agent.standard_research(
+                    symbol=anomaly.instrument,
+                    context=f"价格异动{anomaly.price_change_pct:+.1f}% ({anomaly.anomaly_type.value})"
+                )
+
+                # 调整溯源置信度
+                causation.confidence += research.confidence_delta
+
+                # 如果发现重大利空，降低置信度
+                if research.has_major_negative:
+                    causation.confidence *= 0.5
+                    logger.warning(
+                        f"[M12+M13] 发现重大利空: {anomaly.instrument} - {research.summary}"
+                    )
+
+                logger.info(
+                    f"[M12+M13] 调研完成: {anomaly.instrument} "
+                    f"- 置信度调整: {causation.confidence:.2f}"
+                )
+
+            except Exception as e:
+                # M13失败不影响主流程
+                logger.warning(f"[M12+M13] 调研失败: {e}")
 
         # 优先级取决于趋势阶段
         if trend.stage == TrendStage.EARLY:

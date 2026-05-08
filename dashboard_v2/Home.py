@@ -84,6 +84,32 @@ with col4:
     scheduler_status = "🟢 运行中" if stats["scheduler_running"] else "🔴 已停止"
     st.metric("⚙️ 调度器", scheduler_status)
 
+# ── 信号类型分布 ──
+st.markdown("##### 📊 信号类型分布（最近7天）")
+
+from dashboard_v2.utils.data_loader import load_signal_stats
+signal_stats = load_signal_stats()
+by_type = signal_stats.get("by_signal_type", {})
+
+if by_type:
+    col_sig1, col_sig2, col_sig3, col_sig4, col_sig5, col_sig6 = st.columns(6)
+
+    type_labels = {
+        "sentiment": ("情绪", "💭"),
+        "macro": ("宏观", "🌍"),
+        "event_driven": ("事件", "⚡"),
+        "industry": ("行业", "🏭"),
+        "policy": ("政策", "📜"),
+        "technical": ("技术", "📈"),
+    }
+
+    cols = [col_sig1, col_sig2, col_sig3, col_sig4, col_sig5, col_sig6]
+    for idx, (sig_type, count) in enumerate(sorted(by_type.items(), key=lambda x: -x[1])):
+        if idx < 6:
+            label, emoji = type_labels.get(sig_type, (sig_type, "📊"))
+            with cols[idx]:
+                st.metric(f"{emoji} {label}", count)
+
 st.divider()
 
 # ── OpenD 控制 ──

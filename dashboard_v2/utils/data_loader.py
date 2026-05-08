@@ -67,7 +67,8 @@ def load_opportunities() -> list[dict]:
             return []
 
         opps = []
-        for f in sorted(opp_dir.glob("opportunities_*.json"), reverse=True)[:20]:
+        # 修复：文件名格式是 opp_*.json，不是 opportunities_*.json
+        for f in sorted(opp_dir.glob("opp_*.json"), key=lambda x: x.stat().st_mtime, reverse=True)[:100]:
             try:
                 data = json.loads(f.read_text(encoding="utf-8"))
                 if isinstance(data, list):
@@ -270,6 +271,119 @@ def load_decision_records(date_str: str | None = None) -> list[dict]:
         return data if isinstance(data, list) else []
     except Exception:
         return []
+
+
+# ═══════════════════════════════════════════════════════════════
+# M13调研数据
+# ═══════════════════════════════════════════════════════════════
+
+@st.cache_data(ttl=30)
+def load_m13_cache_stats() -> dict:
+    """加载M13缓存统计"""
+    try:
+        cache_dir = ROOT / "data" / "research_cache"
+        if not cache_dir.exists():
+            return {"total": 0, "valid": 0, "expired": 0}
+
+        from m13_research.cache_manager import CacheManager
+        cache_mgr = CacheManager(str(cache_dir))
+
+        total = 0
+        valid = 0
+        expired = 0
+        now = datetime.now()
+
+        for cache_file in cache_dir.glob("*.json"):
+            total += 1
+            try:
+                data = json.loads(cache_file.read_text(encoding="utf-8"))
+                cached_at = datetime.fromisoformat(data.get("cached_at", ""))
+                ttl_hours = data.get("ttl_hours", 24)
+                if (now - cached_at).total_seconds() / 3600 < ttl_hours:
+                    valid += 1
+                else:
+                    expired += 1
+            except Exception:
+                expired += 1
+
+        return {"total": total, "valid": valid, "expired": expired}
+    except Exception as e:
+        st.error(f"加载M13缓存统计失败: {e}")
+        return {"total": 0, "valid": 0, "expired": 0}
+
+
+@st.cache_data(ttl=30)
+def load_m13_recent_research(limit: int = 20) -> list[dict]:
+    """加载最近的调研记录"""
+    try:
+        cache_dir = ROOT / "data" / "research_cache"
+        if not cache_dir.exists():
+            return []
+
+        records = []
+        for cache_file in sorted(cache_dir.glob("*.json"), key=lambda f: f.stat().st_mtime, reverse=True)[:limit]:
+            try:
+                data = json.loads(cache_file.read_text(encoding="utf-8"))
+                records.append({
+                    "symbol": data.get("symbol", ""),
+                    "level": data.get("level", ""),
+                    "cached_at": data.get("cached_at", ""),
+                    "ttl_hours": data.get("ttl_hours", 24),
+                    "confidence_delta": data.get("result", {}).get("confidence_delta", 0),
+                    "key_findings": data.get("result", {}).get("key_findings", []),
+                })
+            except Exception:
+                continue
+
+        return records
+    except Exception as e:
+        st.error(f"加载M13调研记录失败: {e}")
+        return []
+
+
+@st.cache_data(ttl=60)
+def load_m13_stats() -> dict:
+    """加载M13调研统计"""
+    try:
+        cache_dir = ROOT / "data" / "research_cache"
+        if not cache_dir.exists():
+            return {
+                "total_research": 0,
+                "by_level": {"QUICK": 0, "STANDARD": 0, "DEEP": 0},
+                "avg_confidence_delta": 0.0,
+            }
+
+        total = 0
+        by_level = {"QUICK": 0, "STANDARD": 0, "DEEP": 0}
+        confidence_deltas = []
+
+        for cache_file in cache_dir.glob("*.json"):
+            try:
+                data = json.loads(cache_file.read_text(encoding="utf-8"))
+                total += 1
+                level = data.get("level", "STANDARD")
+                by_level[level] = by_level.get(level, 0) + 1
+
+                delta = data.get("result", {}).get("confidence_delta", 0)
+                if delta != 0:
+                    confidence_deltas.append(delta)
+            except Exception:
+                continue
+
+        avg_delta = sum(confidence_deltas) / len(confidence_deltas) if confidence_deltas else 0.0
+
+        return {
+            "total_research": total,
+            "by_level": by_level,
+            "avg_confidence_delta": round(avg_delta, 3),
+        }
+    except Exception as e:
+        st.error(f"加载M13统计失败: {e}")
+        return {
+            "total_research": 0,
+            "by_level": {"QUICK": 0, "STANDARD": 0, "DEEP": 0},
+            "avg_confidence_delta": 0.0,
+        }
 
 
 # ═══════════════════════════════════════════════════════════════
