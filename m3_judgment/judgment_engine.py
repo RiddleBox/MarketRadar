@@ -137,6 +137,9 @@ class JudgmentEngine:
                                     f"[M3+M13] 发现重大利空: {instrument} - {research.summary}"
                                 )
 
+                            # 确保置信度在有效范围内 [0, 1]
+                            result.opportunity_score.confidence_score = max(0.0, min(1.0, result.opportunity_score.confidence_score))
+
                             # 添加调研摘要到机会描述
                             if research.summary and hasattr(result, 'opportunity_thesis'):
                                 result.opportunity_thesis += f"\n\n【M13调研】{research.summary}"

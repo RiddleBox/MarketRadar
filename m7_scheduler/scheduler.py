@@ -578,6 +578,13 @@ class Scheduler:
                 action_plans_dir = ROOT / "data" / "action_plans"
                 action_plans_dir.mkdir(parents=True, exist_ok=True)
 
+                # M9 模拟交易（仅对 position/urgent 级别）
+                from m9_paper_trader.paper_trader import PaperTrader
+                from m9_paper_trader.feed_factory import get_factory
+
+                trader = PaperTrader()
+                total_positions_opened = 0
+
                 for opp in opportunities:
                     plan = designer.design(opp)
                     total_plans += 1
@@ -596,6 +603,43 @@ class Scheduler:
                         encoding="utf-8",
                     )
                     logger.info(f"[M7/signal_pipeline] 保存行动计划: {plan_file.name}")
+
+                    # 如果是 position 或 urgent 级别，尝试开仓
+                    if opp.priority_level.value in ['position', 'urgent']:
+                        try:
+                            # 获取实时价格
+                            if not opp.target_instruments:
+                                logger.warning(f"[M7/signal_pipeline] {opp.opportunity_id} 无标的，跳过开仓")
+                                continue
+
+                            instrument = opp.target_instruments[0]
+                            market = opp.target_markets[0] if opp.target_markets else Market.A_SHARE
+
+                            # 获取价格源
+                            factory = get_factory()
+                            feed = factory.get_feed(market)
+                            current_price = feed.get_current_price(instrument)
+
+                            if current_price is None:
+                                logger.warning(f"[M7/signal_pipeline] {instrument} 无法获取价格，跳过开仓")
+                                continue
+
+                            # 执行开仓
+                            position = trader.open_from_plan(
+                                action_plan=plan,
+                                entry_price=current_price,
+                                notes=f"Auto-open from signal_pipeline: {opp.opportunity_title}"
+                            )
+
+                            total_positions_opened += 1
+                            logger.info(
+                                f"[M7/signal_pipeline] M9开仓成功: {position.position_id} | "
+                                f"{instrument} @ {current_price} | {opp.priority_level.value}"
+                            )
+
+                        except Exception as e:
+                            logger.error(f"[M7/signal_pipeline] M9开仓失败 {opp.opportunity_id}: {e}")
+                            continue
 
                 # 处理完成后移动文件（容错处理）
                 try:
@@ -619,6 +663,7 @@ class Scheduler:
             "total_signals": total_signals,
             "total_opportunities": total_opps,
             "total_plans": total_plans,
+            "total_positions_opened": total_positions_opened,
             "files": processed_files,
         }
 
