@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_ff469e0c",
+  "opportunity_title": "中东冲突推能源避险",
+  "opportunity_thesis": "美军在霍尔木兹海峡袭击伊朗民用船只并拦截油轮，伊朗武装力量全面备战，双方发生零星冲突，中东停火状态面临破裂。此事件直接威胁全球约30%石油运输的霍尔木兹海峡通行安全，叠加伊朗哈尔克岛疑似石油泄漏，短期将推高原油价格并引发全球避险情绪。A股能源板块（煤炭、石油）及避险资产（黄金）将直接受益，且进口煤价上涨已导致企业转向国内采购，形成结构性利好。\n\n【M13调研】机会描述与新闻事实完全脱节：最近20条新闻均为A股公司日常公告，无任何关于霍尔木兹海峡冲突、伊朗油轮拦截或能源供应中断的报道。基本面数据和行业趋势搜索无结果，缺乏第三方验证。市场未出现恐慌或避险情绪，燃料油夜盘仅小幅上涨。因此，该机会缺乏事实基础，风险极高，建议规避。\n\n【M13调研】该机会描述的地缘冲突事件与新闻事实完全不符，最近20条新闻均为A股公司日常公告，无任何相关报道。基本面数据和行业趋势搜索无结果，市场未出现恐慌或避险情绪，燃料油夜盘仅小幅上涨。研报分析无相关报告。因此，该机会缺乏事实基础，风险极高，建议规避。置信度大幅下调。",
+  "target_markets": [
+    "A_SHARE",
+    "HK",
+    "US"
+  ],
+  "target_instruments": [
+    "601857.SH",
+    "600028.SH",
+    "600188.SH",
+    "601088.SH",
+    "600547.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "5月7-8日连续发生美军袭击伊朗民用船只、拦截油轮、双方零星冲突及伊朗全面备战声明，事件密集爆发且仍在升级，霍尔木兹海峡通行风险急剧上升，市场尚未完全定价。历史案例显示地缘风险爆发后15天内是避险交易窗口，当前时点正是入场时机。",
+  "related_signals": [
+    "sig_0806bfd8639e",
+    "sig_4bdf8baa2d3a",
+    "sig_b3de9b426692",
+    "sig_992644367a0a",
+    "sig_82a8c461a4b6",
+    "sig_bb9a9c6d60a1",
+    "sig_2201d7544cad"
+  ],
+  "inferred_events": [
+    "inferred_71ebdaff",
+    "inferred_6a71cae7",
+    "inferred_6a29c8b9",
+    "inferred_0c65b172",
+    "inferred_c428571e"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军5月7日袭击伊朗民用船只致10伤5失踪，5月8日拦截两艘伊朗油轮，冲突持续升级",
+    "伊朗武装力量宣布全面备战，双方在霍尔木兹海峡发生零星冲突，停火状态面临破裂",
+    "伊朗哈尔克岛附近疑似石油泄漏，该岛是伊朗关键石油出口枢纽",
+    "进口煤价上涨已导致企业转向国内采购，国内煤炭需求结构性增加"
+  ],
+  "counter_evidence": [
+    "冲突可能迅速降温，美伊双方均无全面战争意愿，风险溢价可能快速消退",
+    "全球原油库存仍处高位，OPEC+有增产能力，油价上行空间受限"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡通行受阻或中断持续至少1周",
+    "假设2：伊朗不会立即采取大规模报复行动导致全面战争",
+    "假设3：全球避险情绪不会引发系统性流动性危机"
+  ],
+  "uncertainty_map": [
+    "冲突升级为全面战争（影响程度：高）",
+    "国际社会迅速调停使局势降温（影响程度：中）",
+    "OPEC+宣布增产以平抑油价（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": -0.03749999999999999,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：油价短期上涨10-20%，A股能源板块上涨5-15%，黄金上涨3-8%。潜在风险：冲突迅速降温导致风险溢价消退，油价回吐涨幅，板块回调3-5%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "霍尔木兹海峡当前通行是否已实际受阻？",
+    "WTI/布伦特原油期货价格是否已突破近期阻力位？",
+    "A股能源板块（煤炭、石油）今日开盘量能是否显著放大？"
+  ],
+  "invalidation_conditions": [
+    "美伊双方宣布停火或谈判",
+    "霍尔木兹海峡恢复正常通行",
+    "OPEC+宣布大规模增产"
+  ],
+  "must_watch_indicators": [
+    "WTI原油期货价格及持仓量变化",
+    "霍尔木兹海峡通行状态（实时航运数据）",
+    "A股能源板块（煤炭、石油）成交量",
+    "黄金ETF持仓量变化"
+  ],
+  "kill_switch_signals": [
+    "冲突双方宣布停火",
+    "原油价格单日暴跌超5%",
+    "A股能源板块放量滞涨"
+  ],
+  "warnings": [
+    "注意：信号来源均为新闻媒体，部分信息未经官方完全证实",
+    "地缘风险交易窗口短，需设置严格止损"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T01:31:14.194095",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_20260508_astock_skill_49216636",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

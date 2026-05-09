@@ -1,0 +1,115 @@
+{
+  "opportunity_id": "opp_a1718bcf",
+  "opportunity_title": "金融业绩改善机会",
+  "opportunity_thesis": "7家地方银行一季报营收净利双增，广发证券净利润同比增70.73%，金融板块业绩改善信号明确。保利发展业绩大幅下滑但现金流改善，地产链分化加剧，资金有望从地产转向金融板块。当前市场情绪中性偏乐观，金融板块估值修复空间大，且央行降准释放流动性，构成结构性机会。\n\n【M13调研】金融板块一季报业绩超预期，广发证券净利润同比增70.73%，多家银行券商营收净利润双增，基本面改善。当前市场预期偏低，叠加降准宽松预期，存在估值修复机会。但缺乏研报和行业趋势分析，新闻中金融相关报道仅2条且时效性不足，地缘政治风险可能扰动市场。综合评估，机会有一定逻辑但支撑较弱，建议谨慎参与，等待更多催化剂。\n\n【M13调研】机会描述基于经济疲软和央行超预期宽松，形成短期交易窗口，逻辑成立。但缺乏研报、行业趋势和基本面数据支持，新闻无相关事件，信息不充分。无重大利空，但置信度偏低，建议谨慎参与，关注后续经济数据验证。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "000776.SZ",
+    "600036.SH",
+    "601166.SH",
+    "601398.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-28T00:00:00",
+    "end": "2026-06-28T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "一季报密集披露期，银行和券商业绩超预期信号集中释放，市场尚未充分定价。央行降准释放流动性，金融板块直接受益。地产链持续恶化，资金轮动至金融板块的窗口已打开。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sig_f5dc287cf712",
+    "sig_898af08751f6",
+    "sig_deee36561d85",
+    "sig_b146ce2efab7",
+    "sig_dc0079649df5",
+    "sig_77e33acaca10"
+  ],
+  "inferred_events": [
+    "inferred_ff7f84a6",
+    "inferred_6f8263c2",
+    "inferred_34cdaec5",
+    "inferred_5fe2cc82",
+    "inferred_72a3ee8d",
+    "inferred_44eb1eef",
+    "inferred_680c3fc5",
+    "inferred_6546eb19",
+    "inferred_407e5755",
+    "inferred_1af7bb1a"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "7家地方银行一季报营收净利全部正增长，资产质量平稳",
+    "广发证券一季度净利润同比增70.73%，营收增64.33%",
+    "央行降准0.5个百分点，释放流动性利好金融板块",
+    "保利发展净利润同比降57%，地产链资金流出压力增大"
+  ],
+  "counter_evidence": [
+    "金融板块估值修复可能已被部分定价，预期差有限",
+    "宏观经济通缩压力持续，可能拖累银行资产质量"
+  ],
+  "key_assumptions": [
+    "假设1：一季报业绩改善趋势可持续，非一次性因素",
+    "假设2：地产链资金流出将流入金融板块，而非其他板块",
+    "假设3：央行宽松政策持续，不会快速收紧"
+  ],
+  "uncertainty_map": [
+    "宏观经济通缩风险（影响程度：高）",
+    "金融监管政策变化（影响程度：中）",
+    "地缘政治冲突升级导致市场避险（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.7,
+    "confidence_score": 0.52,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：金融板块估值修复10-15%，叠加业绩增长驱动。风险：宏观经济恶化导致银行坏账上升，或市场风格切换至其他板块。收益风险比约2:1。",
+  "next_validation_questions": [
+    "其他未披露一季报的银行和券商是否也呈现业绩改善？",
+    "北向资金近期是否持续流入金融板块？",
+    "地产链资金流出是否已体现在金融板块成交量上？"
+  ],
+  "invalidation_conditions": [
+    "后续披露的金融股一季报大面积不及预期",
+    "央行政策转向收紧",
+    "地产链出现超预期利好，资金回流地产"
+  ],
+  "must_watch_indicators": [
+    "金融板块成交量变化",
+    "北向资金流向",
+    "银行间市场利率",
+    "地产板块指数走势"
+  ],
+  "kill_switch_signals": [
+    "金融板块出现集体业绩预警",
+    "宏观经济数据大幅恶化",
+    "地缘政治冲突导致系统性风险"
+  ],
+  "warnings": [
+    "注意：信号来源均为新闻，非官方公告，需核实数据准确性",
+    "注意：金融板块体量大，短期爆发力可能有限，需耐心持有"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T01:23:01.138989",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_20260508_astock_skill_1376cd04",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

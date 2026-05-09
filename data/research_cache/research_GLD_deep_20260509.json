@@ -1,0 +1,305 @@
+{
+  "symbol": "GLD",
+  "research_level": "deep",
+  "triggered_by": "m3",
+  "reports": [],
+  "news": [
+    {
+      "title": "【环球财经】部分央行抛售引发市场震荡 金市多空博弈加剧",
+      "content": "3月1日，全球最大的黄金ETF“SPDR Gold Trust（GLD）”持仓量为1100.06吨；而到3月31日，持仓量则降至1047.28吨。这意味着，3月份该ETF基金累计净减持52.78吨，创下2013年4月份以来的单月最大减持纪录。 央行抛售黄金影响几何？",
+      "source": "新华财经",
+      "published_at": "2026-04-07 18:44:30",
+      "url": "http://finance.eastmoney.com/a/202604073696811256.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "上海市市监局：电竞椅、电动桌具等115批次产品抽检不合格，涉多个网络平台销售品牌",
+      "content": "红星美凯龙全球家居1号店 单杆 HDC8603 2020-09-03 惠达卫浴股份有限公司 29 上海荼彩卫浴有限公司 爱联陶瓷建材城 纬固防爆损上水软管 FBA-40CM 2024.8.12 柏瑞润兴(北京)科技发展有限公司 30 上海荼彩卫浴有限公司 爱联陶瓷建材城 潜水艇卫浴挂件单层网篮 GLD1M",
+      "source": "蓝鲸财经",
+      "published_at": "2026-03-31 17:02:43",
+      "url": "http://finance.eastmoney.com/a/202603313690475093.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "以色列总理：继续全力空袭！大宗商品ETF遭遇撤资潮",
+      "content": "全球最大的黄金ETF——SPDR Gold Shares（GLD）遭遇了超过70亿美元的巨额赎回，白银ETF也未能幸免，流出资金约14亿美元。",
+      "source": "期货日报",
+      "published_at": "2026-03-26 08:19:23",
+      "url": "http://finance.eastmoney.com/a/202603263684801056.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "“高台跳水”！黄金、白银骤变！流动性风暴 敲响风险警钟",
+      "content": "法国兴业银行在最新报告中对GLD和现货金价的关联作了量化分析：自2010年以来，每100吨黄金流入黄金ETF，金价就会上涨3.6%。自2025年10月以来，这一涨幅贡献已达到9.2%。",
+      "source": "券商中国",
+      "published_at": "2026-02-02 16:30:50",
+      "url": "http://finance.eastmoney.com/a/202602023638703124.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "黄金白银一跳惊魂 流动性风暴敲响警钟",
+      "content": "法国兴业银行在最新报告中对GLD和现货金价的关联作了量化分析：自2010年以来，每100吨黄金流入黄金ETF，金价就会上涨3.6%。自2025年10月以来，这一涨幅贡献已达到9.2%。",
+      "source": "证券时报",
+      "published_at": "2026-02-02 02:21:32",
+      "url": "http://finance.eastmoney.com/a/202602023637990641.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "特朗普大动作，金价30小时暴跌670美元！此前两周狂飙21%，也与他有关！后市怎么走？各大机构表态，专家解读",
+      "content": "全球最大的黄金ETF——SPDR Gold Shares（GLD）是关键渠道。 自2004年11月上市以来，GLD的持仓规模就成为市场的重要观测指标。截至2026年1月29日，GLD的黄金托管量为1086.53吨，对应资产管理规模（AUM）接近1887亿美元。",
+      "source": "每日经济新闻",
+      "published_at": "2026-01-31 16:43:52",
+      "url": "http://finance.eastmoney.com/a/202601313637804342.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "2026开年黄金大变局，谁是推手？美国联邦政府多个部门陷入“技术性停摆”；马斯克大动作：SpaceX考虑与特斯拉或xAI合并 | 一周国际财经",
+      "content": "全球最大的黄金ETF——SPDR Gold Shares（GLD）是关键渠道。 自2004年11月上市以来，GLD的持仓规模就成为市场的重要观测指标。截至2026年1月29日，GLD的黄金托管量为1086.53吨，对应资产管理规模（AUM）接近1887亿美元。",
+      "source": "每日经济新闻",
+      "published_at": "2026-01-31 15:11:30",
+      "url": "http://finance.eastmoney.com/a/202601313637761337.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "现货黄金升破5200美元！芝商所上调白银、铂金、钯金保证金比例",
+      "content": "而这一切的结果是美元快速贬值，黄金加速上涨： 瑞银交易员注意到，伴随着周二美元指数大跌，现货黄金价格的大幅走高，市场上成交了一笔巨额黄金挂钩权益资产GLD的大宗交易。",
+      "source": "财联社",
+      "published_at": "2026-01-28 11:11:03",
+      "url": "http://finance.eastmoney.com/a/202601283633383024.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "全球央行购金热未减 国际机构继续看好明年金价",
+      "content": "同时，全球主要黄金ETF（如GLD、IAU）的持仓总量，在2025年呈现“先流出后企稳”的态势，进入第四季度，随着全球宏观经济不确定性增加，流出速度已大幅放缓，甚至出现单周净流入。",
+      "source": "证券时报",
+      "published_at": "2025-12-08 07:01:32",
+      "url": "http://finance.eastmoney.com/a/202512083584685266.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "黄金！黄金！央行，连续13个月增持！",
+      "content": "同时，全球主要黄金ETF（如GLD、IAU）的持仓总量，在2025年呈现“先流出后企稳”的态势，进入第四季度，随着宏观不确定性增加，流出速度已大幅放缓，甚至出现单周净流入。",
+      "source": "券商中国",
+      "published_at": "2025-12-07 12:56:11",
+      "url": "http://finance.eastmoney.com/a/202512073584553635.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "俄方同意特朗普提出的停火和交换战俘方案",
+      "content": "【俄方同意特朗普提出的停火和交换战俘方案】俄罗斯总统助理乌沙科夫8日晚回应说，俄罗斯同意并支持美国总统特朗普提出的将俄乌停火延长到11日，以及与乌克兰相互交换1000名战俘的方案。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 03:03:06",
+      "url": "https://finance.eastmoney.com/a/202605093731924567.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "人工智能芯片制造商Cerebras据悉计划周一提高IPO发行价",
+      "content": "人工智能芯片制造商Cerebras据悉计划周一提高IPO发行价。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 03:00:49",
+      "url": "https://finance.eastmoney.com/a/202605093731924320.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "美股存储股涨幅扩大 美光科技涨超15%续创历史新高",
+      "content": "【美股存储股涨幅扩大 美光科技涨超15%续创历史新高】美股存储股涨幅扩大，美光科技涨超15%，续创历史新高。人工智能的高速发展导致对高带宽存储芯片（HBM）的需求呈爆发式增长，推动行业进入新一轮超级周期。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 02:55:28",
+      "url": "https://finance.eastmoney.com/a/202605093731924217.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "谷歌旗下Isomorphic Labs将筹集20亿美元新资金",
+      "content": "谷歌旗下Isomorphic Labs将筹集20亿美元新资金。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 02:41:43",
+      "url": "https://finance.eastmoney.com/a/202605093731923347.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "美联储古尔斯比：通胀方面的积极进展将导致降息 但目前尚未出现",
+      "content": "【美联储古尔斯比：通胀方面的积极进展将导致降息 但目前尚未出现】美联储古尔斯比表示，通胀方面的积极进展将导致降息，但目前尚未出现；通胀是“当前的热点话题”。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 02:36:02",
+      "url": "https://finance.eastmoney.com/a/202605093731923189.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "国际原油期货结算价收涨",
+      "content": "国际原油期货结算价收涨。WTI原油期货6月合约涨0.64%，报95.42美元/桶。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 02:34:23",
+      "url": "https://finance.eastmoney.com/a/202605093731922883.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "特朗普称俄乌9日起停火三天并交换战俘",
+      "content": "【特朗普称俄乌9日起停火三天并交换战俘】美国总统特朗普8日在社交媒体发文称，俄罗斯和乌克兰将从9日开始停火三天，双方还将相互交换1000名战俘。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 02:32:34",
+      "url": "https://finance.eastmoney.com/a/202605093731922752.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "苏丹武装部队总司令拒绝与快速支援部队谈判",
+      "content": "【苏丹武装部队总司令拒绝与快速支援部队谈判】苏丹主权委员会主席兼武装部队总司令布尔汉当地时间5月8日表示，苏丹武装部队拒绝与苏丹快速支援部队进行任何形式的谈判。布尔汉强调，苏丹武装部队将继续对其展开军事打击，不会与其进行任何谈判或达成和解。布尔汉还表示，苏丹当前危机的解决应由苏丹人民决定，任何外部势力都无权强加不符合苏丹人民意愿的解决方案。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 02:17:30",
+      "url": "https://finance.eastmoney.com/a/202605093731922152.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "巴西一所学校发生自制炸弹爆炸 已致10名学生受伤",
+      "content": "【巴西一所学校发生自制炸弹爆炸 已致10名学生受伤】当地时间5月8日上午，巴西里约热内卢州一所公立学校发生自制炸弹爆炸事件，造成至少10名学生受伤。学校宣布当天停课，拆弹小组已抵达现场。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 02:00:19",
+      "url": "https://finance.eastmoney.com/a/202605093731922678.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "伊朗哈尔克岛附近疑现大量原油泄漏",
+      "content": "【伊朗哈尔克岛附近疑现大量原油泄漏】近日拍摄的卫星图像显示，伊朗关键石油出口枢纽哈尔克岛附近海域疑似出现大规模原油泄漏，污染范围覆盖数十平方公里海面。欧洲哥白尼计划“哨兵”系列卫星5月6日至8日拍摄的图像显示，一片灰白色油膜出现在哈尔克岛以西海域。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 01:42:29",
+      "url": "https://finance.eastmoney.com/a/202605093731920382.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "遭美国扣押的伊朗货船抵达巴基斯坦卡拉奇港",
+      "content": "【遭美国扣押的伊朗货船抵达巴基斯坦卡拉奇港】5月8日，据航运消息人士透露，伊朗货船“图斯卡”号已抵达巴基斯坦卡拉奇港，之后将接受检查，并被送往卡拉奇造船厂进行维修。维修完成后，将移交给伊朗。美国已将该船船员移交给巴基斯坦，船员已返回伊朗。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 01:40:20",
+      "url": "https://finance.eastmoney.com/a/202605093731920293.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "博通短线拉升 日内涨幅扩大至5%",
+      "content": "博通短线拉升，日内涨幅扩大至5%。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 01:24:30",
+      "url": "https://finance.eastmoney.com/a/202605093731919966.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "阿波罗与黑石集团考虑为博通融资350亿美元",
+      "content": "阿波罗与黑石集团考虑为博通融资350亿美元。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 01:23:44",
+      "url": "https://finance.eastmoney.com/a/202605093731919826.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "西班牙发现一例涉疫邮轮相关疑似病例",
+      "content": "【西班牙发现一例涉疫邮轮相关疑似病例】西班牙卫生部8日表示，一名曾与“洪迪厄斯”号邮轮后续病亡乘客搭乘同一航班的人员，因出现与感染汉坦病毒相符症状，在该国东南部阿利坎特市送医治疗。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 01:23:10",
+      "url": "https://finance.eastmoney.com/a/202605093731919727.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "5月8日美联储隔夜逆回购协议（RRP）使用规模为7.87亿美元",
+      "content": "周五（5月8日），美联储隔夜逆回购协议（RRP）使用规模为7.87亿美元。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 01:22:27",
+      "url": "https://finance.eastmoney.com/a/202605093731919420.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "The Federal Reserve is quickly running out of reasons to cut interest rates",
+      "content": "Friday's jobs report provided evidence that the central bank's larger concern is a cost of living that is getting increasingly hard to bear.",
+      "source": "CNBC",
+      "published_at": "2026-05-08 19:20:59",
+      "url": "https://www.cnbc.com/2026/05/08/the-federal-reserve-is-quickly-running-out-of-reasons-to-cut-interest-rates.html",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Bullish: Ensnaring Token Market Share",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 19:13:59",
+      "url": "https://seekingalpha.com/article/4901640-bullish-ensnaring-token-market-share?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Intel’s stock could achieve a never-before-seen feat as Apple enthusiasm builds",
+      "content": "Intel is in the midst of transforming its business, with shares up 17% on Friday following a fresh sign of a future Apple manufacturing partnership.",
+      "source": "MarketWatch",
+      "published_at": "2026-05-08 19:13:00",
+      "url": "https://www.marketwatch.com/story/intels-stock-could-achieve-a-never-before-seen-feat-as-apple-enthusiasm-builds-edd94237?mod=mw_rss_topstories",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Innospec Inc. 2026 Q1 - Results - Earnings Call Presentation",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 19:11:41",
+      "url": "https://seekingalpha.com/article/4901673-innospec-inc-2026-q1-results-earnings-call-presentation?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Atrium Mortgage Investment Corporation (AI:CA) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 19:11:20",
+      "url": "https://seekingalpha.com/article/4901672-atrium-mortgage-investment-corporation-ai-ca-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    }
+  ],
+  "fundamentals": {},
+  "quote": {},
+  "semantic_results": [],
+  "summary": "该机会基于2026年3月的霍尔木兹海峡冲突，但最新新闻显示市场焦点已转向俄乌停火、科技股等，且无任何关于冲突升级的报道。无研报、基本面数据或行业趋势支持，M13调研也建议谨慎。新闻中伊朗原油泄漏事件与冲突无关，黄金和原油价格波动主要受其他因素驱动。因此，该机会时效性不足，缺乏可靠分析，存在重大利空，置信度大幅下调至极低水平，建议放弃。",
+  "key_findings": [
+    "机会描述的地缘冲突事件发生在2026年3月，但最新新闻（2026年5月）显示市场关注点已转向俄乌停火、科技股等，冲突未持续升级。",
+    "最近20条新闻中无任何关于霍尔木兹海峡冲突的报道，仅有伊朗原油泄漏事件，但与军事冲突无直接关联。",
+    "无研报支持该机会，缺乏基本面数据和行业趋势分析，机会时效性严重不足。",
+    "新闻显示黄金、原油价格波动主要受美联储政策、央行购金、俄乌停火等因素影响，而非霍尔木兹冲突。",
+    "M13调研明确指出该机会缺乏可靠分析支撑，建议谨慎对待，与新闻分析结果一致。"
+  ],
+  "risk_factors": [
+    "机会基于过时信息，市场已消化或忽略该事件，交易窗口已关闭，存在追高风险。",
+    "缺乏基本面数据和研报验证，投资决策缺乏依据，容易导致错误判断。",
+    "地缘冲突可能并未如描述般升级，若实际影响有限，押注原油和避险资产将面临亏损。"
+  ],
+  "confidence_assessment": "综合M13调研、最新新闻（20条）及无研报支持，该机会描述的地缘冲突事件已过时，市场关注点转移，无任何证据表明冲突持续升级或对油价、避险资产产生显著影响。新闻中伊朗原油泄漏可能影响供应，但未与冲突关联。因此，该机会缺乏时效性和可靠性，置信度极低，需大幅下调。",
+  "confidence_multiplier": 1.0,
+  "confidence_delta": -0.3,
+  "has_major_negative": true,
+  "research_time": "2026-05-09T03:22:02.375478",
+  "data_sources": [
+    "news"
+  ],
+  "cache_hit": false,
+  "timeout": false,
+  "partial_result": false
+}

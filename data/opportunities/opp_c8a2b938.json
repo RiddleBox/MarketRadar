@@ -1,0 +1,116 @@
+{
+  "opportunity_id": "opp_c8a2b938",
+  "opportunity_title": "科技主线扩散机会",
+  "opportunity_thesis": "中国移动推进算力网建设、AI终端国家标准发布、人形机器人及AI应用板块集体走强、成交额突破1.5万亿，多重信号共振指向科技主线全面扩散。当前市场情绪与资金面形成正反馈，龙头股创历史新高表明趋势强化，但板块内部分化尚未充分定价，存在预期差。短期催化剂密集，时间窗口明确，适合布局科技龙头及算力/机器人细分标的。\n\n【M13调研】该机会受益于政策催化与资金流入，处于布局窗口期，但缺乏研报和新闻直接验证，基本面数据缺失。风险在于政策落地不确定性和市场过热。建议谨慎参与，等待更多确认信号。\n\n【M13调研】机会描述声称AI算力与应用板块在政策、龙头、业绩三重催化下爆发，但新闻和研报均未直接验证。新闻中科技主题ETF上涨，但无AI板块具体报道；科大讯飞一季报亏损构成利空；无研报覆盖；基本面数据为空。风险在于政策落地不确定性和市场过热。综合判断，该机会缺乏可靠证据，置信度低，建议谨慎观望。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600941.SH",
+    "002230.SZ",
+    "688017.SH",
+    "603019.SH",
+    "688561.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "2026年5月8日当天，中国移动宣布算力网建设、AI终端国家标准发布、人形机器人及AI应用板块集体上涨、成交额突破1.5万亿，多个催化剂同日共振，形成短期爆发窗口。",
+  "related_signals": [
+    "sig_4149b887d9b2",
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_41c9d0ac13e2",
+    "sig_a1a728ae8eed",
+    "sig_050c391c993e"
+  ],
+  "inferred_events": [
+    "inferred_4de304f0",
+    "inferred_885a1078",
+    "inferred_2da74b5e",
+    "inferred_8dda9974",
+    "inferred_6a149836",
+    "inferred_6a30c227",
+    "inferred_24df51b9",
+    "inferred_bfc9649d",
+    "inferred_329c0324",
+    "inferred_f7fe96b7"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中国移动董事长宣布推进全国一体化算力网建设，开放万亿级词元服务，直接利好算力产业链",
+    "工信部等三部门联合发布AI终端智能化分级国家标准，为AI终端产业提供标准化框架",
+    "人形机器人概念股集体上涨，绿的谐波创历史新高，显示板块强势",
+    "AI应用板块开盘走高，软件ETF涨超2%且资金净流入",
+    "沪深两市成交额突破1.5万亿，市场活跃度显著提升"
+  ],
+  "counter_evidence": [
+    "板块短期涨幅较大，部分个股已创新高，存在获利回吐风险",
+    "历史案例显示概念炒作缺乏订单验证时可能快速回落"
+  ],
+  "key_assumptions": [
+    "假设1：中国移动算力网建设计划将获得政策与资金支持，而非仅口头表态",
+    "假设2：AI终端国家标准将推动产业链实际落地，而非短期情绪炒作",
+    "假设3：市场成交额维持高位，资金持续流入科技板块"
+  ],
+  "uncertainty_map": [
+    "政策落地节奏不确定性（影响程度：中）",
+    "板块短期过热后回调风险（影响程度：高）",
+    "宏观经济数据若低于预期可能压制风险偏好（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.225,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益来自科技主线扩散带来的板块轮动和龙头溢价，风险在于短期涨幅过大后的回调以及政策落地不及预期。预计上行空间10-20%，下行风险5-10%，风险收益比约2:1。",
+  "next_validation_questions": [
+    "中国移动算力网建设是否有具体投资金额和时间表？",
+    "AI终端国家标准发布后，是否有龙头企业宣布适配或新产品计划？",
+    "人形机器人板块是否有新的订单或合作公告支撑估值？"
+  ],
+  "invalidation_conditions": [
+    "中国移动算力网建设计划被证实仅为口头表态，无实质投入",
+    "板块成交额连续萎缩至1万亿以下，资金撤离科技板块",
+    "出现系统性风险事件（如地缘冲突升级、流动性危机）"
+  ],
+  "must_watch_indicators": [
+    "沪深两市成交额是否持续在1.5万亿以上",
+    "中国移动（600941.SH）股价是否突破前高并站稳",
+    "人形机器人板块龙头（如绿的谐波）是否出现放量滞涨",
+    "AI应用板块ETF（如159899）资金流向"
+  ],
+  "kill_switch_signals": [
+    "中国移动股价跌破关键支撑位（如20日均线）",
+    "板块内多只龙头股出现高位放量长阴线",
+    "北向资金连续3日净流出超50亿"
+  ],
+  "warnings": [
+    "注意：信号来源均为新闻和公开信息，部分内容可能为市场解读而非官方公告",
+    "注意：板块短期涨幅较大，追高风险较高，建议分批建仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T03:13:09.285723",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_19000101_astock_skill_e56f7566",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

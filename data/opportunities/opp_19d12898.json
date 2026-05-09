@@ -1,0 +1,113 @@
+{
+  "opportunity_id": "opp_19d12898",
+  "opportunity_title": "机器人AI板块共振",
+  "opportunity_thesis": "人形机器人概念股集体创新高、AI应用板块资金涌入、乐动机器人港股IPO获6707倍超额认购，三者形成产业资本+二级市场+IPO热度的共振。固态电池融资与量产线达产为新能源板块提供额外催化。当前市场情绪中性偏乐观，预期差在于市场尚未充分定价机器人产业链从概念到量产落地的加速拐点。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】机会描述声称AI算力与应用板块在政策、龙头、业绩三重催化下爆发，但新闻和研报均未直接验证。新闻中科技主题ETF上涨，但无AI板块具体报道；科大讯飞一季报亏损构成利空；无研报覆盖；基本面数据为空。风险在于政策落地不确定性和市场过热。综合判断，该机会缺乏可靠证据，置信度低，建议谨慎观望。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "002230.SZ",
+    "600570.SH",
+    "688599.SH",
+    "300274.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "5月8日人形机器人龙头绿的谐波创历史新高、AI应用板块资金净流入、乐动机器人IPO散户认购倍数创纪录，三信号同日出现，表明市场情绪和资金已开始集中涌入，时间窗口紧迫。",
+  "related_signals": [
+    "sig_1da9f093af7d",
+    "sig_906283b999bb",
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_41c9d0ac13e2",
+    "sig_4ef836f98ad7"
+  ],
+  "inferred_events": [
+    "inferred_f34651ef",
+    "inferred_9c30aaec",
+    "inferred_bb3f1bf7",
+    "inferred_155a50e6",
+    "inferred_c4edfbb6",
+    "inferred_1337df20"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "绿的谐波(688017)盘中涨超15%创历史新高，技术面突破确认",
+    "AI应用板块开盘走高，软件ETF(159899)涨超2%且昨日净流入800万",
+    "乐动机器人香港IPO获散户6707倍认购，国际配售9.54倍，显示产业资本高度认可",
+    "纯锂新能源500MWh量产线已达产并推进GWh级产线，固态电池产业化加速"
+  ],
+  "counter_evidence": [
+    "历史案例case_2024_tech_breakout显示技术突破缺乏订单验证时股价会回落",
+    "市场恐贪指数67处于贪婪区间，短期存在过热回调风险"
+  ],
+  "key_assumptions": [
+    "假设1：人形机器人产业链商业化进展持续，龙头公司订单或合作公告将跟进",
+    "假设2：AI应用板块资金流入趋势可持续，非单日脉冲",
+    "假设3：固态电池量产线达产能转化为实际营收和利润"
+  ],
+  "uncertainty_map": [
+    "机器人板块短期涨幅过大，技术性回调风险（影响程度：高）",
+    "乐动机器人上市后表现不及预期，拖累板块情绪（影响程度：中）",
+    "固态电池量产进度或成本控制不达预期（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.32499999999999996,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：机器人+AI板块共振上行，龙头个股有望延续趋势，ETF可获板块平均收益。潜在风险：短期过热回调幅度5-10%，若商业化不及预期则回撤可达15%。",
+  "next_validation_questions": [
+    "绿的谐波、中国软件等龙头是否有近期订单或合作公告？",
+    "乐动机器人上市首日表现及后续机构持仓变化？",
+    "纯锂新能源GWh产线建设进度及客户签约情况？"
+  ],
+  "invalidation_conditions": [
+    "人形机器人板块出现集体跌停或放量长阴",
+    "乐动机器人上市首日破发或涨幅低于10%",
+    "AI应用板块资金连续3日净流出"
+  ],
+  "must_watch_indicators": [
+    "绿的谐波(688017)日成交额与股价走势",
+    "软件ETF(159899)资金净流入/流出",
+    "乐动机器人港股上市首日涨跌幅",
+    "纯锂新能源GWh产线建设进展公告"
+  ],
+  "kill_switch_signals": [
+    "机器人板块指数单日跌幅超5%",
+    "央行意外收紧流动性或加息",
+    "地缘冲突升级引发系统性风险"
+  ],
+  "warnings": [
+    "注意：信号中部分证据为新闻描述，非官方公告，需验证",
+    "历史案例显示概念炒作缺乏订单支撑时回落风险大"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T04:31:22.204556",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_20260509_astock_skill_759e272f",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

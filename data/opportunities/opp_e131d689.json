@@ -1,0 +1,160 @@
+{
+  "opportunity_id": "opp_e131d689",
+  "opportunity_title": "政策托底反弹",
+  "opportunity_thesis": "央行已实施降准0.5个百分点和降息10bp，释放约1万亿元长期资金，叠加央行行长明确表态将适时进一步降准，形成强烈的政策宽松预期。与此同时，制造业PMI连续3个月低于荣枯线、CPI/PPI通缩压力加大，经济疲软信号倒逼政策加码，构成典型的'经济差+政策松'组合。市场对政策效果的预期差较大，当前A股整体估值处于低位，流动性改善和风险偏好修复有望驱动一轮反弹行情。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "600519.SH",
+    "000858.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-25T00:00:00",
+    "end": "2026-06-25T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "降准已落地（4月25日执行），降息已实施，央行行长最新表态'适时降准'，政策宽松信号密集且连续。经济数据（PMI、CPI、PPI）持续恶化，市场对政策托底的需求迫切，当前是政策预期与基本面最背离的时点，预期差最大。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_2ba5b3f88b20",
+    "sig_92a136d719dc",
+    "sig_66cd4adf6332",
+    "sig_ea7347bd74cf",
+    "sig_b344dde14d32",
+    "sig_e39115aa3077",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203",
+    "sig_7298dda97ec7",
+    "sig_8acb82a65167",
+    "sig_6d0d506ec2df",
+    "sig_5fbb3b22217e",
+    "sig_8a6f0519b08d",
+    "sig_21f5c177b742",
+    "sig_0bf2be0f1bda",
+    "sig_6aae84620adb",
+    "sig_eab6949342f3",
+    "sig_c9e5f674d9ca",
+    "sig_edc5b0434f33",
+    "sig_13fe94a19c08",
+    "sig_2ad1cb2b2377",
+    "sig_6030bb0be882",
+    "sig_7d650e648a54",
+    "sig_f5a17113c4e6",
+    "sig_87b1671a6111",
+    "sig_37b8e1ac32b6",
+    "sig_247fd5330706",
+    "sig_8d38b82a7d38",
+    "sig_504fbedd1b66",
+    "sig_cf855bc992d0",
+    "sig_771f563b82a1",
+    "sig_d5e1a6ec9732",
+    "sig_b19ea9e6181e",
+    "sig_e0e3bf1f136a",
+    "sig_db00c48abe84",
+    "sig_46e3ef6b4b10",
+    "sig_de08dfbf89a4",
+    "sig_007be518105c",
+    "sig_f441c8828a04",
+    "sig_ac93f560548e",
+    "sig_483c3b1eec29",
+    "sig_c26c00625075",
+    "sig_4c9e1bba1ed0",
+    "sig_e165b97b96f4",
+    "sig_7a827ccde515",
+    "sig_f0e05280f574",
+    "sig_0e9e62af2013",
+    "sig_dece1006f835",
+    "sig_1ee4d36e04da"
+  ],
+  "inferred_events": [
+    "inferred_338322ef",
+    "inferred_97ac1cd0",
+    "inferred_09522e80",
+    "inferred_5e044ec8",
+    "inferred_57b972a9",
+    "inferred_21ca4c87",
+    "inferred_44b70ce2"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行已下调存款准备金率0.5个百分点，释放长期资金约1万亿元",
+    "央行下调7天逆回购利率10bp至1.7%，降低短期资金成本",
+    "央行行长公开表态将适时降准，释放进一步宽松预期",
+    "制造业PMI连续3个月低于荣枯线（49.0），经济下行压力明确",
+    "CPI同比下降0.3%，PPI同比下降2.7%，通缩压力加大，政策加码必要性增强"
+  ],
+  "counter_evidence": [
+    "12月CPI和PPI数据时效性较低（距今约4个月），可能已被市场部分消化",
+    "市场对宽松政策的反应可能已部分price-in，降准消息公布后指数高开低走"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续会继续实施降准或其他宽松措施，政策不会止步于此",
+    "假设2：经济数据不会进一步急剧恶化，通缩压力可控",
+    "假设3：市场流动性改善能有效传导至实体经济，而非淤积在金融体系"
+  ],
+  "uncertainty_map": [
+    "政策传导效果不确定性（影响程度：高）——宽松政策能否有效提振实体经济和市场信心",
+    "外部风险扰动（影响程度：中）——地缘政治冲突升级可能压制风险偏好",
+    "市场情绪反复（影响程度：中）——若后续经济数据继续恶化，反弹可能夭折"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.35000000000000003,
+    "execution_readiness": 0.8
+  },
+  "risk_reward_profile": "潜在收益：政策宽松推动估值修复，A股指数有望反弹5%-10%，受益板块（金融、消费、新能源）弹性更大。潜在风险：政策效果不及预期，经济继续下行，市场可能再次探底，最大回撤约3%-5%。",
+  "next_validation_questions": [
+    "央行是否在1个月内宣布进一步降准或降息？",
+    "最新PMI数据是否出现企稳迹象？",
+    "市场成交量和北向资金是否持续流入？",
+    "银行间市场利率（如DR007）是否显著下行？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松，或政策转向收紧",
+    "经济数据（PMI、CPI、PPI）持续恶化，跌破关键心理位",
+    "市场出现系统性风险事件（如信用违约、地缘冲突升级）"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率和MLF利率",
+    "制造业PMI月度数据",
+    "沪深两市成交额和北向资金净流入",
+    "DR007和Shibor短期利率"
+  ],
+  "kill_switch_signals": [
+    "央行官员发表鹰派言论，暗示政策收紧",
+    "PMI跌破48，经济加速下行",
+    "市场出现恐慌性抛售，指数单日跌幅超3%"
+  ],
+  "warnings": [
+    "注意：12月CPI/PPI数据时效性较低，需关注最新月度数据",
+    "注意：降准消息公布后市场反应平淡，需警惕'利好出尽'风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T05:23:18.071113",
+  "batch_id": "sched_signal_pipeline_20260509_051555_1189ae_20260509_astock_skill_2fb708ab",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

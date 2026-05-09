@@ -1,0 +1,121 @@
+{
+  "opportunity_id": "opp_76a56fab",
+  "opportunity_title": "AI半导体业绩爆发",
+  "opportunity_thesis": "AI与半导体板块业绩持续超预期（中际旭创市值破万亿、新易盛净利增76.8%、某龙头预增150%-180%），叠加政策利好（人工智能终端国标发布、新能源购置税减免延续）和资金持续流入，形成业绩+政策+资金三重共振。市场情绪处于贪婪区间但未过热，预期差仍存，板块轮动明确指向科技成长，当前是布局窗口。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持。关键发现包括：新闻内容与AI产业链关联度低，业绩数据未验证，外围市场存在不确定性。风险因素主要为信息不实和情绪过热。未发现重大利空，但置信度因证据不足下调0.2。综合来看，该机会缺乏近期数据支撑，建议谨慎对待，等待更多验证信号。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持，关键业绩数据未验证，且豪威集团一季报净利润下降41.92%与板块爆发矛盾。外围市场存在不确定性（欧洲股市下跌、俄欧关系紧张）。未发现重大利空，但置信度较低（0.2），建议谨慎对待，等待更多验证信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "603501.SH",
+    "688008.SH",
+    "002230.SZ",
+    "603019.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-30T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "当前时点催化剂密集：AI半导体业绩集中发布且超预期、人工智能终端国标发布、江苏百亿战新产业基金揭牌、人形机器人/AI应用板块集体走强，资金从消费地产持续流入科技成长。央行降准释放流动性，市场情绪贪婪但未极端，预期差仍存。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_30d3e00700ed",
+    "sig_c65bd11e442f",
+    "sig_4149b887d9b2",
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_41c9d0ac13e2",
+    "sig_050c391c993e",
+    "sig_588712b4e2b5",
+    "sig_b0343a771aa0"
+  ],
+  "inferred_events": [
+    "inferred_ff7f84a6",
+    "inferred_6f8263c2",
+    "inferred_34cdaec5",
+    "inferred_5fe2cc82",
+    "inferred_72a3ee8d",
+    "inferred_44eb1eef",
+    "inferred_680c3fc5",
+    "inferred_6546eb19",
+    "inferred_407e5755",
+    "inferred_1af7bb1a"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创市值突破万亿，新易盛一季报净利增长76.8%，某半导体龙头Q1预增150%-180%，业绩爆发确认",
+    "人工智能终端国标发布，政策明确支持AI产业链发展",
+    "资金从消费/地产流向新能源/半导体，板块轮动信号明确",
+    "人形机器人概念股集体上涨，AI应用板块走高，市场情绪积极"
+  ],
+  "counter_evidence": [
+    "市场情绪已处于贪婪区间（恐贪指数67），部分利好可能已被定价",
+    "地缘政治风险（中东局势紧张）可能引发短期避险情绪"
+  ],
+  "key_assumptions": [
+    "假设1：AI/半导体业绩高增长可持续，非一次性因素",
+    "假设2：货币政策宽松（降准/降息）继续支持流动性",
+    "假设3：地缘政治风险不显著升级为全面冲突"
+  ],
+  "uncertainty_map": [
+    "业绩持续性不确定性（影响程度：高）：当前业绩爆发部分受AI芯片需求拉动，若需求放缓或竞争加剧，增速可能回落",
+    "地缘政治风险（影响程度：中）：中东局势升级可能引发全球避险，短期冲击A股科技板块",
+    "政策落地节奏不确定性（影响程度：中）：人工智能国标和战新产业基金的实际效果需时间验证"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.45000000000000007,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：AI半导体板块在业绩和政策共振下有望延续上涨趋势，龙头股可能实现15%-25%涨幅。潜在风险：若业绩增速放缓或地缘风险升级，板块可能回调10%-15%。风险收益比约1.5:1至2:1。",
+  "next_validation_questions": [
+    "AI/半导体龙头Q2业绩指引是否继续超预期？",
+    "北向资金是否持续流入科技板块？",
+    "人工智能终端国标落地后是否有具体产业支持措施？"
+  ],
+  "invalidation_conditions": [
+    "AI/半导体龙头Q2业绩增速明显放缓（低于30%）",
+    "地缘政治冲突显著升级，引发全球市场系统性下跌",
+    "资金从科技板块大幅流出，板块轮动逆转"
+  ],
+  "must_watch_indicators": [
+    "AI/半导体龙头季报业绩及指引",
+    "北向资金流向（尤其科技板块）",
+    "市场情绪指标（恐贪指数）",
+    "地缘政治事件进展"
+  ],
+  "kill_switch_signals": [
+    "AI/半导体龙头发布业绩预警或下调指引",
+    "北向资金连续3日净流出超50亿",
+    "地缘冲突导致全球股市暴跌超5%"
+  ],
+  "warnings": [
+    "注意：部分信号（如某半导体龙头预增）来源为新闻，非官方公告，需核实",
+    "市场情绪已处于贪婪区间，追高需谨慎，建议分批建仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T01:22:47.577566",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_20260508_astock_skill_1376cd04",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

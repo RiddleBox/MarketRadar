@@ -1,0 +1,107 @@
+{
+  "opportunity_id": "opp_81b982db",
+  "opportunity_title": "地产资金外溢科技",
+  "opportunity_thesis": "保利发展连续业绩暴雷（2025年净利润-79%，2026Q1净利润-53%）确认地产板块基本面恶化，资金持续从地产流出并涌入新能源/半导体板块，形成明确跷跷板效应。在央行宽松预期（降准降息概率85%）和产业政策支持下，科技成长板块有望持续受益于资金再配置，当前是布局窗口。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持。关键发现包括：新闻内容与AI产业链关联度低，业绩数据未验证，外围市场存在不确定性。风险因素主要为信息不实和情绪过热。未发现重大利空，但置信度因证据不足下调0.2。综合来看，该机会缺乏近期数据支撑，建议谨慎对待，等待更多验证信号。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持，关键业绩数据未验证，且豪威集团一季报净利润下降41.92%与板块爆发矛盾。外围市场存在不确定性（欧洲股市下跌、俄欧关系紧张）。未发现重大利空，但置信度较低（0.2），建议谨慎对待，等待更多验证信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "603501.SH",
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-28T00:00:00",
+    "end": "2026-06-28T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "保利发展一季报（4月27日）确认业绩持续恶化，叠加资金轮动信号明确显示地产流出、新能源/半导体流入，央行降准降息预期升温（2周内概率85%），科技板块催化剂密集。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sent_b3cc88f9",
+    "sig_deee36561d85"
+  ],
+  "inferred_events": [
+    "inferred_f11bacc9",
+    "inferred_ff863d13",
+    "inferred_9b367065",
+    "inferred_5a43e82b",
+    "inferred_e99ed316"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "保利发展2025年净利润同比-79%，2026Q1净利润同比-53%，地产基本面持续恶化",
+    "资金轮动信号显示资金从地产流向新能源和半导体",
+    "央行降准降息概率85%，宽松政策利好成长板块估值",
+    "新能源/半导体板块有AI业绩超预期和产业政策支撑"
+  ],
+  "counter_evidence": [
+    "市场整体情绪偏贪婪（恐贪指数67），科技板块可能已部分定价",
+    "地产链恶化可能拖累整体经济预期，压制风险偏好"
+  ],
+  "key_assumptions": [
+    "假设1：地产资金持续流出，不会因政策刺激逆转",
+    "假设2：央行宽松政策在2周内落地",
+    "假设3：新能源/半导体基本面改善趋势延续"
+  ],
+  "uncertainty_map": [
+    "地产政策超预期放松导致资金回流（影响程度：中）",
+    "科技板块业绩不及预期或估值泡沫破裂（影响程度：高）",
+    "宏观经济进一步恶化压制整体市场（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.42000000000000004,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益来自资金持续流入科技板块带来的估值提升，风险在于地产政策逆转或科技板块业绩证伪，预计收益风险比约2:1",
+  "next_validation_questions": [
+    "新能源/半导体板块近期是否有明确的业绩预增或订单公告？",
+    "地产板块是否有政策刺激信号可能逆转资金流向？",
+    "央行降准降息的具体时间表是否明确？"
+  ],
+  "invalidation_conditions": [
+    "地产板块出现重大政策利好，资金回流",
+    "新能源/半导体龙头业绩大幅低于预期",
+    "央行明确否认近期宽松预期"
+  ],
+  "must_watch_indicators": [
+    "保利发展股价及地产板块资金流向",
+    "新能源/半导体板块成交量及龙头股走势",
+    "央行公开市场操作及政策表态",
+    "恐贪指数变化，警惕过热信号"
+  ],
+  "kill_switch_signals": [
+    "地产板块单日资金净流入超50亿",
+    "新能源/半导体板块出现集体跌停",
+    "央行加息或收紧流动性信号"
+  ],
+  "warnings": [
+    "注意：资金轮动信号来自情绪面系统，需结合基本面验证",
+    "科技板块估值已不低，需警惕追高风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T03:09:47.831917",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_19000101_astock_skill_c6f25aeb",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

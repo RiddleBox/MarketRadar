@@ -1,0 +1,142 @@
+{
+  "opportunity_id": "opp_4284db59",
+  "opportunity_title": "AI算力链业绩爆发",
+  "opportunity_thesis": "光模块与半导体龙头业绩超预期（中际旭创市值破万亿、新易盛净利增76.8%、某半导体龙头预增150%-180%），叠加中国移动推进算力网建设、AI终端国标发布等政策催化，AI算力产业链进入业绩兑现期。资金从消费/地产持续流入新能源/半导体，板块轮动确认，当前是布局AI算力核心标的的窗口。\n\n【M13调研】机会描述基于AI算力需求爆发、业绩超预期和政策利好，但新闻分析中缺乏直接验证。中韩半导体ETF领涨、英特尔AMD市值新高、胜宏科技订单饱满等间接支持半导体景气度，但具体公司业绩数据未出现，政策利好也未明确。风险在于业绩持续性分歧和缺乏直接证据。整体方向可行，但需谨慎验证具体数据，建议等待更多确认信号。\n\n【M13调研】AI算力需求驱动光模块和半导体景气度得到部分验证：新易盛业绩高增、英特尔AMD市值新高、胜宏科技订单饱满。但机会描述中的中际旭创市值破万亿、某半导体龙头预增等具体数据未在新闻中出现，政策利好也缺乏报道。市场对业绩持续性存分歧，风险在于信息不实和预期差。建议谨慎，等待更多确认信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "300394.SZ",
+    "688981.SH",
+    "002371.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "光模块'易中天'年报和一季报全部披露完毕，业绩高增长确认；半导体龙头Q1预增150%-180%超预期；中国移动推进算力网建设+AI终端国标发布提供政策催化；资金持续从消费地产流入新能源/半导体，板块轮动信号连续出现，市场共识正在形成。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sent_ec6c7cba",
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_c65bd11e442f",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_5a2ec57f6916",
+    "sig_a1d7094e54d1",
+    "sig_d9ef44f292bd",
+    "sig_d8cb7635ade9",
+    "sig_39b17c44aba1",
+    "sig_4149b887d9b2",
+    "sig_911415444bf5",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017",
+    "sig_df713685bee1",
+    "sig_050c391c993e",
+    "sig_e8ba30264edb",
+    "sig_ffdee791adf2"
+  ],
+  "inferred_events": [
+    "inferred_897d69bf",
+    "inferred_ae03b650",
+    "inferred_aebaeeb3",
+    "inferred_dc4b95e7",
+    "inferred_21936942",
+    "inferred_6f535590"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创4月23日盘中市值突破万亿，收盘9989亿，创历史里程碑",
+    "新易盛一季报净利润同比增长76.8%，光模块三龙头业绩全部披露",
+    "某半导体龙头Q1业绩预增150%-180%，受益AI芯片需求爆发",
+    "中国移动宣布推进全国一体化算力网建设，开放万亿级Token服务",
+    "人工智能终端智能化分级国家标准发布，明确产业标准",
+    "资金连续多日从消费/地产流向新能源/半导体，板块轮动确认"
+  ],
+  "counter_evidence": [
+    "中际旭创万亿市值后可能面临获利回吐压力",
+    "半导体龙头业绩预增但具体公司未明确，存在信息不对称"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，光模块和半导体订单能见度维持高位",
+    "假设2：宏观经济不出现超预期下行，市场风险偏好维持或改善",
+    "假设3：后续无重大地缘政治风险或政策收紧冲击科技板块"
+  ],
+  "uncertainty_map": [
+    "业绩持续性不确定性（影响程度：高）：光模块和半导体高增长能否持续至下半年",
+    "市场整体风险偏好（影响程度：中）：若大盘回调，科技板块可能承压",
+    "具体标的确认（影响程度：中）：半导体龙头业绩预增但公司未明确，需等待正式公告"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.5800000000000001,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI算力产业链业绩兑现期，龙头股有望继续上涨20%-30%；风险：业绩增速放缓或市场风格切换，最大回撤约15%-20%，止损点可设在关键均线支撑位。",
+  "next_validation_questions": [
+    "光模块三龙头（中际旭创、新易盛、天孚通信）2026年Q2订单指引是否继续增长？",
+    "半导体龙头（中芯国际、北方华创）Q1正式财报是否与预增一致？",
+    "中国移动算力网建设的具体投资规模和招标时间表？",
+    "新能源板块资金流入是否伴随基本面改善（如光伏排产数据）？"
+  ],
+  "invalidation_conditions": [
+    "光模块或半导体龙头Q2业绩指引低于预期",
+    "大盘指数跌破关键支撑位，市场系统性风险释放",
+    "AI算力相关产业政策出现重大转向或收紧"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛、天孚通信的日成交量和股价走势",
+    "半导体ETF（512480）资金流向",
+    "中国移动算力网建设相关招标公告",
+    "AI终端国家标准后续配套政策"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头单日放量下跌超5%且无明确利空",
+    "半导体龙头正式财报不及预增区间下限",
+    "市场恐贪指数升至80以上且资金从科技板块大幅流出"
+  ],
+  "warnings": [
+    "注意：半导体龙头业绩预增信号中公司名称未明确，需等待正式公告确认",
+    "注意：中际旭创万亿市值后短期可能面临获利回吐，不宜追高"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T03:25:16.830983",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_20260508_astock_skill_2631c18b",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

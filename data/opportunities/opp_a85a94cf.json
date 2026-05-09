@@ -1,0 +1,111 @@
+{
+  "opportunity_id": "opp_a85a94cf",
+  "opportunity_title": "AI+机器人主升浪",
+  "opportunity_thesis": "人形机器人概念股集体创新高、AI应用板块放量上涨、港股机器人IPO获6707倍超额认购，叠加沪深两市成交额突破1.5万亿，显示AI+机器人主题已从概念炒作进入资金共振阶段。当前市场情绪高涨但尚未出现泡沫信号，板块龙头具备业绩支撑，短期仍有上行空间。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】机会描述声称AI算力与应用板块在政策、龙头、业绩三重催化下爆发，但新闻和研报均未直接验证。新闻中科技主题ETF上涨，但无AI板块具体报道；科大讯飞一季报亏损构成利空；无研报覆盖；基本面数据为空。风险在于政策落地不确定性和市场过热。综合判断，该机会缺乏可靠证据，置信度低，建议谨慎观望。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "002230.SZ",
+    "600570.SH",
+    "688111.SH",
+    "002415.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "板块集体创新高+成交额放大+IPO火爆认购三重信号同日出现，显示资金加速涌入；历史案例表明技术突破+商业化预期共振时，主升浪可持续3-4周。",
+  "related_signals": [
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_41c9d0ac13e2",
+    "sig_a1a728ae8eed",
+    "sig_4ef836f98ad7"
+  ],
+  "inferred_events": [
+    "inferred_e19ca2eb",
+    "inferred_aba01554",
+    "inferred_e41eb30e",
+    "inferred_d58e6285",
+    "inferred_cc404a22"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "人形机器人概念股集体上涨，多只个股涨停或创新高",
+    "AI应用板块开盘走高，软件ETF涨超2%且资金净流入",
+    "沪深两市成交额突破1.5万亿，市场活跃度显著提升",
+    "乐动机器人香港IPO获6707倍散户认购，显示市场对机器人主题极度追捧"
+  ],
+  "counter_evidence": [
+    "板块短期涨幅较大，部分个股已创新高，存在获利回吐风险",
+    "缺乏明确的业绩兑现信号，当前仍以预期驱动为主"
+  ],
+  "key_assumptions": [
+    "假设1：AI+机器人主题的业绩预期能在未来1-2个季度得到初步验证",
+    "假设2：市场整体流动性环境维持宽松，成交额保持高位",
+    "假设3：没有突发利空（如地缘冲突、政策收紧）打断市场情绪"
+  ],
+  "uncertainty_map": [
+    "业绩验证不确定性（影响程度：高）：当前上涨主要基于预期，若后续财报不及预期，板块可能快速回调",
+    "市场情绪过热风险（影响程度：中）：若成交额持续放大但指数滞涨，可能形成短期顶部",
+    "IPO抽血效应（影响程度：中）：后续机器人相关IPO密集发行可能分流资金"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 5,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.32499999999999996,
+    "execution_readiness": 0.8
+  },
+  "risk_reward_profile": "潜在收益：若主升浪持续3-4周，龙头股涨幅可达20-30%；潜在风险：若业绩证伪或情绪退潮，回调幅度可达15-20%。盈亏比约1.5:1，需严格止损。",
+  "next_validation_questions": [
+    "板块内是否有公司发布超预期业绩或订单公告？",
+    "沪深两市成交额能否持续维持在1.5万亿以上？",
+    "乐动机器人上市首日表现如何，是否继续带动板块情绪？"
+  ],
+  "invalidation_conditions": [
+    "沪深两市成交额连续3日低于1.2万亿",
+    "板块内出现龙头股跌停或批量跌停",
+    "央行意外收紧流动性或出台针对AI/机器人的监管政策"
+  ],
+  "must_watch_indicators": [
+    "沪深两市成交额",
+    "人形机器人板块指数",
+    "绿的谐波、科大讯飞等龙头股走势",
+    "软件ETF资金流向"
+  ],
+  "kill_switch_signals": [
+    "板块指数单日跌幅超过5%",
+    "龙头股放量下跌且跌破20日均线",
+    "IPO认购倍数骤降或新股破发"
+  ],
+  "warnings": [
+    "注意：当前板块涨幅已较大，追高需谨慎，建议分批建仓",
+    "注意：信号来源均为新闻，非官方公告，需自行核实"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T03:52:04.887166",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_20260508_astock_skill_9db5557b",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

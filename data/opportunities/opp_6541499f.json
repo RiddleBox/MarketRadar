@@ -1,0 +1,115 @@
+{
+  "opportunity_id": "opp_6541499f",
+  "opportunity_title": "中东冲突原油多",
+  "opportunity_thesis": "美伊在霍尔木兹海峡交火并袭击民用船只，霍尔木兹海峡航运受阻，全球约20%石油运输经过该海峡。冲突已从口头威胁升级为实际军事行动，且高盛调查显示多数投资者预期航运受阻将持续至6月底以后，原油供应中断风险显著上升。WTI原油投机净多头减少，市场尚未充分定价冲突升级的持续性，存在预期差。\n\n【M13调研】霍尔木兹海峡航运受阻已确认，全球约20%石油运输受影响，供应中断风险显著。花旗维持油价120美元预测，市场未充分定价冲突持续性，存在预期差。风险在于冲突缓和或需求下降。整体利多，建议关注原油及相关资产。\n\n【M13调研】霍尔木兹海峡冲突升级导致航运受阻，全球石油供应中断风险显著，花旗维持120美元油价预测，市场未充分定价，存在预期差。WTI净多头减少显示多头空间。风险在于冲突缓和或需求下降。整体利多，建议关注原油及相关资产。",
+  "target_markets": [
+    "A_FUTURES",
+    "US_FUTURES"
+  ],
+  "target_instruments": [
+    "SC0",
+    "CL0",
+    "CO0"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-30T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "美军连续多日拦截伊朗油轮、袭击民用船只，伊朗武装力量已火力回击，霍尔木兹海峡附近传出交火声，冲突从口头威胁升级为实际军事摩擦。当前时点冲突正在发生且尚未停火，市场对冲突持续时间和升级程度的定价不足，高盛调查显示多数投资者预期航运受阻将持续至6月底以后，时间窗口紧迫。",
+  "related_signals": [
+    "sig_830abe83e9a4",
+    "sig_0806bfd8639e",
+    "sig_8e8c4ed52bad",
+    "sig_4bdf8baa2d3a",
+    "sig_afe9eed20a0b",
+    "sig_968dbdfcd94a",
+    "sig_82a8c461a4b6",
+    "sig_bb9a9c6d60a1",
+    "sig_70a333e7b67e",
+    "sig_ec500e4d7f22"
+  ],
+  "inferred_events": [
+    "inferred_09708205",
+    "inferred_bd172f1d",
+    "inferred_033f81e4",
+    "inferred_2b43c63d",
+    "inferred_ee069ae7",
+    "inferred_39de9b2d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军在阿曼湾拦截两艘伊朗油轮，使用F/A-18战机发射精确制导弹药使其失去航行能力",
+    "美军袭击伊朗民用船只，造成人员伤亡，伊朗武装力量已火力回击",
+    "霍尔木兹海峡附近区域在2小时内接连传出交火声",
+    "高盛调查显示43%受访投资者预计霍尔木兹海峡航运要到7月份以后才会恢复正常"
+  ],
+  "counter_evidence": [
+    "WTI原油投机净多头头寸减少2,220手，显示部分投机资金正在离场",
+    "美伊交火已停火，冲突可能不会进一步升级"
+  ],
+  "key_assumptions": [
+    "假设1：美伊军事冲突不会在短期内迅速平息，霍尔木兹海峡航运受阻将持续至6月底以后",
+    "假设2：其他主要产油国（如沙特、俄罗斯）不会大幅增产以弥补伊朗供应缺口",
+    "假设3：美国不会释放战略石油储备或采取其他强力措施压制油价"
+  ],
+  "uncertainty_map": [
+    "冲突升级程度不确定性（影响程度：高）——冲突可能迅速平息，也可能升级为全面战争",
+    "OPEC+增产决策不确定性（影响程度：中）——沙特等国有可能增产以稳定市场",
+    "美国政策干预不确定性（影响程度：中）——美国可能释放战略石油储备或推动外交斡旋"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 1.0699999999999998,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：若冲突持续升级导致霍尔木兹海峡完全封锁，布伦特原油可能突破100美元/桶，涨幅约20-30%。潜在风险：若冲突迅速平息或OPEC+大幅增产，油价可能回落至70美元/桶以下，跌幅约15-20%。风险收益比约1:1.5，需严格止损。",
+  "next_validation_questions": [
+    "美伊双方是否有进一步军事行动或外交谈判信号？",
+    "霍尔木兹海峡实际航运通行量是否已出现明显下降？",
+    "OPEC+是否有紧急会议或增产表态？",
+    "美国战略石油储备库存变化及释放意愿如何？"
+  ],
+  "invalidation_conditions": [
+    "美伊达成停火协议或外交谈判取得实质性进展",
+    "霍尔木兹海峡航运恢复正常，通行量回升至冲突前水平",
+    "OPEC+宣布大幅增产或美国释放战略石油储备"
+  ],
+  "must_watch_indicators": [
+    "霍尔木兹海峡航运通行量数据",
+    "WTI和布伦特原油期货价格及持仓变化",
+    "美伊双方官方声明及军事行动动态",
+    "OPEC+官方表态及产量数据"
+  ],
+  "kill_switch_signals": [
+    "美伊双方宣布停火并开始撤军",
+    "霍尔木兹海峡航运完全恢复正常",
+    "OPEC+宣布紧急增产计划"
+  ],
+  "warnings": [
+    "注意：地缘冲突事件具有高度不确定性，冲突可能迅速平息导致油价回落",
+    "注意：WTI原油投机净多头减少，显示部分资金已提前离场，需警惕市场已部分定价"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T05:46:43.572828",
+  "batch_id": "sched_signal_pipeline_20260509_051555_1189ae_20260509_astock_skill_7eca324e",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

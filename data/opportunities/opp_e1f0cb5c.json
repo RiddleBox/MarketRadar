@@ -1,0 +1,113 @@
+{
+  "opportunity_id": "opp_e1f0cb5c",
+  "opportunity_title": "AI+机器人产业共振",
+  "opportunity_thesis": "2026年5月8日，人形机器人概念股集体创新高、AI应用板块资金大幅流入、人工智能终端国家标准正式发布，叠加乐动机器人港股IPO获6707倍散户认购，显示AI+机器人产业趋势已从概念炒作进入政策+资本+市场共振阶段。当前市场情绪积极但尚未过热，产业资本密集布局提供基本面支撑，存在短期趋势延续和估值修复的双重机会。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】机会描述声称AI算力与应用板块在政策、龙头、业绩三重催化下爆发，但新闻和研报均未直接验证。新闻中科技主题ETF上涨，但无AI板块具体报道；科大讯飞一季报亏损构成利空；无研报覆盖；基本面数据为空。风险在于政策落地不确定性和市场过热。综合判断，该机会缺乏可靠证据，置信度低，建议谨慎观望。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "002230.SZ",
+    "603019.SH",
+    "002747.SZ",
+    "300124.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "当前时点催化剂密集：1）人形机器人板块多只个股创新高，技术面强势确认；2）AI应用板块资金持续流入，软件ETF单日净流入近800万；3）国家标准发布提供政策背书，降低产业不确定性；4）乐动机器人港股IPO获6707倍认购，显示一级市场极度看好，二级市场情绪有望传导。",
+  "related_signals": [
+    "sig_1da9f093af7d",
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_41c9d0ac13e2",
+    "sig_050c391c993e",
+    "sig_4ef836f98ad7"
+  ],
+  "inferred_events": [
+    "inferred_38bfc549",
+    "inferred_0031cef4",
+    "inferred_aec304ff",
+    "inferred_d831e8ac",
+    "inferred_7828da09",
+    "inferred_d9287413"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "人形机器人概念股集体上涨，绿的谐波、华勤技术、乔锋智能创新高，巨轮智能2连板",
+    "AI应用板块走高，中国软件涨停，软件ETF涨超2%且资金净流入",
+    "人工智能终端国家标准正式发布，明确分级和测试方法",
+    "乐动机器人港股IPO获6707倍散户认购，国际配售9.54倍"
+  ],
+  "counter_evidence": [
+    "历史案例case_2024_tech_breakthrough显示，技术突破缺乏商业化订单支撑时，概念炒作可能快速回落",
+    "当前市场恐贪指数处于贪婪区间（67），情绪过热可能引发短期回调"
+  ],
+  "key_assumptions": [
+    "假设1：AI+机器人产业趋势具有持续性，非短期概念炒作",
+    "假设2：国家标准发布能有效推动产业链商业化落地",
+    "假设3：市场整体流动性环境保持宽松，不会出现系统性风险"
+  ],
+  "uncertainty_map": [
+    "商业化落地速度不确定性（影响程度：高）——技术突破到订单兑现的时间差可能超预期",
+    "市场情绪过热风险（影响程度：中）——恐贪指数67，若继续升温可能引发获利回吐",
+    "政策执行力度不确定性（影响程度：中）——国家标准落地效果需观察"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.32499999999999996,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：AI+机器人产业趋势共振，短期板块有望延续强势，龙头股存在10-20%上行空间；潜在风险：概念炒作退潮或市场整体回调，最大回撤约10-15%。",
+  "next_validation_questions": [
+    "人形机器人产业链是否有新的商业化订单或合作公告？",
+    "AI应用板块资金流入是否持续，软件ETF份额是否继续增长？",
+    "乐动机器人上市首日表现如何，能否带动港股机器人板块？"
+  ],
+  "invalidation_conditions": [
+    "人形机器人板块出现集体跌停或连续3日资金净流出",
+    "AI应用板块龙头股业绩低于预期或出现重大负面消息",
+    "市场整体出现系统性风险（如地缘冲突升级、流动性收紧）"
+  ],
+  "must_watch_indicators": [
+    "人形机器人板块成交量和资金流向",
+    "软件ETF份额变化和资金净流入",
+    "乐动机器人港股上市首日表现",
+    "恐贪指数变化，若超过80需警惕过热"
+  ],
+  "kill_switch_signals": [
+    "人形机器人板块单日跌幅超过5%且成交量放大",
+    "AI应用板块龙头股出现跌停",
+    "市场恐贪指数突破85并持续"
+  ],
+  "warnings": [
+    "注意：当前板块已出现短期涨幅，追高风险较大，建议等待回调或分批建仓",
+    "注意：历史案例显示概念炒作缺乏订单支撑时可能快速回落，需关注商业化进展"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T04:10:45.525352",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_20260508_rss_c434b891",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

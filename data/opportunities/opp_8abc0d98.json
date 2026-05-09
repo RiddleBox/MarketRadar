@@ -1,0 +1,108 @@
+{
+  "opportunity_id": "opp_8abc0d98",
+  "opportunity_title": "银行券商业绩驱动",
+  "opportunity_thesis": "7家地方银行一季报营收净利双增，广发证券净利润同比增70.73%，显示银行和券商板块基本面强劲改善。与此同时，保利发展净利润同比大降57%，地产板块持续承压，资金将从地产流出转向金融板块。市场结构性分化明确，银行和券商成为确定性较高的配置方向。\n\n【M13调研】地产龙头保利发展净利润暴跌79%，而银行券商一季报普遍增长，广发证券净利润增长超70%，市场资金从地产流向金融板块，形成明确的行业轮动和避险交易机会。当前一季报密集披露，业绩分化信号集中释放，预期差尚未完全price-in。风险在于地产持续恶化可能拖累银行资产质量，且轮动可能已部分反映。整体机会逻辑清晰，但缺乏研报和行业趋势数据支持，置信度中等偏上。\n\n【M13调研】机会描述基于经济疲软和央行超预期宽松，形成短期交易窗口，逻辑成立。但缺乏研报、行业趋势和基本面数据支持，新闻无相关事件，信息不充分。无重大利空，但置信度偏低，建议谨慎参与，关注后续经济数据验证。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601398.SH",
+    "600036.SH",
+    "601166.SH",
+    "000776.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-28T00:00:00",
+    "end": "2026-07-28T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "一季报密集披露期，银行和券商业绩超预期信号集中释放，而地产龙头保利发展连续两年业绩大幅下滑，市场对结构性分化的认知正在强化。当前时点正是业绩验证窗口，资金调仓换股的关键期。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sig_f5dc287cf712",
+    "sig_898af08751f6",
+    "sig_deee36561d85",
+    "sig_dc0079649df5"
+  ],
+  "inferred_events": [
+    "inferred_d3145a28",
+    "inferred_ff298c46",
+    "inferred_e7f31acf",
+    "inferred_e4810604",
+    "inferred_992ac747"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "7家地方银行一季报营收净利全部正增长，资产质量平稳",
+    "广发证券一季度净利润同比增70.73%，营收增64.33%",
+    "保利发展一季报净利润同比降57%，地产板块持续承压",
+    "历史案例case_2024_rate_cut显示降息预期下银行股估值修复"
+  ],
+  "counter_evidence": [
+    "银行股可能已部分定价业绩利好，涨幅空间有限",
+    "若央行降息幅度超预期，银行净息差可能承压"
+  ],
+  "key_assumptions": [
+    "假设1：银行和券商业绩增长趋势可持续，非一次性因素",
+    "假设2：地产板块资金持续流出，不会出现政策逆转",
+    "假设3：市场整体流动性环境维持宽松"
+  ],
+  "uncertainty_map": [
+    "央行降息幅度和节奏不确定，可能影响银行净息差（影响程度：中）",
+    "地产政策可能超预期放松，导致资金回流地产（影响程度：中）",
+    "宏观经济下行压力可能拖累银行资产质量（影响程度：高）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 7,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益来自银行券商估值修复和业绩驱动，预计10-15%涨幅空间；风险在于业绩利好已部分定价，以及降息对净息差的负面影响，最大回撤约5-8%。",
+  "next_validation_questions": [
+    "更多银行和券商一季报是否延续正增长趋势？",
+    "地产板块资金流出是否加速，是否有其他龙头地产股业绩恶化？",
+    "市场对银行券商业绩的反应是否已充分？"
+  ],
+  "invalidation_conditions": [
+    "后续银行或券商一季报出现大面积不及预期",
+    "地产政策出现重大利好，资金回流地产板块",
+    "央行降息幅度过大导致银行净息差明显收窄"
+  ],
+  "must_watch_indicators": [
+    "银行和券商一季报披露进度及业绩增速",
+    "保利发展及其他地产龙头股价和资金流向",
+    "央行货币政策动向，特别是降息降准信号",
+    "银行板块相对大盘的强弱指标"
+  ],
+  "kill_switch_signals": [
+    "银行板块出现连续3日放量下跌",
+    "地产板块出现政策利好导致资金大幅回流",
+    "央行意外加息或收紧流动性"
+  ],
+  "warnings": [
+    "注意：银行和券商板块已有一定涨幅，追高需谨慎",
+    "注意：业绩利好可能已被部分定价，预期差有限"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T03:58:55.080690",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_20260508_astock_skill_e7918cde",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

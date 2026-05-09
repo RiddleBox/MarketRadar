@@ -1,0 +1,147 @@
+{
+  "opportunity_id": "opp_6ce4cee3",
+  "opportunity_title": "AI算力链业绩共振",
+  "opportunity_thesis": "光模块龙头中际旭创市值突破万亿、新易盛一季报净利润增长76.8%、某半导体龙头预增150%-180%，叠加中国移动推进算力网建设、AI应用板块资金持续流入，AI/半导体产业链景气度已从预期进入业绩兑现期。资金从消费地产持续轮入新能源/半导体，形成基本面+资金面的共振，当前是布局AI算力链主升浪的窗口。\n\n【M13调研】机会描述基于AI算力需求爆发、业绩超预期和政策利好，但新闻分析中缺乏直接验证。中韩半导体ETF领涨、英特尔AMD市值新高、胜宏科技订单饱满等间接支持半导体景气度，但具体公司业绩数据未出现，政策利好也未明确。风险在于业绩持续性分歧和缺乏直接证据。整体方向可行，但需谨慎验证具体数据，建议等待更多确认信号。\n\n【M13调研】AI算力需求驱动光模块和半导体景气度得到部分验证：新易盛业绩高增、英特尔AMD市值新高、胜宏科技订单饱满。但机会描述中的中际旭创市值破万亿、某半导体龙头预增等具体数据未在新闻中出现，政策利好也缺乏报道。市场对业绩持续性存分歧，风险在于信息不实和预期差。建议谨慎，等待更多确认信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "300476.SZ",
+    "688981.SH",
+    "002371.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "光模块三巨头年报一季报全部披露完毕，业绩超预期落地；中际旭创万亿市值里程碑强化板块信心；上交所对芯片LOF重点监控虽短期压制情绪，但基本面强劲支撑下调整空间有限；中国移动算力网建设政策催化叠加AI应用板块资金持续流入，当前是业绩验证后的加速窗口。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sent_ec6c7cba",
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_c65bd11e442f",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_5a2ec57f6916",
+    "sig_a1d7094e54d1",
+    "sig_d9ef44f292bd",
+    "sig_d8cb7635ade9",
+    "sig_39b17c44aba1",
+    "sig_4149b887d9b2",
+    "sig_911415444bf5",
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017",
+    "sig_41c9d0ac13e2",
+    "sig_d36d819acfc5",
+    "sig_e49e84bd5c49",
+    "sig_df713685bee1",
+    "sig_050c391c993e",
+    "sig_80b5ac1dde51",
+    "sig_296213a63e79",
+    "sig_e8ba30264edb",
+    "sig_ffdee791adf2"
+  ],
+  "inferred_events": [
+    "inferred_cf1318b2",
+    "inferred_4375069d",
+    "inferred_9589b89c",
+    "inferred_4ffeb9a9",
+    "inferred_2777d81f"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创4月23日盘中市值突破万亿，收盘9989亿元，创历史里程碑",
+    "新易盛一季报净利润同比增长76.8%，光模块'易中天'年报一季报全部披露完毕",
+    "某半导体龙头Q1业绩预增150%-180%，受益AI芯片需求爆发",
+    "资金持续从消费地产流向新能源/半导体，板块轮动信号重复出现",
+    "中国移动推进全国一体化算力网建设，开放万亿级Token服务体验包",
+    "AI应用板块5月8日走高，软件ETF涨超2%且资金净流入",
+    "胜宏科技1.6T光模块产能利用率良好，CoWop技术研发推进"
+  ],
+  "counter_evidence": [
+    "上交所对全球芯片LOF进行重点监控，溢价较高可能引发短期回调",
+    "某半导体龙头业绩预增但公司名称未明确，市场可能已部分定价"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，光模块/半导体订单不出现大幅下滑",
+    "假设2：中美科技摩擦不进一步升级影响供应链",
+    "假设3：市场整体流动性环境维持宽松，不出现系统性风险"
+  ],
+  "uncertainty_map": [
+    "全球芯片LOF溢价监控可能引发短期情绪降温（影响程度：中）",
+    "某半导体龙头业绩预增的具体公司未明确，市场反应可能分化（影响程度：中）",
+    "地缘政治风险（中东冲突）可能引发市场避险情绪（影响程度：低）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.3,
+    "confidence_score": 0.5800000000000001,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI算力链业绩持续超预期，光模块/半导体龙头有望继续上行20%-30%；潜在风险：全球芯片LOF溢价监控引发板块回调10%-15%，或中美科技摩擦升级导致供应链中断。整体风险收益比约2:1。",
+  "next_validation_questions": [
+    "某半导体龙头业绩预增的具体公司是哪家？市场反应如何？",
+    "全球芯片LOF溢价监控是否已引发板块资金流出？",
+    "光模块三巨头年报一季报的具体财务数据（营收、毛利率、现金流）是否健康？"
+  ],
+  "invalidation_conditions": [
+    "光模块/半导体龙头出现业绩不及预期或订单下滑",
+    "中美科技摩擦升级，如新的出口管制措施",
+    "市场整体流动性大幅收紧或出现系统性风险"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛、天孚通信的股价走势及成交量",
+    "全球芯片LOF溢价率及资金流向",
+    "AI相关公司后续季报/业绩预告",
+    "中国移动算力网建设相关订单落地情况"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头单日放量下跌超5%且无明确利空",
+    "某半导体龙头业绩预告被证伪或大幅低于预期",
+    "上交所对芯片相关ETF/LOF采取更严厉的监管措施"
+  ],
+  "warnings": [
+    "注意：某半导体龙头业绩预增的公司名称未明确，需确认具体标的",
+    "注意：全球芯片LOF溢价监控可能引发短期情绪波动，不宜追高"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T02:58:13.621775",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_19000101_astock_skill_619b8185",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

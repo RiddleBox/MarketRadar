@@ -1,0 +1,109 @@
+{
+  "opportunity_id": "opp_c7870699",
+  "opportunity_title": "人形机器人主升浪",
+  "opportunity_thesis": "人形机器人赛道已从概念炒作进入业绩与资本共振阶段：A股龙头绿的谐波创历史新高，港股IPO乐动机器人获6707倍散户认购，显示产业资本与二级市场资金高度一致。当前板块处于技术突破+IPO热度+资金流入的三重催化窗口，但需警惕短期过热风险，适合小仓位参与趋势延续。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】人形机器人板块在5月8日逆势大涨，成交额放量，龙头业绩增长，但短期涨幅大、缺乏研报覆盖，且A股整体回调风险未消。机会真实但需警惕回调，建议关注产业落地进展，谨慎参与。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "603728.SH",
+    "300124.SZ",
+    "002747.SZ",
+    "688160.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "5月8日A股龙头创历史新高与港股IPO创纪录认购同日发生，形成板块共振信号，且市场情绪处于中性偏乐观区间（恐贪指数67），尚未极端过热，为趋势延续提供窗口。",
+  "related_signals": [
+    "sig_cc33dd52b601",
+    "sig_41c9d0ac13e2",
+    "sig_4ef836f98ad7"
+  ],
+  "inferred_events": [
+    "inferred_8d62505d",
+    "inferred_c6de917a",
+    "inferred_b18f0d6a",
+    "inferred_81968dd4",
+    "inferred_3295b475",
+    "inferred_c8a0a96f",
+    "inferred_a6e9308e"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "绿的谐波股价创历史新高，涨幅超15%，技术面突破确认",
+    "乐动机器人香港IPO散户认购6707倍，显示市场对人形机器人赛道极度追捧",
+    "多只概念股涨停或连板，板块赚钱效应扩散"
+  ],
+  "counter_evidence": [
+    "板块已连续上涨，短期涨幅较大，存在获利回吐风险",
+    "历史案例显示技术突破需商业化验证，当前缺乏订单落地信号"
+  ],
+  "key_assumptions": [
+    "假设1：人形机器人产业链商业化进展未出现重大延迟",
+    "假设2：市场整体流动性环境维持宽松，央行降准降息预期兑现",
+    "假设3：板块热度不会因监管降温或IPO抽血而快速消退"
+  ],
+  "uncertainty_map": [
+    "商业化落地节奏不确定（影响程度：高）",
+    "短期涨幅过大后回调风险（影响程度：中）",
+    "IPO密集发行可能分流资金（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 5,
+    "consensus_gap": 5,
+    "signal_consistency": 8,
+    "overall_score": 6.9,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：板块趋势延续，龙头股有望继续上涨10%-20%；潜在风险：短期回调5%-10%，若商业化不及预期可能回撤15%以上。风险收益比约1:2，适合小仓位试探。",
+  "next_validation_questions": [
+    "绿的谐波等龙头股后续成交量是否持续放大？",
+    "是否有新的产业政策或订单公告支撑板块逻辑？",
+    "乐动机器人上市首日表现如何，是否带动港股机器人板块？"
+  ],
+  "invalidation_conditions": [
+    "绿的谐波股价跌破5日均线且成交量萎缩",
+    "板块内出现大面积跌停或龙头股单日跌幅超7%",
+    "监管层出台针对概念炒作的降温措施"
+  ],
+  "must_watch_indicators": [
+    "绿的谐波日线走势与成交量",
+    "人形机器人板块整体成交额变化",
+    "央行降准降息政策落地情况",
+    "乐动机器人港股上市首日涨跌幅"
+  ],
+  "kill_switch_signals": [
+    "板块指数单日跌幅超5%",
+    "龙头股放量跌停",
+    "IPO认购倍数骤降或破发"
+  ],
+  "warnings": [
+    "板块短期涨幅较大，追高风险显著",
+    "历史案例显示概念炒作缺乏订单支撑时易回落"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T05:36:46.418999",
+  "batch_id": "sched_signal_pipeline_20260509_051555_1189ae_20260509_astock_skill_64c3289b",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

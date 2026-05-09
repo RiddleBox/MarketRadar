@@ -1,0 +1,138 @@
+{
+  "opportunity_id": "opp_b75accb3",
+  "opportunity_title": "AI算力链景气确认",
+  "opportunity_thesis": "光模块龙头中际旭创市值突破万亿、新易盛一季报净利润增长76.8%、半导体龙头预增150%-180%，叠加中国移动推进算力网建设、AI应用板块走强，多条信号一致指向AI算力产业链景气度持续超预期。市场对AI算力需求的结构性增长尚未充分定价，当前是业绩验证后的加速窗口。\n\n【M13调研】机会描述基于AI算力需求爆发、业绩超预期和政策利好，但新闻分析中缺乏直接验证。中韩半导体ETF领涨、英特尔AMD市值新高、胜宏科技订单饱满等间接支持半导体景气度，但具体公司业绩数据未出现，政策利好也未明确。风险在于业绩持续性分歧和缺乏直接证据。整体方向可行，但需谨慎验证具体数据，建议等待更多确认信号。\n\n【M13调研】AI算力需求驱动光模块和半导体景气度得到部分验证：新易盛业绩高增、英特尔AMD市值新高、胜宏科技订单饱满。但机会描述中的中际旭创市值破万亿、某半导体龙头预增等具体数据未在新闻中出现，政策利好也缺乏报道。市场对业绩持续性存分歧，风险在于信息不实和预期差。建议谨慎，等待更多确认信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "300394.SZ",
+    "300476.SZ",
+    "688981.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "光模块'易中天'（中际旭创、新易盛、天孚通信）2025年报及2026一季报全部披露完毕，业绩超预期；中际旭创市值突破万亿里程碑；半导体龙头Q1预增150%-180%；中国移动宣布推进算力网建设，政策与产业共振。当前是业绩验证后的情绪加速期，窗口有限。",
+  "related_signals": [
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_c65bd11e442f",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_5a2ec57f6916",
+    "sig_a1d7094e54d1",
+    "sig_d9ef44f292bd",
+    "sig_d8cb7635ade9",
+    "sig_39b17c44aba1",
+    "sig_4149b887d9b2",
+    "sig_911415444bf5",
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017",
+    "sig_41c9d0ac13e2",
+    "sig_d36d819acfc5",
+    "sig_e49e84bd5c49",
+    "sig_df713685bee1",
+    "sig_050c391c993e",
+    "sig_1427d286ec9e",
+    "sig_e8ba30264edb",
+    "sig_ffdee791adf2"
+  ],
+  "inferred_events": [
+    "inferred_ba08e15c",
+    "inferred_f4a66746",
+    "inferred_503d81a1",
+    "inferred_dd551385",
+    "inferred_7d5cf0a5"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，收盘9989亿，创历史里程碑",
+    "新易盛一季报净利润同比增长76.8%，业绩超预期",
+    "某半导体龙头Q1预增150%-180%，受益AI芯片需求爆发",
+    "胜宏科技1.6T光模块产能利用率良好，CoWop技术推进",
+    "中国移动推进全国一体化算力网建设，开放万亿级Token服务",
+    "AI应用板块走高，软件ETF涨超2%，资金净流入"
+  ],
+  "counter_evidence": [
+    "中际旭创市值突破万亿后可能面临获利回吐压力",
+    "部分信号（如每日互动AI收入千万级）体量较小，代表性有限"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，光模块/半导体订单能见度维持高位",
+    "假设2：宏观经济不出现超预期下行，市场风险偏好维持",
+    "假设3：中美科技摩擦不进一步升级影响供应链"
+  ],
+  "uncertainty_map": [
+    "业绩增速能否持续（影响程度：高）",
+    "市场整体流动性及风险偏好变化（影响程度：中）",
+    "地缘政治风险对科技板块的冲击（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.5800000000000001,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI算力产业链业绩持续超预期，龙头股有望继续创新高，板块整体估值提升。潜在风险：业绩增速放缓、市场风格切换、地缘政治冲击。预计收益风险比约2:1。",
+  "next_validation_questions": [
+    "中际旭创、新易盛等龙头的最新订单及产能利用率数据如何？",
+    "半导体龙头Q1预增的具体公司及业务拆分？",
+    "中国移动算力网建设的实际投资规模和时间表？"
+  ],
+  "invalidation_conditions": [
+    "光模块龙头出现订单下滑或客户砍单信号",
+    "半导体龙头业绩预告低于预期",
+    "市场整体出现系统性风险（如流动性危机）"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛、天孚通信的日成交额及股价走势",
+    "光模块产业链（如胜宏科技）的产能利用率变化",
+    "AI芯片相关公司的业绩预告及订单数据",
+    "中国移动算力网建设的后续政策及投资落地"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头单日放量下跌超5%且无明确原因",
+    "半导体龙头业绩预告大幅低于预期",
+    "中美科技制裁升级，限制光模块/芯片出口"
+  ],
+  "warnings": [
+    "部分信号（如某半导体龙头）公司名称未明确，需确认具体标的",
+    "中际旭创市值突破万亿后短期可能面临技术性回调压力"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T03:15:36.585960",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_19000101_astock_skill_fd926efa",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,111 @@
+{
+  "opportunity_id": "opp_36948cdc",
+  "opportunity_title": "宽松博弈经济底",
+  "opportunity_thesis": "央行已实施降准降息，但经济数据（PMI、CPI、PPI）持续疲弱，形成典型的'政策宽松+经济探底'组合。市场预期后续将有更大力度财政与产业刺激政策出台，当前处于博弈政策底与基本面底之间的窗口期。历史经验显示，降息降准后市场短期有估值修复机会，但持续性取决于后续经济数据能否企稳。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "600519.SH",
+    "000858.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-24T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "央行降准降息已落地，但4月PMI连续3个月低于荣枯线、CPI/PPI通缩，经济下行压力加大。市场预期两会后或有新一轮财政刺激（特别国债、消费补贴等），当前是政策预期发酵期。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203",
+    "sig_7298dda97ec7"
+  ],
+  "inferred_events": [
+    "inferred_520a9dfb",
+    "inferred_f93f9837",
+    "inferred_960e5ae3",
+    "inferred_f0d3511f",
+    "inferred_fa46383d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点+降逆回购利率10bp，流动性宽松信号明确",
+    "制造业PMI连续3个月低于50，经济基本面疲弱倒逼政策加码",
+    "CPI/PPI双负，通缩压力为政策宽松提供空间",
+    "历史案例case_2024_rate_cut显示降息后银行股有估值修复机会"
+  ],
+  "counter_evidence": [
+    "经济数据持续恶化可能压制市场风险偏好，政策效果需时间传导",
+    "市场对宽松已有部分定价，预期差可能有限"
+  ],
+  "key_assumptions": [
+    "假设1：后续1个月内将有财政刺激政策（如特别国债、消费补贴）出台",
+    "假设2：经济数据不会进一步急剧恶化（PMI不跌破48）",
+    "假设3：外部风险（地缘冲突、美联储政策）不显著冲击A股"
+  ],
+  "uncertainty_map": [
+    "政策力度与节奏不确定性（影响程度：高）：市场预期与实际政策可能偏差",
+    "经济数据改善时点不确定（影响程度：高）：若PMI持续低迷，反弹可能夭折",
+    "外部风险扰动（影响程度：中）：中东地缘冲突或美联储鹰派可能压制风险偏好"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 7,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.6,
+    "confidence_score": 0.29999999999999993,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：若政策刺激超预期，指数有望反弹5-10%，新能源、消费龙头弹性更大。潜在风险：若政策落空或经济数据继续恶化，指数可能下跌3-5%。收益风险比约2:1。",
+  "next_validation_questions": [
+    "近期是否有重要会议（如国常会、政治局会议）释放财政刺激信号？",
+    "4月PMI终值是否企稳或回升？",
+    "北向资金近期流向是否转为净流入？"
+  ],
+  "invalidation_conditions": [
+    "1个月内无实质性财政刺激政策出台",
+    "PMI跌破48，经济加速恶化",
+    "外部重大风险事件（如地缘冲突升级至全面战争）"
+  ],
+  "must_watch_indicators": [
+    "制造业PMI月度数据",
+    "央行公开市场操作利率",
+    "北向资金净流入/流出",
+    "国债收益率曲线（反映宽松预期）"
+  ],
+  "kill_switch_signals": [
+    "PMI跌破48且无政策对冲",
+    "央行意外收紧流动性（如逆回购利率上调）",
+    "A股单日跌幅超3%且放量"
+  ],
+  "warnings": [
+    "注意：经济数据滞后，政策效果需时间验证，短期反弹可能不持续",
+    "注意：市场对宽松已有部分定价，预期差可能有限，不宜追高"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T00:36:13.837480",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_bd83e010",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

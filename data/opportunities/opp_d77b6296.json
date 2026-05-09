@@ -1,0 +1,151 @@
+{
+  "opportunity_id": "opp_d77b6296",
+  "opportunity_title": "AI半导体景气确认",
+  "opportunity_thesis": "英伟达股价创新高、中际旭创市值破万亿、新易盛一季报增长76.8%、某半导体龙头预增150%-180%，叠加中国移动算力网建设政策、AI应用板块资金流入，构成AI与半导体产业链景气度从上游到下游全面确认的信号。市场情绪面（板块轮动资金流入半导体/新能源）与基本面（业绩超预期）共振，但部分利好已被股价部分反映，需警惕追高风险。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持。关键发现包括：新闻内容与AI产业链关联度低，业绩数据未验证，外围市场存在不确定性。风险因素主要为信息不实和情绪过热。未发现重大利空，但置信度因证据不足下调0.2。综合来看，该机会缺乏近期数据支撑，建议谨慎对待，等待更多验证信号。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持，关键业绩数据未验证，且豪威集团一季报净利润下降41.92%与板块爆发矛盾。外围市场存在不确定性（欧洲股市下跌、俄欧关系紧张）。未发现重大利空，但置信度较低（0.2），建议谨慎对待，等待更多验证信号。",
+  "target_markets": [
+    "A_SHARE",
+    "US"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "603501.SH",
+    "688008.SH",
+    "002371.SZ",
+    "002230.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-07-08T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "英伟达创新高（5月8日）、中际旭创万亿市值（4月23日）、新易盛一季报（4月23日）、某半导体龙头预增（4月24日）、AI应用板块集体上涨（5月8日）、中国移动算力网政策（5月8日）、人工智能终端国标发布（5月8日）——多个催化剂在近两周密集出现，形成基本面+政策+情绪三重共振窗口。",
+  "related_signals": [
+    "sig_c4f2e4a475a6",
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sent_ec6c7cba",
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_c65bd11e442f",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_5a2ec57f6916",
+    "sig_a1d7094e54d1",
+    "sig_d9ef44f292bd",
+    "sig_d8cb7635ade9",
+    "sig_39b17c44aba1",
+    "sig_4149b887d9b2",
+    "sig_911415444bf5",
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017",
+    "sig_41c9d0ac13e2",
+    "sig_d36d819acfc5",
+    "sig_e49e84bd5c49",
+    "sig_df713685bee1",
+    "sig_050c391c993e"
+  ],
+  "inferred_events": [
+    "inferred_311a1292",
+    "inferred_55c31d3c",
+    "inferred_c29c735d",
+    "inferred_2e8d9ec9",
+    "inferred_60f444d9",
+    "inferred_a2dc42b2",
+    "inferred_cd6cf4df",
+    "inferred_7aa75747",
+    "inferred_c9eb49aa",
+    "inferred_6ff99cd9"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "英伟达股价创新高，总市值5.26万亿美元，确认全球AI算力需求持续爆发",
+    "中际旭创盘中市值突破万亿，光模块龙头率先受益于AI数据中心建设",
+    "新易盛一季报净利润增长76.8%，光模块板块业绩集体超预期",
+    "某半导体龙头Q1预增150%-180%，AI芯片需求驱动业绩爆发",
+    "中国移动推进全国一体化算力网建设，政策加码AI基础设施",
+    "AI应用板块走高，软件ETF资金净流入，市场情绪转向积极",
+    "人工智能终端国家标准发布，产业标准化加速"
+  ],
+  "counter_evidence": [
+    "部分利好（如中际旭创万亿市值）已被股价部分反映，短期存在获利回吐压力",
+    "市场情绪贪婪（恐贪指数67），若后续催化剂不足，可能面临回调风险"
+  ],
+  "key_assumptions": [
+    "假设1：AI芯片需求持续增长，英伟达及国内半导体公司订单不出现大幅下滑",
+    "假设2：国内AI/半导体产业政策保持支持力度，不出现转向",
+    "假设3：市场整体流动性环境不出现急剧收紧"
+  ],
+  "uncertainty_map": [
+    "地缘政治风险（中东局势升级）可能引发全球避险情绪，拖累科技股（影响程度：高）",
+    "部分标的短期涨幅过大，技术性回调风险（影响程度：中）",
+    "业绩兑现后缺乏新催化剂，行情持续性存疑（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 5,
+    "signal_consistency": 9,
+    "overall_score": 7.3,
+    "confidence_score": 0.45000000000000007,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：AI/半导体产业链景气度持续，龙头公司业绩高增长，政策加码，有望推动板块进一步上涨10%-20%。潜在风险：短期涨幅已部分反映利好，若后续催化剂不足或市场情绪转向，可能回调5%-10%。盈亏比约2:1。",
+  "next_validation_questions": [
+    "英伟达最新季报（预计5月底）是否继续超预期？",
+    "国内半导体龙头（如中芯国际）一季报是否验证行业高景气？",
+    "北向资金是否持续流入A股半导体/AI板块？",
+    "中国移动算力网建设是否有具体投资金额或时间表？"
+  ],
+  "invalidation_conditions": [
+    "英伟达股价跌破200美元或出现重大利空",
+    "A股半导体板块指数跌破20日均线且成交量萎缩",
+    "北向资金连续3日净流出超50亿元"
+  ],
+  "must_watch_indicators": [
+    "英伟达股价走势",
+    "中证半导体指数（990001）走势",
+    "北向资金每日净流入/流出",
+    "光模块板块（中际旭创、新易盛）成交量变化"
+  ],
+  "kill_switch_signals": [
+    "英伟达单日跌幅超5%",
+    "A股半导体板块单日跌幅超3%且放量",
+    "中美科技领域出现新的制裁或限制政策"
+  ],
+  "warnings": [
+    "注意：部分信号（如某半导体龙头预增）公司名称未明确，需确认具体标的",
+    "注意：市场情绪已偏贪婪，追高风险较大，建议等待回调或分批建仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T01:42:46.652266",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_20260508_astock_skill_8ccb9dbb",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

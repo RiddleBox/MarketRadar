@@ -1,0 +1,110 @@
+{
+  "opportunity_id": "opp_0b65c5be",
+  "opportunity_title": "人形机器人产业链爆发",
+  "opportunity_thesis": "人形机器人板块在2026年5月8日出现多信号共振：龙头股绿的谐波创历史新高、多只概念股涨停、港股IPO获6707倍散户认购，显示市场情绪和资金高度聚焦。叠加固态电池技术突破（纯锂新能源量产线达产）提供产业链上游支撑，当前处于产业爆发初期，预期差较大，短期有持续上涨动力。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】人形机器人板块在情绪和资金推动下爆发，但缺乏研报和基本面验证，短期过热风险显著。产业处于初期，预期差大，但需谨慎对待回调可能。建议关注后续产业落地进展，避免追高。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "002031.SZ",
+    "603728.SH",
+    "300124.SZ",
+    "688160.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "当前时点催化剂密集：龙头股创历史新高、板块集体涨停、港股IPO认购倍数创纪录，显示市场情绪和资金已开始集中涌入。同时固态电池量产线达产提供产业链上游支撑，技术突破与市场情绪形成共振，短期窗口明确。",
+  "related_signals": [
+    "sig_1da9f093af7d",
+    "sig_906283b999bb",
+    "sig_cc33dd52b601",
+    "sig_41c9d0ac13e2",
+    "sig_4ef836f98ad7"
+  ],
+  "inferred_events": [
+    "inferred_c0b53c83",
+    "inferred_299e3915",
+    "inferred_b3ddabcd",
+    "inferred_075e5309",
+    "inferred_2fb51126"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "绿的谐波(688017)股价创历史新高，盘中涨超15%",
+    "人形机器人概念股集体上涨，多只个股涨停",
+    "乐动机器人香港IPO获6707倍散户认购，显示市场极度追捧",
+    "纯锂新能源500MWh量产线已达产，推进GWh级产线，固态电池技术突破"
+  ],
+  "counter_evidence": [
+    "板块短期涨幅较大，可能已部分price-in乐观预期",
+    "历史案例case_2024_tech_breakthrough显示技术突破缺乏商业化订单时可能回落"
+  ],
+  "key_assumptions": [
+    "假设1：人形机器人产业链商业化进程加速，订单落地可期",
+    "假设2：市场情绪持续高涨，资金继续流入板块",
+    "假设3：固态电池等上游技术突破能顺利转化为产业链支撑"
+  ],
+  "uncertainty_map": [
+    "商业化订单落地时间不确定（影响程度：高）",
+    "市场情绪可能快速消退，导致板块回调（影响程度：中）",
+    "监管政策变化可能影响板块炒作（影响程度：低）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：板块短期情绪驱动下可能继续上涨10-20%，龙头股可能更高。潜在风险：若商业化订单不及预期或市场情绪逆转，板块可能回调10-15%。风险收益比约1:1.5。",
+  "next_validation_questions": [
+    "人形机器人产业链是否有近期订单或合作公告？",
+    "板块资金流向是否持续净流入？",
+    "港股乐动机器人上市首日表现如何？"
+  ],
+  "invalidation_conditions": [
+    "板块出现集体跌停或龙头股放量下跌",
+    "商业化订单落地明显低于预期",
+    "市场整体出现系统性风险（如地缘冲突升级）"
+  ],
+  "must_watch_indicators": [
+    "绿的谐波(688017)股价走势及成交量",
+    "人形机器人板块资金流向",
+    "港股乐动机器人上市首日表现",
+    "固态电池相关公司公告"
+  ],
+  "kill_switch_signals": [
+    "龙头股跌破5日均线且成交量放大",
+    "板块内多只个股出现利空公告",
+    "市场恐贪指数进入极度贪婪（≥80）后快速回落"
+  ],
+  "warnings": [
+    "注意：板块短期涨幅较大，追高风险较高",
+    "注意：技术突破到商业化落地存在时间差，需关注订单验证"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T04:28:07.220243",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_20260509_astock_skill_4221087c",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

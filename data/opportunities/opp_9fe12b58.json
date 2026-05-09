@@ -1,0 +1,157 @@
+{
+  "opportunity_id": "opp_9fe12b58",
+  "opportunity_title": "宽松流动性驱动反弹",
+  "opportunity_thesis": "经济数据持续疲软（PMI连续3个月低于荣枯线、CPI/PPI通缩）迫使央行连续释放宽松信号并已落地降准降息。当前市场对经济基本面定价悲观，但对政策宽松的定价尚不充分，存在预期差。流动性释放将首先驱动高弹性、对利率敏感的板块（如券商、科技）出现估值修复行情，形成短期交易性机会。\n\n【M13调研】央行释放强烈宽松信号，但经济基本面疲弱，市场交易政策托底预期。受益方向为金融、地产等，但需警惕经济数据恶化。新闻中无直接相关分析，中信证券一季报亮眼，但整体信息不足。风险在于政策效果打折和全球市场波动。建议谨慎关注，等待更多数据。\n\n【M13调研】机会基于政策底和宽松预期，但经济基本面疲弱，市场博弈政策托底。流动性敏感板块（券商、银行）和利率敏感板块（地产）存在阶段性交易机会，但需警惕经济数据恶化和全球市场波动。当前信息不足，缺乏研报和新闻直接支持，建议谨慎关注，等待更多数据验证。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600030.SH",
+    "601688.SH",
+    "002230.SZ",
+    "300059.SZ",
+    "688981.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-25T00:00:00",
+    "end": "2026-05-25T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行已明确表态将适时降准，并已落地降准0.5个百分点和下调7天逆回购利率10bp，政策信号从预期转向执行。同时，最新PMI数据（49.0）确认经济下行压力，为政策持续宽松提供了基本面依据。当前时点是政策落地初期，市场尚未充分反应流动性改善对资产价格的提振作用。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_2ba5b3f88b20",
+    "sig_92a136d719dc",
+    "sig_66cd4adf6332",
+    "sig_ea7347bd74cf",
+    "sig_b344dde14d32",
+    "sig_e39115aa3077",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203",
+    "sig_7298dda97ec7",
+    "sig_8acb82a65167",
+    "sig_6d0d506ec2df",
+    "sig_5fbb3b22217e",
+    "sig_8a6f0519b08d",
+    "sig_9b5f9f0a102a",
+    "sig_21f5c177b742",
+    "sig_0bf2be0f1bda",
+    "sig_6aae84620adb",
+    "sig_eab6949342f3",
+    "sig_c9e5f674d9ca",
+    "sig_edc5b0434f33",
+    "sig_13fe94a19c08",
+    "sig_2ad1cb2b2377",
+    "sig_6030bb0be882",
+    "sig_7d650e648a54",
+    "sig_f5a17113c4e6",
+    "sig_87b1671a6111",
+    "sig_37b8e1ac32b6",
+    "sig_247fd5330706",
+    "sig_8d38b82a7d38",
+    "sig_504fbedd1b66",
+    "sig_cf855bc992d0",
+    "sig_771f563b82a1",
+    "sig_d5e1a6ec9732",
+    "sig_b19ea9e6181e",
+    "sig_e0e3bf1f136a",
+    "sig_db00c48abe84",
+    "sig_46e3ef6b4b10",
+    "sig_de08dfbf89a4",
+    "sig_007be518105c",
+    "sig_f441c8828a04",
+    "sig_ac93f560548e",
+    "sig_483c3b1eec29",
+    "sig_c26c00625075",
+    "sig_4c9e1bba1ed0",
+    "sig_e165b97b96f4",
+    "sig_7a827ccde515",
+    "sig_f0e05280f574",
+    "sig_0e9e62af2013",
+    "sig_dece1006f835",
+    "sig_1ee4d36e04da"
+  ],
+  "inferred_events": [
+    "inferred_cf1318b2",
+    "inferred_4375069d",
+    "inferred_9589b89c",
+    "inferred_4ffeb9a9",
+    "inferred_2777d81f"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行已宣布降准0.5个百分点（4月25日执行），释放长期资金约1万亿元，流动性改善确定性高。",
+    "央行下调7天逆回购利率10bp至1.7%，降低市场短期资金成本。",
+    "制造业PMI连续3个月低于荣枯线（49.0），CPI/PPI持续负增长，经济基本面疲软为政策宽松提供了持续动力。",
+    "央行行长公开表态将适时降准，政策意图明确，市场对后续进一步宽松（如降息）有预期。"
+  ],
+  "counter_evidence": [
+    "经济基本面疲软（PMI、CPI、PPI）可能压制企业盈利，流动性宽松无法完全对冲盈利下行风险。",
+    "12月CPI/PPI数据时效性较低（约4个月前），可能已被市场部分定价。"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续不会收紧货币政策，宽松方向至少维持1-2个月。",
+    "假设2：流动性释放能有效传导至资本市场，而非完全淤积在银行间市场。",
+    "假设3：没有超预期的外部冲击（如地缘冲突升级）打断市场风险偏好修复。"
+  ],
+  "uncertainty_map": [
+    "经济基本面恶化速度超预期，导致市场信心崩溃，流动性宽松失效（影响程度：高）。",
+    "政策宽松力度不及预期，或市场已充分定价，导致反弹空间有限（影响程度：中）。",
+    "外部地缘风险（如中东冲突）升级，引发全球避险情绪，抵消国内流动性利好（影响程度：中）。"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.7,
+    "confidence_score": 0.52,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：流动性驱动的高弹性板块（券商、科技）估值修复，预期收益10-15%。潜在风险：经济基本面持续恶化导致市场对政策宽松脱敏，或政策落地后市场反应平淡，最大回撤5-8%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "降准落地后，银行间市场利率（如DR007）是否显著下行，验证流动性是否有效释放？",
+    "市场成交量是否在降准后放大，验证资金是否流入股市？",
+    "券商板块（如中信证券、华泰证券）是否出现放量上涨，验证市场对流动性改善的定价？"
+  ],
+  "invalidation_conditions": [
+    "央行在1个月内释放收紧信号（如重启正回购、提高逆回购利率）。",
+    "市场成交量在降准后持续萎缩，显示流动性宽松未传导至股市。",
+    "经济数据（如PMI）进一步恶化至48以下，引发系统性风险担忧。"
+  ],
+  "must_watch_indicators": [
+    "DR007（7天期银行间质押式回购利率）",
+    "A股市场日成交额",
+    "券商板块指数（如申万证券II）",
+    "北向资金净流入/流出情况"
+  ],
+  "kill_switch_signals": [
+    "央行意外上调政策利率或暂停逆回购操作。",
+    "A股市场出现连续3日以上缩量下跌，且跌幅超过2%。",
+    "地缘政治事件（如中东冲突）导致全球股市暴跌超过5%。"
+  ],
+  "warnings": [
+    "注意：经济基本面疲软是长期压制因素，流动性驱动的反弹可能持续时间较短（1个月以内），需及时止盈。",
+    "注意：CPI/PPI数据时效性较低（12月），需关注最新月度数据以验证通缩趋势是否延续。"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T02:57:57.114522",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_19000101_astock_skill_619b8185",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

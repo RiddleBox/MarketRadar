@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_e105839d",
+  "opportunity_title": "光模块业绩爆发",
+  "opportunity_thesis": "AI算力需求持续驱动光模块产业链景气度上行，龙头中际旭创市值突破万亿、新易盛一季报净利润增长76.8%等信号表明行业业绩进入加速释放期。叠加中国移动推进算力网建设、AI终端国家标准发布等政策催化，板块预期差仍存，市场尚未完全定价后续1.6T光模块放量及CoWop技术升级带来的价值量提升。当前时点业绩验证与政策共振，构成中期做多机会。\n\n【M13调研】机会描述基于AI算力需求爆发、业绩超预期和政策利好，但新闻分析中缺乏直接验证。中韩半导体ETF领涨、英特尔AMD市值新高、胜宏科技订单饱满等间接支持半导体景气度，但具体公司业绩数据未出现，政策利好也未明确。风险在于业绩持续性分歧和缺乏直接证据。整体方向可行，但需谨慎验证具体数据，建议等待更多确认信号。\n\n【M13调研】AI算力需求驱动光模块和半导体景气度得到部分验证：新易盛业绩高增、英特尔AMD市值新高、胜宏科技订单饱满。但机会描述中的中际旭创市值破万亿、某半导体龙头预增等具体数据未在新闻中出现，政策利好也缺乏报道。市场对业绩持续性存分歧，风险在于信息不实和预期差。建议谨慎，等待更多确认信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "300394.SZ",
+    "300476.SZ",
+    "600941.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "中际旭创市值突破万亿、新易盛一季报净利润增长76.8%等业绩信号密集出现，叠加中国移动推进算力网建设、AI终端国家标准发布等政策催化，形成业绩验证与政策共振窗口。市场对1.6T光模块放量和CoWop技术升级的价值量提升尚未充分定价，预期差存在。",
+  "related_signals": [
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_ab3ab55a49b9",
+    "sig_d9ef44f292bd",
+    "sig_4149b887d9b2",
+    "sig_050c391c993e",
+    "sig_e8ba30264edb",
+    "sig_ffdee791adf2"
+  ],
+  "inferred_events": [
+    "inferred_f34651ef",
+    "inferred_9c30aaec",
+    "inferred_bb3f1bf7",
+    "inferred_155a50e6",
+    "inferred_c4edfbb6",
+    "inferred_1337df20"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，创历史里程碑",
+    "新易盛一季报净利润同比增长76.8%，业绩超预期",
+    "胜宏科技1.6T光模块产能利用率良好，CoWop技术研发推进",
+    "中国移动推进全国一体化算力网建设，加速AI数据中心布局",
+    "人工智能终端国家标准发布，明确智能化分级"
+  ],
+  "counter_evidence": [
+    "板块已大幅上涨，中际旭创市值突破万亿可能已部分price-in利好",
+    "市场整体情绪偏贪婪（恐贪指数67），短期回调风险增加"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，光模块订单保持高景气",
+    "假设2：1.6T光模块放量节奏符合预期，CoWop技术商业化顺利",
+    "假设3：宏观经济和政策环境不发生重大逆转"
+  ],
+  "uncertainty_map": [
+    "1.6T光模块放量节奏不及预期（影响程度：高）",
+    "CoWop技术研发进度或商业化效果低于预期（影响程度：中）",
+    "市场整体回调风险导致板块估值压缩（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.55,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益来自1.6T光模块放量和CoWop技术升级带来的业绩超预期，以及政策催化下的估值提升。风险在于板块已部分price-in利好，且市场情绪偏贪婪，短期回调可能压缩收益。预计上行空间20-30%，下行风险10-15%。",
+  "next_validation_questions": [
+    "中际旭创、新易盛等龙头的最新订单和产能利用率数据如何？",
+    "1.6T光模块的客户导入进度和2026年下半年出货指引是否明确？",
+    "CoWop技术研发进展及对胜宏科技PCB价值量的具体提升幅度？"
+  ],
+  "invalidation_conditions": [
+    "光模块龙头公司发布低于预期的季度业绩或订单指引",
+    "AI算力需求出现明显放缓信号（如主要云厂商资本开支下调）",
+    "市场整体出现系统性风险，板块大幅回调"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛、天孚通信的季度营收和净利润增速",
+    "1.6T光模块出货量和客户订单公告",
+    "中国移动等运营商算力投资实际落地进度",
+    "光模块板块整体估值水平和资金流向"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头公司高管减持或业绩预警",
+    "主要客户（如英伟达、谷歌）下调AI资本开支指引",
+    "板块出现连续放量下跌，技术形态破位"
+  ],
+  "warnings": [
+    "注意：板块已大幅上涨，部分利好可能已被市场定价",
+    "注意：市场情绪偏贪婪，短期回调风险不容忽视"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T04:30:56.178954",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_20260509_astock_skill_759e272f",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

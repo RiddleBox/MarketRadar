@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_247b2f02",
+  "opportunity_title": "券商业绩爆发",
+  "opportunity_thesis": "广发证券一季度净利润同比增70.73%，叠加沪深两市成交额突破1.5万亿，显示资本市场活跃度显著提升。港股IPO火爆（乐动机器人6707倍认购）进一步验证市场情绪高涨。券商作为市场活跃度的直接受益者，业绩与交易量双重确认，形成基本面与资金面的共振机会。\n\n【M13调研】金融板块一季报业绩超预期，广发证券净利润同比增70.73%，多家银行券商营收净利润双增，基本面改善。当前市场预期偏低，叠加降准宽松预期，存在估值修复机会。但缺乏研报和行业趋势分析，新闻中金融相关报道仅2条且时效性不足，地缘政治风险可能扰动市场。综合评估，机会有一定逻辑但支撑较弱，建议谨慎参与，等待更多催化剂。\n\n【M13调研】央行释放强烈宽松信号，但经济基本面疲弱，市场交易政策托底预期。受益方向为金融、地产等，但需警惕经济数据恶化。新闻中无直接相关分析，中信证券一季报亮眼，但整体信息不足。风险在于政策效果打折和全球市场波动。建议谨慎关注，等待更多数据。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "000776.SZ",
+    "600030.SH",
+    "601211.SH",
+    "600837.SH",
+    "601688.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "广发证券一季报超预期（4月27日）与沪深成交额突破1.5万亿（5月8日）几乎同时出现，形成业绩+交易量的双重确认。港股IPO火爆（5月8日）进一步强化市场情绪，当前时点催化剂密集，市场尚未完全定价。",
+  "related_signals": [
+    "sig_898af08751f6",
+    "sig_a1a728ae8eed",
+    "sig_1427d286ec9e"
+  ],
+  "inferred_events": [
+    "inferred_b1a39110",
+    "inferred_835444a3",
+    "inferred_faf505dc",
+    "inferred_02754d68",
+    "inferred_f53692b6",
+    "inferred_73cf7310",
+    "inferred_b0e01c11",
+    "inferred_b137de30",
+    "inferred_40d6766b",
+    "inferred_1ae457b5"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "广发证券一季度净利润同比增70.73%，营收增64.33%",
+    "沪深两市成交额突破1.5万亿元，创近期新高",
+    "乐动机器人香港IPO获6707倍散户认购，市场情绪极度亢奋"
+  ],
+  "counter_evidence": [
+    "市场短期技术面恶化（三大指数高开回落，近4000只个股下跌）",
+    "地缘政治风险（中东局势升级）可能引发避险情绪"
+  ],
+  "key_assumptions": [
+    "假设1：市场成交额维持1.2万亿以上，券商经纪业务收入持续改善",
+    "假设2：IPO热潮延续，投行业务贡献增量利润",
+    "假设3：宏观经济不出现超预期恶化，市场风险偏好维持"
+  ],
+  "uncertainty_map": [
+    "市场成交额能否持续维持高位（影响程度：高）",
+    "地缘政治风险是否升级并冲击全球市场（影响程度：中）",
+    "监管政策是否收紧（如IPO节奏放缓）（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 9,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.4,
+    "confidence_score": 0.55,
+    "execution_readiness": 0.85
+  },
+  "risk_reward_profile": "潜在收益：券商板块在成交额持续放量下有望获得20-30%涨幅；风险：成交额回落或地缘风险导致市场回调，最大回撤约10-15%。",
+  "next_validation_questions": [
+    "未来一周沪深两市日均成交额能否维持在1.2万亿以上？",
+    "其他头部券商（如中信证券、华泰证券）一季报是否同样超预期？",
+    "港股IPO热度是否持续（如后续是否有大型IPO）？"
+  ],
+  "invalidation_conditions": [
+    "沪深两市成交额连续3日低于1万亿",
+    "地缘政治冲突显著升级，全球股市大跌",
+    "监管层出台政策收紧市场流动性或IPO节奏"
+  ],
+  "must_watch_indicators": [
+    "沪深两市日成交额",
+    "券商板块指数走势",
+    "北向资金净流入/流出",
+    "港股IPO认购倍数"
+  ],
+  "kill_switch_signals": [
+    "成交额跌破1万亿且持续萎缩",
+    "券商板块出现集体跌停或单日跌幅超5%",
+    "地缘冲突导致原油价格暴涨超10%"
+  ],
+  "warnings": [
+    "注意：广发证券一季报超预期可能已被部分定价，需关注后续业绩持续性",
+    "注意：市场情绪极度亢奋（港股IPO6707倍认购）可能预示短期过热风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T03:02:09.661247",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_19000101_astock_skill_99218794",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

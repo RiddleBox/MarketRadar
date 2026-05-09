@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_a0367dd3",
+  "opportunity_title": "AI算力光模块景气共振",
+  "opportunity_thesis": "AI算力需求爆发带动光模块产业链进入高景气周期，龙头公司业绩持续超预期（中际旭创市值破万亿、新易盛净利增76.8%），叠加政策端（国家标准发布、中国移动算力网建设）形成正向催化。当前市场对AI算力长期趋势已有共识，但对光模块1.6T升级带来的业绩弹性定价仍不充分，存在预期差。\n\n【M13调研】机会描述基于AI算力需求爆发、业绩超预期和政策利好，但新闻分析中缺乏直接验证。中韩半导体ETF领涨、英特尔AMD市值新高、胜宏科技订单饱满等间接支持半导体景气度，但具体公司业绩数据未出现，政策利好也未明确。风险在于业绩持续性分歧和缺乏直接证据。整体方向可行，但需谨慎验证具体数据，建议等待更多确认信号。\n\n【M13调研】AI算力需求驱动光模块和半导体景气度得到部分验证：新易盛业绩高增、英特尔AMD市值新高、胜宏科技订单饱满。但机会描述中的中际旭创市值破万亿、某半导体龙头预增等具体数据未在新闻中出现，政策利好也缺乏报道。市场对业绩持续性存分歧，风险在于信息不实和预期差。建议谨慎，等待更多确认信号。",
+  "target_markets": [
+    "A_SHARE",
+    "US"
+  ],
+  "target_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "300476.SZ",
+    "600941.SH",
+    "AKAM"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "1) 中际旭创市值破万亿、新易盛一季报净利增76.8%，龙头业绩高增验证行业景气；2) 胜宏科技1.6T光模块产能利用率良好，技术升级周期启动；3) 中国移动推进算力网建设+AI终端国家标准发布，政策与产业共振；4) Akamai云基础设施业务增长40%并达成18亿美元AI交易，全球AI资本开支持续扩张。",
+  "related_signals": [
+    "sig_84edb201c131",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f",
+    "sig_4149b887d9b2",
+    "sig_050c391c993e",
+    "sig_e8ba30264edb"
+  ],
+  "inferred_events": [
+    "inferred_b2a5e2c6",
+    "inferred_8d0fbf2d",
+    "inferred_a9cfda12",
+    "inferred_5179fd76",
+    "inferred_809a41ab",
+    "inferred_c6905d45"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，光模块龙头地位确认",
+    "新易盛一季报净利润同比增长76.8%，业绩高增",
+    "胜宏科技1.6T光模块产能利用率良好，技术升级落地",
+    "中国移动推进全国一体化算力网建设，布局吉瓦级数据园区",
+    "Akamai云基础设施业务同比增长40%，全球AI需求强劲"
+  ],
+  "counter_evidence": [
+    "光模块板块已累积较大涨幅，部分预期可能已price-in",
+    "历史案例显示技术突破需商业化验证，概念炒作后可能回落"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力资本开支持续增长，下游需求未出现放缓",
+    "假设2：1.6T光模块升级周期按预期推进，产能释放顺利",
+    "假设3：中美科技竞争未导致供应链中断或出口限制"
+  ],
+  "uncertainty_map": [
+    "AI资本开支增速放缓风险（影响程度：高）",
+    "1.6T光模块技术路线变化或竞争加剧（影响程度：中）",
+    "地缘政治风险导致供应链中断（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.3,
+    "confidence_score": 0.5800000000000001,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：光模块龙头受益于1.6T升级周期，业绩弹性大，估值有提升空间；潜在风险：AI资本开支不及预期或技术路线变化导致订单下滑，股价可能回调20-30%。",
+  "next_validation_questions": [
+    "1.6T光模块的订单可见度如何？主要客户（如英伟达、谷歌）的采购计划是否明确？",
+    "光模块行业竞争格局是否稳定？新进入者是否对龙头构成威胁？",
+    "AI算力相关公司的资本开支指引是否持续上调？"
+  ],
+  "invalidation_conditions": [
+    "主要光模块公司下一季度业绩增速明显放缓",
+    "AI巨头资本开支指引下调或推迟",
+    "1.6T光模块技术路线出现重大变化"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛、胜宏科技的季度订单和毛利率",
+    "英伟达、谷歌等AI巨头的资本开支指引",
+    "1.6T光模块的出货量和价格趋势",
+    "中国移动算力网建设的实际投资进度"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头公司发布低于预期的业绩预告",
+    "AI芯片出口管制升级导致供应链中断",
+    "行业出现大规模降价竞争"
+  ],
+  "warnings": [
+    "注意：部分信号来自新闻，非官方公告，需核实",
+    "注意：光模块板块已累积一定涨幅，短期追高有回调风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T04:05:53.363932",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_20260508_rss_496c84b5",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,106 @@
+{
+  "opportunity_id": "opp_27abe065",
+  "opportunity_title": "金融一季报行情",
+  "opportunity_thesis": "多家银行和券商一季报营收净利润双增，广发证券净利润同比增超70%，银行资产质量平稳，显示金融板块基本面实质性改善。当前市场对经济复苏预期偏弱，金融板块估值仍处低位，业绩超预期有望驱动估值修复行情。\n\n【M13调研】金融板块一季报业绩超预期，广发证券净利润同比增70.73%，多家银行券商营收净利润双增，基本面改善。当前市场预期偏低，叠加降准宽松预期，存在估值修复机会。但缺乏研报和行业趋势分析，新闻中金融相关报道仅2条且时效性不足，地缘政治风险可能扰动市场。综合评估，机会有一定逻辑但支撑较弱，建议谨慎参与，等待更多催化剂。\n\n【M13调研】机会描述基于经济疲软和央行超预期宽松，形成短期交易窗口，逻辑成立。但缺乏研报、行业趋势和基本面数据支持，新闻无相关事件，信息不充分。无重大利空，但置信度偏低，建议谨慎参与，关注后续经济数据验证。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "000776.SZ",
+    "600036.SH",
+    "601166.SH",
+    "601398.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-28T00:00:00",
+    "end": "2026-05-28T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "一季报密集披露期，银行和券商业绩超预期信号集中释放，市场尚未充分定价，后续更多银行券商一季报有望延续向好趋势，形成板块催化。",
+  "related_signals": [
+    "sig_f5dc287cf712",
+    "sig_898af08751f6",
+    "sig_7ae3396ab434",
+    "sig_781fda7e246d"
+  ],
+  "inferred_events": [
+    "inferred_d78df839",
+    "inferred_d6d9a023",
+    "inferred_0778f3a8",
+    "inferred_1c673fb6",
+    "inferred_f98a1c0d",
+    "inferred_d178a590"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "7家地方银行一季报营收净利润全部正增长，资产质量平稳",
+    "广发证券一季度净利润同比增70.73%，营收增64.33%",
+    "银行和券商板块估值处于历史低位，业绩改善提供估值修复基础"
+  ],
+  "counter_evidence": [
+    "样本主要为地方性银行和个别券商，国有大行和头部券商一季报尚未披露，业绩持续性待验证",
+    "当前市场整体情绪偏弱，三大指数高开回落，资金可能不青睐金融板块"
+  ],
+  "key_assumptions": [
+    "假设1：后续披露的银行券商一季报整体延续正增长趋势",
+    "假设2：宏观经济不出现超预期恶化，资产质量保持平稳"
+  ],
+  "uncertainty_map": [
+    "后续银行券商一季报业绩不及预期的风险（影响程度：高）",
+    "市场整体情绪持续低迷，资金从金融板块流出（影响程度：中）",
+    "宏观经济下行压力加大，导致银行资产质量恶化（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 7,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.6,
+    "confidence_score": 0.5,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：金融板块估值修复10-15%；风险：业绩不及预期或市场情绪恶化导致下跌5-8%；盈亏比约2:1",
+  "next_validation_questions": [
+    "后续银行券商一季报是否继续超预期？",
+    "市场资金是否开始流入金融板块？",
+    "宏观经济数据是否支持金融板块基本面改善？"
+  ],
+  "invalidation_conditions": [
+    "后续银行券商一季报出现大面积不及预期",
+    "市场整体大幅下跌，金融板块领跌",
+    "宏观经济数据显著恶化"
+  ],
+  "must_watch_indicators": [
+    "银行券商一季报披露进度及业绩",
+    "银行板块资金流向",
+    "市场整体成交量及指数走势",
+    "宏观经济数据（PMI、社融等）"
+  ],
+  "kill_switch_signals": [
+    "银行券商一季报大面积不及预期",
+    "银行板块出现连续放量下跌",
+    "宏观经济数据超预期恶化"
+  ],
+  "warnings": [
+    "注意：当前信号样本有限，仅7家银行和1家券商，需等待更多数据验证",
+    "注意：市场整体情绪偏弱，金融板块可能受拖累"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T05:45:17.420547",
+  "batch_id": "sched_signal_pipeline_20260509_051555_1189ae_20260509_astock_skill_790d43b3",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,63 @@
+{
+  "plan_id": "plan_728dbb089d89",
+  "opportunity_id": "opp_010b36ea",
+  "plan_summary": "BULLISH | 601012.SH, 600438.SH",
+  "primary_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "688981.SH",
+    "603501.SH"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "以隆基绿能为例，跌破近期低点（假设为2026年4月20日收盘价下方5%）或板块指数跌破20日均线"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "基于潜在10-20%涨幅，设定分批止盈目标"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入隆基绿能、阳光电源、中芯国际各10%仓位（总计30%仓位），以开盘价或盘中突破前日高点时入场",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "保利发展一季报确认业绩恶化（净利润降幅>50%），且地产板块当日跌幅>1%，同时新能源或半导体板块出现放量上涨（单日涨幅>2%且成交量放大>30%）"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总仓位60%，按比例分配至三个品种（各加仓10%），以公告后次日开盘价入场",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 持仓浮盈达5%以上，且央行降准/降息公告发布后科技板块未出现高开低走"
+    }
+  ],
+  "valid_until": "2026-05-30T10:23:21.402257",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-09T10:23:21.402353",
+  "opportunity_priority": "research"
+}

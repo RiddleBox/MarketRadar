@@ -1,0 +1,113 @@
+{
+  "opportunity_id": "opp_69035cc3",
+  "opportunity_title": "AI半导体景气上行",
+  "opportunity_thesis": "AI与半导体产业链景气度持续高涨，资金从消费、地产持续流入新能源和半导体板块，中际旭创市值突破万亿、新易盛一季报净利润增长76.8%、某半导体龙头Q1预增150%-180%等业绩信号密集释放，叠加AI应用板块走高、软件ETF资金净流入，表明行业基本面强劲且市场情绪积极。当前时点业绩验证窗口打开，预期差较大，构成结构性做多机会。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持。关键发现包括：新闻内容与AI产业链关联度低，业绩数据未验证，外围市场存在不确定性。风险因素主要为信息不实和情绪过热。未发现重大利空，但置信度因证据不足下调0.2。综合来看，该机会缺乏近期数据支撑，建议谨慎对待，等待更多验证信号。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持，关键业绩数据未验证，且豪威集团一季报净利润下降41.92%与板块爆发矛盾。外围市场存在不确定性（欧洲股市下跌、俄欧关系紧张）。未发现重大利空，但置信度较低（0.2），建议谨慎对待，等待更多验证信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "603501.SH",
+    "688008.SH",
+    "002371.SZ",
+    "300274.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-06-24T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "当前正值一季报密集披露期，新易盛、某半导体龙头等业绩超预期信号集中释放，验证了AI和半导体产业链的高景气度；同时资金持续流入、板块轮动信号明确，市场情绪从恐惧转向积极，时间窗口紧迫。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f",
+    "sig_d9ef44f292bd",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017"
+  ],
+  "inferred_events": [
+    "inferred_520a9dfb",
+    "inferred_f93f9837",
+    "inferred_960e5ae3",
+    "inferred_f0d3511f",
+    "inferred_fa46383d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，创历史里程碑",
+    "新易盛一季报净利润同比增长76.8%",
+    "某半导体龙头Q1净利润预增150%-180%",
+    "AI应用板块走高，软件ETF涨超2%且资金净流入",
+    "资金从消费、地产流向新能源和半导体"
+  ],
+  "counter_evidence": [
+    "历史案例显示技术突破需商业化验证，当前部分AI公司收入规模仍较小",
+    "中东地缘冲突可能引发市场避险情绪，短期压制风险偏好"
+  ],
+  "key_assumptions": [
+    "假设1：一季报业绩超预期趋势可持续，后续更多公司财报验证景气度",
+    "假设2：资金流入趋势延续，板块轮动不逆转",
+    "假设3：宏观政策环境（如降准降息）保持宽松"
+  ],
+  "uncertainty_map": [
+    "地缘冲突升级风险（影响程度：高）",
+    "业绩兑现后市场获利了结导致回调（影响程度：中）",
+    "AI商业化落地速度不及预期（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.4,
+    "confidence_score": 0.4800000000000001,
+    "execution_readiness": 0.72
+  },
+  "risk_reward_profile": "潜在收益来自AI和半导体板块业绩超预期驱动的估值提升，预计上行空间15%-25%；主要风险在于业绩证伪或地缘冲突导致市场情绪逆转，下行风险约10%-15%，可通过ETF或龙头股止损控制。",
+  "next_validation_questions": [
+    "后续披露的半导体公司一季报是否普遍超预期？",
+    "AI应用板块的资金流入是否持续？",
+    "宏观政策（如降准）是否如期落地？"
+  ],
+  "invalidation_conditions": [
+    "连续2家以上半导体龙头公司一季报不及预期",
+    "AI应用板块出现资金大幅流出或龙头股跌停",
+    "地缘冲突显著升级导致全球股市系统性下跌"
+  ],
+  "must_watch_indicators": [
+    "半导体ETF（512480）资金流向",
+    "中际旭创、新易盛股价走势",
+    "一季报披露进度及业绩预告",
+    "恐贪指数变化"
+  ],
+  "kill_switch_signals": [
+    "半导体板块单日跌幅超5%且放量",
+    "龙头股（如中际旭创）跌破20日均线",
+    "地缘冲突导致原油价格暴涨超10%"
+  ],
+  "warnings": [
+    "部分信号来自新闻，非官方公告，需核实",
+    "历史案例显示AI概念炒作后可能回调，需警惕短期过热"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T00:39:45.511807",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_bd83e010",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

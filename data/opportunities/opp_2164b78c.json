@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_2164b78c",
+  "opportunity_title": "地缘冲突推升煤价",
+  "opportunity_thesis": "霍尔木兹海峡冲突升级导致进口煤价飙升，国内煤价出现倒挂，企业转向国内采购，直接利好国内煤炭企业。同时，高油价加速新能源替代逻辑，新能源汽车购置税减免政策延续强化需求端支撑。两条主线形成共振，且市场尚未充分定价，存在预期差。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-13T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "霍尔木兹海峡冲突在5月7-8日急剧升级，美军与伊朗发生直接军事摩擦，航运受阻预期从短期延长至下半年。进口煤价已出现倒挂，企业转向国内采购的拐点刚刚出现。新能源政策4月底刚发布，市场仍在消化期。",
+  "related_signals": [
+    "sig_debbf62cdf97",
+    "sig_30d3e00700ed",
+    "sig_1c94cfaf9bad",
+    "sig_3cf8fcf349ae",
+    "sig_0806bfd8639e",
+    "sig_4bdf8baa2d3a",
+    "sig_992644367a0a",
+    "sig_82a8c461a4b6",
+    "sig_bb9a9c6d60a1",
+    "sig_2201d7544cad",
+    "sig_ec500e4d7f22"
+  ],
+  "inferred_events": [
+    "inferred_aa032e60",
+    "inferred_1d2a3646",
+    "inferred_2557a23b",
+    "inferred_d2507a88",
+    "inferred_d9cc818d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "进口煤价较年初上涨171元/吨，4月已出现倒挂，企业转向国内采购",
+    "霍尔木兹海峡航运受阻预期延长至7月后，高盛调查显示43%受访者预计7月后才恢复",
+    "新能源汽车购置税减免政策延续至2027年底，政策确定性高",
+    "美军与伊朗在霍尔木兹海峡发生零星冲突，地缘风险短期难以消退"
+  ],
+  "counter_evidence": [
+    "A股市场整体情绪偏弱，恐贪指数67处于贪婪区间，短期回调风险加大",
+    "历史案例显示地缘冲突带来的能源溢价消退较快，需警惕风险溢价回落"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡航运受阻持续至6月底以后，进口煤价维持高位",
+    "假设2：中东冲突不会迅速升级为全面战争导致全球风险资产暴跌",
+    "假设3：国内煤炭供给端无重大政策干预（如增产限价）"
+  ],
+  "uncertainty_map": [
+    "中东冲突升级为全面战争（影响程度：高）",
+    "国内政策干预煤价（影响程度：中）",
+    "新能源板块资金持续性不足（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.35000000000000003,
+    "execution_readiness": 0.65
+  },
+  "risk_reward_profile": "潜在收益：国内煤炭企业量价齐升，新能源替代逻辑强化带来估值修复。潜在风险：地缘冲突快速缓和导致能源价格回落，或全面战争引发系统性风险。预计收益风险比约2:1。",
+  "next_validation_questions": [
+    "国内主要煤炭企业（如中国神华、陕西煤业）最新库存和订单情况如何？",
+    "近期是否有国内煤炭增产或限价政策信号？",
+    "新能源板块资金流入是否持续，光伏组件价格是否企稳？"
+  ],
+  "invalidation_conditions": [
+    "霍尔木兹海峡航运在1个月内恢复正常",
+    "国内出台煤炭增产限价政策",
+    "中东冲突升级为全面战争，全球股市暴跌"
+  ],
+  "must_watch_indicators": [
+    "布伦特原油价格走势",
+    "印尼3800大卡动力煤到岸价",
+    "国内动力煤期货价格（郑煤）",
+    "光伏组件价格及新能源板块资金流向"
+  ],
+  "kill_switch_signals": [
+    "伊朗与美国达成临时停火协议",
+    "国内宣布增加煤炭进口配额或增产",
+    "A股市场连续3日放量下跌"
+  ],
+  "warnings": [
+    "注意：信号来源均为新闻，部分地缘冲突细节未经独立核实",
+    "注意：历史案例显示地缘冲突带来的能源溢价消退较快，需设置严格止损"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T03:47:53.281684",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_20260508_astock_skill_7f83ff3d",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

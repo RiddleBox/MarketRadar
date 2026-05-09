@@ -1,0 +1,111 @@
+{
+  "opportunity_id": "opp_cda3d030",
+  "opportunity_title": "宽松落地加码",
+  "opportunity_thesis": "央行已下调7天逆回购利率10bp并宣布降准0.5个百分点，货币政策宽松从预期走向落地，且经济数据（PMI连续低于荣枯线、CPI/PPI通缩）持续疲弱，为后续进一步宽松（如再次降准降息）打开空间。当前市场对宽松力度定价不足，存在预期差，宽松加码将直接利好利率敏感型资产和流动性驱动板块。\n\n【M13调研】机会基于通缩和降准预期，但缺乏研报、基本面数据和行业趋势支持。新闻分析中无直接相关宏观信息，仅有个股公告。政策预期差存在，但利好出尽风险需警惕。整体置信度较低，建议等待更多数据或政策明确信号后再行决策。\n\n【M13调研】机会描述基于经济疲软和央行超预期宽松，形成短期交易窗口，逻辑成立。但缺乏研报、行业趋势和基本面数据支持，新闻无相关事件，信息不充分。无重大利空，但置信度偏低，建议谨慎参与，关注后续经济数据验证。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601166.SH",
+    "600036.SH",
+    "600030.SH",
+    "000002.SZ",
+    "600585.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-06-24T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "央行已实际降息降准，但经济数据（PMI、CPI、PPI）仍在恶化，市场对宽松效果存疑，而政策工具箱仍有空间（降准已落地但降息预期未完全兑现），当前时点是政策加码与基本面底部的博弈窗口，预期差最大。",
+  "related_signals": [
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_e39115aa3077",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203",
+    "sig_6030bb0be882"
+  ],
+  "inferred_events": [
+    "inferred_b443f492",
+    "inferred_57b29fcb",
+    "inferred_a8b75eb7",
+    "inferred_c04cd155",
+    "inferred_e3aeb97f"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行下调7天逆回购利率10bp至1.7%，已实际降息",
+    "央行宣布降准0.5个百分点，释放约1万亿长期资金",
+    "央行行长表态将适时降准，政策宽松信号明确",
+    "制造业PMI连续3个月低于荣枯线，经济下行压力为宽松提供必要性",
+    "CPI同比下降0.3%、PPI同比下降2.7%，通缩压力加大，宽松空间充足"
+  ],
+  "counter_evidence": [
+    "12月CPI和PPI数据时效性较低（1/10），可能已被市场消化",
+    "宽松政策效果需传导时间，短期经济数据可能继续走弱"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续仍有进一步降准或降息动作，而非一次性宽松结束",
+    "假设2：经济数据不会在短期内急剧恶化至引发系统性风险",
+    "假设3：市场对宽松政策的定价尚未完全反映后续加码预期"
+  ],
+  "uncertainty_map": [
+    "后续宽松力度和节奏不确定（影响程度：高）",
+    "经济基本面能否在宽松下企稳不确定（影响程度：高）",
+    "外部地缘风险或全球流动性收紧可能抵消国内宽松效果（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.45000000000000007,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：宽松加码推动利率敏感板块（银行、地产、周期）估值修复，预期涨幅10-15%；潜在风险：宽松效果不及预期或经济继续恶化，跌幅5-10%；风险收益比约1.5:1。",
+  "next_validation_questions": [
+    "央行近期是否有进一步降准或降息的具体时间表？",
+    "银行间市场利率（如DR007）是否已反映宽松预期？",
+    "地产销售和投资数据是否有企稳迹象？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "经济数据意外大幅好转（如PMI重回50以上）",
+    "市场流动性突然收紧（如DR007大幅上行）"
+  ],
+  "must_watch_indicators": [
+    "DR007利率走势",
+    "央行公开市场操作公告",
+    "制造业PMI月度数据",
+    "社融和信贷数据"
+  ],
+  "kill_switch_signals": [
+    "央行意外加息或收紧流动性",
+    "银行间市场出现流动性危机",
+    "经济数据断崖式下跌引发系统性风险"
+  ],
+  "warnings": [
+    "注意：宽松政策效果存在时滞，短期市场可能继续震荡",
+    "注意：历史案例显示降息降准后市场反应可能分化，需精选标的"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T00:45:46.554465",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_cab807c5",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

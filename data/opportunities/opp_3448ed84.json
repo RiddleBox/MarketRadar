@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_3448ed84",
+  "opportunity_title": "AI半导体景气加速",
+  "opportunity_thesis": "AI/半导体产业链景气度持续高涨，光模块龙头业绩爆发（中际旭创市值破万亿、新易盛净利增76.8%），叠加资金从地产消费向科技成长轮动，形成基本面+资金面共振。当前时点业绩验证窗口打开，市场预期差仍存，AI应用和半导体设备等细分领域有望接力上涨。\n\n【M13调研】该机会描述缺乏实际数据支撑，最近20条新闻中仅胜宏科技一季报相关，无光模块其他公司、半导体龙头、政策催化或资金流向的报道。研报缺失，行业趋势无搜索结果。关键发现显示信息不实风险高，风险因素包括数据无法验证、政策催化缺失、资金流向不明。未发现重大利空，但置信度极低，调整-0.3。综合评估为不可靠机会。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持。关键发现包括：新闻内容与AI产业链关联度低，业绩数据未验证，外围市场存在不确定性。风险因素主要为信息不实和情绪过热。未发现重大利空，但置信度因证据不足下调0.2。综合来看，该机会缺乏近期数据支撑，建议谨慎对待，等待更多验证信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300476.SZ",
+    "688981.SH",
+    "002371.SZ",
+    "688008.SH",
+    "603501.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "光模块龙头一季报业绩超预期（新易盛+76.8%）、中际旭创市值破万亿，验证AI算力需求高景气；同时AI应用板块走强、软件ETF资金净流入，显示行情从硬件向应用扩散。资金面板块轮动信号明确，地产消费持续失血，科技成长承接力度强。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f",
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_41c9d0ac13e2",
+    "sig_e8ba30264edb"
+  ],
+  "inferred_events": [
+    "inferred_074f0269",
+    "inferred_ce7f5598",
+    "inferred_d09d65a6",
+    "inferred_3f1993bb",
+    "inferred_60c580b0"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，光模块龙头地位确认",
+    "新易盛一季报净利润同比增长76.8%，业绩强劲",
+    "胜宏科技1.6T光模块产能利用率良好，产业链景气传导",
+    "AI应用板块走高，软件ETF单日净流入近800万元",
+    "资金从消费、地产流向新能源、半导体，板块轮动明确"
+  ],
+  "counter_evidence": [
+    "人形机器人概念股短期涨幅较大，存在回调风险",
+    "历史案例显示技术突破需商业化验证，当前部分标的估值偏高"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，光模块订单能见度维持高位",
+    "假设2：资金从地产消费向科技成长的轮动趋势延续",
+    "假设3：宏观经济不出现超预期下行，市场风险偏好维持"
+  ],
+  "uncertainty_map": [
+    "地缘政治冲突升级可能引发市场避险，压制科技股估值（影响程度：高）",
+    "部分AI概念股业绩兑现不及预期，引发板块回调（影响程度：中）",
+    "央行降准降息节奏不及预期，流动性宽松力度不足（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.25,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：AI产业链景气扩散，光模块、半导体设备、AI应用等细分领域有望轮动上涨，龙头股可能获得20-30%涨幅。潜在风险：地缘冲突或宏观下行导致市场整体回调，科技股估值承压，最大回撤约10-15%。",
+  "next_validation_questions": [
+    "光模块龙头（中际旭创、新易盛）未来1-2个月订单指引是否持续超预期？",
+    "半导体设备龙头（北方华创）一季报业绩是否验证景气度？",
+    "AI应用板块（软件ETF）资金流入是否具有持续性？"
+  ],
+  "invalidation_conditions": [
+    "光模块龙头出现大额减持或业绩低于预期",
+    "资金从科技成长板块大幅流出，转向防御板块",
+    "地缘冲突显著升级，全球股市系统性下跌"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛股价走势及成交量变化",
+    "半导体ETF（512480）资金净流入/流出情况",
+    "AI应用板块（软件ETF）日涨幅及换手率",
+    "恐贪指数是否进入极度贪婪区间（≥80）"
+  ],
+  "kill_switch_signals": [
+    "中际旭创或新易盛单日跌幅超5%且放量",
+    "半导体ETF连续3日资金净流出",
+    "地缘冲突导致原油价格单日暴涨超10%"
+  ],
+  "warnings": [
+    "部分信号来源为新闻，非官方公告，需核实具体数据",
+    "人形机器人概念股短期涨幅过大，追高风险较高"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T03:17:23.080513",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_20260508_astock_skill_0ac2988b",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

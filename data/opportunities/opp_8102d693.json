@@ -1,0 +1,153 @@
+{
+  "opportunity_id": "opp_8102d693",
+  "opportunity_title": "AI半导体景气上行",
+  "opportunity_thesis": "AI/半导体产业链景气度持续上行，核心驱动来自AI芯片需求爆发和光模块订单高增，叠加政策支持（算力网建设、AI终端标准）和资金持续流入（板块轮动、ETF申购），形成基本面+资金面+政策面共振。中际旭创市值突破万亿、新易盛净利增76.8%、半导体龙头预增150%-180%等业绩信号已确认行业高景气，市场尚未完全定价后续扩散效应，存在预期差。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持。关键发现包括：新闻内容与AI产业链关联度低，业绩数据未验证，外围市场存在不确定性。风险因素主要为信息不实和情绪过热。未发现重大利空，但置信度因证据不足下调0.2。综合来看，该机会缺乏近期数据支撑，建议谨慎对待，等待更多验证信号。\n\n【M13调研】该机会描述声称美股AI股创新高、A股AI产业链业绩验证，但新闻分析未找到相关证据，北方华创业绩增速仅3.42%，与预增150-180%严重不符。政策与资金面支撑也未在新闻中体现。M13调研已指出证据不足，研报分析无支持。综合来看，机会缺乏近期数据支撑，风险较高，建议谨慎对待，等待更多验证信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "002371.SZ",
+    "300476.SZ",
+    "603019.SH",
+    "002230.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "当前时点催化剂密集：1）光模块三巨头年报/一季报全部披露完毕，业绩高增确认；2）半导体龙头Q1预增150%-180%超预期；3）中国移动推进算力网建设、AI终端国家标准发布等政策利好集中释放；4）板块轮动信号显示资金持续从消费/地产流入新能源/半导体，且AI应用板块已出现放量上涨。时间窗口在2个月内，后续需关注Q2业绩验证和海外AI资本开支节奏。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sent_ec6c7cba",
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_c65bd11e442f",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_5a2ec57f6916",
+    "sig_a1d7094e54d1",
+    "sig_d9ef44f292bd",
+    "sig_d8cb7635ade9",
+    "sig_39b17c44aba1",
+    "sig_4149b887d9b2",
+    "sig_911415444bf5",
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017",
+    "sig_41c9d0ac13e2",
+    "sig_d36d819acfc5",
+    "sig_e49e84bd5c49",
+    "sig_df713685bee1",
+    "sig_050c391c993e",
+    "sig_588712b4e2b5",
+    "sig_b0343a771aa0",
+    "sig_68fd6d4291f4",
+    "sig_c53b812566be",
+    "sig_4ef836f98ad7",
+    "sig_1427d286ec9e",
+    "sig_e8ba30264edb",
+    "sig_ffdee791adf2"
+  ],
+  "inferred_events": [
+    "inferred_338322ef",
+    "inferred_97ac1cd0",
+    "inferred_09522e80",
+    "inferred_5e044ec8",
+    "inferred_57b972a9",
+    "inferred_21ca4c87",
+    "inferred_44b70ce2"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，光模块行业景气度确认",
+    "新易盛一季报净利润同比增长76.8%，业绩超预期",
+    "某半导体龙头Q1业绩预增150%-180%，AI芯片需求爆发",
+    "中国移动推进全国一体化算力网建设，政策加码",
+    "AI应用板块走高，软件ETF涨超2%且资金净流入",
+    "板块轮动信号显示资金从消费/地产流向新能源/半导体"
+  ],
+  "counter_evidence": [
+    "历史案例显示技术突破需商业化验证，当前部分AI公司收入仍小（如每日互动AI收入千万级）",
+    "市场短期已出现技术性回调信号，恐贪指数偏高，存在获利回吐风险"
+  ],
+  "key_assumptions": [
+    "假设1：AI芯片需求持续爆发，下游资本开支不减速",
+    "假设2：Q2业绩继续高增，验证行业景气持续性",
+    "假设3：资金轮动趋势延续，无系统性风险打断"
+  ],
+  "uncertainty_map": [
+    "海外AI资本开支节奏放缓风险（影响程度：高）",
+    "地缘政治冲突升级导致市场避险情绪升温（影响程度：中）",
+    "短期获利回吐压力导致板块回调（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.35000000000000003,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益来自AI/半导体产业链业绩超预期和估值提升，预计上行空间15%-25%；主要风险是Q2业绩不及预期或海外AI资本开支放缓，下行风险约10%-15%，可通过设置止损控制。",
+  "next_validation_questions": [
+    "半导体龙头Q1业绩预增的具体公司名称和详细数据？",
+    "光模块三巨头Q1业绩的同比环比增速及订单指引？",
+    "中国移动算力网建设的资本开支计划和时间表？",
+    "当前AI/半导体板块的估值水平是否合理？"
+  ],
+  "invalidation_conditions": [
+    "Q2业绩发布后增速明显放缓，低于市场预期",
+    "海外主要AI公司资本开支指引下调",
+    "市场系统性风险爆发（如地缘冲突升级）"
+  ],
+  "must_watch_indicators": [
+    "光模块三巨头（中际旭创、新易盛、天孚通信）的订单和产能利用率",
+    "半导体龙头Q1正式财报及Q2指引",
+    "AI应用板块（软件ETF）的资金流入持续性",
+    "恐贪指数和板块轮动信号的变化"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头股价放量跌破20日均线",
+    "半导体龙头业绩预告大幅下修",
+    "海外AI龙头（如英伟达）股价出现趋势性下跌"
+  ],
+  "warnings": [
+    "部分信号来源为新闻，非官方公告，需核实具体数据",
+    "市场短期已出现技术性回调，追高需谨慎"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T05:23:32.462116",
+  "batch_id": "sched_signal_pipeline_20260509_051555_1189ae_20260509_astock_skill_2fb708ab",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

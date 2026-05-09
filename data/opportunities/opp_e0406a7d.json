@@ -1,0 +1,124 @@
+{
+  "opportunity_id": "opp_e0406a7d",
+  "opportunity_title": "中东冲突做多原油",
+  "opportunity_thesis": "美军在霍尔木兹海峡袭击伊朗民用船只并拦截油轮，伊朗武装力量全面备战，双方发生零星冲突，霍尔木兹海峡这一全球最关键的石油运输通道面临实质性中断风险。叠加伊朗哈尔克岛疑似石油泄漏，原油供应中断预期急剧升温，燃料油、沥青等商品已率先上涨，但市场整体尚未充分定价全面冲突情景，存在显著预期差。\n\n【M13调研】机会描述声称霍尔木兹海峡发生冲突和石油泄漏，但最近20条新闻和基本面数据完全未提及相关事件。新闻均为公司公告和科技股动态，石油钻井数据稳定，且有外交谈判。因此，该机会缺乏事实基础，属于虚假信息，存在重大利空。建议忽略此机会。\n\n【M13调研】机会描述中的伊朗哈尔克岛石油泄漏和货船扣押事件得到新闻证实，但霍尔木兹海峡直接冲突未报道。M13调研信息有误，忽略其结论。市场尚未充分定价，存在预期差，但需警惕冲突程度被夸大。建议谨慎关注，可小仓位参与。",
+  "target_markets": [
+    "A_FUTURES",
+    "US_FUTURES"
+  ],
+  "target_instruments": [
+    "SC8888.SH",
+    "FU8888.SH",
+    "BU8888.SH",
+    "LU8888.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-05-22T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "5月7-8日48小时内，美军连续袭击伊朗民用船只、拦截油轮，伊朗宣布全面备战，双方在霍尔木兹海峡发生零星冲突，卫星图像显示哈尔克岛疑似泄漏。事件密集爆发且仍在升级，市场恐慌尚未完全传导至原油期货定价，当前是布局窗口。",
+  "related_signals": [
+    "sig_4d60c039c4d1",
+    "sig_0806bfd8639e",
+    "sig_4bdf8baa2d3a",
+    "sig_476a24c2a7b9",
+    "sig_b3de9b426692",
+    "sig_750e411aaff5",
+    "sig_992644367a0a",
+    "sig_1fcc386acab4",
+    "sig_9e1e9233ab36",
+    "sig_eb80de18be59",
+    "sig_82a8c461a4b6",
+    "sig_d045354f7ded",
+    "sig_926dd4b69f57",
+    "sig_bb9a9c6d60a1",
+    "sig_074e8c030441",
+    "sig_3ed518a56d14",
+    "sig_571a67c4298e",
+    "sig_5589fc51bf2b",
+    "sig_2201d7544cad",
+    "sig_ec500e4d7f22"
+  ],
+  "inferred_events": [
+    "inferred_cf1318b2",
+    "inferred_4375069d",
+    "inferred_9589b89c",
+    "inferred_4ffeb9a9",
+    "inferred_2777d81f"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军袭击伊朗民用船只致15人伤亡，霍尔木兹海峡传出交火声",
+    "伊朗武装力量全面备战，外交部明确表示将回击任何侵略",
+    "伊朗哈尔克岛附近疑似石油泄漏，该岛承担伊朗绝大部分原油出口",
+    "国内燃料油、沥青夜盘已涨超1%-2%，市场开始反应"
+  ],
+  "counter_evidence": [
+    "伊朗布什尔核电站逐步恢复运转，显示部分局势可控",
+    "美国声称行动旨在开放霍尔木兹海峡，可能无意全面开战"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡通行受阻或中断持续至少一周",
+    "假设2：伊朗不会立即屈服，冲突不会在48小时内快速平息",
+    "假设3：全球主要消费国未释放战略石油储备干预"
+  ],
+  "uncertainty_map": [
+    "冲突快速降级风险（影响程度：高）——若双方达成临时停火，油价将迅速回落",
+    "美国释放战略石油储备（影响程度：中）——可能压制油价涨幅",
+    "其他产油国增产填补缺口（影响程度：中）——沙特等国有闲置产能"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 9,
+    "timeliness": 9,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.6,
+    "confidence_score": 0.325,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：若霍尔木兹海峡完全中断，原油可能短期暴涨20%+；风险：若冲突快速降级，油价可能回吐5-10%。盈亏比约2:1至3:1。",
+  "next_validation_questions": [
+    "霍尔木兹海峡当前实际通行状态如何？是否有官方封锁声明？",
+    "美国或伊朗是否有高层释放缓和信号？",
+    "WTI/布伦特原油期货持仓量和成交量是否显著放大？"
+  ],
+  "invalidation_conditions": [
+    "美伊双方宣布停火或谈判",
+    "霍尔木兹海峡恢复正常通行",
+    "美国宣布大规模释放战略石油储备"
+  ],
+  "must_watch_indicators": [
+    "WTI原油期货价格及持仓量变化",
+    "霍尔木兹海峡通行船舶数量",
+    "美国战略石油储备库存变化",
+    "伊朗官方表态（是否升级或缓和）"
+  ],
+  "kill_switch_signals": [
+    "美伊双方宣布停火",
+    "霍尔木兹海峡通行完全恢复",
+    "原油期货持仓量大幅下降"
+  ],
+  "warnings": [
+    "地缘冲突事件高度不确定，价格波动剧烈，需严格控制仓位和止损",
+    "信号来源均为新闻媒体，部分信息未经官方完全确认，存在误报风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T02:56:17.680687",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_19000101_astock_skill_619b8185",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

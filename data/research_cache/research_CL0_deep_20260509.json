@@ -1,0 +1,305 @@
+{
+  "symbol": "CL0",
+  "research_level": "deep",
+  "triggered_by": "m3",
+  "reports": [],
+  "news": [
+    {
+      "title": "过去24小时没有大型商船通过霍尔木兹海峡",
+      "content": "【过去24小时没有大型商船通过霍尔木兹海峡】8日获悉，船舶追踪数据显示，截至当地时间8日上午，没有大型船只在过去24小时内通过霍尔木兹海峡。据悉，这已是自7日以来连续第二天没有大型商船通过该海峡。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 05:36:15",
+      "url": "https://finance.eastmoney.com/a/202605093731936434.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "富时A50期指连续夜盘收涨0.21% 报15660点",
+      "content": "富时A50期指连续夜盘收涨0.21%，报15660点。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 05:18:14",
+      "url": "https://finance.eastmoney.com/a/202605093731935815.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "离岸人民币兑美元较周四纽约尾盘涨116点",
+      "content": "【离岸人民币兑美元较周四纽约尾盘涨116点】周五（5月8日）纽约尾盘（周六北京时间04:59），离岸人民币（CNH）兑美元报6.7971元，较周四纽约尾盘涨116点，日内整体交投于6.8099-6.7955元区间。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 05:08:25",
+      "url": "https://finance.eastmoney.com/a/202605093731935332.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "COMEX黄金期货涨0.35% 报4727.4美元/盎司",
+      "content": "COMEX黄金期货涨0.35%，报4727.4美元/盎司，本周累涨1.78%。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 04:53:17",
+      "url": "https://finance.eastmoney.com/a/202605093731933971.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "鲁比奥：如果俄乌谈判再无进展 美方不愿再“浪费时间”",
+      "content": "【鲁比奥：如果俄乌谈判再无进展 美方不愿再“浪费时间”】据意大利媒体8日报道，美国国务卿鲁比奥当天在意大利访问期间就俄乌冲突表态称，若关于乌克兰问题的谈判无法取得进展，美方不愿再“浪费时间”。此外他还预计伊朗当天会对美国提出的协议方案作出回应。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 04:47:42",
+      "url": "https://finance.eastmoney.com/a/202605093731932741.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "俄罗斯同意延长停火并换俘 乌克兰称不会袭击红场阅兵",
+      "content": "【俄罗斯同意延长停火并换俘 乌克兰称不会袭击红场阅兵】俄罗斯总统助理乌沙科夫8日晚表示，俄方同意并支持美国总统特朗普提出的延长停火和俄乌交换被俘人员的方案。乌克兰总统泽连斯基下令，莫斯科红场9日举行的阅兵活动不会成为乌方攻击目标。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 04:44:33",
+      "url": "https://finance.eastmoney.com/a/202605093731933236.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "特朗普媒体科技集团一季度资产规模22亿美元",
+      "content": "【特朗普媒体科技集团一季度资产规模22亿美元】特朗普媒体科技集团一季度资产规模22亿美元。一季度营收90万美元，净亏损4.059亿美元，调整后EBITDA亏损3.878亿美元。一季度运营现金流0.179亿美元。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 04:36:29",
+      "url": "https://finance.eastmoney.com/a/202605093731931030.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "美联储数据显示：美国上周银行存款19.113万亿美元 之前一周19.080万亿美元",
+      "content": "美联储数据显示，美国上周银行存款19.113万亿美元，之前一周19.080万亿美元。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 04:32:45",
+      "url": "https://finance.eastmoney.com/a/202605093731930019.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "劳拉·费尔南德斯宣誓就任哥斯达黎加总统",
+      "content": "【劳拉·费尔南德斯宣誓就任哥斯达黎加总统】当地时间5月8日，劳拉·费尔南德斯在哥斯达黎加首都圣何塞宣誓就职，出任哥斯达黎加总统。2月1日，哥斯达黎加主权人民党候选人劳拉·费尔南德斯在总统选举中获胜。她领导的主权人民党在立法大会选举中赢得57个席位中的30个，成为第一大党。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 04:21:56",
+      "url": "https://finance.eastmoney.com/a/202605093731929087.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "花旗：维持对未来3个月原油价格120美元的预测",
+      "content": "【花旗：维持对未来3个月原油价格120美元的预测】花旗表示，维持对未来3个月原油价格120美元的预测；当前基本情景预计，2026年第二季度布伦特原油价格平均为110美元，随后在第三季度降至95美元，第四季度降至80美元。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 04:17:50",
+      "url": "https://finance.eastmoney.com/a/202605093731928851.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "美联储金融稳定报告：私人信贷赎回相关风险“可控”",
+      "content": "【美联储金融稳定报告：私人信贷赎回相关风险“可控”】美联储在周五发布的一份金融稳定报告中表示，在近期市场上一些知名公司阻止投资者从旗下基金中提取资金后，进一步的私人信贷赎回申请所带来的稳定风险似乎“有限且可控”。美联储表示，“尽管2026年第一季度这些基金的资金流出量略超过新流入量，但赎回请求仍然可控。”美联储指出，持续的赎回和负面情绪可能导致某些借款人（尤其是信用风险相对较高的借款人）可获得的信贷减少。私人信贷在2008年金融危机后爆炸式增长，但最近随着一些基金面临创纪录的赎回请求而面临挑战。媒体此前报道称，在这些请求激增后，美联储已向美国各大银行询问其私人信贷风险敞口的详细信息。与此同时，特朗普的最高监管机构正寻求放宽对华尔街大型贷款机构的规则，部分原因是为了帮助传统贷款机构更好地与非银行公司竞争。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 04:12:06",
+      "url": "https://finance.eastmoney.com/a/202605093731928749.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "Quantinuum申请美国IPO 该公司投资方包括霍尼韦尔",
+      "content": "Quantinuum申请美国IPO，该公司投资方包括霍尼韦尔。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 04:09:22",
+      "url": "https://finance.eastmoney.com/a/202605093731928541.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "标普确认以色列“A/A-1”评级 展望稳定",
+      "content": "【标普确认以色列“A/A-1”评级 展望稳定】标普确认以色列“A/A-1”评级；展望稳定。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 04:08:51",
+      "url": "https://finance.eastmoney.com/a/202605093731928191.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "纳斯达克中国金龙指数收跌0.46%",
+      "content": "【纳斯达克中国金龙指数收跌0.46%】海天网络跌6.11%，再鼎医药跌5.94%，新东方跌4.90%，优品车跌2.56%，中进医疗跌3.64%。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 04:00:33",
+      "url": "https://finance.eastmoney.com/a/202605093731927640.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "美国拟定人工智能安全行政令 未纳入强制性 AI 模型测试要求",
+      "content": "【美国拟定人工智能安全行政令 未纳入强制性 AI 模型测试要求】据知情人士透露，特朗普政府正拟下令美国各机构与人工智能企业合作，保护网络免受人工智能驱动的网络攻击，但该指令不会要求尖端人工智能模型必须获得政府批准。知情人士称，特朗普总统的一份行政令草案将修订现有网络安全信息共享计划，把人工智能企业纳入其中，并应对这一新兴技术带来的威胁。这些人士因讨论保密程序而要求匿名。知情人士表示，这些调整将有助于联邦、州、地方各级网络以及美国关键基础设施更轻松地发现并修补安全漏洞，同时不会强制对人工智能模型实施新的监管。目前尚不清楚特朗普何时会签署这项措施，草案内容仍有可能调整。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 03:46:58",
+      "url": "https://finance.eastmoney.com/a/202605093731927069.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "The Federal Reserve is quickly running out of reasons to cut interest rates",
+      "content": "Friday's jobs report provided evidence that the central bank's larger concern is a cost of living that is getting increasingly hard to bear.",
+      "source": "CNBC",
+      "published_at": "2026-05-08 21:44:14",
+      "url": "https://www.cnbc.com/2026/05/08/the-federal-reserve-is-quickly-running-out-of-reasons-to-cut-interest-rates.html",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Gold has climbed back above a key trend line. Are more gains on the way?",
+      "content": "Gold broke above an important short-term technical level on Friday — a sign that the precious metal may be starting to regain momentum after a sluggish stretch since the start of the Iran conflict.",
+      "source": "MarketWatch",
+      "published_at": "2026-05-08 21:44:00",
+      "url": "https://www.marketwatch.com/story/gold-has-climbed-back-above-a-key-trend-line-are-more-gains-on-the-way-6627e0f5?mod=mw_rss_topstories",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Wheaton Precious Metals Corp. (WPM:CA) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 21:41:16",
+      "url": "https://seekingalpha.com/article/4901569-wheaton-precious-metals-corp-wpm-ca-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "VAALCO Energy, Inc. (EGY) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 21:41:15",
+      "url": "https://seekingalpha.com/article/4901648-vaalco-energy-inc-egy-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Suja Life: A Bad Taste Post IPO",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 21:36:35",
+      "url": "https://seekingalpha.com/article/4901711-suja-life-a-bad-taste-post-its-ipo?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Texas Roadhouse, Inc. (TXRH) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 21:31:17",
+      "url": "https://seekingalpha.com/article/4900849-texas-roadhouse-inc-txrh-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Evolent Health, Inc. (EVH) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 21:31:15",
+      "url": "https://seekingalpha.com/article/4900809-evolent-health-inc-evh-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Doman Building Materials Group Ltd. (DBM:CA) Shareholder/Analyst Call Prepared Remarks Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 21:31:13",
+      "url": "https://seekingalpha.com/article/4901720-doman-building-materials-group-ltd-dbm-ca-shareholder-analyst-call-prepared-remarks?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "No do-overs: How one extra dollar on your Roth conversion triggers a tax bill you won’t see coming",
+      "content": "The new Roth reality: Stealth taxes and Medicare penalties make the stakes higher than ever.",
+      "source": "MarketWatch",
+      "published_at": "2026-05-08 21:29:00",
+      "url": "https://www.marketwatch.com/story/no-do-overs-how-one-extra-dollar-on-your-roth-conversion-triggers-a-tax-bill-you-wont-see-coming-5b52c911?mod=mw_rss_topstories",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Liberty Broadband Corporation (LBRDK) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 21:21:19",
+      "url": "https://seekingalpha.com/article/4901728-liberty-broadband-corporation-lbrdk-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Enbridge Inc. (ENB:CA) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 21:21:14",
+      "url": "https://seekingalpha.com/article/4901491-enbridge-inc-enb-ca-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "VGSH: Berkshire's Cash Position Looks Increasingly Rational",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 21:21:13",
+      "url": "https://seekingalpha.com/article/4901705-vgsh-berkshires-cash-position-looks-increasingly-rational?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "FRDM Is A Strategy On EMs That Almost Doubles The Return",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 21:18:04",
+      "url": "https://seekingalpha.com/article/4901704-frdm-is-a-strategy-on-ems-that-almost-doubles-the-return?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Rocket Lab surges 34% in best day ever on revenue beat, record-setting launch deal",
+      "content": "Enthusiasm for space stocks has skyrocketed ahead of SpaceX's anticipated IPO.",
+      "source": "CNBC",
+      "published_at": "2026-05-08 21:15:33",
+      "url": "https://www.cnbc.com/2026/05/08/rocket-lab-rklb-q1-earnings-2026.html",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Information Services Group, Inc. (III) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-08 21:11:17",
+      "url": "https://seekingalpha.com/article/4901725-information-services-group-inc-iii-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    }
+  ],
+  "fundamentals": {},
+  "quote": {},
+  "semantic_results": [],
+  "summary": "霍尔木兹海峡冲突升级导致航运受阻，全球石油供应中断风险显著，花旗维持120美元油价预测，市场未充分定价，存在预期差。WTI净多头减少显示多头空间。风险在于冲突缓和或需求下降。整体利多，建议关注原油及相关资产。",
+  "key_findings": [
+    "霍尔木兹海峡航运已确认受阻，过去24小时无大型商船通过，全球约20%石油运输受影响，供应中断风险显著。",
+    "花旗维持未来3个月原油价格120美元预测，市场未充分定价冲突持续性，存在预期差。",
+    "WTI原油投机净多头减少，表明市场对冲突升级的持续性定价不足，多头仓位有增加空间。",
+    "冲突已从口头威胁升级为实际军事行动，且高盛调查显示多数投资者预期航运受阻持续至6月底以后。",
+    "新闻中无直接利空原油消息，其他资产如黄金、人民币表现平稳，未出现系统性风险信号。"
+  ],
+  "risk_factors": [
+    "冲突可能意外缓和，如外交谈判或停火协议，导致航运恢复和油价回落。",
+    "全球经济需求下降风险，若衰退预期升温，可能抵消供应中断对油价的支撑。",
+    "美国或国际社会干预，如释放战略石油储备或施压双方停火，缓解供应紧张。"
+  ],
+  "confidence_assessment": "基于M13调研确认航运受阻、花旗看多预期、市场净多头减少形成的预期差，以及无直接利空新闻，利多逻辑较为坚实。但缺乏研报支持，且风险因素存在，置信度中等偏高。",
+  "confidence_multiplier": 1.0,
+  "confidence_delta": 0.15,
+  "has_major_negative": false,
+  "research_time": "2026-05-09T05:49:27.491612",
+  "data_sources": [
+    "news"
+  ],
+  "cache_hit": false,
+  "timeout": false,
+  "partial_result": false
+}

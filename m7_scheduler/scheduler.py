@@ -574,15 +574,28 @@ class Scheduler:
                 # M4 行动设计
                 opp_dir = ROOT / "data" / "opportunities"
                 opp_dir.mkdir(parents=True, exist_ok=True)
+
+                action_plans_dir = ROOT / "data" / "action_plans"
+                action_plans_dir.mkdir(parents=True, exist_ok=True)
+
                 for opp in opportunities:
                     plan = designer.design(opp)
                     total_plans += 1
+
                     # 保存机会 JSON
                     opp_file = opp_dir / f"{opp.opportunity_id}.json"
                     opp_file.write_text(
                         json.dumps(opp.model_dump(mode="json"), ensure_ascii=False, indent=2, default=str),
                         encoding="utf-8",
                     )
+
+                    # 保存行动计划 JSON
+                    plan_file = action_plans_dir / f"{opp.opportunity_id}_plan.json"
+                    plan_file.write_text(
+                        json.dumps(plan.model_dump(mode="json"), ensure_ascii=False, indent=2, default=str),
+                        encoding="utf-8",
+                    )
+                    logger.info(f"[M7/signal_pipeline] 保存行动计划: {plan_file.name}")
 
                 # 处理完成后移动文件（容错处理）
                 try:

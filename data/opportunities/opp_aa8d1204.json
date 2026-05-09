@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_aa8d1204",
+  "opportunity_title": "宽松驱动成长反弹",
+  "opportunity_thesis": "制造业PMI连续3个月低于荣枯线，经济下行压力加大，倒逼央行于4月25日降准0.5个百分点释放约1万亿元流动性。在流动性宽松预期下，资金从消费、地产等顺周期板块流向新能源、半导体等成长板块，板块轮动信号明确。当前市场对宽松政策的定价尚不充分，成长板块估值处于低位，存在预期差修复机会。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持。关键发现包括：新闻内容与AI产业链关联度低，业绩数据未验证，外围市场存在不确定性。风险因素主要为信息不实和情绪过热。未发现重大利空，但置信度因证据不足下调0.2。综合来看，该机会缺乏近期数据支撑，建议谨慎对待，等待更多验证信号。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持，关键业绩数据未验证，且豪威集团一季报净利润下降41.92%与板块爆发矛盾。外围市场存在不确定性（欧洲股市下跌、俄欧关系紧张）。未发现重大利空，但置信度较低（0.2），建议谨慎对待，等待更多验证信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "603501.SH",
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-06-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行降准已落地（4月25日），PMI数据持续疲弱，政策宽松窗口已打开。资金轮动信号显示新能源、半导体已开始获得资金流入，市场情绪从恐惧转向贪婪，但成长板块整体涨幅有限，预期差仍存。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_b344dde14d32",
+    "sig_7298dda97ec7",
+    "sig_6030bb0be882",
+    "sig_e0e3bf1f136a"
+  ],
+  "inferred_events": [
+    "inferred_4f8bed6e",
+    "inferred_7b1eb8e2",
+    "inferred_50ef159f",
+    "inferred_05ab9d33",
+    "inferred_02d0cbf5",
+    "inferred_acf28a4e",
+    "inferred_4486bdac",
+    "inferred_71bade53",
+    "inferred_6f82e748",
+    "inferred_c78618e7"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点，释放长期资金约1万亿元，流动性宽松信号明确",
+    "制造业PMI连续3个月低于荣枯线，经济疲弱倒逼政策持续宽松",
+    "资金从消费、地产流向新能源、半导体，板块轮动信号已出现",
+    "历史案例case_2024_rate_cut显示降息降准后成长板块有估值修复机会"
+  ],
+  "counter_evidence": [
+    "市场恐贪指数偏高（≥80），情绪过热可能限制上行空间",
+    "地缘政治冲突加剧（中东局势升级）可能引发避险情绪，压制风险偏好"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续不会收紧流动性，宽松政策持续",
+    "假设2：新能源、半导体行业基本面未出现超预期恶化",
+    "假设3：地缘政治风险不会大幅升级至影响全球市场"
+  ],
+  "uncertainty_map": [
+    "地缘政治冲突升级程度（影响程度：高）",
+    "后续经济数据是否进一步恶化（影响程度：中）",
+    "成长板块业绩兑现情况（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.45000000000000007,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：成长板块估值修复10-20%；潜在风险：宽松不及预期或地缘风险导致市场下跌5-10%，风险收益比约2:1",
+  "next_validation_questions": [
+    "新能源/半导体龙头公司最新季报是否超预期？",
+    "后续是否有更多宽松政策（如降息）出台？",
+    "北向资金是否持续流入成长板块？"
+  ],
+  "invalidation_conditions": [
+    "央行释放收紧信号或暂停宽松",
+    "新能源/半导体龙头业绩大幅低于预期",
+    "地缘冲突导致全球市场系统性下跌"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率",
+    "新能源/半导体板块成交量",
+    "北向资金流向",
+    "制造业PMI后续数据"
+  ],
+  "kill_switch_signals": [
+    "央行意外加息或提高存款准备金率",
+    "新能源/半导体板块单日跌幅超5%且放量",
+    "地缘冲突导致原油价格暴涨超10%"
+  ],
+  "warnings": [
+    "注意：市场恐贪指数偏高，情绪过热可能限制上行空间",
+    "注意：地缘政治风险是最大不确定性，需密切关注"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T02:48:07.797695",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_19000101_astock_skill_2da79101",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

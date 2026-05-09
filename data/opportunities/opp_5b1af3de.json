@@ -1,0 +1,111 @@
+{
+  "opportunity_id": "opp_5b1af3de",
+  "opportunity_title": "宽松流动性驱动反弹",
+  "opportunity_thesis": "经济疲弱（PMI连续收缩、通缩）已触发央行连续宽松（降准+降息），释放万亿级长期资金，流动性改善将驱动A股估值修复。当前市场对经济基本面悲观已充分定价，但对流动性宽松的持续性及后续政策加码预期不足，存在预期差。历史案例显示，降息降准组合拳后，银行、券商等利率敏感板块短期受益明显，但需警惕经济数据持续恶化对反弹高度的压制。\n\n【M13调研】地产龙头保利发展净利润暴跌79%，而银行券商一季报普遍增长，广发证券净利润增长超70%，市场资金从地产流向金融板块，形成明确的行业轮动和避险交易机会。当前一季报密集披露，业绩分化信号集中释放，预期差尚未完全price-in。风险在于地产持续恶化可能拖累银行资产质量，且轮动可能已部分反映。整体机会逻辑清晰，但缺乏研报和行业趋势数据支持，置信度中等偏上。\n\n【M13调研】机会基于通缩和降准预期，但缺乏研报、基本面数据和行业趋势支持。新闻分析中无直接相关宏观信息，仅有个股公告。政策预期差存在，但利好出尽风险需警惕。整体置信度较低，建议等待更多数据或政策明确信号后再行决策。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601398.SH",
+    "601166.SH",
+    "600030.SH",
+    "601688.SH",
+    "000002.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-25T00:00:00",
+    "end": "2026-05-25T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "央行已宣布4月25日降准0.5个百分点（释放约1万亿资金），并下调逆回购利率10bp，宽松政策密集落地，流动性释放窗口开启。同时PMI连续收缩和通缩数据强化了市场对后续进一步宽松的预期，当前是政策效果传导初期，市场尚未完全反应。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203",
+    "sig_6030bb0be882"
+  ],
+  "inferred_events": [
+    "inferred_043927af",
+    "inferred_533fd6c2",
+    "inferred_7c2ee61b",
+    "inferred_2b193cf9",
+    "inferred_66fedf2a"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点，释放长期资金约1万亿元，直接改善银行间流动性",
+    "7天逆回购利率下调10bp至1.7%，降低资金成本，利好利率敏感板块",
+    "PMI连续3个月低于荣枯线、CPI/PPI通缩，强化了宽松政策持续性预期",
+    "历史案例case_2024_rate_cut显示降息后银行股估值修复，20天内完成交易"
+  ],
+  "counter_evidence": [
+    "经济基本面（PMI、CPI、PPI）持续恶化，可能压制市场风险偏好",
+    "地产行业持续承压（保利净利润大降），宽松政策对实体传导效果存疑"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续不会收紧流动性，宽松基调至少维持1个月",
+    "假设2：经济数据不会在短期内出现超预期恶化（如PMI跌破48）",
+    "假设3：地缘政治风险（中东冲突）不会显著升级并冲击全球市场"
+  ],
+  "uncertainty_map": [
+    "经济数据持续恶化程度（影响程度：高）——若PMI进一步下滑或CPI通缩加深，可能抵消流动性利好",
+    "政策传导效率（影响程度：中）——宽松资金能否有效进入实体经济，而非仅在金融体系空转",
+    "地缘政治风险外溢（影响程度：中）——中东冲突升级可能引发避险情绪，压制A股风险偏好"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.7,
+    "confidence_score": 0.5999999999999999,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：流动性驱动估值修复，银行/券商板块短期反弹5-10%；风险：经济基本面恶化超预期或地缘风险爆发，可能导致市场下跌3-5%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "降准后银行间市场利率（如DR007）是否显著下行，确认流动性宽松效果？",
+    "北向资金在降准后是否持续净流入，验证外资对宽松政策的正面解读？",
+    "后续是否有更多宽松信号（如MLF利率下调）出台，强化政策预期？"
+  ],
+  "invalidation_conditions": [
+    "央行公开市场操作回收流动性，或政策基调转为中性",
+    "PMI数据进一步恶化至48以下，引发市场对经济硬着陆的担忧",
+    "中东地缘冲突显著升级，导致全球风险资产抛售"
+  ],
+  "must_watch_indicators": [
+    "DR007利率走势",
+    "北向资金净流入/流出",
+    "制造业PMI（下期公布值）",
+    "沪深300指数成交量"
+  ],
+  "kill_switch_signals": [
+    "央行意外上调逆回购利率或暂停逆回购操作",
+    "PMI跌破48且无企稳迹象",
+    "中东冲突导致原油价格单日暴涨超10%"
+  ],
+  "warnings": [
+    "注意：经济基本面疲弱是长期压制因素，流动性驱动的反弹可能持续时间较短",
+    "注意：地缘政治风险（中东冲突）可能随时干扰市场情绪，需保持警惕"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T01:01:11.097697",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_20260508_astock_skill_047b699b",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

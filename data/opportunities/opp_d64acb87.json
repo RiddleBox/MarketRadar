@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_d64acb87",
+  "opportunity_title": "宽松博弈下的防御反击",
+  "opportunity_thesis": "央行降准降息释放流动性，但经济数据疲弱（PMI连续3个月低于荣枯线）与地产龙头业绩暴雷（保利净利润降79%）形成鲜明对比，市场已price-in部分悲观预期。当前政策宽松窗口明确，但基本面尚未企稳，市场处于'政策底'与'市场底'之间的博弈阶段。机会在于：市场对宽松政策的短期有效性存疑，导致预期差较大，一旦后续经济数据边际改善或政策加码，超跌的金融、地产及高股息板块将迎来修复行情。\n\n【M13调研】保利发展业绩大幅下滑，但新闻和研报信息匮乏，缺乏资金轮动和板块共振的直接证据。地产板块做空机会存在，但风险较高，需谨慎。新能源和半导体轮动逻辑未获数据支持。整体置信度偏低，建议等待更多信息再决策。\n\n【M13调研】机会基于通缩和降准预期，但缺乏研报、基本面数据和行业趋势支持。新闻分析中无直接相关宏观信息，仅有个股公告。政策预期差存在，但利好出尽风险需警惕。整体置信度较低，建议等待更多数据或政策明确信号后再行决策。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600048.SH",
+    "601166.SH",
+    "600036.SH",
+    "601318.SH",
+    "600519.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-27T00:00:00",
+    "end": "2026-06-27T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "央行已连续降准降息，政策宽松信号明确，但市场因经济数据疲弱和地产暴雷而悲观，导致政策利好未被充分定价。当前时点处于政策密集出台后的观察期，市场情绪极度悲观，一旦出现边际改善信号（如PMI企稳、地产销售回暖），预期差将快速修复。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_38049b31fb61",
+    "sig_6030bb0be882",
+    "sig_deee36561d85"
+  ],
+  "inferred_events": [
+    "inferred_abe75f27",
+    "inferred_2532143a",
+    "inferred_12f404b3",
+    "inferred_db65819e",
+    "inferred_2d9e3775"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点+降息10bp，释放长期资金约1万亿元，流动性充裕",
+    "制造业PMI连续3个月低于荣枯线，经济下行压力大，政策加码预期强",
+    "保利发展净利润大降79%，地产板块已充分反映利空，利空出尽概率大",
+    "历史案例显示降息后银行股估值修复，地产股需基本面配合但政策底已现"
+  ],
+  "counter_evidence": [
+    "市场指数高开回落，下跌个股近4000只，短期情绪极度脆弱",
+    "地产基本面持续恶化，保利一季度净利润再降53%，未见企稳迹象"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续仍有进一步宽松措施（如降息、定向支持地产）",
+    "假设2：经济数据在2个月内出现边际改善（PMI回升至50以上或地产销售企稳）",
+    "假设3：市场情绪不会进一步恶化至系统性风险（如信用事件爆发）"
+  ],
+  "uncertainty_map": [
+    "经济数据持续恶化，PMI跌破48（影响程度：高）",
+    "地产信用风险扩散，龙头房企出现债务违约（影响程度：高）",
+    "政策宽松力度不及预期，仅停留在降准层面（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 7,
+    "market_confirmation": 4,
+    "tradability": 8,
+    "risk_clarity": 5,
+    "consensus_gap": 7,
+    "signal_consistency": 6,
+    "overall_score": 6.3,
+    "confidence_score": 0.25,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：若政策加码+经济边际改善，金融地产板块估值修复空间10-20%；潜在风险：经济持续恶化或信用事件爆发，板块继续下跌10-15%；盈亏比约1.5:1，需严格止损。",
+  "next_validation_questions": [
+    "未来1个月PMI数据是否企稳或回升？",
+    "保利发展等龙头房企销售数据是否出现环比改善？",
+    "央行是否在2周内出台进一步宽松措施（如降息或定向工具）？"
+  ],
+  "invalidation_conditions": [
+    "PMI跌破48且无企稳迹象",
+    "地产龙头出现债务违约或信用事件",
+    "央行明确表态不再进一步宽松"
+  ],
+  "must_watch_indicators": [
+    "制造业PMI（月度）",
+    "30大中城市商品房成交面积（周度）",
+    "央行公开市场操作利率",
+    "保利发展月度销售数据"
+  ],
+  "kill_switch_signals": [
+    "PMI跌破48",
+    "地产信用利差大幅走阔",
+    "市场指数跌破前低"
+  ],
+  "warnings": [
+    "当前市场情绪极度脆弱，短期仍有下行风险，需控制仓位",
+    "地产基本面尚未企稳，政策传导存在时滞，不宜重仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T02:54:03.486592",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_19000101_astock_skill_5beae9ee",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,113 @@
+{
+  "opportunity_id": "opp_8bc3cbe5",
+  "opportunity_title": "AI算力业绩爆发",
+  "opportunity_thesis": "中际旭创市值突破万亿、新易盛净利润增长76.8%、某半导体龙头Q1预增150%-180%，叠加中国移动推进算力网建设、AI应用板块走强及人工智能终端国家标准发布，AI算力产业链业绩持续超预期，市场情绪与政策共振，板块景气度有望延续。当前市场对AI算力需求的高增长尚未充分定价，存在预期差，是布局AI算力核心标的的窗口期。\n\n【M13调研】机会描述基于AI算力需求爆发、业绩超预期和政策利好，但新闻分析中缺乏直接验证。中韩半导体ETF领涨、英特尔AMD市值新高、胜宏科技订单饱满等间接支持半导体景气度，但具体公司业绩数据未出现，政策利好也未明确。风险在于业绩持续性分歧和缺乏直接证据。整体方向可行，但需谨慎验证具体数据，建议等待更多确认信号。\n\n【M13调研】AI算力需求驱动光模块和半导体景气度得到部分验证：新易盛业绩高增、英特尔AMD市值新高、胜宏科技订单饱满。但机会描述中的中际旭创市值破万亿、某半导体龙头预增等具体数据未在新闻中出现，政策利好也缺乏报道。市场对业绩持续性存分歧，风险在于信息不实和预期差。建议谨慎，等待更多确认信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "002230.SZ",
+    "603019.SH",
+    "688981.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-07-08T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "中际旭创市值突破万亿、新易盛一季报高增、半导体龙头预增等业绩信号密集释放，叠加中国移动算力网建设、AI应用板块走强、人工智能终端国家标准发布等政策与市场信号，形成多维度共振，当前是业绩验证与政策催化叠加的窗口期。",
+  "related_signals": [
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f",
+    "sig_4149b887d9b2",
+    "sig_de9b85fe30aa",
+    "sig_050c391c993e"
+  ],
+  "inferred_events": [
+    "inferred_8eef4f34",
+    "inferred_b4da7532",
+    "inferred_fef4efd5",
+    "inferred_d727cc4d",
+    "inferred_6b4475d7",
+    "inferred_aada8700"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，创历史里程碑",
+    "新易盛一季报净利润同比增长76.8%",
+    "某半导体龙头Q1净利润预增150%-180%",
+    "中国移动推进全国一体化算力网建设",
+    "AI应用板块走高，软件ETF涨超2%且资金净流入",
+    "人工智能终端国家标准正式发布"
+  ],
+  "counter_evidence": [
+    "市场短期回调风险，三大指数高开回落，下跌个股近4000只",
+    "历史案例显示技术突破需商业化验证，概念炒作可能回落"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，业绩高增趋势延续",
+    "假设2：政策支持力度不减，算力基础设施建设按计划推进",
+    "假设3：市场整体流动性环境未显著恶化"
+  ],
+  "uncertainty_map": [
+    "业绩增速能否持续超预期（影响程度：高）",
+    "市场整体回调风险可能拖累板块（影响程度：中）",
+    "地缘政治冲突加剧可能影响风险偏好（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.6,
+    "confidence_score": 0.5800000000000001,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI算力产业链业绩持续超预期，叠加政策催化，板块有望迎来估值与业绩双升，核心标的涨幅空间较大。潜在风险：市场整体回调、业绩增速不及预期、地缘政治风险等，最大回撤约10%-15%。",
+  "next_validation_questions": [
+    "中际旭创、新易盛等核心标的的订单能见度如何？",
+    "AI算力产业链的估值水平是否合理？",
+    "市场整体流动性环境是否支持板块持续走强？"
+  ],
+  "invalidation_conditions": [
+    "核心标的业绩增速显著低于预期",
+    "政策支持力度减弱或转向",
+    "市场整体出现系统性下跌"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛等核心标的的股价与成交量",
+    "AI算力产业链相关公司的季度业绩预告",
+    "中国移动算力网建设进展",
+    "市场整体流动性及风险偏好指标"
+  ],
+  "kill_switch_signals": [
+    "核心标的股价放量跌破关键支撑位",
+    "AI算力产业链出现重大负面事件（如订单取消、技术瓶颈）",
+    "市场整体出现恐慌性下跌"
+  ],
+  "warnings": [
+    "注意：部分信号来源为新闻，非官方公告，需核实",
+    "注意：历史案例显示技术突破需商业化验证，避免追高概念炒作"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T03:36:18.481407",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_20260508_astock_skill_3ddb32fa",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

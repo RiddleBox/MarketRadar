@@ -1,0 +1,139 @@
+{
+  "opportunity_id": "opp_21afbfd6",
+  "opportunity_title": "AI算力链景气确认",
+  "opportunity_thesis": "光模块龙头中际旭创市值突破万亿、新易盛一季报净利润增长76.8%、某半导体龙头Q1预增150%-180%，叠加中国移动推进算力网建设、AI终端国标发布，AI与半导体产业链业绩爆发已从预期走向兑现。资金持续从消费地产流入新能源/半导体，板块轮动信号与基本面共振，当前是布局AI算力链的窗口期。\n\n【M13调研】机会描述基于AI算力需求爆发、业绩超预期和政策利好，但新闻分析中缺乏直接验证。中韩半导体ETF领涨、英特尔AMD市值新高、胜宏科技订单饱满等间接支持半导体景气度，但具体公司业绩数据未出现，政策利好也未明确。风险在于业绩持续性分歧和缺乏直接证据。整体方向可行，但需谨慎验证具体数据，建议等待更多确认信号。\n\n【M13调研】AI算力需求驱动光模块和半导体景气度得到部分验证：新易盛业绩高增、英特尔AMD市值新高、胜宏科技订单饱满。但机会描述中的中际旭创市值破万亿、某半导体龙头预增等具体数据未在新闻中出现，政策利好也缺乏报道。市场对业绩持续性存分歧，风险在于信息不实和预期差。建议谨慎，等待更多确认信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "300476.SZ",
+    "688981.SH",
+    "002371.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "光模块'易中天'年报和一季报全部披露完毕，业绩超预期；某半导体龙头Q1预增150%-180%；中国移动5月8日宣布推进算力网建设并开放万亿级Token体验包；AI终端国标同日发布。多重催化剂密集出现，市场情绪从恐惧转向贪婪，资金已开始流入。",
+  "related_signals": [
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sent_ec6c7cba",
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_c65bd11e442f",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_5a2ec57f6916",
+    "sig_a1d7094e54d1",
+    "sig_d9ef44f292bd",
+    "sig_d8cb7635ade9",
+    "sig_39b17c44aba1",
+    "sig_4149b887d9b2",
+    "sig_911415444bf5",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017",
+    "sig_df713685bee1",
+    "sig_050c391c993e",
+    "sig_e8ba30264edb",
+    "sig_ffdee791adf2"
+  ],
+  "inferred_events": [
+    "inferred_def1e051",
+    "inferred_ac8b23fd",
+    "inferred_0e798242",
+    "inferred_48b64796",
+    "inferred_3791ecb4"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，收盘9989亿，创历史里程碑",
+    "新易盛一季报净利润同比增长76.8%",
+    "某半导体龙头Q1业绩预增150%-180%，受益AI芯片需求爆发",
+    "中国移动推进全国一体化算力网建设，布局吉瓦级数据园区",
+    "人工智能终端国家标准正式发布",
+    "资金从消费、地产持续流向新能源、半导体（多次板块轮动信号）"
+  ],
+  "counter_evidence": [
+    "中际旭创万亿市值仅为盘中突破，收盘回落，存在获利回吐压力",
+    "每日互动AI业务收入仅千万级，体量较小，对板块带动有限"
+  ],
+  "key_assumptions": [
+    "假设1：AI芯片需求持续增长，光模块和半导体订单能见度维持高位",
+    "假设2：中国移动等算力建设投资按计划落地，不出现大幅削减",
+    "假设3：市场整体流动性环境不出现急剧收紧"
+  ],
+  "uncertainty_map": [
+    "地缘政治风险升级（中东局势）可能引发市场避险，压制科技股估值（影响程度：高）",
+    "半导体龙头业绩预增后，实际一季报能否达到预告上限（影响程度：中）",
+    "板块短期涨幅过大，存在技术性回调风险（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.5800000000000001,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI算力链业绩持续超预期，龙头股有望继续创新高，板块整体估值提升。潜在风险：地缘政治冲击或流动性收紧导致科技股回调，但业绩支撑下回调幅度有限。风险收益比约1:2。",
+  "next_validation_questions": [
+    "某半导体龙头Q1实际业绩是否达到预告上限？",
+    "光模块龙头4月订单数据是否环比增长？",
+    "中国移动算力网建设是否有具体投资金额和时间表？"
+  ],
+  "invalidation_conditions": [
+    "光模块或半导体龙头一季报实际业绩低于预告下限",
+    "中国移动等算力建设投资大幅低于预期",
+    "市场出现系统性风险事件（如地缘冲突升级至全面战争）"
+  ],
+  "must_watch_indicators": [
+    "光模块龙头（中际旭创、新易盛）日成交额和股价走势",
+    "半导体龙头（中芯国际、北方华创）一季报披露情况",
+    "中国移动算力网建设相关公告",
+    "AI终端国家标准后续配套政策"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头连续3日放量下跌，跌破20日均线",
+    "半导体龙头一季报净利润同比增速低于100%",
+    "央行意外加息或大幅收紧流动性"
+  ],
+  "warnings": [
+    "部分信号（如每日互动AI收入）体量较小，对板块整体影响有限",
+    "板块已部分上涨，追高需注意短期回调风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T03:44:10.863629",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_20260508_astock_skill_6c9a3310",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

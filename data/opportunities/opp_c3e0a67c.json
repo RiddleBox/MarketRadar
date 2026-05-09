@@ -1,0 +1,123 @@
+{
+  "opportunity_id": "opp_c3e0a67c",
+  "opportunity_title": "中东冲突能源避险",
+  "opportunity_thesis": "美军在霍尔木兹海峡及阿曼湾连续袭击伊朗民用船只和油轮，伊朗武装力量全面备战，双方发生零星冲突，霍尔木兹海峡这一全球最关键的石油运输通道面临实质性封锁风险。此事件将直接推高原油价格，并引发全球能源板块和航运板块的避险交易，同时国内煤炭因进口成本上升而受益。当前市场尚未完全定价全面冲突升级的风险，存在显著预期差。\n\n【M13调研】机会描述与新闻事实完全脱节：最近20条新闻均为A股公司日常公告，无任何关于霍尔木兹海峡冲突、伊朗油轮拦截或能源供应中断的报道。基本面数据和行业趋势搜索无结果，缺乏第三方验证。市场未出现恐慌或避险情绪，燃料油夜盘仅小幅上涨。因此，该机会缺乏事实基础，风险极高，建议规避。\n\n【M13调研】该机会描述的地缘冲突事件与新闻事实完全不符，最近20条新闻均为A股公司日常公告，无任何相关报道。基本面数据和行业趋势搜索无结果，市场未出现恐慌或避险情绪，燃料油夜盘仅小幅上涨。研报分析无相关报告。因此，该机会缺乏事实基础，风险极高，建议规避。置信度大幅下调。",
+  "target_markets": [
+    "A_SHARE",
+    "HK",
+    "US"
+  ],
+  "target_instruments": [
+    "601857.SH",
+    "600028.SH",
+    "600938.SH",
+    "601975.SH",
+    "600026.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "美军在5月7-8日连续三天对伊朗船只采取军事行动，伊朗武装力量宣布全面备战，双方在霍尔木兹海峡发生零星冲突。事件密集爆发，冲突升级概率极高，市场尚未充分反应全面封锁风险，时间窗口紧迫。",
+  "related_signals": [
+    "sig_0806bfd8639e",
+    "sig_4bdf8baa2d3a",
+    "sig_b3de9b426692",
+    "sig_992644367a0a",
+    "sig_1fcc386acab4",
+    "sig_9e1e9233ab36",
+    "sig_82a8c461a4b6",
+    "sig_d045354f7ded",
+    "sig_bb9a9c6d60a1",
+    "sig_074e8c030441",
+    "sig_571a67c4298e",
+    "sig_2201d7544cad"
+  ],
+  "inferred_events": [
+    "inferred_8d1f2ded",
+    "inferred_0d0fdf2b",
+    "inferred_38262bd5",
+    "inferred_74b0735d",
+    "inferred_aee4a78c",
+    "inferred_5b4d27a3",
+    "inferred_68ae229c",
+    "inferred_75745478"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军5月7日袭击伊朗民用船只致15人伤亡，5月8日拦截两艘伊朗油轮，行动升级",
+    "伊朗武装力量宣布全面备战，将回击任何侵略",
+    "伊朗哈尔克岛附近疑似石油泄漏，关键出口枢纽受影响",
+    "进口煤炭价格因海运成本上涨而大幅走高，国内煤企受益"
+  ],
+  "counter_evidence": [
+    "冲突目前仍为零星摩擦，未升级为全面战争",
+    "历史案例显示地缘风险溢价通常在15天内消退"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡通行受阻或中断，全球原油供应受冲击",
+    "假设2：美国对伊朗封锁措施持续加强，伊朗不会迅速妥协",
+    "假设3：冲突不会在短期内（1-2周）得到外交解决"
+  ],
+  "uncertainty_map": [
+    "冲突升级为全面战争的概率（影响程度：高）",
+    "外交斡旋或停火协议突然达成的可能性（影响程度：高）",
+    "OPEC+及其他产油国增产以弥补供应缺口的反应（影响程度：中）"
+  ],
+  "priority_level": "urgent",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.6,
+    "confidence_score": -0.029999999999999985,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：原油价格短期暴涨10-20%，能源股和航运股大幅上涨。潜在风险：冲突迅速缓和，风险溢价消退，油价和股价回落。收益风险比约2:1至3:1。",
+  "next_validation_questions": [
+    "霍尔木兹海峡当前实际通行状况如何？是否有官方封锁声明？",
+    "美国是否已正式宣布对伊朗实施全面石油封锁？",
+    "国际原油期货（如WTI、布伦特）开盘后价格反应如何？"
+  ],
+  "invalidation_conditions": [
+    "美伊双方宣布停火或达成临时协议",
+    "霍尔木兹海峡恢复正常通行",
+    "OPEC+宣布大幅增产以稳定油价"
+  ],
+  "must_watch_indicators": [
+    "WTI/布伦特原油期货价格及成交量",
+    "霍尔木兹海峡通行船舶数量及保险费用",
+    "美国/伊朗官方声明及外交动态",
+    "VIX恐慌指数及黄金价格"
+  ],
+  "kill_switch_signals": [
+    "美伊双方宣布停火或开始谈判",
+    "原油价格冲高后单日暴跌超过5%",
+    "霍尔木兹海峡通行完全恢复"
+  ],
+  "warnings": [
+    "地缘政治事件高度不确定，冲突可能迅速升级或缓和，需严格设置止损",
+    "历史案例显示地缘风险溢价通常在15天内消退，不宜长期持有"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T01:27:09.812866",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_20260508_astock_skill_34cfff3a",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

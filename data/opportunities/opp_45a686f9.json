@@ -1,0 +1,113 @@
+{
+  "opportunity_id": "opp_45a686f9",
+  "opportunity_title": "宽松加码权益修复",
+  "opportunity_thesis": "经济数据疲弱（PMI连续3个月低于荣枯线、CPI/PPI通缩）倒逼央行加大宽松力度，已实施降准0.5个百分点和降息10bp，且央行明确表态将适时进一步降准。流动性释放叠加市场成交额突破1.5万亿，权益市场有望迎来估值修复行情，尤其受益于利率敏感和流动性改善的板块。\n\n【M13调研】宏观经济数据疲软确认下行压力，央行超预期降准降息释放宽松信号，形成短期交易窗口。但无研报和行业趋势支持，新闻无相关重大事件，基本面数据缺失。逻辑成立但信息不充分，置信度中性。建议谨慎参与，关注后续经济数据验证。\n\n【M13调研】机会描述基于经济疲软和央行超预期宽松，形成短期交易窗口，逻辑成立。但缺乏研报、行业趋势和基本面数据支持，新闻无相关事件，信息不充分。无重大利空，但置信度偏低，建议谨慎参与，关注后续经济数据验证。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601318.SH",
+    "600036.SH",
+    "000002.SZ",
+    "600030.SH",
+    "002594.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-20T00:00:00",
+    "end": "2026-07-20T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "央行已实施降准降息，且表态将适时进一步降准，政策宽松窗口已打开；同时PMI连续3个月低于荣枯线、CPI/PPI通缩确认经济下行压力，倒逼政策加码；市场成交额突破1.5万亿显示资金开始入场，时机成熟。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_e39115aa3077",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203",
+    "sig_a1a728ae8eed"
+  ],
+  "inferred_events": [
+    "inferred_21914997",
+    "inferred_70bd363e",
+    "inferred_9474f226",
+    "inferred_30e4d6d3",
+    "inferred_3dde20d4",
+    "inferred_d3a26bf7"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行下调存款准备金率0.5个百分点，释放长期流动性约1万亿元",
+    "央行下调7天逆回购利率10bp至1.7%，降低资金成本",
+    "央行行长明确表态将适时降准，政策宽松预期强烈",
+    "沪深两市成交额突破1.5万亿元，市场活跃度显著提升"
+  ],
+  "counter_evidence": [
+    "制造业PMI连续3个月低于荣枯线，经济基本面仍疲弱",
+    "CPI同比下降0.3%、PPI同比下降2.7%，通缩压力持续"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续会进一步降准或降息，宽松政策持续加码",
+    "假设2：经济数据不会进一步恶化至引发系统性风险",
+    "假设3：市场流动性改善能有效传导至权益市场，而非仅停留在银行间"
+  ],
+  "uncertainty_map": [
+    "经济下行超预期，企业盈利恶化抵消流动性利好（影响程度：高）",
+    "政策宽松力度不及预期，仅一次降准后无后续动作（影响程度：中）",
+    "外部风险（如地缘冲突、海外加息）冲击市场情绪（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.68,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：流动性驱动估值修复，指数有望上涨5-10%，金融、消费等板块弹性更大；潜在风险：经济基本面恶化超预期，企业盈利下滑抵消流动性利好，最大回撤约5-8%。",
+  "next_validation_questions": [
+    "央行后续是否有进一步降准或降息的具体时间表？",
+    "4月及5月PMI数据能否企稳回升？",
+    "北向资金近期是否持续净流入？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "PMI数据继续恶化至48以下",
+    "市场成交额萎缩至1万亿以下"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作及降准降息动态",
+    "制造业PMI月度数据",
+    "沪深两市成交额变化",
+    "北向资金流向"
+  ],
+  "kill_switch_signals": [
+    "央行意外收紧流动性（如加息或正回购）",
+    "PMI跌破48且无企稳迹象",
+    "市场出现恐慌性抛售，成交额骤降"
+  ],
+  "warnings": [
+    "注意：经济基本面疲弱可能持续压制市场，流动性利好需时间传导",
+    "注意：历史案例显示降息降准后市场反应可能滞后，需耐心等待"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T03:27:14.600941",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_20260508_astock_skill_271e733f",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

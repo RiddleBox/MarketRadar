@@ -1,0 +1,116 @@
+{
+  "opportunity_id": "opp_9e93a4af",
+  "opportunity_title": "宽松周期启动",
+  "opportunity_thesis": "经济数据持续疲软（PMI连续3个月低于荣枯线、CPI/PPI通缩）已倒逼央行落地实质性宽松政策（降准0.5%+降息10bp），且央行行长公开表态将适时进一步降准，确认宽松周期开启。当前市场对经济悲观预期已较充分定价，但政策力度和持续性尚未被完全price-in，存在预期差。宽松流动性将首先利好利率敏感型资产（金融、地产）和成长板块（科技、消费），短期交易窗口明确。\n\n【M13调研】机会基于通缩和降准预期，但缺乏研报、基本面数据和行业趋势支持。新闻分析中无直接相关宏观信息，仅有个股公告。政策预期差存在，但利好出尽风险需警惕。整体置信度较低，建议等待更多数据或政策明确信号后再行决策。\n\n【M13调研】机会描述基于经济疲软和央行超预期宽松，形成短期交易窗口，逻辑成立。但缺乏研报、行业趋势和基本面数据支持，新闻无相关事件，信息不充分。无重大利空，但置信度偏低，建议谨慎参与，关注后续经济数据验证。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601166.SH",
+    "600036.SH",
+    "000002.SZ",
+    "600030.SH",
+    "300059.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-18T00:00:00",
+    "end": "2026-07-18T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "央行已落地降准和降息，且行长公开表态将适时进一步降准，政策信号明确且连续。经济数据（PMI、CPI、PPI）持续恶化提供了政策紧迫性，当前时点是宽松政策从预期到落地的转折点，市场尚未充分反应后续政策加码的预期。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_e39115aa3077",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203"
+  ],
+  "inferred_events": [
+    "inferred_239d779a",
+    "inferred_cc81f3d5",
+    "inferred_b7e320ca",
+    "inferred_d43e4843",
+    "inferred_b123cad9",
+    "inferred_5dd26c36",
+    "inferred_7bc1110c",
+    "inferred_3c29dd9f",
+    "inferred_72c73296",
+    "inferred_9356ad08"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行已宣布下调存款准备金率0.5个百分点，自4月20日起生效",
+    "央行下调7天逆回购利率10bp至1.7%，降低资金成本",
+    "央行行长公开表态将根据经济形势适时降准，释放持续宽松信号",
+    "制造业PMI连续3个月低于荣枯线，CPI/PPI通缩，经济下行压力为政策提供必要性"
+  ],
+  "counter_evidence": [
+    "经济基本面尚未企稳，宽松政策传导至实体经济需要时间，短期市场可能继续承压",
+    "市场对降准降息已有部分预期，落地后可能出现'买预期卖事实'"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续会继续降准或降息，宽松周期至少持续一个季度",
+    "假设2：经济数据不会在短期内急剧恶化至引发系统性风险",
+    "假设3：外部环境（如美联储政策、地缘冲突）不会大幅制约国内宽松空间"
+  ],
+  "uncertainty_map": [
+    "后续政策力度和节奏不确定（影响程度：高）",
+    "经济数据改善时点不确定，宽松效果可能滞后（影响程度：中）",
+    "市场情绪可能因经济数据持续疲软而反复（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 7,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.4,
+    "confidence_score": 0.4800000000000001,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：宽松周期启动后，金融、地产、科技板块有望迎来估值修复和流动性驱动的上涨，幅度10-20%。潜在风险：若后续政策不及预期或经济数据继续恶化，市场可能重回悲观，跌幅5-10%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "央行后续是否有明确的降准或降息时间表？",
+    "近期信贷和社融数据是否出现企稳迹象？",
+    "北向资金是否持续流入A股，确认外资对宽松政策的认可？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松，或收紧货币政策",
+    "经济数据出现超预期恶化（如PMI跌破48、CPI大幅负增长）",
+    "市场出现系统性风险事件（如信用违约潮、股市暴跌）"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率和MLF利率变化",
+    "制造业PMI和社融数据",
+    "北向资金净流入/流出情况",
+    "银行间市场利率（如Shibor）走势"
+  ],
+  "kill_switch_signals": [
+    "央行意外加息或提高存款准备金率",
+    "PMI跌破48且无企稳迹象",
+    "市场出现连续大幅下跌，恐慌情绪蔓延"
+  ],
+  "warnings": [
+    "注意：经济基本面疲软可能限制宽松政策的效果，市场反弹后可能再次回落",
+    "注意：历史案例显示降息后银行股估值修复但地产股需基本面配合，需精选标的"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T00:51:56.708930",
+  "batch_id": "sched_signal_pipeline_20260508_230011_cf8d27_19000101_astock_skill_ccc944d9",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

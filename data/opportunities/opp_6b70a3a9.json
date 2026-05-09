@@ -1,0 +1,164 @@
+{
+  "opportunity_id": "opp_6b70a3a9",
+  "opportunity_title": "科技成长板块轮动",
+  "opportunity_thesis": "资金从消费、地产等传统板块持续流入新能源、半导体和AI产业链，形成明确的板块轮动趋势。叠加新能源汽车购置税减免政策延续、半导体龙头业绩超预期（150%-180%增长）、光模块公司市值突破万亿等结构性催化剂，科技成长板块具备持续上涨动力。当前市场情绪处于中性偏乐观区间，预期差仍存，是布局的较好时机。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持。关键发现包括：新闻内容与AI产业链关联度低，业绩数据未验证，外围市场存在不确定性。风险因素主要为信息不实和情绪过热。未发现重大利空，但置信度因证据不足下调0.2。综合来看，该机会缺乏近期数据支撑，建议谨慎对待，等待更多验证信号。\n\n【M13调研】该机会描述声称美股AI股创新高、A股AI产业链业绩验证，但新闻分析未找到相关证据，北方华创业绩增速仅3.42%，与预增150-180%严重不符。政策与资金面支撑也未在新闻中体现。M13调研已指出证据不足，研报分析无支持。综合来看，机会缺乏近期数据支撑，风险较高，建议谨慎对待，等待更多验证信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "002371.SZ",
+    "300274.SZ",
+    "601012.SH",
+    "600438.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "当前时点催化剂密集：1）新能源汽车购置税减免政策于4月24日正式发布延续至2027年底，政策落地提供确定性；2）半导体龙头Q1业绩预增150%-180%，光模块公司新易盛净利润增长76.8%，中际旭创市值突破万亿，业绩验证行业高景气；3）AI应用板块5月8日集体走高，人形机器人概念股创新高，资金持续流入科技板块。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sent_ec6c7cba",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_30d3e00700ed",
+    "sig_1c94cfaf9bad",
+    "sig_c65bd11e442f",
+    "sig_810b1cc2cedf",
+    "sig_80c24e558ad0",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_e552050e5030",
+    "sig_5a2ec57f6916",
+    "sig_a19c232b39d7",
+    "sig_a1d7094e54d1",
+    "sig_d9ef44f292bd",
+    "sig_d8cb7635ade9",
+    "sig_39b17c44aba1",
+    "sig_1da9f093af7d",
+    "sig_906283b999bb",
+    "sig_3a8e941b3c94",
+    "sig_5c2b6019cab4",
+    "sig_8a44caabf0c3",
+    "sig_58fd56efe3f5",
+    "sig_3e8e8f0e0f71",
+    "sig_14c93523d744",
+    "sig_4149b887d9b2",
+    "sig_911415444bf5",
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017",
+    "sig_41c9d0ac13e2",
+    "sig_d36d819acfc5",
+    "sig_e49e84bd5c49",
+    "sig_df713685bee1",
+    "sig_050c391c993e",
+    "sig_588712b4e2b5",
+    "sig_b0343a771aa0",
+    "sig_68fd6d4291f4",
+    "sig_c53b812566be",
+    "sig_4ef836f98ad7",
+    "sig_1427d286ec9e",
+    "sig_e8ba30264edb",
+    "sig_ffdee791adf2"
+  ],
+  "inferred_events": [
+    "inferred_44053006",
+    "inferred_8fc8ec3c",
+    "inferred_f5e994eb",
+    "inferred_447ac3ac",
+    "inferred_db0d7c9e",
+    "inferred_364b2991"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "资金从消费、地产流向新能源、半导体，板块轮动信号连续多日出现",
+    "新能源汽车购置税减免政策延续至2027年底，政策正式落地",
+    "半导体龙头Q1业绩预增150%-180%，光模块公司新易盛净利润增长76.8%",
+    "中际旭创盘中市值突破万亿，光模块行业景气度确认",
+    "AI应用板块走高，人形机器人概念股创新高，科技板块活跃"
+  ],
+  "counter_evidence": [
+    "市场整体恐贪指数处于中性偏乐观区间，若情绪过热可能引发回调",
+    "部分科技股已出现较大涨幅，短期获利盘压力增加"
+  ],
+  "key_assumptions": [
+    "假设1：资金从传统板块流向科技成长的趋势将持续，不会出现逆转",
+    "假设2：半导体和新能源的业绩高增长具有可持续性，非一次性因素",
+    "假设3：宏观经济和政策环境保持稳定，不会出现系统性风险"
+  ],
+  "uncertainty_map": [
+    "地缘政治冲突升级风险（影响程度：高）——若中东局势恶化，可能引发全球避险情绪，压制科技板块",
+    "市场短期过热回调风险（影响程度：中）——若科技板块短期涨幅过大，可能面临获利回吐",
+    "政策执行力度不及预期（影响程度：中）——若购置税减免政策执行效果不佳，可能影响新能源板块"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.35000000000000003,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：科技成长板块在资金轮动和业绩验证下有望持续上涨，半导体和新能源龙头可能实现10%-20%的涨幅。潜在风险：市场情绪过热或地缘政治风险可能导致5%-10%的回调。风险收益比约为2:1。",
+  "next_validation_questions": [
+    "半导体龙头Q1业绩预增的具体公司名称和详细数据是什么？",
+    "新能源板块的产能利用率是否持续提升？",
+    "AI应用板块的资金流入是否具有持续性？"
+  ],
+  "invalidation_conditions": [
+    "资金从科技板块大幅流出，转向传统防御性板块",
+    "半导体或新能源龙头业绩不及预期，出现盈利预警",
+    "宏观经济数据大幅恶化，引发系统性风险"
+  ],
+  "must_watch_indicators": [
+    "新能源和半导体板块的资金流向",
+    "半导体龙头Q1业绩正式报告",
+    "新能源汽车月度销量数据",
+    "AI应用板块的成交量和资金净流入"
+  ],
+  "kill_switch_signals": [
+    "科技板块出现连续3日以上资金净流出",
+    "半导体龙头业绩预告大幅低于预期",
+    "市场恐贪指数进入极度贪婪区间（≥80）且伴随放量下跌"
+  ],
+  "warnings": [
+    "注意：部分信号来源为新闻和情绪面系统，需进一步验证",
+    "注意：科技板块波动性较大，需严格控制仓位和止损"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T05:28:36.890501",
+  "batch_id": "sched_signal_pipeline_20260509_051555_1189ae_20260509_astock_skill_4820f333",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

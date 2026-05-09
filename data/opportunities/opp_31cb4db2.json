@@ -1,0 +1,109 @@
+{
+  "opportunity_id": "opp_31cb4db2",
+  "opportunity_title": "机器人IPO热潮催化",
+  "opportunity_thesis": "乐动机器人港股IPO获得6707倍散户认购，创下近年罕见纪录，叠加A股人形机器人概念股集体涨停、龙头创历史新高，表明市场对机器人/硬科技赛道的热情已从概念炒作转向资金实质性涌入。当前时点，IPO超购作为情绪放大器，有望在短期内推动A股机器人产业链标的进一步估值扩张，尤其是与乐动机器人业务重叠的谐波减速器、执行器、传感器等核心零部件供应商。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】人形机器人板块在情绪和资金推动下爆发，但缺乏研报和基本面验证，短期过热风险显著。产业处于初期，预期差大，但需谨慎对待回调可能。建议关注后续产业落地进展，避免追高。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "002031.SZ",
+    "603728.SH",
+    "300124.SZ",
+    "688160.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "乐动机器人IPO超购数据于5月8日晚间公布，次日（5月9日）开盘即为情绪催化窗口；A股人形机器人概念股已在5月8日盘中集体走强，形成技术面与事件面的共振，短期情绪溢价尚未完全释放。",
+  "related_signals": [
+    "sig_cc33dd52b601",
+    "sig_41c9d0ac13e2",
+    "sig_4ef836f98ad7",
+    "sig_1427d286ec9e"
+  ],
+  "inferred_events": [
+    "inferred_09708205",
+    "inferred_bd172f1d",
+    "inferred_033f81e4",
+    "inferred_2b43c63d",
+    "inferred_ee069ae7",
+    "inferred_39de9b2d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "乐动机器人港股IPO散户认购倍数达6707倍，国际配售9.54倍，显示资金对机器人赛道极度追捧",
+    "A股人形机器人概念股5月8日集体上涨，绿的谐波创历史新高，巨轮智能2连板",
+    "历史案例显示，港股IPO超购纪录往往带动同板块A股标的短期情绪溢价（如2020年泡泡玛特IPO后潮玩概念股上涨）"
+  ],
+  "counter_evidence": [
+    "A股人形机器人概念股已连续上涨，部分个股短期涨幅较大，存在获利回吐风险",
+    "乐动机器人尚未在港股正式挂牌交易，首日表现存在不确定性，若破发可能反向压制情绪"
+  ],
+  "key_assumptions": [
+    "假设1：乐动机器人港股上市首日表现正面（涨幅≥10%），维持市场热情",
+    "假设2：A股机器人板块整体未出现系统性利空（如监管降温、龙头业绩暴雷）",
+    "假设3：市场流动性环境维持宽松，资金面支持主题炒作"
+  ],
+  "uncertainty_map": [
+    "乐动机器人上市首日表现（影响程度：高）",
+    "A股机器人板块短期获利回吐压力（影响程度：中）",
+    "监管层对概念炒作的态度变化（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.68
+  },
+  "risk_reward_profile": "潜在收益：若情绪持续发酵，龙头股（如绿的谐波）有望在1-2周内再涨15-25%；潜在风险：若乐动机器人首日破发或A股板块获利盘涌出，回调幅度可达10-15%。盈亏比约1.5:1至2:1。",
+  "next_validation_questions": [
+    "乐动机器人港股上市首日收盘涨跌幅及换手率如何？",
+    "A股机器人板块次日（5月9日）开盘资金流向及涨停家数是否延续？",
+    "是否有机构研报或卖方开始上调机器人板块评级？"
+  ],
+  "invalidation_conditions": [
+    "乐动机器人港股上市首日收盘下跌超过5%",
+    "A股机器人板块次日出现大面积跌停或资金大幅净流出",
+    "监管层发布针对概念炒作的风险提示或窗口指导"
+  ],
+  "must_watch_indicators": [
+    "乐动机器人港股上市首日涨跌幅及成交量",
+    "A股人形机器人概念板块次日开盘涨幅及涨停家数",
+    "绿的谐波、巨轮智能等龙头股次日资金流向",
+    "机器人板块整体成交额是否持续放大"
+  ],
+  "kill_switch_signals": [
+    "乐动机器人首日破发且跌幅超过10%",
+    "A股机器人板块次日成交额较前日萎缩30%以上",
+    "出现机器人行业龙头公司业绩大幅低于预期的公告"
+  ],
+  "warnings": [
+    "注意：当前信号主要基于情绪面和技术面，基本面（如订单、业绩）尚未形成强支撑",
+    "注意：港股IPO超购数据虽亮眼，但散户认购倍数高不代表上市后表现必然优异，需警惕首日冲高回落"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T05:50:06.781723",
+  "batch_id": "sched_signal_pipeline_20260509_051555_1189ae_20260509_astock_skill_7eca324e",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

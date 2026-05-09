@@ -349,7 +349,8 @@ else:
     st.markdown("**行动策略设计**")
 
     # 尝试加载关联的决策记录
-    action_plan = metadata.get("action_plan", {})
+    signal_metadata = selected_signal.get("metadata", {})
+    action_plan = signal_metadata.get("action_plan", {})
 
     if action_plan:
         st.markdown("##### 策略类型")

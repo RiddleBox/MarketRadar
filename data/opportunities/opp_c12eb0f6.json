@@ -1,0 +1,106 @@
+{
+  "opportunity_id": "opp_c12eb0f6",
+  "opportunity_title": "人形机器人主升浪",
+  "opportunity_thesis": "人形机器人板块在A股出现集体涨停、龙头创历史新高的技术面强势信号，同时港股IPO获得6707倍散户认购，显示市场情绪和资金面高度共振。当前处于概念炒作向业绩预期过渡的早期阶段，预期差较大，但需警惕短期过热后的回调风险。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】人形机器人板块在情绪和资金推动下爆发，但缺乏研报和基本面验证，短期过热风险显著。产业处于初期，预期差大，但需谨慎对待回调可能。建议关注后续产业落地进展，避免追高。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "002031.SZ",
+    "603728.SH",
+    "300124.SZ",
+    "688160.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "龙头股绿的谐波创历史新高、多只个股涨停，技术面突破确认；港股IPO巨量认购显示资金极度追捧，情绪面与资金面共振，短期催化剂密集。",
+  "related_signals": [
+    "sig_cc33dd52b601",
+    "sig_41c9d0ac13e2",
+    "sig_4ef836f98ad7"
+  ],
+  "inferred_events": [
+    "inferred_0e7f207f",
+    "inferred_9581008e",
+    "inferred_e8147d10",
+    "inferred_bd83a14c",
+    "inferred_f6d0b5fb"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "绿的谐波盘中涨超15%创历史新高，技术面强势突破",
+    "多只概念股涨停或创新高，板块效应明显",
+    "乐动机器人港股IPO获6707倍散户认购，显示市场对人形机器人赛道极度热情"
+  ],
+  "counter_evidence": [
+    "板块短期涨幅过大，可能已透支部分预期",
+    "缺乏明确的业绩订单落地信号，概念炒作成分较高"
+  ],
+  "key_assumptions": [
+    "假设1：人形机器人行业政策或订单消息在近期持续催化",
+    "假设2：市场整体流动性环境不出现急剧恶化"
+  ],
+  "uncertainty_map": [
+    "板块短期过热后回调风险（影响程度：高）",
+    "缺乏实质性业绩支撑，概念炒作持续性存疑（影响程度：中）",
+    "港股IPO上市后表现可能不及预期，拖累板块情绪（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 8,
+    "tradability": 8,
+    "risk_clarity": 5,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.7,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益来自板块情绪持续发酵和龙头股估值提升，但风险在于短期涨幅过大后回调幅度可能较大，盈亏比约1.5:1。",
+  "next_validation_questions": [
+    "近期是否有头部企业发布人形机器人量产或订单公告？",
+    "板块整体成交量是否持续放大，资金是否持续流入？",
+    "港股乐动机器人上市首日表现如何？"
+  ],
+  "invalidation_conditions": [
+    "板块龙头股出现放量下跌，跌破5日均线",
+    "港股乐动机器人上市首日破发",
+    "市场整体出现系统性风险（如流动性收紧）"
+  ],
+  "must_watch_indicators": [
+    "绿的谐波股价走势及成交量",
+    "人形机器人板块整体成交额变化",
+    "港股乐动机器人上市首日涨跌幅",
+    "相关ETF资金流入情况"
+  ],
+  "kill_switch_signals": [
+    "板块内多只个股出现跌停",
+    "龙头股单日跌幅超过8%",
+    "市场恐慌指数急剧上升"
+  ],
+  "warnings": [
+    "注意：当前信号以概念炒作为主，缺乏业绩验证，需警惕高位接盘风险",
+    "注意：港股IPO巨量认购可能包含散户情绪因素，不代表机构长期看好"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T05:30:25.828401",
+  "batch_id": "sched_signal_pipeline_20260509_051555_1189ae_20260509_astock_skill_49aeefd9",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

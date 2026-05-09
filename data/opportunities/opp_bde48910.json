@@ -1,0 +1,113 @@
+{
+  "opportunity_id": "opp_bde48910",
+  "opportunity_title": "霍尔木兹冲突套利",
+  "opportunity_thesis": "美军与伊朗在霍尔木兹海峡的军事冲突持续升级（袭击民用船只、拦截油轮、交火），叠加进口煤价倒挂推动国内煤炭需求，以及高盛调查显示航运受阻预期持续至下半年，构成能源与航运板块的短期交易机会。市场尚未完全定价冲突长期化风险，预期差存在。\n\n【M13调研】机会描述与新闻事实完全脱节：最近20条新闻均为A股公司日常公告，无任何关于霍尔木兹海峡冲突、伊朗油轮拦截或能源供应中断的报道。基本面数据和行业趋势搜索无结果，缺乏第三方验证。市场未出现恐慌或避险情绪，燃料油夜盘仅小幅上涨。因此，该机会缺乏事实基础，风险极高，建议规避。\n\n【M13调研】该机会描述的地缘冲突事件与新闻事实完全不符，最近20条新闻均为A股公司日常公告，无任何相关报道。基本面数据和行业趋势搜索无结果，市场未出现恐慌或避险情绪，燃料油夜盘仅小幅上涨。研报分析无相关报告。因此，该机会缺乏事实基础，风险极高，建议规避。置信度大幅下调。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "601857.SH",
+    "600028.SH",
+    "600188.SH",
+    "601088.SH",
+    "601919.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "5月7-8日冲突密集升级（美军袭击伊朗民用船只、拦截油轮、交火），事件刚发生，市场尚未充分反应；进口煤价倒挂已出现，国内煤炭采购转向正在发生，催化剂密集且时效性强。",
+  "related_signals": [
+    "sig_3cf8fcf349ae",
+    "sig_0806bfd8639e",
+    "sig_4bdf8baa2d3a",
+    "sig_b3de9b426692",
+    "sig_82a8c461a4b6",
+    "sig_bb9a9c6d60a1",
+    "sig_70a333e7b67e",
+    "sig_ec500e4d7f22"
+  ],
+  "inferred_events": [
+    "inferred_f34651ef",
+    "inferred_9c30aaec",
+    "inferred_bb3f1bf7",
+    "inferred_155a50e6",
+    "inferred_c4edfbb6",
+    "inferred_1337df20"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军5月7-8日连续袭击伊朗民用船只并拦截油轮，霍尔木兹海峡交火，冲突升级明确",
+    "进口煤价较年初上涨171元/吨，与国内煤价倒挂，企业转向国内采购",
+    "高盛调查显示多数投资者预期航运受阻持续至7月后，油价预期高位"
+  ],
+  "counter_evidence": [
+    "冲突可能短期缓和，如外交介入或停火，风险溢价迅速消退",
+    "全球股市整体偏弱，地缘风险可能引发避险抛售而非板块轮动"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡航运受阻持续至少2周以上",
+    "假设2：国内煤炭需求因进口替代而实质性增加",
+    "假设3：冲突不会迅速升级为全面战争导致市场系统性下跌"
+  ],
+  "uncertainty_map": [
+    "冲突升级为全面战争（影响程度：高）",
+    "外交斡旋快速达成停火（影响程度：中）",
+    "国内煤炭供应弹性不足，无法充分承接进口替代（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": -0.045,
+    "execution_readiness": 0.65
+  },
+  "risk_reward_profile": "潜在收益来自能源/煤炭/航运板块短期脉冲上涨（10-20%），风险在于冲突快速缓和或系统性避险导致板块回调（5-10%），盈亏比约2:1。",
+  "next_validation_questions": [
+    "霍尔木兹海峡航运中断的具体量化数据（每日通过油轮数量变化）",
+    "国内煤炭企业近期订单或出货量是否已出现环比增长",
+    "布伦特原油期货持仓变化，投机净多头是否增加"
+  ],
+  "invalidation_conditions": [
+    "美伊双方宣布停火或外交谈判取得突破",
+    "霍尔木兹海峡航运恢复正常，油轮通行量恢复至冲突前水平",
+    "国内煤炭价格出现大幅下跌，进口替代逻辑失效"
+  ],
+  "must_watch_indicators": [
+    "布伦特原油期货价格及持仓变化",
+    "霍尔木兹海峡油轮通行数量（实时航运数据）",
+    "国内动力煤期货价格及库存数据",
+    "中国进口煤到岸价与国内煤价价差"
+  ],
+  "kill_switch_signals": [
+    "冲突双方宣布停火或外交突破",
+    "布伦特原油单日暴跌超过5%",
+    "国内煤炭期货价格跌破关键支撑位"
+  ],
+  "warnings": [
+    "地缘冲突事件高度不确定，价格波动剧烈，需严格止损",
+    "信号来源均为新闻媒体，非官方一手信息，需交叉验证"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T04:31:09.380923",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_20260509_astock_skill_759e272f",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,121 @@
+{
+  "opportunity_id": "opp_fe2bb8b6",
+  "opportunity_title": "新能源政策产业共振",
+  "opportunity_thesis": "新能源汽车购置税减免延续至2027年底，叠加固态电池量产突破和甲醇船舶重大进展，形成政策+产业双轮驱动。当前市场对新能源板块关注度较低，预期差较大，且政策落地时间窗口明确，固态电池商业化加速将带动产业链估值重塑。\n\n【M13调研】机会描述声称资金流向新能源和半导体、政策利好及业绩爆发，但最近20条新闻中未验证任何关键事实（如中际旭创市值突破万亿、新易盛业绩增长等），且无研报、基本面数据或行业趋势支持。新闻显示市场热点分散，科技主线不明确。因此，该机会描述缺乏可靠依据，置信度极低，建议谨慎对待。\n\n【M13调研】新能源汽车购置税减免延续至2027年底，政策超预期；固态电池产业化加速，纯锂新能源500MWh量产线已达产，GWh级产线推进中。政策与技术共振，产业链迎来估值修复与业绩上修机会。当前市场未充分定价固态电池商业化，预期差较大。宁德时代一季报净利润同比增48.52%，验证行业景气。风险在于政策细则、固态电池量产不确定性及市场情绪。整体机会积极，但需关注后续进展。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300274.SZ",
+    "300750.SZ",
+    "002074.SZ",
+    "601012.SH",
+    "600438.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "新能源汽车购置税减免政策于2026年4月24日正式发布，固态电池量产线已达产且GWh级产线预计2026年投产，甲醇双燃料集装箱船于5月8日完工，多个催化剂密集出现，市场尚未充分定价。",
+  "related_signals": [
+    "sig_30d3e00700ed",
+    "sig_1c94cfaf9bad",
+    "sig_810b1cc2cedf",
+    "sig_80c24e558ad0",
+    "sig_e552050e5030",
+    "sig_a19c232b39d7",
+    "sig_1da9f093af7d",
+    "sig_906283b999bb",
+    "sig_3a8e941b3c94",
+    "sig_5c2b6019cab4",
+    "sig_8a44caabf0c3",
+    "sig_58fd56efe3f5",
+    "sig_3e8e8f0e0f71",
+    "sig_14c93523d744"
+  ],
+  "inferred_events": [
+    "inferred_ba08e15c",
+    "inferred_f4a66746",
+    "inferred_503d81a1",
+    "inferred_dd551385",
+    "inferred_7d5cf0a5"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "新能源汽车购置税减免延续至2027年底，政策确定性增强，利好新能源汽车销量预期",
+    "纯锂新能源500MWh全固态电池量产线已达产，GWh级产线预计2026年投产，商业化进程加速",
+    "纯锂新能源与国电投、国家电网等储能项目已落地，固态电池在储能场景率先商业化",
+    "全球首艘2.4万箱甲醇双燃料集装箱船完工，标志清洁能源船舶重大突破",
+    "推理的未来事件显示新能源板块有75%概率持续获得资金流入并上涨"
+  ],
+  "counter_evidence": [
+    "固态电池技术仍处于早期，大规模量产和成本下降存在不确定性",
+    "新能源板块过去几年涨幅较大，市场对利好可能已部分定价"
+  ],
+  "key_assumptions": [
+    "假设1：新能源汽车购置税减免政策能有效刺激终端销量，带动产业链需求",
+    "假设2：固态电池量产进度符合预期，GWh级产线2026年顺利投产",
+    "假设3：甲醇船舶订单持续增长，带动相关产业链需求"
+  ],
+  "uncertainty_map": [
+    "固态电池技术成熟度与成本下降速度（影响程度：高）",
+    "新能源汽车销量增速是否超预期（影响程度：中）",
+    "甲醇燃料船舶的订单转化率（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.55,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益来自政策刺激下的销量增长和固态电池商业化带来的估值提升，风险在于技术商业化不及预期或市场对政策利好反应平淡。预计上行空间15-25%，下行风险10-15%。",
+  "next_validation_questions": [
+    "新能源汽车5-6月销量数据是否环比改善？",
+    "纯锂新能源GWh级产线建设进度是否有官方更新？",
+    "甲醇船舶订单是否有新增公告？",
+    "市场资金是否开始流入新能源板块？"
+  ],
+  "invalidation_conditions": [
+    "新能源汽车销量连续两个月环比下滑",
+    "固态电池量产进度明显低于预期",
+    "甲醇船舶订单大幅低于预期"
+  ],
+  "must_watch_indicators": [
+    "新能源汽车月度销量数据",
+    "纯锂新能源GWh级产线投产公告",
+    "甲醇船舶新增订单数量",
+    "新能源板块资金流向"
+  ],
+  "kill_switch_signals": [
+    "新能源汽车购置税减免政策被取消或缩减",
+    "固态电池出现重大安全事故",
+    "新能源板块出现系统性资金流出"
+  ],
+  "warnings": [
+    "注意：固态电池信号主要来自一家初创公司，需关注其技术验证和订单落地情况",
+    "注意：政策利好已被部分市场预期，需警惕利好兑现后的回调风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T03:15:48.354750",
+  "batch_id": "sched_signal_pipeline_20260509_024243_3e6789_19000101_astock_skill_fd926efa",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}
