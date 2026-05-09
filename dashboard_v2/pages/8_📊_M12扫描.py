@@ -121,9 +121,9 @@ if market_filter != "全部":
     market_key = market_map.get(market_filter)
     filtered_results = [
         s for s in scan_results
-        if s.get('a_share', 0) > 0 if market_key == 'a_share' else
-           s.get('hk', 0) > 0 if market_key == 'hk' else
-           s.get('us', 0) > 0 if market_key == 'us' else True
+        if (s.get('a_share', 0) > 0 if market_key == 'a_share' else
+            s.get('hk', 0) > 0 if market_key == 'hk' else
+            s.get('us', 0) > 0 if market_key == 'us' else True)
     ]
 
 # ═══════════════════════════════════════════════════════════════
