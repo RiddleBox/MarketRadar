@@ -61,6 +61,92 @@ with st.sidebar:
         clear_all_cache()
         st.rerun()
 
+    st.divider()
+
+    # 系统关闭按钮
+    st.caption("⚠️ 系统控制")
+
+    if st.button("🛑 关闭所有服务", type="secondary", use_container_width=True, help="停止调度器、OpenD和Dashboard"):
+        import subprocess
+        import os
+        import signal
+
+        with st.spinner("正在关闭所有服务..."):
+            # 1. 停止调度器
+            try:
+                subprocess.run(
+                    [sys.executable, "-m", "m7_scheduler.cli", "stop"],
+                    cwd=str(ROOT),
+                    capture_output=True,
+                    timeout=10
+                )
+                st.success("✅ 调度器已停止")
+            except Exception as e:
+                st.warning(f"调度器停止失败: {e}")
+
+            # 2. 停止 OpenD
+            if OPEND_AVAILABLE:
+                try:
+                    opend_mgr = get_opend_manager()
+                    result = opend_mgr.stop()
+                    if result["success"]:
+                        st.success("✅ OpenD 已停止")
+                    else:
+                        st.warning(f"OpenD 停止失败: {result['message']}")
+                except Exception as e:
+                    st.warning(f"OpenD 停止失败: {e}")
+
+            # 3. 关闭其他可能的 Streamlit 进程（8501, 8502端口）
+            try:
+                if sys.platform == "win32":
+                    # Windows: 查找并关闭占用8501和8502端口的进程
+                    for port in [8501, 8502]:
+                        result = subprocess.run(
+                            f'netstat -ano | findstr :{port}',
+                            shell=True,
+                            capture_output=True,
+                            text=True
+                        )
+                        if result.stdout:
+                            # 提取PID并终止
+                            lines = result.stdout.strip().split('\n')
+                            for line in lines:
+                                parts = line.split()
+                                if len(parts) >= 5:
+                                    pid = parts[-1]
+                                    try:
+                                        subprocess.run(f'taskkill /F /PID {pid}', shell=True, capture_output=True)
+                                        st.success(f"✅ 已关闭端口 {port} 的进程 (PID: {pid})")
+                                    except:
+                                        pass
+                else:
+                    # Linux/Mac: 使用 lsof 查找并关闭
+                    for port in [8501, 8502]:
+                        result = subprocess.run(
+                            f'lsof -ti:{port}',
+                            shell=True,
+                            capture_output=True,
+                            text=True
+                        )
+                        if result.stdout:
+                            pids = result.stdout.strip().split('\n')
+                            for pid in pids:
+                                try:
+                                    subprocess.run(f'kill -9 {pid}', shell=True, capture_output=True)
+                                    st.success(f"✅ 已关闭端口 {port} 的进程 (PID: {pid})")
+                                except:
+                                    pass
+            except Exception as e:
+                st.warning(f"清理端口进程时出错: {e}")
+
+            st.success("🎉 所有服务已关闭")
+            st.info("Dashboard 将在 2 秒后自动退出...")
+
+            # 4. 最后关闭当前 Dashboard
+            import time
+            time.sleep(2)
+            os.kill(os.getpid(), signal.SIGTERM)
+
     st.caption("💡 使用左侧导航切换功能页面")
 
 # ═══════════════════════════════════════════════════════════════
