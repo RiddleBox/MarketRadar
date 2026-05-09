@@ -153,6 +153,9 @@ class JudgmentEngine:
                         # M13失败不影响主流程
                         logger.warning(f"[M3+M13] 调研失败: {e}")
 
+                # 无条件钳制置信度到有效范围 [0, 1]（防止LLM输出异常值）
+                result.opportunity_score.confidence_score = max(0.0, min(1.0, result.opportunity_score.confidence_score))
+
                 opportunities.append(result)
 
         logger.info(f"[M3] 判断完成 | 识别机会={len(opportunities)} 个")

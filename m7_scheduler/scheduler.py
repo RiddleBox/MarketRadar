@@ -519,6 +519,22 @@ class Scheduler:
             logger.warning(f"[M7/signal_pipeline] M13初始化失败，将跳过调研验证: {e}")
             m13_agent = None
 
+        # 初始化M1.5隐式推理器
+        try:
+            from m1_5_implicit_reasoner.inferencer import LLMImplicitSignalInferencer
+            from m3_judgment.implicit_signal_adapter import ImplicitSignalAdapter
+
+            # TODO: 需要产业链图谱，暂时传None
+            implicit_inferencer = LLMImplicitSignalInferencer(
+                llm_client=llm_client,
+                industry_graph=None,
+                m13_agent=m13_agent
+            )
+            logger.info("[M7/signal_pipeline] M1.5隐式推理器已初始化")
+        except Exception as e:
+            logger.warning(f"[M7/signal_pipeline] M1.5初始化失败，将跳过隐式推理: {e}")
+            implicit_inferencer = None
+
         decoder = SignalDecoder(llm_client=llm_client)
         store = SignalStore()
         engine = JudgmentEngine(llm_client=llm_client, m13_agent=m13_agent)
@@ -539,13 +555,37 @@ class Scheduler:
                 raw_text = f.read_text(encoding="utf-8")
                 batch_id = f"sched_{run_id}_{f.stem}"
 
-                # M1 解码
+                # M1 解码显式信号
                 signals = decoder.decode(
                     raw_text=raw_text,
                     source_ref=f.name,
                     source_type=SourceType("news"),
                     batch_id=batch_id,
                 )
+
+                # M1.5 隐式推理（从新闻中推理隐含信号）
+                implicit_signals = []
+                if implicit_inferencer:
+                    try:
+                        raw_data = {
+                            'source': f.name,
+                            'category': 'news',  # 可以根据文件名或内容分类
+                            'title': raw_text.split('\n')[0] if raw_text else '',
+                            'content': raw_text,
+                            'published_at': datetime.now().isoformat()
+                        }
+                        implicit_signals = implicit_inferencer.infer(raw_data)
+                        if implicit_signals:
+                            logger.info(f"[M7/signal_pipeline] M1.5推理出 {len(implicit_signals)} 个隐式信号")
+
+                            # 将隐式信号转换为MarketSignal格式并添加到signals列表
+                            from m3_judgment.implicit_signal_adapter import ImplicitSignalAdapter
+                            for imp_sig in implicit_signals:
+                                market_signal = ImplicitSignalAdapter.to_market_signal(imp_sig, batch_id)
+                                signals.append(market_signal)
+                    except Exception as e:
+                        logger.warning(f"[M7/signal_pipeline] M1.5推理失败: {e}")
+
                 if not signals:
                     try:
                         f.rename(processed_dir / f.name)
@@ -553,9 +593,10 @@ class Scheduler:
                         logger.debug(f"[M7/signal_pipeline] 文件已被移动: {f.name}")
                     continue
 
-                # M2 存储
+                # M2 存储（包含显式信号和隐式信号）
                 store.save(signals)
                 total_signals += len(signals)
+                logger.info(f"[M7/signal_pipeline] M2存储 {len(signals)} 个信号（显式+隐式）")
 
                 # M3 判断
                 from datetime import timedelta

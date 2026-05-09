@@ -6,6 +6,14 @@ import sys
 from pathlib import Path
 from datetime import datetime
 
+# 修复 Windows GBK 控制台无法输出 Unicode 字符（如 ✓、✗、⚠️）
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 ROOT = Path(__file__).parent
 sys.path.insert(0, str(ROOT))
 
