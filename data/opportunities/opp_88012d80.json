@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_88012d80",
+  "opportunity_title": "港股IPO与地产共振",
+  "opportunity_thesis": "香港市场正经历多重正向共振：IPO集资额同比暴增604%且散户认购倍数创纪录，住宅市场量价齐升且去化周期进入乐观区间，GDP与零售额加速增长。这些信号共同指向香港经济与资本市场进入加速复苏阶段，港交所作为直接受益标的，以及地产、消费相关板块将受益于资金流入和基本面改善。当前市场尚未完全定价这一结构性变化，存在预期差。\n\n【M13调研】港交所受益于IPO热潮和宏观经济复苏，交易量与上市费收入有望显著提升。当前市场资金充裕，基本面改善形成正反馈，但需警惕全球利率和地缘政治风险。机会窗口明确，但缺乏外部数据验证，建议谨慎乐观。\n\n【M13调研】机会描述提出香港经济与资本市场加速复苏，港交所及地产消费板块受益，但新闻和研报均未提供直接验证。M13调研建议谨慎乐观，新闻中公司回购行为偏个股层面。缺乏关键数据支持，且地缘政治风险存在。综合来看，机会逻辑合理但证据薄弱，置信度较低，建议等待更多数据确认。",
+  "target_markets": [
+    "HK"
+  ],
+  "target_instruments": [
+    "00388.HK",
+    "00016.HK",
+    "00012.HK",
+    "00001.HK",
+    "00027.HK"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-08-10T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "当前时点催化剂密集：港交所前4月IPO集资额同比增604%的数据刚刚公布（5月9日），乐动机器人6707倍散户认购创纪录（5月8日），4月住宅量价齐升数据（5月9日），一季度GDP与零售额加速增长（5月9日）。这些数据集中释放，形成强烈的短期催化窗口，且市场尚未充分反应。",
+  "related_signals": [
+    "sig_4ef836f98ad7",
+    "sig_1427d286ec9e",
+    "sig_423c7cb04845",
+    "sig_b0c897ac9682",
+    "sig_98977668d330",
+    "sig_09d9ef8d7272"
+  ],
+  "inferred_events": [
+    "inferred_edf59b52",
+    "inferred_49ff59df",
+    "inferred_f9a6d41f",
+    "inferred_e1a8acc6",
+    "inferred_e37ce040",
+    "inferred_a1d22190",
+    "inferred_ca3e928f",
+    "inferred_9cf568d0"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "港交所2026年前4月IPO集资额1514亿港元，同比暴增604%，新上市公司数量同比增158%",
+    "乐动机器人香港IPO散户认购6707倍，国际配售9.54倍，创近年纪录",
+    "2026年4月香港住宅市场延续量价齐升，去化周期进入乐观区间",
+    "2026年第一季度香港GDP和零售额同比加速增长"
+  ],
+  "counter_evidence": [
+    "中东地缘冲突升级可能影响全球风险偏好，对港股造成短期冲击",
+    "住宅市场量价齐升可能引发政策调控风险"
+  ],
+  "key_assumptions": [
+    "假设1：IPO火热趋势在未来2-3个月延续，更多大型IPO排队上市",
+    "假设2：香港经济复苏势头不被外部地缘风险打断",
+    "假设3：住宅市场量价齐升不会触发严厉调控政策"
+  ],
+  "uncertainty_map": [
+    "中东地缘冲突升级对全球资本流动的影响（影响程度：高）",
+    "香港住宅市场调控政策的不确定性（影响程度：中）",
+    "IPO热潮的可持续性，是否仅为短期集中释放（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益主要来自港交所交易量提升和地产消费板块估值修复，预计上行空间15-25%；主要风险为地缘冲突导致全球风险偏好下降，下行风险约10-15%，可通过设置止损控制。",
+  "next_validation_questions": [
+    "未来1-2周是否有更多大型IPO启动招股？",
+    "港交所股价是否已突破近期阻力位并伴随成交量放大？",
+    "香港住宅市场成交量是否继续环比增长？"
+  ],
+  "invalidation_conditions": [
+    "中东地缘冲突显著升级，导致全球股市系统性下跌",
+    "香港住宅市场出现量缩价跌或政策调控加码",
+    "港交所IPO集资额环比大幅下滑"
+  ],
+  "must_watch_indicators": [
+    "港交所每日成交量与股价走势",
+    "香港住宅市场月度成交数据",
+    "香港零售额与GDP季度数据",
+    "中东地缘政治事件进展"
+  ],
+  "kill_switch_signals": [
+    "港交所股价跌破关键支撑位（如20日均线）",
+    "香港住宅市场出现政策调控信号",
+    "全球风险资产大幅下跌，VIX指数飙升"
+  ],
+  "warnings": [
+    "注意：部分信号来源为新闻，非官方公告，需核实数据准确性",
+    "注意：中东地缘冲突是当前最大外部风险，需持续跟踪"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T07:26:20.285185",
+  "batch_id": "sched_signal_pipeline_20260510_065007_cdc95c_20260510_astock_skill_f03c1b36",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

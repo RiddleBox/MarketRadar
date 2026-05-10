@@ -1,0 +1,149 @@
+{
+  "opportunity_id": "opp_cfb629e7",
+  "opportunity_title": "AI半导体景气上行",
+  "opportunity_thesis": "半导体/AI产业链正经历从概念到业绩兑现的实质性景气上行周期。长电科技产能利用率超80%、新易盛净利润增长76.8%、某半导体龙头业绩预增150%-180%等信号，叠加中国移动上线大模型平台、百度发布文心5.1等产业催化，共同指向AI算力需求爆发带来的全产业链订单和业绩高增。资金从消费地产持续流入半导体/新能源，市场已开始定价但预期差仍存，当前是布局AI半导体主升浪的窗口期。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持。关键发现包括：新闻内容与AI产业链关联度低，业绩数据未验证，外围市场存在不确定性。风险因素主要为信息不实和情绪过热。未发现重大利空，但置信度因证据不足下调0.2。综合来看，该机会缺乏近期数据支撑，建议谨慎对待，等待更多验证信号。\n\n【M13调研】该机会描述声称美股AI股创新高、A股AI产业链业绩验证，但新闻分析未找到相关证据，北方华创业绩增速仅3.42%，与预增150-180%严重不符。政策与资金面支撑也未在新闻中体现。M13调研已指出证据不足，研报分析无支持。综合来看，机会缺乏近期数据支撑，风险较高，建议谨慎对待，等待更多验证信号。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "002371.SZ",
+    "600584.SH",
+    "300476.SZ",
+    "9888.HK"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "当前时点是业绩验证期与产业催化密集期的共振窗口。长电科技、新易盛等龙头一季报已确认业绩高增，中国移动大模型平台上线、百度文心5.1发布等事件持续强化AI产业趋势，而市场对半导体周期持续性的分歧仍存，预期差较大。",
+  "related_signals": [
+    "sig_b305b999b74e",
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sent_ec6c7cba",
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_c65bd11e442f",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_5a2ec57f6916",
+    "sig_a1d7094e54d1",
+    "sig_d9ef44f292bd",
+    "sig_d8cb7635ade9",
+    "sig_39b17c44aba1",
+    "sig_294db3749c23",
+    "sig_4149b887d9b2",
+    "sig_911415444bf5",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017",
+    "sig_df713685bee1",
+    "sig_050c391c993e",
+    "sig_e8ba30264edb",
+    "sig_ffdee791adf2",
+    "sig_4a9e081d7724",
+    "sig_237f646ed46b",
+    "sig_de1c0bc2bee5"
+  ],
+  "inferred_events": [
+    "inferred_88f7e759",
+    "inferred_f03d01c1",
+    "inferred_b4116f62",
+    "inferred_6f3d3cb1",
+    "inferred_6689889b",
+    "inferred_b1393264",
+    "inferred_91f46b37",
+    "inferred_7a90144a"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "长电科技一季度产能利用率超80%，固定资产投资预算增至100亿元，显示行业高景气",
+    "新易盛一季报净利润增长76.8%，中际旭创市值突破万亿，光模块龙头业绩确认",
+    "某半导体龙头Q1业绩预增150%-180%，AI芯片需求爆发",
+    "中国移动上线国内最大AI大模型服务平台，百度发布文心5.1，产业催化密集",
+    "资金从消费地产持续流入新能源/半导体，板块轮动确认"
+  ],
+  "counter_evidence": [
+    "半导体板块已累积一定涨幅，部分标的估值偏高",
+    "全球宏观经济不确定性仍存，可能影响下游需求持续性"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，带动半导体产业链订单延续",
+    "假设2：中美科技竞争背景下，国产替代逻辑不变",
+    "假设3：宏观经济不出现超预期衰退，下游需求稳定"
+  ],
+  "uncertainty_map": [
+    "AI算力需求增速放缓风险（影响程度：高）",
+    "美国对华半导体出口管制升级风险（影响程度：中）",
+    "板块短期过热后回调风险（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.38000000000000006,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI半导体产业链业绩持续超预期，板块估值修复+业绩增长双击，预期收益20-30%。潜在风险：AI需求增速放缓或出口管制升级，板块回调10-15%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "长电科技、中芯国际等龙头二季度产能利用率及订单指引是否延续高景气？",
+    "美国对华半导体出口管制政策是否有新变化？",
+    "AI大模型商业化落地进展是否加速，带动算力需求？"
+  ],
+  "invalidation_conditions": [
+    "半导体龙头二季度业绩指引低于预期",
+    "美国对华半导体出口管制显著升级",
+    "AI算力需求增速明显放缓"
+  ],
+  "must_watch_indicators": [
+    "长电科技、中芯国际产能利用率变化",
+    "光模块龙头月度出货量及订单",
+    "AI大模型API调用量及商业化收入",
+    "半导体设备进口数据"
+  ],
+  "kill_switch_signals": [
+    "半导体板块出现集体跌停或放量暴跌",
+    "龙头公司发布业绩预警或下调指引",
+    "美国将更多中国半导体公司列入实体清单"
+  ],
+  "warnings": [
+    "注意：部分信号来自新闻，需核实官方公告",
+    "板块已累积一定涨幅，注意短期回调风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T13:48:16.283910",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_ca4cce24",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,121 @@
+{
+  "opportunity_id": "opp_4a091718",
+  "opportunity_title": "逆周期宽松交易",
+  "opportunity_thesis": "央行已实施降准0.5个百分点并下调逆回购利率，叠加PMI连续收缩、CPI/PPI通缩，构成明确的逆周期调节叙事。市场对经济疲软已有定价，但对政策持续宽松的力度和节奏预期不足，存在预期差。当前时点政策落地+经济数据验证，是布局受益于流动性宽松和利率下行的板块（如金融、高股息、基建）的窗口。\n\n【M13调研】地产龙头保利发展净利润暴跌79%，而银行券商一季报普遍增长，广发证券净利润增长超70%，市场资金从地产流向金融板块，形成明确的行业轮动和避险交易机会。当前一季报密集披露，业绩分化信号集中释放，预期差尚未完全price-in。风险在于地产持续恶化可能拖累银行资产质量，且轮动可能已部分反映。整体机会逻辑清晰，但缺乏研报和行业趋势数据支持，置信度中等偏上。\n\n【M13调研】机会基于通缩和降准预期，但缺乏研报、基本面数据和行业趋势支持。新闻分析中无直接相关宏观信息，仅有个股公告。政策预期差存在，但利好出尽风险需警惕。整体置信度较低，建议等待更多数据或政策明确信号后再行决策。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601398.SH",
+    "601166.SH",
+    "600036.SH",
+    "601668.SH",
+    "600585.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行已宣布4月25日降准0.5个百分点并下调逆回购利率，政策已落地；同时4月PMI连续3个月低于荣枯线，经济疲软信号强化宽松预期。当前是政策效果尚未完全传导、市场仍在消化期，预期差最大。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203",
+    "sig_7298dda97ec7",
+    "sig_6d0d506ec2df",
+    "sig_5fbb3b22217e",
+    "sig_8a6f0519b08d",
+    "sig_6030bb0be882",
+    "sig_7d650e648a54",
+    "sig_37b8e1ac32b6",
+    "sig_247fd5330706",
+    "sig_e0e3bf1f136a"
+  ],
+  "inferred_events": [
+    "inferred_89f0b1ae",
+    "inferred_ac99c248",
+    "inferred_6f68f35e",
+    "inferred_b6d14878",
+    "inferred_47db1e5e",
+    "inferred_45f91119",
+    "inferred_85a9b52e"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点释放约1万亿长期资金，逆回购利率下调10bp至1.7%，政策力度明确",
+    "制造业PMI连续3个月低于50荣枯线，CPI/PPI通缩，经济下行压力为宽松提供必要性",
+    "央行行长公开表态将适时降准，后续进一步宽松概率高（推理概率85%）",
+    "历史案例case_2024_rate_cut显示降息降准后银行股估值修复，20天内完成交易"
+  ],
+  "counter_evidence": [
+    "市场恐贪指数处于贪婪区间（67），短期情绪过热可能限制上行空间",
+    "地产板块持续承压（保利净利润大降），宽松对实体传导效果存疑"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续仍有进一步降准或降息动作，宽松周期延续",
+    "假设2：经济数据不会急剧恶化导致系统性风险，仅维持温和下行",
+    "假设3：市场对宽松政策的定价尚未充分，预期差存在"
+  ],
+  "uncertainty_map": [
+    "后续宽松力度不及预期（影响程度：高）",
+    "经济数据超预期恶化引发避险情绪（影响程度：中）",
+    "外部地缘冲突升级（中东）干扰市场风险偏好（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.6499999999999999,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益来自流动性宽松驱动的估值修复和利率敏感板块（银行、基建）的反弹，预计10-15%上行空间；风险在于宽松效果不及预期或经济加速下行，最大回撤约5-8%，止损点可设在政策信号反转或PMI跌破48。",
+  "next_validation_questions": [
+    "央行是否在2周内宣布进一步降准或降息？",
+    "4月社融和信贷数据是否超预期增长？",
+    "银行板块资金流入是否持续放大？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "PMI回升至50以上，经济企稳信号出现",
+    "市场出现系统性风险事件（如信用危机）"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率",
+    "制造业PMI月度数据",
+    "银行板块成交量与资金流向",
+    "10年期国债收益率走势"
+  ],
+  "kill_switch_signals": [
+    "央行意外加息或收紧流动性",
+    "PMI跌破48，经济加速下行",
+    "银行板块出现连续放量下跌"
+  ],
+  "warnings": [
+    "注意：当前恐贪指数67处于贪婪区间，短期追高需谨慎",
+    "注意：地产链风险尚未出清，宽松传导至实体存在时滞"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T20:02:45.195927",
+  "batch_id": "sched_signal_pipeline_20260509_194006_9160d7_20260509_astock_skill_80d3865d",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

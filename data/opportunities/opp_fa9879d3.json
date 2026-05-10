@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_fa9879d3",
+  "opportunity_title": "宽松驱动科技轮动",
+  "opportunity_thesis": "央行密集降准降息释放强烈宽松信号，市场流动性充裕，但经济基本面（PMI连续收缩、地产利润暴跌）压制传统板块，资金正从地产消费系统性流向新能源和半导体。当前市场高开低走反映对经济悲观预期，但宽松政策叠加资金轮动，新能源和半导体板块有望在流动性驱动下走出结构性行情。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "688981.SH",
+    "603501.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-18T00:00:00",
+    "end": "2026-05-18T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行4月18日宣布降准降息，政策窗口刚刚开启；资金轮动信号于4月17日出现，市场尚未充分定价；PMI数据4月23日公布确认经济疲弱，强化宽松预期和轮动逻辑。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sent_b3cc88f9",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_38049b31fb61"
+  ],
+  "inferred_events": [
+    "inferred_83eddb1e",
+    "inferred_72c08007",
+    "inferred_cc7b0032",
+    "inferred_62cb07cd",
+    "inferred_63f8c652",
+    "inferred_1ecfe7b3",
+    "inferred_a3a6ceaf",
+    "inferred_de883ec1"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行下调存款准备金率0.5个百分点和7天逆回购利率10bp，流动性显著宽松",
+    "资金从消费、地产流向新能源和半导体，板块轮动信号明确",
+    "保利发展净利润暴跌79.31%，地产基本面恶化加速资金流出",
+    "制造业PMI连续3个月低于荣枯线，经济下行压力倒逼政策持续宽松"
+  ],
+  "counter_evidence": [
+    "三大指数高开回落全部翻绿，市场情绪偏弱，短期抛压较大",
+    "新能源和半导体板块部分个股已提前上涨，可能存在获利回吐风险"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续仍有进一步宽松动作（如再降准或降息），流动性持续充裕",
+    "假设2：资金从地产消费向新能源半导体的轮动趋势不会因短期回调逆转",
+    "假设3：新能源和半导体行业基本面未出现超预期恶化"
+  ],
+  "uncertainty_map": [
+    "经济下行超预期导致市场整体风险偏好急剧下降（影响程度：高）",
+    "新能源/半导体板块业绩不及预期或出现利空事件（影响程度：中）",
+    "政策宽松力度不及预期或市场已充分定价（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.32,
+    "execution_readiness": 0.68
+  },
+  "risk_reward_profile": "潜在收益来自流动性驱动的板块轮动和估值修复，预计上行空间10-20%；主要风险是市场整体情绪恶化导致轮动失败或政策效果不及预期，下行风险约5-10%。",
+  "next_validation_questions": [
+    "新能源和半导体板块近期成交量是否持续放大，确认资金流入趋势？",
+    "是否有更多地产或消费龙头发布业绩预警，强化轮动逻辑？",
+    "央行后续是否有进一步宽松信号或官方表态？"
+  ],
+  "invalidation_conditions": [
+    "新能源和半导体板块出现重大利空事件（如龙头业绩暴雷）",
+    "央行明确表态不再进一步宽松，或政策转向收紧",
+    "市场整体出现系统性风险事件（如地缘冲突升级导致全面下跌）"
+  ],
+  "must_watch_indicators": [
+    "新能源和半导体板块的日成交额及资金流向",
+    "央行公开市场操作及政策利率变动",
+    "制造业PMI及社融数据",
+    "保利发展等地产龙头股价走势"
+  ],
+  "kill_switch_signals": [
+    "新能源或半导体板块单日跌幅超3%且放量",
+    "央行意外加息或收紧流动性",
+    "地产板块出现政策利好导致资金回流"
+  ],
+  "warnings": [
+    "注意：市场高开低走显示短期抛压，需等待企稳信号再入场",
+    "注意：新能源和半导体板块部分个股估值已不低，需精选龙头"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T17:27:45.876797",
+  "batch_id": "sched_signal_pipeline_20260509_163638_e0e39c_20260509_astock_skill_c7c99d5a",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

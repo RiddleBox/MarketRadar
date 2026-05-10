@@ -1,0 +1,160 @@
+{
+  "opportunity_id": "opp_6443fa10",
+  "opportunity_title": "AI半导体景气确认",
+  "opportunity_thesis": "AI与半导体产业链景气度高涨已从多个维度得到确认：龙头公司中际旭创市值突破万亿、新易盛一季报净利润增长76.8%、某半导体龙头Q1业绩预增150%-180%，叠加长电科技产能利用率超80%且计划百亿资本开支，以及中国移动推进算力网建设、百度发布文心5.1等产业催化。这些信号共同指向AI算力需求爆发正在向产业链各环节传导，业绩兑现期已至，市场尚未完全定价后续增长持续性，存在预期差。\n\n【M13调研】机会描述基于AI算力需求爆发、业绩超预期和政策利好，但新闻分析中缺乏直接验证。中韩半导体ETF领涨、英特尔AMD市值新高、胜宏科技订单饱满等间接支持半导体景气度，但具体公司业绩数据未出现，政策利好也未明确。风险在于业绩持续性分歧和缺乏直接证据。整体方向可行，但需谨慎验证具体数据，建议等待更多确认信号。\n\n【M13调研】AI算力需求驱动光模块和半导体景气度得到部分验证：新易盛业绩高增、英特尔AMD市值新高、胜宏科技订单饱满。但机会描述中的中际旭创市值破万亿、某半导体龙头预增等具体数据未在新闻中出现，政策利好也缺乏报道。市场对业绩持续性存分歧，风险在于信息不实和预期差。建议谨慎，等待更多确认信号。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "300394.SZ",
+    "600584.SH",
+    "688981.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "当前时点催化剂密集：1）光模块'易中天'年报和一季报全部披露完毕，业绩高增长得到验证；2）长电科技宣布百亿资本开支计划，显示产业链扩产意愿强烈；3）中国移动推进算力网建设、百度发布文心5.1等产业事件持续催化；4）上交所对全球芯片LOF重点监控提示短期情绪过热，但基本面支撑强劲，回调后是布局良机。",
+  "related_signals": [
+    "sig_21444019569d",
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_c65bd11e442f",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_5a2ec57f6916",
+    "sig_a1d7094e54d1",
+    "sig_d9ef44f292bd",
+    "sig_d8cb7635ade9",
+    "sig_39b17c44aba1",
+    "sig_294db3749c23",
+    "sig_4149b887d9b2",
+    "sig_911415444bf5",
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017",
+    "sig_41c9d0ac13e2",
+    "sig_d36d819acfc5",
+    "sig_e49e84bd5c49",
+    "sig_df713685bee1",
+    "sig_050c391c993e",
+    "sig_80b5ac1dde51",
+    "sig_296213a63e79",
+    "sig_4ef836f98ad7",
+    "sig_1427d286ec9e",
+    "sig_e8ba30264edb",
+    "sig_ffdee791adf2",
+    "sig_4a9e081d7724",
+    "sig_237f646ed46b",
+    "sig_de1c0bc2bee5",
+    "sig_b305b999b74e"
+  ],
+  "inferred_events": [
+    "inferred_bb2371e0",
+    "inferred_500c0bb1",
+    "inferred_f5ca9766",
+    "inferred_d4678648",
+    "inferred_c4ccf001",
+    "inferred_dd7580b6",
+    "inferred_d72c5078",
+    "inferred_8ce1698b",
+    "inferred_82e8a4e4",
+    "inferred_9f2f11b3",
+    "inferred_2e144a18",
+    "inferred_66ba1a37",
+    "inferred_0f236818",
+    "inferred_41dda864",
+    "inferred_f16c9e2a"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，光模块龙头地位确认",
+    "新易盛一季报净利润同比增长76.8%，业绩持续高增长",
+    "某半导体龙头Q1业绩预增150%-180%，AI芯片需求爆发",
+    "长电科技2026年固定资产投资预算约100亿元，产能供不应求",
+    "中国移动推进全国一体化算力网建设，开放万亿级Token服务",
+    "百度发布文心5.1，预训练成本仅为业界6%",
+    "胜宏科技1.6T光模块产能利用率良好，推进CoWop技术研发"
+  ],
+  "counter_evidence": [
+    "上交所对全球芯片LOF进行重点监控，提示短期情绪过热风险",
+    "部分AI概念股（如每日互动）AI业务收入规模仍较小（千万级）"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，光模块和半导体订单能见度维持高位",
+    "假设2：产业链扩产计划（如长电科技百亿投资）能够顺利落地",
+    "假设3：宏观经济和政策环境不发生重大逆转"
+  ],
+  "uncertainty_map": [
+    "地缘政治冲突升级风险（中东局势恶化）可能影响全球半导体供应链（影响程度：高）",
+    "AI资本开支增速是否见顶，后续订单能否持续超预期（影响程度：中）",
+    "市场情绪过热后可能面临短期回调压力（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.3,
+    "confidence_score": 0.5800000000000001,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI产业链业绩兑现期，龙头公司有望继续上行20-30%；风险：市场情绪过热后回调10-15%，或地缘政治冲击导致系统性风险。风险收益比约2:1。",
+  "next_validation_questions": [
+    "光模块龙头（中际旭创、新易盛）2026年二季度订单指引是否继续环比增长？",
+    "长电科技百亿资本开支的具体投向和产能爬坡节奏如何？",
+    "中国移动算力网建设对AI产业链的实际拉动效应何时体现？"
+  ],
+  "invalidation_conditions": [
+    "光模块或半导体龙头公司二季度业绩指引低于预期",
+    "AI资本开支出现明显放缓信号（如北美云厂商下调资本开支指引）",
+    "地缘政治冲突导致全球半导体供应链中断"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛、天孚通信的周度订单和出货数据",
+    "长电科技产能利用率变化",
+    "北美四大云厂商（微软、谷歌、亚马逊、Meta）资本开支指引",
+    "全球芯片LOF溢价率变化（情绪指标）"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头公司出现大客户砍单或订单延迟",
+    "半导体设备出口管制升级影响国内产能扩张",
+    "AI相关公司业绩连续miss或下调指引"
+  ],
+  "warnings": [
+    "注意：部分信号（如某半导体龙头业绩预增）来源为新闻，非官方公告，需核实",
+    "市场情绪已部分反应，短期追高需谨慎，建议等待回调或分批建仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T14:00:50.651845",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_ddbe0ddd",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

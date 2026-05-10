@@ -1,0 +1,7 @@
+【东方财富】Zeroth元点M1人形机器人接入OpenClaw 5月下旬正式上线
+
+<!-- source: 东方财富 | url: https://finance.eastmoney.com/a/202605093732201876.html | published: 2026-05-09 14:32 | collected: 2026-05-09 14:44 | provider: astock_skill -->
+
+[信号类型: macro]
+
+【Zeroth元点M1人形机器人接入OpenClaw 5月下旬正式上线】5月9日，界面新闻获悉，乐享科技官宣旗下具身智能品牌Zeroth元点的M1人形机器人成为首款接入腾讯OpenClaw（小龙虾）的可量产人形机器人。用户通过QQ界面远程向“龙虾agent”发送指令，由AI智能体操控M1完成行走、转身、跟随主人等动作任务；开发者可借此开发提醒、看护等家庭应用。

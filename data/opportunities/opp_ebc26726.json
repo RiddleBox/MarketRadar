@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_ebc26726",
+  "opportunity_title": "地缘推升煤价",
+  "opportunity_thesis": "中东地缘冲突导致霍尔木兹海峡受阻，全球航运成本飙升，进口煤炭价格大幅上涨并与国内煤价倒挂，促使企业转向国内采购。这一结构性变化将直接利好国内煤炭生产企业，且当前市场尚未充分定价，存在预期差。\n\n【M13调研】机会描述的地缘事件未获任何新闻支持，相反，新闻显示伊朗谈判仍在进行，且中国神华财报利空。无研报或行业趋势佐证。因此，该机会极可能基于虚假或过时信息，存在重大利空。建议忽略此机会。\n\n【M13调研】该机会描述的地缘事件未获任何新闻、研报或行业趋势支持，M13调研明确指出其基于虚假或过时信息。新闻显示伊朗谈判仍在进行，与冲突升级矛盾。无相关基本面数据。因此，该机会存在重大利空，建议忽略。置信度下调0.3。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601088.SH",
+    "600188.SH",
+    "000983.SZ",
+    "601225.SH",
+    "600546.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "霍尔木兹海峡冲突持续升级（5月8日美伊交火），航运成本飙升（赫伯罗特每周额外成本超5000万美元），进口煤价已倒挂（4月数据），企业转向国内采购正在发生，催化剂密集且时间窗口紧迫。",
+  "related_signals": [
+    "sig_3cf8fcf349ae",
+    "sig_0806bfd8639e",
+    "sig_2e7d7516821e",
+    "sig_c8ad6aa39ecc",
+    "sig_82a8c461a4b6"
+  ],
+  "inferred_events": [
+    "inferred_7b28909e",
+    "inferred_de644807",
+    "inferred_18826a62",
+    "inferred_5fb03aaa",
+    "inferred_95cd3219",
+    "inferred_e4c689e4",
+    "inferred_1aa0e652",
+    "inferred_05623a0a",
+    "inferred_309076f1",
+    "inferred_86c5ea3d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "印尼3800大卡动力煤华南到岸价较年初上涨171元至602元/吨，进口煤与国内煤价倒挂",
+    "霍尔木兹海峡通行持续受阻，德国航运巨头赫伯罗特每周额外增加至少5000万美元成本",
+    "美军袭击伊朗民用船只、美伊在霍尔木兹海峡发生零星冲突，地缘紧张局势加剧",
+    "全球粮价连续第三个月上涨，能源成本上涨和物流中断已传导至其他大宗商品"
+  ],
+  "counter_evidence": [
+    "国内煤炭供给可能因保供政策增加，压制煤价上涨空间",
+    "地缘冲突若快速缓和，航运成本回落将削弱进口煤价支撑"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡通行受阻持续至少1-2个月，航运成本维持高位",
+    "假设2：国内煤炭企业产能充足，能够承接进口替代需求",
+    "假设3：政策层面不会大幅干预国内煤价（如限价）"
+  ],
+  "uncertainty_map": [
+    "地缘冲突缓和速度（影响程度：高）——若美伊达成临时停火，航运恢复将迅速压低进口煤价",
+    "国内煤炭保供政策力度（影响程度：中）——若发改委要求增产限价，企业利润空间受限",
+    "全球经济衰退风险（影响程度：中）——若需求大幅萎缩，煤价可能同步下跌"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": -0.03749999999999999,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：国内煤炭企业量价齐升，利润弹性大（进口替代+煤价上涨）；潜在风险：地缘缓和或政策干预导致逻辑破坏。预计收益风险比约2:1至3:1。",
+  "next_validation_questions": [
+    "国内主要煤炭企业（如中国神华、中煤能源）近期是否有产能释放或检修计划？",
+    "发改委近期是否有关于煤炭保供或限价的表态或政策文件？",
+    "霍尔木兹海峡通行受阻是否已导致实际原油和LNG运输中断？"
+  ],
+  "invalidation_conditions": [
+    "霍尔木兹海峡恢复通行，航运成本显著回落",
+    "国内煤炭价格被政策强制限价",
+    "进口煤价快速回落，倒挂消失"
+  ],
+  "must_watch_indicators": [
+    "印尼3800大卡动力煤华南到岸价",
+    "波罗的海干散货指数（BDI）",
+    "国内秦港5500大卡动力煤价格",
+    "霍尔木兹海峡通行状态（新闻跟踪）"
+  ],
+  "kill_switch_signals": [
+    "美伊达成停火协议或临时休战",
+    "国内煤炭期货价格出现连续跌停",
+    "发改委发布煤炭限价或增产指令"
+  ],
+  "warnings": [
+    "地缘冲突事件具有高度不确定性，冲突缓和可能迅速逆转逻辑",
+    "国内煤炭股近期已有一定涨幅，需警惕短期获利回吐"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T20:40:03.841233",
+  "batch_id": "sched_signal_pipeline_20260509_194006_9160d7_20260509_astock_skill_e8eb5fb6",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

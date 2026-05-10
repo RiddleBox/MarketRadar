@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_63c1cd10",
+  "opportunity_title": "出口超预期机会",
+  "opportunity_thesis": "中国4月出口同比增14.1%，大幅超预期（8.4%），机电产品（+17.6%）和汽车（+54%）出口高速增长，贸易顺差扩大至848亿美元，显示外需强劲且结构优化。当前市场尚未充分定价出口链的持续性，叠加未来央行可能宽松，出口龙头有望迎来盈利上修和估值修复。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "000625.SZ",
+    "600104.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "4月出口数据刚公布，超预期幅度大，市场尚未完全消化；未来2周内央行可能降准或降息，进一步提振经济和出口企业盈利预期；汽车出口创历史新高，机电产品增速领先，结构性机会明确。",
+  "related_signals": [
+    "sig_d3ff18d62491",
+    "sig_890ae71c107a",
+    "sig_dba0b0625849",
+    "sig_e9fbc445cc5c"
+  ],
+  "inferred_events": [
+    "inferred_73977b67",
+    "inferred_1156cea6",
+    "inferred_956e7c6e",
+    "inferred_964e6cfb",
+    "inferred_8fffac49",
+    "inferred_97cb810a",
+    "inferred_74f6e9df"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "4月出口同比14.1%，远超市场预期8.4%",
+    "前4月机电产品出口同比增17.6%，高于整体出口增速",
+    "1-4月汽车出口金额同比增54%，创历史新高",
+    "贸易顺差848亿美元，显示外需强劲"
+  ],
+  "counter_evidence": [
+    "进口同比增25.3%，可能反映内需改善但部分为价格因素",
+    "地缘风险（霍尔木兹海峡冲突）可能推高航运成本，影响出口利润"
+  ],
+  "key_assumptions": [
+    "假设1：外需在Q2维持韧性，不会因关税或地缘风险大幅下滑",
+    "假设2：人民币汇率保持相对稳定，不出现大幅升值侵蚀出口利润",
+    "假设3：未来央行宽松政策落地，进一步支撑经济和企业盈利"
+  ],
+  "uncertainty_map": [
+    "地缘冲突升级影响全球贸易和航运成本（影响程度：高）",
+    "海外需求超预期回落（影响程度：中）",
+    "人民币汇率大幅波动（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 6.9,
+    "confidence_score": 0.35000000000000003,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：出口龙头盈利上修+估值修复，预计10-20%涨幅；风险：地缘冲突或外需回落导致出口增速放缓，最大回撤约5-8%。",
+  "next_validation_questions": [
+    "5月高频出口数据（如PMI新出口订单、港口集装箱吞吐量）是否延续强劲？",
+    "主要贸易伙伴（美国、欧盟、东盟）的经济景气度是否支撑后续订单？",
+    "人民币汇率近期走势是否对出口企业构成压力？"
+  ],
+  "invalidation_conditions": [
+    "5月出口增速回落至个位数或低于预期",
+    "地缘冲突导致全球贸易大幅萎缩",
+    "人民币对美元快速升值超3%"
+  ],
+  "must_watch_indicators": [
+    "海关总署月度出口数据",
+    "PMI新出口订单指数",
+    "人民币兑美元汇率",
+    "波罗的海干散货指数（BDI）"
+  ],
+  "kill_switch_signals": [
+    "5月出口同比增速低于5%",
+    "主要贸易伙伴宣布加征关税或贸易限制",
+    "人民币汇率单月升值超2%"
+  ],
+  "warnings": [
+    "注意：出口数据为4月数据，存在1个月滞后，需关注5月高频指标",
+    "注意：地缘风险（霍尔木兹海峡）可能短期冲击全球贸易，需动态评估"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:16:30.041313",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_20260509_astock_skill_2c8eda66",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_28c395cc",
+  "opportunity_title": "AI算力半导体共振",
+  "opportunity_thesis": "AI算力需求爆发叠加半导体产业链景气度上行，形成业绩与资金共振。字节跳动2000亿AI基础设施支出、中国移动大模型平台上线、中际旭创万亿市值突破、新易盛及某半导体龙头业绩超预期，均指向AI算力与半导体产业链进入加速期。资金从消费地产流向新能源/半导体，市场确认度提升。当前处于业绩验证与催化剂密集窗口，预期差仍存。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持。关键发现包括：新闻内容与AI产业链关联度低，业绩数据未验证，外围市场存在不确定性。风险因素主要为信息不实和情绪过热。未发现重大利空，但置信度因证据不足下调0.2。综合来看，该机会缺乏近期数据支撑，建议谨慎对待，等待更多验证信号。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持，关键业绩数据未验证，且豪威集团一季报净利润下降41.92%与板块爆发矛盾。外围市场存在不确定性（欧洲股市下跌、俄欧关系紧张）。未发现重大利空，但置信度较低（0.2），建议谨慎对待，等待更多验证信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "603501.SH",
+    "688008.SH",
+    "002371.SZ",
+    "300274.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "字节跳动上调AI支出至2000亿、中国移动大模型平台上线、中际旭创万亿市值突破、新易盛及某半导体龙头Q1业绩超预期，多个催化剂密集出现，且资金已开始流入半导体板块，市场正在price in但尚未完全反映。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f",
+    "sig_294db3749c23",
+    "sig_1678cc7149dc"
+  ],
+  "inferred_events": [
+    "inferred_a3f4ac46",
+    "inferred_70a13652",
+    "inferred_35bc1165",
+    "inferred_adf2ea0d",
+    "inferred_e25615c5",
+    "inferred_45fac2ea"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "字节跳动AI基础设施支出计划增加25%至2000亿元人民币",
+    "中国移动上线国内最大AI大模型服务平台，接入300余款模型",
+    "中际旭创盘中市值突破万亿，新易盛Q1净利润增长76.8%",
+    "某半导体龙头Q1净利润预增150%-180%",
+    "资金从消费、地产流向新能源和半导体"
+  ],
+  "counter_evidence": [
+    "历史案例显示技术突破需商业化验证，当前部分信号仍偏概念",
+    "恐贪指数67处于贪婪区间，市场情绪可能过热"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，字节等大厂资本开支不会大幅缩减",
+    "假设2：半导体产能利用率提升趋势延续，Q2业绩继续向好",
+    "假设3：资金流入半导体板块具有持续性，非短期轮动"
+  ],
+  "uncertainty_map": [
+    "AI资本开支增速是否可持续（影响程度：高）",
+    "半导体周期是否已进入顶部区域（影响程度：中）",
+    "地缘政治风险对供应链的潜在冲击（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.4,
+    "confidence_score": 0.4800000000000001,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI算力与半导体景气共振，龙头股有望实现20%-30%涨幅；潜在风险：AI资本开支不及预期或半导体周期见顶，最大回撤约15%。",
+  "next_validation_questions": [
+    "字节跳动2000亿支出计划是否有官方确认？",
+    "半导体龙头Q1预增的具体公司名称和详细数据？",
+    "资金流入半导体板块的持续性如何？北向资金是否同步流入？"
+  ],
+  "invalidation_conditions": [
+    "字节跳动或主要云厂商下调AI资本开支指引",
+    "半导体龙头Q2业绩指引低于预期",
+    "资金大幅流出半导体板块，板块指数跌破关键支撑"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛等光模块公司后续订单及业绩",
+    "半导体设备龙头北方华创、中芯国际的产能利用率",
+    "AI大模型平台上线后的实际调用量和商业化进展",
+    "北向资金对半导体板块的净流入情况"
+  ],
+  "kill_switch_signals": [
+    "主要AI公司资本开支计划下调超过10%",
+    "半导体板块指数放量跌破20日均线",
+    "出现大规模地缘冲突导致供应链中断"
+  ],
+  "warnings": [
+    "字节跳动支出计划为媒体报道，尚未官方确认",
+    "某半导体龙头业绩预增未披露具体公司名称，需验证真实性"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:26:39.021977",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_20260509_astock_skill_65c07d40",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,63 @@
+{
+  "plan_id": "plan_083014be2c9a",
+  "opportunity_id": "opp_cecfb1f8",
+  "plan_summary": "BULLISH | 0388.HK, 300124.SZ",
+  "primary_instruments": [
+    "0388.HK",
+    "300124.SZ",
+    "002230.SZ",
+    "688169.SH",
+    "300024.SZ"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "HK",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破 280 港元（前低支撑位）"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "第一目标 350 港元，第二目标 380 港元"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入 0388.HK，仓位为总资金的 20%（侦察仓上限 30%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "0388.HK 股价在 300-320 港元区间内，且成交量放大至 20 日均量 1.5 倍以上"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总资金的 40%（累计仓位不超过 50%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 浮盈达到 5%（即股价涨至 315-336 港元区间），且港股 IPO 市场无重大利空消息"
+    }
+  ],
+  "valid_until": "2026-05-31T00:12:43.420458",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T00:12:43.420648",
+  "opportunity_priority": "research"
+}

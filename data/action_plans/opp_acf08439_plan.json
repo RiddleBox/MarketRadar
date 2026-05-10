@@ -1,0 +1,63 @@
+{
+  "plan_id": "plan_64f3a63a4299",
+  "opportunity_id": "opp_acf08439",
+  "plan_summary": "BULLISH | 601012.SH, 600438.SH",
+  "primary_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "002594.SZ",
+    "000858.SZ"
+  ],
+  "instrument_type": "ETF",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 5.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破5月8日收盘价下方3%"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 10.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "第一目标：5月8日收盘价上方5%；第二目标：5月8日收盘价上方10%"
+  },
+  "position_sizing": {
+    "suggested_allocation": "8.0%",
+    "max_allocation": "不超过8.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=5.0% | 仓位=风险预算/止损=8.0%",
+    "suggested_allocation_pct": 0.08,
+    "max_allocation_pct": 0.08
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入300274.SZ，仓位为总计划资金的30%（即总资金上限的30%×30%=9%总资金）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "满足入场条件1和2"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总计划资金的70%（即总资金上限的70%×30%=21%总资金），总仓位不超过总资金的30%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1持仓浮盈达到3%，且5月10日开盘后俄方未发表明确拒绝延长停火的声明"
+    }
+  ],
+  "valid_until": "2026-05-31T11:02:59.021392",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T11:02:59.021553",
+  "opportunity_priority": "research"
+}

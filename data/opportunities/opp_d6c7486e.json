@@ -1,0 +1,109 @@
+{
+  "opportunity_id": "opp_d6c7486e",
+  "opportunity_title": "宽松预期下的债牛",
+  "opportunity_thesis": "制造业PMI连续3个月低于荣枯线、CPI/PPI持续负增长，确认经济通缩压力加大，央行已明确表态将适时降准。历史模式显示，在通缩+宽松预期组合下，债券市场确定性受益，而权益市场需等待基本面拐点。当前市场对宽松力度定价尚不充分，存在预期差。\n\n【M13调研】经济通缩压力加大，央行降准预期明确，历史模式显示债券市场确定性受益，当前定价不充分存在预期差。新闻中无直接利空，但缺乏研报验证。建议关注债券配置机会，权益市场需等待基本面拐点。\n\n【M13调研】经济通缩压力加大，央行降准预期明确，历史模式显示债券市场确定性受益，当前定价不充分存在预期差。但缺乏研报验证，新闻无直接利空但无额外支撑，基本面数据和行业趋势为空。建议关注债券配置机会，但需警惕预期差不及预期及信用风险。权益市场仍需等待基本面拐点。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "511010.SH",
+    "511520.SH",
+    "511090.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-24T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "央行行长最新表态将适时降准，叠加PMI、CPI、PPI数据全面走弱，宽松预期已从模糊转向明确。历史案例显示，降准落地前1-2周是债券最佳配置窗口，当前时点恰处于预期发酵初期。",
+  "related_signals": [
+    "sig_b344dde14d32",
+    "sig_e39115aa3077",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203"
+  ],
+  "inferred_events": [
+    "inferred_7d7bf2d7",
+    "inferred_8fc2ca18",
+    "inferred_451f46a6",
+    "inferred_13a305e3",
+    "inferred_f3ce1471",
+    "inferred_537d5680",
+    "inferred_97be7387",
+    "inferred_0bc2aade"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行行长明确表态将适时降准，释放强烈宽松信号",
+    "制造业PMI连续3个月低于荣枯线，经济下行压力确认",
+    "CPI同比下降0.3%，PPI同比下降2.7%，通缩压力持续加大",
+    "历史案例case_2024_rate_cut显示降息降准前债券市场有确定性机会"
+  ],
+  "counter_evidence": [
+    "市场对宽松预期已有部分定价，10年期国债收益率已有所下行",
+    "若后续经济数据意外企稳，宽松预期可能落空"
+  ],
+  "key_assumptions": [
+    "假设1：央行在未来2周内宣布降准或降息",
+    "假设2：经济数据短期内不会出现超预期反弹",
+    "假设3：资金面维持宽松，无流动性冲击"
+  ],
+  "uncertainty_map": [
+    "降准/降息时点不确定性（影响程度：高）",
+    "经济数据边际改善可能削弱宽松预期（影响程度：中）",
+    "外部地缘冲突可能引发避险情绪，短期扰动债市（影响程度：低）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 9,
+    "risk_clarity": 7,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.85
+  },
+  "risk_reward_profile": "潜在收益：降准落地后10年期国债收益率下行10-20bp，对应债券ETF价格上涨1-2%；潜在风险：降准落空或经济数据意外好转，收益率上行，最大回撤约0.5-1%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "央行是否在近期召开新闻发布会或发布货币政策执行报告？",
+    "下周公布的PMI数据是否继续低于荣枯线？",
+    "银行间市场7天回购利率是否持续下行？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表示短期内不降准",
+    "PMI或CPI数据出现超预期反弹",
+    "市场流动性突然收紧，资金利率大幅上行"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作公告",
+    "10年期国债活跃券收益率",
+    "银行间7天质押式回购利率",
+    "下周公布的官方制造业PMI"
+  ],
+  "kill_switch_signals": [
+    "央行官员发表鹰派言论",
+    "CPI同比转正且超过0.5%",
+    "PMI回升至50以上"
+  ],
+  "warnings": [
+    "注意：债券ETF流动性较好，但需关注折溢价率，避免高溢价买入",
+    "注意：若降准落地后收益率快速下行，需警惕利好出尽风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T21:30:09.993897",
+  "batch_id": "sched_signal_pipeline_20260509_212153_0b40a6_19000101_astock_skill_93295b03",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

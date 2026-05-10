@@ -1,0 +1,152 @@
+{
+  "opportunity_id": "opp_9406a645",
+  "opportunity_title": "AI算力产业链景气共振",
+  "opportunity_thesis": "光模块、封测、算力等AI产业链核心环节业绩与资本开支形成共振，中际旭创市值突破万亿、新易盛Q1净利增长76.8%、长电科技产能利用率超80%且固定资产投资预算增至100亿元、字节跳动AI基础设施支出增加25%至2000亿元，叠加中国移动推进全国一体化算力网建设，产业链景气度从上游芯片向中下游封测、应用扩散，预期差仍存，当前是布局AI算力主线的窗口期。\n\n【M13调研】机会描述基于AI算力需求爆发、业绩超预期和政策利好，但新闻分析中缺乏直接验证。中韩半导体ETF领涨、英特尔AMD市值新高、胜宏科技订单饱满等间接支持半导体景气度，但具体公司业绩数据未出现，政策利好也未明确。风险在于业绩持续性分歧和缺乏直接证据。整体方向可行，但需谨慎验证具体数据，建议等待更多确认信号。\n\n【M13调研】AI算力需求驱动光模块和半导体景气度得到部分验证：新易盛业绩高增、英特尔AMD市值新高、胜宏科技订单饱满。但机会描述中的中际旭创市值破万亿、某半导体龙头预增等具体数据未在新闻中出现，政策利好也缺乏报道。市场对业绩持续性存分歧，风险在于信息不实和预期差。建议谨慎，等待更多确认信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "600584.SH",
+    "688981.SH",
+    "002371.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "光模块三巨头（中际旭创、新易盛、天孚通信）2025年报及2026一季报已全部披露完毕，业绩超预期；长电科技Q1产能利用率超80%且宣布100亿固定资产投资；字节跳动上调AI基础设施支出至2000亿元；中国移动推进算力网建设并开放万亿级Token体验包；上交所对全球芯片LOF重点监控暗示短期情绪过热，但基本面强劲支撑中期趋势。",
+  "related_signals": [
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_c65bd11e442f",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_5a2ec57f6916",
+    "sig_a1d7094e54d1",
+    "sig_d9ef44f292bd",
+    "sig_d8cb7635ade9",
+    "sig_39b17c44aba1",
+    "sig_294db3749c23",
+    "sig_4149b887d9b2",
+    "sig_911415444bf5",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017",
+    "sig_df713685bee1",
+    "sig_050c391c993e",
+    "sig_80b5ac1dde51",
+    "sig_296213a63e79",
+    "sig_e8ba30264edb",
+    "sig_ffdee791adf2",
+    "sig_14d75f807b3c",
+    "sig_1678cc7149dc",
+    "sig_4a9e081d7724",
+    "sig_237f646ed46b",
+    "sig_de1c0bc2bee5",
+    "sig_b305b999b74e",
+    "sig_c37fb23fb71a",
+    "sig_7cfae5a1c6bb",
+    "sig_59c364b7ab9e",
+    "sig_8916d4e102cb",
+    "sig_86e5d9a0a063",
+    "sig_25a8bce1601f",
+    "sig_f70a16fc0c30"
+  ],
+  "inferred_events": [
+    "inferred_4aa975de",
+    "inferred_a62524e6",
+    "inferred_460f71f8",
+    "inferred_3678e43b",
+    "inferred_69b49940",
+    "inferred_d84958e6",
+    "inferred_4ddc2d62",
+    "inferred_a6a0e434"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，收盘9989亿元，创历史里程碑",
+    "新易盛2026年一季报净利润同比增长76.8%",
+    "长电科技一季度产能利用率超80%，2026年固定资产投资预算约100亿元",
+    "字节跳动将AI基础设施支出计划增加25%至2000亿元人民币",
+    "中国移动推进全国一体化算力网建设，开放万亿级Token服务体验包",
+    "胜宏科技1.6T光模块产能利用率良好，推进CoWop技术研发"
+  ],
+  "counter_evidence": [
+    "上交所对全球芯片LOF等溢价较高基金进行重点监控，显示短期投机情绪过热",
+    "某半导体龙头Q1业绩预增150%-180%但公司名称未披露，市场可能已部分定价"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，下游资本开支不会大幅缩减",
+    "假设2：光模块、封测等环节产能利用率维持高位，订单可见度至少2-3个季度",
+    "假设3：中美科技摩擦不会导致关键供应链中断"
+  ],
+  "uncertainty_map": [
+    "全球芯片LOF溢价监控可能引发短期回调，影响板块情绪（影响程度：中）",
+    "字节跳动AI支出增加消息来源为报道，未获官方确认（影响程度：中）",
+    "半导体龙头业绩预增具体公司未明，市场可能已提前反应（影响程度：低）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.3,
+    "confidence_score": 0.5800000000000001,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI算力产业链景气度持续超预期，光模块、封测龙头业绩有望继续高增长，股价有20-30%上行空间。潜在风险：短期情绪过热（芯片LOF溢价监控）可能引发10-15%回调，但基本面支撑下中期趋势向上，风险收益比约2:1。",
+  "next_validation_questions": [
+    "中际旭创、新易盛、天孚通信2026年Q2订单指引是否继续环比增长？",
+    "长电科技100亿固定资产投资的具体投向和产能爬坡节奏如何？",
+    "字节跳动AI基础设施支出增加是否已反映在相关供应商订单中？"
+  ],
+  "invalidation_conditions": [
+    "光模块龙头Q2业绩指引低于预期或出现砍单",
+    "长电科技产能利用率跌破70%或固定资产投资预算大幅缩减",
+    "中美科技制裁升级导致关键设备/材料断供"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛、天孚通信的周度订单/出货数据",
+    "长电科技季度产能利用率及毛利率变化",
+    "全球芯片LOF溢价率及上交所监控后续措施",
+    "字节跳动、中国移动等大厂AI资本开支实际落地进度"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头公司发布Q2业绩预警或下调全年指引",
+    "长电科技宣布缩减先进封装投资计划",
+    "AI芯片出口管制进一步收紧，影响国内算力建设"
+  ],
+  "warnings": [
+    "注意：字节跳动AI支出增加消息来源为报道，非官方公告，需进一步验证",
+    "上交所对芯片LOF监控可能引发短期情绪降温，建议分批建仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T17:44:03.032417",
+  "batch_id": "sched_signal_pipeline_20260509_163638_e0e39c_20260509_rss_43da1a61",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

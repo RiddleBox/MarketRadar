@@ -1,0 +1,7 @@
+【东方财富】MiniMax发长文回应“模型无法说出马嘉祺”
+
+<!-- source: 东方财富 | url: https://finance.eastmoney.com/a/202605093732223274.html | published: 2026-05-09 16:01 | collected: 2026-05-09 16:07 | provider: astock_skill -->
+
+[信号类型: macro]
+
+【MiniMax发长文回应“模型无法说出马嘉祺”】5月9日，MiniMax官微发长文回应M2系列模型无法说出马嘉祺一事，提供了对“嘉祺识别”问题的完整排查过程和技术思考。

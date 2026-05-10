@@ -1,0 +1,59 @@
+{
+  "plan_id": "plan_ced74c00d34b",
+  "opportunity_id": "opp_dccd1ed5",
+  "plan_summary": "BULLISH | 00388.HK",
+  "primary_instruments": [
+    "00388.HK"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "HK",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破250日均线（约265港元）或入场价下方8%"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "第一目标320港元（前高附近），第二目标340港元（估值修复上限）"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0% | Kelly参考=17.5%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入00388.HK，仓位占总资金20%（侦察仓）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "港交所股价回踩20日均线（约280-285港元）且RSI回落至50-60区间，同时下一个大型IPO确认"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总仓位50%（即再加30%仓位），总仓位上限50%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 浮盈达到5%（即股价从入场价上涨5%至约294-300港元），且港交所成交量连续3日高于20日均量"
+    }
+  ],
+  "valid_until": "2026-05-31T10:50:07.285881",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T10:50:07.285989",
+  "opportunity_priority": "research"
+}

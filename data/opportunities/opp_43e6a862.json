@@ -1,0 +1,116 @@
+{
+  "opportunity_id": "opp_43e6a862",
+  "opportunity_title": "AI算力国产化机遇",
+  "opportunity_thesis": "中国移动上线国内最大AI大模型服务平台并推进全国一体化算力网建设，叠加百度文心5.1以极低成本实现领先性能、量子计算机上线等多项技术突破，以及人工智能终端国家标准的发布，共同构成从基础设施到应用层的系统性催化。市场对AI算力国产化的预期尚未充分定价，当前处于政策+产业共振的早期阶段，具备结构性机会。\n\n【M13调研】该机会受益于政策催化与资金流入，处于布局窗口期，但缺乏研报和新闻直接验证，基本面数据缺失。风险在于政策落地不确定性和市场过热。建议谨慎参与，等待更多确认信号。\n\n【M13调研】该机会受益于政策催化（算力网、AI标准）和资金流入（成交额放量、科技板块上涨），处于布局窗口期。但缺乏研报、新闻和基本面直接验证，行业趋势无数据，风险在于政策落地不确定性和市场过热。M13调研建议谨慎。综合评估，机会存在但需等待更多确认信号，建议小仓位试探或观望。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "600941.SH",
+    "603019.SH",
+    "002230.SZ",
+    "688561.SH",
+    "9888.HK"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "2026年5月8-9日密集出现多项重大信号：中国移动大模型服务平台上线、算力网建设表态、万亿级Token体验包、AI终端国家标准发布、百度文心5.1发布、量子计算机上线，形成多维度共振。当前时点处于政策发布和技术突破的密集窗口期，市场尚未完全消化，预期差较大。",
+  "related_signals": [
+    "sig_294db3749c23",
+    "sig_4149b887d9b2",
+    "sig_df713685bee1",
+    "sig_050c391c993e",
+    "sig_4a9e081d7724",
+    "sig_237f646ed46b"
+  ],
+  "inferred_events": [
+    "inferred_07e1c606",
+    "inferred_1c9d2053",
+    "inferred_e45d6e85",
+    "inferred_7219ca0a",
+    "inferred_79640aa9",
+    "inferred_1eb087dc",
+    "inferred_a54aa0bc",
+    "inferred_d0860aad"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中国移动上线国内最大AI大模型服务平台，接入300余款主流大模型",
+    "中国移动董事长宣布推进全国一体化算力网建设，布局吉瓦级数据园区",
+    "百度文心5.1预训练成本仅为业界6%，技术突破显著",
+    "第四代超导量子计算机上线，180比特芯片接收全球任务",
+    "人工智能终端国家标准发布，明确分级和测试方法"
+  ],
+  "counter_evidence": [
+    "历史案例显示技术突破后缺乏商业化订单支撑可能回落",
+    "AI板块前期已有一定涨幅，部分预期可能已price-in"
+  ],
+  "key_assumptions": [
+    "假设1：中国移动算力网建设将带动相关设备和服务采购，产业链受益",
+    "假设2：百度文心5.1的低成本优势能转化为商业化订单和市场份额",
+    "假设3：AI终端国家标准将推动终端设备升级换代需求"
+  ],
+  "uncertainty_map": [
+    "商业化落地速度不确定（影响程度：高）",
+    "中美科技竞争可能带来供应链风险（影响程度：中）",
+    "市场情绪过热导致短期回调（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.1,
+    "confidence_score": 0.55,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：AI算力国产化政策+产业共振，若商业化落地顺利，龙头股可能获得20-30%涨幅。潜在风险：技术突破后缺乏订单验证，股价可能回落10-15%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "中国移动算力网建设的具体投资规模和招标时间表是什么？",
+    "百度文心5.1是否有已签约的客户或商业化合作？",
+    "量子计算机的商业化订单和客户反馈如何？"
+  ],
+  "invalidation_conditions": [
+    "中国移动算力网建设投资规模低于预期或推迟",
+    "百度文心5.1商业化订单不及预期",
+    "AI板块整体出现系统性回调"
+  ],
+  "must_watch_indicators": [
+    "中国移动算力网相关招标公告",
+    "百度文心5.1的API调用量和客户签约数",
+    "AI板块成交量和资金流向",
+    "量子计算机的商业化订单"
+  ],
+  "kill_switch_signals": [
+    "中国移动或百度发布低于预期的业绩指引",
+    "AI板块出现连续3日资金净流出",
+    "中美科技制裁升级导致供应链中断"
+  ],
+  "warnings": [
+    "注意：部分信号来自新闻，需等待官方公告确认细节",
+    "历史案例显示技术突破后若无订单支撑，股价可能回落"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T12:10:36.162540",
+  "batch_id": "sched_signal_pipeline_20260509_110458_103b7e_20260509_astock_skill_fb9676c1",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

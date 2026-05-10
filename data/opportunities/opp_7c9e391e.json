@@ -1,0 +1,108 @@
+{
+  "opportunity_id": "opp_7c9e391e",
+  "opportunity_title": "电解铝盈利新高",
+  "opportunity_thesis": "中东冲突推高进口煤价，国内煤炭转向内购，电解铝成本端受益于国内煤价相对稳定，同时铝价高位运行，单吨盈利创历史新高。库存去化初显，行业进入高景气阶段，且市场尚未充分定价该逻辑，存在预期差。\n\n【M13调研】中东冲突推高进口煤价，国内煤炭转向内购，电解铝成本端受益于国内煤价稳定，同时铝价高位运行，单吨盈利创历史新高。库存去化初显，行业进入高景气阶段，且市场尚未充分定价，存在预期差。云铝股份一季报净利润同比增269.45%验证行业景气。风险在于中东局势缓和、铝价回调及缺乏研报支持。整体机会积极，但需关注风险。\n\n【M13调研】中东冲突推高进口煤价，国内煤价稳定使电解铝成本受益，叠加铝价高位，行业盈利创历史新高。库存去化初显，市场存在预期差。云铝股份和中国铝业一季报高增长验证景气。风险在于中东局势缓和、铝价回调及缺乏研报支持。整体机会积极，但需关注风险。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "000807.SZ",
+    "601600.SH",
+    "600219.SH",
+    "000933.SZ",
+    "002532.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-08-10T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "进口煤价倒挂已发生（4月），电解铝盈利创历史新高（5月9日信号），库存去化初显，当前是盈利高点的确认窗口，且市场对持续性存疑，预期差较大。",
+  "related_signals": [
+    "sig_3cf8fcf349ae",
+    "sig_2201d7544cad",
+    "sig_0fef94bbb0e8"
+  ],
+  "inferred_events": [
+    "inferred_73977b67",
+    "inferred_1156cea6",
+    "inferred_956e7c6e",
+    "inferred_964e6cfb",
+    "inferred_8fffac49",
+    "inferred_97cb810a",
+    "inferred_74f6e9df"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "进口煤价大幅上涨，国内煤价相对稳定，电解铝成本端受益",
+    "电解铝单吨盈利刷新历史极值",
+    "库存去化初显迹象"
+  ],
+  "counter_evidence": [
+    "电解铝盈利高企可能刺激复产，供给增加压制价格",
+    "中东冲突若缓和，进口煤价可能回落，成本优势减弱"
+  ],
+  "key_assumptions": [
+    "假设1：国内煤价不会因进口煤转向而大幅上涨",
+    "假设2：电解铝需求端保持稳定，不会出现超预期下滑",
+    "假设3：中东冲突持续或维持高位，进口煤价维持倒挂"
+  ],
+  "uncertainty_map": [
+    "中东冲突缓和导致进口煤价回落（影响程度：高）",
+    "电解铝复产超预期，供给压力增大（影响程度：中）",
+    "下游需求走弱，铝价承压（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.95,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：电解铝盈利高位持续，叠加库存去化，股价有望修复估值，上行空间10-20%。潜在风险：盈利高企刺激复产，供给增加压制铝价，或中东冲突缓和导致成本优势消失，下行风险5-10%。",
+  "next_validation_questions": [
+    "电解铝行业最新库存数据是否持续下降？",
+    "国内主要电解铝企业是否有大规模复产计划？",
+    "下游铝加工企业开工率如何？"
+  ],
+  "invalidation_conditions": [
+    "进口煤价大幅回落，倒挂消失",
+    "电解铝库存出现明显累积",
+    "铝价跌破关键支撑位"
+  ],
+  "must_watch_indicators": [
+    "国内动力煤价格走势",
+    "电解铝社会库存变化",
+    "沪铝主力合约价格",
+    "电解铝企业开工率"
+  ],
+  "kill_switch_signals": [
+    "中东冲突出现明确缓和信号",
+    "电解铝单吨盈利连续两周回落",
+    "宏观政策收紧，需求预期恶化"
+  ],
+  "warnings": [
+    "盈利高企可能刺激复产，需警惕供给端压力",
+    "地缘政治风险具有不确定性，需持续跟踪"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:12:38.602871",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_20260509_astock_skill_2c8eda66",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

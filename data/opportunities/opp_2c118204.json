@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_2c118204",
+  "opportunity_title": "出口超预期机遇",
+  "opportunity_thesis": "4月出口增速远超预期，机电产品和电动汽车出口增速亮眼，表明外需强劲且中国制造业竞争力持续提升。当前市场尚未充分定价这一结构性变化，叠加政策宽松预期和新能源板块资金流入，出口链龙头存在估值修复和业绩上修的双重驱动机会。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "002594.SZ",
+    "000625.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "4月出口数据超预期（14.1% vs 预期8.4%）是近期最强宏观催化剂，叠加电动汽车出口增长68.1%和机电产品增长17.6%，数据刚发布，市场尚未充分反应。同时央行降准降息预期（概率85%）和新能源板块资金流入趋势形成共振，时间窗口紧迫。",
+  "related_signals": [
+    "sig_890ae71c107a",
+    "sig_e9adf347ff0c",
+    "sig_dba0b0625849"
+  ],
+  "inferred_events": [
+    "inferred_b63a1007",
+    "inferred_21c89a9d",
+    "inferred_ad5a8c7d",
+    "inferred_a5259187",
+    "inferred_e9a2c596",
+    "inferred_bd82b1f0",
+    "inferred_f30d4583",
+    "inferred_87e5d3cd"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中国4月出口同比增14.1%，大幅超预期8.4%",
+    "前4月电动汽车出口增长68.1%，机电产品增长17.6%",
+    "央行降准降息概率85%，政策宽松预期强化",
+    "新能源板块持续获得资金流入，相关个股业绩超预期概率80%"
+  ],
+  "counter_evidence": [
+    "中东地缘政治冲突升级可能抑制全球贸易需求",
+    "A股短期调整风险（概率70%），获利回吐压力"
+  ],
+  "key_assumptions": [
+    "假设1：外需持续强劲，5月出口数据不会大幅回落",
+    "假设2：中美贸易摩擦未显著升级，关税政策稳定",
+    "假设3：新能源产业链订单能持续兑现，业绩增长可验证"
+  ],
+  "uncertainty_map": [
+    "外需持续性不确定性（影响程度：高）",
+    "地缘政治风险对全球贸易的冲击（影响程度：中）",
+    "政策宽松落地节奏不及预期（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.38000000000000006,
+    "execution_readiness": 0.72
+  },
+  "risk_reward_profile": "潜在收益：出口链龙头估值修复+业绩上修，预期涨幅15-25%；潜在风险：外需回落或贸易摩擦升级，最大回撤10-15%。风险收益比约1.5:1。",
+  "next_validation_questions": [
+    "5月出口高频数据（如PMI新出口订单）是否延续强劲？",
+    "主要出口目的地（美国、欧盟）经济数据是否支持需求持续？",
+    "新能源龙头公司（如比亚迪、隆基绿能）近期订单和排产情况如何？"
+  ],
+  "invalidation_conditions": [
+    "5月出口增速回落至10%以下",
+    "中美贸易摩擦显著升级，加征新关税",
+    "新能源龙头公司业绩低于预期"
+  ],
+  "must_watch_indicators": [
+    "5月出口增速（月度）",
+    "PMI新出口订单指数",
+    "新能源龙头公司周度排产数据",
+    "中美贸易政策动态"
+  ],
+  "kill_switch_signals": [
+    "出口增速连续两个月低于预期",
+    "美国对中国电动汽车加征高额关税",
+    "新能源板块资金大幅流出"
+  ],
+  "warnings": [
+    "注意：出口数据为月度数据，存在滞后性，需关注高频指标验证",
+    "注意：地缘政治风险可能短期冲击市场情绪，需设置止损"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T13:55:55.361225",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_d3c16a13",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

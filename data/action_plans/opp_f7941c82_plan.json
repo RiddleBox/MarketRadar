@@ -1,0 +1,71 @@
+{
+  "plan_id": "plan_3e749fae2cc9",
+  "opportunity_id": "opp_f7941c82",
+  "plan_summary": "BULLISH | 688981.SH, 603501.SH",
+  "primary_instruments": [
+    "688981.SH",
+    "603501.SH",
+    "688008.SH",
+    "002230.SZ",
+    "600941.SH"
+  ],
+  "instrument_type": "ETF",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 5.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破关键支撑位或假设失效"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 10.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "分批止盈，基于技术阻力位和估值目标"
+  },
+  "position_sizing": {
+    "suggested_allocation": "8.0%",
+    "max_allocation": "不超过8.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=5.0% | 仓位=风险预算/止损=8.0%",
+    "suggested_allocation_pct": 0.08,
+    "max_allocation_pct": 0.08
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入中芯国际(688981.SH) 10%仓位，韦尔股份(603501.SH) 5%仓位，澜起科技(688008.SH) 5%仓位，科大讯飞(002230.SZ) 5%仓位，中国移动(600941.SH) 5%仓位，合计30%仓位",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "中芯国际(688981.SH) 收盘价站稳60日均线（约55元）且成交量放大30%以上，同时中证半导体指数(931865)收盘价站稳20日均线"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓中芯国际(688981.SH) 15%仓位，韦尔股份(603501.SH) 10%仓位，澜起科技(688008.SH) 10%仓位，科大讯飞(002230.SZ) 10%仓位，中国移动(600941.SH) 10%仓位，合计加仓55%仓位，总仓位达到85%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 持仓浮盈超过8%，且中证半导体指数(931865)收盘价站稳120日均线，且成交量持续高于20日均量"
+    },
+    {
+      "phase_name": "Phase 3 冲刺仓",
+      "action_type": "buy",
+      "timing_description": "加仓中芯国际(688981.SH) 5%仓位，韦尔股份(603501.SH) 3%仓位，澜起科技(688008.SH) 3%仓位，科大讯飞(002230.SZ) 2%仓位，中国移动(600941.SH) 2%仓位，合计加仓15%仓位，总仓位达到100%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 2 持仓浮盈超过15%，且中证半导体指数(931865)收盘价突破250日均线，且市场恐贪指数低于80（未进入极度贪婪）"
+    }
+  ],
+  "valid_until": "2026-05-31T11:02:37.757588",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T11:02:37.757685",
+  "opportunity_priority": "research"
+}

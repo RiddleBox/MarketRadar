@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_6d8a7f87",
+  "opportunity_title": "宏观宽松对冲",
+  "opportunity_thesis": "央行已实施降准降息，叠加PMI、CPI、PPI通缩信号，构成典型的宏观对冲交易机会。市场对经济下行定价充分，但对政策持续宽松的预期尚未完全price-in，尤其是后续降准降息概率高（85%），将推动A股估值修复。\n\n【M13调研】央行降准降息叠加通缩信号，形成宏观对冲交易机会。市场对经济下行定价充分，但对政策持续宽松预期不足，后续降准降息概率高，有望推动A股估值修复。然而，无研报和新闻验证，通缩风险可能削弱政策效果，且外部不确定性存在。建议谨慎参与，关注政策落地和基本面改善信号。\n\n【M13调研】央行降准降息叠加通缩信号构成宏观对冲交易机会，市场对经济下行定价充分，但对政策持续宽松预期不足，后续降准降息概率高，有望推动A股估值修复。然而，缺乏研报和新闻验证，通缩风险可能削弱政策效果，且外部不确定性存在。建议谨慎参与，关注政策落地和基本面改善信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600036.SH",
+    "601166.SH",
+    "600030.SH",
+    "000002.SZ",
+    "600048.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-18T00:00:00",
+    "end": "2026-05-18T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "央行已实际降准0.5个百分点并降息10bp，且行长表态将适时进一步降准，PMI连续3个月低于荣枯线、CPI/PPI通缩压力持续，政策窗口已打开，后续宽松预期强烈。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_e39115aa3077",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203"
+  ],
+  "inferred_events": [
+    "inferred_f593485a",
+    "inferred_07f3477c",
+    "inferred_0b89252e",
+    "inferred_1384813c",
+    "inferred_3be20051",
+    "inferred_4f8f65a1",
+    "inferred_2ce5748d",
+    "inferred_82c86783"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行已下调存款准备金率0.5个百分点，释放长期流动性约1万亿元",
+    "央行下调7天逆回购利率10bp至1.7%，降低资金成本",
+    "央行行长表态将适时降准，政策意图明确",
+    "PMI连续3个月低于50荣枯线，经济下行压力加大，倒逼政策加码"
+  ],
+  "counter_evidence": [
+    "CPI/PPI通缩数据为12月，时效性较低，可能已被市场消化",
+    "市场情绪贪婪（恐贪指数67），短期存在回调风险"
+  ],
+  "key_assumptions": [
+    "假设1：央行将在2周内进一步降准或降息，概率85%",
+    "假设2：经济下行压力不会在短期内显著恶化，PMI不会跌破48",
+    "假设3：市场对宽松政策的反应不会因外部冲击（如地缘冲突）而逆转"
+  ],
+  "uncertainty_map": [
+    "后续宽松政策力度和节奏不确定（影响程度：高）",
+    "经济数据可能进一步恶化，削弱宽松效果（影响程度：中）",
+    "地缘冲突升级可能引发避险情绪，压制风险偏好（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 7,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.48000000000000004,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益来自政策宽松推动的估值修复，预期收益10-15%；风险在于政策力度不及预期或经济进一步恶化，最大回撤约5-8%，可通过ETF或期货对冲尾部风险。",
+  "next_validation_questions": [
+    "央行是否在2周内宣布进一步降准或降息？",
+    "4月PMI数据是否企稳或回升？",
+    "市场成交量是否持续放大，确认资金流入？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "PMI跌破48，经济加速恶化",
+    "市场出现系统性风险事件（如地缘冲突升级至全面战争）"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率",
+    "制造业PMI月度数据",
+    "A股成交量变化",
+    "10年期国债收益率"
+  ],
+  "kill_switch_signals": [
+    "央行意外收紧流动性",
+    "PMI跌破48且无企稳迹象",
+    "市场恐慌指数（VIX）飙升"
+  ],
+  "warnings": [
+    "注意：CPI/PPI数据为12月，时效性较低，需关注最新数据",
+    "注意：市场情绪贪婪，短期回调风险不可忽视"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T00:14:34.859205",
+  "batch_id": "sched_signal_pipeline_20260509_235735_5123bd_20260509_astock_skill_a4035453",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

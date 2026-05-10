@@ -1,0 +1,67 @@
+{
+  "plan_id": "plan_d81202789896",
+  "opportunity_id": "opp_0fa6f3bd",
+  "plan_summary": "BULLISH | 00388.HK",
+  "primary_instruments": [
+    "00388.HK"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "HK",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破250日均线（约265港元）或跌破Phase 1建仓成本价5%"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "第一目标325港元（前高+10%），第二目标350港元（2025年高点），第三目标380港元（乐观情景）"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0% | Kelly参考=17.5%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入00388.HK，仓位为总资金的20%（上限30%），止损设于建仓成本价下方5%或250日均线（取较低者）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "股价回踩20日均线（约280-285港元）且成交量萎缩至5日均量80%以下，或放量突破305港元并站稳3日"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总资金的50%（累计仓位不超过50%），止损统一上移至Phase 1建仓成本价（即整体成本线）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1浮盈达8%以上，且港交所日成交额连续5日高于50亿港元（当前市场活跃度指标），且无新增地缘冲突事件"
+    },
+    {
+      "phase_name": "Phase 3 趋势仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总资金的70%（累计仓位不超过70%），止损上移至Phase 2建仓成本价（即整体成本线+5%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 2浮盈达15%以上，且香港IPO集资额季度数据继续同比增长超50%，且恒生指数站稳23000点"
+    }
+  ],
+  "valid_until": "2026-05-31T11:03:20.978804",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T11:03:20.978909",
+  "opportunity_priority": "research"
+}

@@ -1,0 +1,144 @@
+{
+  "opportunity_id": "opp_45177d24",
+  "opportunity_title": "中东冲突能源避险",
+  "opportunity_thesis": "中东地缘冲突急剧升级，美军与伊朗在霍尔木兹海峡直接交火并实施海上封锁，导致全球能源运输通道受阻、航运成本飙升。这一变化对原油、煤炭、航运等板块构成直接利好，且市场尚未完全定价冲突长期化的风险。当前时点冲突仍在升级，伊朗革命卫队已锁定目标等待开火命令，短期无缓和迹象，是布局能源和避险资产的窗口。\n\n【M13调研】机会描述的中东冲突升级在最近新闻中未获证实，俄乌停火预期反复但不足以支撑避险交易。市场关注点分散，无避险情绪迹象。基本面数据缺失，行业趋势无信息。整体来看，该机会缺乏事实依据，风险较高，不建议采纳。\n\n【M13调研】该机会基于未经证实的中东冲突升级和俄乌停火预期，但M13调研和新闻分析均未发现相关事件或市场避险情绪。基本面数据和行业趋势缺失。机会描述与实际情况严重不符，属于高风险虚假信号。建议不采纳。",
+  "target_markets": [
+    "A_SHARE",
+    "HK",
+    "US"
+  ],
+  "target_instruments": [
+    "601857.SH",
+    "600028.SH",
+    "600188.SH",
+    "601088.SH",
+    "600026.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-06-10T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "美军与伊朗在霍尔木兹海峡交火并实施海上封锁，伊朗革命卫队已锁定美国目标等待开火命令，冲突有进一步升级为全面军事对抗的风险。同时，以军大规模空袭黎巴嫩真主党目标，中东多线冲突同步升级，短期无缓和迹象。高盛调查显示多数投资者预期航运受阻将持续至7月以后，市场尚未充分定价冲突长期化。",
+  "related_signals": [
+    "sig_721195b6909b",
+    "sig_3cf8fcf349ae",
+    "sig_0806bfd8639e",
+    "sig_8e8c4ed52bad",
+    "sig_4bdf8baa2d3a",
+    "sig_afe9eed20a0b",
+    "sig_968dbdfcd94a",
+    "sig_2e7d7516821e",
+    "sig_378c376ff8d4",
+    "sig_755175bfd918",
+    "sig_c8ad6aa39ecc",
+    "sig_750e411aaff5",
+    "sig_992644367a0a",
+    "sig_82a8c461a4b6",
+    "sig_bb9a9c6d60a1",
+    "sig_2201d7544cad",
+    "sig_70a333e7b67e",
+    "sig_ec500e4d7f22",
+    "sig_adef1edef3e4",
+    "sig_5c4893f53a82",
+    "sig_30f065d81f86",
+    "sig_85cdf39e1a40",
+    "sig_211956c76085",
+    "sig_48a7c2ed9b4c",
+    "sig_860b74669ffd",
+    "sig_68f154d345f7",
+    "sig_99010c56b320",
+    "sig_bc3c6b2f3550",
+    "sig_f079127c3165",
+    "sig_60c34f881549",
+    "sig_a82cb7eb4d39"
+  ],
+  "inferred_events": [
+    "inferred_59976ce5",
+    "inferred_9a398e7a",
+    "inferred_b52744c8",
+    "inferred_adcdfaf4",
+    "inferred_21bfc595",
+    "inferred_8bf12c79",
+    "inferred_b255d663",
+    "inferred_9e0e4d2a"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军在霍尔木兹海峡袭击伊朗民用船只并实施海上封锁，已改变58艘商船航向",
+    "伊朗革命卫队警告导弹和无人机已锁定美国目标，等待开火命令",
+    "霍尔木兹海峡附近2小时内接连传出交火声，航运持续受阻",
+    "德国航运巨头赫伯罗特每周额外增加至少5000万美元成本",
+    "进口煤价上涨导致国内煤价倒挂，企业转向国内采购",
+    "全球粮价连续第三个月上涨，受能源成本和中东战事影响"
+  ],
+  "counter_evidence": [
+    "卡塔尔LNG船试图穿越霍尔木兹海峡，表明部分航运可能仍可通行",
+    "美伊交火后曾短暂停火，冲突存在阶段性缓和可能"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡航运受阻将持续至少1个月以上",
+    "假设2：冲突不会在短期内迅速降级或达成停火协议",
+    "假设3：全球能源需求未出现大幅下滑"
+  ],
+  "uncertainty_map": [
+    "冲突升级为全面战争的风险（影响程度：高）",
+    "国际社会调停导致冲突快速缓和（影响程度：中）",
+    "美国或伊朗内部政治变化影响冲突走向（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.6,
+    "confidence_score": 0.09000000000000002,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：原油、煤炭、航运板块短期涨幅10-20%，若冲突全面升级则涨幅更大。潜在风险：冲突快速缓和导致风险溢价消退，板块回调5-10%。收益风险比约2:1。",
+  "next_validation_questions": [
+    "霍尔木兹海峡航运受阻的具体程度和持续时间是否有官方数据？",
+    "原油期货价格是否已突破关键阻力位并伴随成交量放大？",
+    "国内煤炭企业是否已出现订单增加或价格上涨的明确信号？"
+  ],
+  "invalidation_conditions": [
+    "美伊达成停火协议或冲突明显缓和",
+    "霍尔木兹海峡航运恢复正常通行",
+    "原油价格大幅回落至冲突前水平"
+  ],
+  "must_watch_indicators": [
+    "布伦特原油期货价格及持仓变化",
+    "霍尔木兹海峡航运通行情况（实时数据）",
+    "国内动力煤期货价格及进口煤价差",
+    "航运指数（如BDI、SCFI）变化"
+  ],
+  "kill_switch_signals": [
+    "美伊双方宣布停火并开始撤军",
+    "霍尔木兹海峡航运完全恢复",
+    "原油期货价格单日暴跌超过5%"
+  ],
+  "warnings": [
+    "注意：地缘冲突事件具有高度不确定性，冲突可能快速升级或缓和，需设置严格止损",
+    "注意：部分信号来源为新闻媒体，未经官方完全确认，需交叉验证"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T07:53:45.307332",
+  "batch_id": "sched_signal_pipeline_20260510_073856_e9ae5f_20260510_astock_skill_4f4259be",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

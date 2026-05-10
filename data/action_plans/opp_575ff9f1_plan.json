@@ -1,0 +1,63 @@
+{
+  "plan_id": "plan_98676da60439",
+  "opportunity_id": "opp_575ff9f1",
+  "plan_summary": "BULLISH | 00388.HK, 00011.HK",
+  "primary_instruments": [
+    "00388.HK",
+    "00011.HK",
+    "00016.HK",
+    "00012.HK",
+    "00083.HK"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "HK",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破300港元整数关口（对应前低支撑位）"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "基于IPO热潮和交易量增长，目标价360港元（对应2026年预期PE 35x）"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0% | Kelly参考=17.5%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入00388.HK，仓位为总资金的20%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "当前价格（320港元）直接触发"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总资金的40%（即再加20%仓位）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1浮盈5%（即价格达到336港元）后，且日线成交量放大至20日均量1.5倍以上"
+    }
+  ],
+  "valid_until": "2026-05-31T11:22:28.889400",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T11:22:28.889556",
+  "opportunity_priority": "research"
+}

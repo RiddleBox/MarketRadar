@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_060094a0",
+  "opportunity_title": "俄乌停火提振风险偏好",
+  "opportunity_thesis": "俄乌冲突出现罕见的正式停火安排（三天停火+交换战俘），且双方均表现出缓和意愿，这是冲突以来最明确的降温信号。地缘风险溢价将快速回落，全球风险资产（尤其是前期受地缘压制的A股、港股、欧股）有望迎来短期情绪修复行情。历史经验显示，地缘风险缓和窗口通常持续2-4周，期间风险偏好回升、资金回流权益市场。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE",
+    "HK",
+    "US"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "00700.HK",
+    "09988.HK"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "俄乌双方在特朗普斡旋下宣布5月9日起停火三天并交换战俘，这是冲突爆发以来首次正式停火安排，且乌克兰承诺不攻击红场阅兵，缓和信号明确。当前时点恰逢市场对中东冲突升级已有定价，俄乌缓和形成对冲，情绪修复窗口开启。",
+  "related_signals": [
+    "sig_2cf7a78fa7a2",
+    "sig_73b1a2dad8ea"
+  ],
+  "inferred_events": [
+    "inferred_17e0974d",
+    "inferred_8e6aa64e",
+    "inferred_770f93db",
+    "inferred_075b4474",
+    "inferred_4278d7e5",
+    "inferred_1d06474d",
+    "inferred_6339cb06",
+    "inferred_5fb9f158"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "俄罗斯同意延长停火并换俘，乌克兰承诺不攻击红场阅兵",
+    "特朗普宣布俄乌从5月9日起停火三天并交换1000名战俘",
+    "历史案例显示地缘风险缓和后风险资产短期反弹概率高"
+  ],
+  "counter_evidence": [
+    "停火仅三天，持续时间短，后续可能反复",
+    "中东地缘冲突仍在升级，可能压制整体风险偏好"
+  ],
+  "key_assumptions": [
+    "假设1：停火安排不会被破坏，双方维持缓和姿态",
+    "假设2：全球资金在风险偏好回升下回流权益市场",
+    "假设3：中东冲突不进一步升级至抵消俄乌缓和效应"
+  ],
+  "uncertainty_map": [
+    "停火能否延长或转化为持久和平（影响程度：高）",
+    "中东冲突升级可能压制风险偏好（影响程度：中）",
+    "市场对俄乌缓和的定价是否已部分提前反映（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 9,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.32,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：短期情绪修复推动风险资产反弹5-10%，尤其前期受地缘压制的板块（如航空、旅游、新能源）。潜在风险：停火破裂或中东冲突升级导致风险偏好再度恶化，最大回撤约3-5%。收益风险比约2:1。",
+  "next_validation_questions": [
+    "停火期间是否有违反停火的事件发生？",
+    "全球主要股指（如S&P 500、恒生指数）开盘后是否出现跳空上涨？",
+    "VIX指数是否显著回落？",
+    "是否有更多国家或组织介入推动和平进程？"
+  ],
+  "invalidation_conditions": [
+    "停火期间发生重大军事冲突",
+    "中东地缘冲突显著升级（如霍尔木兹海峡封锁）",
+    "全球风险资产不涨反跌，显示市场不认可缓和信号"
+  ],
+  "must_watch_indicators": [
+    "俄乌前线冲突报告",
+    "VIX指数变化",
+    "全球主要股指开盘表现",
+    "黄金价格（避险情绪反向指标）"
+  ],
+  "kill_switch_signals": [
+    "俄方或乌方宣布终止停火",
+    "中东冲突升级至原油供应中断",
+    "全球股市连续两日下跌且成交量放大"
+  ],
+  "warnings": [
+    "注意：停火仅三天，持续时间短，后续不确定性高",
+    "注意：中东冲突仍在升级，可能抵消俄乌缓和效应"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T12:14:25.643587",
+  "batch_id": "sched_signal_pipeline_20260509_110458_103b7e_20260509_astock_skill_febd185d",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

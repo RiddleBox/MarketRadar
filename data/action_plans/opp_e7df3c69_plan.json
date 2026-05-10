@@ -1,0 +1,63 @@
+{
+  "plan_id": "plan_63d699d45d30",
+  "opportunity_id": "opp_e7df3c69",
+  "plan_summary": "BULLISH | 601012.SH, 600438.SH",
+  "primary_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "688599.SH",
+    "002129.SZ"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破20元整数关口（对应关键假设1和2失效的临界点）"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "第一目标32.5元（估值修复30%），第二目标37.5元（估值修复50%）"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入隆基绿能（601012.SH），仓位为总资金的20%（侦察仓上限30%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "当前价格（25元）或回调至20日均线（23.5元）时触发"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总资金的40%（累计仓位不超过50%），加仓部分止损设在成本价下方5%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 浮盈达到10%（即股价从25元涨至27.5元，或从23.5元涨至25.85元）"
+    }
+  ],
+  "valid_until": "2026-05-31T00:12:16.751878",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T00:12:16.751978",
+  "opportunity_priority": "research"
+}

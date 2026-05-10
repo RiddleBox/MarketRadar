@@ -1,0 +1,111 @@
+{
+  "opportunity_id": "opp_1d442c72",
+  "opportunity_title": "港股复苏交易",
+  "opportunity_thesis": "港股IPO火爆（乐动机器人6707倍超额认购）、住宅量价齐升、GDP与零售额加速增长，三者共振指向香港经济与资本市场系统性复苏。当前市场尚未充分定价这一结构性变化，存在预期差，尤其利好香港本地地产、金融及IPO相关标的。\n\n【M13调研】机会描述基于港股IPO火爆、住宅量价齐升、GDP与零售加速增长，但新闻分析中仅IPO火爆得到部分印证（乐动机器人超额认购），其他数据无来源。大量公司回购显示市场信心，但未聚焦香港本地地产或金融。无研报支持，基本面数据缺失。整体证据不足，存在信息不实风险，置信度偏低。建议谨慎对待，等待更多经济数据或行业报告。\n\n【M13调研】该机会基于港股IPO火爆、住宅量价齐升、GDP与零售加速增长，但仅IPO火爆有单一案例支持，其他数据无来源。新闻中公司回购显示市场信心，但未涉及香港本地地产或金融。无研报或基本面数据支撑，证据链薄弱，存在信息不实风险。建议谨慎对待，等待更多经济数据或行业报告。",
+  "target_markets": [
+    "HK"
+  ],
+  "target_instruments": [
+    "00016.HK",
+    "00012.HK",
+    "00001.HK",
+    "00011.HK",
+    "00005.HK"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-08-10T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "乐动机器人IPO于5月8日完成定价并获6707倍认购，创近年纪录，叠加4月住宅量价齐升和Q1 GDP加速，三个信号在5月9日集中释放，形成共振窗口。市场情绪从观望转向乐观，但地产和商业地产板块尚未充分反应，存在时间窗口。",
+  "related_signals": [
+    "sig_4ef836f98ad7",
+    "sig_423c7cb04845",
+    "sig_b0c897ac9682"
+  ],
+  "inferred_events": [
+    "inferred_68c74407",
+    "inferred_eba2b53c",
+    "inferred_8248f6ee",
+    "inferred_28b6ef8c",
+    "inferred_cd690755",
+    "inferred_15e0b6b5",
+    "inferred_f3cc663d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "乐动机器人IPO散户认购6707倍，国际配售9.54倍，显示资金涌入港股",
+    "2026年4月香港住宅量价齐升，去化周期进入乐观区间",
+    "2026年Q1香港GDP和零售额同比加速增长",
+    "历史案例显示IPO火爆与住宅市场复苏常伴随经济周期上行"
+  ],
+  "counter_evidence": [
+    "中东地缘冲突（霍尔木兹海峡航运受阻）可能冲击全球风险偏好",
+    "港股短期已有所上涨，部分利好可能已被定价"
+  ],
+  "key_assumptions": [
+    "假设1：香港经济复苏趋势可持续，Q2数据不会逆转",
+    "假设2：IPO火爆非孤立事件，后续更多优质公司赴港上市",
+    "假设3：中东地缘冲突不升级为全面战争，不影响香港市场"
+  ],
+  "uncertainty_map": [
+    "中东地缘冲突升级风险（影响程度：高）",
+    "香港本地政策变化（如印花税调整）（影响程度：中）",
+    "全球流动性收紧导致资金回流美元（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.25000000000000006,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：香港本地地产股和金融股估值修复空间10-20%，若经济复苏超预期可达30%。潜在风险：地缘冲突或政策变化导致市场回调5-10%，止损点明确。",
+  "next_validation_questions": [
+    "乐动机器人上市首日表现如何？是否继续上涨？",
+    "5月香港住宅成交量是否延续4月趋势？",
+    "是否有其他大型IPO正在筹备中？",
+    "香港商业地产租金数据是否开始回升？"
+  ],
+  "invalidation_conditions": [
+    "乐动机器人上市首日破发或大幅下跌",
+    "5月香港住宅成交量环比下降超过10%",
+    "中东地缘冲突导致恒生指数单日下跌超过3%"
+  ],
+  "must_watch_indicators": [
+    "恒生指数及香港本地地产股走势",
+    "香港住宅月度成交量及价格指数",
+    "香港IPO后续排队企业数量",
+    "中东局势相关新闻"
+  ],
+  "kill_switch_signals": [
+    "恒生指数跌破20000点整数关口",
+    "香港住宅市场出现量价齐跌",
+    "中东爆发全面军事冲突"
+  ],
+  "warnings": [
+    "注意：信号来源均为新闻，非官方公告，需核实数据准确性",
+    "注意：历史案例显示地缘冲突可能快速改变市场情绪，需设置止损"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T13:30:26.991834",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_ad2094fa",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

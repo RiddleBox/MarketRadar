@@ -1,0 +1,116 @@
+{
+  "opportunity_id": "opp_78bdd8a9",
+  "opportunity_title": "AI半导体景气上行",
+  "opportunity_thesis": "AI算力需求爆发驱动半导体产业链全面景气上行，从光模块（中际旭创市值破万亿、新易盛净利增76.8%）到封测（长电科技产能利用率超80%、百亿资本开支）再到芯片设计（某龙头Q1预增150%-180%），多个环节业绩共振。服务器CPU缺货涨价进一步确认供需紧张，且市场尚未充分定价这一结构性趋势，存在预期差。当前正值一季报密集披露期，业绩超预期信号密集，是布局窗口。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持。关键发现包括：新闻内容与AI产业链关联度低，业绩数据未验证，外围市场存在不确定性。风险因素主要为信息不实和情绪过热。未发现重大利空，但置信度因证据不足下调0.2。综合来看，该机会缺乏近期数据支撑，建议谨慎对待，等待更多验证信号。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持，关键业绩数据未验证，且豪威集团一季报净利润下降41.92%与板块爆发矛盾。外围市场存在不确定性（欧洲股市下跌、俄欧关系紧张）。未发现重大利空，但置信度较低（0.2），建议谨慎对待，等待更多验证信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "603501.SH",
+    "688008.SH",
+    "002371.SZ",
+    "600584.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-07-10T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "一季报密集披露期，新易盛、某半导体龙头、长电科技等业绩超预期信号密集出现，中际旭创市值破万亿形成标杆效应，服务器CPU缺货涨价进一步强化供需紧张逻辑，当前是业绩验证与情绪共振的最佳窗口。",
+  "related_signals": [
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f",
+    "sig_d9ef44f292bd",
+    "sig_14d75f807b3c",
+    "sig_de1c0bc2bee5",
+    "sig_c37fb23fb71a"
+  ],
+  "inferred_events": [
+    "inferred_80732bbc",
+    "inferred_16fa4681",
+    "inferred_7a0ca01b",
+    "inferred_3c76bf89",
+    "inferred_8707c94e",
+    "inferred_6051c47e",
+    "inferred_327baf9f",
+    "inferred_ca06b9f4"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创市值突破万亿，光模块龙头标杆效应确立",
+    "新易盛一季报净利润增长76.8%，业绩持续高增",
+    "某半导体龙头Q1预增150%-180%，AI芯片需求爆发",
+    "长电科技产能利用率超80%且百亿资本开支扩产",
+    "服务器CPU缺货涨价，AI算力需求传导至上游"
+  ],
+  "counter_evidence": [
+    "部分信号（如每日互动AI收入千万级）体量较小，代表性有限",
+    "历史案例显示技术突破需商业化验证，当前部分标的估值已较高"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，未出现需求拐点",
+    "假设2：一季报业绩超预期趋势可持续至二季度",
+    "假设3：中美科技摩擦未进一步升级影响供应链"
+  ],
+  "uncertainty_map": [
+    "AI需求增速放缓风险（影响程度：高）",
+    "中美科技制裁升级风险（影响程度：高）",
+    "板块短期过热后回调风险（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.6,
+    "confidence_score": 0.4800000000000001,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI半导体景气上行趋势明确，业绩超预期驱动估值修复，板块有望获得超额收益。潜在风险：需求增速放缓或政策打压导致回调，但龙头公司业绩支撑较强，下行空间有限。",
+  "next_validation_questions": [
+    "中际旭创、新易盛等光模块公司二季度订单指引是否继续增长？",
+    "长电科技百亿资本开支的具体产能爬坡节奏如何？",
+    "服务器CPU缺货涨价是否已反映在相关公司二季度业绩预期中？"
+  ],
+  "invalidation_conditions": [
+    "AI芯片需求出现明显放缓信号",
+    "中美科技制裁升级，限制关键设备或材料供应",
+    "板块整体估值泡沫化，资金大幅流出"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛等光模块公司二季度业绩预告",
+    "长电科技产能利用率及订单能见度",
+    "服务器CPU价格指数及交货周期",
+    "半导体设备（北方华创）订单数据"
+  ],
+  "kill_switch_signals": [
+    "AI芯片龙头业绩不及预期",
+    "中美科技制裁实质性升级",
+    "板块单日跌幅超5%且放量"
+  ],
+  "warnings": [
+    "部分信号来源为新闻，非官方公告，需核实",
+    "板块短期涨幅较大，注意追高风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T15:10:19.544831",
+  "batch_id": "sched_signal_pipeline_20260509_145546_c8d320_20260509_astock_skill_288a70f4",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

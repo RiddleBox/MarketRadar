@@ -1,0 +1,152 @@
+{
+  "opportunity_id": "opp_0e85e306",
+  "opportunity_title": "AI光模块业绩爆发",
+  "opportunity_thesis": "AI算力需求持续爆发，光模块龙头中际旭创市值突破万亿、新易盛一季报净利润增长76.8%，半导体龙头Q1业绩预增150%-180%，业绩验证AI产业链高景气。同时资金从消费地产持续流入新能源/半导体，板块轮动信号与业绩信号高度一致，形成结构性机会。\n\n【M13调研】机会描述基于AI算力需求爆发、业绩超预期和政策利好，但新闻分析中缺乏直接验证。中韩半导体ETF领涨、英特尔AMD市值新高、胜宏科技订单饱满等间接支持半导体景气度，但具体公司业绩数据未出现，政策利好也未明确。风险在于业绩持续性分歧和缺乏直接证据。整体方向可行，但需谨慎验证具体数据，建议等待更多确认信号。\n\n【M13调研】AI算力需求驱动光模块和半导体景气度得到部分验证：新易盛业绩高增、英特尔AMD市值新高、胜宏科技订单饱满。但机会描述中的中际旭创市值破万亿、某半导体龙头预增等具体数据未在新闻中出现，政策利好也缺乏报道。市场对业绩持续性存分歧，风险在于信息不实和预期差。建议谨慎，等待更多确认信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "300394.SZ",
+    "688981.SH",
+    "002371.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-06-30T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "光模块三巨头年报一季报全部披露完毕，业绩超预期；中际旭创市值突破万亿里程碑；半导体龙头Q1预增150%-180%；资金持续从消费地产流入科技板块，形成业绩+资金共振窗口。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sent_ec6c7cba",
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_c65bd11e442f",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_5a2ec57f6916",
+    "sig_a1d7094e54d1",
+    "sig_d9ef44f292bd",
+    "sig_d8cb7635ade9",
+    "sig_39b17c44aba1",
+    "sig_294db3749c23",
+    "sig_4149b887d9b2",
+    "sig_911415444bf5",
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017",
+    "sig_41c9d0ac13e2",
+    "sig_d36d819acfc5",
+    "sig_e49e84bd5c49",
+    "sig_df713685bee1",
+    "sig_050c391c993e",
+    "sig_4ef836f98ad7",
+    "sig_1427d286ec9e",
+    "sig_e8ba30264edb",
+    "sig_ffdee791adf2",
+    "sig_4a9e081d7724",
+    "sig_237f646ed46b"
+  ],
+  "inferred_events": [
+    "inferred_dac153c6",
+    "inferred_4f8a4ba2",
+    "inferred_0443fe83",
+    "inferred_9430cd30",
+    "inferred_35b57442",
+    "inferred_35ebfcf4",
+    "inferred_4a942d7a",
+    "inferred_3afa65a1"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，收盘9989亿元，创历史里程碑",
+    "新易盛一季报净利润同比增长76.8%，光模块三巨头业绩全部披露",
+    "某半导体龙头Q1业绩预增150%-180%，受益AI芯片需求爆发",
+    "资金从消费、地产持续流向新能源、半导体，板块轮动信号连续出现",
+    "中国移动上线国内最大AI大模型服务平台，推进算力网建设",
+    "AI应用板块走高，软件ETF涨超2%且资金净流入"
+  ],
+  "counter_evidence": [
+    "中际旭创万亿市值后可能面临获利回吐压力",
+    "部分信号为情绪面信号，需警惕市场过度乐观"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，光模块和半导体订单能见度维持高位",
+    "假设2：资金从消费地产向科技板块的轮动趋势延续",
+    "假设3：宏观经济和政策环境不发生重大逆转"
+  ],
+  "uncertainty_map": [
+    "地缘政治风险升级可能引发市场系统性回调（影响程度：高）",
+    "AI板块估值已较高，业绩增速能否持续支撑估值（影响程度：中）",
+    "半导体龙头业绩预增的具体公司未明确，需确认标的（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.5800000000000001,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益来自AI产业链业绩持续超预期和资金流入推动的估值提升，风险在于市场系统性回调或业绩增速放缓。预期收益20-30%，最大回撤10-15%。",
+  "next_validation_questions": [
+    "某半导体龙头Q1预增150%-180%的具体公司是哪家？",
+    "光模块三巨头一季报的环比增速如何？订单能见度是否延续？",
+    "资金从消费地产流入科技板块的趋势是否持续？北向资金动向如何？"
+  ],
+  "invalidation_conditions": [
+    "光模块或半导体龙头发布低于预期的业绩指引",
+    "资金从科技板块大幅流出，板块轮动信号逆转",
+    "市场出现系统性风险事件（如地缘冲突升级）"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛、天孚通信的股价走势和成交量",
+    "半导体龙头（中芯国际、北方华创）的业绩和订单数据",
+    "板块轮动信号是否持续指向新能源/半导体",
+    "北向资金流向和AI相关ETF资金净流入"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头单日放量下跌超过5%",
+    "资金轮动信号转向流出新能源/半导体",
+    "AI产业链出现重大负面事件（如出口管制升级）"
+  ],
+  "warnings": [
+    "部分信号来源为情绪面系统，需结合基本面验证",
+    "半导体龙头业绩预增的具体公司未明确，需进一步确认标的"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T12:24:16.061305",
+  "batch_id": "sched_signal_pipeline_20260509_110458_103b7e_20260509_rss_b7a57854",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,71 @@
+{
+  "plan_id": "plan_b1390f710281",
+  "opportunity_id": "opp_d8064235",
+  "plan_summary": "BULLISH | 601012.SH, 600438.SH",
+  "primary_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "601919.SH",
+    "600026.SH"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破关键支撑位或冲突缓和信号出现"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "基于技术阻力位和事件驱动目标"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入601919.SH、600026.SH、300274.SZ，每个品种分配总资金的10%（合计30%仓位）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "满足全部入场条件"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "对601919.SH和600026.SH各加仓10%总资金，对300274.SZ加仓5%总资金（合计加仓25%仓位，总仓位升至55%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 持仓浮盈达到8%，且布伦特原油期货价格未跌破5日均线"
+    },
+    {
+      "phase_name": "Phase 3 极限仓",
+      "action_type": "buy",
+      "timing_description": "对601919.SH和600026.SH各加仓5%总资金（合计加仓10%仓位，总仓位升至65%，此为总仓位上限）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 2 持仓浮盈达到12%，且霍尔木兹海峡通行受阻新闻确认持续（如：美军宣布扩大拦截范围）"
+    }
+  ],
+  "valid_until": "2026-05-31T11:21:48.980940",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T11:21:48.981526",
+  "opportunity_priority": "research"
+}

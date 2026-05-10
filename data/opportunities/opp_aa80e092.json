@@ -1,0 +1,117 @@
+{
+  "opportunity_id": "opp_aa80e092",
+  "opportunity_title": "俄乌停火避险消退",
+  "opportunity_thesis": "俄乌冲突出现实质性缓和信号，包括停火、换俘及领导人会晤意愿，这将显著降低地缘风险溢价。全球风险资产（尤其是A股、港股、美股）将受益于风险偏好回升，前期因地缘风险承压的板块（如能源、军工）可能回调，而受压制的新兴市场及欧洲出口相关板块有望修复。当前信号一致性高，但市场尚未充分定价，存在预期差。\n\n【M13调研】央行降准降息明确宽松，政策底已现，但经济底未确认，市场在宽松预期与衰退现实间博弈。流动性改善直接利好金融、地产，经济企稳预期利好新能源、半导体，但需数据验证。无研报和新闻数据，信息不完整，风险在于经济持续疲弱和政策传导时滞。综合评估无重大利空，但置信度偏低，建议谨慎参与。\n\n【M13调研】央行降准降息明确宽松，政策底已现，但经济底未确认，市场在宽松预期与衰退现实间博弈。流动性改善直接利好金融、地产，经济企稳预期利好新能源、半导体，但需数据验证。无研报和新闻数据，基本面为空，行业趋势缺失，信息不完整。风险在于经济持续疲弱和政策传导时滞。无重大利空，但置信度偏低，建议谨慎参与。",
+  "target_markets": [
+    "A_SHARE",
+    "HK",
+    "US"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "600036.SH",
+    "000858.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-06-10T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "俄乌双方已宣布5月9-11日停火并交换战俘，普京确认收到泽连斯基会晤请求，这是冲突以来最明确的缓和信号。当前时点恰逢停火执行期，后续领导人会晤预期升温，时间窗口紧迫，市场尚未完全反应。",
+  "related_signals": [
+    "sig_2cf7a78fa7a2",
+    "sig_f0f177c18de5",
+    "sig_357a73b3d181",
+    "sig_73b1a2dad8ea",
+    "sig_dbba3aafdd0f",
+    "sig_d495fea2fc53",
+    "sig_40e0fe37ede7"
+  ],
+  "inferred_events": [
+    "inferred_edf59b52",
+    "inferred_49ff59df",
+    "inferred_f9a6d41f",
+    "inferred_e1a8acc6",
+    "inferred_e37ce040",
+    "inferred_a1d22190",
+    "inferred_ca3e928f",
+    "inferred_9cf568d0"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "俄罗斯同意并支持特朗普提出的延长停火和换俘方案",
+    "俄乌宣布5月9日至11日停火三天并计划大规模交换战俘",
+    "普京确认收到泽连斯基希望会晤的口信，不反对在第三国会谈",
+    "联合国秘书长对停火表示欢迎"
+  ],
+  "counter_evidence": [
+    "俄方称延长停火缺乏现实基础，乌克兰无力遵守协议",
+    "历史案例显示地缘缓和信号可能反复，停火执行存在不确定性"
+  ],
+  "key_assumptions": [
+    "假设1：停火协议在5月9-11日期间基本得到遵守",
+    "假设2：后续领导人会晤能够推进，缓和趋势延续",
+    "假设3：全球风险偏好回升，资金从避险资产回流风险资产"
+  ],
+  "uncertainty_map": [
+    "停火执行情况（影响程度：高）",
+    "领导人会晤能否成行及成果（影响程度：高）",
+    "美国及欧洲后续对俄制裁态度（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.35000000000000003,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：风险资产（A股、港股、美股）短期反弹5-10%，前期受压制的新兴市场及欧洲出口板块修复。潜在风险：停火执行不力或谈判破裂，风险溢价回升，损失约3-5%。",
+  "next_validation_questions": [
+    "停火期间是否有违反协议的重大事件？",
+    "普京与泽连斯基会晤的具体时间和地点是否确定？",
+    "全球主要股指（如沪深300、恒生指数、标普500）是否出现放量上涨？"
+  ],
+  "invalidation_conditions": [
+    "停火期间发生重大军事冲突",
+    "普京或泽连斯基公开否认会晤计划",
+    "美国或欧盟宣布对俄新制裁"
+  ],
+  "must_watch_indicators": [
+    "俄乌边境军事活动报告",
+    "普京与泽连斯基会晤进展",
+    "全球主要股指及VIX指数",
+    "原油及黄金价格走势"
+  ],
+  "kill_switch_signals": [
+    "停火协议被单方面终止",
+    "领导人会晤被取消",
+    "地缘冲突升级至新高度"
+  ],
+  "warnings": [
+    "注意：信号来源均为新闻，非官方公告，需确认真实性",
+    "历史案例显示地缘缓和信号可能反复，需警惕假突破"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T07:25:49.859227",
+  "batch_id": "sched_signal_pipeline_20260510_065007_cdc95c_20260510_astock_skill_f03c1b36",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

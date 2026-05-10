@@ -1,0 +1,113 @@
+{
+  "opportunity_id": "opp_656ff998",
+  "opportunity_title": "宽松政策下的结构性轮动",
+  "opportunity_thesis": "央行密集降准降息释放明确宽松信号，但经济基本面疲弱（PMI连续收缩）导致市场整体高开低走，资金从地产消费等顺周期板块流出，转向受益于流动性宽松且景气度独立的新能源和半导体。当前市场情绪贪婪但指数走弱，形成结构性机会而非全面牛市，新能源和半导体板块有望在宽松政策窗口内持续获得资金青睐。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "688981.SH",
+    "603501.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-23T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行已实际降准0.5个百分点并下调逆回购利率10bp，且行长表态将适时进一步降准，宽松政策密集落地。同时，资金轮动信号明确显示从消费地产流向新能源半导体，技术面指数高开低走但板块分化，为结构性机会提供了入场窗口。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_38049b31fb61",
+    "sig_e39115aa3077",
+    "sent_afb94f7676ae"
+  ],
+  "inferred_events": [
+    "inferred_68c74407",
+    "inferred_eba2b53c",
+    "inferred_8248f6ee",
+    "inferred_28b6ef8c",
+    "inferred_cd690755",
+    "inferred_15e0b6b5",
+    "inferred_f3cc663d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行已宣布降准0.5个百分点并下调逆回购利率10bp，释放明确宽松信号",
+    "资金轮动信号显示资金从消费、地产流向新能源、半导体",
+    "新能源和半导体板块有独立景气度（隆基百亿美元订单、半导体龙头业绩预增）",
+    "PMI连续3个月低于荣枯线，经济下行压力下宽松政策有望持续"
+  ],
+  "counter_evidence": [
+    "市场情绪贪婪（恐贪指数67），指数高开低走，短期回调风险存在",
+    "地缘冲突升级可能引发避险情绪，压制风险偏好"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续仍有进一步宽松动作（如降准或降息）",
+    "假设2：新能源和半导体板块的景气度独立于宏观经济，不受PMI持续收缩影响",
+    "假设3：资金轮动趋势可持续，不会因市场整体回调而逆转"
+  ],
+  "uncertainty_map": [
+    "宽松政策效果不及预期，市场继续下行（影响程度：高）",
+    "地缘冲突升级导致全球避险情绪升温，资金流出A股（影响程度：中）",
+    "新能源/半导体板块业绩证伪，无法支撑估值（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.7,
+    "confidence_score": 0.29999999999999993,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益来自宽松政策驱动下的结构性板块上涨，新能源和半导体有独立催化剂；风险在于市场整体下行或板块轮动逆转，止损可设在板块指数跌破近期低点。",
+  "next_validation_questions": [
+    "新能源和半导体板块的成交量是否持续放大，确认资金流入？",
+    "央行是否在2周内宣布进一步降准或降息？",
+    "PMI数据是否在5月出现边际改善？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "新能源或半导体板块出现重大利空（如龙头业绩大幅低于预期）",
+    "市场整体跌破关键支撑位，系统性风险爆发"
+  ],
+  "must_watch_indicators": [
+    "新能源和半导体板块的成交额占比",
+    "央行公开市场操作利率和降准公告",
+    "PMI和社融数据",
+    "北向资金流向"
+  ],
+  "kill_switch_signals": [
+    "新能源或半导体板块指数跌破20日均线",
+    "央行意外收紧流动性（如加息或提高准备金率）",
+    "地缘冲突导致全球股市暴跌"
+  ],
+  "warnings": [
+    "市场情绪贪婪，指数高开低走，短期回调风险不可忽视",
+    "信号来源包括情绪面系统，需结合基本面验证"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T13:25:51.786537",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_ad2094fa",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

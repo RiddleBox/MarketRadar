@@ -1,0 +1,111 @@
+{
+  "opportunity_id": "opp_3dc59175",
+  "opportunity_title": "人形机器人产业爆发",
+  "opportunity_thesis": "人形机器人产业链正经历从概念到量产的质变：乐动机器人IPO获6707倍散户认购、小雨智造获产业资本B+轮融资、Zeroth元点M1接入腾讯生态并达成万台意向，叠加绿的谐波等龙头股价创新高，表明产业资本、二级市场、技术生态三重共振。当前时点处于商业化前夜，市场对产业链实际订单和量产能力的定价尚不充分，存在预期差。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头创历史新高，资金高度聚焦。固态电池技术提供支撑，IPO认购火爆显示市场关注。但短期涨幅较大，缺乏研报覆盖，产业落地进展不确定。整体机会真实，但需警惕回调风险，建议关注后续产业催化。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "601689.SH",
+    "300124.SZ",
+    "002747.SZ",
+    "688160.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "当前催化剂密集：1) 乐动机器人IPO散户认购倍数创纪录，显示市场情绪极度亢奋；2) 小雨智造B+轮融资由北汽、复星等产业资本领投，验证产业资本认可；3) Zeroth元点M1接入腾讯OpenClaw并达成万台意向，商业化落地在即；4) 绿的谐波等龙头股价创新高，技术面确认趋势。",
+  "related_signals": [
+    "sig_cc33dd52b601",
+    "sig_41c9d0ac13e2",
+    "sig_4ef836f98ad7",
+    "sig_aff5a3953935",
+    "sig_12415bc90517"
+  ],
+  "inferred_events": [
+    "inferred_d0ccdc79",
+    "inferred_d99b8303",
+    "inferred_c17fcae8",
+    "inferred_b4102098",
+    "inferred_40398d78",
+    "inferred_3e716770"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "乐动机器人香港IPO散户认购6707倍，国际配售9.54倍，显示市场对人形机器人赛道极度追捧",
+    "小雨智造完成数亿元B+轮融资，北汽产投、复星锐正等产业资本入局，验证产业链价值",
+    "Zeroth元点M1成为全球首款接入腾讯OpenClaw的可量产人形机器人，达成万台硬件终端接入意向，5月下旬上线、上半年预售",
+    "绿的谐波股价创历史新高，涨幅超15%，技术面确认龙头地位"
+  ],
+  "counter_evidence": [
+    "板块短期涨幅较大，部分个股已连续涨停，存在获利回吐风险",
+    "人形机器人量产仍处于早期，实际订单和收入贡献有限，估值可能透支"
+  ],
+  "key_assumptions": [
+    "假设1：人形机器人量产进度符合预期，Zeroth元点M1等产品如期上线并产生收入",
+    "假设2：产业资本持续投入，融资环境未恶化",
+    "假设3：宏观经济和政策环境未出现重大负面冲击"
+  ],
+  "uncertainty_map": [
+    "量产进度不及预期（影响程度：高）",
+    "市场竞争加剧导致毛利率下降（影响程度：中）",
+    "监管政策变化（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：若人形机器人量产顺利，产业链龙头有望实现业绩和估值双击，涨幅空间30%-50%。潜在风险：量产不及预期或市场情绪退潮，回调幅度可能达15%-20%。",
+  "next_validation_questions": [
+    "Zeroth元点M1预售订单量及客户结构如何？",
+    "绿的谐波等龙头公司2026年Q2业绩指引是否超预期？",
+    "乐动机器人上市后股价表现及后续融资计划？"
+  ],
+  "invalidation_conditions": [
+    "Zeroth元点M1预售订单远低于万台意向",
+    "龙头公司业绩不及预期或下调指引",
+    "板块出现集体跌停或资金大幅流出"
+  ],
+  "must_watch_indicators": [
+    "绿的谐波股价走势及成交量",
+    "Zeroth元点M1预售数据",
+    "人形机器人板块资金流向",
+    "乐动机器人上市后股价表现"
+  ],
+  "kill_switch_signals": [
+    "龙头公司发布业绩预警",
+    "产业资本减持或融资中断",
+    "监管层对概念炒作进行窗口指导"
+  ],
+  "warnings": [
+    "板块短期涨幅较大，存在技术性回调风险",
+    "量产进度和订单数据尚未充分验证，需警惕概念炒作"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T18:52:49.296283",
+  "batch_id": "sched_signal_pipeline_20260509_182053_fc7de6_20260509_astock_skill_e7d94824",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

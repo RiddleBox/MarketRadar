@@ -1,0 +1,113 @@
+{
+  "opportunity_id": "opp_08b23216",
+  "opportunity_title": "造船航运景气共振",
+  "opportunity_thesis": "中国造船业一季度新接订单同比暴增195%，全球份额达84.9%，叠加全球首艘2.4万箱甲醇双燃料集装箱船完工，技术突破与订单爆发形成共振。同时，三大船型运价上涨、出口强劲（4月出口同比增14.1%），航运需求旺盛直接拉动造船订单。当前造船板块尚未充分定价这一轮景气周期，预期差较大，且催化剂密集（订单数据、技术突破、运价上涨），构成中期做多机会。\n\n【M13调研】中国4月出口数据超预期，机电和造船业景气度高，贸易顺差扩大，显示外需强劲和制造业竞争力提升。市场存在预期差，但缺乏研报和基本面数据验证，新闻中仅中国船舶业绩利好。风险在于贸易政策、原材料价格和汇率波动。综合评估，机会有一定逻辑但信息不充分，建议谨慎关注。\n\n【M13调研】中国4月出口数据超预期，机电和造船业高景气，贸易顺差扩大，显示外需强劲和制造业竞争力提升。市场存在预期差，但缺乏研报、基本面数据和行业趋势验证，新闻中仅中国船舶业绩利好。风险在于贸易政策、原材料价格和汇率波动。综合评估，机会有一定逻辑但信息不充分，置信度偏低，建议谨慎关注。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600150.SH",
+    "601989.SH",
+    "600685.SH",
+    "600026.SH",
+    "601872.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-08-10T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "2026年5月8-9日密集发布多项利好：全球首艘2.4万箱甲醇双燃料集装箱船完工（技术突破）、一季度新接订单同比增195%（订单爆发）、4月出口同比增14.1%（出口强劲）、三大船型运价上涨（航运景气）。多项信号在同一天集中释放，形成强催化剂窗口，市场尚未充分反应。",
+  "related_signals": [
+    "sig_14c93523d744",
+    "sig_d835222c90d1",
+    "sig_d3ff18d62491",
+    "sig_debd6a76d715"
+  ],
+  "inferred_events": [
+    "inferred_f09f939a",
+    "inferred_f3b2dda0",
+    "inferred_5ffb8eba",
+    "inferred_a624a7c5",
+    "inferred_0c0abcb4",
+    "inferred_38c3be61",
+    "inferred_d00fffd3",
+    "inferred_920291d4",
+    "inferred_05eb70ff",
+    "inferred_f4c9653d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "2026年一季度新接订单量5953万载重吨，同比增长195.2%，全球市场份额达84.9%",
+    "全球首艘2.4万箱甲醇双燃料集装箱船完工，标志技术突破",
+    "4月出口同比增14.1%，贸易顺差848.2亿美元，出口强劲",
+    "三大船型运价上涨，海岬型船日租金创新高，运力偏紧"
+  ],
+  "counter_evidence": [
+    "造船板块已部分上涨，可能存在获利回吐压力",
+    "全球贸易摩擦风险可能影响后续订单持续性"
+  ],
+  "key_assumptions": [
+    "假设1：全球贸易需求持续复苏，航运运价维持高位",
+    "假设2：中国造船业技术优势（甲醇双燃料等）能持续转化为订单",
+    "假设3：地缘政治冲突不显著影响全球航运路线"
+  ],
+  "uncertainty_map": [
+    "全球贸易增速放缓风险（影响程度：高）",
+    "原材料价格波动影响造船利润（影响程度：中）",
+    "竞争对手（韩国、日本）技术追赶速度（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.68,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：造船板块估值修复+业绩增长双击，历史景气周期龙头涨幅50-100%；潜在风险：订单交付周期长（2-3年），短期业绩兑现慢，若全球贸易衰退则运价暴跌，回撤20-30%。",
+  "next_validation_questions": [
+    "中国船舶、中国重工等龙头公司最新订单交付进度和毛利率变化？",
+    "全球干散货和集装箱运价指数（BDI、CCFI）近期走势是否持续上行？",
+    "韩国、日本造船业近期接单情况是否有明显恢复？"
+  ],
+  "invalidation_conditions": [
+    "BDI指数连续2周下跌超过15%",
+    "中国造船业新接订单连续2个月环比下降",
+    "全球主要经济体出现衰退信号（如PMI持续低于45）"
+  ],
+  "must_watch_indicators": [
+    "BDI（波罗的海干散货指数）",
+    "CCFI（中国出口集装箱运价指数）",
+    "中国船舶、中国重工周度订单公告",
+    "全球贸易量月度数据"
+  ],
+  "kill_switch_signals": [
+    "BDI指数单周暴跌20%以上",
+    "中国造船业新接订单同比转负",
+    "中美/中欧贸易摩擦升级导致关税大幅提高"
+  ],
+  "warnings": [
+    "造船板块短期涨幅较大，注意追高风险",
+    "订单交付周期长，业绩兑现存在时间差"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T18:48:43.129472",
+  "batch_id": "sched_signal_pipeline_20260509_182053_fc7de6_20260509_astock_skill_e62544ac",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

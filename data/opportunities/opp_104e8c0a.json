@@ -1,0 +1,117 @@
+{
+  "opportunity_id": "opp_104e8c0a",
+  "opportunity_title": "出口链景气交易",
+  "opportunity_thesis": "中国4月出口同比增14.1%超预期，前4月电动汽车出口增68.1%、机电产品增17.6%，叠加造船新接订单暴增195%，显示出口与制造业高景气具有广泛性和持续性。当前市场尚未充分定价这一结构性变化，出口链龙头（尤其是汽车、机电、造船）存在盈利上修和估值修复的双重机会。\n\n【M13调研】中国4月出口数据超预期，机电和造船业景气度高，贸易顺差扩大，显示外需强劲和制造业竞争力提升。市场存在预期差，但缺乏研报和基本面数据验证，新闻中仅中国船舶业绩利好。风险在于贸易政策、原材料价格和汇率波动。综合评估，机会有一定逻辑但信息不充分，建议谨慎关注。\n\n【M13调研】中国4月出口数据超预期，机电和造船业高景气，贸易顺差扩大，显示外需强劲和制造业竞争力提升。市场存在预期差，但缺乏研报、基本面数据和行业趋势验证，新闻中仅中国船舶业绩利好。风险在于贸易政策、原材料价格和汇率波动。综合评估，机会有一定逻辑但信息不充分，置信度偏低，建议谨慎关注。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600150.SH",
+    "601989.SH",
+    "600685.SH",
+    "000625.SZ",
+    "002594.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "海关总署5月9日集中发布4月及前4月出口数据，多项指标超预期且增速亮眼，市场尚未充分消化。同时，造船业一季度新接订单数据于同日发布，形成多重利好共振，当前是布局出口链的黄金窗口。",
+  "related_signals": [
+    "sig_d835222c90d1",
+    "sig_d3ff18d62491",
+    "sig_e9adf347ff0c",
+    "sig_dba0b0625849"
+  ],
+  "inferred_events": [
+    "inferred_4d35d3ea",
+    "inferred_13dab0dc",
+    "inferred_6f6362ee",
+    "inferred_441e664b",
+    "inferred_16d13569",
+    "inferred_0f7fb382",
+    "inferred_b8ed3025",
+    "inferred_4a8aa67d",
+    "inferred_a942b062",
+    "inferred_b3eabd65",
+    "inferred_9c8a773f",
+    "inferred_b7ef7758",
+    "inferred_32c015fa",
+    "inferred_dcfdccfd"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中国4月出口同比增14.1%，贸易顺差848.2亿美元，均超预期",
+    "前4月电动汽车出口增长68.1%，机电产品出口增长17.6%，增速显著高于整体出口",
+    "一季度造船新接订单量同比增195.2%，全球市场份额84.9%",
+    "出口高景气具有持续性，前4月整体出口增速11.3%已连续多月保持两位数增长"
+  ],
+  "counter_evidence": [
+    "进口增速25.3%高于出口，可能反映内需改善或大宗商品涨价，对出口企业利润构成成本压力",
+    "地缘政治冲突升级（中东局势）可能干扰全球贸易物流和需求"
+  ],
+  "key_assumptions": [
+    "假设1：出口高景气可持续，后续月份数据不会大幅回落",
+    "假设2：中美贸易摩擦未显著升级，关税政策不出现超预期恶化",
+    "假设3：全球需求未出现明显衰退，主要贸易伙伴经济保持韧性"
+  ],
+  "uncertainty_map": [
+    "全球需求变化（影响程度：高）：若欧美经济超预期放缓，出口增速可能快速回落",
+    "贸易政策风险（影响程度：中）：美国大选年可能加征关税或出台新的贸易限制",
+    "汇率波动（影响程度：中）：人民币若大幅升值将削弱出口企业竞争力"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.65,
+    "execution_readiness": 0.8
+  },
+  "risk_reward_profile": "潜在收益来自出口链龙头盈利上修和估值修复，预计10-20%上行空间；主要风险为出口数据回落或贸易摩擦升级，下行风险约5-10%，可通过止损控制。",
+  "next_validation_questions": [
+    "后续月份（5月、6月）出口数据能否维持两位数增长？",
+    "主要出口企业（如中国船舶、比亚迪）的订单和排产情况是否持续饱满？",
+    "全球主要经济体PMI等先行指标是否指向需求扩张？"
+  ],
+  "invalidation_conditions": [
+    "5月出口增速回落至个位数或转负",
+    "中美/欧盟宣布对华电动汽车或机电产品加征高额关税",
+    "全球主要经济体PMI连续两个月跌破荣枯线"
+  ],
+  "must_watch_indicators": [
+    "每月海关总署出口数据（同比增速）",
+    "中国制造业PMI新出口订单分项",
+    "主要出口企业（中国船舶、比亚迪）的订单公告",
+    "人民币汇率走势"
+  ],
+  "kill_switch_signals": [
+    "出口增速连续两个月低于市场预期",
+    "中美贸易摩擦实质性升级（如加征关税落地）",
+    "全球航运价格大幅下跌或集装箱运量骤降"
+  ],
+  "warnings": [
+    "出口数据为滞后指标，市场可能已部分定价，需关注预期差",
+    "地缘政治风险（中东冲突）可能短期冲击全球贸易情绪"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T22:14:17.652907",
+  "batch_id": "sched_signal_pipeline_20260509_212153_0b40a6_20260509_astock_skill_c78bec52",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

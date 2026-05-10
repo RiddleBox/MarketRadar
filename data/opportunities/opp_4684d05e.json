@@ -1,0 +1,110 @@
+{
+  "opportunity_id": "opp_4684d05e",
+  "opportunity_title": "机器人产业加速落地",
+  "opportunity_thesis": "人形机器人概念股集体上涨、龙头创历史新高，叠加产业链融资极度火爆（乐动机器人IPO获6707倍散户认购）和商业化落地加速（Zeroth M1接入腾讯OpenClaw并达成万台意向），表明机器人产业正从概念炒作进入量产和生态构建阶段。当前市场对产业加速落地的定价尚不充分，存在预期差，且催化剂密集，构成中期结构性机会。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】人形机器人板块在情绪和资金推动下爆发，但缺乏研报和基本面验证，短期过热风险显著。产业处于初期，预期差大，但需谨慎对待回调可能。建议关注后续产业落地进展，避免追高。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "002031.SZ",
+    "603728.SH",
+    "300124.SZ",
+    "002747.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "当前时点催化剂密集：1）乐动机器人IPO获6707倍散户认购，显示市场对机器人赛道极度追捧；2）Zeroth M1成为全球首款接入腾讯OpenClaw的可量产人形机器人，并达成万台硬件终端接入意向，商业化落地进入实质阶段；3）龙头股绿的谐波创历史新高，板块赚钱效应扩散。这些事件集中在2天内发生，形成共振，且市场尚未充分定价产业加速落地的长期影响。",
+  "related_signals": [
+    "sig_cc33dd52b601",
+    "sig_41c9d0ac13e2",
+    "sig_4ef836f98ad7",
+    "sig_12415bc90517"
+  ],
+  "inferred_events": [
+    "inferred_be6b3d43",
+    "inferred_80916f9a",
+    "inferred_242e50ee",
+    "inferred_71b08635",
+    "inferred_3a8c0046",
+    "inferred_667d6b12"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "人形机器人概念股集体上涨，多只个股涨停或创新高，板块强势确认",
+    "绿的谐波股价创历史新高，龙头领涨信号明确",
+    "乐动机器人香港IPO获6707倍散户认购，融资极度活跃，产业资本认可度高",
+    "Zeroth M1接入腾讯OpenClaw并达成万台硬件终端接入意向，商业化落地加速"
+  ],
+  "counter_evidence": [
+    "板块短期涨幅较大，部分个股已创新高，可能存在获利回吐压力",
+    "历史案例显示，技术突破和概念炒作后若无订单验证，股价可能回落"
+  ],
+  "key_assumptions": [
+    "假设1：人形机器人量产和商业化落地进度符合或超预期，万台意向能转化为实际订单",
+    "假设2：宏观经济和政策环境不出现重大负面变化，市场风险偏好维持或提升",
+    "假设3：产业链融资活跃度持续，后续更多公司获得资本支持"
+  ],
+  "uncertainty_map": [
+    "商业化落地进度不确定性（影响程度：高）：万台意向能否转化为实际订单，以及量产时间表是否如期",
+    "板块短期过热风险（影响程度：中）：连续上涨后可能面临技术性回调",
+    "竞争格局变化（影响程度：中）：其他厂商可能推出竞品，影响龙头地位"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.6,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：若产业加速落地逻辑兑现，龙头股有望实现30-50%涨幅；风险：若商业化进度不及预期或板块过热回调，最大回撤约15-20%，止损点可设在近期低点下方5-10%。",
+  "next_validation_questions": [
+    "Zeroth M1与腾讯OpenClaw合作的万台意向是否有正式合同或预付款？",
+    "绿的谐波等龙头股近期是否有机构调研或业绩指引更新？",
+    "乐动机器人上市后股价表现如何，是否持续获得资金追捧？"
+  ],
+  "invalidation_conditions": [
+    "Zeroth M1量产或预售进度明显延迟，或万台意向未能转化为订单",
+    "板块出现集体大幅回调，龙头股跌破关键支撑位",
+    "产业链融资热度骤降，后续IPO或定增遇冷"
+  ],
+  "must_watch_indicators": [
+    "绿的谐波股价走势及成交量变化",
+    "Zeroth M1量产和预售进展公告",
+    "乐动机器人上市后股价及换手率",
+    "人形机器人板块整体成交额和资金流向"
+  ],
+  "kill_switch_signals": [
+    "板块单日跌幅超5%且成交量放大",
+    "龙头股跌破20日均线",
+    "出现重大负面新闻（如量产失败、核心团队离职）"
+  ],
+  "warnings": [
+    "注意：板块短期涨幅较大，追高风险较高，建议等待回调或分批建仓",
+    "注意：商业化落地进度存在不确定性，需持续跟踪订单和量产进展"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T17:13:31.071287",
+  "batch_id": "sched_signal_pipeline_20260509_163638_e0e39c_20260509_astock_skill_6e9d55ba",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

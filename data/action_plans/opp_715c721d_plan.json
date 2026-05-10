@@ -1,0 +1,63 @@
+{
+  "plan_id": "plan_9d5bd3b94f7c",
+  "opportunity_id": "opp_715c721d",
+  "plan_summary": "BULLISH | 600048.SH, 001979.SZ",
+  "primary_instruments": [
+    "600048.SH",
+    "001979.SZ",
+    "600383.SH",
+    "000002.SZ",
+    "600325.SH"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破近期低点8.00元（2026年4月低点）"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "第一目标9.50元（前期平台阻力），第二目标10.50元（2026年2月高点）"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0% | Kelly参考=17.5%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入600048.SH，仓位为总资金的20%（上限30%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "保利发展股价站稳10日均线（约8.50元）且成交量放大至5日均量1.5倍以上"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总仓位50%（累计仓位不超过总资金的50%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 浮盈5%以上（即股价达到约8.93元），且上海二手房日成交数据连续3日高于800套"
+    }
+  ],
+  "valid_until": "2026-05-31T00:13:03.965862",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T00:13:03.965965",
+  "opportunity_priority": "research"
+}

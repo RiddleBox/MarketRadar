@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_5bfc0074",
+  "opportunity_title": "人形机器人产业链爆发",
+  "opportunity_thesis": "人形机器人产业链出现多重共振信号：A股概念股集体上涨、核心零部件龙头绿的谐波创历史新高、港股IPO获6707倍超额认购，显示市场情绪和资金高度聚焦。结合央行降准预期和科技突破支持政策，该板块具备短期交易机会，但需警惕概念炒作后缺乏订单验证的风险。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】人形机器人板块在5月8日逆势大涨，成交额放量，龙头业绩增长，但短期涨幅大、缺乏研报覆盖，且A股整体回调风险未消。机会真实但需警惕回调，建议关注产业落地进展，谨慎参与。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "603728.SH",
+    "300124.SZ",
+    "002747.SZ",
+    "002896.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "当前时点催化剂密集：1) 5月8日概念股集体涨停、龙头创新高，市场情绪高涨；2) 乐动机器人港股IPO获6707倍认购，显示一级市场极度看好；3) 央行降准预期（概率85%）和科技突破支持政策（概率65%）提供宏观和产业政策支撑；4) 历史案例显示技术突破+政策催化可推动板块短期上涨，但需警惕商业化验证不足的风险。",
+  "related_signals": [
+    "sig_1da9f093af7d",
+    "sig_cc33dd52b601",
+    "sig_41c9d0ac13e2",
+    "sig_4ef836f98ad7"
+  ],
+  "inferred_events": [
+    "inferred_9c9b78d0",
+    "inferred_f2364ab2",
+    "inferred_f67e9ae5",
+    "inferred_ec2df7bb",
+    "inferred_eb8bc471",
+    "inferred_0f60fada",
+    "inferred_ae804392",
+    "inferred_ba67755b",
+    "inferred_c3e85128",
+    "inferred_e1f538c1"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "人形机器人概念股集体上涨，多只个股涨停或创新高",
+    "绿的谐波股价创历史新高，盘中涨超15%",
+    "乐动机器人香港IPO获6707倍散户认购，国际配售9.54倍",
+    "央行降准预期（概率85%）和科技突破支持政策（概率65%）"
+  ],
+  "counter_evidence": [
+    "历史案例case_2024_tech_breakthrough显示技术突破后缺乏订单验证导致回落",
+    "概念炒作可能已部分price-in，需警惕追高风险"
+  ],
+  "key_assumptions": [
+    "假设1：人形机器人产业链商业化进展持续推进，订单落地",
+    "假设2：央行降准或科技支持政策在1个月内落地",
+    "假设3：市场情绪不会因外部风险（如地缘冲突）突然逆转"
+  ],
+  "uncertainty_map": [
+    "商业化订单验证进度（影响程度：高）",
+    "政策落地时间与力度（影响程度：中）",
+    "市场情绪持续性（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 8,
+    "tradability": 7,
+    "risk_clarity": 5,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.65
+  },
+  "risk_reward_profile": "潜在收益：若商业化订单落地+政策催化，板块有望延续上涨趋势，龙头股可能再涨20-30%。潜在风险：概念炒作后缺乏订单验证，股价可能回落15-20%。风险收益比约1:1.5，需严格止损。",
+  "next_validation_questions": [
+    "人形机器人产业链是否有近期订单或合作公告？",
+    "央行降准或科技支持政策是否在1个月内落地？",
+    "乐动机器人上市后股价表现如何？是否带动板块情绪？"
+  ],
+  "invalidation_conditions": [
+    "人形机器人概念股出现集体跌停或大幅回调",
+    "央行降准或科技支持政策落空",
+    "外部风险事件（如地缘冲突）导致市场避险情绪升温"
+  ],
+  "must_watch_indicators": [
+    "绿的谐波股价走势及成交量",
+    "人形机器人概念板块指数",
+    "央行降准或科技政策动态",
+    "乐动机器人上市后股价表现"
+  ],
+  "kill_switch_signals": [
+    "概念股集体跌停或板块指数单日跌幅超5%",
+    "央行明确表示不降准或政策力度不及预期",
+    "乐动机器人上市首日破发"
+  ],
+  "warnings": [
+    "注意：当前信号以概念炒作为主，缺乏订单验证，需警惕回调风险",
+    "注意：历史案例显示技术突破后若无商业化支撑，板块可能快速回落"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T13:04:48.982904",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_1e6d287a",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

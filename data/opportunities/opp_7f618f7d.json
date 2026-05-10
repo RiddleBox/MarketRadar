@@ -1,0 +1,173 @@
+{
+  "opportunity_id": "opp_7f618f7d",
+  "opportunity_title": "科技成长主线机会",
+  "opportunity_thesis": "资金从地产消费持续流向新能源和半导体，叠加新能源汽车购置税减免延续至2027年底、光模块龙头中际旭创市值突破万亿、新易盛一季报净利润增长76.8%、某半导体龙头Q1业绩预增150%-180%等多重利好，科技成长主线清晰。当前市场情绪中性偏乐观，预期差仍存，是布局新能源、半导体及AI产业链的窗口期。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "688981.SH",
+    "002371.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "新能源汽车购置税减免政策刚于4月24日发布，光模块龙头业绩爆发（中际旭创市值破万亿、新易盛净利增76.8%）、半导体龙头业绩预增150%-180%均在4月23-24日集中释放，形成政策+业绩双重催化剂，市场尚未充分定价，时间窗口紧迫。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sent_ec6c7cba",
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_30d3e00700ed",
+    "sig_1c94cfaf9bad",
+    "sig_c65bd11e442f",
+    "sig_810b1cc2cedf",
+    "sig_80c24e558ad0",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_e552050e5030",
+    "sig_5a2ec57f6916",
+    "sig_a19c232b39d7",
+    "sig_a1d7094e54d1",
+    "sig_d9ef44f292bd",
+    "sig_d8cb7635ade9",
+    "sig_39b17c44aba1",
+    "sig_294db3749c23",
+    "sig_1da9f093af7d",
+    "sig_906283b999bb",
+    "sig_3a8e941b3c94",
+    "sig_5c2b6019cab4",
+    "sig_8a44caabf0c3",
+    "sig_58fd56efe3f5",
+    "sig_3e8e8f0e0f71",
+    "sig_14c93523d744",
+    "sig_4149b887d9b2",
+    "sig_911415444bf5",
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017",
+    "sig_41c9d0ac13e2",
+    "sig_d36d819acfc5",
+    "sig_e49e84bd5c49",
+    "sig_df713685bee1",
+    "sig_050c391c993e",
+    "sig_588712b4e2b5",
+    "sig_b0343a771aa0",
+    "sig_68fd6d4291f4",
+    "sig_c53b812566be",
+    "sig_4ef836f98ad7",
+    "sig_1427d286ec9e",
+    "sig_e8ba30264edb",
+    "sig_ffdee791adf2",
+    "sig_d835222c90d1",
+    "sig_4a9e081d7724",
+    "sig_237f646ed46b"
+  ],
+  "inferred_events": [
+    "inferred_de4cd8a8",
+    "inferred_a231810e",
+    "inferred_67b127c7",
+    "inferred_13aa6e8c",
+    "inferred_2a3ccb9d",
+    "inferred_1b6a2717",
+    "inferred_a10e2648",
+    "inferred_f538b337",
+    "inferred_414877da",
+    "inferred_3b09f6c3"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "新能源汽车购置税减免延续至2027年底，政策正式落地",
+    "中际旭创盘中市值突破万亿，光模块行业龙头地位确认",
+    "新易盛一季报净利润同比增长76.8%，业绩超预期",
+    "某半导体龙头Q1业绩预增150%-180%，AI芯片需求爆发",
+    "资金从消费、地产流向新能源、半导体，板块轮动信号持续"
+  ],
+  "counter_evidence": [
+    "市场整体恐贪指数未显示极端恐惧，情绪中性，缺乏恐慌性买入机会",
+    "部分信号（如每日互动AI业务收入）体量较小，对板块带动有限"
+  ],
+  "key_assumptions": [
+    "假设1：新能源汽车购置税减免政策执行无变数",
+    "假设2：光模块和半导体龙头业绩增长可持续，非一次性因素",
+    "假设3：资金从地产消费向科技成长轮动趋势延续"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：宏观经济复苏力度（影响程度：高）",
+    "不确定性2：地缘政治风险（中东冲突）对市场情绪冲击（影响程度：中）",
+    "不确定性3：板块轮动持续性，若资金回流消费地产则主线瓦解（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.4,
+    "confidence_score": 0.38000000000000006,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：新能源/半导体板块在政策+业绩双驱动下有望迎来10-20%涨幅；潜在风险：宏观经济不及预期或地缘风险导致市场整体回调，最大回撤约8-10%。",
+  "next_validation_questions": [
+    "光模块龙头（中际旭创、新易盛）后续订单和产能利用率数据是否持续向好？",
+    "半导体龙头业绩预增的具体公司名称和订单可见性如何？",
+    "新能源汽车购置税减免政策对终端销量的实际拉动效果如何？"
+  ],
+  "invalidation_conditions": [
+    "资金从新能源/半导体明显流出，重回消费/地产",
+    "光模块或半导体龙头业绩不及预期或出现负面消息",
+    "宏观经济数据大幅恶化，市场系统性下跌"
+  ],
+  "must_watch_indicators": [
+    "新能源/半导体板块资金流向（北向资金、主力资金）",
+    "光模块龙头（中际旭创、新易盛）股价走势和成交量",
+    "新能源汽车月度销量数据",
+    "半导体行业景气度指标（如全球半导体销售额）"
+  ],
+  "kill_switch_signals": [
+    "中际旭创或新易盛出现单日跌幅超5%且放量",
+    "新能源汽车购置税减免政策被取消或修改",
+    "半导体龙头业绩预告大幅低于预期"
+  ],
+  "warnings": [
+    "注意：部分信号（如某半导体龙头）未明确公司名称，需进一步确认",
+    "注意：地缘政治风险（中东冲突）可能对整体市场情绪造成冲击"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T13:18:37.493130",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_6538b279",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

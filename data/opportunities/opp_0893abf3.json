@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_0893abf3",
+  "opportunity_title": "地缘避险交易",
+  "opportunity_thesis": "中东冲突（霍尔木兹海峡交火、以黎大规模交火）急剧升级，而俄乌停火预期虽提供情绪对冲但无法逆转中东风险。全球避险情绪将主导短期市场，原油、黄金、军工等避险资产受益，风险资产承压。当前信号密集、时效性极强，构成短期避险交易窗口。\n\n【M13调研】机会描述的中东冲突升级在最近新闻中未获证实，俄乌停火预期反复但不足以支撑避险交易。市场关注点分散，无避险情绪迹象。基本面数据缺失，行业趋势无信息。整体来看，该机会缺乏事实依据，风险较高，不建议采纳。\n\n【M13调研】该机会基于未经证实的中东冲突升级和俄乌停火预期，但M13调研和新闻分析均未发现相关事件或市场避险情绪。基本面数据和行业趋势缺失。机会描述与实际情况严重不符，属于高风险虚假信号。建议不采纳。",
+  "target_markets": [
+    "A_SHARE",
+    "HK",
+    "US"
+  ],
+  "target_instruments": [
+    "601857.SH",
+    "600028.SH",
+    "600547.SH",
+    "600489.SH",
+    "600893.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-05-25T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "霍尔木兹海峡交火（5月8日）与以军大规模袭击黎巴嫩真主党（5月9日）在24小时内密集发生，中东冲突升级信号明确且未被市场完全消化。俄乌停火预期虽提供部分对冲，但中东风险独立且紧迫，避险交易窗口已开启。",
+  "related_signals": [
+    "sig_2cf7a78fa7a2",
+    "sig_ec500e4d7f22",
+    "sig_211956c76085",
+    "sig_860b74669ffd",
+    "sig_68f154d345f7",
+    "sig_dbba3aafdd0f"
+  ],
+  "inferred_events": [
+    "inferred_dc3d7826",
+    "inferred_36e7071f",
+    "inferred_3edd90da",
+    "inferred_92f83979",
+    "inferred_b20120ad",
+    "inferred_6a15a9d2"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "霍尔木兹海峡附近2小时内接连传出交火声，直接威胁全球原油运输通道",
+    "以军一天内袭击超85个黎巴嫩真主党目标，空袭致7人死亡，冲突强度显著升级",
+    "黎真主党使用无人机炸伤3名以军士兵，冲突双向升级",
+    "历史案例case_2024_geopolitical显示地缘风险爆发后15天内避险资产表现优异"
+  ],
+  "counter_evidence": [
+    "俄乌停火预期（普京同意延长停火、收到会晤口信）可能部分缓解全球避险情绪",
+    "中东冲突若迅速降温（如外交干预），避险交易窗口将提前关闭"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡交火事件不是孤立事件，后续有进一步升级风险",
+    "假设2：以黎冲突在未来1-2周内不会快速停火",
+    "假设3：全球市场对中东风险的定价尚未充分反映"
+  ],
+  "uncertainty_map": [
+    "中东冲突升级速度与外交干预节奏（影响程度：高）",
+    "俄乌停火进展对全球风险偏好的对冲效果（影响程度：中）",
+    "原油、黄金等资产价格已部分反映避险情绪（影响程度：中）"
+  ],
+  "priority_level": "urgent",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 7,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.6,
+    "confidence_score": 0.09000000000000002,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：原油、黄金、军工等避险资产短期上涨5-15%；潜在风险：冲突快速降温导致避险溢价消退，回撤3-5%；风险收益比约2:1至3:1。",
+  "next_validation_questions": [
+    "霍尔木兹海峡交火事件是否有官方确认或后续报道？",
+    "以黎冲突是否有国际调停或停火信号？",
+    "原油期货和黄金ETF今日开盘是否有跳空高开？"
+  ],
+  "invalidation_conditions": [
+    "霍尔木兹海峡交火被证实为误报或演习",
+    "以黎双方宣布停火或重大外交突破",
+    "俄乌停火协议正式签署，全球风险偏好大幅回升"
+  ],
+  "must_watch_indicators": [
+    "WTI原油期货价格",
+    "COMEX黄金期货价格",
+    "VIX恐慌指数",
+    "中东主要媒体（如半岛电视台）冲突报道"
+  ],
+  "kill_switch_signals": [
+    "霍尔木兹海峡航运恢复正常",
+    "以黎双方宣布无条件停火",
+    "原油期货价格单日暴跌超5%"
+  ],
+  "warnings": [
+    "注意：信号来源为新闻，部分事件（如霍尔木兹交火）尚未有官方确认",
+    "注意：俄乌停火预期可能随时超预期推进，削弱避险逻辑"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T05:15:16.786875",
+  "batch_id": "sched_signal_pipeline_20260510_045720_1d2d59_20260510_astock_skill_ae7e1fcd",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_dfe3b06c",
+  "opportunity_title": "中东避险交易",
+  "opportunity_thesis": "美军袭击伊朗民用船只并误击，霍尔木兹海峡交火升级，地缘冲突从口头威胁转为实质性军事摩擦。短期避险情绪将急剧升温，黄金、原油及军工板块直接受益，且高盛调查显示市场预期航运受阻将持续至下半年，油价高位有支撑。当前市场尚未完全定价冲突升级的持续性，存在预期差。\n\n【M13调研】机会描述声称美军袭击伊朗并导致霍尔木兹海峡交火升级，但最近20条新闻中无任何相关报道，仅包含公司公告、行业数据等无关内容。研报和行业趋势数据为空。基本面数据为空。因此，该机会缺乏事实依据，存在重大利空（虚假信息风险）。建议忽略此机会，避免投资决策失误。\n\n【M13调研】该机会描述的地缘冲突事件在最近新闻、研报和基本面数据中均无任何证实，属于虚假信息。市场未定价该事件是合理的，因为事件并未发生。投资者应避免基于此机会进行任何投资决策，以免遭受损失。",
+  "target_markets": [
+    "A_SHARE",
+    "HK",
+    "US"
+  ],
+  "target_instruments": [
+    "601899.SH",
+    "600547.SH",
+    "600489.SH",
+    "600988.SH",
+    "002155.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-05-23T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "美军袭击伊朗民用船只（5月7日）和霍尔木兹海峡交火（5月8日）是冲突从口头威胁升级为实质性军事摩擦的转折点，黄金已开始上涨（周涨1.78%），但市场对冲突持续性和油价高位预期尚未充分定价，当前是事件驱动的早期反应窗口。",
+  "related_signals": [
+    "sig_8f4f02f6f0e0",
+    "sig_0806bfd8639e",
+    "sig_4bdf8baa2d3a",
+    "sig_82a8c461a4b6",
+    "sig_70a333e7b67e",
+    "sig_ec500e4d7f22"
+  ],
+  "inferred_events": [
+    "inferred_cd9eedae",
+    "inferred_cd8eb77a",
+    "inferred_301dbdce",
+    "inferred_8ff5c7af",
+    "inferred_dab56280",
+    "inferred_1d45d709"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军袭击伊朗民用船只致10伤5失踪，霍尔木兹海峡2小时内接连传出交火声，冲突实质性升级",
+    "COMEX黄金期货周涨1.78%，避险资产已开始反应",
+    "高盛调查显示多数投资者预期航运受阻持续至7月后，油价预期80-90美元/桶"
+  ],
+  "counter_evidence": [
+    "冲突可能被迅速外交平息，风险溢价快速消退",
+    "黄金已周涨1.78%，部分避险情绪可能已price-in"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡航运受阻持续至少2周以上",
+    "假设2：冲突不会迅速升级为全面战争（避免极端风险）"
+  ],
+  "uncertainty_map": [
+    "冲突升级为全面战争（影响程度：极高）",
+    "外交斡旋迅速平息冲突（影响程度：高）",
+    "油价上涨引发通胀预期导致央行收紧（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.4,
+    "confidence_score": -0.045,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：黄金股短期涨幅5-15%，若冲突持续则更高；风险：冲突快速平息导致避险资产回落，最大回撤约5-8%。",
+  "next_validation_questions": [
+    "霍尔木兹海峡航运是否实际中断？",
+    "美国或伊朗是否有外交谈判信号？",
+    "原油期货价格是否突破前高？"
+  ],
+  "invalidation_conditions": [
+    "冲突双方宣布停火或外交谈判",
+    "霍尔木兹海峡航运恢复正常",
+    "黄金价格跌破4700美元/盎司"
+  ],
+  "must_watch_indicators": [
+    "WTI原油期货价格",
+    "COMEX黄金期货价格",
+    "霍尔木兹海峡航运状态",
+    "美国/伊朗官方声明"
+  ],
+  "kill_switch_signals": [
+    "冲突双方宣布停火",
+    "霍尔木兹海峡航运恢复",
+    "黄金期货单日跌幅超2%"
+  ],
+  "warnings": [
+    "地缘冲突事件高度不确定，需严格止损",
+    "黄金已周涨1.78%，追高需谨慎"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T10:28:50.073266",
+  "batch_id": "sched_signal_pipeline_20260509_051555_1189ae_20260509_astock_skill_de24da73",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,305 @@
+{
+  "symbol": "000002.SZ",
+  "research_level": "deep",
+  "triggered_by": "m3",
+  "reports": [],
+  "news": [
+    {
+      "title": "浪潮信息000977.SZ：董事彭震、高管刘军完成减持计划，合计减持3万股",
+      "content": "2026年5月8日，浪潮电子信息产业股份有限公司（000977.SZ）发布公告称，公司董事彭震先生、高级管理人员刘军先生已完成此前披露的股份减持计划。本次减持通过集中竞价交易方式进行，减持股份来源为股权激励计划行权所得股份。",
+      "source": "界面新闻",
+      "published_at": "2026-05-09 18:18:19",
+      "url": "http://finance.eastmoney.com/a/202605093732252730.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "深交所对智飞生物（300122.SZ）发监管函：涉2020–2025Q3多期财报差错更正",
+      "content": "深圳证券交易所于2026年5月8日向重庆智飞生物制品股份有限公司（300122.SZ）及相关当事人蒋仁生、蒋凌峰、李振敬发出创业板监管函〔2026〕第68号。",
+      "source": "界面新闻",
+      "published_at": "2026-05-09 16:43:53",
+      "url": "http://finance.eastmoney.com/a/202605093732236939.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "光弘科技(300735.SZ：增资一亿元夯实华东汽车电子布局，有望稳步提升经营规模与盈利水平",
+      "content": "光弘科技(300735.SZ在互动平台上称，嘉兴光弘是公司布局华东地区的重要生产基地，主要为区域内客户提供车载电机控制单元、功率模块等汽车电子部件的专业制造服务。华东作为国内核心汽车产业集聚地，汽车电动化、智能化持续推进，长期看好区域汽车电子行业需求稳步扩容、景气度持续向上。",
+      "source": "界面新闻",
+      "published_at": "2026-05-09 16:42:49",
+      "url": "http://finance.eastmoney.com/a/202605093732236841.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "伟星股份002003.SZ：2025年度分红方案获股东会通过",
+      "content": "伟星股份(002003.SZ在互动平台上称，公司2025年度利润分配方案于2026年5月7日经公司2025年度股东会审议通过，目前权益分派实施相关事宜正在准备过程中，敬请关注公司后续公告。",
+      "source": "界面新闻",
+      "published_at": "2026-05-09 16:42:44",
+      "url": "http://finance.eastmoney.com/a/202605093732237035.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "长城证券002939.SZ：香港子公司长证国际获SFC颁发第1、4、9类业务牌照",
+      "content": "2026年5月9日，长城证券股份有限公司（002939.SZ）发布公告称，公司全资子公司长证国际金融有限公司于近日获得香港证券及期货事务监察委员会（SFC）颁发的第1类（证券交易）、第4类（就证券提供意见）和第9类（提供资产管理）受规管活动牌照，获准开展相关业务。",
+      "source": "界面新闻",
+      "published_at": "2026-05-09 16:13:31",
+      "url": "http://finance.eastmoney.com/a/202605093732229685.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "ETF英雄汇：航空航天ETF华泰柏瑞(563380.SH)领涨、纳指科技ETF景顺(159509.SZ溢价明显-20260508",
+      "content": "航空航天ETF天弘（159241.SZ）最新份额规模达8.79亿份。该产品紧密跟踪国证航天航空行业指数，布局国防军工行业。指数权重股包括航发动力、光启技术、中国卫星、航天电子、中航沈飞、航天发展、中航西飞、中航机载、上海瀚讯、国博电子等公司。",
+      "source": "界面新闻",
+      "published_at": "2026-05-08 17:16:25",
+      "url": "http://finance.eastmoney.com/a/202605083731570658.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "行业持续回暖！机床ETF华夏（159663.SZ）上涨1.11%，恒锋工具20%涨停",
+      "content": "机床板块走强，截至13:24，机床ETF华夏（159663.SZ）上涨1.11%，其成分股恒锋工具上涨20.01%，绿的谐波上涨15.15%，恒而达上涨10.27%，雷赛智能上涨10.00%，日发精机上涨9.93%。",
+      "source": "每日经济新闻",
+      "published_at": "2026-05-08 13:30:50",
+      "url": "http://finance.eastmoney.com/a/202605083731358994.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "南方基金旗下机器人ETF南方(159258.SZ量产元年加持，产业成长逻辑凸显",
+      "content": "截至上午11：30，机器人ETF南方(159258.SZ上涨1.63%，其成分股拓普集团涨幅达5.21%，板块表现亮眼。",
+      "source": "财联社",
+      "published_at": "2026-05-08 12:59:41",
+      "url": "http://finance.eastmoney.com/a/202605083731339857.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "汉嘉数智(300746.SZ：因2025年业绩预告严重失准收深交所监管函",
+      "content": "2026年5月7日，深圳证券交易所创业板公司管理部向汉嘉数智科技集团股份有限公司（300746.SZ）下发监管函（创业板监管函〔2026〕第66号），指出公司前期披露的2025年度业绩预告不准确。",
+      "source": "界面新闻",
+      "published_at": "2026-05-08 08:56:39",
+      "url": "http://finance.eastmoney.com/a/202605083730873411.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "深交所对中节能铁汉(300197.SZ及刘水等给予公开谴责及三年任职限制处分",
+      "content": "2026年4月28日，深圳证券交易所对中节能铁汉生态环境股份有限公司（300197.SZ）及相关当事人作出公开认定等纪律处分决定。",
+      "source": "界面新闻",
+      "published_at": "2026-05-08 08:56:25",
+      "url": "http://finance.eastmoney.com/a/202605083730873340.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "霍尔木兹海峡受阻 德航运巨头称每周额外花费超5000万美元",
+      "content": "【霍尔木兹海峡受阻 德航运巨头称每周额外花费超5000万美元】2月28日美以伊战事开始以来，霍尔木兹海峡通行持续受阻。当地时间5月8日，德国航运巨头赫伯罗特公司高管尼尔斯·豪普特接受总台记者采访时表示，战事爆发以来，该公司平均每周增加至少5000万美元额外成本。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 18:43:31",
+      "url": "https://finance.eastmoney.com/a/202605093732253572.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "博杰股份：公司光耦合设备尚处于方案设计和实验室研发阶段",
+      "content": "【博杰股份：公司光耦合设备尚处于方案设计和实验室研发阶段】5月9日，博杰股份在接待机构调研时表示，公司在光模块领域目前的布局主要聚焦于光耦合设备的研发。目前，该设备尚处于方案设计和实验室研发阶段，相关产品研发及市场推广尚存在不确定性。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 18:43:23",
+      "url": "https://finance.eastmoney.com/a/202605093732253745.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "财政部下达支持学前教育发展资金458亿元 推进学前教育普及普惠安全优质发展",
+      "content": "【财政部下达支持学前教育发展资金458亿元 推进学前教育普及普惠安全优质发展】为贯彻落实党中央、国务院决策部署，推进学前教育普及普惠安全优质发展，财政部近期下达2026年支持学前教育发展资金458亿元，比上年增加125.6亿元，增长38%，重点支持地方巩固落实好学前教育免保育教育费政策；补足普惠性资源短板，提高保教质量，巩固家庭经济困难儿童等群体资助制度。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 18:37:36",
+      "url": "https://finance.eastmoney.com/a/202605093732252919.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "阿里未参与DeepSeek融资谈判 市场人士否认“谈崩”传闻",
+      "content": "【阿里未参与DeepSeek融资谈判 市场人士否认“谈崩”传闻】近日有消息称，深度求索（DeepSeek）正在展开首轮融资计划，吸引了包括腾讯和阿里巴巴等洽谈入股，但近日阿里巴巴和DeepSeek谈崩了。今日，有市场消息人士对第一财经记者透露，阿里应该没有进行谈判。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 18:37:35",
+      "url": "https://finance.eastmoney.com/a/202605093732252585.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "苏姿丰确认将出席在上海举办的AMD AI开发者日",
+      "content": "【苏姿丰确认将出席在上海举办的AMD AI开发者日】5月9日，AMD中国宣布，AMDAI开发者日2026将于5月19日在上海举办，AMD董事会主席兼首席执行官苏姿丰将出席本次开发者日，并发表主题演讲。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 18:37:23",
+      "url": "https://finance.eastmoney.com/a/202605093732252693.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "百亿量化私募进化论暂停旗下部分产品新客申购",
+      "content": "【百亿量化私募进化论暂停旗下部分产品新客申购】进化论资产今日发布公告称，基于公司管理的部分产品当前运作情况，为维护投资者利益、保障策略运作的持续性及稳定性，本着投资者利益优先原则，决定自2026年5月9日起，暂停办理部分产品的新客户申购业务。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 18:35:03",
+      "url": "https://finance.eastmoney.com/a/202605093732252363.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "中核科技：在手核电订单约25亿",
+      "content": "【中核科技：在手核电订单约25亿】5月9日，中核科技在业绩说明会上表示，在手核电订单约25亿，今年预计交付项目有漳州、白龙、石岛湾、廉江、徐大堡、陆丰、金七门等项目。一季度亏损主要原因是收入、毛利额减少，减少利润：部分订单未到交货期，大量完工产品当月未及时发运，无法计入当期营收。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 18:33:23",
+      "url": "https://finance.eastmoney.com/a/202605093732252113.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "伊朗官员否认“美国袭击伊朗民用船致多人失踪”消息",
+      "content": "【伊朗官员否认“美国袭击伊朗民用船致多人失踪”消息】当地时间5月9日，伊朗南部霍尔木兹甘省伦格港县县长否认了当天早些时候传出的有关“美国战斗机在阿曼海塞卜港附近海域袭击多艘伊朗货船及渔船”的消息。消息称，6艘船遭袭，造成6人失踪、6人受伤。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 18:32:27",
+      "url": "https://finance.eastmoney.com/a/202605093732251288.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "中瓷电子：一季度毛利率下降受产品结构调整及材料价格上涨影响",
+      "content": "【中瓷电子：一季度毛利率下降受产品结构调整及材料价格上涨影响】中瓷电子5月9日在互动平台表示，2026年一季度毛利率下降，主要是受产品结构调整影响（高增长的电子陶瓷产品较其他板块产品毛利率略低）以及黄金、有色金属等材料价格上涨对陶瓷外壳形成成本压力影响。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 18:27:49",
+      "url": "https://finance.eastmoney.com/a/202605093732251519.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "虚构工作量确认单 四年虚增超6亿营收：国新证券是否需要为元道通信买单？",
+      "content": "【虚构工作量确认单 四年虚增超6亿营收：国新证券是否需要为元道通信买单？】5月8日晚，元道通信（301139）披露公告，公司收到中国证监会《行政处罚事先告知书》，公司存在证券发行文件编造重大虚假内容、年度报告信息披露存在虚假记载等违法行为，同时发布强制退市风险提示。这家2022年7月才登陆创业板的企业，上市尚不足四年，便已站在退市悬崖边缘。与此同时，国新证券作为上市公司的保荐机构和持续督导券商，在IPO尽调阶段及上市后持续督导期内，对这场贯穿IPO前后的系统性造假，究竟有没有核查到位，也成为市场关注的重点。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 18:27:00",
+      "url": "https://finance.eastmoney.com/a/202605093732252498.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "我国第四代超导量子计算机来了！相关概念股梳理",
+      "content": "【我国第四代超导量子计算机来了！相关概念股梳理】从安徽省量子计算芯片重点实验室获悉，搭载单核180个计算比特自主超导量子芯片的“本源悟空-180”量子计算机已上线运行，开始接收全球量子计算任务。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 18:26:07",
+      "url": "https://finance.eastmoney.com/a/202605093732250856.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "国家发改委低空司发布2026年研究课题征集公告",
+      "content": "【国家发改委低空司发布2026年研究课题征集公告】5月9日，国家发展改革委低空司发布2026年研究课题征集公告，为更好推动低空经济高质量发展研究，现向社会公开征集课题研究单位。研究题目包括低空经济发展立法深化研究、低空物流成本分析及降本举措研究。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 18:22:18",
+      "url": "https://finance.eastmoney.com/a/202605093732250537.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "OTA可远程“锁电”风波刷屏！多家车企集体辟谣 传谣者又是它？",
+      "content": "【OTA可远程“锁电”风波刷屏！多家车企集体辟谣 传谣者又是它？】截至目前，小鹏、比亚迪、广汽埃安、极氪、蔚来、问界等均已通过官方账号进行辟谣。特斯拉、理想向媒体表示“被约谈”传闻不实。此事始于日前央视网的一篇报道。但由于官方原始通报并未披露被约谈及立案调查的具体企业名单，网络上随即出现各类市场猜测。与此同时，不少网友借助AI平台查询所谓精准企业名单，相关结果截图亦在社交平台广泛传播。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 18:08:00",
+      "url": "https://finance.eastmoney.com/a/202605093732250456.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "振华科技：公司光电耦合器系列产品在光通信、光模块等领域已实现应用",
+      "content": "【振华科技：公司光电耦合器系列产品在光通信、光模块等领域已实现应用】振华科技在互动平台表示，公司光电耦合器系列产品在光通信、光模块等领域已实现应用，业务占比小。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 18:07:29",
+      "url": "https://finance.eastmoney.com/a/202605093732250372.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "网传四川宜宾人员关联境外邮轮疫情 官方通报：无时空交集",
+      "content": "【网传四川宜宾人员关联境外邮轮疫情 官方通报：无时空交集】5月9日，四川省宜宾市疾病预防控制中心就网传该市人员涉“洪迪厄斯”邮轮相关情况发布通报。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 18:07:08",
+      "url": "https://finance.eastmoney.com/a/202605093732250192.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "What Moved Markets This Week",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 10:35:44",
+      "url": "https://seekingalpha.com/article/4901933-what-moved-markets-this-week?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "CoreWeave: Lagging Margins Create An Uncertain Picture",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 10:25:51",
+      "url": "https://seekingalpha.com/article/4901924-coreweave-lagging-margins-create-an-uncertain-picture?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Howard Hughes Holdings: Bill Ackman's Plan For $200 By 2030",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 10:21:00",
+      "url": "https://seekingalpha.com/article/4901923-howard-hughes-holdings-bill-ackmans-plan-for-200-by-2030?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Mueller Water Products: Undervalued Despite High Profitability",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 10:18:00",
+      "url": "https://seekingalpha.com/article/4901922-mueller-water-products-undervalued-despite-high-profitability?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "6 May Dividend Power Dog Buys",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 10:12:31",
+      "url": "https://seekingalpha.com/article/4901921-6-may-dividend-power-dog-buys?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    }
+  ],
+  "fundamentals": {},
+  "quote": {},
+  "semantic_results": [],
+  "summary": "机会描述强调龙头房企现金流改善和融资恢复，但缺乏近期新闻、研报和基本面数据支持。M13调研显示信息匮乏，置信度偏低。未发现重大利空，但风险因素包括利润下滑持续和行业不确定性。建议谨慎，等待更多证据。",
+  "key_findings": [
+    "保利发展等龙头房企净利润下滑但经营现金流暴增423%，显示现金流改善。",
+    "成功发行低成本可转债，融资能力恢复，资产负债表修复中。",
+    "市场过度关注利润下滑，忽视行业集中度提升的结构性利好。",
+    "M13调研显示缺乏资金轮动和板块共振的直接证据，置信度偏低。",
+    "最近20条新闻无地产相关，缺乏行业催化剂或负面消息。"
+  ],
+  "risk_factors": [
+    "净利润大幅下滑可能持续，基本面未根本好转。",
+    "行业出清过程漫长，政策不确定性高。",
+    "M13调研提示做空风险较高，市场情绪可能恶化。"
+  ],
+  "confidence_assessment": "机会描述逻辑自洽，但缺乏近期新闻和研报支持，M13调研也显示信息匮乏。基本面数据为空，行业趋势无搜索结果，无法验证现金流改善和融资能力恢复的具体细节。整体置信度较低，需等待更多数据。",
+  "confidence_multiplier": 1.0,
+  "confidence_delta": -0.2,
+  "has_major_negative": false,
+  "research_time": "2026-05-09T18:48:06.799889",
+  "data_sources": [
+    "news"
+  ],
+  "cache_hit": false,
+  "timeout": false,
+  "partial_result": false
+}

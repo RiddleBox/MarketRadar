@@ -1,0 +1,131 @@
+{
+  "opportunity_id": "opp_ccb48f33",
+  "opportunity_title": "中东冲突推升能源航运",
+  "opportunity_thesis": "美军与伊朗在霍尔木兹海峡的军事冲突升级，导致航运受阻、进口煤价倒挂、全球粮价上涨，且高盛调查显示市场预期扰动将持续至下半年。这一系列信号指向能源（原油、煤炭）和航运板块的结构性受益，且当前市场尚未完全定价冲突长期化的风险，存在预期差。\n\n【M13调研】机会描述与新闻事实完全脱节：最近20条新闻均为A股公司日常公告，无任何关于霍尔木兹海峡冲突、伊朗油轮拦截或能源供应中断的报道。基本面数据和行业趋势搜索无结果，缺乏第三方验证。市场未出现恐慌或避险情绪，燃料油夜盘仅小幅上涨。因此，该机会缺乏事实基础，风险极高，建议规避。\n\n【M13调研】该机会描述的地缘冲突事件与新闻事实完全不符，最近20条新闻均为A股公司日常公告，无任何相关报道。基本面数据和行业趋势搜索无结果，市场未出现恐慌或避险情绪，燃料油夜盘仅小幅上涨。研报分析无相关报告。因此，该机会缺乏事实基础，风险极高，建议规避。置信度大幅下调。",
+  "target_markets": [
+    "A_SHARE",
+    "HK",
+    "US"
+  ],
+  "target_instruments": [
+    "601857.SH",
+    "600028.SH",
+    "600188.SH",
+    "601088.SH",
+    "601919.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-13T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "美军5月7-8日连续袭击伊朗民用船只并拦截油轮，伊朗武装力量全面备战并发出军事回应警告，霍尔木兹海峡附近传出交火声，冲突已从口头威胁升级为实际军事摩擦，时间窗口紧迫。",
+  "related_signals": [
+    "sig_3cf8fcf349ae",
+    "sig_0806bfd8639e",
+    "sig_8e8c4ed52bad",
+    "sig_4bdf8baa2d3a",
+    "sig_afe9eed20a0b",
+    "sig_968dbdfcd94a",
+    "sig_2e7d7516821e",
+    "sig_b3de9b426692",
+    "sig_992644367a0a",
+    "sig_82a8c461a4b6",
+    "sig_bb9a9c6d60a1",
+    "sig_2201d7544cad",
+    "sig_70a333e7b67e",
+    "sig_debbf62cdf97",
+    "sig_ec500e4d7f22",
+    "sig_adef1edef3e4",
+    "sig_debd6a76d715"
+  ],
+  "inferred_events": [
+    "inferred_8f45b053",
+    "inferred_c8a2175e",
+    "inferred_855cc242",
+    "inferred_f13c6728",
+    "inferred_2d28ff04",
+    "inferred_0908fc62",
+    "inferred_e9162f22",
+    "inferred_0d790675",
+    "inferred_715acbb2",
+    "inferred_95bd9894"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军在阿曼湾拦截两艘伊朗油轮，并使用精确制导弹药使其失去航行能力",
+    "伊朗武装力量全面备战，议员警告将军事回应海上封锁",
+    "霍尔木兹海峡附近2小时内接连传出交火声",
+    "进口煤价与国内煤价倒挂，企业转向国内采购",
+    "高盛调查显示多数投资者预期航运受阻将持续至7月以后",
+    "上海航运交易所报告三大船型运价上涨，海岬型船日租金创新高"
+  ],
+  "counter_evidence": [
+    "美伊交火已暂时停止，存在短期降温可能",
+    "哈尔克岛附近石油泄漏尚未确认，可能为误报"
+  ],
+  "key_assumptions": [
+    "假设1：美伊军事摩擦不会在短期内迅速降温或达成停火协议",
+    "假设2：霍尔木兹海峡航运受阻持续至少至6月底",
+    "假设3：全球原油和煤炭需求未出现超预期下滑"
+  ],
+  "uncertainty_map": [
+    "冲突升级程度不确定性（影响程度：高）：当前为零星交火，若升级为全面冲突则油价暴涨，若迅速降温则机会消失",
+    "OPEC+增产响应不确定性（影响程度：中）：若沙特等国迅速增产填补缺口，油价上行空间受限",
+    "伊朗石油出口设施受损程度不确定性（影响程度：中）：哈尔克岛泄漏若为军事打击所致，供应中断将更严重"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 6,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": -0.03749999999999999,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：原油/煤炭/航运板块10-20%涨幅（若冲突持续至7月）；潜在风险：冲突降温后板块回调5-10%（止损明确）。收益风险比约2:1。",
+  "next_validation_questions": [
+    "美伊双方是否有正式停火谈判或外交接触？",
+    "霍尔木兹海峡实际通航量较正常水平下降多少？",
+    "布伦特原油期货持仓量和期权隐含波动率是否显著上升？"
+  ],
+  "invalidation_conditions": [
+    "美伊达成临时停火协议或双方宣布降级",
+    "霍尔木兹海峡航运完全恢复正常",
+    "OPEC+宣布大幅增产以稳定油价"
+  ],
+  "must_watch_indicators": [
+    "布伦特原油期货价格及持仓量变化",
+    "霍尔木兹海峡每日通航船舶数量",
+    "上海航运交易所远东干散货运价指数",
+    "美伊双方官方表态（是否释放缓和信号）"
+  ],
+  "kill_switch_signals": [
+    "美伊宣布停火或开始正式谈判",
+    "霍尔木兹海峡航运完全恢复",
+    "原油期货价格单日暴跌超过5%"
+  ],
+  "warnings": [
+    "注意：地缘政治事件具有高度不确定性，冲突可能迅速升级或降温，需严格设置止损",
+    "注意：部分信号（如哈尔克岛泄漏）尚未经官方确认，存在误报风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T15:44:32.416022",
+  "batch_id": "sched_signal_pipeline_20260509_145546_c8d320_20260509_astock_skill_dc41c22f",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

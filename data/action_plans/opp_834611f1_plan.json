@@ -1,0 +1,63 @@
+{
+  "plan_id": "plan_1a85446d2cf5",
+  "opportunity_id": "opp_834611f1",
+  "plan_summary": "BULLISH | 601012.SH, 600438.SH",
+  "primary_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "601088.SH",
+    "600026.SH"
+  ],
+  "instrument_type": "ETF",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 5.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破关键支撑位或冲突缓和信号出现"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 10.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "基于冲突持续 2-3 个月的预期涨幅"
+  },
+  "position_sizing": {
+    "suggested_allocation": "8.0%",
+    "max_allocation": "不超过8.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=5.0% | 仓位=风险预算/止损=8.0%",
+    "suggested_allocation_pct": 0.08,
+    "max_allocation_pct": 0.08
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入 601088.SH，仓位为总资金的 15%；买入 600026.SH，仓位为总资金的 15%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "满足入场条件 1 和 2 中的任意一个，且布伦特原油价格满足条件 3"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓 601088.SH 至总资金的 30%；加仓 600026.SH 至总资金的 30%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 浮盈达到 5% 后，且未触发止损"
+    }
+  ],
+  "valid_until": "2026-05-31T11:02:08.328577",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T11:02:08.329324",
+  "opportunity_priority": "research"
+}

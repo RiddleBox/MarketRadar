@@ -1,0 +1,109 @@
+{
+  "opportunity_id": "opp_484abc74",
+  "opportunity_title": "俄乌停火避险消退",
+  "opportunity_thesis": "俄乌冲突出现实质性缓和信号，包括停火、换俘及领导人会晤预期，将显著降低地缘政治风险溢价，推动全球风险资产短期反弹。A股、港股及美股中前期受地缘风险压制的板块（如航空、航运、能源）将受益于避险情绪消退，而黄金等避险资产可能承压。当前市场尚未充分定价这一变化，存在预期差。\n\n【M13调研】俄乌冲突缓和信号（普京表态）及国航扭亏为盈提供短期交易机会，但缺乏研报和行业趋势验证，且伊朗局势带来不确定性。当前市场未充分定价，存在预期差，但风险因素较多，建议谨慎参与。\n\n【M13调研】俄乌冲突缓和信号（普京表态）及南航扭亏为盈提供短期交易机会，但缺乏研报和行业趋势验证。伊朗局势紧张增加不确定性，市场未充分定价但风险较高。建议谨慎参与，关注后续停火进展及伊朗局势变化。",
+  "target_markets": [
+    "A_SHARE",
+    "HK",
+    "US"
+  ],
+  "target_instruments": [
+    "601111.SH",
+    "600029.SH",
+    "600115.SH",
+    "601919.SH",
+    "600026.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-05-25T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "俄乌冲突已持续多年，此次停火三天并交换战俘是罕见的正式停火安排，且普京确认收到泽连斯基会晤口信，领导人会晤预期升温。这些信号密集出现，表明冲突缓和进入实质性阶段，市场风险偏好有望快速修复。",
+  "related_signals": [
+    "sig_2cf7a78fa7a2",
+    "sig_357a73b3d181",
+    "sig_73b1a2dad8ea",
+    "sig_dbba3aafdd0f"
+  ],
+  "inferred_events": [
+    "inferred_6f2f1a43",
+    "inferred_8bd368cd",
+    "inferred_ea61e28a",
+    "inferred_ea29899f",
+    "inferred_07b2f1a7"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "俄罗斯同意延长停火并换俘，乌克兰承诺不攻击红场阅兵",
+    "俄乌宣布5月9日至11日停火三天并计划大规模交换战俘",
+    "普京确认收到泽连斯基会晤口信，不反对在第三国会谈"
+  ],
+  "counter_evidence": [
+    "停火仅三天，持续时间短，后续能否延续存在不确定性",
+    "历史案例显示地缘风险溢价消退迅速，反弹可能短暂"
+  ],
+  "key_assumptions": [
+    "假设1：停火协议在三天后不会立即破裂，后续谈判能延续",
+    "假设2：领导人会晤在短期内（2-4周）能够实现",
+    "假设3：全球市场风险偏好提升，资金从避险资产回流风险资产"
+  ],
+  "uncertainty_map": [
+    "停火后冲突再起风险（影响程度：高）",
+    "领导人会晤未能实现或谈判破裂（影响程度：中）",
+    "市场对地缘缓和的定价已部分反映（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 6.9,
+    "confidence_score": 0.62,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：地缘风险溢价消退带来的短期反弹，航空、航运等板块可能上涨5-10%。潜在风险：停火破裂或谈判失败，导致风险资产回吐涨幅，止损点可设在入场价下方3-5%。",
+  "next_validation_questions": [
+    "停火三天后，双方是否继续延长停火或达成更长期协议？",
+    "普京与泽连斯基会晤的具体时间和地点是否确定？",
+    "全球主要股指（如标普500、恒生指数）是否出现放量上涨？"
+  ],
+  "invalidation_conditions": [
+    "停火结束后双方立即恢复大规模军事行动",
+    "普京或泽连斯基公开否认会晤计划",
+    "联合国或美国斡旋失败，冲突升级"
+  ],
+  "must_watch_indicators": [
+    "俄乌边境军事活动报告",
+    "普京与泽连斯基会晤相关新闻",
+    "全球主要股指及VIX指数变化",
+    "黄金价格走势（避险情绪指标）"
+  ],
+  "kill_switch_signals": [
+    "俄乌双方互相指责对方违反停火并恢复攻击",
+    "普京或泽连斯基发表强硬言论，拒绝谈判",
+    "美国或北约宣布向乌克兰提供更多进攻性武器"
+  ],
+  "warnings": [
+    "注意：停火仅三天，持续时间短，后续不确定性高",
+    "注意：地缘风险交易通常持续时间短，需快速止盈"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T07:01:39.234441",
+  "batch_id": "sched_signal_pipeline_20260510_065007_cdc95c_20260510_astock_skill_4f4259be",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

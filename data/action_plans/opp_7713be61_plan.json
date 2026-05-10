@@ -1,0 +1,63 @@
+{
+  "plan_id": "plan_ac0e67e38712",
+  "opportunity_id": "opp_7713be61",
+  "plan_summary": "BULLISH | 601398.SH, 600036.SH",
+  "primary_instruments": [
+    "601398.SH",
+    "600036.SH",
+    "000002.SZ",
+    "600519.SH",
+    "000858.SZ"
+  ],
+  "instrument_type": "ETF",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 5.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破近期低点（前5日最低价）"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 10.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "第一目标：前高（近20日高点）+3%；第二目标：前高+8%"
+  },
+  "position_sizing": {
+    "suggested_allocation": "8.0%",
+    "max_allocation": "不超过8.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=5.0% | 仓位=风险预算/止损=8.0% | Kelly参考=15.6%",
+    "suggested_allocation_pct": 0.08,
+    "max_allocation_pct": 0.08
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入601398.SH，仓位占总资金的20%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "满足入场条件1、2、3，且开盘后30分钟内价格未跌破前一日最低价"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总仓位50%（即再加30%仓位）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 浮盈达到3%以上，且当日成交量放大至10日均量的1.2倍以上"
+    }
+  ],
+  "valid_until": "2026-05-31T09:42:05.787712",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T09:42:05.787830",
+  "opportunity_priority": "research"
+}

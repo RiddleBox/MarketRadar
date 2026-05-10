@@ -1,0 +1,107 @@
+{
+  "opportunity_id": "opp_f15edf48",
+  "opportunity_title": "港股IPO复苏红利",
+  "opportunity_thesis": "香港IPO市场出现极端火爆信号（乐动机器人散户认购6707倍），叠加香港GDP、零售额加速增长及住宅量价齐升，表明香港经济与资本市场正进入正向循环。IPO超高认购倍数不仅直接利好承销商和交易所，更会带动商业地产租金回升、金融活动活跃，形成系统性复苏机会。当前市场尚未充分定价这一正向循环的持续性，存在预期差。\n\n【M13调研】港股机器人IPO获6707倍认购及A股概念股创新高，显示市场热情高涨，但缺乏研报和基本面数据支撑。风险在于情绪驱动可能引发回调，且宏观不确定性存在。建议谨慎参与，关注后续行业动态和公司基本面。\n\n【M13调研】机会描述基于乐动机器人IPO超高认购和香港经济数据，但缺乏研报和基本面支撑。新闻显示公司回购和出口增长，但未直接关联。风险在于情绪驱动和宏观不确定性，且无数据验证正向循环持续性。当前置信度低，建议谨慎，等待更多证据。",
+  "target_markets": [
+    "HK"
+  ],
+  "target_instruments": [
+    "01501.HK",
+    "03888.HK",
+    "00016.HK",
+    "00012.HK",
+    "00083.HK"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "乐动机器人IPO散户认购6707倍是极端信号，反映市场情绪和资金面极度亢奋；同时一季度GDP和零售数据刚刚公布，住宅市场量价齐升趋势延续，三者叠加形成当前时点的催化剂窗口。",
+  "related_signals": [
+    "sig_423c7cb04845",
+    "sig_b0c897ac9682",
+    "sig_69fe289e4fee",
+    "sig_4ef836f98ad7"
+  ],
+  "inferred_events": [
+    "inferred_27ff3cc0",
+    "inferred_dd95287e",
+    "inferred_2d87924b",
+    "inferred_412a8d32",
+    "inferred_14278bea"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "乐动机器人IPO散户认购6707倍，国际配售9.54倍，显示资金极度追捧科技/机器人标的",
+    "2026年第一季度香港GDP和零售额同比加速增长，经济基本面改善",
+    "香港住宅市场延续量价齐升，去化周期进入乐观区间，地产复苏确认"
+  ],
+  "counter_evidence": [
+    "内地房地产板块持续承压，龙头房企业绩下滑，可能拖累港股整体情绪",
+    "地缘政治冲突（中东局势）可能引发全球避险情绪，影响港股流动性"
+  ],
+  "key_assumptions": [
+    "假设1：香港IPO火爆趋势可持续，后续仍有大型科技公司上市",
+    "假设2：香港经济复苏（GDP、零售、地产）不是短期脉冲，而是中期趋势",
+    "假设3：内地政策不会突然收紧对港股的资金流动限制"
+  ],
+  "uncertainty_map": [
+    "IPO热度持续性（影响程度：高）——6707倍认购可能是单一事件，后续IPO能否延续热度不确定",
+    "地缘政治风险（影响程度：中）——中东冲突升级可能压制全球风险偏好",
+    "内地经济传导（影响程度：中）——内地房地产和消费疲弱可能拖累香港经济复苏力度"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 6,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.35000000000000003,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：港股IPO持续火爆带动券商、交易所、商业地产受益，板块估值修复空间10-20%；潜在风险：IPO热度消退或地缘风险冲击，下行空间5-10%，风险收益比约2:1。",
+  "next_validation_questions": [
+    "未来1-2周是否有其他科技/机器人公司启动港股IPO招股？",
+    "香港住宅成交量是否在5月继续环比增长？",
+    "港股通南向资金近期是否持续净流入香港市场？"
+  ],
+  "invalidation_conditions": [
+    "后续IPO认购倍数大幅下降（低于10倍）",
+    "香港住宅成交量连续2周环比下降",
+    "中东冲突升级导致恒生指数单周下跌超5%"
+  ],
+  "must_watch_indicators": [
+    "香港IPO认购倍数（后续新股）",
+    "香港住宅月度成交量",
+    "恒生指数及港股通资金流向",
+    "香港零售额月度同比增速"
+  ],
+  "kill_switch_signals": [
+    "恒生指数跌破20日均线且成交量放大",
+    "香港住宅价格指数环比转跌",
+    "港股通南向资金连续3日净流出超50亿港元"
+  ],
+  "warnings": [
+    "注意：乐动机器人IPO认购数据为单一事件，需观察后续IPO是否延续热度",
+    "注意：香港经济复苏可能受内地经济拖累，需关注内地宏观数据变化"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T11:16:27.458366",
+  "batch_id": "sched_signal_pipeline_20260509_110458_103b7e_20260509_astock_skill_27fd4f85",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

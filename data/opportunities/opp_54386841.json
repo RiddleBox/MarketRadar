@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_54386841",
+  "opportunity_title": "AI应用算力共振",
+  "opportunity_thesis": "AI应用与算力基础设施正形成产业共振：每日互动AI收入爆发式增长、中国移动加速算力网建设、AI终端国家标准发布，叠加板块资金持续流入和个股创历史新高，表明AI产业已从概念炒作进入业绩验证和规模化落地阶段。当前市场对AI的定价仍以情绪和预期为主，但业绩加速信号已出现，存在预期差，是布局AI应用和算力龙头的窗口期。\n\n【M13调研】机会描述声称AI算力与应用板块在政策、龙头、业绩三重催化下爆发，但新闻和研报均未直接验证。新闻中科技主题ETF上涨，但无AI板块具体报道；科大讯飞一季报亏损构成利空；无研报覆盖；基本面数据为空。风险在于政策落地不确定性和市场过热。综合判断，该机会缺乏可靠证据，置信度低，建议谨慎观望。\n\n【M13调研】该机会受益于政策催化（算力网、AI标准）和资金流入（成交额放量、科技板块上涨），处于布局窗口期。但缺乏研报、新闻和基本面直接验证，行业趋势无数据，风险在于政策落地不确定性和市场过热。M13调研建议谨慎。综合评估，机会存在但需等待更多确认信号，建议小仓位试探或观望。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "002230.SZ",
+    "603019.SH",
+    "600941.SH",
+    "688017.SH",
+    "688561.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-08-08T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "2026年5月8日，AI应用板块开盘走高、软件ETF资金净流入、绿的谐波创历史新高、AI终端国家标准发布、中国移动宣布算力网建设，多信号同日共振，形成明确的时间窗口。",
+  "related_signals": [
+    "sig_d9ef44f292bd",
+    "sig_4149b887d9b2",
+    "sig_de9b85fe30aa",
+    "sig_41c9d0ac13e2",
+    "sig_050c391c993e"
+  ],
+  "inferred_events": [
+    "inferred_1f846257",
+    "inferred_bc82a661",
+    "inferred_b1c7fd96",
+    "inferred_b0c9a669",
+    "inferred_38e6682b",
+    "inferred_66821ae3"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "每日互动2026年Q1 AI收入已接近2025年全年水平，业绩加速信号明确",
+    "中国移动董事长公开宣布推进全国一体化算力网建设，布局吉瓦级数据中心",
+    "AI终端国家标准发布，为产业链提供标准化指引，利好龙头",
+    "AI应用板块开盘走高，软件ETF单日净流入近800万元，资金面确认",
+    "绿的谐波股价创历史新高，市场对AI/机器人产业链认可度提升"
+  ],
+  "counter_evidence": [
+    "AI板块已连续上涨，部分个股估值偏高，短期存在回调风险",
+    "历史案例显示技术突破需商业化验证，当前订单数据仍有限"
+  ],
+  "key_assumptions": [
+    "假设1：AI业务收入增长趋势可持续，非一次性因素",
+    "假设2：中国移动算力网建设计划能如期落地，带动产业链需求",
+    "假设3：宏观经济和政策环境不出现重大负面变化"
+  ],
+  "uncertainty_map": [
+    "AI商业化落地速度不及预期（影响程度：高）",
+    "市场情绪过热导致短期回调（影响程度：中）",
+    "地缘政治风险或宏观政策收紧（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.4,
+    "confidence_score": 0.19000000000000003,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI应用和算力板块在业绩加速和政策催化下有望迎来主升浪，龙头个股涨幅可达20-30%。潜在风险：若AI商业化不及预期或市场情绪逆转，板块可能回调10-15%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "每日互动、科大讯飞等公司最新季报中AI业务收入占比和增速是否持续？",
+    "中国移动算力网建设的具体投资规模和招标时间表？",
+    "AI终端国家标准对产业链的实际影响范围和受益标的？"
+  ],
+  "invalidation_conditions": [
+    "AI板块出现连续3日资金净流出，且跌幅超过5%",
+    "主要AI公司发布业绩预警或下调指引",
+    "政策层面出现对AI行业的重大利空（如限制投资、加强监管）"
+  ],
+  "must_watch_indicators": [
+    "AI板块成交量和资金流向",
+    "每日互动、科大讯飞等龙头公司股价走势",
+    "中国移动算力网建设相关公告和招标信息",
+    "AI终端国家标准后续配套政策"
+  ],
+  "kill_switch_signals": [
+    "AI板块单日跌幅超过5%且伴随放量",
+    "龙头公司出现高管减持或业绩变脸",
+    "宏观政策转向紧缩或地缘冲突升级"
+  ],
+  "warnings": [
+    "注意：部分信号来自新闻和公开表态，需验证实际执行情况",
+    "注意：AI板块已积累一定涨幅，追高需谨慎"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T11:12:50.100950",
+  "batch_id": "sched_signal_pipeline_20260509_110458_103b7e_20260509_astock_skill_2616ce12",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

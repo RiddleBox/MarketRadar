@@ -1,0 +1,118 @@
+{
+  "opportunity_id": "opp_97f7bb1b",
+  "opportunity_title": "地产链分化机会",
+  "opportunity_thesis": "地产链出现显著分化：龙头保利、万科业绩持续恶化、债务承压，但上海二手房成交创十年新高、温州宅地高溢价成交、国常会推进化债等政策信号显示市场底部区域可能临近。当前市场对地产板块极度悲观，但政策宽松与局部回暖信号形成预期差，可能孕育结构性反弹机会，尤其是受益于核心城市回暖的优质房企和地产服务标的。\n\n【M13调研】保利发展业绩大幅下滑，但新闻和研报信息匮乏，缺乏资金轮动和板块共振的直接证据。地产板块做空机会存在，但风险较高，需谨慎。新能源和半导体轮动逻辑未获数据支持。整体置信度偏低，建议等待更多信息再决策。\n\n【M13调研】机会描述强调龙头房企现金流改善和融资恢复，但缺乏近期新闻、研报和基本面数据支持。M13调研显示信息匮乏，置信度偏低。未发现重大利空，但风险因素包括利润下滑持续和行业不确定性。建议谨慎，等待更多证据。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "600048.SH",
+    "000002.SZ",
+    "001979.SZ",
+    "600383.SH",
+    "600325.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-07-10T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "当前时点催化剂密集：保利、万科业绩利空已充分释放（年报/一季报均已披露），市场情绪极度悲观；同时上海二手房成交创十年新高、温州宅地高溢价成交、国常会推进化债等利好信号集中出现，形成多空博弈的临界点。政策宽松预期（降准降息）与基本面局部改善共振，时间窗口有限。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sig_deee36561d85",
+    "sig_dc0079649df5",
+    "sig_65d00d268232",
+    "sig_5cf40470ca24",
+    "sig_e056e11395f0",
+    "sig_61c0ebff0aa1"
+  ],
+  "inferred_events": [
+    "inferred_c593f08a",
+    "inferred_9cfee960",
+    "inferred_97e6c532",
+    "inferred_87e7cdbf",
+    "inferred_0c038e71",
+    "inferred_92ecde52",
+    "inferred_13d9d2fc",
+    "inferred_f2078899",
+    "inferred_facb8fcf",
+    "inferred_963e79b9"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "上海4月二手房成交28742套，创近十年4月单月新高，同比增长22.3%",
+    "温州宅地溢价近80%成交，显示局部土地市场回暖",
+    "国常会研究推进地方债务风险化解，政策宽松信号明确",
+    "保利发展2025年净利润大降79.31%、2026Q1净利润降57%，利空已充分释放"
+  ],
+  "counter_evidence": [
+    "万科23万科MTN002本息兑付安排调整，债务风险仍在暴露",
+    "保利发展营收和净利润持续双降，基本面未见拐点"
+  ],
+  "key_assumptions": [
+    "假设1：核心城市（上海、杭州等）楼市回暖趋势可持续，非昙花一现",
+    "假设2：政策宽松（降准降息、化债）能有效传导至地产企业融资端",
+    "假设3：龙头房企（保利、万科）不会出现实质性债务违约"
+  ],
+  "uncertainty_map": [
+    "核心城市回暖能否扩散至全国（影响程度：高）",
+    "政策宽松落地节奏和力度（影响程度：中）",
+    "龙头房企债务风险是否进一步恶化（影响程度：高）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 5,
+    "consensus_gap": 8,
+    "signal_consistency": 6,
+    "overall_score": 6.6,
+    "confidence_score": 0.25,
+    "execution_readiness": 0.6
+  },
+  "risk_reward_profile": "潜在收益：地产板块超跌反弹20-30%，优质龙头（保利、招商蛇口）估值修复。潜在风险：基本面继续恶化，政策宽松不及预期，龙头债务违约，下行空间10-15%。盈亏比约2:1。",
+  "next_validation_questions": [
+    "上海、杭州等核心城市5月二手房成交数据是否延续4月回暖趋势？",
+    "近期是否有更多城市出现土地高溢价成交？",
+    "央行是否在2周内落地降准或降息？",
+    "保利、万科是否有新的债务展期或融资利好公告？"
+  ],
+  "invalidation_conditions": [
+    "上海5月二手房成交环比大幅下滑（>20%）",
+    "保利或万科出现实质性债务违约（如债券到期未兑付）",
+    "政策面出现收紧信号（如国常会未提及进一步宽松）"
+  ],
+  "must_watch_indicators": [
+    "上海/北京/杭州二手房周度成交量",
+    "保利、万科债券收益率和信用利差",
+    "央行公开市场操作和LPR报价",
+    "土地市场溢价率变化"
+  ],
+  "kill_switch_signals": [
+    "保利或万科公告债务违约或展期",
+    "上海二手房成交连续两周环比下降",
+    "政策面明确收紧地产融资"
+  ],
+  "warnings": [
+    "注意：地产基本面尚未见底，当前机会为预期差驱动的反弹，非趋势反转",
+    "注意：信号来源均为新闻，需交叉验证官方数据"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T20:18:39.615235",
+  "batch_id": "sched_signal_pipeline_20260509_194006_9160d7_20260509_astock_skill_aba2ac44",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

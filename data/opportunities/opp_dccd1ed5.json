@@ -1,0 +1,103 @@
+{
+  "opportunity_id": "opp_dccd1ed5",
+  "opportunity_title": "港股IPO热潮",
+  "opportunity_thesis": "港交所IPO集资额同比暴增604%，乐动机器人散户认购6707倍，显示港股一级市场极度活跃。情绪面贪婪但尚未传导至二级市场全面泡沫化，港交所作为直接受益平台，业绩弹性巨大，当前估值尚未充分反映IPO爆发带来的收入增长。\n\n【M13调研】港交所受益于IPO热潮和宏观经济复苏，交易量与上市费收入有望显著提升。当前市场资金充裕，基本面改善形成正反馈，但需警惕全球利率和地缘政治风险。机会窗口明确，但缺乏外部数据验证，建议谨慎乐观。",
+  "target_markets": [
+    "HK"
+  ],
+  "target_instruments": [
+    "00388.HK"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-08-10T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "港交所前4月数据刚公布，乐动机器人IPO刚完成，市场情绪贪婪但尚未price-in港交所中期业绩。后续还有多家大型IPO排队，时间窗口在2-3个月内。",
+  "related_signals": [
+    "sent_afb94f7676ae",
+    "sig_4ef836f98ad7",
+    "sig_98977668d330"
+  ],
+  "inferred_events": [
+    "inferred_f06a28a4",
+    "inferred_40ff6e47",
+    "inferred_b7d6c80e",
+    "inferred_d7341de9",
+    "inferred_cf277866"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "港交所前4月IPO集资额1514亿港元，同比+604%",
+    "乐动机器人散户认购6707倍，创近年纪录",
+    "新上市公司数量从19家增至49家，+158%",
+    "市场情绪贪婪（恐贪指数67），但非极端，仍有上行空间"
+  ],
+  "counter_evidence": [
+    "情绪贪婪可能意味着短期过热，回调风险增加",
+    "IPO火爆可能已部分反映在港交所股价中"
+  ],
+  "key_assumptions": [
+    "假设1：后续IPO排队项目能顺利推进，保持高集资额",
+    "假设2：二级市场未出现系统性下跌，不影响IPO定价和认购",
+    "假设3：港交所收入与IPO集资额高度相关，业绩弹性释放"
+  ],
+  "uncertainty_map": [
+    "IPO节奏能否持续（影响程度：高）",
+    "全球利率环境变化对港股流动性的影响（影响程度：中）",
+    "地缘政治风险（中东、俄乌）对风险偏好的冲击（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 5,
+    "tradability": 9,
+    "risk_clarity": 7,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.95,
+    "execution_readiness": 0.85
+  },
+  "risk_reward_profile": "潜在收益：港交所业绩超预期带动估值修复，目标涨幅15-25%。潜在风险：IPO热潮降温或市场系统性下跌，最大回撤约10-15%。",
+  "next_validation_questions": [
+    "港交所当前估值（PE/PB）处于历史什么分位？",
+    "未来2-3个月已披露的IPO排队项目数量和集资额预估？",
+    "港交所收入结构中IPO相关收入占比及弹性系数？"
+  ],
+  "invalidation_conditions": [
+    "港交所股价已大幅上涨超过20%",
+    "后续IPO项目大规模撤回或延期",
+    "港股市场出现系统性下跌（恒指跌超10%）"
+  ],
+  "must_watch_indicators": [
+    "港交所每日成交量",
+    "恒生指数走势",
+    "后续IPO公告数量和集资额",
+    "港交所股价相对强弱（RSI）"
+  ],
+  "kill_switch_signals": [
+    "港交所单日放量下跌超5%",
+    "连续3日无新增IPO公告",
+    "恒指跌破关键支撑位"
+  ],
+  "warnings": [
+    "情绪贪婪（67）接近贪婪区间上沿，需警惕短期过热回调",
+    "港交所股价可能已部分反映IPO利好，需确认估值是否合理"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T10:48:10.417988",
+  "batch_id": "sched_signal_pipeline_20260510_102452_817478_20260510_astock_skill_4f4259be",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

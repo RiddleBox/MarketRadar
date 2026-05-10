@@ -1,0 +1,110 @@
+{
+  "opportunity_id": "opp_0201827c",
+  "opportunity_title": "人形机器人加速落地",
+  "opportunity_thesis": "人形机器人产业链正从概念炒作进入量产落地阶段，龙头股创历史新高、港股IPO获6707倍超额认购、腾讯生态接入万台终端意向，三重信号共振确认产业加速拐点。当前市场对商业化节奏仍存分歧，预期差较大，板块短期强势但尚未充分定价未来6-12个月的订单放量。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头创历史新高，资金高度聚焦。固态电池技术提供支撑，IPO认购火爆显示市场关注。但短期涨幅较大，缺乏研报覆盖，产业落地进展不确定。整体机会真实，但需警惕回调风险，建议关注后续产业催化。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "601689.SH",
+    "300124.SZ",
+    "002747.SZ",
+    "002050.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "5月8日龙头股集体创新高、港股IPO超额认购创纪录、腾讯OpenClaw接入万台终端意向，三事件同日发生，表明产业从概念炒作进入实质落地阶段，催化剂密集且时间窗口紧迫。",
+  "related_signals": [
+    "sig_cc33dd52b601",
+    "sig_41c9d0ac13e2",
+    "sig_4ef836f98ad7",
+    "sig_12415bc90517"
+  ],
+  "inferred_events": [
+    "inferred_73977b67",
+    "inferred_1156cea6",
+    "inferred_956e7c6e",
+    "inferred_964e6cfb",
+    "inferred_8fffac49",
+    "inferred_97cb810a",
+    "inferred_74f6e9df"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "绿的谐波、华勤技术、乔锋智能等龙头股5月8日盘中创历史新高，板块集体走强",
+    "乐动机器人港股IPO散户认购倍数达6707倍，国际配售9.54倍，显示资本极度追捧",
+    "Zeroth元点M1成为全球首款接入腾讯OpenClaw的可量产人形机器人，已达成万台终端接入意向，5月下旬上线、上半年预售"
+  ],
+  "counter_evidence": [
+    "板块已连续上涨，短期涨幅较大，存在获利回吐风险",
+    "多数公司尚未披露人形机器人相关订单或收入，商业化验证不足"
+  ],
+  "key_assumptions": [
+    "假设1：腾讯OpenClaw万台终端接入意向能在2026年内转化为实际订单",
+    "假设2：宏观经济和政策环境不发生重大逆转，市场风险偏好维持",
+    "假设3：龙头公司（如绿的谐波）产能和技术能支撑量产需求"
+  ],
+  "uncertainty_map": [
+    "商业化落地速度不确定性（影响程度：高）：万台终端接入意向能否转化为实际订单和收入，时间节点不确定",
+    "估值泡沫风险（影响程度：中）：板块已大幅上涨，部分个股估值偏高，若业绩不及预期可能大幅回调",
+    "竞争格局变化（影响程度：中）：多家企业同时布局人形机器人，技术路线和市场份额存在变数"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.6,
+    "confidence_score": 0.78,
+    "execution_readiness": 0.72
+  },
+  "risk_reward_profile": "潜在收益：若人形机器人量产落地超预期，龙头股有望实现50-100%涨幅；潜在风险：若商业化进度低于预期或市场情绪逆转，板块可能回调20-30%。风险收益比约2:1，需严格止损。",
+  "next_validation_questions": [
+    "绿的谐波、华勤技术等龙头公司近期是否有公开披露人形机器人相关订单或合作？",
+    "腾讯OpenClaw万台终端接入意向的具体交付时间表和收入确认方式？",
+    "乐动机器人上市后首日表现及后续资金流向？"
+  ],
+  "invalidation_conditions": [
+    "龙头股（如绿的谐波）出现放量下跌，跌破20日均线",
+    "腾讯OpenClaw合作未在5月下旬如期上线或订单大幅低于预期",
+    "板块整体成交量萎缩，资金流出明显"
+  ],
+  "must_watch_indicators": [
+    "绿的谐波、华勤技术等龙头股日成交额和价格走势",
+    "腾讯OpenClaw上线时间及首批订单规模",
+    "人形机器人板块整体资金流向（北向资金、主力资金）",
+    "乐动机器人上市后股价表现及估值水平"
+  ],
+  "kill_switch_signals": [
+    "龙头股单日跌幅超过7%且放量",
+    "腾讯OpenClaw合作延期或取消",
+    "板块内多只个股同时发布减持公告"
+  ],
+  "warnings": [
+    "注意：板块已连续上涨，短期追高风险较大，建议等待回调或分批建仓",
+    "注意：多数公司人形机器人业务收入占比极低，需警惕概念炒作后的业绩证伪"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:12:05.978533",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_20260509_astock_skill_2c8eda66",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

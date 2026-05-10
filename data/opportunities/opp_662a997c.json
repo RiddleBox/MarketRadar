@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_662a997c",
+  "opportunity_title": "光伏龙头反转机遇",
+  "opportunity_thesis": "隆基绿能签署百亿美元订单、BC电池技术突破，叠加国家能源局200GW装机目标，三重利好共振。尽管行业连续10季度亏损，但订单和政策的实质性支撑有望推动龙头率先扭亏，市场尚未充分定价这一反转预期。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "688599.SH",
+    "002129.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-08-10T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "隆基绿能百亿美元订单和BC电池技术突破同日发布，国家能源局200GW装机目标刚出台，市场情绪高涨但股价仅盘中涨停，尚未充分消化长期利好。行业亏损周期已持续10个季度，反转预期正在形成，当前是布局窗口。",
+  "related_signals": [
+    "sig_d96752d3b6e2",
+    "sig_dcf5293d00c8",
+    "sig_f092b9093445",
+    "sig_8b72684e688d",
+    "sig_c2cb165dee2d"
+  ],
+  "inferred_events": [
+    "inferred_2159b863",
+    "inferred_e7729fcc",
+    "inferred_a8620e70",
+    "inferred_d97e96f3",
+    "inferred_87a8054e",
+    "inferred_8be6c7a6",
+    "inferred_0b57cb1c",
+    "inferred_95057e56"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "隆基绿能签署100亿美元订单，预计净利润超15亿美元，为去年全年净利润3倍",
+    "BC电池转换效率26.5%打破世界纪录，Q3量产将巩固龙头地位",
+    "国家能源局2026年新增装机目标200GW，同比增长50%",
+    "隆基绿能股价涨停，成交量放大至5倍，市场初步反应积极"
+  ],
+  "counter_evidence": [
+    "光伏龙头已连续10个季度亏损，行业反转节奏不确定",
+    "订单交付周期3年，短期业绩改善有限"
+  ],
+  "key_assumptions": [
+    "假设1：百亿美元订单能按计划交付，不出现违约或延期",
+    "假设2：行业亏损周期在政策与订单推动下逐步收窄，龙头率先扭亏",
+    "假设3：市场情绪持续，资金流入光伏板块"
+  ],
+  "uncertainty_map": [
+    "订单执行风险：沙特项目地缘政治或资金问题导致交付延迟（影响程度：高）",
+    "行业亏损持续：若行业供需失衡未改善，龙头扭亏时间可能延长（影响程度：中）",
+    "技术量产风险：BC电池Q3量产能否达到预期良率和成本（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.38000000000000006,
+    "execution_readiness": 0.72
+  },
+  "risk_reward_profile": "潜在收益：龙头股价在订单和业绩反转预期下有望上涨30%-50%；风险：订单执行不力或行业亏损持续，股价可能回撤15%-20%。",
+  "next_validation_questions": [
+    "隆基绿能百亿美元订单的具体交付时间表和预付款条款？",
+    "BC电池量产良率和成本是否达到预期？",
+    "行业其他龙头（如通威、中环）是否有扭亏信号？"
+  ],
+  "invalidation_conditions": [
+    "隆基绿能订单出现重大违约或取消",
+    "行业亏损进一步扩大，龙头Q3财报继续亏损",
+    "市场情绪快速消退，股价跌破涨停前低点"
+  ],
+  "must_watch_indicators": [
+    "隆基绿能股价和成交量变化",
+    "光伏行业月度装机数据",
+    "BC电池量产进度和良率报告",
+    "行业龙头季度财报"
+  ],
+  "kill_switch_signals": [
+    "隆基绿能股价连续3日下跌且成交量萎缩",
+    "行业龙头发布亏损预警",
+    "政策支持力度减弱或装机目标下调"
+  ],
+  "warnings": [
+    "注意：行业连续10季度亏损，反转节奏可能慢于预期",
+    "注意：订单交付周期长，短期业绩改善有限"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T20:28:56.187746",
+  "batch_id": "sched_signal_pipeline_20260509_194006_9160d7_20260509_astock_skill_be711583",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

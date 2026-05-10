@@ -1,0 +1,111 @@
+{
+  "opportunity_id": "opp_8b61c1a5",
+  "opportunity_title": "中东冲突推升能源与航运",
+  "opportunity_thesis": "中东地缘冲突持续升级，霍尔木兹海峡受阻导致全球航运成本飙升，进口煤炭价格倒挂推动国内煤企受益，同时全球粮价连续上涨。这些变化对国内煤炭、航运及农业板块形成结构性利好，市场尚未充分定价，存在预期差。\n\n【M13调研】美军袭击伊朗民用船只事件确实发生，霍尔木兹海峡通行受阻风险上升，理论上利好能源替代和军工。但外交谈判同步进行，科技股大涨分流资金，且煤炭企业盈利下滑，削弱了利好逻辑。市场尚未充分定价冲突持续性，但预期差不大。综合评估，机会存在但风险较高，置信度下调0.1。\n\n【M13调研】该机会描述的地缘事件未获任何新闻、研报或行业趋势支持，M13调研明确指出其基于虚假或过时信息。新闻显示伊朗谈判仍在进行，与冲突升级矛盾。无相关基本面数据。因此，该机会存在重大利空，建议忽略。置信度下调0.3。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601225.SH",
+    "600188.SH",
+    "601919.SH",
+    "600026.SH",
+    "000061.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "霍尔木兹海峡交火事件（5月8日）和美军袭击伊朗船只（5月7日）是近期催化剂，叠加进口煤价倒挂（5月6日）和全球粮价上涨（5月8日），地缘风险正在加速传导至能源、航运和农业领域，当前是布局窗口。",
+  "related_signals": [
+    "sig_3cf8fcf349ae",
+    "sig_0806bfd8639e",
+    "sig_2e7d7516821e",
+    "sig_755175bfd918",
+    "sig_c8ad6aa39ecc",
+    "sig_ec500e4d7f22"
+  ],
+  "inferred_events": [
+    "inferred_a3f4ac46",
+    "inferred_70a13652",
+    "inferred_35bc1165",
+    "inferred_adf2ea0d",
+    "inferred_e25615c5",
+    "inferred_45fac2ea"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "霍尔木兹海峡附近2小时内接连传出交火声，地缘紧张局势升级",
+    "德国航运巨头赫伯罗特每周额外成本超5000万美元，航运成本飙升",
+    "进口煤价与国内煤价倒挂，企业转向国内采购，利好国内煤企",
+    "全球粮价连续第三个月上涨，受能源成本和中东战事影响"
+  ],
+  "counter_evidence": [
+    "硫磺价格年内上涨约80%，下游钛白粉、磷肥企业成本急剧抬升，可能抑制部分工业需求",
+    "地缘冲突若快速缓和，航运和能源风险溢价可能迅速消退"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡通行受阻将持续至少1-2个月，航运成本维持高位",
+    "假设2：中东地缘冲突不会在短期内快速缓和",
+    "假设3：国内煤炭企业产能充足，能承接进口煤转向需求"
+  ],
+  "uncertainty_map": [
+    "地缘冲突缓和速度（影响程度：高）",
+    "国内煤炭增产政策响应（影响程度：中）",
+    "全球粮价上涨是否引发通胀政策干预（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.17500000000000002,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：国内煤炭、航运和农业板块受益于地缘风险溢价，若冲突持续，相关个股可能上涨15-30%。潜在风险：地缘冲突快速缓和导致风险溢价消退，相关板块可能回调5-10%。",
+  "next_validation_questions": [
+    "霍尔木兹海峡通行是否在近期有恢复迹象？",
+    "国内煤炭企业（如中国神华、中煤能源）近期是否有增产或提价公告？",
+    "全球航运指数（如BDI）是否继续上行？"
+  ],
+  "invalidation_conditions": [
+    "霍尔木兹海峡恢复通行，航运成本显著下降",
+    "中东地缘冲突出现停火或缓和信号",
+    "国内煤炭价格因政策干预大幅下跌"
+  ],
+  "must_watch_indicators": [
+    "霍尔木兹海峡通行状态",
+    "BDI（波罗的海干散货指数）",
+    "国内动力煤期货价格",
+    "联合国粮农组织食品价格指数"
+  ],
+  "kill_switch_signals": [
+    "中东主要国家宣布停火",
+    "霍尔木兹海峡恢复通航",
+    "国内煤炭价格因政策干预单日跌幅超5%"
+  ],
+  "warnings": [
+    "注意：地缘冲突风险具有高度不确定性，需设置严格止损",
+    "注意：硫磺价格上涨可能压制下游化工需求，间接影响部分板块"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:26:57.304959",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_20260509_astock_skill_65c07d40",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,111 @@
+{
+  "opportunity_id": "opp_14b901ed",
+  "opportunity_title": "宽松驱动科技轮动",
+  "opportunity_thesis": "央行降准降息释放流动性，叠加制造业PMI连续收缩强化宽松预期，资金从消费地产系统性流向新能源和半导体板块。当前市场情绪贪婪但尚未过热，板块轮动初期仍有预期差，新能源和半导体龙头受益于流动性改善和政策催化，具备结构性上涨机会。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "688981.SH",
+    "603501.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-20T00:00:00",
+    "end": "2026-06-20T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行降准降息已落地，制造业PMI连续收缩强化宽松预期，资金轮动信号明确，新能源和半导体板块处于轮入初期，市场情绪贪婪但未极端，时间窗口打开。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sent_afb94f7676ae"
+  ],
+  "inferred_events": [
+    "inferred_73977b67",
+    "inferred_1156cea6",
+    "inferred_956e7c6e",
+    "inferred_964e6cfb",
+    "inferred_8fffac49",
+    "inferred_97cb810a",
+    "inferred_74f6e9df"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行下调存款准备金率0.5个百分点和7天逆回购利率10bp，释放明确宽松信号",
+    "制造业PMI连续3个月低于荣枯线，经济下行压力加大，宽松政策预期持续",
+    "板块轮动信号显示资金从消费地产流向新能源和半导体，趋势初现",
+    "市场情绪贪婪（恐贪指数67），但未达极端，仍有上行空间"
+  ],
+  "counter_evidence": [
+    "制造业PMI持续收缩，基本面疲弱可能压制整体市场风险偏好",
+    "历史案例显示技术突破需商业化验证，新能源和半导体板块存在概念炒作风险"
+  ],
+  "key_assumptions": [
+    "假设1：央行宽松政策持续，后续仍有降准或降息空间",
+    "假设2：新能源和半导体板块基本面改善或政策催化落地，支撑资金持续流入",
+    "假设3：消费地产资金流出不会逆转，板块轮动趋势延续"
+  ],
+  "uncertainty_map": [
+    "经济下行超预期，PMI持续恶化导致市场整体下跌（影响程度：高）",
+    "新能源/半导体板块业绩不及预期，资金轮动缺乏基本面支撑（影响程度：中）",
+    "地缘风险升级（如霍尔木兹海峡冲突）引发避险情绪，打断轮动节奏（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.35000000000000003,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益来自流动性驱动的估值修复和板块轮动初期涨幅，风险在于经济基本面恶化或政策不及预期导致轮动中断，收益风险比约2:1，需设置止损。",
+  "next_validation_questions": [
+    "新能源和半导体板块近期是否有业绩预告或政策催化？",
+    "北向资金是否持续流入新能源和半导体龙头？",
+    "消费地产板块资金流出是否加速？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "新能源或半导体板块出现重大利空（如龙头业绩暴雷）",
+    "市场情绪转为极度恐惧，资金全面流出"
+  ],
+  "must_watch_indicators": [
+    "北向资金流向（新能源/半导体板块）",
+    "新能源和半导体龙头股成交量变化",
+    "制造业PMI后续数据",
+    "央行公开市场操作利率"
+  ],
+  "kill_switch_signals": [
+    "新能源或半导体板块单日跌幅超3%且放量",
+    "北向资金连续3日净流出超50亿元",
+    "消费地产板块突然大幅反弹，资金轮动逆转"
+  ],
+  "warnings": [
+    "注意：板块轮动信号来自情绪面系统，需结合基本面验证",
+    "注意：经济下行压力可能压制整体市场，不宜重仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:10:07.809147",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_20260509_astock_skill_2c8eda66",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

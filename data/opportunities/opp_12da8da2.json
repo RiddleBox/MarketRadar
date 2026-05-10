@@ -1,0 +1,111 @@
+{
+  "opportunity_id": "opp_12da8da2",
+  "opportunity_title": "欧洲国防军工机遇",
+  "opportunity_thesis": "俄乌冲突出现实质性缓和信号（俄同意延长停火并换俘），同时欧盟向波兰提供437亿欧元国防贷款，欧洲国防开支进入加速扩张期。冲突缓和降低全球风险溢价，利好风险资产；国防贷款直接利好军工产业链，尤其是欧洲本土及全球国防供应商。当前市场对欧洲国防开支的结构性增长定价不足，存在预期差。\n\n【M13调研】机会描述基于俄乌冲突缓和及欧盟国防贷款，但最近20条新闻无相关报道，研报和行业趋势分析缺失，基本面数据为空。关键事件真实性存疑，市场预期差缺乏依据。风险在于信息可能过时或虚假，且无数据支撑投资决策。综合评估，该机会置信度低，建议谨慎对待。\n\n【M13调研】该机会描述的核心事件（俄乌冲突缓和、欧盟国防贷款）在最近20条新闻、研报、基本面数据和行业趋势中均无任何佐证，信息真实性存疑。市场预期差缺乏数据支撑，风险极高。建议放弃该机会，避免基于未经验证的信息进行投资。",
+  "target_markets": [
+    "A_SHARE",
+    "HK",
+    "US"
+  ],
+  "target_instruments": [
+    "600760.SH",
+    "600893.SH",
+    "600862.SH",
+    "000768.SZ",
+    "600118.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "俄乌停火三天并交换战俘是冲突以来罕见的正式停火安排，俄方同意延长停火至11日，冲突缓和信号明确；同时波兰作为首个签署国获得欧盟437亿欧元国防贷款，标志着欧洲国防开支进入实质性加速阶段，时间窗口紧迫。",
+  "related_signals": [
+    "sig_2cf7a78fa7a2",
+    "sig_f0f177c18de5",
+    "sig_495622dbc368",
+    "sig_73b1a2dad8ea"
+  ],
+  "inferred_events": [
+    "inferred_c35be469",
+    "inferred_6f49c67f",
+    "inferred_b9c63e5c",
+    "inferred_8d69616f",
+    "inferred_5c90cc7a",
+    "inferred_9dd58fb6"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "俄罗斯同意并支持特朗普提出的延长停火和换俘方案，乌克兰承诺不攻击红场阅兵",
+    "波兰与欧盟签署'欧洲安全行动'协议，获437亿欧元低息国防贷款，为19国中首个",
+    "俄乌宣布从5月9日起停火三天，交换1000名战俘"
+  ],
+  "counter_evidence": [
+    "停火仅三天，持续时间短，冲突可能反复",
+    "欧洲国防开支增加对A股军工企业直接订单拉动有限"
+  ],
+  "key_assumptions": [
+    "假设1：停火协议能够延长并维持，冲突不会短期升级",
+    "假设2：欧盟国防贷款计划将扩展至其他成员国，形成持续国防开支增长趋势",
+    "假设3：全球国防军工板块估值未充分反映欧洲国防开支结构性增长"
+  ],
+  "uncertainty_map": [
+    "停火协议执行力度及后续谈判进展（影响程度：高）",
+    "欧盟国防贷款实际落地速度及规模（影响程度：中）",
+    "A股军工企业能否获得欧洲国防订单（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 6.9,
+    "confidence_score": 0.06,
+    "execution_readiness": 0.65
+  },
+  "risk_reward_profile": "潜在收益来自欧洲国防开支结构性增长带来的全球军工板块估值重估，以及冲突缓和带来的风险偏好提升；风险在于停火协议破裂导致冲突升级，或国防贷款落地不及预期。预计上行空间15-25%，下行风险10-15%。",
+  "next_validation_questions": [
+    "停火协议是否延长至三天以上？后续谈判是否有实质性进展？",
+    "欧盟其他成员国是否跟进签署国防贷款协议？",
+    "A股军工龙头是否有欧洲订单或合作公告？"
+  ],
+  "invalidation_conditions": [
+    "停火协议破裂，俄乌冲突显著升级",
+    "欧盟国防贷款计划被推迟或削减",
+    "全球股市因其他风险事件大幅下跌"
+  ],
+  "must_watch_indicators": [
+    "俄乌停火执行情况（每日战报）",
+    "欧盟国防贷款协议签署进展",
+    "全球国防ETF（如ITA、PPA）价格走势",
+    "A股军工板块成交量及龙头股走势"
+  ],
+  "kill_switch_signals": [
+    "俄方或乌方宣布终止停火",
+    "欧盟宣布缩减国防贷款规模",
+    "A股军工板块放量下跌破位"
+  ],
+  "warnings": [
+    "注意：停火仅三天，冲突缓和信号可能短暂，需密切跟踪后续进展",
+    "注意：A股军工企业直接受益欧洲国防订单的确定性较低，需关注出口型企业"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T13:37:31.088786",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_aefdc61f",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

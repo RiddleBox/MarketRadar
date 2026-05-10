@@ -1,0 +1,71 @@
+{
+  "plan_id": "plan_62f1faf2aa00",
+  "opportunity_id": "opp_46d00d43",
+  "plan_summary": "BULLISH | 688981.SH, 603501.SH",
+  "primary_instruments": [
+    "688981.SH",
+    "603501.SH",
+    "688008.SH",
+    "002230.SZ",
+    "600941.SH"
+  ],
+  "instrument_type": "ETF",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 5.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破20日均线（MA20）或入场价下方5%（取两者中较低者）"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 10.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "目标价：入场价上方15%-25%（基于历史波动率和业绩预期）"
+  },
+  "position_sizing": {
+    "suggested_allocation": "8.0%",
+    "max_allocation": "不超过8.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=5.0% | 仓位=风险预算/止损=8.0%",
+    "suggested_allocation_pct": 0.08,
+    "max_allocation_pct": 0.08
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入总计划仓位的20%（即总资金的10%），分散至5只目标品种，每只占4%仓位。使用限价单，价格不高于当前市价0.5%。",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "满足任一入场条件（价格+成交量+板块确认）"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总计划仓位的60%（即总资金的30%），优先加仓Phase 1中表现最强的2-3只品种（涨幅最大且成交量配合），每只加仓至总仓位的12%-15%。",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1持仓浮盈超过3%，且板块指数（半导体ETF）连续3日站稳5日均线"
+    },
+    {
+      "phase_name": "Phase 3 满仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总计划仓位的100%（即总资金的50%），剩余仓位均匀分配至所有目标品种。设置止损单于入场价下方5%。",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 2持仓浮盈超过5%，且出现以下任一信号：1）中国移动算力投资正式落地公告；2）AI终端国家标准实施后首个交易日板块涨幅>2%；3）北向资金连续3日净流入半导体板块"
+    }
+  ],
+  "valid_until": "2026-05-31T09:42:18.381368",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T09:42:18.381462",
+  "opportunity_priority": "research"
+}

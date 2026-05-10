@@ -1,0 +1,113 @@
+{
+  "opportunity_id": "opp_89b66637",
+  "opportunity_title": "宽松对冲衰退",
+  "opportunity_thesis": "央行已实施降准降息，但经济数据（PMI连续3个月低于荣枯线、CPI/PPI通缩）显示下行压力持续，政策宽松预期仍强烈。市场对宽松的短期反应可能过度，但中期看，流动性改善和后续进一步宽松（未来2周内降准降息概率85%）将支撑A股估值修复，尤其是受益于利率下行的金融和成长板块。当前信号一致指向政策宽松对抗经济衰退，构成中期布局机会。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "600519.SH",
+    "000858.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-18T00:00:00",
+    "end": "2026-07-18T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行已宣布降准降息（4月20日生效），但经济数据（PMI、CPI、PPI）持续恶化，市场对政策效果存疑，预期差较大。未来2周内进一步宽松概率高，当前是布局窗口。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203"
+  ],
+  "inferred_events": [
+    "inferred_80732bbc",
+    "inferred_16fa4681",
+    "inferred_7a0ca01b",
+    "inferred_3c76bf89",
+    "inferred_8707c94e",
+    "inferred_6051c47e",
+    "inferred_327baf9f",
+    "inferred_ca06b9f4"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行下调存款准备金率0.5个百分点，释放长期流动性约1万亿元",
+    "央行下调7天逆回购利率10bp至1.7%，降低资金成本",
+    "制造业PMI连续3个月低于荣枯线，经济下行压力确认",
+    "CPI同比下降0.3%，PPI同比下降2.7%，通缩压力加大，政策宽松必要性增强"
+  ],
+  "counter_evidence": [
+    "市场对宽松已有部分定价，降准降息消息公布后短期涨幅可能有限",
+    "经济基本面持续恶化可能抵消宽松效果，企业盈利改善需时间"
+  ],
+  "key_assumptions": [
+    "假设1：央行在未来2周内进一步降准或降息，延续宽松周期",
+    "假设2：经济数据不会进一步急剧恶化，PMI在二季度末企稳",
+    "假设3：地缘政治风险（中东冲突）不显著升级，不引发系统性风险"
+  ],
+  "uncertainty_map": [
+    "经济下行超预期（影响程度：高）：PMI持续低于48，通缩加剧，宽松政策效果有限",
+    "地缘冲突升级（影响程度：中）：中东局势恶化导致油价暴涨，输入性通胀制约宽松空间",
+    "市场情绪过热（影响程度：中）：恐贪指数已67，若进一步升至80以上，追高风险加大"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.35000000000000003,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：若宽松政策持续加码且经济企稳，A股估值修复空间约10-15%；潜在风险：经济超预期下滑或地缘风险爆发，最大回撤约8-10%。风险收益比约1.5:1。",
+  "next_validation_questions": [
+    "未来2周内央行是否进一步降准或降息？",
+    "4月制造业PMI是否企稳或回升？",
+    "北向资金是否持续净流入？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "PMI跌破48，经济加速恶化",
+    "中东冲突升级导致原油价格暴涨20%以上"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率",
+    "制造业PMI月度数据",
+    "北向资金净流入/流出",
+    "恐贪指数"
+  ],
+  "kill_switch_signals": [
+    "央行意外加息或收紧流动性",
+    "PMI跌破48且无企稳迹象",
+    "地缘冲突导致全球市场恐慌性抛售"
+  ],
+  "warnings": [
+    "注意：经济数据滞后，宽松效果需时间传导，短期市场可能震荡",
+    "注意：市场已部分定价宽松，追高需谨慎"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T15:09:47.056727",
+  "batch_id": "sched_signal_pipeline_20260509_145546_c8d320_20260509_astock_skill_288a70f4",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

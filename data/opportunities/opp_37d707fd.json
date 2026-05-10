@@ -1,0 +1,117 @@
+{
+  "opportunity_id": "opp_37d707fd",
+  "opportunity_title": "光伏三击反转",
+  "opportunity_thesis": "政策目标上调（2026年装机200GW，同比+50%）、技术突破（BC电池效率破世界纪录，Q3量产）与巨额订单落地（隆基100亿美元，净利润3倍于去年）形成三重共振，驱动光伏行业从底部反转。市场当前仅反应了订单利好，对政策和技术溢价的定价不足，存在显著预期差。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "688599.SH",
+    "002129.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "三大催化剂同日爆发：1）国家能源局发布200GW装机目标，政策信号明确；2）隆基BC电池技术突破并锁定Q3量产，技术路线确定性增强；3）100亿美元订单落地，验证全球需求。市场情绪从极度悲观转向，但股价仅涨停，尚未充分定价政策和技术溢价。",
+  "related_signals": [
+    "sig_d96752d3b6e2",
+    "sig_dcf5293d00c8",
+    "sig_f092b9093445",
+    "sig_8b72684e688d"
+  ],
+  "inferred_events": [
+    "inferred_4d35d3ea",
+    "inferred_13dab0dc",
+    "inferred_6f6362ee",
+    "inferred_441e664b",
+    "inferred_16d13569",
+    "inferred_0f7fb382",
+    "inferred_b8ed3025",
+    "inferred_4a8aa67d",
+    "inferred_a942b062",
+    "inferred_b3eabd65",
+    "inferred_9c8a773f",
+    "inferred_b7ef7758",
+    "inferred_32c015fa",
+    "inferred_dcfdccfd"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "隆基绿能签署100亿美元订单，净利润贡献为去年全年3倍，基本面拐点确认",
+    "BC电池转换效率26.5%破世界纪录，Q3量产将拉开与竞争对手差距",
+    "国家能源局2026年装机目标200GW，同比+50%，政策支持力度空前",
+    "隆基股价涨停且成交量放大至5倍，资金开始积极介入"
+  ],
+  "counter_evidence": [
+    "光伏行业过去两年产能过剩严重，价格战尚未完全结束",
+    "中东地缘冲突升级可能影响沙特订单的交付和收款"
+  ],
+  "key_assumptions": [
+    "假设1：BC电池技术量产顺利，良率和成本可控",
+    "假设2：沙特订单的交付和付款不受地缘政治影响",
+    "假设3：国内光伏装机目标能够如期完成，不出现政策执行偏差"
+  ],
+  "uncertainty_map": [
+    "BC电池量产良率与成本控制（影响程度：高）",
+    "中东地缘冲突对沙特订单执行的影响（影响程度：中）",
+    "行业产能出清速度，是否仍有价格战风险（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 9,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.6,
+    "confidence_score": 0.38000000000000006,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：若三重催化兑现，龙头公司（隆基）估值修复至行业平均PE（20x），对应股价上行空间30-50%。潜在风险：BC量产失败或订单取消，股价可能回吐涨幅，下行风险约15-20%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "隆基BC电池量产的具体良率数据和成本是否达到预期？",
+    "沙特订单的预付款比例和交付时间表是否已明确？",
+    "其他光伏龙头（通威、阳光电源）是否有跟进的技术或订单公告？"
+  ],
+  "invalidation_conditions": [
+    "BC电池量产推迟或良率低于80%",
+    "沙特订单出现重大交付障碍或取消",
+    "光伏板块整体资金持续流出，无法形成板块效应"
+  ],
+  "must_watch_indicators": [
+    "隆基绿能股价能否在涨停后站稳并持续放量",
+    "光伏ETF（如159857）的份额变化和资金流向",
+    "国家能源局后续对装机目标的细化执行文件",
+    "BC电池产业链相关公司（如设备商）的订单公告"
+  ],
+  "kill_switch_signals": [
+    "隆基绿能发布BC量产不及预期的公告",
+    "沙特订单被取消或大幅缩水",
+    "光伏板块出现集体跌停或资金大幅出逃"
+  ],
+  "warnings": [
+    "注意：信号来源均为新闻公告，需核实隆基订单的具体条款和收款条件",
+    "注意：历史案例显示技术突破若无商业化订单支撑，股价可能短期冲高后回落"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T22:13:36.260070",
+  "batch_id": "sched_signal_pipeline_20260509_212153_0b40a6_20260509_astock_skill_c78bec52",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_85460fe6",
+  "opportunity_title": "俄乌停火交易窗口",
+  "opportunity_thesis": "俄乌冲突出现实质性缓和信号，包括停火协议、换俘及领导人会晤意愿，尽管俄方对延长停火持保留态度，但短期风险偏好修复已启动。全球风险资产（A股、港股、美股）将受益于地缘溢价消退，尤其是前期受冲突压制的能源敏感板块和欧洲出口相关品种。当前市场尚未充分定价停火持续性，存在预期差，但窗口较短，需警惕俄方负面表态带来的反复。\n\n【M13调研】央行降准降息明确宽松，政策底已现，但经济底未确认，市场在宽松预期与衰退现实间博弈。流动性改善直接利好金融、地产，经济企稳预期利好新能源、半导体，但需数据验证。无研报和新闻数据，信息不完整，风险在于经济持续疲弱和政策传导时滞。综合评估无重大利空，但置信度偏低，建议谨慎参与。\n\n【M13调研】央行降准降息明确宽松，政策底已现，但经济底未确认，市场在宽松预期与衰退现实间博弈。流动性改善直接利好金融、地产，经济企稳预期利好新能源、半导体，但需数据验证。无研报和新闻数据，基本面为空，行业趋势缺失，信息不完整。风险在于经济持续疲弱和政策传导时滞。无重大利空，但置信度偏低，建议谨慎参与。",
+  "target_markets": [
+    "A_SHARE",
+    "HK",
+    "US"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "600519.SH",
+    "000858.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-05-16T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "停火协议已宣布并开始执行（5月9-11日），普京确认收到会晤口信，这是冲突以来最明确的缓和信号。但俄方同时表示延长停火缺乏现实基础，表明窗口可能仅限停火期内，需快速反应。",
+  "related_signals": [
+    "sig_2cf7a78fa7a2",
+    "sig_357a73b3d181",
+    "sig_dbba3aafdd0f",
+    "sig_40e0fe37ede7"
+  ],
+  "inferred_events": [
+    "inferred_3b9afa30",
+    "inferred_421adbe7",
+    "inferred_c6c2ce88",
+    "inferred_d391c9fc",
+    "inferred_f3fd0a91",
+    "inferred_7f26c289",
+    "inferred_e4c2063d",
+    "inferred_9393f659"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "俄罗斯同意延长停火并换俘，乌克兰承诺不攻击红场阅兵",
+    "普京确认收到泽连斯基会晤口信，不反对第三国会谈",
+    "联合国秘书长对停火表示欢迎，国际社会认可"
+  ],
+  "counter_evidence": [
+    "俄方称延长停火缺乏现实基础，暗示停火可能无法持续",
+    "历史案例显示地缘缓和带来的风险偏好修复通常短暂（如2024年地缘冲突案例）"
+  ],
+  "key_assumptions": [
+    "假设1：停火期间双方无重大军事冲突，维持相对平静",
+    "假设2：市场对停火持续性的悲观预期未被完全定价，存在修复空间"
+  ],
+  "uncertainty_map": [
+    "停火能否延长至5月11日之后（影响程度：高）",
+    "普京与泽连斯基会晤能否成行及结果（影响程度：中）",
+    "俄方负面表态是否引发市场情绪逆转（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 6,
+    "timeliness": 9,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 5,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.4,
+    "confidence_score": 0.25,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益来自风险偏好修复和地缘溢价消退，幅度约3-5%；风险在于停火破裂或俄方强硬表态导致情绪逆转，最大回撤约2-3%。盈亏比约1.5:1，适合短线交易。",
+  "next_validation_questions": [
+    "停火期间是否有违反协议的重大军事行动？",
+    "普京与泽连斯基会晤是否有具体时间表？",
+    "全球主要股指（如S&P 500、恒生指数）是否已出现明显反弹？"
+  ],
+  "invalidation_conditions": [
+    "停火期间发生重大军事冲突",
+    "俄方明确拒绝延长停火或会晤",
+    "市场情绪指标（如VIX）未出现下降"
+  ],
+  "must_watch_indicators": [
+    "俄乌边境军事动态",
+    "普京与泽连斯基会晤进展",
+    "VIX指数变化",
+    "欧洲天然气价格"
+  ],
+  "kill_switch_signals": [
+    "俄方宣布终止停火",
+    "乌克兰方面违反停火协议",
+    "普京公开拒绝会晤"
+  ],
+  "warnings": [
+    "注意：俄方对延长停火持负面态度，机会窗口可能仅限停火期内",
+    "历史案例显示地缘缓和交易通常持续时间短，需严格止损"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T06:12:14.311804",
+  "batch_id": "sched_signal_pipeline_20260510_055340_631327_20260510_astock_skill_c4604e19",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

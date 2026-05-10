@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_f88e7c1f",
+  "opportunity_title": "人形机器人产业链加速",
+  "opportunity_thesis": "人形机器人产业链正经历从概念到落地的关键转折：乐动机器人IPO获6707倍散户认购显示资本极度追捧，小雨智造B+轮融资获产业资本加持，Zeroth元点M1接入腾讯OpenClaw并达成万台终端意向，叠加龙头股绿的谐波创历史新高。这些信号共同指向产业链从研发走向量产和生态构建的加速阶段，存在显著预期差——市场尚未充分定价商业化落地的实际进展。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头创历史新高，资金高度聚焦。固态电池技术提供支撑，IPO认购火爆显示市场关注。但短期涨幅较大，缺乏研报覆盖，产业落地进展不确定。整体机会真实，但需警惕回调风险，建议关注后续产业催化。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "601689.SH",
+    "300124.SZ",
+    "002747.SZ",
+    "688160.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "当前时点催化剂密集：乐动机器人IPO超额认购创纪录（5月8日）、Zeroth元点M1接入腾讯OpenClaw并计划5月下旬上线（5月9日）、小雨智造B+轮融资（5月9日）、龙头股创历史新高（5月8日），多个事件在48小时内集中爆发，形成共振。且央行降准降息预期（概率85%）提供流动性支撑，历史案例显示技术突破+商业化验证的组合往往带来主升浪。",
+  "related_signals": [
+    "sig_cc33dd52b601",
+    "sig_41c9d0ac13e2",
+    "sig_4ef836f98ad7",
+    "sig_aff5a3953935",
+    "sig_12415bc90517"
+  ],
+  "inferred_events": [
+    "inferred_83eddb1e",
+    "inferred_72c08007",
+    "inferred_cc7b0032",
+    "inferred_62cb07cd",
+    "inferred_63f8c652",
+    "inferred_1ecfe7b3",
+    "inferred_a3a6ceaf",
+    "inferred_de883ec1"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "乐动机器人香港IPO获6707倍散户认购，国际配售9.54倍，显示资本极度看好",
+    "Zeroth元点M1成为全球首款接入腾讯OpenClaw的可量产人形机器人，已达成万台终端接入意向",
+    "小雨智造完成数亿元B+轮融资，北汽产投、复星锐正等产业资本入局",
+    "绿的谐波股价创历史新高，概念股集体涨停，技术面强势确认"
+  ],
+  "counter_evidence": [
+    "历史案例case_2024_tech_breakthrough显示技术突破后缺乏订单验证会导致回落",
+    "当前恐贪指数67处于贪婪区间，市场情绪过热可能带来短期回调风险"
+  ],
+  "key_assumptions": [
+    "假设1：Zeroth元点M1在5月下旬正式上线后能获得实际订单，而非仅意向",
+    "假设2：央行降准降息在2周内落地，维持流动性宽松",
+    "假设3：人形机器人产业链商业化进度不被技术瓶颈或政策变化打断"
+  ],
+  "uncertainty_map": [
+    "商业化落地速度不确定性（影响程度：高）：从万台意向到实际交付和收入确认存在时间差",
+    "市场情绪过热回调风险（影响程度：中）：恐贪指数67，短期获利盘抛压可能引发回调",
+    "竞争格局变化（影响程度：中）：特斯拉等海外巨头可能发布更具竞争力的产品"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：若商业化落地超预期，龙头股有望在3个月内实现30-50%涨幅；风险：若订单不及预期或市场情绪反转，回调幅度可能达15-20%，止损点可设在近期低点下方5%。",
+  "next_validation_questions": [
+    "Zeroth元点M1在5月下旬上线后首周订单量是否达到预期？",
+    "乐动机器人上市首日表现如何，是否继续获得资金追捧？",
+    "绿的谐波等龙头股在创历史新高后是否有持续成交量支撑？",
+    "央行降准降息是否在2周内落地？"
+  ],
+  "invalidation_conditions": [
+    "Zeroth元点M1上线后订单量远低于万台意向",
+    "人形机器人板块出现集体跌停或龙头股跌破20日均线",
+    "央行降准降息预期落空或流动性收紧"
+  ],
+  "must_watch_indicators": [
+    "绿的谐波(688017)日成交量及价格走势",
+    "Zeroth元点M1正式上线后订单公告",
+    "乐动机器人上市首日涨幅及换手率",
+    "央行公开市场操作及降准降息信号"
+  ],
+  "kill_switch_signals": [
+    "人形机器人板块单日跌幅超5%且无利空",
+    "龙头股绿的谐波连续3日放量下跌",
+    "Zeroth元点M1上线延期或技术问题曝光"
+  ],
+  "warnings": [
+    "注意：部分信号来自新闻，非官方公告，需验证Zeroth元点M1接入腾讯OpenClaw的具体条款",
+    "历史案例显示概念炒作后缺乏订单支撑会快速回落，需紧盯商业化进展"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T17:29:00.004694",
+  "batch_id": "sched_signal_pipeline_20260509_163638_e0e39c_20260509_astock_skill_c7c99d5a",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

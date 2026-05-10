@@ -1,0 +1,118 @@
+{
+  "opportunity_id": "opp_623ff73a",
+  "opportunity_title": "出口超预期，机电汽车受益",
+  "opportunity_thesis": "中国4月出口同比增14.1%，远超市场预期的8.4%，其中机电产品出口增长17.6%，电动汽车出口增长68.1%，汽车整车出口量额同比大增51%/44%。这些数据表明外需强劲，出口结构持续优化，机电与汽车产业链（尤其是新能源车）是最大受益者。当前市场尚未充分定价这一超预期数据，存在预期差，且航运运价上涨进一步确认了出口景气度，构成短期交易机会。\n\n【M13调研】4月出口数据超预期，贸易顺差创新高，电动车出口增长68.1%是核心亮点，对出口导向型制造业和电动车产业链构成短期催化。市场尚未充分定价这一结构性分化，存在预期差机会。但需注意贸易摩擦升级风险、出口持续性不确定性以及电动车产业链高估值。整体机会偏正面，但缺乏研报和直接新闻催化，置信度中等偏上。\n\n【M13调研】4月出口数据超预期，电动车出口高增是结构性亮点，市场尚未充分定价，存在预期差。但缺乏研报和新闻催化，基本面数据缺失，且面临贸易摩擦和持续性风险。整体机会偏正面，但置信度下调至中等。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "600104.SH",
+    "000625.SZ",
+    "601238.SH",
+    "600066.SH",
+    "000800.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "4月出口数据于5月9日公布，超预期幅度大（实际14.1% vs 预期8.4%），市场尚未充分反应。同时航运运价上涨、汽车出口量额创新高等信号密集释放，形成短期催化剂窗口。",
+  "related_signals": [
+    "sig_d3ff18d62491",
+    "sig_debd6a76d715",
+    "sig_890ae71c107a",
+    "sig_e9adf347ff0c",
+    "sig_dba0b0625849",
+    "sig_fb3b73b63b61",
+    "sig_e9fbc445cc5c",
+    "sig_581f274076e7"
+  ],
+  "inferred_events": [
+    "inferred_a1ba3277",
+    "inferred_79e8ab5b",
+    "inferred_279a348b",
+    "inferred_d4d86622",
+    "inferred_87e78b12",
+    "inferred_1fc71fdf",
+    "inferred_f619cae0",
+    "inferred_45fb7266",
+    "inferred_c21a477d",
+    "inferred_93b2e213"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中国4月出口同比增14.1%，远超市场预期的8.4%",
+    "前4月电动汽车出口增长68.1%，机电产品出口增长17.6%",
+    "4月汽车整车出口量同比增51%，出口额同比增44%",
+    "三大船型运价上涨，远东散货日租金指数涨幅扩大，确认出口景气"
+  ],
+  "counter_evidence": [
+    "进口增速25.3%高于出口，可能反映内需改善但也会压缩顺差",
+    "地缘政治风险（中东局势）可能影响后续出口订单和航运"
+  ],
+  "key_assumptions": [
+    "假设1：外需在短期内不会显著恶化（欧美经济未出现超预期衰退）",
+    "假设2：中东地缘冲突不会导致全球贸易物流中断",
+    "假设3：人民币汇率保持相对稳定，不出现大幅升值削弱出口竞争力"
+  ],
+  "uncertainty_map": [
+    "外需持续性不确定（影响程度：高）",
+    "地缘政治风险升级可能冲击航运和出口（影响程度：中）",
+    "市场可能已部分定价出口利好，预期差有限（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益来自出口超预期带来的估值修复和盈利上调，风险在于外需回落或地缘冲突打断出口链条。预计上行空间5-10%，下行风险3-5%，风险收益比约2:1。",
+  "next_validation_questions": [
+    "4月出口数据公布后，相关个股（如上汽、比亚迪等）的成交量是否明显放大？",
+    "后续几周是否有更多出口相关高频数据（如PMI新出口订单）确认景气？",
+    "市场对出口超预期的解读是否一致乐观，还是存在分歧？"
+  ],
+  "invalidation_conditions": [
+    "5月出口数据大幅低于预期（如增速降至个位数）",
+    "中东局势导致霍尔木兹海峡航运中断，影响全球贸易",
+    "人民币兑美元快速升值超过2%"
+  ],
+  "must_watch_indicators": [
+    "每周出口集装箱运价指数（CCFI）",
+    "5月PMI新出口订单分项",
+    "人民币汇率走势",
+    "汽车行业周度出口数据"
+  ],
+  "kill_switch_signals": [
+    "出口相关个股放量下跌，跌破关键支撑位",
+    "中东冲突升级导致油价暴涨超过10%",
+    "美国或欧盟宣布对中国电动汽车加征关税"
+  ],
+  "warnings": [
+    "注意：出口数据为4月数据，市场可能已部分预期，需警惕利好兑现",
+    "注意：地缘政治风险（中东）是最大不确定性，需持续跟踪"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T18:57:41.671360",
+  "batch_id": "sched_signal_pipeline_20260509_182053_fc7de6_20260509_astock_skill_ed4d9299",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

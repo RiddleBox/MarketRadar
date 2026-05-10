@@ -1,0 +1,110 @@
+{
+  "opportunity_id": "opp_0b8e9201",
+  "opportunity_title": "新能源半导体轮动",
+  "opportunity_thesis": "资金从消费地产明确流向新能源和半导体，叠加成交额突破1.5万亿显示市场活跃度提升，板块轮动具备结构性驱动力。但市场整体情绪贪婪且指数高开回落，短期存在获利回吐压力，机会窗口需等待情绪消化后的二次确认。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "688981.SH",
+    "603501.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "资金轮动信号明确（新能源/半导体流入，消费/地产流出），成交额放大至1.5万亿确认增量资金入场，但指数高开回落显示短期分歧，当前是观察板块能否在回调后继续走强的关键时点。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_38049b31fb61",
+    "sent_afb94f7676ae",
+    "sig_a1a728ae8eed"
+  ],
+  "inferred_events": [
+    "inferred_f09f939a",
+    "inferred_f3b2dda0",
+    "inferred_5ffb8eba",
+    "inferred_a624a7c5",
+    "inferred_0c0abcb4",
+    "inferred_38c3be61",
+    "inferred_d00fffd3",
+    "inferred_920291d4",
+    "inferred_05eb70ff",
+    "inferred_f4c9653d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "资金从消费地产流向新能源半导体",
+    "沪深两市成交额突破1.5万亿元",
+    "恐贪指数67显示市场情绪贪婪但未极端"
+  ],
+  "counter_evidence": [
+    "三大指数高开回落全部翻绿，下跌个股近4000只",
+    "北向资金净流入为0，外资未确认方向"
+  ],
+  "key_assumptions": [
+    "资金轮动趋势可持续，新能源/半导体基本面有支撑",
+    "市场整体回调不演变为系统性风险，成交额维持万亿以上"
+  ],
+  "uncertainty_map": [
+    "指数高开回落是否意味着短期见顶（影响程度：高）",
+    "新能源/半导体板块能否在回调后获得资金接力（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 6,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 5,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.3,
+    "confidence_score": 0.25,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益来自板块轮动持续和增量资金推动，风险在于指数高开回落可能引发短期调整，止损需设在板块指数跌破近期低点。",
+  "next_validation_questions": [
+    "新能源/半导体板块在次日能否止跌企稳？",
+    "成交额能否维持在1.2万亿以上？",
+    "北向资金是否开始净流入新能源/半导体？"
+  ],
+  "invalidation_conditions": [
+    "新能源/半导体板块指数跌破20日均线",
+    "成交额萎缩至1万亿以下",
+    "资金重新流回消费地产"
+  ],
+  "must_watch_indicators": [
+    "新能源/半导体板块成交额占比",
+    "北向资金流向",
+    "沪深两市总成交额",
+    "恐贪指数变化"
+  ],
+  "kill_switch_signals": [
+    "三大指数连续两日下跌且跌幅扩大",
+    "新能源/半导体龙头股出现跌停",
+    "北向资金单日净流出超100亿"
+  ],
+  "warnings": [
+    "情绪贪婪叠加指数回落，短期追高风险较大",
+    "资金轮动信号来自情绪面系统，需结合基本面验证"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T18:46:24.188499",
+  "batch_id": "sched_signal_pipeline_20260509_182053_fc7de6_20260509_astock_skill_e62544ac",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

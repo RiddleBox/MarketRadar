@@ -1,0 +1,115 @@
+{
+  "opportunity_id": "opp_0b379c23",
+  "opportunity_title": "宽松对冲衰退",
+  "opportunity_thesis": "央行降准降息组合拳已落地，但经济数据（PMI连续3月收缩、CPI/PPI通缩）显示衰退压力仍在加大。当前市场对政策效果存疑，预期差较大，实际宽松力度超市场预期，且后续财政配合概率高，构成政策底+经济底博弈下的结构性做多窗口。\n\n【M13调研】机会基于通缩和降准预期，但缺乏研报、基本面数据和行业趋势支持。新闻分析中无直接相关宏观信息，仅有个股公告。政策预期差存在，但利好出尽风险需警惕。整体置信度较低，建议等待更多数据或政策明确信号后再行决策。\n\n【M13调研】机会描述基于经济疲软和央行超预期宽松，形成短期交易窗口，逻辑成立。但缺乏研报、行业趋势和基本面数据支持，新闻无相关事件，信息不充分。无重大利空，但置信度偏低，建议谨慎参与，关注后续经济数据验证。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601166.SH",
+    "600036.SH",
+    "000002.SZ",
+    "600585.SH",
+    "000333.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "降准降息已宣布但尚未完全传导至实体经济，市场对通缩和衰退的悲观定价已较充分，而政策宽松力度（降准0.5%+降息10bp）超出此前市场预期，形成短期预期差修复窗口。后续1-2个月是观察信贷数据、PMI是否企稳的关键期，也是政策效果验证期。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203"
+  ],
+  "inferred_events": [
+    "inferred_9c9b78d0",
+    "inferred_f2364ab2",
+    "inferred_f67e9ae5",
+    "inferred_ec2df7bb",
+    "inferred_eb8bc471",
+    "inferred_0f60fada",
+    "inferred_ae804392",
+    "inferred_ba67755b",
+    "inferred_c3e85128",
+    "inferred_e1f538c1"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点+降息10bp，宽松力度超预期",
+    "制造业PMI连续3个月低于荣枯线，经济下行压力已充分反映在股价中",
+    "CPI/PPI通缩数据为滞后指标，政策宽松后有望边际改善",
+    "历史案例显示降息降准组合后A股短期反弹概率较高"
+  ],
+  "counter_evidence": [
+    "通缩和PMI收缩可能持续，政策传导存在时滞",
+    "市场对宽松政策已部分定价，反弹空间可能有限"
+  ],
+  "key_assumptions": [
+    "假设1：后续信贷数据（社融、M2）在1-2个月内出现边际改善",
+    "假设2：没有超预期的外部冲击（如地缘冲突升级）打断宽松效果",
+    "假设3：财政政策（如专项债、特别国债）后续配合发力"
+  ],
+  "uncertainty_map": [
+    "政策传导效果不确定性（影响程度：高）",
+    "外部地缘风险（中东冲突）可能压制风险偏好（影响程度：中）",
+    "市场情绪修复速度不确定（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 7,
+    "overall_score": 6.9,
+    "confidence_score": 0.42000000000000004,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益来自政策宽松带来的估值修复和风险偏好回升，预计指数层面5-10%反弹空间；风险在于政策效果不及预期或经济继续恶化，最大回撤约3-5%。",
+  "next_validation_questions": [
+    "未来1个月社融和M2数据是否出现环比改善？",
+    "制造业PMI是否在5月数据中企稳或回升？",
+    "是否有财政刺激政策（如特别国债、消费补贴）跟进？"
+  ],
+  "invalidation_conditions": [
+    "社融数据连续两个月低于预期",
+    "PMI进一步下滑至48以下",
+    "出现超预期外部冲击（如地缘冲突大幅升级）"
+  ],
+  "must_watch_indicators": [
+    "社融增量",
+    "制造业PMI",
+    "CPI/PPI同比",
+    "10年期国债收益率"
+  ],
+  "kill_switch_signals": [
+    "PMI跌破48",
+    "社融同比增速转负",
+    "央行意外收紧流动性"
+  ],
+  "warnings": [
+    "注意：经济数据滞后，政策传导需要时间，短期可能继续磨底",
+    "注意：地缘风险（中东冲突）可能阶段性压制市场情绪"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T13:03:35.931010",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_1e6d287a",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

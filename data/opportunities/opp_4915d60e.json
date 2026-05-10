@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_4915d60e",
+  "opportunity_title": "AI应用生态爆发",
+  "opportunity_thesis": "百度文心5.1以6%成本实现领先效果、字节AI支出上调25%至2000亿、中国移动百亿Token投入，三大产业巨头同步加码，叠加AI终端国标发布，构成从基础设施到应用层的全链条催化。市场已初步反应（软件ETF涨2%+资金流入），但预期差仍大——低成本训练将加速应用落地，AI应用板块有望迎来业绩与估值双升。\n\n【M13调研】机会描述声称AI算力与应用板块在政策、龙头、业绩三重催化下爆发，但新闻和研报均未直接验证。新闻中科技主题ETF上涨，但无AI板块具体报道；科大讯飞一季报亏损构成利空；无研报覆盖；基本面数据为空。风险在于政策落地不确定性和市场过热。综合判断，该机会缺乏可靠证据，置信度低，建议谨慎观望。\n\n【M13调研】该机会受益于政策催化（算力网、AI标准）和资金流入（成交额放量、科技板块上涨），处于布局窗口期。但缺乏研报、新闻和基本面直接验证，行业趋势无数据，风险在于政策落地不确定性和市场过热。M13调研建议谨慎。综合评估，机会存在但需等待更多确认信号，建议小仓位试探或观望。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "002230.SZ",
+    "603019.SH",
+    "688561.SH",
+    "600941.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "百度文心5.1发布（5月9日）、字节AI支出上调（5月9日）、中国移动百亿Token宣布（5月9日）、AI终端国标发布（5月8日）四重催化剂集中在同一时间窗口，形成罕见的产业共振。市场仅初步反应（软件ETF涨2%），尚未充分定价低成本训练对应用端盈利的实质性改善。",
+  "related_signals": [
+    "sig_de9b85fe30aa",
+    "sig_050c391c993e",
+    "sig_92aa277c89e1",
+    "sig_1678cc7149dc",
+    "sig_59c364b7ab9e"
+  ],
+  "inferred_events": [
+    "inferred_2159b863",
+    "inferred_e7729fcc",
+    "inferred_a8620e70",
+    "inferred_d97e96f3",
+    "inferred_87a8054e",
+    "inferred_8be6c7a6",
+    "inferred_0b57cb1c",
+    "inferred_95057e56"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "百度文心5.1以业界6%成本达到领先效果，大幅降低AI应用开发门槛",
+    "字节AI基础设施支出上调25%至2000亿，显示头部企业加速布局",
+    "中国移动未来3-5年百亿Token+千亿算力投入，国家队入场",
+    "AI终端国标发布，为消费级AI产品提供标准化基础"
+  ],
+  "counter_evidence": [
+    "历史案例显示技术突破需商业化验证，当前缺乏订单数据支撑",
+    "AI板块此前已多次炒作，市场对概念疲劳可能限制涨幅"
+  ],
+  "key_assumptions": [
+    "假设1：百度文心5.1的低成本训练能转化为实际应用落地和收入增长",
+    "假设2：字节和中国移动的投入不会因宏观经济或地缘风险而大幅缩减",
+    "假设3：AI终端国标能有效推动消费级AI产品渗透率提升"
+  ],
+  "uncertainty_map": [
+    "商业化落地速度（影响程度：高）——技术突破到订单兑现存在时间差",
+    "地缘冲突升级（影响程度：中）——中东局势可能引发市场避险，压制风险偏好",
+    "政策执行力度（影响程度：中）——国标和产业投入的实际落地节奏可能慢于预期"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.3,
+    "confidence_score": 0.19000000000000003,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI应用板块在催化剂共振下有望迎来20-30%的阶段性涨幅，龙头个股可能更高。潜在风险：若商业化不及预期或市场情绪逆转，回调幅度约10-15%。风险收益比约2:1，偏正面。",
+  "next_validation_questions": [
+    "百度文心5.1发布后，是否有企业客户宣布采用或合作？",
+    "字节2000亿支出中，有多少比例流向A股相关供应商（如服务器、芯片）？",
+    "中国移动的百亿Token投入是否有具体时间表和首批合作方名单？"
+  ],
+  "invalidation_conditions": [
+    "百度文心5.1发布后1个月内无重大商业化合作公告",
+    "字节AI支出计划因外部因素（如地缘制裁）被下调",
+    "AI应用板块指数跌破5日均线且成交量萎缩"
+  ],
+  "must_watch_indicators": [
+    "软件ETF（159899）日成交额和资金净流入",
+    "科大讯飞、金山办公等龙头股成交量变化",
+    "百度（BIDU/9888.HK）股价对文心5.1的反应",
+    "AI应用板块相对大盘的强弱比"
+  ],
+  "kill_switch_signals": [
+    "AI应用板块单日跌幅超5%且无明确利空",
+    "主要龙头股（如科大讯飞）出现高管减持公告",
+    "中东地缘冲突导致原油暴涨超10%，引发系统性避险"
+  ],
+  "warnings": [
+    "注意：字节AI支出上调为媒体报道，尚未经官方确认",
+    "注意：AI板块历史波动较大，需严格控制仓位和止损"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T20:29:17.042143",
+  "batch_id": "sched_signal_pipeline_20260509_194006_9160d7_20260509_astock_skill_be711583",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

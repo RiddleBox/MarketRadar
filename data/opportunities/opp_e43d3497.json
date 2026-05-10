@@ -1,0 +1,111 @@
+{
+  "opportunity_id": "opp_e43d3497",
+  "opportunity_title": "宽松驱动科技轮动",
+  "opportunity_thesis": "央行密集降准降息释放流动性，叠加经济下行压力（PMI连续收缩、地产利润暴跌），资金正从地产消费系统性流向新能源和半导体。当前市场情绪贪婪但尚未过热，宽松政策窗口与板块轮动初期重合，构成结构性做多科技成长的机会。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "688981.SH",
+    "603501.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-20T00:00:00",
+    "end": "2026-06-20T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行4月18日宣布降准降息，4月20日生效，流动性释放刚刚开始；PMI连续3个月低于荣枯线确认经济疲弱，政策宽松预期强化；资金轮动信号显示新能源/半导体刚启动流入，尚未充分定价。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sent_b3cc88f9",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sent_afb94f7676ae"
+  ],
+  "inferred_events": [
+    "inferred_c1c6110f",
+    "inferred_5cbedf2c",
+    "inferred_9bc79ff8",
+    "inferred_29ef4076",
+    "inferred_51dc6625",
+    "inferred_6bb879eb"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点+降息10bp，释放明确宽松信号",
+    "资金从地产/消费流向新能源/半导体，板块轮动初期",
+    "保利发展净利润暴跌79%，地产基本面恶化加速资金流出",
+    "PMI连续3个月低于荣枯线，经济下行压力倒逼政策持续宽松"
+  ],
+  "counter_evidence": [
+    "恐贪指数66.7处于贪婪区间，短期情绪可能过热",
+    "制造业PMI收缩可能拖累整体企业盈利，科技板块亦难独善其身"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续仍有进一步宽松动作（降准/降息）",
+    "假设2：新能源/半导体板块业绩能支撑估值，不会出现业绩暴雷",
+    "假设3：资金从地产消费流出趋势持续，不会快速回流"
+  ],
+  "uncertainty_map": [
+    "后续宽松力度不及预期（影响程度：高）",
+    "新能源/半导体龙头业绩低于预期（影响程度：高）",
+    "地缘冲突升级引发系统性风险（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.35000000000000003,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：宽松周期+资金轮动驱动新能源/半导体板块估值修复，龙头股有望获得10-20%涨幅；潜在风险：宽松不及预期或业绩证伪导致板块回调5-10%，止损可控。",
+  "next_validation_questions": [
+    "新能源/半导体龙头最新季度业绩是否超预期？",
+    "央行近期是否有进一步宽松表态或操作？",
+    "北向资金是否持续流入新能源/半导体板块？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "新能源/半导体龙头业绩大幅低于预期",
+    "资金重新大幅流入地产消费板块"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率及逆回购规模",
+    "新能源/半导体板块成交额占比变化",
+    "北向资金流向（尤其新能源/半导体）",
+    "PMI数据是否企稳回升"
+  ],
+  "kill_switch_signals": [
+    "央行意外收紧流动性（如加息或正回购）",
+    "新能源/半导体龙头出现业绩暴雷或重大负面事件",
+    "恐贪指数突破85进入极度贪婪，市场过热信号"
+  ],
+  "warnings": [
+    "当前恐贪指数66.7处于贪婪区间，需警惕短期情绪过热后的回调风险",
+    "信号来源均为新闻和公开数据，未验证内部信息"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T17:15:55.365318",
+  "batch_id": "sched_signal_pipeline_20260509_163638_e0e39c_20260509_astock_skill_75958673",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

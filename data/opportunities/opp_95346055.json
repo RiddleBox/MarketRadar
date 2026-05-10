@@ -1,0 +1,124 @@
+{
+  "opportunity_id": "opp_95346055",
+  "opportunity_title": "中东冲突推升能源航运",
+  "opportunity_thesis": "美军与伊朗在霍尔木兹海峡的军事冲突持续升级，导致航运受阻、成本飙升，进口煤炭价格倒挂促使国内企业转向采购，同时全球粮价连续上涨。这一系列信号指向能源、航运和农业板块的结构性受益，且市场尚未完全定价长期中断风险，存在预期差。\n\n【M13调研】美军封锁霍尔木兹海峡导致航运受阻，进口煤炭价格倒挂，国内煤企可能受益，但陕西煤业盈利下滑。全球粮价上涨但无直接新闻。市场未完全定价长期中断风险，但缺乏研报和行业趋势支持。风险在于冲突缓和或国内需求疲软。整体机会存在但置信度不高，需谨慎。\n\n【M13调研】中东冲突升级利好国内煤炭和农业的逻辑存在，但缺乏任何研报、新闻或基本面数据支持，信息基础薄弱。市场可能已部分定价，且冲突缓和风险高。当前置信度极低，建议观望，等待更多数据或催化剂出现。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "601225.SH",
+    "600188.SH",
+    "600026.SH",
+    "601872.SH",
+    "000998.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-07-10T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "美军5月7-8日连续袭击伊朗民用船只并拦截油轮，伊朗军事回应，霍尔木兹海峡交火声不断，冲突烈度急剧升级。同时进口煤价倒挂已发生，企业转向国内采购，航运成本每周增加超5000万美元，这些变化正在实时发生，市场尚未充分定价长期中断风险。",
+  "related_signals": [
+    "sig_3cf8fcf349ae",
+    "sig_0806bfd8639e",
+    "sig_8e8c4ed52bad",
+    "sig_4bdf8baa2d3a",
+    "sig_afe9eed20a0b",
+    "sig_968dbdfcd94a",
+    "sig_2e7d7516821e",
+    "sig_c8ad6aa39ecc",
+    "sig_82a8c461a4b6",
+    "sig_bb9a9c6d60a1",
+    "sig_70a333e7b67e",
+    "sig_ec500e4d7f22",
+    "sig_5c4893f53a82",
+    "sig_211956c76085",
+    "sig_860b74669ffd",
+    "sig_f079127c3165",
+    "sig_a82cb7eb4d39"
+  ],
+  "inferred_events": [
+    "inferred_afafb527",
+    "inferred_fe28bd03",
+    "inferred_29c32f73",
+    "inferred_c2034a3e",
+    "inferred_f26dd2a3",
+    "inferred_b343f8c7",
+    "inferred_beabb0b1"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军袭击伊朗民用船只并拦截油轮，霍尔木兹海峡航运受阻，德国航运巨头赫伯罗特每周额外成本超5000万美元",
+    "进口煤炭价格大幅上涨，4月进口煤与国内煤价倒挂，企业转向国内采购",
+    "全球粮价连续第三个月上涨，受能源成本和中东战事物流中断影响",
+    "高盛调查显示多数投资者预期霍尔木兹海峡航运受阻将持续至下半年"
+  ],
+  "counter_evidence": [
+    "冲突可能短期缓和，如已出现停火迹象，风险溢价可能快速消退",
+    "国内煤炭供给弹性较大，若进口替代快速实现，煤价上涨空间有限"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡航运受阻至少持续至6月底，不会在短期内快速恢复",
+    "假设2：国内煤炭企业产能充足，能够承接进口替代需求",
+    "假设3：全球能源和航运成本上涨趋势不会因政策干预而逆转"
+  ],
+  "uncertainty_map": [
+    "冲突缓和风险（影响程度：高）：美伊双方可能达成临时停火协议，导致航运快速恢复，能源价格回落",
+    "国内政策干预风险（影响程度：中）：政府可能通过释放煤炭储备或价格管控抑制煤价上涨",
+    "全球经济衰退风险（影响程度：中）：能源成本持续上涨可能抑制需求，导致商品价格回落"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 6,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.35000000000000003,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益来自能源和航运板块的持续上涨，以及农业板块的跟涨；风险在于冲突突然缓和导致风险溢价快速消退，以及国内政策干预压制价格。预计收益风险比约2:1。",
+  "next_validation_questions": [
+    "霍尔木兹海峡航运受阻的具体持续时间是否有官方或可靠第三方预测？",
+    "国内煤炭企业（如中国神华、中煤能源）的产能利用率及库存水平如何？",
+    "全球航运指数（如BDI）和原油价格（布伦特）近期走势是否与信号一致？"
+  ],
+  "invalidation_conditions": [
+    "美伊双方达成正式停火协议，霍尔木兹海峡航运恢复正常",
+    "国内煤炭价格出现明显下跌，进口替代逻辑失效",
+    "全球能源和航运成本指数大幅回落，趋势逆转"
+  ],
+  "must_watch_indicators": [
+    "布伦特原油期货价格",
+    "波罗的海干散货运价指数（BDI）",
+    "国内动力煤期货价格（郑商所）",
+    "联合国粮农组织食品价格指数"
+  ],
+  "kill_switch_signals": [
+    "美伊双方宣布停火并恢复海峡通行",
+    "国内煤炭期货价格单日跌幅超过5%",
+    "航运成本指数连续3日下跌"
+  ],
+  "warnings": [
+    "注意：地缘政治事件具有高度不确定性，冲突可能随时缓和或升级",
+    "注意：信号来源均为新闻媒体，需交叉验证官方信息"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T04:11:01.547511",
+  "batch_id": "sched_signal_pipeline_20260510_040903_703b4e_20260509_rss_303cc0c8",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,110 @@
+{
+  "opportunity_id": "opp_aefcca0a",
+  "opportunity_title": "科技成长轮动机会",
+  "opportunity_thesis": "市场情绪贪婪但指数高开低走，资金从消费、地产等传统板块轮动至新能源和半导体，成交额突破1.5万亿显示增量资金入场。板块轮动信号与历史案例中技术突破+基本面改善的模式相似，新能源和半导体板块有望在资金持续流入和潜在业绩超预期催化下走出独立行情。当前时点，市场整体调整提供了低吸科技成长龙头的窗口。\n\n【M13调研】市场情绪贪婪但指数高开低走，成交额放大显示增量资金入场，资金从传统板块轮动至新能源和半导体，板块轮动信号与历史模式相似。然而，缺乏研报、新闻、基本面数据和行业趋势支持，信息不完整。风险在于情绪反转和信息不足。建议谨慎，等待更多确认信号。\n\n【M13调研】该机会描述市场情绪贪婪、资金轮动至新能源和半导体，成交额放大，但缺乏任何研报、新闻、基本面数据或行业趋势支持。关键发现包括情绪与指数背离、增量资金入场但来源不明、轮动信号存在但无验证。风险因素集中于情绪反转、信息缺失和轮动持续性。未发现重大利空，但信息不完整导致置信度低，建议谨慎观望，等待更多确认信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "603501.SH",
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "成交额突破1.5万亿显示市场活跃度提升，资金轮动信号明确指向新能源和半导体，且推理显示未来1周内新能源/半导体板块业绩超预期或政策利好概率高达80%，当前指数调整提供了较好的入场时机。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_38049b31fb61",
+    "sent_afb94f7676ae",
+    "sig_a1a728ae8eed"
+  ],
+  "inferred_events": [
+    "inferred_e2f4bb1a",
+    "inferred_4358e1f1",
+    "inferred_0819d4ba",
+    "inferred_337f73a2",
+    "inferred_37993e1c",
+    "inferred_925e234b",
+    "inferred_ac4819e9"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "资金从消费、地产轮动至新能源、半导体，板块轮动信号明确",
+    "沪深两市成交额突破1.5万亿元，市场活跃度显著提升",
+    "推理显示新能源/半导体板块业绩超预期或政策利好概率80%",
+    "历史案例case_2024_tech_breakthrough和case_2024_breakout显示技术突破+基本面改善可带来趋势行情"
+  ],
+  "counter_evidence": [
+    "三大指数高开回落，下跌个股近4000只，市场整体偏弱",
+    "市场情绪贪婪（恐贪指数66.7），可能已部分price-in利好"
+  ],
+  "key_assumptions": [
+    "假设1：资金轮动趋势持续，新能源和半导体板块获得增量资金",
+    "假设2：新能源/半导体板块业绩超预期或政策利好如期兑现",
+    "假设3：市场整体调整不会演变为系统性风险"
+  ],
+  "uncertainty_map": [
+    "资金轮动持续性不确定，若市场整体继续走弱，轮动可能中断（影响程度：高）",
+    "业绩超预期或政策利好可能不及预期（影响程度：中）",
+    "地缘冲突升级可能引发避险情绪，压制成长板块（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.7,
+    "confidence_score": 0.22000000000000003,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益来自板块轮动带来的超额收益和业绩催化，预计10-20%；风险在于轮动中断或市场整体下跌，最大亏损可控制在5-8%以内。",
+  "next_validation_questions": [
+    "新能源和半导体板块的成交量是否持续放大？",
+    "是否有具体的业绩预告或政策文件发布？",
+    "北向资金是否开始净流入科技成长板块？"
+  ],
+  "invalidation_conditions": [
+    "新能源和半导体板块出现资金净流出，轮动信号消失",
+    "市场整体持续下跌，跌破关键支撑位",
+    "业绩预告或政策利好落空"
+  ],
+  "must_watch_indicators": [
+    "新能源和半导体板块成交额占比",
+    "北向资金流向",
+    "板块内龙头个股走势（如中芯国际、隆基绿能）",
+    "市场整体涨跌家数比"
+  ],
+  "kill_switch_signals": [
+    "新能源和半导体板块单日跌幅超过3%且放量",
+    "北向资金连续3日净流出超过50亿元",
+    "市场出现系统性风险事件（如地缘冲突升级）"
+  ],
+  "warnings": [
+    "市场情绪贪婪，需警惕追高风险，建议分批建仓",
+    "历史案例case_2024_tech_breakthrough显示技术突破需商业化验证，避免纯概念炒作"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T00:11:18.071369",
+  "batch_id": "sched_signal_pipeline_20260509_235735_5123bd_20260509_astock_skill_3dacddcc",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

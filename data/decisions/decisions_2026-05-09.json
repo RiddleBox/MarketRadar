@@ -1,0 +1,2509 @@
+[
+  {
+    "id": "dec_702119f4ac",
+    "timestamp": "2026-05-09T10:58:32.168811",
+    "instrument": "600186.SH",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "intraday_spike",
+    "anomaly_price_change_pct": -5.66,
+    "anomaly_atr_multiple": 0.0,
+    "anomaly_sigma_multiple": 0.0,
+    "anomaly_volume_ratio": 0.0,
+    "anomaly_is_limit_up": false,
+    "causation_type": "macro",
+    "causation_has_cause": true,
+    "causation_signal_count": 4,
+    "causation_signals": [
+      {
+        "signal_id": "sig_af99dd44e967",
+        "label": "欧洲主要股指集体下跌",
+        "type": "macro"
+      },
+      {
+        "signal_id": "sig_3c5918c0920f",
+        "label": "圣阳股份否认介入光通信及重组计划",
+        "type": "event_driven"
+      },
+      {
+        "signal_id": "sig_8768286dbeb3",
+        "label": "俄罗斯不会主动与欧盟对话",
+        "type": "macro"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_9bb6b3a1",
+      "opportunity_title": "光伏龙头三重利好",
+      "opportunity_thesis": "隆基绿能同时迎来技术突破（BC电池效率创世界纪录）、超级订单（100亿美元沙特订单）、政策加码（国家能源局200GW装机目标）三重历史级利好，且三者相互强化：技术突破提升订单竞争力，政策目标扩大市场空间，订单验证商业化能力。当前股价涨停但尚未充分反映未来3年业绩增量，存在显著预期差。",
+      "target_markets": [
+        "A_SHARE"
+      ],
+      "target_instruments": [
+        "601012.SH",
+        "600438.SH",
+        "300274.SZ",
+        "688599.SH",
+        "002129.SZ"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-09 00:00:00",
+        "end": "2026-08-09 00:00:00",
+        "confidence_level": 0.75
+      },
+      "why_now": "三大利好同日集中释放，形成罕见的信号共振：技术突破（Q3量产）、超级订单（未来3年交付）、政策目标（年内装机）在时间上形成接力，当前涨停是市场初步反应，后续随着订单细节披露、量产进展、政策细则落地，催化剂将持续发酵。",
+      "related_signals": [
+        "sig_8b72684e688d",
+        "sig_5895f0b8ee96",
+        "sig_f51ed8d5222e",
+        "sig_54951582fc78",
+        "sig_6e2e78201e3e",
+        "sig_ece38467157b",
+        "sig_f092b9093445",
+        "sig_dcf5293d00c8",
+        "sig_d96752d3b6e2"
+      ],
+      "inferred_events": [
+        "inferred_b11f6f9a",
+        "inferred_ce6e28fd",
+        "inferred_f75edaad",
+        "inferred_abcfc03a",
+        "inferred_23a0178c",
+        "inferred_1c3a1411",
+        "inferred_5ccba8bb"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout"
+      ],
+      "supporting_evidence": [
+        "隆基绿能BC电池转换效率26.5%打破世界纪录，已通过第三方认证，Q3量产",
+        "签署100亿美元沙特订单，为全球光伏行业最大单笔订单，净利润相当于去年全年3倍",
+        "国家能源局发布2026年光伏新增装机目标200GW，同比增长50%",
+        "股价涨停且成交量放大至5倍，技术面确认资金入场"
+      ],
+      "counter_evidence": [
+        "涨停后短期获利盘抛压可能引发回调",
+        "100亿美元订单交付周期3年，短期业绩弹性有限"
+      ],
+      "key_assumptions": [
+        "假设1：BC电池量产良率和成本控制符合预期，Q3顺利量产",
+        "假设2：沙特订单不存在交付风险（地缘政治、付款能力等）",
+        "假设3：200GW装机目标不会因电网消纳等问题大幅下调"
+      ],
+      "uncertainty_map": [
+        "BC电池量产良率与成本（影响程度：高）",
+        "沙特订单交付节奏与汇率波动（影响程度：中）",
+        "光伏行业产能过剩导致价格战加剧（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 9,
+        "timeliness": 8,
+        "market_confirmation": 7,
+        "tradability": 8,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 9,
+        "overall_score": 7.7,
+        "confidence_score": 0.78,
+        "execution_readiness": 0.72
+      },
+      "risk_reward_profile": "潜在收益：隆基绿能未来3年净利润有望因超级订单增长3倍，叠加行业景气度提升，股价存在翻倍空间。潜在风险：BC量产不及预期、订单交付延迟、行业价格战侵蚀利润，最大回撤约20-30%。",
+      "next_validation_questions": [
+        "BC电池量产良率和成本数据是否已披露？",
+        "沙特订单是否有预付款或履约保证金条款？",
+        "光伏行业当前产能利用率及库存水平如何？",
+        "200GW装机目标是否有配套电网投资计划？"
+      ],
+      "invalidation_conditions": [
+        "BC电池量产延期或良率低于80%",
+        "沙特订单出现违约或重大变更",
+        "光伏装机目标被下调或政策转向"
+      ],
+      "must_watch_indicators": [
+        "隆基绿能成交量与股价走势",
+        "BC电池量产进度公告",
+        "光伏行业月度装机数据",
+        "多晶硅价格走势"
+      ],
+      "kill_switch_signals": [
+        "隆基绿能股价放量跌破涨停日开盘价",
+        "BC电池量产公告低于预期",
+        "沙特订单出现负面消息"
+      ],
+      "warnings": [
+        "注意：信号来源均为新闻公告，需核实官方公告原文",
+        "注意：涨停后追高风险较大，建议等待回调或分批建仓"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-09 10:59:09.042148",
+      "batch_id": "m12_600186.SH_2026-05-09",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 7.7,
+    "m3_fallback": false,
+    "trend_stage": "middle",
+    "trend_remaining_upside_pct": 4.5,
+    "trend_catalyst_persistence": "continuing",
+    "trend_skip_reason": "",
+    "action_taken": "PASSED",
+    "action_plan_id": "opp_9bb6b3a1",
+    "stop_loss_pct": 5.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "PASSED",
+    "reason": "trend=middle upside=4.5%",
+    "full_chain": [
+      "1.ANOMALY: 600186.SH -5.7% type=intraday_spike sigma=0.0 atr=0.0 vol=0.0",
+      "2.CAUSATION: has_cause type=macro signals=4 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=7.7",
+      "4.TREND: middle upside=4.5% persistence=continuing",
+      "5.ACTION: PASSED reason=trend=middle upside=4.5% plan=opp_9bb6b3a1 SL=5.0% TP=0.0%"
+    ]
+  },
+  {
+    "id": "dec_d558c43d00",
+    "timestamp": "2026-05-09T12:30:47.466522",
+    "instrument": "600186.SH",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "intraday_spike",
+    "anomaly_price_change_pct": -5.66,
+    "anomaly_atr_multiple": 0.0,
+    "anomaly_sigma_multiple": 0.0,
+    "anomaly_volume_ratio": 0.0,
+    "anomaly_is_limit_up": false,
+    "causation_type": "macro",
+    "causation_has_cause": true,
+    "causation_signal_count": 5,
+    "causation_signals": [
+      {
+        "signal_id": "sig_8c1ad346ebec",
+        "label": "抖音开展涉税虚假宣传治理",
+        "type": "policy"
+      },
+      {
+        "signal_id": "sig_af8c0ffc2e27",
+        "label": "原油运价高位下探",
+        "type": "macro"
+      },
+      {
+        "signal_id": "sig_05dcba00c5e4",
+        "label": "美联储官员表态加息选项在桌面上",
+        "type": "macro"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_46879bb0",
+      "opportunity_title": "光伏龙头三重利好",
+      "opportunity_thesis": "隆基绿能同时迎来技术突破（BC电池效率创世界纪录）、巨额订单（100亿美元沙特订单，净利润超去年全年3倍）和政策利好（国家能源局200GW装机目标，同比增长50%）三重催化，且股价已放量涨停确认市场反应。技术突破+订单落地+政策支持形成强共振，预期差大，短期有望持续上涨并带动光伏板块整体估值修复。",
+      "target_markets": [
+        "A_SHARE"
+      ],
+      "target_instruments": [
+        "601012.SH",
+        "600438.SH",
+        "300274.SZ",
+        "688599.SH",
+        "002129.SZ"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-09 00:00:00",
+        "end": "2026-06-09 00:00:00",
+        "confidence_level": 0.75
+      },
+      "why_now": "隆基绿能同日发布BC电池技术突破和100亿美元订单两大重磅利好，叠加国家能源局发布200GW装机目标，三重催化集中释放，股价已放量涨停，市场情绪和资金面高度共振，短期窗口极为紧迫。",
+      "related_signals": [
+        "sig_8b72684e688d",
+        "sig_5895f0b8ee96",
+        "sig_f51ed8d5222e",
+        "sig_54951582fc78",
+        "sig_6e2e78201e3e",
+        "sig_ece38467157b",
+        "sig_f092b9093445",
+        "sig_dcf5293d00c8",
+        "sig_d96752d3b6e2"
+      ],
+      "inferred_events": [
+        "inferred_76bd7bdc",
+        "inferred_4e58cd37",
+        "inferred_73e440f3",
+        "inferred_65c7f9bd",
+        "inferred_2db08222"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout",
+        "case_2024_rate_cut"
+      ],
+      "supporting_evidence": [
+        "隆基绿能BC电池转换效率26.5%创世界纪录，已通过第三方认证，Q3量产，技术壁垒显著",
+        "100亿美元沙特订单为全球光伏行业最大单笔订单，净利润超去年全年3倍，业绩确定性极强",
+        "国家能源局2026年新增装机目标200GW，同比增长50%，政策支持力度空前",
+        "股价涨停且成交量放大至5倍，市场资金已积极介入，趋势确认"
+      ],
+      "counter_evidence": [
+        "光伏行业产能过剩问题尚未完全解决，行业竞争激烈可能压制利润率",
+        "股价已涨停，短期可能存在获利回吐压力"
+      ],
+      "key_assumptions": [
+        "假设1：BC电池技术量产顺利，良率和成本可控",
+        "假设2：沙特订单履约无重大政治或商业风险",
+        "假设3：光伏行业政策执行力度符合预期，装机目标可实现"
+      ],
+      "uncertainty_map": [
+        "BC电池量产良率与成本控制（影响程度：高）",
+        "沙特订单交付周期内汇率及地缘政治风险（影响程度：中）",
+        "行业产能过剩导致价格战加剧（影响程度：中）"
+      ],
+      "priority_level": "urgent",
+      "opportunity_score": {
+        "catalyst_strength": 9,
+        "timeliness": 9,
+        "market_confirmation": 8,
+        "tradability": 8,
+        "risk_clarity": 7,
+        "consensus_gap": 8,
+        "signal_consistency": 9,
+        "overall_score": 8.3,
+        "confidence_score": 0.82,
+        "execution_readiness": 0.78
+      },
+      "risk_reward_profile": "潜在收益：隆基绿能短期有望突破前高，涨幅10-20%，光伏板块跟涨5-10%；风险：技术量产不及预期或订单履约风险，最大回撤约8-10%，止损点可设在涨停板开盘价下方5%",
+      "next_validation_questions": [
+        "BC电池量产进度是否有官方时间表更新？",
+        "沙特订单是否有预付款或履约保证金安排？",
+        "光伏板块其他龙头（通威、阳光电源）是否有跟涨信号？"
+      ],
+      "invalidation_conditions": [
+        "隆基绿能股价次日高开低走，成交量萎缩",
+        "BC电池量产出现重大技术障碍或延期",
+        "沙特订单出现违约或重大变更"
+      ],
+      "must_watch_indicators": [
+        "隆基绿能次日开盘价及成交量",
+        "光伏板块ETF（如159857）资金流向",
+        "BC电池相关专利及行业认证动态",
+        "国家能源局后续配套政策细则"
+      ],
+      "kill_switch_signals": [
+        "隆基绿能股价跌破涨停板开盘价",
+        "BC电池量产延期公告",
+        "沙特订单被取消或大幅缩水"
+      ],
+      "warnings": [
+        "注意：信号来源均为新闻公告，需核实官方公告原文",
+        "股价已涨停，追高需严格控制仓位和止损"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-09 12:31:23.572423",
+      "batch_id": "m12_600186.SH_2026-05-09",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "urgent",
+    "m3_direction": "BULLISH",
+    "m3_score": 8.3,
+    "m3_fallback": false,
+    "trend_stage": "middle",
+    "trend_remaining_upside_pct": 4.5,
+    "trend_catalyst_persistence": "continuing",
+    "trend_skip_reason": "",
+    "action_taken": "PASSED",
+    "action_plan_id": "opp_46879bb0",
+    "stop_loss_pct": 5.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "PASSED",
+    "reason": "trend=middle upside=4.5%",
+    "full_chain": [
+      "1.ANOMALY: 600186.SH -5.7% type=intraday_spike sigma=0.0 atr=0.0 vol=0.0",
+      "2.CAUSATION: has_cause type=macro signals=5 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=urgent dir=BULLISH score=8.3",
+      "4.TREND: middle upside=4.5% persistence=continuing",
+      "5.ACTION: PASSED reason=trend=middle upside=4.5% plan=opp_46879bb0 SL=5.0% TP=0.0%"
+    ]
+  },
+  {
+    "id": "dec_6ec133910b",
+    "timestamp": "2026-05-09T12:42:29.903073",
+    "instrument": "600186.SH",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "intraday_spike",
+    "anomaly_price_change_pct": -5.66,
+    "anomaly_atr_multiple": 0.0,
+    "anomaly_sigma_multiple": 0.0,
+    "anomaly_volume_ratio": 0.0,
+    "anomaly_is_limit_up": false,
+    "causation_type": "macro",
+    "causation_has_cause": true,
+    "causation_signal_count": 5,
+    "causation_signals": [
+      {
+        "signal_id": "sig_8c1ad346ebec",
+        "label": "抖音开展涉税虚假宣传治理",
+        "type": "policy"
+      },
+      {
+        "signal_id": "sig_af8c0ffc2e27",
+        "label": "原油运价高位下探",
+        "type": "macro"
+      },
+      {
+        "signal_id": "sig_05dcba00c5e4",
+        "label": "美联储官员表态加息选项在桌面上",
+        "type": "macro"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_f37ce9dc",
+      "opportunity_title": "光伏龙头三重利好",
+      "opportunity_thesis": "隆基绿能同时迎来BC电池技术突破（世界纪录）、百亿美元沙特订单（净利润3倍于去年全年）以及国家能源局200GW装机目标（同比+50%）三重结构性利好，且股价放量涨停尚未充分消化全部预期差。技术突破+订单落地+政策加码形成闭环，Q3量产和未来3年交付窗口提供持续催化，当前是布局光伏龙头的关键时点。",
+      "target_markets": [
+        "A_SHARE"
+      ],
+      "target_instruments": [
+        "601012.SH",
+        "600438.SH",
+        "300274.SZ",
+        "688599.SH",
+        "002129.SZ"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK",
+        "ETF"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-09 00:00:00",
+        "end": "2026-08-09 00:00:00",
+        "confidence_level": 0.75
+      },
+      "why_now": "今日（2026-05-09）隆基绿能同时公告BC电池技术突破（Q3量产）和百亿美元订单（未来3年交付），国家能源局同步发布200GW装机目标（同比+50%），股价放量涨停但仅反应部分预期。Q3量产前市场将反复定价技术领先优势，订单利润弹性巨大，政策窗口刚打开，是三重催化剂共振的最佳入场时点。",
+      "related_signals": [
+        "sig_8b72684e688d",
+        "sig_5895f0b8ee96",
+        "sig_f51ed8d5222e",
+        "sig_54951582fc78",
+        "sig_6e2e78201e3e",
+        "sig_ece38467157b",
+        "sig_f092b9093445",
+        "sig_dcf5293d00c8",
+        "sig_d96752d3b6e2"
+      ],
+      "inferred_events": [
+        "inferred_3138dfdc",
+        "inferred_d9def996",
+        "inferred_d3e22aa8",
+        "inferred_979ba7c5",
+        "inferred_7c941223"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout",
+        "case_2024_rate_cut"
+      ],
+      "supporting_evidence": [
+        "隆基绿能BC电池转换效率26.5%打破世界纪录，已通过第三方认证，Q3量产将拉开与竞争对手差距",
+        "百亿美元沙特订单为全球光伏行业最大单笔订单，预计净利润15亿美元，相当于去年全年净利润3倍",
+        "国家能源局2026年新增装机目标200GW，同比增长50%，政策力度空前",
+        "股价放量涨停，成交量放大至5倍，市场资金已开始积极介入"
+      ],
+      "counter_evidence": [
+        "股价已涨停，短期可能存在获利回吐压力",
+        "历史案例显示技术突破若无持续订单验证，概念炒作后可能回落"
+      ],
+      "key_assumptions": [
+        "假设1：BC电池技术量产良率和成本可控，Q3如期量产",
+        "假设2：沙特订单合同条款无重大风险，交付和收款顺利",
+        "假设3：国内光伏装机政策执行到位，200GW目标可实现"
+      ],
+      "uncertainty_map": [
+        "BC电池量产良率不及预期（影响程度：高）",
+        "沙特订单受地缘政治或汇率波动影响（影响程度：中）",
+        "光伏行业产能过剩导致价格战加剧（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 9,
+        "timeliness": 8,
+        "market_confirmation": 7,
+        "tradability": 8,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 9,
+        "overall_score": 7.7,
+        "confidence_score": 0.78,
+        "execution_readiness": 0.75
+      },
+      "risk_reward_profile": "潜在收益：隆基绿能订单利润弹性巨大（15亿美元净利润），叠加技术领先和行业景气度提升，股价有望在Q3量产前实现30-50%涨幅。潜在风险：量产不及预期或订单交付风险可能导致股价回撤15-20%。风险收益比约2:1至3:1。",
+      "next_validation_questions": [
+        "BC电池量产良率和成本数据是否已公布？",
+        "沙特订单是否有预付款或履约保证金条款？",
+        "光伏板块整体资金流向和机构持仓变化如何？"
+      ],
+      "invalidation_conditions": [
+        "BC电池量产延期或良率低于85%",
+        "沙特订单出现重大合同纠纷或取消",
+        "光伏装机政策目标被下调或执行不力"
+      ],
+      "must_watch_indicators": [
+        "隆基绿能成交量是否持续放大",
+        "BC电池量产进度公告",
+        "光伏行业月度装机数据",
+        "沙特订单预付款到账情况"
+      ],
+      "kill_switch_signals": [
+        "隆基绿能股价跌破涨停日开盘价",
+        "BC电池量产公告延期或良率低于预期",
+        "光伏行业出现重大利空政策"
+      ],
+      "warnings": [
+        "注意：股价已涨停，短期追高需谨慎，建议等待回调或分批建仓",
+        "注意：历史案例显示技术突破若无订单验证可能回落，但本次已有百亿美元订单支撑"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-09 12:43:08.815275",
+      "batch_id": "m12_600186.SH_2026-05-09",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 7.7,
+    "m3_fallback": false,
+    "trend_stage": "middle",
+    "trend_remaining_upside_pct": 4.5,
+    "trend_catalyst_persistence": "continuing",
+    "trend_skip_reason": "",
+    "action_taken": "PASSED",
+    "action_plan_id": "opp_f37ce9dc",
+    "stop_loss_pct": 5.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "PASSED",
+    "reason": "trend=middle upside=4.5%",
+    "full_chain": [
+      "1.ANOMALY: 600186.SH -5.7% type=intraday_spike sigma=0.0 atr=0.0 vol=0.0",
+      "2.CAUSATION: has_cause type=macro signals=5 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=7.7",
+      "4.TREND: middle upside=4.5% persistence=continuing",
+      "5.ACTION: PASSED reason=trend=middle upside=4.5% plan=opp_f37ce9dc SL=5.0% TP=0.0%"
+    ]
+  },
+  {
+    "id": "dec_54d445fc22",
+    "timestamp": "2026-05-09T12:44:04.776745",
+    "instrument": "600379.SH",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "intraday_spike",
+    "anomaly_price_change_pct": -6.16,
+    "anomaly_atr_multiple": 0.0,
+    "anomaly_sigma_multiple": 0.0,
+    "anomaly_volume_ratio": 0.0,
+    "anomaly_is_limit_up": false,
+    "causation_type": "macro",
+    "causation_has_cause": true,
+    "causation_signal_count": 5,
+    "causation_signals": [
+      {
+        "signal_id": "sig_8c1ad346ebec",
+        "label": "抖音开展涉税虚假宣传治理",
+        "type": "policy"
+      },
+      {
+        "signal_id": "sig_af8c0ffc2e27",
+        "label": "原油运价高位下探",
+        "type": "macro"
+      },
+      {
+        "signal_id": "sig_05dcba00c5e4",
+        "label": "美联储官员表态加息选项在桌面上",
+        "type": "macro"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_0b145a67",
+      "opportunity_title": "光伏龙头三重利好",
+      "opportunity_thesis": "隆基绿能同时迎来BC电池技术突破（转换效率26.5%破世界纪录）、百亿美元沙特订单（净利润相当于去年3倍）以及国家能源局200GW装机目标（同比+50%）三重重大利好，且股价放量涨停确认市场反应。技术、订单、政策三箭齐发，构成光伏板块景气度系统性提升的强信号，预期差大且催化剂密集，适合布局龙头标的。",
+      "target_markets": [
+        "A_SHARE"
+      ],
+      "target_instruments": [
+        "601012.SH",
+        "600438.SH",
+        "300274.SZ",
+        "688599.SH",
+        "002129.SZ"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-09 00:00:00",
+        "end": "2026-08-09 00:00:00",
+        "confidence_level": 0.75
+      },
+      "why_now": "今日（2026-05-09）隆基绿能同时公告BC电池技术突破（Q3量产）和百亿美元订单（3年交付），叠加国家能源局发布200GW装机目标，三大利好同日释放，股价放量涨停，市场确认度高。Q3量产和订单交付的时间窗口明确，当前是布局最佳时点。",
+      "related_signals": [
+        "sig_8b72684e688d",
+        "sig_5895f0b8ee96",
+        "sig_f51ed8d5222e",
+        "sig_54951582fc78",
+        "sig_6e2e78201e3e",
+        "sig_ece38467157b",
+        "sig_f092b9093445",
+        "sig_dcf5293d00c8",
+        "sig_d96752d3b6e2"
+      ],
+      "inferred_events": [
+        "inferred_b58a1f25",
+        "inferred_45b7e356",
+        "inferred_aebb379c",
+        "inferred_788acf81",
+        "inferred_787c1895"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout",
+        "case_2024_rate_cut"
+      ],
+      "supporting_evidence": [
+        "隆基绿能BC电池转换效率26.5%破世界纪录，已通过第三方认证，Q3量产",
+        "隆基绿能与沙特签署100亿美元订单，为全球光伏行业最大单笔，净利润相当于去年全年3倍",
+        "国家能源局发布2026年光伏新增装机目标200GW，同比增长50%",
+        "隆基绿能股价放量涨停，成交量放大至5倍，市场强烈确认"
+      ],
+      "counter_evidence": [
+        "光伏行业过去两年产能过剩严重，行业整体盈利能力承压",
+        "股价已涨停，短期可能存在获利回吐压力"
+      ],
+      "key_assumptions": [
+        "假设1：BC电池技术量产顺利，良率和成本可控",
+        "假设2：沙特订单履约无重大政治或汇率风险",
+        "假设3：200GW装机目标能实际落地，而非仅规划数字"
+      ],
+      "uncertainty_map": [
+        "BC电池量产良率与成本控制（影响程度：高）",
+        "沙特订单交付周期长，地缘政治与汇率风险（影响程度：中）",
+        "光伏行业产能过剩格局短期难以根本扭转（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 9,
+        "timeliness": 9,
+        "market_confirmation": 8,
+        "tradability": 8,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 9,
+        "overall_score": 8.0,
+        "confidence_score": 0.78,
+        "execution_readiness": 0.75
+      },
+      "risk_reward_profile": "潜在收益：隆基绿能估值修复+订单利润兑现，股价有望上涨30-50%；风险：技术量产不及预期或订单履约风险，最大回撤约15-20%，止损点可设在涨停价下方5%",
+      "next_validation_questions": [
+        "BC电池量产良率和成本数据是否已公开？",
+        "沙特订单是否有预付款或履约担保条款？",
+        "其他光伏龙头（通威、阳光电源）是否有同步利好或订单跟进？"
+      ],
+      "invalidation_conditions": [
+        "BC电池量产延期或良率低于预期",
+        "沙特订单出现重大履约障碍",
+        "光伏装机政策目标被下调或推迟"
+      ],
+      "must_watch_indicators": [
+        "隆基绿能股价是否站稳涨停价上方",
+        "光伏板块成交量是否持续放大",
+        "BC电池量产进度公告",
+        "沙特订单预付款或履约进展"
+      ],
+      "kill_switch_signals": [
+        "隆基绿能股价跌破涨停日开盘价",
+        "BC电池量产公告延期或技术指标不达标",
+        "沙特订单被取消或大幅缩水"
+      ],
+      "warnings": [
+        "注意：信号来源均为新闻公告，需核实官方公告原文",
+        "股价已涨停，短期追高风险较大，建议等待回调或分批建仓"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-09 12:44:39.597730",
+      "batch_id": "m12_600379.SH_2026-05-09",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 8.0,
+    "m3_fallback": false,
+    "trend_stage": "middle",
+    "trend_remaining_upside_pct": 4.9,
+    "trend_catalyst_persistence": "continuing",
+    "trend_skip_reason": "",
+    "action_taken": "PASSED",
+    "action_plan_id": "opp_0b145a67",
+    "stop_loss_pct": 5.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "PASSED",
+    "reason": "trend=middle upside=4.9%",
+    "full_chain": [
+      "1.ANOMALY: 600379.SH -6.2% type=intraday_spike sigma=0.0 atr=0.0 vol=0.0",
+      "2.CAUSATION: has_cause type=macro signals=5 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=8.0",
+      "4.TREND: middle upside=4.9% persistence=continuing",
+      "5.ACTION: PASSED reason=trend=middle upside=4.9% plan=opp_0b145a67 SL=5.0% TP=0.0%"
+    ]
+  },
+  {
+    "id": "dec_cb2fba2146",
+    "timestamp": "2026-05-09T12:55:44.466098",
+    "instrument": "600186.SH",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "intraday_spike",
+    "anomaly_price_change_pct": -5.66,
+    "anomaly_atr_multiple": 0.0,
+    "anomaly_sigma_multiple": 0.0,
+    "anomaly_volume_ratio": 0.0,
+    "anomaly_is_limit_up": false,
+    "causation_type": "macro",
+    "causation_has_cause": true,
+    "causation_signal_count": 5,
+    "causation_signals": [
+      {
+        "signal_id": "sig_8c1ad346ebec",
+        "label": "抖音开展涉税虚假宣传治理",
+        "type": "policy"
+      },
+      {
+        "signal_id": "sig_af8c0ffc2e27",
+        "label": "原油运价高位下探",
+        "type": "macro"
+      },
+      {
+        "signal_id": "sig_05dcba00c5e4",
+        "label": "美联储官员表态加息选项在桌面上",
+        "type": "macro"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_644692d9",
+      "opportunity_title": "光伏政策+技术双驱动",
+      "opportunity_thesis": "国家能源局发布2026年新增装机200GW目标（同比增长50%），叠加隆基绿能BC电池技术突破（转换效率26.5%打破世界纪录）及百亿美元沙特订单（净利润相当于去年全年3倍），构成政策、技术、订单三重共振。市场已初步反应（隆基涨停、成交量5倍），但板块整体尚未充分定价，存在预期差。当前是光伏板块从底部反转的确认窗口。",
+      "target_markets": [
+        "A_SHARE"
+      ],
+      "target_instruments": [
+        "601012.SH",
+        "600438.SH",
+        "300274.SZ",
+        "688599.SH",
+        "002129.SZ"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-09 00:00:00",
+        "end": "2026-08-09 00:00:00",
+        "confidence_level": 0.75
+      },
+      "why_now": "政策发布、技术认证、订单签署三事件同日发生，形成强催化剂组合。隆基涨停且成交量放大至5倍，表明聪明资金已开始行动。Q3量产和订单交付在即，时间窗口紧迫。",
+      "related_signals": [
+        "sig_8b72684e688d",
+        "sig_54951582fc78",
+        "sig_6e2e78201e3e",
+        "sig_ece38467157b"
+      ],
+      "inferred_events": [
+        "inferred_59b35463",
+        "inferred_81214eeb",
+        "inferred_229972b7",
+        "inferred_bcf5b36e",
+        "inferred_1f0a74c7"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout",
+        "case_2024_rate_cut"
+      ],
+      "supporting_evidence": [
+        "国家能源局2026年新增装机目标200GW，同比增长50%，政策力度空前",
+        "隆基绿能BC电池转换效率26.5%打破世界纪录，已通过第三方认证，Q3量产",
+        "隆基绿能与沙特签署100亿美元订单，净利润相当于去年全年3倍",
+        "隆基绿能股价涨停，成交量放大至5倍，市场初步确认"
+      ],
+      "counter_evidence": [
+        "光伏行业过去两年产能过剩，板块估值修复可能有限",
+        "相似历史案例显示技术突破若无订单验证，短期冲高后回落"
+      ],
+      "key_assumptions": [
+        "假设1：200GW装机目标能实际落地，不因电网消纳问题大幅打折",
+        "假设2：隆基BC电池量产良率和成本可控，Q3如期量产",
+        "假设3：沙特订单履约风险可控，不因地缘政治或付款问题延迟"
+      ],
+      "uncertainty_map": [
+        "电网消纳能力不足导致装机目标无法完成（影响程度：高）",
+        "BC电池量产良率低于预期，成本高于预期（影响程度：中）",
+        "沙特订单付款周期长或汇率波动影响实际利润（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 9,
+        "timeliness": 8,
+        "market_confirmation": 7,
+        "tradability": 8,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 9,
+        "overall_score": 7.7,
+        "confidence_score": 0.78,
+        "execution_readiness": 0.75
+      },
+      "risk_reward_profile": "潜在收益：隆基绿能净利润3倍增长预期，叠加政策催化，板块估值修复空间20-30%。潜在风险：政策执行不及预期、技术量产失败、订单履约风险。风险收益比约2:1。",
+      "next_validation_questions": [
+        "隆基绿能Q3量产BC电池的良率和成本数据是否公开？",
+        "国家能源局200GW目标是否有配套电网投资计划？",
+        "沙特订单是否有预付款或信用证保障？"
+      ],
+      "invalidation_conditions": [
+        "隆基绿能股价连续3日放量下跌，跌破涨停日开盘价",
+        "国家能源局或相关部门对装机目标进行下调或修正",
+        "隆基绿能公告BC电池量产延期或技术认证被撤销"
+      ],
+      "must_watch_indicators": [
+        "隆基绿能成交量是否持续高于5日均量",
+        "光伏板块ETF（如159857）资金流入情况",
+        "国家能源局后续配套政策文件",
+        "隆基绿能Q2财报中BC电池研发投入和订单确认情况"
+      ],
+      "kill_switch_signals": [
+        "隆基绿能股价跌破涨停日最低价",
+        "沙特订单出现违约或重大变更公告",
+        "光伏板块出现集体跌停或恐慌性抛售"
+      ],
+      "warnings": [
+        "注意：隆基绿能涨停后短期获利盘抛压较大，追高风险较高",
+        "注意：信号来源均为新闻，需等待官方公告确认订单和技术细节"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-09 12:56:18.406573",
+      "batch_id": "m12_600186.SH_2026-05-09",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 7.7,
+    "m3_fallback": false,
+    "trend_stage": "middle",
+    "trend_remaining_upside_pct": 4.5,
+    "trend_catalyst_persistence": "continuing",
+    "trend_skip_reason": "",
+    "action_taken": "PASSED",
+    "action_plan_id": "opp_644692d9",
+    "stop_loss_pct": 5.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "PASSED",
+    "reason": "trend=middle upside=4.5%",
+    "full_chain": [
+      "1.ANOMALY: 600186.SH -5.7% type=intraday_spike sigma=0.0 atr=0.0 vol=0.0",
+      "2.CAUSATION: has_cause type=macro signals=5 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=7.7",
+      "4.TREND: middle upside=4.5% persistence=continuing",
+      "5.ACTION: PASSED reason=trend=middle upside=4.5% plan=opp_644692d9 SL=5.0% TP=0.0%"
+    ]
+  },
+  {
+    "id": "dec_f82cf0eb88",
+    "timestamp": "2026-05-09T12:56:52.700887",
+    "instrument": "600379.SH",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "intraday_spike",
+    "anomaly_price_change_pct": -6.16,
+    "anomaly_atr_multiple": 0.0,
+    "anomaly_sigma_multiple": 0.0,
+    "anomaly_volume_ratio": 0.0,
+    "anomaly_is_limit_up": false,
+    "causation_type": "macro",
+    "causation_has_cause": true,
+    "causation_signal_count": 5,
+    "causation_signals": [
+      {
+        "signal_id": "sig_8c1ad346ebec",
+        "label": "抖音开展涉税虚假宣传治理",
+        "type": "policy"
+      },
+      {
+        "signal_id": "sig_af8c0ffc2e27",
+        "label": "原油运价高位下探",
+        "type": "macro"
+      },
+      {
+        "signal_id": "sig_05dcba00c5e4",
+        "label": "美联储官员表态加息选项在桌面上",
+        "type": "macro"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_c616f546",
+      "opportunity_title": "光伏龙头三重利好",
+      "opportunity_thesis": "隆基绿能同时迎来BC电池技术突破（转换效率26.5%破世界纪录）、百亿美元沙特订单（净利润相当于去年3倍）和国家能源局200GW装机目标（同比增长50%）三重利好，信号高度一致且相互强化。技术突破+大额订单+政策支持形成完整叙事，市场已开始反应（涨停+5倍量），但订单和装机目标均为中长期兑现，预期差仍存在。",
+      "target_markets": [
+        "A_SHARE"
+      ],
+      "target_instruments": [
+        "601012.SH",
+        "600438.SH",
+        "300274.SZ",
+        "688599.SH",
+        "002129.SZ"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-09 00:00:00",
+        "end": "2026-08-09 00:00:00",
+        "confidence_level": 0.75
+      },
+      "why_now": "隆基绿能今日同时公告BC电池技术突破（Q3量产）和百亿美元沙特订单（3年交付），叠加国家能源局今日发布200GW装机目标，三事件同日发生形成强催化剂共振。市场已以涨停和5倍量能确认，但后续订单执行和技术量产仍需时间验证，当前是布局窗口。",
+      "related_signals": [
+        "sig_8b72684e688d",
+        "sig_5895f0b8ee96",
+        "sig_f51ed8d5222e",
+        "sig_54951582fc78",
+        "sig_6e2e78201e3e",
+        "sig_ece38467157b",
+        "sig_f092b9093445",
+        "sig_dcf5293d00c8",
+        "sig_d96752d3b6e2"
+      ],
+      "inferred_events": [
+        "inferred_11432bc9",
+        "inferred_13948688",
+        "inferred_dd95c11e",
+        "inferred_eabde058",
+        "inferred_a5263d15",
+        "inferred_32e901ee"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout",
+        "case_2024_rate_cut"
+      ],
+      "supporting_evidence": [
+        "隆基绿能BC电池转换效率26.5%破世界纪录，已通过第三方认证，Q3量产",
+        "隆基绿能与沙特签署100亿美元订单，净利润15亿美元（去年全年净利润3倍）",
+        "国家能源局发布2026年光伏新增装机目标200GW，同比增长50%",
+        "股价涨停+成交量放大至5倍，市场已开始积极反应"
+      ],
+      "counter_evidence": [
+        "相似历史案例显示技术突破缺乏订单验证时短期冲高后回落（case_2024_tech_breakthrough）",
+        "美联储加息预期可能引发北向资金流出，对A股整体流动性形成压力"
+      ],
+      "key_assumptions": [
+        "假设1：BC电池技术量产顺利，Q3如期达产且良率可控",
+        "假设2：沙特订单合同条款无重大风险，交付和回款按计划执行",
+        "假设3：200GW装机目标有配套政策落地，非口号式目标"
+      ],
+      "uncertainty_map": [
+        "BC电池量产良率和成本能否达到预期（影响程度：高）",
+        "沙特订单执行过程中的地缘政治和汇率风险（影响程度：中）",
+        "光伏行业产能过剩格局是否因政策和技术突破快速改善（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 8,
+        "timeliness": 8,
+        "market_confirmation": 7,
+        "tradability": 8,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 9,
+        "overall_score": 7.6,
+        "confidence_score": 0.78,
+        "execution_readiness": 0.75
+      },
+      "risk_reward_profile": "潜在收益：隆基绿能股价若修复至前期高点（约30%空间），叠加行业估值修复，龙头股整体上行空间20-40%。潜在风险：技术量产不及预期或订单执行风险，下行空间约15-20%（涨停后回调至支撑位）。风险收益比约1.5:1至2:1。",
+      "next_validation_questions": [
+        "BC电池量产进度和良率是否有官方更新或第三方验证？",
+        "沙特订单的预付款比例和交付时间表是否明确？",
+        "200GW装机目标是否有配套补贴或电网接入政策？",
+        "光伏板块其他龙头（通威、阳光电源）是否有同步利好或订单？"
+      ],
+      "invalidation_conditions": [
+        "BC电池量产延期或良率低于预期",
+        "沙特订单出现合同纠纷或取消",
+        "光伏装机目标被下调或政策转向"
+      ],
+      "must_watch_indicators": [
+        "隆基绿能股价是否站稳涨停价上方，成交量是否持续放大",
+        "BC电池量产相关公告和第三方认证更新",
+        "沙特订单的预付款到账和交付进展",
+        "光伏板块整体资金流向和北向资金动态"
+      ],
+      "kill_switch_signals": [
+        "隆基绿能股价跌破涨停日开盘价（约-8%）",
+        "BC电池量产公告延期或良率低于22%",
+        "沙特订单出现重大违约或取消公告"
+      ],
+      "warnings": [
+        "注意：信号来源均为新闻和公告，需确认公告原文的完整性和准确性",
+        "注意：涨停后追高风险较大，建议等待回调或分批建仓"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-09 12:57:29.453787",
+      "batch_id": "m12_600379.SH_2026-05-09",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 7.6,
+    "m3_fallback": false,
+    "trend_stage": "middle",
+    "trend_remaining_upside_pct": 4.9,
+    "trend_catalyst_persistence": "continuing",
+    "trend_skip_reason": "",
+    "action_taken": "PASSED",
+    "action_plan_id": "opp_c616f546",
+    "stop_loss_pct": 5.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "PASSED",
+    "reason": "trend=middle upside=4.9%",
+    "full_chain": [
+      "1.ANOMALY: 600379.SH -6.2% type=intraday_spike sigma=0.0 atr=0.0 vol=0.0",
+      "2.CAUSATION: has_cause type=macro signals=5 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=7.6",
+      "4.TREND: middle upside=4.9% persistence=continuing",
+      "5.ACTION: PASSED reason=trend=middle upside=4.9% plan=opp_c616f546 SL=5.0% TP=0.0%"
+    ]
+  },
+  {
+    "id": "dec_44f3e3cc73",
+    "timestamp": "2026-05-09T14:28:30.843756",
+    "instrument": "600186.SH",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "intraday_spike",
+    "anomaly_price_change_pct": -5.66,
+    "anomaly_atr_multiple": 0.0,
+    "anomaly_sigma_multiple": 0.0,
+    "anomaly_volume_ratio": 0.0,
+    "anomaly_is_limit_up": false,
+    "causation_type": "policy",
+    "causation_has_cause": true,
+    "causation_signal_count": 4,
+    "causation_signals": [
+      {
+        "signal_id": "sig_840df322691f",
+        "label": "证监局对编造AI假消息罚款45万",
+        "type": "policy"
+      },
+      {
+        "signal_id": "sig_af0e1a0e5f56",
+        "label": "新华社调查胖东来被黑事件",
+        "type": "macro"
+      },
+      {
+        "signal_id": "sig_8c1ad346ebec",
+        "label": "抖音开展涉税虚假宣传治理",
+        "type": "policy"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_995d0bb2",
+      "opportunity_title": "半导体景气上行",
+      "opportunity_thesis": "AI算力需求爆发、巨头加速布局ASIC芯片、服务器CPU缺货涨价，叠加长电科技产能利用率超80%并大幅扩产，以及集成电路出口持续增长，共同确认半导体产业链从设计到封测全面景气上行。当前市场尚未充分定价这一结构性变化，存在预期差，是布局半导体龙头的窗口期。",
+      "target_markets": [
+        "A_SHARE"
+      ],
+      "target_instruments": [
+        "600584.SH",
+        "688981.SH",
+        "603501.SH",
+        "688008.SH"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-09 00:00:00",
+        "end": "2026-08-09 00:00:00",
+        "confidence_level": 0.7
+      },
+      "why_now": "长电科技一季度产能利用率超80%且宣布100亿固定资产投资，是产业链景气度从设计传导至封测的明确信号；同时AI算力需求持续爆发、服务器CPU缺货涨价，叠加集成电路出口数据向好，多重信号在5月上旬集中释放，形成共振。",
+      "related_signals": [
+        "sig_7cfae5a1c6bb",
+        "sig_c37fb23fb71a",
+        "sig_b305b999b74e",
+        "sig_de1c0bc2bee5",
+        "sig_2a01f8d096bc"
+      ],
+      "inferred_events": [
+        "inferred_aa7eb1f3",
+        "inferred_71d82104",
+        "inferred_30579547",
+        "inferred_232cee2b",
+        "inferred_23675597"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout"
+      ],
+      "supporting_evidence": [
+        "长电科技一季度产能利用率超80%，淡季不淡，且宣布2026年固定资产投资预算约100亿元，重点投向先进封装和产能扩充",
+        "AI算力需求爆发驱动巨头加速布局ASIC芯片，行业走向GPU+ASIC异构协同",
+        "服务器CPU因AI算力需求、内存涨价及产能紧张出现缺货涨价",
+        "中国4月集成电路出口量同比增长3.8%，出口贸易保持增长"
+      ],
+      "counter_evidence": [
+        "半导体板块此前已有一定涨幅，部分预期可能已被定价",
+        "全球宏观经济不确定性可能影响下游需求持续性"
+      ],
+      "key_assumptions": [
+        "假设1：AI算力需求持续增长，带动ASIC和服务器CPU需求不减弱",
+        "假设2：长电科技等封测企业产能扩张能顺利转化为营收和利润增长",
+        "假设3：全球半导体贸易环境不发生重大恶化"
+      ],
+      "uncertainty_map": [
+        "下游需求持续性（影响程度：高）：若AI资本开支放缓或宏观经济下行，需求可能不及预期",
+        "产能扩张节奏与盈利兑现（影响程度：中）：长电科技百亿投资能否如期达产并贡献利润存在不确定性",
+        "地缘政治风险（影响程度：中）：中美科技摩擦可能影响设备进口或出口市场"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 7,
+        "timeliness": 8,
+        "market_confirmation": 6,
+        "tradability": 8,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 8,
+        "overall_score": 7.1,
+        "confidence_score": 0.75,
+        "execution_readiness": 0.7
+      },
+      "risk_reward_profile": "上行空间：半导体景气上行叠加扩产周期，龙头公司业绩有望超预期，股价有20-30%上涨潜力；下行风险：若需求不及预期或产能扩张受阻，股价可能回调10-15%，但封测龙头估值合理，下行空间有限。",
+      "next_validation_questions": [
+        "长电科技及其他封测企业二季度产能利用率及订单能见度如何？",
+        "ASIC芯片相关订单是否已体现在产业链公司营收中？",
+        "服务器CPU缺货涨价是否已传导至相关芯片设计公司业绩？"
+      ],
+      "invalidation_conditions": [
+        "长电科技等封测企业二季度产能利用率明显下滑",
+        "AI算力相关资本开支出现显著放缓信号",
+        "集成电路出口增速连续两个月转负"
+      ],
+      "must_watch_indicators": [
+        "长电科技月度产能利用率",
+        "全球半导体销售额月度数据",
+        "中国集成电路出口量月度同比增速",
+        "主要AI芯片公司资本开支指引"
+      ],
+      "kill_switch_signals": [
+        "长电科技或中芯国际发布业绩预警",
+        "美国对华半导体出口管制进一步升级",
+        "AI芯片巨头大幅削减订单"
+      ],
+      "warnings": [
+        "注意：部分信号来自新闻和业绩说明会，需关注后续官方公告确认",
+        "半导体板块波动较大，需控制仓位并设置止损"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-09 14:29:28.015572",
+      "batch_id": "m12_600186.SH_2026-05-09",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 7.1,
+    "m3_fallback": false,
+    "trend_stage": "middle",
+    "trend_remaining_upside_pct": 4.5,
+    "trend_catalyst_persistence": "continuing",
+    "trend_skip_reason": "",
+    "action_taken": "PASSED",
+    "action_plan_id": "opp_995d0bb2",
+    "stop_loss_pct": 5.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "PASSED",
+    "reason": "trend=middle upside=4.5%",
+    "full_chain": [
+      "1.ANOMALY: 600186.SH -5.7% type=intraday_spike sigma=0.0 atr=0.0 vol=0.0",
+      "2.CAUSATION: has_cause type=policy signals=4 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=7.1",
+      "4.TREND: middle upside=4.5% persistence=continuing",
+      "5.ACTION: PASSED reason=trend=middle upside=4.5% plan=opp_995d0bb2 SL=5.0% TP=0.0%"
+    ]
+  },
+  {
+    "id": "dec_a88d7326c0",
+    "timestamp": "2026-05-09T14:30:36.014308",
+    "instrument": "600379.SH",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "intraday_spike",
+    "anomaly_price_change_pct": -6.16,
+    "anomaly_atr_multiple": 0.0,
+    "anomaly_sigma_multiple": 0.0,
+    "anomaly_volume_ratio": 0.0,
+    "anomaly_is_limit_up": false,
+    "causation_type": "policy",
+    "causation_has_cause": true,
+    "causation_signal_count": 4,
+    "causation_signals": [
+      {
+        "signal_id": "sig_840df322691f",
+        "label": "证监局对编造AI假消息罚款45万",
+        "type": "policy"
+      },
+      {
+        "signal_id": "sig_af0e1a0e5f56",
+        "label": "新华社调查胖东来被黑事件",
+        "type": "macro"
+      },
+      {
+        "signal_id": "sig_8c1ad346ebec",
+        "label": "抖音开展涉税虚假宣传治理",
+        "type": "policy"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_e4f8b7bf",
+      "opportunity_title": "监管清朗利好绩优股",
+      "opportunity_thesis": "监管层密集打击利用AI编造虚假信息的行为（北京证监局罚款、新华社调查胖东来被黑），直接保护了绩优股企业的市场声誉和投资者信任。这将减少绩优股因谣言导致的非理性下跌风险，并可能引导资金从概念炒作转向基本面扎实的龙头公司。当前市场对绩优股的信任溢价尚未充分定价，存在预期差。",
+      "target_markets": [
+        "A_SHARE"
+      ],
+      "target_instruments": [
+        "688981.SH",
+        "603501.SH",
+        "688008.SH"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-10 00:00:00",
+        "end": "2026-06-10 00:00:00",
+        "confidence_level": 0.7
+      },
+      "why_now": "北京证监局5月9日开出罚单、新华社同日发文调查、小鹏汽车同日辟谣，三件事在同一天密集发生，形成监管层集中表态的窗口期，市场情绪可能快速反应。",
+      "related_signals": [
+        "sig_840df322691f",
+        "sig_af0e1a0e5f56",
+        "sig_840df322691f",
+        "sig_af0e1a0e5f56",
+        "sig_991afb18ae1a",
+        "sig_d8ffa51dcef3"
+      ],
+      "inferred_events": [
+        "inferred_0d05a529",
+        "inferred_0f114aaf",
+        "inferred_afdf227f",
+        "inferred_14275c28",
+        "inferred_a270f724",
+        "inferred_42ca3443"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout"
+      ],
+      "supporting_evidence": [
+        "北京证监局对利用AI编造寒武纪虚假信息的行为罚款45万元，显示监管执行力",
+        "新华社官方公众号发文调查胖东来被黑事件，指出网络黑嘴对绩优股信誉的冲击",
+        "小鹏汽车同日否认被约谈立案，并声明将追责造谣者，形成企业自救与监管联动的信号"
+      ],
+      "counter_evidence": [
+        "罚款金额较小（45万），威慑力有限，可能无法根本遏制谣言传播",
+        "市场整体情绪中性偏乐观，绩优股可能已部分定价监管利好"
+      ],
+      "key_assumptions": [
+        "假设1：监管层后续会持续出台类似打击虚假信息的措施，形成常态化机制",
+        "假设2：绩优股企业（如芯片龙头）的基本面未出现恶化，谣言是主要扰动因素"
+      ],
+      "uncertainty_map": [
+        "监管力度持续性不确定（影响程度：高）",
+        "市场对绩优股的信任修复速度不确定（影响程度：中）",
+        "宏观经济下行可能压制整体市场情绪，抵消监管利好（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 6,
+        "timeliness": 7,
+        "market_confirmation": 4,
+        "tradability": 8,
+        "risk_clarity": 6,
+        "consensus_gap": 6,
+        "signal_consistency": 7,
+        "overall_score": 6.3,
+        "confidence_score": 0.7,
+        "execution_readiness": 0.75
+      },
+      "risk_reward_profile": "潜在收益：绩优股估值修复10-15%；潜在风险：监管力度不及预期或市场整体下跌导致止损5-8%。",
+      "next_validation_questions": [
+        "未来一周是否有更多监管机构（如证监会、网信办）发布类似声明或处罚案例？",
+        "被谣言影响的绩优股（如寒武纪、胖东来相关上市公司）股价是否出现企稳或反弹？",
+        "市场资金是否从概念炒作转向绩优股（观察北向资金流向和板块轮动）？"
+      ],
+      "invalidation_conditions": [
+        "一周内无新增监管打击虚假信息的案例",
+        "绩优股板块出现新的重大利空（如业绩暴雷）",
+        "市场整体进入下跌趋势，监管利好被淹没"
+      ],
+      "must_watch_indicators": [
+        "监管层（证监会、网信办）官方声明频率",
+        "寒武纪、胖东来相关上市公司股价走势",
+        "北向资金对芯片龙头的净买入情况",
+        "市场情绪指标（恐贪指数）是否从中性转向乐观"
+      ],
+      "kill_switch_signals": [
+        "监管层转向打击绩优股本身（如反垄断调查）",
+        "绩优股龙头出现超预期利空（如订单取消）",
+        "市场出现系统性风险（如流动性危机）"
+      ],
+      "warnings": [
+        "注意：当前信号仅基于新闻事件，需等待更多监管动作确认趋势",
+        "注意：芯片龙头股价已处于相对高位，追高需谨慎"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-09 14:31:28.549822",
+      "batch_id": "m12_600379.SH_2026-05-09",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 6.3,
+    "m3_fallback": false,
+    "trend_stage": "middle",
+    "trend_remaining_upside_pct": 4.9,
+    "trend_catalyst_persistence": "continuing",
+    "trend_skip_reason": "",
+    "action_taken": "PASSED",
+    "action_plan_id": "opp_e4f8b7bf",
+    "stop_loss_pct": 5.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "PASSED",
+    "reason": "trend=middle upside=4.9%",
+    "full_chain": [
+      "1.ANOMALY: 600379.SH -6.2% type=intraday_spike sigma=0.0 atr=0.0 vol=0.0",
+      "2.CAUSATION: has_cause type=policy signals=4 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=6.3",
+      "4.TREND: middle upside=4.9% persistence=continuing",
+      "5.ACTION: PASSED reason=trend=middle upside=4.9% plan=opp_e4f8b7bf SL=5.0% TP=0.0%"
+    ]
+  },
+  {
+    "id": "dec_4ae3db3c51",
+    "timestamp": "2026-05-09T14:44:42.415093",
+    "instrument": "600186.SH",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "intraday_spike",
+    "anomaly_price_change_pct": -5.66,
+    "anomaly_atr_multiple": 0.0,
+    "anomaly_sigma_multiple": 0.0,
+    "anomaly_volume_ratio": 0.0,
+    "anomaly_is_limit_up": false,
+    "causation_type": "policy",
+    "causation_has_cause": true,
+    "causation_signal_count": 4,
+    "causation_signals": [
+      {
+        "signal_id": "sig_840df322691f",
+        "label": "证监局对编造AI假消息罚款45万",
+        "type": "policy"
+      },
+      {
+        "signal_id": "sig_af0e1a0e5f56",
+        "label": "新华社调查胖东来被黑事件",
+        "type": "macro"
+      },
+      {
+        "signal_id": "sig_8c1ad346ebec",
+        "label": "抖音开展涉税虚假宣传治理",
+        "type": "policy"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_a2b3ade6",
+      "opportunity_title": "绩优股监管红利",
+      "opportunity_thesis": "监管层密集打击利用AI编造虚假信息的行为，新华社等官方媒体公开为绩优股企业站台，将显著提升市场对绩优股的信息环境信任度。此前被谣言压制的优质企业（如寒武纪、小鹏汽车等）有望迎来估值修复，而造谣成本急剧上升将减少未来恶意做空力量，形成结构性利好。当前市场尚未充分定价此监管转向的长期影响，存在预期差。",
+      "target_markets": [
+        "A_SHARE",
+        "HK"
+      ],
+      "target_instruments": [
+        "688981.SH",
+        "603501.SH",
+        "688008.SH"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-10 00:00:00",
+        "end": "2026-07-10 00:00:00",
+        "confidence_level": 0.7
+      },
+      "why_now": "北京证监局5月9日开出AI造谣罚单、新华社同日发文为胖东来站台、小鹏汽车同日辟谣被约谈——三件事同日发生，形成监管+舆论+企业三方合力，时间窗口明确。市场尚未充分反应这一监管转向的长期影响。",
+      "related_signals": [
+        "sig_840df322691f",
+        "sig_af0e1a0e5f56",
+        "sig_840df322691f",
+        "sig_af0e1a0e5f56",
+        "sig_991afb18ae1a",
+        "sig_d8ffa51dcef3"
+      ],
+      "inferred_events": [
+        "inferred_9f26c8ea",
+        "inferred_37764539",
+        "inferred_6a9e8929",
+        "inferred_813c5dc4",
+        "inferred_f40caaa2",
+        "inferred_0c88cdcb"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout"
+      ],
+      "supporting_evidence": [
+        "北京证监局对利用AI编造寒武纪虚假信息的行为罚款45万元，盈利不足300元但罚款力度大，显示监管决心",
+        "新华社官方公众号发文调查胖东来被黑事件，公开为绩优股企业站台，信号级别高",
+        "小鹏汽车同日辟谣被约谈传闻，并声明将追责造谣者，形成企业端配合",
+        "历史案例显示，监管打击虚假信息后，相关板块信息环境改善，优质企业估值修复"
+      ],
+      "counter_evidence": [
+        "当前市场情绪中性偏乐观，恐贪指数未到极端恐惧，情绪修复空间有限",
+        "监管行动为个案处罚，尚未形成系统性制度，持续性存疑"
+      ],
+      "key_assumptions": [
+        "假设1：监管层后续会持续加大打击虚假信息的力度，而非一次性行动",
+        "假设2：绩优股企业基本面未因谣言实质性受损，估值修复有基本面支撑",
+        "假设3：市场情绪不会因其他宏观因素（如经济数据、地缘政治）大幅恶化"
+      ],
+      "uncertainty_map": [
+        "监管行动持续性不确定（影响程度：高）",
+        "绩优股企业基本面是否已受谣言实质性影响不确定（影响程度：中）",
+        "市场整体流动性环境变化可能影响修复节奏（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 7,
+        "timeliness": 8,
+        "market_confirmation": 4,
+        "tradability": 7,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 8,
+        "overall_score": 6.7,
+        "confidence_score": 0.72,
+        "execution_readiness": 0.65
+      },
+      "risk_reward_profile": "潜在收益：绩优股估值修复10-20%，叠加信息环境改善带来的溢价。潜在风险：监管行动仅为个案，市场不认可，股价不反应或下跌5-10%。收益风险比约2:1。",
+      "next_validation_questions": [
+        "监管层是否有后续政策或表态跟进？",
+        "寒武纪、小鹏汽车等标的近期是否有基本面变化或订单公告？",
+        "市场对监管行动的关注度是否持续上升（如新闻热度、研报覆盖）？"
+      ],
+      "invalidation_conditions": [
+        "一周内无其他监管或官方媒体跟进，证明为孤立事件",
+        "寒武纪或小鹏汽车出现新的负面基本面信息",
+        "市场整体出现系统性下跌（如大盘跌幅超3%）"
+      ],
+      "must_watch_indicators": [
+        "北京证监局及证监会后续是否发布类似处罚或政策",
+        "新华社等官媒是否继续为其他绩优股企业发声",
+        "寒武纪、小鹏汽车股价是否出现放量上涨",
+        "市场对绩优股板块的研报覆盖和评级变化"
+      ],
+      "kill_switch_signals": [
+        "监管层出现放松监管的表态或行动",
+        "寒武纪或小鹏汽车被证实存在实质性问题",
+        "市场出现新的重大利空（如经济数据大幅不及预期）"
+      ],
+      "warnings": [
+        "注意：当前信号均为新闻事件，非官方公告，需关注后续官方确认",
+        "注意：监管行动为个案，持续性存疑，不宜重仓"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-09 14:45:32.967865",
+      "batch_id": "m12_600186.SH_2026-05-09",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 6.7,
+    "m3_fallback": false,
+    "trend_stage": "middle",
+    "trend_remaining_upside_pct": 4.5,
+    "trend_catalyst_persistence": "continuing",
+    "trend_skip_reason": "",
+    "action_taken": "PASSED",
+    "action_plan_id": "opp_a2b3ade6",
+    "stop_loss_pct": 5.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "PASSED",
+    "reason": "trend=middle upside=4.5%",
+    "full_chain": [
+      "1.ANOMALY: 600186.SH -5.7% type=intraday_spike sigma=0.0 atr=0.0 vol=0.0",
+      "2.CAUSATION: has_cause type=policy signals=4 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=6.7",
+      "4.TREND: middle upside=4.5% persistence=continuing",
+      "5.ACTION: PASSED reason=trend=middle upside=4.5% plan=opp_a2b3ade6 SL=5.0% TP=0.0%"
+    ]
+  },
+  {
+    "id": "dec_4fe4586dd1",
+    "timestamp": "2026-05-09T14:46:58.899873",
+    "instrument": "600379.SH",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "intraday_spike",
+    "anomaly_price_change_pct": -6.16,
+    "anomaly_atr_multiple": 0.0,
+    "anomaly_sigma_multiple": 0.0,
+    "anomaly_volume_ratio": 0.0,
+    "anomaly_is_limit_up": false,
+    "causation_type": "policy",
+    "causation_has_cause": true,
+    "causation_signal_count": 4,
+    "causation_signals": [
+      {
+        "signal_id": "sig_840df322691f",
+        "label": "证监局对编造AI假消息罚款45万",
+        "type": "policy"
+      },
+      {
+        "signal_id": "sig_af0e1a0e5f56",
+        "label": "新华社调查胖东来被黑事件",
+        "type": "macro"
+      },
+      {
+        "signal_id": "sig_8c1ad346ebec",
+        "label": "抖音开展涉税虚假宣传治理",
+        "type": "policy"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_8db3a27c",
+      "opportunity_title": "监管净化利好绩优股",
+      "opportunity_thesis": "监管层连续出手打击利用AI编造虚假信息的行为（证监局罚款45万、新华社调查胖东来被黑），并配合小鹏汽车等企业主动辟谣，表明监管环境正在收紧，对利用AI进行信息操纵的行为形成威慑。这将减少绩优股被恶意做空/炒作的风险，资金有望从概念炒作转向基本面扎实的合规企业，形成结构性利好。当前市场情绪中性偏乐观（恐贪指数58），但北向资金观望，预期差在于市场尚未充分定价监管趋严对绩优股的风险溢价下降。",
+      "target_markets": [
+        "A_SHARE"
+      ],
+      "target_instruments": [
+        "688981.SH",
+        "603501.SH",
+        "688008.SH"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-10 00:00:00",
+        "end": "2026-06-10 00:00:00",
+        "confidence_level": 0.65
+      },
+      "why_now": "5月9日同一天内，北京证监局公布AI假消息罚款案例、新华社发文调查胖东来被黑、小鹏汽车辟谣被约谈，三件事叠加形成监管趋严的明确信号窗口。市场尚未对此充分反应，预期差存在。",
+      "related_signals": [
+        "sig_840df322691f",
+        "sig_af0e1a0e5f56",
+        "sig_840df322691f",
+        "sig_af0e1a0e5f56",
+        "sig_991afb18ae1a",
+        "sig_d8ffa51dcef3"
+      ],
+      "inferred_events": [
+        "inferred_5f49e003",
+        "inferred_f3ead4ee",
+        "inferred_851c8468",
+        "inferred_e9bf3fed",
+        "inferred_4fe285be"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout"
+      ],
+      "supporting_evidence": [
+        "北京证监局对利用AI编造寒武纪虚假信息的行为罚款45万元，盈利不足300元但罚款力度大，显示监管决心",
+        "新华社官方公众号发文调查胖东来被黑事件，指出网络黑嘴专门攻击绩优股企业，冲击投资者信任",
+        "小鹏汽车官方否认被约谈立案，称相关传闻为AI恶意炒作，已取证追责",
+        "历史案例显示，监管打击虚假信息后，绩优股相对表现优于概念股"
+      ],
+      "counter_evidence": [
+        "当前市场情绪中性偏乐观（恐贪指数58），北向资金净流入为0，外资观望，可能限制短期涨幅",
+        "监管案例涉及金额较小（罚款45万），威慑力可能有限，后续执行力度待观察"
+      ],
+      "key_assumptions": [
+        "假设1：监管层后续会持续加大打击AI虚假信息的力度，形成常态化威慑",
+        "假设2：市场资金会从概念炒作转向绩优股，而非整体避险",
+        "假设3：绩优股基本面（如芯片龙头订单、业绩）保持稳健，不出现超预期利空"
+      ],
+      "uncertainty_map": [
+        "监管执行力度不确定性（影响程度：高）：罚款45万是否只是开始，后续是否有更严厉措施",
+        "市场风格切换速度（影响程度：中）：资金是否愿意从AI概念股转向传统绩优股",
+        "外部宏观环境（影响程度：中）：贸易摩擦、汇率波动等可能压制整体市场情绪"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 6,
+        "timeliness": 7,
+        "market_confirmation": 4,
+        "tradability": 8,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 8,
+        "overall_score": 6.6,
+        "confidence_score": 0.72,
+        "execution_readiness": 0.75
+      },
+      "risk_reward_profile": "潜在收益：若监管趋严推动资金流入绩优股，芯片龙头（中芯国际、韦尔股份、澜起科技）有望获得5-10%的估值修复。潜在风险：若监管只是短期个案，市场风格未切换，则可能横盘或小幅下跌（-3%以内）。风险收益比约2:1。",
+      "next_validation_questions": [
+        "监管层（证监会、网信办）是否有后续政策或表态跟进？",
+        "绩优股（如芯片龙头）近期是否有订单、业绩等基本面催化？",
+        "市场资金流向是否开始从AI概念股转向绩优股（观察ETF资金流、北向资金）？"
+      ],
+      "invalidation_conditions": [
+        "监管层后续无任何跟进动作，罚款案例被市场视为孤立事件",
+        "市场出现新的AI概念炒作热点，资金继续追逐概念而非绩优股",
+        "绩优股出现超预期利空（如业绩不及预期、大股东减持）"
+      ],
+      "must_watch_indicators": [
+        "证监会/网信办是否发布打击虚假信息的正式文件或指导意见",
+        "芯片龙头（中芯国际、韦尔股份、澜起科技）的成交量与股价走势",
+        "北向资金净流入/流出方向",
+        "市场恐贪指数变化，若进入极度贪婪（≥80）则需警惕追高风险"
+      ],
+      "kill_switch_signals": [
+        "监管层出台限制绩优股所在行业的政策（如芯片出口管制）",
+        "市场出现系统性风险（如贸易战升级、流动性危机）",
+        "绩优股龙头出现重大负面新闻（如财务造假、高管被调查）"
+      ],
+      "warnings": [
+        "注意：当前信号均为5月9日当天发布，市场反应尚需时间验证，建议先观察1-2个交易日",
+        "注意：芯片龙头股价已处于相对高位，需警惕短期获利回吐压力"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-09 14:47:50.247778",
+      "batch_id": "m12_600379.SH_2026-05-09",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 6.6,
+    "m3_fallback": false,
+    "trend_stage": "middle",
+    "trend_remaining_upside_pct": 4.9,
+    "trend_catalyst_persistence": "continuing",
+    "trend_skip_reason": "",
+    "action_taken": "PASSED",
+    "action_plan_id": "opp_8db3a27c",
+    "stop_loss_pct": 5.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "PASSED",
+    "reason": "trend=middle upside=4.9%",
+    "full_chain": [
+      "1.ANOMALY: 600379.SH -6.2% type=intraday_spike sigma=0.0 atr=0.0 vol=0.0",
+      "2.CAUSATION: has_cause type=policy signals=4 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=6.6",
+      "4.TREND: middle upside=4.9% persistence=continuing",
+      "5.ACTION: PASSED reason=trend=middle upside=4.9% plan=opp_8db3a27c SL=5.0% TP=0.0%"
+    ]
+  },
+  {
+    "id": "dec_c175b031fd",
+    "timestamp": "2026-05-09T14:49:28.818340",
+    "instrument": "600623.SH",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "intraday_spike",
+    "anomaly_price_change_pct": -5.66,
+    "anomaly_atr_multiple": 0.0,
+    "anomaly_sigma_multiple": 0.0,
+    "anomaly_volume_ratio": 0.0,
+    "anomaly_is_limit_up": false,
+    "causation_type": "policy",
+    "causation_has_cause": true,
+    "causation_signal_count": 4,
+    "causation_signals": [
+      {
+        "signal_id": "sig_840df322691f",
+        "label": "证监局对编造AI假消息罚款45万",
+        "type": "policy"
+      },
+      {
+        "signal_id": "sig_af0e1a0e5f56",
+        "label": "新华社调查胖东来被黑事件",
+        "type": "macro"
+      },
+      {
+        "signal_id": "sig_8c1ad346ebec",
+        "label": "抖音开展涉税虚假宣传治理",
+        "type": "policy"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_52c453f1",
+      "opportunity_title": "绩优股监管红利",
+      "opportunity_thesis": "监管层（北京证监局、新华社）连续出手打击利用AI编造虚假信息、攻击绩优股企业的行为，旨在保护市场信誉和投资者信任。这构成结构性利好：被恶意做空/造假的绩优股将迎来估值修复，且监管趋严将提升市场对优质公司的风险偏好。当前时点，监管信号密集且力度加大，市场尚未充分定价此长期利好。",
+      "target_markets": [
+        "A_SHARE"
+      ],
+      "target_instruments": [
+        "688981.SH",
+        "603501.SH",
+        "688008.SH"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-10 00:00:00",
+        "end": "2026-08-10 00:00:00",
+        "confidence_level": 0.7
+      },
+      "why_now": "北京证监局5月9日对AI编造寒武纪假消息开出罚单，同日新华社高调调查胖东来被黑事件，小鹏汽车也同日辟谣AI恶意炒作。监管信号在一天内集中爆发，形成明确的政策态度转变窗口。",
+      "related_signals": [
+        "sig_840df322691f",
+        "sig_af0e1a0e5f56",
+        "sig_840df322691f",
+        "sig_af0e1a0e5f56",
+        "sig_991afb18ae1a",
+        "sig_d8ffa51dcef3"
+      ],
+      "inferred_events": [
+        "inferred_736a2470",
+        "inferred_603b269d",
+        "inferred_b2e21a43",
+        "inferred_bdc0853d",
+        "inferred_13d8db14",
+        "inferred_77af6611"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout"
+      ],
+      "supporting_evidence": [
+        "北京证监局对利用AI编造寒武纪虚假信息的行为罚款45万元，显示监管层对AI造假的零容忍态度",
+        "新华社官方公众号发文调查胖东来被黑事件，指出网络黑嘴攻击绩优股企业，冲击投资者信任",
+        "小鹏汽车同日否认被约谈立案，称相关传闻为AI恶意炒作，并已取证追责",
+        "历史案例显示，监管打击虚假信息后，相关板块龙头股往往迎来估值修复"
+      ],
+      "counter_evidence": [
+        "罚款金额较小（45万），威慑力有限，可能无法根本遏制造假行为",
+        "市场整体情绪偏弱，监管利好可能被短期负面情绪抵消"
+      ],
+      "key_assumptions": [
+        "假设1：监管层后续会持续出台更严厉的打击虚假信息政策",
+        "假设2：被恶意做空的绩优股基本面未发生实质性恶化"
+      ],
+      "uncertainty_map": [
+        "监管执行力度不确定性（影响程度：高）：罚款金额是否足够形成威慑，后续是否会有更严厉措施",
+        "市场情绪传导不确定性（影响程度：中）：监管利好能否快速转化为资金流入绩优股"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 7,
+        "timeliness": 8,
+        "market_confirmation": 4,
+        "tradability": 8,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 8,
+        "overall_score": 6.9,
+        "confidence_score": 0.75,
+        "execution_readiness": 0.65
+      },
+      "risk_reward_profile": "潜在收益：绩优股估值修复10-20%；潜在风险：监管执行不及预期，市场继续下跌，最大亏损5-10%。",
+      "next_validation_questions": [
+        "未来一周内是否有更多监管机构（如证监会、网信办）发布类似打击虚假信息的政策或案例？",
+        "寒武纪、小鹏汽车等被造假的个股股价是否出现止跌企稳迹象？",
+        "市场资金是否开始流入芯片、新能源等绩优板块？"
+      ],
+      "invalidation_conditions": [
+        "一周内无新增监管打击虚假信息案例或政策",
+        "寒武纪、小鹏汽车等股价继续下跌，跌破近期低点",
+        "出现新的、更严重的市场负面事件（如经济数据大幅恶化）"
+      ],
+      "must_watch_indicators": [
+        "北京证监局及证监会官网是否发布新的处罚案例",
+        "新华社、人民日报等官媒是否继续跟进报道",
+        "寒武纪、小鹏汽车等个股的成交量与价格走势",
+        "沪深300指数整体走势"
+      ],
+      "kill_switch_signals": [
+        "监管层明确表示不会扩大打击范围",
+        "被造假的绩优股公司发布业绩预警或基本面恶化公告",
+        "市场出现系统性风险（如流动性危机）"
+      ],
+      "warnings": [
+        "注意：当前信号均为新闻事件，尚未转化为市场资金流向数据",
+        "注意：监管利好可能被短期市场情绪淹没，需耐心等待确认信号"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-09 14:50:16.316153",
+      "batch_id": "m12_600623.SH_2026-05-09",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 6.9,
+    "m3_fallback": false,
+    "trend_stage": "middle",
+    "trend_remaining_upside_pct": 4.5,
+    "trend_catalyst_persistence": "continuing",
+    "trend_skip_reason": "",
+    "action_taken": "PASSED",
+    "action_plan_id": "opp_52c453f1",
+    "stop_loss_pct": 5.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "PASSED",
+    "reason": "trend=middle upside=4.5%",
+    "full_chain": [
+      "1.ANOMALY: 600623.SH -5.7% type=intraday_spike sigma=0.0 atr=0.0 vol=0.0",
+      "2.CAUSATION: has_cause type=policy signals=4 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=6.9",
+      "4.TREND: middle upside=4.5% persistence=continuing",
+      "5.ACTION: PASSED reason=trend=middle upside=4.5% plan=opp_52c453f1 SL=5.0% TP=0.0%"
+    ]
+  },
+  {
+    "id": "dec_e1f8844f05",
+    "timestamp": "2026-05-09T17:10:52.960653",
+    "instrument": "601012.SH",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "daily_surge",
+    "anomaly_price_change_pct": 8.5,
+    "anomaly_atr_multiple": 3.2,
+    "anomaly_sigma_multiple": 2.8,
+    "anomaly_volume_ratio": 2.5,
+    "anomaly_is_limit_up": false,
+    "causation_type": "macro",
+    "causation_has_cause": true,
+    "causation_signal_count": 4,
+    "causation_signals": [
+      {
+        "signal_id": "sig_25a8bce1601f",
+        "label": "字节跳动AI基础设施支出增加25%",
+        "type": "macro"
+      },
+      {
+        "signal_id": "sig_2645b3d34a1f",
+        "label": "中科曙光携百余机构共建太空云生态",
+        "type": "industry"
+      },
+      {
+        "signal_id": "sig_075fc9359e49",
+        "label": "半导体材料市场年均复合增长率5.6%",
+        "type": "macro"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_075af421",
+      "opportunity_title": "AI算力半导体材料机会",
+      "opportunity_thesis": "字节跳动2026年AI基础设施支出增加25%至2000亿元，叠加TECHCET预测半导体材料市场2023-2028年CAGR 5.6%，表明AI算力需求正从下游应用向上游半导体材料传导。这一结构性变化直接利好国内半导体材料与设备供应商，当前市场尚未充分定价，存在预期差。",
+      "target_markets": [
+        "A_SHARE"
+      ],
+      "target_instruments": [
+        "688981.SH",
+        "603501.SH",
+        "688008.SH",
+        "002371.SZ"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-10 00:00:00",
+        "end": "2026-08-10 00:00:00",
+        "confidence_level": 0.7
+      },
+      "why_now": "字节跳动2000亿AI基础设施支出计划是近期最明确的产业资本开支信号，叠加TECHCET报告发布，形成双重催化剂。当前时点市场对AI主题情绪中性偏乐观，但尚未充分定价上游材料环节的确定性受益。",
+      "related_signals": [
+        "sig_25a8bce1601f",
+        "sig_075fc9359e49",
+        "sig_25a8bce1601f",
+        "sig_075fc9359e49"
+      ],
+      "inferred_events": [
+        "inferred_c33ca99e",
+        "inferred_f83b6a97",
+        "inferred_00828d41",
+        "inferred_4a6fedcb",
+        "inferred_3e690878"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout"
+      ],
+      "supporting_evidence": [
+        "字节跳动2026年AI基础设施支出增加25%至2000亿元，直接拉动AI芯片、服务器及内存芯片需求",
+        "TECHCET预测半导体材料市场2023-2028年CAGR 5.6%，2028年突破840亿美元，AI是核心驱动力",
+        "两条信号均指向AI算力上游，方向一致，形成共振"
+      ],
+      "counter_evidence": [
+        "字节跳动支出计划为媒体报道，尚未经官方确认，存在不确定性",
+        "半导体材料市场增长为长期趋势，短期催化力度有限"
+      ],
+      "key_assumptions": [
+        "假设1：字节跳动2000亿支出计划属实且按计划执行",
+        "假设2：AI需求持续推动晶圆消耗增长，半导体材料市场增速不低于预期",
+        "假设3：国内半导体材料供应商能有效承接需求增长"
+      ],
+      "uncertainty_map": [
+        "字节跳动支出计划真实性及执行节奏（影响程度：高）",
+        "全球半导体周期是否进入下行阶段（影响程度：中）",
+        "国内半导体材料企业技术突破与产能扩张进度（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 7,
+        "timeliness": 8,
+        "market_confirmation": 5,
+        "tradability": 8,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 8,
+        "overall_score": 7.0,
+        "confidence_score": 0.72,
+        "execution_readiness": 0.75
+      },
+      "risk_reward_profile": "潜在收益来自AI资本开支超预期及半导体材料国产替代加速，风险在于字节跳动支出计划落空或全球半导体周期下行。预计上行空间15-25%，下行风险10-15%，风险收益比约1.5:1。",
+      "next_validation_questions": [
+        "字节跳动2000亿支出计划是否有官方公告或更多信源证实？",
+        "国内半导体材料龙头（如沪硅产业、雅克科技）近期是否有新增订单或产能扩张公告？",
+        "全球半导体设备出货量及晶圆厂开工率数据是否支持材料需求增长？"
+      ],
+      "invalidation_conditions": [
+        "字节跳动否认或大幅缩减AI基础设施支出计划",
+        "半导体材料市场出现明显供过于求或价格下跌",
+        "全球半导体行业进入衰退周期"
+      ],
+      "must_watch_indicators": [
+        "字节跳动官方公告或财报中AI资本开支指引",
+        "半导体材料板块龙头公司季度营收及毛利率变化",
+        "全球半导体设备出货量月度数据",
+        "AI芯片（如英伟达、AMD）业绩及资本开支指引"
+      ],
+      "kill_switch_signals": [
+        "字节跳动支出计划被证伪或大幅下调",
+        "半导体材料龙头公司发布业绩预警或大幅下调指引",
+        "全球主要经济体出台限制半导体材料出口政策"
+      ],
+      "warnings": [
+        "注意：字节跳动支出计划为媒体报道，非官方公告，需进一步验证",
+        "半导体材料市场增长为长期趋势，短期股价可能受情绪扰动"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-09 17:11:33.973750",
+      "batch_id": "m12_601012.SH_2026-05-09",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 7.0,
+    "m3_fallback": false,
+    "trend_stage": "early",
+    "trend_remaining_upside_pct": 6.8,
+    "trend_catalyst_persistence": "continuing",
+    "trend_skip_reason": "",
+    "action_taken": "PASSED",
+    "action_plan_id": "opp_075af421",
+    "stop_loss_pct": 5.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "PASSED",
+    "reason": "trend=early upside=6.8%",
+    "full_chain": [
+      "1.ANOMALY: 601012.SH +8.5% type=daily_surge sigma=2.8 atr=3.2 vol=2.5",
+      "2.CAUSATION: has_cause type=macro signals=4 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=7.0",
+      "4.TREND: early upside=6.8% persistence=continuing",
+      "5.ACTION: PASSED reason=trend=early upside=6.8% plan=opp_075af421 SL=5.0% TP=0.0%"
+    ]
+  },
+  {
+    "id": "dec_7a566fd149",
+    "timestamp": "2026-05-09T17:16:16.770939",
+    "instrument": "601012.SH",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "daily_surge",
+    "anomaly_price_change_pct": 8.5,
+    "anomaly_atr_multiple": 3.2,
+    "anomaly_sigma_multiple": 2.8,
+    "anomaly_volume_ratio": 2.5,
+    "anomaly_is_limit_up": false,
+    "causation_type": "macro",
+    "causation_has_cause": true,
+    "causation_signal_count": 4,
+    "causation_signals": [
+      {
+        "signal_id": "sig_25a8bce1601f",
+        "label": "字节跳动AI基础设施支出增加25%",
+        "type": "macro"
+      },
+      {
+        "signal_id": "sig_2645b3d34a1f",
+        "label": "中科曙光携百余机构共建太空云生态",
+        "type": "industry"
+      },
+      {
+        "signal_id": "sig_075fc9359e49",
+        "label": "半导体材料市场年均复合增长率5.6%",
+        "type": "macro"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_ca7f3c1b",
+      "opportunity_title": "AI算力基建加速",
+      "opportunity_thesis": "字节跳动2026年AI基础设施支出大幅增加25%至2000亿元，叠加半导体材料市场长期增长趋势，表明AI算力需求正从概念进入实质性资本开支扩张阶段。上游半导体材料、晶圆代工及AI芯片供应商将直接受益于下游互联网巨头的持续投入，当前市场对字节跳动的具体支出规模尚未充分定价，存在预期差。",
+      "target_markets": [
+        "A_SHARE",
+        "HK"
+      ],
+      "target_instruments": [
+        "688981.SH",
+        "688008.SH",
+        "603501.SH",
+        "002371.SZ"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "ETF",
+        "FUTURES"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-09 00:00:00",
+        "end": "2026-08-09 00:00:00",
+        "confidence_level": 0.7
+      },
+      "why_now": "字节跳动明确上调2026年AI基础设施支出计划至2000亿元，是近期最具体的产业资本开支信号，叠加TECHCET报告确认半导体材料市场长期增长趋势，当前时点处于产业投资加速初期，市场尚未完全消化这一增量信息。",
+      "related_signals": [
+        "sig_25a8bce1601f",
+        "sig_075fc9359e49",
+        "sig_25a8bce1601f",
+        "sig_075fc9359e49"
+      ],
+      "inferred_events": [
+        "inferred_223be4f3",
+        "inferred_e29b330c",
+        "inferred_e863d44e",
+        "inferred_ea297067",
+        "inferred_f20919e0"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout"
+      ],
+      "supporting_evidence": [
+        "字节跳动2026年AI基础设施支出增加25%至2000亿元，直接拉动AI芯片、服务器及内存需求",
+        "TECHCET报告预测半导体材料市场2023-2028年CAGR为5.6%，2028年突破840亿美元，AI需求是核心驱动力",
+        "推理未来事件显示AI及半导体行业补贴或支持政策出台概率75%，政策面可能进一步催化"
+      ],
+      "counter_evidence": [
+        "字节跳动的支出计划仅为报道，尚未经官方公告确认，存在不确定性",
+        "历史案例显示AI概念炒作后缺乏订单验证容易回落，需警惕商业化落地节奏"
+      ],
+      "key_assumptions": [
+        "假设1：字节跳动的2000亿元支出计划能够按预期执行，不会因外部环境变化大幅削减",
+        "假设2：AI算力需求持续增长，带动半导体材料及晶圆消耗量稳步提升",
+        "假设3：国内半导体产业链能够承接部分字节跳动的采购需求，而非全部流向海外供应商"
+      ],
+      "uncertainty_map": [
+        "字节跳动支出计划的官方确认程度（影响程度：高）",
+        "全球半导体供应链限制及地缘政治风险（影响程度：中）",
+        "AI商业化变现速度是否匹配资本开支节奏（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 8,
+        "timeliness": 8,
+        "market_confirmation": 5,
+        "tradability": 7,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 8,
+        "overall_score": 7.0,
+        "confidence_score": 0.75,
+        "execution_readiness": 0.7
+      },
+      "risk_reward_profile": "潜在收益来自字节跳动支出超预期及政策催化带来的估值提升，风险在于支出计划未确认或AI需求增速放缓，最大回撤约15-20%，止损可设在关键支撑位下方。",
+      "next_validation_questions": [
+        "字节跳动是否已正式公告或确认2000亿元AI基础设施支出计划？",
+        "国内主要AI芯片供应商（如寒武纪、海光信息）是否已获得字节跳动的订单或意向？",
+        "半导体材料板块当前估值水平是否处于历史合理区间？"
+      ],
+      "invalidation_conditions": [
+        "字节跳动官方否认或大幅下调AI基础设施支出计划",
+        "半导体材料市场出现明显需求下滑信号（如晶圆厂产能利用率大幅下降）",
+        "AI行业出现重大技术路线变化导致现有投资方向失效"
+      ],
+      "must_watch_indicators": [
+        "字节跳动后续官方公告或财报中AI资本开支指引",
+        "国内主要晶圆代工厂（中芯国际）产能利用率变化",
+        "半导体材料板块龙头公司（如沪硅产业、雅克科技）订单及营收增速",
+        "AI芯片相关ETF资金流入情况"
+      ],
+      "kill_switch_signals": [
+        "字节跳动或腾讯等巨头宣布削减AI投资预算",
+        "半导体材料板块出现连续放量下跌，跌破关键支撑位",
+        "美国进一步升级对华半导体设备出口管制"
+      ],
+      "warnings": [
+        "注意：字节跳动支出计划为媒体报道，尚未经官方确认，存在信息不确定性",
+        "注意：历史案例显示AI概念炒作后若无订单验证容易回落，需关注商业化落地节奏"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-09 17:16:59.850060",
+      "batch_id": "m12_601012.SH_2026-05-09",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 7.0,
+    "m3_fallback": false,
+    "trend_stage": "early",
+    "trend_remaining_upside_pct": 6.8,
+    "trend_catalyst_persistence": "continuing",
+    "trend_skip_reason": "",
+    "action_taken": "PASSED",
+    "action_plan_id": "opp_ca7f3c1b",
+    "stop_loss_pct": 5.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "PASSED",
+    "reason": "trend=early upside=6.8%",
+    "full_chain": [
+      "1.ANOMALY: 601012.SH +8.5% type=daily_surge sigma=2.8 atr=3.2 vol=2.5",
+      "2.CAUSATION: has_cause type=macro signals=4 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=7.0",
+      "4.TREND: early upside=6.8% persistence=continuing",
+      "5.ACTION: PASSED reason=trend=early upside=6.8% plan=opp_ca7f3c1b SL=5.0% TP=0.0%"
+    ]
+  },
+  {
+    "id": "dec_5e123d081c",
+    "timestamp": "2026-05-09T17:54:49.897969",
+    "instrument": "601012.SH",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "daily_surge",
+    "anomaly_price_change_pct": 8.5,
+    "anomaly_atr_multiple": 3.2,
+    "anomaly_sigma_multiple": 2.8,
+    "anomaly_volume_ratio": 2.5,
+    "anomaly_is_limit_up": false,
+    "causation_type": "macro",
+    "causation_has_cause": true,
+    "causation_signal_count": 4,
+    "causation_signals": [
+      {
+        "signal_id": "sig_25a8bce1601f",
+        "label": "字节跳动AI基础设施支出增加25%",
+        "type": "macro"
+      },
+      {
+        "signal_id": "sig_2645b3d34a1f",
+        "label": "中科曙光携百余机构共建太空云生态",
+        "type": "industry"
+      },
+      {
+        "signal_id": "sig_075fc9359e49",
+        "label": "半导体材料市场年均复合增长率5.6%",
+        "type": "macro"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_bb4137c3",
+      "opportunity_title": "AI算力产业链扩张",
+      "opportunity_thesis": "字节跳动大幅增加AI基础设施支出、中国算力平台上线普惠专区、半导体材料市场持续增长，三条信号均指向AI算力产业链需求扩张。当前时点，巨头资本开支加速叠加政策推动普惠算力，将直接拉动AI芯片、服务器、内存芯片及半导体材料需求，且市场尚未充分定价这一共振效应。",
+      "target_markets": [
+        "A_SHARE",
+        "HK"
+      ],
+      "target_instruments": [
+        "688981.SH",
+        "603501.SH",
+        "688008.SH",
+        "002371.SZ"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "ETF",
+        "FUTURES"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-09 00:00:00",
+        "end": "2026-08-09 00:00:00",
+        "confidence_level": 0.7
+      },
+      "why_now": "字节跳动2026年AI基础设施支出计划增加25%至2000亿元，叠加中国算力平台中小企业专区于5月9日正式上线，两大催化剂同日出现，形成需求端和供给端双重利好，时间窗口紧迫。",
+      "related_signals": [
+        "sig_25a8bce1601f",
+        "sig_075fc9359e49",
+        "sig_84ccdee1ae86",
+        "sig_25a8bce1601f",
+        "sig_075fc9359e49",
+        "sig_84ccdee1ae86"
+      ],
+      "inferred_events": [
+        "inferred_ed6ef725",
+        "inferred_96157458",
+        "inferred_620c732d",
+        "inferred_8a9a7d5b"
+      ],
+      "supporting_cases": [
+        "case_2024_tech_breakthrough",
+        "case_2024_breakout"
+      ],
+      "supporting_evidence": [
+        "字节跳动将2026年AI基础设施支出增加25%至2000亿元，直接拉动AI芯片和服务器需求",
+        "中国算力平台'算力超市·中小企业专区'上线，普惠算力服务将扩大下游应用场景",
+        "TECHCET预测半导体材料市场2023-2028年CAGR 5.6%，2028年突破840亿美元，AI驱动晶圆消耗增长"
+      ],
+      "counter_evidence": [
+        "字节跳动支出计划为媒体报道，尚未经官方确认，存在不确定性",
+        "半导体材料市场增长预期已被部分定价，预期差有限"
+      ],
+      "key_assumptions": [
+        "假设1：字节跳动2000亿元支出计划属实且能按计划执行",
+        "假设2：中国算力平台中小企业专区能有效转化为实际算力需求",
+        "假设3：AI芯片和半导体材料供应链不出现重大中断"
+      ],
+      "uncertainty_map": [
+        "字节跳动支出计划真实性（影响程度：高）",
+        "普惠算力平台实际落地效果（影响程度：中）",
+        "全球半导体材料供应链稳定性（影响程度：中）"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 7,
+        "timeliness": 8,
+        "market_confirmation": 5,
+        "tradability": 7,
+        "risk_clarity": 6,
+        "consensus_gap": 6,
+        "signal_consistency": 8,
+        "overall_score": 6.7,
+        "confidence_score": 0.7,
+        "execution_readiness": 0.65
+      },
+      "risk_reward_profile": "潜在收益：AI算力产业链需求扩张带动相关标的上涨，若字节支出计划确认，龙头股可能上涨15-25%。潜在风险：若支出计划不实或普惠算力平台效果不及预期，股价可能回落5-10%。风险收益比约2:1。",
+      "next_validation_questions": [
+        "字节跳动2000亿元支出计划是否有官方公告或财报确认？",
+        "中国算力平台中小企业专区上线后，实际注册企业和算力使用量数据如何？",
+        "当前AI芯片和半导体材料库存水平及订单能见度如何？"
+      ],
+      "invalidation_conditions": [
+        "字节跳动否认或下调AI基础设施支出计划",
+        "中国算力平台中小企业专区使用量远低于预期",
+        "半导体材料市场出现供过于求或价格大幅下跌"
+      ],
+      "must_watch_indicators": [
+        "字节跳动官方公告或财报中AI资本开支指引",
+        "中国算力平台中小企业专区注册企业数量",
+        "AI芯片和内存芯片现货价格走势",
+        "半导体材料企业季度订单数据"
+      ],
+      "kill_switch_signals": [
+        "字节跳动支出计划被证伪或大幅缩减",
+        "AI芯片出口管制升级导致供应链中断",
+        "半导体材料库存大幅上升、价格下跌"
+      ],
+      "warnings": [
+        "注意：字节跳动支出计划为媒体报道，非官方公告，需进一步验证",
+        "注意：历史案例显示AI概念炒作后缺乏订单验证易回落，需关注实际订单落地"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-09 17:55:34.846851",
+      "batch_id": "m12_601012.SH_2026-05-09",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 6.7,
+    "m3_fallback": false,
+    "trend_stage": "early",
+    "trend_remaining_upside_pct": 6.8,
+    "trend_catalyst_persistence": "continuing",
+    "trend_skip_reason": "",
+    "action_taken": "PASSED",
+    "action_plan_id": "opp_bb4137c3",
+    "stop_loss_pct": 5.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "PASSED",
+    "reason": "trend=early upside=6.8%",
+    "full_chain": [
+      "1.ANOMALY: 601012.SH +8.5% type=daily_surge sigma=2.8 atr=3.2 vol=2.5",
+      "2.CAUSATION: has_cause type=macro signals=4 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=6.7",
+      "4.TREND: early upside=6.8% persistence=continuing",
+      "5.ACTION: PASSED reason=trend=early upside=6.8% plan=opp_bb4137c3 SL=5.0% TP=0.0%"
+    ]
+  },
+  {
+    "id": "dec_1702bca8f8",
+    "timestamp": "2026-05-09T18:44:46.470249",
+    "instrument": "601012.SH",
+    "market": "A_SHARE",
+    "anomaly_detected": true,
+    "anomaly_type": "daily_surge",
+    "anomaly_price_change_pct": 8.5,
+    "anomaly_atr_multiple": 3.2,
+    "anomaly_sigma_multiple": 2.8,
+    "anomaly_volume_ratio": 2.5,
+    "anomaly_is_limit_up": false,
+    "causation_type": "macro",
+    "causation_has_cause": true,
+    "causation_signal_count": 6,
+    "causation_signals": [
+      {
+        "signal_id": "sig_f39af8262f5c",
+        "label": "广州楼市热度持续攀升",
+        "type": "macro"
+      },
+      {
+        "signal_id": "sig_0fef94bbb0e8",
+        "label": "电解铝单吨盈利创历史新高",
+        "type": "macro"
+      },
+      {
+        "signal_id": "sig_e81b92d2f2b0",
+        "label": "北辰航天完成数千万元天使轮融资",
+        "type": "event_driven"
+      }
+    ],
+    "causation_skip_reason": "",
+    "m3_judged": true,
+    "m3_opportunity": {
+      "opportunity_id": "opp_8c7b3859",
+      "opportunity_title": "地缘能源避险",
+      "opportunity_thesis": "霍尔木兹海峡船只起火沉没叠加伊朗议会战事首次会议，地缘政治风险短期急剧升温，全球原油运输安全受威胁，能源价格风险溢价上升。市场尚未充分定价该事件对航运和能源板块的冲击，存在短期避险交易机会。",
+      "target_markets": [
+        "A_SHARE",
+        "HK"
+      ],
+      "target_instruments": [
+        "601857.SH",
+        "600028.SH",
+        "600026.SH",
+        "601872.SH",
+        "600150.SH"
+      ],
+      "trade_direction": "BULLISH",
+      "instrument_types": [
+        "STOCK"
+      ],
+      "opportunity_window": {
+        "start": "2026-05-10 00:00:00",
+        "end": "2026-05-17 00:00:00",
+        "confidence_level": 0.7
+      },
+      "why_now": "霍尔木兹海峡事件刚发生（5月9日），伊朗议会首次会议（5月10日）将讨论通胀（可能涉及油价），双重催化剂叠加，市场反应尚未充分，时间窗口仅1周左右。",
+      "related_signals": [
+        "sig_66aa03b3311d",
+        "sig_f6844cfdbce1"
+      ],
+      "inferred_events": [
+        "inferred_abe01dd5",
+        "inferred_84926a08",
+        "inferred_16daf753",
+        "inferred_96398e36",
+        "inferred_e9a41eda"
+      ],
+      "supporting_cases": [
+        "case_2024_geopolitical"
+      ],
+      "supporting_evidence": [
+        "霍尔木兹海峡船只起火沉没直接威胁全球关键原油运输通道，历史上类似事件均导致油价短期飙升",
+        "伊朗议会战事首次会议讨论通胀，可能涉及油价调控或出口政策，增加不确定性",
+        "推理事件预测霍尔木兹海峡事件导致原油运输风险溢价上升概率80%，时间窗口1周内"
+      ],
+      "counter_evidence": [
+        "船只起火为木质帆船，非大型油轮，实际影响可能有限",
+        "市场情绪中性偏乐观，地缘风险可能被快速消化"
+      ],
+      "key_assumptions": [
+        "假设1：霍尔木兹海峡航运不会进一步恶化或封锁",
+        "假设2：伊朗议会会议不会释放超预期缓和信号",
+        "假设3：全球原油库存未处于极高水平"
+      ],
+      "uncertainty_map": [
+        "事件升级风险（影响程度：高）：若霍尔木兹海峡出现更多袭击或封锁，油价可能暴涨，但也会触发更大避险",
+        "伊朗会议结果（影响程度：中）：若会议释放缓和信号，风险溢价将快速消退",
+        "市场情绪（影响程度：中）：当前情绪中性，若恐慌指数快速上升，避险交易可能提前结束"
+      ],
+      "priority_level": "research",
+      "opportunity_score": {
+        "catalyst_strength": 7,
+        "timeliness": 9,
+        "market_confirmation": 4,
+        "tradability": 8,
+        "risk_clarity": 6,
+        "consensus_gap": 7,
+        "signal_consistency": 8,
+        "overall_score": 7.0,
+        "confidence_score": 0.72,
+        "execution_readiness": 0.75
+      },
+      "risk_reward_profile": "短期高波动交易，潜在收益10-15%（油价上涨带动能源股），风险5-8%（事件快速平息），止损明确，适合小仓位试探。",
+      "next_validation_questions": [
+        "霍尔木兹海峡事件是否有更多细节或官方定性？",
+        "伊朗议会会议是否提及油价或霍尔木兹海峡？",
+        "原油期货价格是否已出现跳涨？"
+      ],
+      "invalidation_conditions": [
+        "伊朗议会会议释放明确缓和信号",
+        "霍尔木兹海峡航运恢复正常，无后续事件",
+        "原油期货价格不涨反跌"
+      ],
+      "must_watch_indicators": [
+        "WTI/布伦特原油期货价格",
+        "霍尔木兹海峡航运保险费用",
+        "伊朗议会会议新闻稿",
+        "全球股市恐慌指数VIX"
+      ],
+      "kill_switch_signals": [
+        "伊朗宣布霍尔木兹海峡安全无虞",
+        "原油期货价格单日跌幅超3%",
+        "霍尔木兹海峡出现大规模军事冲突"
+      ],
+      "warnings": [
+        "注意：信号来源为新闻，非官方公告，船只起火细节需进一步核实",
+        "注意：地缘风险交易窗口极短，需严格止损"
+      ],
+      "judgment_version": "v1.0",
+      "created_at": "2026-05-09 18:45:54.995158",
+      "batch_id": "m12_601012.SH_2026-05-09",
+      "origin": "m3_judgment",
+      "entry_constraint": null
+    },
+    "m3_skip_reason": "",
+    "m3_priority": "research",
+    "m3_direction": "BULLISH",
+    "m3_score": 7.0,
+    "m3_fallback": false,
+    "trend_stage": "early",
+    "trend_remaining_upside_pct": 6.8,
+    "trend_catalyst_persistence": "continuing",
+    "trend_skip_reason": "",
+    "action_taken": "PASSED",
+    "action_plan_id": "opp_8c7b3859",
+    "stop_loss_pct": 5.0,
+    "take_profit_pct": 0.0,
+    "position_id": "",
+    "entry_price": 0.0,
+    "outcome": "PASSED",
+    "reason": "trend=early upside=6.8%",
+    "full_chain": [
+      "1.ANOMALY: 601012.SH +8.5% type=daily_surge sigma=2.8 atr=3.2 vol=2.5",
+      "2.CAUSATION: has_cause type=macro signals=6 labels=['?', '?', '?']",
+      "3.M3: opportunity found priority=research dir=BULLISH score=7.0",
+      "4.TREND: early upside=6.8% persistence=continuing",
+      "5.ACTION: PASSED reason=trend=early upside=6.8% plan=opp_8c7b3859 SL=5.0% TP=0.0%"
+    ]
+  }
+]

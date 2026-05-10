@@ -1,0 +1,121 @@
+{
+  "opportunity_id": "opp_e820bc6b",
+  "opportunity_title": "出口链景气共振",
+  "opportunity_thesis": "4月出口超预期（同比+14.1% vs 预期8.4%）叠加汽车、机电、造船等细分领域全面高增长，表明中国制造业出口正进入量价齐升的景气共振阶段。高油价+全球供应链紧张+中国新能源/高端制造竞争力提升，构成结构性而非周期性出口红利，且市场尚未充分定价这一持续性。\n\n【M13调研】中国4月出口数据超预期，机电和造船业景气度高，贸易顺差扩大，显示外需强劲和制造业竞争力提升。市场存在预期差，但缺乏研报和基本面数据验证，新闻中仅中国船舶业绩利好。风险在于贸易政策、原材料价格和汇率波动。综合评估，机会有一定逻辑但信息不充分，建议谨慎关注。\n\n【M13调研】中国4月出口数据超预期，机电和造船业高景气，贸易顺差扩大，显示外需强劲和制造业竞争力提升。市场存在预期差，但缺乏研报、基本面数据和行业趋势验证，新闻中仅中国船舶业绩利好。风险在于贸易政策、原材料价格和汇率波动。综合评估，机会有一定逻辑但信息不充分，置信度偏低，建议谨慎关注。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600150.SH",
+    "601989.SH",
+    "600104.SH",
+    "000625.SZ",
+    "601238.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-07-10T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "4月出口数据超预期（14.1% vs 8.4%）刚于5月9日公布，叠加造船新接订单同比+195%、汽车出口量额同比+51%/+44%、机电产品出口+17.6%等多项数据同日发布，形成密集利好共振窗口。市场尚未完全消化这一轮出口景气度的超预期强度和广度。",
+  "related_signals": [
+    "sig_d835222c90d1",
+    "sig_d3ff18d62491",
+    "sig_debd6a76d715",
+    "sig_890ae71c107a",
+    "sig_ccc7baf677c1",
+    "sig_e9adf347ff0c",
+    "sig_dba0b0625849",
+    "sig_fb3b73b63b61",
+    "sig_e9fbc445cc5c",
+    "sig_581f274076e7",
+    "sig_cfeafa7e2805"
+  ],
+  "inferred_events": [
+    "inferred_a4b14e43",
+    "inferred_e142fe63",
+    "inferred_8db359d7",
+    "inferred_abe9b5cd",
+    "inferred_617c5d9e",
+    "inferred_6d664afb",
+    "inferred_01e697a5",
+    "inferred_1abee75b",
+    "inferred_1b67963e",
+    "inferred_592ca8b7"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中国4月出口同比增14.1%，大幅超市场预期8.4%",
+    "造船业一季度新接订单同比增195%，全球份额84.9%",
+    "前4月电动汽车出口同比增68.1%，汽车出口量额同比增51%/44%",
+    "三大船型运价上涨，海岬型船日租金创新高",
+    "常州变压器出口一季度同比增超60%"
+  ],
+  "counter_evidence": [
+    "地缘政治冲突（中东局势）可能干扰全球航运和贸易",
+    "高基数效应下后续出口增速可能放缓"
+  ],
+  "key_assumptions": [
+    "假设1：全球外需韧性持续，欧美经济未出现超预期衰退",
+    "假设2：中东地缘冲突不升级为全面封锁霍尔木兹海峡",
+    "假设3：人民币汇率保持相对稳定，不出现大幅升值侵蚀出口利润"
+  ],
+  "uncertainty_map": [
+    "全球贸易政策突变风险（如美国加征关税）影响程度：高",
+    "航运成本持续飙升可能抑制部分低附加值出口影响程度：中",
+    "国内产能扩张过快导致价格战影响程度：中"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.3,
+    "confidence_score": 0.68,
+    "execution_readiness": 0.72
+  },
+  "risk_reward_profile": "潜在收益：出口链龙头（造船、汽车、机电）在景气共振下有望迎来估值修复+业绩上修双击，预期15-25%涨幅空间。潜在风险：地缘冲突或贸易摩擦导致出口受阻，最大回撤约10-15%。",
+  "next_validation_questions": [
+    "4月出口数据中，对美、对欧出口增速是否同步改善？",
+    "主要出口企业（如中国船舶、上汽集团）的订单排产情况是否延续至下半年？",
+    "航运运价上涨是否已开始侵蚀出口企业利润空间？"
+  ],
+  "invalidation_conditions": [
+    "5月PMI新出口订单指数大幅回落至50以下",
+    "美国或欧盟宣布对中国电动汽车/船舶加征惩罚性关税",
+    "中东局势升级导致霍尔木兹海峡实质性封锁"
+  ],
+  "must_watch_indicators": [
+    "每周出口集装箱运价指数（CCFI）",
+    "中国制造业PMI新出口订单分项",
+    "主要出口企业（中国船舶、上汽集团）的月度订单公告",
+    "人民币兑美元汇率走势"
+  ],
+  "kill_switch_signals": [
+    "美国宣布对中国商品加征全面关税",
+    "5月出口同比增速回落至个位数",
+    "波罗的海干散货指数（BDI）单周暴跌超20%"
+  ],
+  "warnings": [
+    "注意：出口数据为已公布历史数据，市场可能已部分定价，需警惕利好出尽",
+    "注意：地缘政治风险是最大不确定性，需持续跟踪中东局势演变"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:41:10.648994",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_20260509_astock_skill_c9c69eb9",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

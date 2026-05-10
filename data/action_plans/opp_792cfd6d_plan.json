@@ -1,0 +1,71 @@
+{
+  "plan_id": "plan_f4eee8b22d90",
+  "opportunity_id": "opp_792cfd6d",
+  "plan_summary": "BULLISH | 601012.SH, 600438.SH",
+  "primary_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "688599.SH",
+    "002129.SZ"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破涨停日最低价（约26.0元）或5日均线（约28.5元）且收盘无法收复"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "第一目标：前高区域（约35元，对应2024年10月高点）；第二目标：估值修复至2025年预期PE 20倍（约42元）"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入601012.SH，仓位为总资金的20%（不超过30%），止损位设在26.0元",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "满足任一入场条件（回踩5日均线或次日开盘条件）"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总仓位50%，止损位上移至28.5元（5日均线）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 浮盈达到8%以上，且股价站稳30元（涨停板实体上方）"
+    },
+    {
+      "phase_name": "Phase 3 趋势仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总仓位70%（上限），止损位上移至30元（涨停板实体上沿），开始使用移动止盈",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 2 浮盈达到15%以上，且成交量持续放大（日均成交额>30亿），且BC电池量产Q3消息确认"
+    }
+  ],
+  "valid_until": "2026-05-31T04:15:56.185636",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T04:15:56.185739",
+  "opportunity_priority": "research"
+}

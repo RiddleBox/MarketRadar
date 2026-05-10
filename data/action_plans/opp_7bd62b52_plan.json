@@ -1,0 +1,63 @@
+{
+  "plan_id": "plan_9ab9538fc2f1",
+  "opportunity_id": "opp_7bd62b52",
+  "plan_summary": "BULLISH | 601012.SH, 600438.SH",
+  "primary_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "688981.SH",
+    "603501.SH"
+  ],
+  "instrument_type": "ETF",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 5.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破20日均线或保利发展发布超预期政策利好"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 10.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "基于业绩超预期兑现的估值修复目标"
+  },
+  "position_sizing": {
+    "suggested_allocation": "8.0%",
+    "max_allocation": "不超过8.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=5.0% | 仓位=风险预算/止损=8.0%",
+    "suggested_allocation_pct": 0.08,
+    "max_allocation_pct": 0.08
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入隆基绿能（601012.SH）和阳光电源（300274.SZ），各占总资金15%（合计30%）。若资金不足，优先买入隆基绿能。",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "保利发展一季报发布后，确认净利润同比降幅超过50%，且地产板块当日跌幅超过1.5%"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓中芯国际（688981.SH），占总资金20%。同时，若隆基绿能或阳光电源浮盈超过8%，可各追加10%仓位（合计追加20%），使总仓位不超过70%。",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 持仓浮盈达5%以上，且新能源/半导体板块指数（如光伏ETF）连续3日主力资金净流入为正"
+    }
+  ],
+  "valid_until": "2026-05-31T04:16:17.631982",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T04:16:17.632068",
+  "opportunity_priority": "research"
+}

@@ -1,0 +1,63 @@
+{
+  "plan_id": "plan_8c6ac01b100f",
+  "opportunity_id": "opp_74af2b3f",
+  "plan_summary": "BULLISH | 002594.SZ, 601633.SH",
+  "primary_instruments": [
+    "002594.SZ",
+    "601633.SH",
+    "000625.SZ",
+    "600104.SH",
+    "300750.SZ"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破250日均线（约240元）或入场价下方5%"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "第一目标前高（约290元），第二目标300元整数关口"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0% | Kelly参考=17.5%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入002594.SZ，仓位为总资金的20%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "比亚迪股价放量站上20日均线（约260元）"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总资金的50%（即再加30%仓位）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 浮盈达到5%以上，且股价未跌破20日均线"
+    }
+  ],
+  "valid_until": "2026-05-31T05:10:17.806120",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T05:10:17.806213",
+  "opportunity_priority": "research"
+}

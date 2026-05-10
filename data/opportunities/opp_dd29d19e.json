@@ -1,0 +1,111 @@
+{
+  "opportunity_id": "opp_dd29d19e",
+  "opportunity_title": "出口超预期外需强",
+  "opportunity_thesis": "中国4月出口同比增14.1%远超预期，贸易顺差848亿美元，叠加干散货运价上涨，表明外需韧性超市场预期。出口链相关行业（航运、港口、外贸制造）将直接受益于订单增长和运价提升，且市场尚未充分定价这一结构性变化。当前时点数据刚公布，预期差大，是布局出口链的窗口。\n\n【M13调研】中国4月出口数据超预期，外需韧性利好出口链，但缺乏研报和行业趋势验证。中远海控一季报净利润大幅下降，可能暗示航运业景气度下行。当前机会存在预期差，但风险因素不容忽视，建议谨慎布局，待更多数据确认。\n\n【M13调研】该机会基于霍尔木兹海峡冲突推高能源和航运价格，但近期无冲突报道，研报和行业趋势数据缺失，仅有招商轮船业绩大增和山煤国际智能化等间接利好。风险在于冲突未发生或政策对冲，置信度极低，建议放弃。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "601919.SH",
+    "600026.SH",
+    "601872.SH",
+    "600428.SH",
+    "000039.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "4月出口数据超预期（14.1% vs 预期8.4%）和贸易顺差848亿美元刚于5月9日公布，叠加航运运价指数同步上涨，形成数据共振。市场短期可能反应不足，存在预期差修复机会。",
+  "related_signals": [
+    "sig_debd6a76d715",
+    "sig_890ae71c107a",
+    "sig_ccc7baf677c1",
+    "sig_de808af04b73"
+  ],
+  "inferred_events": [
+    "inferred_07e1c606",
+    "inferred_1c9d2053",
+    "inferred_e45d6e85",
+    "inferred_7219ca0a",
+    "inferred_79640aa9",
+    "inferred_1eb087dc",
+    "inferred_a54aa0bc",
+    "inferred_d0860aad"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中国4月出口同比增14.1%，大幅超预期8.4%",
+    "4月贸易顺差848.2亿美元，显示外需强劲",
+    "干散货运价指数上涨，海岬型船日租金创新高，反映实际货运需求旺盛"
+  ],
+  "counter_evidence": [
+    "进口同比增20.6%可能暗示内需亦强，但出口顺差扩大仍是净利好",
+    "地缘政治风险（中东冲突）可能干扰全球贸易流"
+  ],
+  "key_assumptions": [
+    "假设1：出口高增长可持续，5月数据不会大幅回落",
+    "假设2：航运运价维持高位，不出现快速回调",
+    "假设3：中美贸易摩擦未在短期内升级"
+  ],
+  "uncertainty_map": [
+    "出口增速持续性（影响程度：高）",
+    "地缘政治对航运路线的干扰（影响程度：中）",
+    "人民币汇率波动对出口企业利润的影响（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 6.9,
+    "confidence_score": 0.17500000000000002,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益来自出口超预期持续和运价上涨带来的盈利上修，风险在于出口数据回落或地缘冲突导致贸易中断。预期收益/风险比约2:1。",
+  "next_validation_questions": [
+    "5月前10日港口集装箱吞吐量是否同比继续增长？",
+    "主要出口目的地（美国、欧盟、东盟）的PMI是否仍处于扩张区间？",
+    "航运公司近期是否有上调运价或增加航线的公告？"
+  ],
+  "invalidation_conditions": [
+    "5月出口数据低于预期（如增速回落至个位数）",
+    "航运运价指数连续两周下跌",
+    "中美贸易摩擦出现实质性升级（如加征关税）"
+  ],
+  "must_watch_indicators": [
+    "上海航运交易所远东干散货运价指数",
+    "中国5月出口数据（高频港口吞吐量）",
+    "主要贸易伙伴PMI",
+    "人民币汇率走势"
+  ],
+  "kill_switch_signals": [
+    "出口数据连续两个月低于预期",
+    "航运运价指数跌破关键支撑位",
+    "地缘冲突导致主要航道中断"
+  ],
+  "warnings": [
+    "注意：出口数据受基数效应影响，需关注环比变化",
+    "注意：航运股已部分反映运价上涨，需警惕获利回吐"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T12:08:28.149538",
+  "batch_id": "sched_signal_pipeline_20260509_110458_103b7e_20260509_astock_skill_fb9676c1",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

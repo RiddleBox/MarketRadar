@@ -1,0 +1,108 @@
+{
+  "opportunity_id": "opp_fe10131f",
+  "opportunity_title": "AI基建加速潮",
+  "opportunity_thesis": "中国移动正式上线国内最大AI大模型服务平台并宣布百亿级Token投入与千亿级算力基建计划，叠加百度文心5.1成本大幅降低，构成AI产业生态从政策/资本/技术三端共振的扩张叙事。当前市场对AI板块关注度回升但尚未充分定价运营商级基建投入的长期拉动效应，存在预期差。\n\n【M13调研】该机会受益于政策催化与资金流入，处于布局窗口期，但缺乏研报和新闻直接验证，基本面数据缺失。风险在于政策落地不确定性和市场过热。建议谨慎参与，等待更多确认信号。\n\n【M13调研】机会描述的中国移动AI大模型服务平台上线及百亿Token投入缺乏新闻直接验证，仅算力网技术体系发布提供部分支撑。百度AI业务增长和昆仑芯IPO为间接利好，但市场对运营商基建的长期拉动效应尚未充分定价。风险在于政策落地不确定性和市场过热，基本面数据缺失。建议谨慎参与，等待更多确认信号。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "600941.SH",
+    "BIDU",
+    "9888.HK"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "中国移动5月8-9日连续发布平台上线、算力网建设、百亿级Token投入三大重磅信号，百度同日发布文心5.1成本突破，事件密集且时间高度集中，形成短期催化剂集群。",
+  "related_signals": [
+    "sig_294db3749c23",
+    "sig_4149b887d9b2",
+    "sig_237f646ed46b",
+    "sig_59c364b7ab9e"
+  ],
+  "inferred_events": [
+    "inferred_be6b3d43",
+    "inferred_80916f9a",
+    "inferred_242e50ee",
+    "inferred_71b08635",
+    "inferred_3a8c0046",
+    "inferred_667d6b12"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中国移动上线国内最大AI大模型服务平台，接入300余款模型",
+    "中国移动董事长宣布推进全国一体化算力网建设，布局吉瓦级数据园区",
+    "中国移动未来3-5年投入百亿级Token资源、千亿级算力基础设施",
+    "百度文心5.1预训练成本仅为业界6%，技术突破显著"
+  ],
+  "counter_evidence": [
+    "AI板块此前已有多次概念炒作后回落的历史（如case_2024_tech_breakthrough），商业化落地仍需验证",
+    "当前恐贪指数67处于贪婪区间，市场情绪偏热，短期回调风险增加"
+  ],
+  "key_assumptions": [
+    "假设1：中国移动的算力基建投入能按计划落地，而非仅口头表态",
+    "假设2：AI大模型商业化应用需求持续增长，带动算力服务收入",
+    "假设3：宏观经济不出现超预期恶化导致资本开支收缩"
+  ],
+  "uncertainty_map": [
+    "商业化落地速度不确定性（影响程度：高）",
+    "竞争对手（如阿里、腾讯）跟进力度可能稀释中国移动先发优势（影响程度：中）",
+    "监管政策对AI大模型服务的态度变化（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.45,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：中国移动作为运营商龙头受益于算力基建投资，估值修复+业绩增长空间；百度成本突破可能带动市场份额提升。风险：若后续订单/收入不及预期，股价可能回吐涨幅，类似2024年AI概念炒作后回落。",
+  "next_validation_questions": [
+    "中国移动算力基建的具体资本开支计划是否有官方公告或财报指引？",
+    "百度文心5.1的商业化客户签约情况如何？",
+    "AI大模型服务平台上线后，实际调用量和收入数据何时披露？"
+  ],
+  "invalidation_conditions": [
+    "中国移动或百度后续财报中AI相关收入低于预期",
+    "出现重大AI安全事故或监管收紧",
+    "市场整体大幅下跌拖累板块"
+  ],
+  "must_watch_indicators": [
+    "中国移动（600941.SH）股价与成交量变化",
+    "百度（BIDU/9888.HK）股价与成交量变化",
+    "AI板块ETF资金流向",
+    "中国移动/百度后续公告及财报"
+  ],
+  "kill_switch_signals": [
+    "中国移动算力基建投资计划被推迟或缩减",
+    "百度文心5.1被曝技术问题或客户流失",
+    "AI板块出现集体大幅下跌且无基本面支撑"
+  ],
+  "warnings": [
+    "信号来源均为新闻，非官方公告，需关注后续官方确认",
+    "历史案例显示AI概念炒作后回落风险较高，需等待商业化验证"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T17:11:23.181049",
+  "batch_id": "sched_signal_pipeline_20260509_163638_e0e39c_20260509_astock_skill_6e9d55ba",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

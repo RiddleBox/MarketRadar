@@ -1,0 +1,107 @@
+{
+  "opportunity_id": "opp_fc5d3c6a",
+  "opportunity_title": "新能源车景气确认",
+  "opportunity_thesis": "新能源汽车购置税减免延续至2027年底，叠加前4月出口增长68.1%及比亚迪10万台大单，政策端与需求端双重确认行业高景气。当前市场对新能源板块情绪偏谨慎，预期差较大，构成中期布局窗口。\n\n【M13调研】新能源汽车产业链受益于购置税减免延续、出口高增长及比亚迪大单，景气度上行。但近期无相关研报或新闻验证，信息支撑不足。风险在于宏观经济和竞争。综合评估为中期做多机会，但需更多数据确认。\n\n【M13调研】机会描述声称资金流向新能源和半导体、政策利好及业绩爆发，但最近20条新闻中未验证任何关键事实（如中际旭创市值突破万亿、新易盛业绩增长等），且无研报、基本面数据或行业趋势支持。新闻显示市场热点分散，科技主线不明确。因此，该机会描述缺乏可靠依据，置信度极低，建议谨慎对待。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "002594.SZ",
+    "300274.SZ",
+    "601012.SH",
+    "600438.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-08-10T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "政策刚落地（购置税减免延续至2027年底）、出口数据刚公布（前4月+68.1%）、大单刚签署（比亚迪10万台），三重催化剂密集出现，市场尚未充分定价，窗口期在1-3个月内。",
+  "related_signals": [
+    "sig_30d3e00700ed",
+    "sig_e9adf347ff0c",
+    "sig_8b301a716c06",
+    "sig_a7d2af223ddb"
+  ],
+  "inferred_events": [
+    "inferred_6eefcb33",
+    "inferred_42c2e269",
+    "inferred_6db5b131",
+    "inferred_6d0c487c",
+    "inferred_68168fc0"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "新能源汽车购置税减免政策延续至2027年底，政策确定性增强",
+    "前4月电动汽车出口同比增长68.1%，远超整体出口增速",
+    "比亚迪与神州租车签署10万台采购框架协议，需求端验证",
+    "交通运输部推动新能源重卡规模化应用，打开新增长空间"
+  ],
+  "counter_evidence": [
+    "新能源板块前期已有一定涨幅，部分利好可能已被定价",
+    "出口高增长面临海外贸易壁垒风险（如欧盟反补贴调查）"
+  ],
+  "key_assumptions": [
+    "假设1：购置税减免政策执行力度和范围不出现大幅缩减",
+    "假设2：海外市场对中国电动汽车的贸易壁垒不显著升级",
+    "假设3：国内新能源汽车渗透率持续提升，需求保持韧性"
+  ],
+  "uncertainty_map": [
+    "海外贸易壁垒升级风险（影响程度：高）",
+    "行业竞争加剧导致利润率下滑（影响程度：中）",
+    "宏观经济下行压制消费需求（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.3,
+    "confidence_score": 0.38000000000000006,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：政策+出口+大单三重催化下，新能源车龙头有望获得15-25%的估值修复；潜在风险：海外贸易壁垒或行业竞争加剧导致利润不及预期，最大回撤约10-15%。",
+  "next_validation_questions": [
+    "5月新能源汽车销量数据是否延续高增长？",
+    "比亚迪等龙头Q2业绩是否超预期？",
+    "海外主要市场（欧盟、美国）近期有无新的贸易限制措施？"
+  ],
+  "invalidation_conditions": [
+    "海外主要市场对中国电动汽车加征高额关税或实施进口限制",
+    "5月新能源汽车销量增速显著放缓（低于20%）",
+    "行业价格战加剧导致龙头毛利率大幅下滑"
+  ],
+  "must_watch_indicators": [
+    "每月新能源汽车销量及渗透率数据",
+    "比亚迪、宁德时代等龙头季度毛利率变化",
+    "欧盟、美国对中国电动汽车贸易政策动态",
+    "碳酸锂等关键原材料价格走势"
+  ],
+  "kill_switch_signals": [
+    "海外主要市场宣布对中国电动汽车加征超过25%的关税",
+    "龙头公司发布低于预期的Q2业绩预告",
+    "行业出现大规模库存积压或价格战失控"
+  ],
+  "warnings": [
+    "注意：出口高增长数据为前4月，需关注5月趋势是否持续",
+    "注意：比亚迪大单为框架协议，实际交付节奏和利润贡献存在不确定性"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:46:04.263956",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_20260509_astock_skill_d62bea8b",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

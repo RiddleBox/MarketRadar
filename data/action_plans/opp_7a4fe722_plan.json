@@ -1,0 +1,63 @@
+{
+  "plan_id": "plan_e7700e198d7f",
+  "opportunity_id": "opp_7a4fe722",
+  "plan_summary": "BULLISH | 300308.SZ, 300502.SZ",
+  "primary_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "688981.SH",
+    "002371.SZ",
+    "601012.SH"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破入场日最低价下方3%或20日均线（取两者中较低者）"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "基于入场价上涨15%-25%分批止盈"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入新易盛（300502.SZ），仓位为总资金的20%（上限30%）。若条件未完全满足，则延迟至4月24日某半导体龙头预增公告发布后，若条件满足则执行，否则放弃",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "新易盛一季报发布日（4月23日）净利润同比增速不低于+70%，且当日收盘价站稳20日均线；同时中际旭创在4月23日前突破万亿市值且成交量放大"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓新易盛（300502.SZ），加仓至总资金的50%（即加仓30%）。若央行降准/降息未在2周内落地，则仅加仓至总资金的35%（即加仓15%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 浮盈达到+5%（以收盘价计算），且央行降准或降息公告在2周内落地（即5月7日前），同时资金轮动信号（新能源半导体板块资金净流入连续3日为正）"
+    }
+  ],
+  "valid_until": "2026-05-31T00:17:49.635079",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T00:17:49.635210",
+  "opportunity_priority": "research"
+}

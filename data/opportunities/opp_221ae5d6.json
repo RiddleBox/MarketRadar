@@ -1,0 +1,113 @@
+{
+  "opportunity_id": "opp_221ae5d6",
+  "opportunity_title": "地产分化龙头修复",
+  "opportunity_thesis": "保利发展净利润大降但经营现金流暴增423%，叠加上海二手房成交创十年新高、温州宅地高溢价成交，表明行业正经历出清后的结构性分化：龙头房企现金流改善、核心城市需求回暖，而市场对地产板块整体悲观预期过度，存在预期差修复机会。当前时点，政策宽松预期（降准）与基本面边际改善共振，构成龙头地产股的估值修复窗口。\n\n【M13调研】保利发展业绩大幅下滑，但新闻和研报信息匮乏，缺乏资金轮动和板块共振的直接证据。地产板块做空机会存在，但风险较高，需谨慎。新能源和半导体轮动逻辑未获数据支持。整体置信度偏低，建议等待更多信息再决策。\n\n【M13调研】保利发展现金流改善和核心城市需求回暖构成基本面边际改善，但净利润大幅下滑、缺乏政策落地信号及板块共振证据，且M13调研和新闻研报均未提供有力支撑。当前机会逻辑存在但置信度较低，建议等待更多信息确认。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600048.SH",
+    "001979.SZ",
+    "600383.SH",
+    "000002.SZ",
+    "600325.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-07-10T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "上海二手房成交创十年新高（4月28742套）和温州宅地溢价80%成交，是近期核心催化剂，叠加保利发展经营现金流暴增423%的微观验证，以及央行降准预期（概率85%），形成政策+基本面+情绪三重共振。市场对地产板块仍处悲观惯性中，预期差较大。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sig_b146ce2efab7",
+    "sig_5cf40470ca24",
+    "sig_e056e11395f0"
+  ],
+  "inferred_events": [
+    "inferred_9c9b78d0",
+    "inferred_f2364ab2",
+    "inferred_f67e9ae5",
+    "inferred_ec2df7bb",
+    "inferred_eb8bc471",
+    "inferred_0f60fada",
+    "inferred_ae804392",
+    "inferred_ba67755b",
+    "inferred_c3e85128",
+    "inferred_e1f538c1"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "上海4月二手房成交28742套，创近十年4月单月最高，同比增长22.3%",
+    "温州宅地溢价近80%成交，90轮竞价，显示开发商拿地意愿回暖",
+    "保利发展一季度经营现金流净额86.73亿元，同比增长423%",
+    "央行降准概率85%，政策宽松预期明确"
+  ],
+  "counter_evidence": [
+    "保利发展2025年净利润同比大降79.31%，基本面仍承压",
+    "全国房地产销售数据尚未全面回暖，分化格局持续"
+  ],
+  "key_assumptions": [
+    "假设1：上海二手房成交高增长趋势可持续，非单月脉冲",
+    "假设2：龙头房企现金流改善能逐步传导至利润表修复",
+    "假设3：政策宽松（降准/降息）在2周内落地"
+  ],
+  "uncertainty_map": [
+    "全国销售复苏节奏不确定（影响程度：高）",
+    "保利发展利润下滑趋势是否见底不确定（影响程度：中）",
+    "政策宽松力度和时点不确定（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 7,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 7,
+    "overall_score": 6.7,
+    "confidence_score": 0.29999999999999993,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：龙头地产股估值修复10-20%，受益于政策宽松和核心城市回暖。潜在风险：全国销售持续低迷，利润下滑超预期，最大回撤约10%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "上海5月二手房成交数据是否延续4月高增长？",
+    "保利发展一季度经营现金流改善是否可持续？",
+    "其他龙头房企（如万科、招商蛇口）的现金流和销售数据是否同步改善？"
+  ],
+  "invalidation_conditions": [
+    "上海5月二手房成交环比大幅下滑超过20%",
+    "保利发展二季度经营现金流转为净流出",
+    "央行降准预期落空或政策转向收紧"
+  ],
+  "must_watch_indicators": [
+    "上海二手房周度网签量",
+    "保利发展月度销售金额和回款率",
+    "30大中城市商品房成交面积周度数据",
+    "央行公开市场操作和降准公告"
+  ],
+  "kill_switch_signals": [
+    "保利发展发布业绩预警或债务展期公告",
+    "全国房地产销售面积同比降幅扩大至20%以上",
+    "核心城市出现新一轮限购收紧政策"
+  ],
+  "warnings": [
+    "注意：行业分化格局下，仅龙头房企受益，中小房企风险仍大",
+    "注意：利润下滑与现金流改善的矛盾需持续跟踪，利润修复时点不确定"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T13:05:03.820670",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_1e6d287a",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

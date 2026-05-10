@@ -1,0 +1,110 @@
+{
+  "opportunity_id": "opp_f9c9cd62",
+  "opportunity_title": "出口景气超预期",
+  "opportunity_thesis": "中国4月出口同比增14.1%远超预期，机电产品出口增长17.6%，造船新接订单同比暴增195%，三大船型运价上涨，显示外需强劲且制造业景气度超预期。当前市场尚未充分定价这一结构性变化，出口链（尤其是造船、机电）存在明确的盈利上修和估值修复机会。\n\n【M13调研】中国4月出口数据超预期，机电和造船业景气度高，贸易顺差扩大，显示外需强劲和制造业竞争力提升。市场存在预期差，但缺乏研报和基本面数据验证，新闻中仅中国船舶业绩利好。风险在于贸易政策、原材料价格和汇率波动。综合评估，机会有一定逻辑但信息不充分，建议谨慎关注。\n\n【M13调研】中国4月出口数据超预期，机电和造船业高景气，贸易顺差扩大，显示外需强劲和制造业竞争力提升。市场存在预期差，但缺乏研报、基本面数据和行业趋势验证，新闻中仅中国船舶业绩利好。风险在于贸易政策、原材料价格和汇率波动。综合评估，机会有一定逻辑但信息不充分，置信度偏低，建议谨慎关注。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600150.SH",
+    "601989.SH",
+    "600685.SH",
+    "000039.SZ",
+    "600104.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "4月出口数据超预期（14.1% vs 预期8.4%）叠加造船新接订单同比+195%的极端数据，形成双重催化剂。当前市场情绪中性偏谨慎，预期差大，且后续降准宽松预期提供流动性支撑，时间窗口最佳。",
+  "related_signals": [
+    "sig_d835222c90d1",
+    "sig_debd6a76d715",
+    "sig_890ae71c107a",
+    "sig_ccc7baf677c1",
+    "sig_dba0b0625849"
+  ],
+  "inferred_events": [
+    "inferred_c35be469",
+    "inferred_6f49c67f",
+    "inferred_b9c63e5c",
+    "inferred_8d69616f",
+    "inferred_5c90cc7a",
+    "inferred_9dd58fb6"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中国4月出口同比增14.1%，大幅超预期（预期8.4%）",
+    "前4月机电产品出口增长17.6%，高于整体出口增速",
+    "造船新接订单一季度同比增195%，全球份额84.9%",
+    "三大船型运价上涨，海岬型船日租金创新高"
+  ],
+  "counter_evidence": [
+    "贸易顺差848.2亿美元可能引发贸易摩擦风险",
+    "地缘政治冲突（霍尔木兹海峡）可能扰动航运成本"
+  ],
+  "key_assumptions": [
+    "假设1：外需韧性持续，5-6月出口数据不会大幅回落",
+    "假设2：贸易摩擦未显著升级，关税政策保持稳定",
+    "假设3：造船订单交付周期内原材料成本可控"
+  ],
+  "uncertainty_map": [
+    "外需持续性不确定性（影响程度：高）",
+    "贸易摩擦升级风险（影响程度：中）",
+    "原材料价格波动对造船利润的影响（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.1,
+    "confidence_score": 0.65,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：出口超预期+造船订单爆发驱动盈利上修，板块估值修复空间10-20%；潜在风险：外需回落或贸易摩擦升级导致盈利下修，最大回撤约8-10%。",
+  "next_validation_questions": [
+    "5月高频出口数据（如港口吞吐量、PMI新出口订单）是否延续强势？",
+    "造船企业当前在手订单的毛利率水平如何？",
+    "主要贸易伙伴（美国、欧盟）近期是否有新的贸易限制措施？"
+  ],
+  "invalidation_conditions": [
+    "5月出口数据低于预期（如增速回落至10%以下）",
+    "主要贸易伙伴宣布加征关税或实施进口限制",
+    "造船订单出现大规模取消或延期"
+  ],
+  "must_watch_indicators": [
+    "每周港口集装箱吞吐量",
+    "PMI新出口订单指数",
+    "上海航运交易所运价指数",
+    "造船板价格走势"
+  ],
+  "kill_switch_signals": [
+    "5月出口增速低于10%",
+    "美国/欧盟宣布对华加征惩罚性关税",
+    "造船新接订单连续两个月环比下降"
+  ],
+  "warnings": [
+    "注意：出口数据为月度数据，存在季节性扰动",
+    "注意：造船订单交付周期长（2-3年），短期利润释放有限"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T13:36:58.421120",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_aefdc61f",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

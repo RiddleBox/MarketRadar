@@ -1,0 +1,63 @@
+{
+  "plan_id": "plan_407dd9104bff",
+  "opportunity_id": "opp_1ec28e3f",
+  "plan_summary": "BULLISH | 601088.SH, 600188.SH",
+  "primary_instruments": [
+    "601088.SH",
+    "600188.SH",
+    "000983.SZ",
+    "600598.SH",
+    "000792.SZ"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "以中国神华（601088.SH）为例，跌破20日均线或入场价下方5%"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "基于入场价上涨15%作为第一目标，上涨25%作为第二目标"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入中国神华（601088.SH）和北大荒（600598.SH），各占总仓位的15%（合计30%），使用限价单，价格不高于当前市价0.5%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "满足任意一条入场条件，且布伦特原油价格未跌破80美元/桶"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓中国神华（601088.SH）和北大荒（600598.SH）各15%（合计30%），同时买入山西焦煤（000983.SZ）和盐湖股份（000792.SZ）各10%（合计20%），总仓位不超过80%。使用市价单，确保快速成交",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 持仓浮盈超过5%，且布伦特原油价格继续上涨至88美元/桶以上，同时国内煤炭期货主力合约涨幅超过3%"
+    }
+  ],
+  "valid_until": "2026-05-31T00:18:04.204771",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T00:18:04.204914",
+  "opportunity_priority": "research"
+}

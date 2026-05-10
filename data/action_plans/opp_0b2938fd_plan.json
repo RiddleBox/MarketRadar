@@ -1,0 +1,63 @@
+{
+  "plan_id": "plan_5ec07666251b",
+  "opportunity_id": "opp_0b2938fd",
+  "plan_summary": "BULLISH | 300308.SZ, 300502.SZ",
+  "primary_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "300394.SZ",
+    "600584.SH",
+    "002371.SZ"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "中际旭创跌破120元（对应250日均线附近），或新易盛跌破80元（对应前低支撑位）"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "中际旭创目标160元（前高+20%），新易盛目标110元（前高+25%），长电科技目标45元（前高+15%）"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入中际旭创（300308.SZ）或新易盛（300502.SZ），仓位为总资金的15%（不超过30%），优先选择中际旭创（市值大、流动性好）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "中际旭创或新易盛股价站稳20日均线，且板块指数当日涨幅>1.5%"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓中际旭创或新易盛至总仓位30%，同时买入长电科技（600584.SH）作为封测环节分散配置，仓位为总资金的10%（总仓位不超过40%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 持仓浮盈达到5%以上，且板块指数未出现单日跌幅>2%的调整"
+    }
+  ],
+  "valid_until": "2026-05-31T10:38:57.432273",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T10:38:57.432368",
+  "opportunity_priority": "research"
+}

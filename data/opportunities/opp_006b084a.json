@@ -1,0 +1,143 @@
+{
+  "opportunity_id": "opp_006b084a",
+  "opportunity_title": "AI光模块景气确认",
+  "opportunity_thesis": "光模块龙头中际旭创市值突破万亿、新易盛一季报净利润增长76.8%、胜宏科技1.6T光模块产能利用率良好，叠加资金持续流入半导体板块，确认AI算力产业链高景气度。市场对光模块业绩已有预期但未充分定价后续持续性，存在预期差。当前时点催化剂密集（业绩披露+政策支持+技术突破），是布局光模块及AI算力链的窗口。\n\n【M13调研】机会描述基于AI算力需求爆发、业绩超预期和政策利好，但新闻分析中缺乏直接验证。中韩半导体ETF领涨、英特尔AMD市值新高、胜宏科技订单饱满等间接支持半导体景气度，但具体公司业绩数据未出现，政策利好也未明确。风险在于业绩持续性分歧和缺乏直接证据。整体方向可行，但需谨慎验证具体数据，建议等待更多确认信号。\n\n【M13调研】AI算力需求驱动光模块和半导体景气度得到部分验证：新易盛业绩高增、英特尔AMD市值新高、胜宏科技订单饱满。但机会描述中的中际旭创市值破万亿、某半导体龙头预增等具体数据未在新闻中出现，政策利好也缺乏报道。市场对业绩持续性存分歧，风险在于信息不实和预期差。建议谨慎，等待更多确认信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "300476.SZ",
+    "002371.SZ",
+    "688981.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-07-10T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "光模块三巨头（中际旭创、新易盛、天孚通信）2025年报及2026一季报全部披露完毕，业绩高增长确认；中际旭创盘中市值突破万亿形成标志性事件；中国移动推进算力网建设、百度发布文心5.1等政策与技术催化密集；资金从消费地产持续流入科技板块，形成板块轮动支撑。",
+  "related_signals": [
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sent_ec6c7cba",
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_e06d501cfacc",
+    "sig_d2c3f4ae88b8",
+    "sig_0542749efda8",
+    "sig_2f1946036bb1",
+    "sig_925147159561",
+    "sig_60038f4f21d9",
+    "sig_ab3ab55a49b9",
+    "sig_85287ab16282",
+    "sig_c65bd11e442f",
+    "sig_96d20268c4b7",
+    "sig_153b63a0bfbf",
+    "sig_f2f59d3c80e6",
+    "sig_5a2ec57f6916",
+    "sig_a1d7094e54d1",
+    "sig_d9ef44f292bd",
+    "sig_d8cb7635ade9",
+    "sig_39b17c44aba1",
+    "sig_4149b887d9b2",
+    "sig_911415444bf5",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017",
+    "sig_df713685bee1",
+    "sig_050c391c993e",
+    "sig_e8ba30264edb",
+    "sig_ffdee791adf2",
+    "sig_4a9e081d7724",
+    "sig_237f646ed46b"
+  ],
+  "inferred_events": [
+    "inferred_fe347eec",
+    "inferred_db5e1b44",
+    "inferred_bd5bad17",
+    "inferred_e7fd2c29",
+    "inferred_b8feb4f0",
+    "inferred_c5e90562",
+    "inferred_78f3afda",
+    "inferred_77613f43"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创4月23日盘中市值突破万亿，收盘9989亿元，创历史里程碑",
+    "新易盛一季报净利润同比增长76.8%，光模块三巨头业绩全部披露",
+    "胜宏科技1.6T光模块产能利用率良好，并推进CoWop技术研发",
+    "板块轮动信号显示资金从消费地产流向新能源/半导体",
+    "中国移动推进全国一体化算力网建设，开放万亿级Token服务",
+    "百度发布文心5.1，预训练成本仅为业界6%，AI应用加速"
+  ],
+  "counter_evidence": [
+    "中际旭创万亿市值后可能面临获利回吐压力",
+    "某半导体龙头业绩预增150%-180%但公司未明确，存在不确定性"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，光模块订单能见度维持高位",
+    "假设2：中美科技摩擦未进一步升级，供应链稳定",
+    "假设3：市场整体流动性环境保持宽松，资金继续流入科技板块"
+  ],
+  "uncertainty_map": [
+    "光模块估值已处于历史高位，业绩增速能否持续支撑估值（影响程度：高）",
+    "地缘政治风险（中东冲突）可能引发市场避险情绪，拖累科技板块（影响程度：中）",
+    "半导体龙头业绩预增的具体公司未明确，市场反应可能分化（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.5800000000000001,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：光模块龙头业绩持续超预期带动股价上行，AI算力政策催化提供额外弹性，预计10-20%上行空间。潜在风险：估值已高，业绩增速放缓或市场风格切换可能导致10-15%回调。风险收益比约1:1.5。",
+  "next_validation_questions": [
+    "中际旭创、新易盛、天孚通信的2026年二季度订单指引是否继续增长？",
+    "光模块板块整体估值水平（PE/PEG）是否处于历史合理区间？",
+    "资金流入半导体板块的持续性如何，是否有机构增持信号？"
+  ],
+  "invalidation_conditions": [
+    "光模块龙头发布低于预期的二季度业绩预告",
+    "中美科技制裁升级，限制光模块出口",
+    "市场整体出现系统性风险（如地缘冲突大幅升级）"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛、天孚通信的日成交额和股价走势",
+    "光模块板块整体资金流向（北向资金、主力资金）",
+    "AI算力相关政策和订单公告",
+    "半导体龙头业绩预告的具体公司及市场反应"
+  ],
+  "kill_switch_signals": [
+    "光模块龙头股价跌破20日均线且成交量放大",
+    "板块资金连续3日净流出",
+    "出现光模块行业需求下行的权威报告"
+  ],
+  "warnings": [
+    "注意：光模块板块已累积较大涨幅，短期追高风险较大，建议分批建仓",
+    "注意：部分信号（如半导体龙头业绩预增）公司未明确，需等待正式公告确认"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T11:59:01.735041",
+  "batch_id": "sched_signal_pipeline_20260509_110458_103b7e_20260509_astock_skill_d1adfa45",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

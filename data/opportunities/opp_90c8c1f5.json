@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_90c8c1f5",
+  "opportunity_title": "宽松驱动科技轮动",
+  "opportunity_thesis": "央行密集降准降息释放流动性，叠加经济下行压力（PMI连续收缩），资金正从消费、地产等传统板块系统性流向新能源和半导体等科技成长板块。情绪面恐惧已过，板块轮动信号明确，且半导体/新能源业绩超预期概率高，构成结构性做多机会。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持。关键发现包括：新闻内容与AI产业链关联度低，业绩数据未验证，外围市场存在不确定性。风险因素主要为信息不实和情绪过热。未发现重大利空，但置信度因证据不足下调0.2。综合来看，该机会缺乏近期数据支撑，建议谨慎对待，等待更多验证信号。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持，关键业绩数据未验证，且豪威集团一季报净利润下降41.92%与板块爆发矛盾。外围市场存在不确定性（欧洲股市下跌、俄欧关系紧张）。未发现重大利空，但置信度较低（0.2），建议谨慎对待，等待更多验证信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "603501.SH",
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-18T00:00:00",
+    "end": "2026-07-18T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "央行已宣布4月20日起降准0.5个百分点并下调逆回购利率10bp，宽松政策已落地；同时PMI连续3个月低于荣枯线强化了经济下行预期，资金从传统板块流出至科技成长板块的轮动信号已出现，当前是布局窗口。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_38049b31fb61"
+  ],
+  "inferred_events": [
+    "inferred_7b28909e",
+    "inferred_de644807",
+    "inferred_18826a62",
+    "inferred_5fb03aaa",
+    "inferred_95cd3219",
+    "inferred_e4c689e4",
+    "inferred_1aa0e652",
+    "inferred_05623a0a",
+    "inferred_309076f1",
+    "inferred_86c5ea3d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点+降息10bp，释放明确宽松信号",
+    "资金从消费、地产流向新能源、半导体的板块轮动信号已出现",
+    "制造业PMI连续3个月低于荣枯线，经济下行压力强化宽松预期",
+    "推理显示半导体/新能源业绩超预期概率85%，AI产业链持续高景气"
+  ],
+  "counter_evidence": [
+    "A股三大指数高开回落，下跌个股近4000只，短期市场情绪偏弱",
+    "历史案例显示降息利好可能已被部分定价，地产股反弹乏力"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续仍有进一步宽松动作（如降息或定向支持）",
+    "假设2：新能源/半导体板块业绩超预期兑现，基本面支撑轮动",
+    "假设3：资金从传统板块流出趋势持续，不会快速回流"
+  ],
+  "uncertainty_map": [
+    "经济下行超预期导致系统性风险（影响程度：高）",
+    "板块轮动持续性不足，资金回流传统板块（影响程度：中）",
+    "地缘冲突升级（中东）引发避险情绪，压制风险偏好（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.45000000000000007,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益来自宽松政策驱动的估值修复和业绩超预期带来的戴维斯双击，风险在于经济下行超预期导致系统性下跌或板块轮动提前结束。预计收益风险比约2:1，止损可设在板块指数跌破20日均线。",
+  "next_validation_questions": [
+    "新能源/半导体板块近期是否有业绩预告或订单公告确认增长？",
+    "北向资金是否持续净流入科技成长板块？",
+    "央行是否在近期会议中释放进一步宽松信号？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "新能源/半导体板块业绩大幅低于预期",
+    "资金重新大幅流入消费、地产等传统板块"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率及MLF利率",
+    "新能源/半导体板块成交额占比及资金流向",
+    "制造业PMI是否回升至50以上",
+    "北向资金净流入/流出方向"
+  ],
+  "kill_switch_signals": [
+    "央行意外收紧流动性（如提高逆回购利率）",
+    "新能源/半导体龙头股出现业绩暴雷或重大利空",
+    "A股三大指数连续放量下跌，恐慌情绪蔓延"
+  ],
+  "warnings": [
+    "注意：板块轮动信号来自情绪面系统，需结合基本面验证",
+    "注意：当前市场短期情绪偏弱（三大指数翻绿），建仓需分批进行"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T20:39:24.665309",
+  "batch_id": "sched_signal_pipeline_20260509_194006_9160d7_20260509_astock_skill_e8eb5fb6",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "instrument": "600186.SH",
+    "market": "A_SHARE",
+    "price_change_pct": -5.66,
+    "trend_stage": "middle",
+    "causation_confidence": 1.0,
+    "remaining_upside_pct": 4.5,
+    "opportunity_id": "opp_995d0bb2",
+    "priority": "research",
+    "entry_constraint": null
+  },
+  {
+    "instrument": "600379.SH",
+    "market": "A_SHARE",
+    "price_change_pct": -6.16,
+    "trend_stage": "middle",
+    "causation_confidence": 1.0,
+    "remaining_upside_pct": 4.9,
+    "opportunity_id": "opp_e4f8b7bf",
+    "priority": "research",
+    "entry_constraint": null
+  }
+]

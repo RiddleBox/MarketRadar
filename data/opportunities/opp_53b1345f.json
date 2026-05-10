@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_53b1345f",
+  "opportunity_title": "AI基建与应用共振",
+  "opportunity_thesis": "中国移动百亿级Token投入与千亿级算力建设、百度文心5.1成本革命、AI国家标准发布，三大信号在同一天密集释放，形成从基础设施到应用落地的完整闭环。市场已开始反应（软件ETF涨2%+资金流入），但AI算力与应用板块整体仍处于预期差较大的早期阶段，后续催化剂密集（移动云生态、百度商业化），具备持续上涨动力。\n\n【M13调研】该机会受益于政策催化与资金流入，处于布局窗口期，但缺乏研报和新闻直接验证，基本面数据缺失。风险在于政策落地不确定性和市场过热。建议谨慎参与，等待更多确认信号。\n\n【M13调研】机会描述声称AI算力与应用板块在政策、龙头、业绩三重催化下爆发，但新闻和研报均未直接验证。新闻中科技主题ETF上涨，但无AI板块具体报道；科大讯飞一季报亏损构成利空；无研报覆盖；基本面数据为空。风险在于政策落地不确定性和市场过热。综合判断，该机会缺乏可靠证据，置信度低，建议谨慎观望。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "600941.SH",
+    "002230.SZ",
+    "603019.SH",
+    "688561.SH",
+    "9888.HK"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "5月8-9日，中国移动大模型平台上线+算力网建设+百亿级Token投入、百度文心5.1发布、AI国家标准发布，三大事件集中爆发，形成政策+巨头+技术三重共振。市场刚启动（软件ETF涨2%），预期差大，时间窗口紧迫。",
+  "related_signals": [
+    "sig_294db3749c23",
+    "sig_4149b887d9b2",
+    "sig_de9b85fe30aa",
+    "sig_050c391c993e",
+    "sig_237f646ed46b",
+    "sig_59c364b7ab9e"
+  ],
+  "inferred_events": [
+    "inferred_ca497604",
+    "inferred_8baea605",
+    "inferred_051fb08c",
+    "inferred_f40a6dc8",
+    "inferred_88977166"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中国移动上线国内最大大模型服务平台（300余款模型），并宣布未来3-5年百亿级Token投入、千亿级算力建设",
+    "百度文心5.1预训练成本仅为业界6%，技术突破显著降低AI应用门槛",
+    "工信部等三部门联合发布AI终端智能化分级国家标准，为产业规范化铺路",
+    "AI应用板块已开始走强，软件ETF涨超2%且资金净流入"
+  ],
+  "counter_evidence": [
+    "历史案例显示技术突破需商业化验证，当前缺乏具体订单数据",
+    "市场整体情绪中性偏谨慎，若后续无更多催化剂可能冲高回落"
+  ],
+  "key_assumptions": [
+    "假设1：中国移动百亿级Token投入能实际落地并带动产业链需求",
+    "假设2：百度文心5.1的低成本优势能转化为商业化订单",
+    "假设3：AI国家标准能推动终端设备放量，而非停留在文件层面"
+  ],
+  "uncertainty_map": [
+    "商业化落地节奏不确定（影响程度：高）",
+    "市场整体流动性环境（影响程度：中）",
+    "中美科技竞争对AI供应链的潜在扰动（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.24000000000000002,
+    "execution_readiness": 0.72
+  },
+  "risk_reward_profile": "潜在收益：AI算力与应用板块估值修复+业绩预期上调，龙头股有望上涨20-30%；潜在风险：商业化不及预期导致股价回落10-15%，止损点明确（板块指数跌破5日均线）。",
+  "next_validation_questions": [
+    "中国移动百亿级Token投入的具体采购计划和合作伙伴名单？",
+    "百度文心5.1是否有已签约的客户或应用场景？",
+    "AI国家标准发布后，终端厂商是否有明确的产品规划？"
+  ],
+  "invalidation_conditions": [
+    "中国移动或百度后续公告低于预期（如投入规模缩减）",
+    "AI板块出现集体大幅回调（如板块指数跌超5%）",
+    "宏观经济数据恶化导致市场风险偏好急剧下降"
+  ],
+  "must_watch_indicators": [
+    "软件ETF（159899）资金流向与价格走势",
+    "中国移动（600941.SH）股价与成交量变化",
+    "百度（9888.HK）文心5.1相关新闻与客户签约",
+    "AI板块整体成交额占比是否持续提升"
+  ],
+  "kill_switch_signals": [
+    "中国移动或百度高管公开表态调整AI投入节奏",
+    "AI板块出现单日放量下跌超3%",
+    "市场整体出现系统性风险（如地缘冲突升级）"
+  ],
+  "warnings": [
+    "注意：信号来源均为新闻，非官方公告，需验证具体细节",
+    "历史案例显示技术突破后若无订单验证，行情可持续性差"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T17:38:52.944134",
+  "batch_id": "sched_signal_pipeline_20260509_163638_e0e39c_20260509_rss_1e11ba1d",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,107 @@
+{
+  "opportunity_id": "opp_f0d73df8",
+  "opportunity_title": "机器人IPO热潮",
+  "opportunity_thesis": "港股IPO市场出现机器人赛道极度火爆信号，乐动机器人散户认购倍数高达6707倍，创近年纪录，显示资金对机器人赛道有极强的配置需求。同时A股人形机器人概念股集体涨停新高，形成跨市场共振。这一信号表明机器人赛道正处于资金涌入的早期阶段，后续更多机器人公司IPO及二级市场标的将受益于资金溢出效应。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】人形机器人板块在5月8日逆势大涨，成交额放量，龙头业绩增长，但短期涨幅大、缺乏研报覆盖，且A股整体回调风险未消。机会真实但需警惕回调，建议关注产业落地进展，谨慎参与。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "603728.SH",
+    "300124.SZ",
+    "002747.SZ",
+    "688160.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "乐动机器人IPO散户认购倍数6707倍是极端情绪指标，通常出现在市场对某一赛道极度看好的阶段，且A股机器人概念股同日集体涨停，形成跨市场共振，时间窗口紧迫，后续更多机器人IPO可能加速推出。",
+  "related_signals": [
+    "sig_cc33dd52b601",
+    "sig_4ef836f98ad7"
+  ],
+  "inferred_events": [
+    "inferred_cd9eedae",
+    "inferred_cd8eb77a",
+    "inferred_301dbdce",
+    "inferred_8ff5c7af",
+    "inferred_dab56280",
+    "inferred_1d45d709"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "乐动机器人香港IPO散户认购倍数6707倍，国际配售9.54倍，显示资金极度追捧",
+    "A股人形机器人概念股集体上涨，多只个股涨停或创新高",
+    "推理事件显示新能源/半导体板块业绩超预期概率80%，机器人作为交叉领域受益"
+  ],
+  "counter_evidence": [
+    "A股市场短期回调风险增加概率65%，可能拖累板块情绪",
+    "历史案例case_2024_tech_breakthrough显示纯概念炒作缺乏订单验证会回落"
+  ],
+  "key_assumptions": [
+    "假设1：机器人赛道IPO热潮将持续，后续有更多公司上市",
+    "假设2：A股机器人概念股基本面有支撑，非纯概念炒作",
+    "假设3：市场整体流动性环境不会急剧恶化"
+  ],
+  "uncertainty_map": [
+    "机器人公司商业化进度不及预期（影响程度：高）",
+    "A股市场短期回调拖累板块（影响程度：中）",
+    "监管对IPO过热的态度变化（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 6,
+    "risk_clarity": 5,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.65
+  },
+  "risk_reward_profile": "潜在收益来自机器人赛道资金溢出效应和IPO情绪带动，风险在于概念炒作退潮和A股回调，收益风险比约2:1",
+  "next_validation_questions": [
+    "乐动机器人上市首日表现如何？是否继续大涨？",
+    "A股机器人概念股是否有业绩支撑或订单公告？",
+    "是否有其他机器人公司宣布港股IPO计划？"
+  ],
+  "invalidation_conditions": [
+    "乐动机器人上市首日破发或涨幅低于预期",
+    "A股机器人概念股出现集体跌停或大幅回调",
+    "监管层对机器人IPO过热发出警示"
+  ],
+  "must_watch_indicators": [
+    "乐动机器人上市首日涨跌幅及换手率",
+    "A股机器人概念板块成交量变化",
+    "港股IPO市场后续机器人公司招股情况",
+    "机器人行业龙头公司季度业绩"
+  ],
+  "kill_switch_signals": [
+    "乐动机器人上市首日跌幅超过10%",
+    "A股机器人概念板块单日跌幅超过5%",
+    "监管层明确限制机器人相关IPO"
+  ],
+  "warnings": [
+    "注意：IPO认购倍数极高可能包含散户情绪因素，需警惕上市后获利回吐",
+    "注意：A股机器人概念股短期涨幅已较大，追高风险增加"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T10:32:43.192208",
+  "batch_id": "sched_signal_pipeline_20260509_051555_1189ae_20260509_astock_skill_de24da73",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

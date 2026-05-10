@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_d290de20",
+  "opportunity_title": "机器人赛道IPO热潮",
+  "opportunity_thesis": "港股IPO市场出现极端火爆信号，乐动机器人散户认购倍数达6707倍，创近年纪录，叠加A股人形机器人概念股集体创新高、产业资本密集融资，表明机器人赛道已进入情绪与资金共振阶段。当前市场对机器人板块的定价尚未完全反映IPO热潮带来的估值锚定效应和产业链溢出效应，存在短期交易性机会。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头创历史新高，资金高度聚焦。固态电池技术提供支撑，IPO认购火爆显示市场关注。但短期涨幅较大，缺乏研报覆盖，产业落地进展不确定。整体机会真实，但需警惕回调风险，建议关注后续产业催化。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "601689.SH",
+    "300124.SZ",
+    "002747.SZ",
+    "688160.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "乐动机器人IPO散户认购6707倍是极端情绪指标，通常出现在市场极度亢奋时，且A股人形机器人概念股同日创新高，形成跨市场共振。产业资本（北汽、复星、小米联合创始人）持续加码小雨智造，显示产业端对机器人赛道信心。当前时点处于IPO定价完成、二级市场尚未充分反应阶段，存在短期交易窗口。",
+  "related_signals": [
+    "sig_cc33dd52b601",
+    "sig_41c9d0ac13e2",
+    "sig_4ef836f98ad7",
+    "sig_aff5a3953935"
+  ],
+  "inferred_events": [
+    "inferred_80732bbc",
+    "inferred_16fa4681",
+    "inferred_7a0ca01b",
+    "inferred_3c76bf89",
+    "inferred_8707c94e",
+    "inferred_6051c47e",
+    "inferred_327baf9f",
+    "inferred_ca06b9f4"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "乐动机器人香港IPO散户认购6707倍，国际配售9.54倍，显示资金极度追捧",
+    "A股人形机器人概念股集体上涨，绿的谐波创历史新高，巨轮智能2连板",
+    "小雨智造完成数亿元B+轮融资，北汽产投、复星锐正等产业资本联合投资",
+    "小米联合创始人黎万强持续追加投资，显示产业内人士信心"
+  ],
+  "counter_evidence": [
+    "机器人板块已连续上涨，部分个股短期涨幅较大，存在获利回吐风险",
+    "IPO火爆可能已部分反映在定价中，上市后表现存在不确定性"
+  ],
+  "key_assumptions": [
+    "假设1：乐动机器人上市首日表现强劲，带动板块估值上行",
+    "假设2：A股机器人概念股上涨趋势延续，资金持续流入",
+    "假设3：产业资本融资信号未被市场完全定价"
+  ],
+  "uncertainty_map": [
+    "乐动机器人上市后股价表现（影响程度：高）",
+    "A股机器人板块短期获利回吐压力（影响程度：中）",
+    "整体市场流动性环境变化（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 6,
+    "risk_clarity": 5,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 6.9,
+    "confidence_score": 0.72,
+    "execution_readiness": 0.65
+  },
+  "risk_reward_profile": "潜在收益来自IPO情绪溢出和板块估值提升，但机器人板块已部分上涨，上行空间有限；风险在于IPO上市后表现不及预期或板块获利回吐，止损点可设在板块指数跌破5日均线。",
+  "next_validation_questions": [
+    "乐动机器人上市首日涨幅及换手率如何？",
+    "A股机器人板块成交量是否持续放大？",
+    "是否有更多产业资本或机构发布机器人相关研报？"
+  ],
+  "invalidation_conditions": [
+    "乐动机器人上市首日破发或涨幅低于10%",
+    "A股机器人板块指数连续两日下跌且成交量萎缩",
+    "市场整体出现系统性风险（如地缘冲突升级）"
+  ],
+  "must_watch_indicators": [
+    "乐动机器人上市首日股价表现",
+    "A股机器人板块指数及成交量",
+    "绿的谐波、巨轮智能等龙头股走势",
+    "北向资金对机器人板块的净流入情况"
+  ],
+  "kill_switch_signals": [
+    "乐动机器人上市首日跌幅超过5%",
+    "A股机器人板块出现跌停潮",
+    "市场恐慌指数大幅飙升"
+  ],
+  "warnings": [
+    "注意：IPO火爆情绪可能已部分反映在定价中，追高风险较大",
+    "注意：机器人板块短期涨幅较大，需警惕获利回吐"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T15:11:30.700714",
+  "batch_id": "sched_signal_pipeline_20260509_145546_c8d320_20260509_astock_skill_288a70f4",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

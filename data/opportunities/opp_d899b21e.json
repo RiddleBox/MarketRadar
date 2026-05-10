@@ -1,0 +1,119 @@
+{
+  "opportunity_id": "opp_d899b21e",
+  "opportunity_title": "中东冲突避险交易",
+  "opportunity_thesis": "美伊在霍尔木兹海峡交火并误击民用船只，美军同步拦截伊朗油轮，表明冲突已从口头威胁升级为实质性军事行动。霍尔木兹海峡是全球约20%石油运输的咽喉，航运受阻将直接推高油价和航运成本，同时引发全球避险情绪。市场尚未完全定价冲突持续至7月后的预期，存在预期差。\n\n【M13调研】机会描述与新闻事实完全脱节：最近20条新闻均为A股公司日常公告，无任何关于霍尔木兹海峡冲突、伊朗油轮拦截或能源供应中断的报道。基本面数据和行业趋势搜索无结果，缺乏第三方验证。市场未出现恐慌或避险情绪，燃料油夜盘仅小幅上涨。因此，该机会缺乏事实基础，风险极高，建议规避。\n\n【M13调研】该机会描述的地缘冲突事件与新闻事实完全不符，最近20条新闻均为A股公司日常公告，无任何相关报道。基本面数据和行业趋势搜索无结果，市场未出现恐慌或避险情绪，燃料油夜盘仅小幅上涨。研报分析无相关报告。因此，该机会缺乏事实基础，风险极高，建议规避。置信度大幅下调。",
+  "target_markets": [
+    "A_SHARE",
+    "HK",
+    "US"
+  ],
+  "target_instruments": [
+    "601857.SH",
+    "600028.SH",
+    "600026.SH",
+    "601872.SH",
+    "600988.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-30T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "冲突已从口头威胁升级为实际交火和拦截行动，且高盛调查显示多数投资者预期航运受阻将持续至7月后，当前是布局能源和避险资产的最佳窗口。",
+  "related_signals": [
+    "sig_0806bfd8639e",
+    "sig_4bdf8baa2d3a",
+    "sig_82a8c461a4b6",
+    "sig_bb9a9c6d60a1",
+    "sig_70a333e7b67e",
+    "sig_ec500e4d7f22"
+  ],
+  "inferred_events": [
+    "inferred_9c9b78d0",
+    "inferred_f2364ab2",
+    "inferred_f67e9ae5",
+    "inferred_ec2df7bb",
+    "inferred_eb8bc471",
+    "inferred_0f60fada",
+    "inferred_ae804392",
+    "inferred_ba67755b",
+    "inferred_c3e85128",
+    "inferred_e1f538c1"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军袭击伊朗民用船只致10伤5失踪，且误击渔船和货船，冲突性质严重",
+    "美军在阿曼湾拦截两艘伊朗油轮，封锁措施加强执行",
+    "霍尔木兹海峡附近2小时内接连传出交火声，紧张局势持续升级",
+    "高盛调查显示43%受访者预计航运受阻将持续至7月以后"
+  ],
+  "counter_evidence": [
+    "冲突可能迅速降温，如双方达成临时停火协议",
+    "原油价格已部分反映地缘风险，进一步上涨空间有限"
+  ],
+  "key_assumptions": [
+    "假设1：美伊军事冲突不会在短期内（1-2周）迅速降温",
+    "假设2：霍尔木兹海峡航运受阻持续至少至6月底",
+    "假设3：全球原油库存未大幅释放以平抑价格"
+  ],
+  "uncertainty_map": [
+    "冲突降温速度（影响程度：高）：若双方迅速谈判或停火，油价和避险资产将快速回落",
+    "美国战略石油储备释放（影响程度：中）：若美国大规模释放SPR，将压制油价涨幅",
+    "其他产油国增产（影响程度：中）：沙特、俄罗斯等可能增产填补缺口"
+  ],
+  "priority_level": "urgent",
+  "opportunity_score": {
+    "catalyst_strength": 9,
+    "timeliness": 9,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 7,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 8.0,
+    "confidence_score": -0.01999999999999999,
+    "execution_readiness": 0.78
+  },
+  "risk_reward_profile": "潜在收益：原油期货和能源股短期涨幅10-20%，黄金避险涨幅5-10%；潜在风险：冲突迅速降温导致油价回吐涨幅，最大亏损约5-8%（止损位）。",
+  "next_validation_questions": [
+    "美伊双方是否有任何停火或谈判信号？",
+    "美国是否宣布释放战略石油储备？",
+    "霍尔木兹海峡实际航运中断程度如何？",
+    "其他主要产油国（沙特、俄罗斯）是否宣布增产？"
+  ],
+  "invalidation_conditions": [
+    "美伊达成临时停火或谈判协议",
+    "美国大规模释放战略石油储备",
+    "霍尔木兹海峡航运恢复正常"
+  ],
+  "must_watch_indicators": [
+    "布伦特原油期货价格",
+    "霍尔木兹海峡航运通行状态",
+    "美国战略石油储备库存变化",
+    "VIX恐慌指数"
+  ],
+  "kill_switch_signals": [
+    "美伊双方宣布停火或谈判",
+    "美国宣布释放战略石油储备",
+    "霍尔木兹海峡航运完全恢复"
+  ],
+  "warnings": [
+    "地缘冲突事件具有高度不确定性，冲突可能迅速升级或降温，需严格设置止损",
+    "原油和黄金价格已部分反映地缘风险，追高需谨慎"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T13:04:03.963631",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_1e6d287a",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

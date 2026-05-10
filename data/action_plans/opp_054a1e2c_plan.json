@@ -1,0 +1,62 @@
+{
+  "plan_id": "plan_32f89c5f2a7f",
+  "opportunity_id": "opp_054a1e2c",
+  "plan_summary": "BULLISH | 518880.SH, 159934.SZ",
+  "primary_instruments": [
+    "518880.SH",
+    "159934.SZ",
+    "USO",
+    "GLD"
+  ],
+  "instrument_type": "ETF",
+  "direction": "BULLISH",
+  "market": "US",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 5.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破当日开盘价下方1.5%"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 10.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "黄金ETF上涨3-5%区间"
+  },
+  "position_sizing": {
+    "suggested_allocation": "8.0%",
+    "max_allocation": "不超过8.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=5.0% | 仓位=风险预算/止损=8.0%",
+    "suggested_allocation_pct": 0.08,
+    "max_allocation_pct": 0.08
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入518880.SH，仓位为总资金的20%（上限30%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "开盘后30分钟内，518880.SH价格高于前一日收盘价1.5%以上，且COMEX黄金期货突破前一日高点"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总资金的50%（总仓位上限50%），若冲突新闻未持续出现，则不加仓",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1持仓浮盈达到2%以上，且冲突相关新闻（如双方交火报道）在开盘后2小时内持续出现"
+    }
+  ],
+  "valid_until": "2026-05-31T11:22:50.346140",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T11:22:50.346241",
+  "opportunity_priority": "research"
+}

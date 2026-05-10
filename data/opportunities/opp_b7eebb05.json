@@ -1,0 +1,115 @@
+{
+  "opportunity_id": "opp_b7eebb05",
+  "opportunity_title": "逆周期宽松交易",
+  "opportunity_thesis": "央行已实施降准降息，叠加PMI连续收缩、CPI/PPI通缩，经济疲弱倒逼政策进一步宽松。当前市场对宽松力度定价不足，预期差在于后续降息空间和财政协同。历史案例显示降息后银行股估值修复确定性高，但地产需基本面配合。\n\n【M13调研】央行降准降息叠加通缩信号，形成宏观对冲交易机会。市场对经济下行定价充分，但对政策持续宽松预期不足，后续降准降息概率高，有望推动A股估值修复。然而，无研报和新闻验证，通缩风险可能削弱政策效果，且外部不确定性存在。建议谨慎参与，关注政策落地和基本面改善信号。\n\n【M13调研】央行降准降息叠加通缩信号构成宏观对冲交易机会，市场对经济下行定价充分，但对政策持续宽松预期不足，后续降准降息概率高，有望推动A股估值修复。然而，缺乏研报和新闻验证，通缩风险可能削弱政策效果，且外部不确定性存在。建议谨慎参与，关注政策落地和基本面改善信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600036.SH",
+    "601166.SH",
+    "600030.SH",
+    "000002.SZ",
+    "600585.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-25T00:00:00",
+    "end": "2026-05-25T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "降准已落地（4月25日执行），逆回购利率已下调，但PMI连续3个月低于荣枯线、CPI/PPI负增长，经济数据疲弱强化了进一步宽松预期。央行行长表态'适时降准'暗示政策仍有空间，当前是政策密集窗口期。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_e39115aa3077",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203",
+    "sig_7298dda97ec7",
+    "sig_6030bb0be882"
+  ],
+  "inferred_events": [
+    "inferred_cb19a16e",
+    "inferred_36c2cff8",
+    "inferred_a3c2e74d",
+    "inferred_fb274385",
+    "inferred_23231d94",
+    "inferred_deb215cb",
+    "inferred_7686d78f",
+    "inferred_e73f1701"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行已降准0.5个百分点并下调逆回购利率10bp，释放明确宽松信号",
+    "制造业PMI连续3个月低于50荣枯线，经济下行压力加大",
+    "CPI同比下降0.3%、PPI同比下降2.7%，通缩压力倒逼政策加码",
+    "央行行长公开表态将适时降准，政策预期未完全price-in"
+  ],
+  "counter_evidence": [
+    "降准利好已被部分定价，市场可能已提前反应",
+    "地产板块资金持续流出，宽松对地产的传导效果存疑"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续仍有降息或降准操作，而非一次性宽松",
+    "假设2：经济数据不会进一步恶化至引发系统性风险",
+    "假设3：财政政策与货币政策形成协同，而非单兵突进"
+  ],
+  "uncertainty_map": [
+    "后续宽松力度不及预期（影响程度：高）",
+    "经济数据持续恶化引发避险情绪（影响程度：中）",
+    "地缘冲突升级干扰市场风险偏好（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.7,
+    "confidence_score": 0.42,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益来自估值修复和流动性溢价，银行股弹性约5-10%；风险在于宽松不及预期或经济数据恶化，最大回撤约3-5%。",
+  "next_validation_questions": [
+    "央行是否在1个月内再次降准或降息？",
+    "4月PMI数据是否边际改善？",
+    "北向资金是否持续流入银行板块？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "PMI回升至50以上，经济企稳信号出现",
+    "市场出现系统性风险事件（如信用违约潮）"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率",
+    "制造业PMI月度数据",
+    "银行板块资金流向",
+    "10年期国债收益率"
+  ],
+  "kill_switch_signals": [
+    "央行意外收紧流动性（如正回购）",
+    "PMI跌破48，经济加速恶化",
+    "银行板块出现集体破位下跌"
+  ],
+  "warnings": [
+    "注意：历史案例显示降息后地产股反弹需基本面配合，当前地产销售数据仍疲弱",
+    "注意：地缘冲突风险可能压制整体风险偏好，需关注中东局势"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T10:59:53.633873",
+  "batch_id": "sched_signal_pipeline_20260510_104549_97730c_20260510_astock_skill_380a1cf7",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

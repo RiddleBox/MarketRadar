@@ -1,0 +1,113 @@
+{
+  "opportunity_id": "opp_cfa9c186",
+  "opportunity_title": "地缘冲突推升航运与粮价",
+  "opportunity_thesis": "霍尔木兹海峡冲突持续升级，美军袭击伊朗民用船只并传出交火声，导致航运成本飙升（赫伯罗特每周额外成本超5000万美元），同时推高硫磺价格（年内涨80%）和全球粮价（连续第三个月上涨）。这些变化对航运、化肥和农业板块构成直接利好，且市场尚未充分定价，存在预期差。当前时点冲突仍在升级，时间窗口紧迫，适合短期做多相关品种。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "000792.SZ",
+    "002601.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-05-23T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "霍尔木兹海峡冲突在5月7-8日急剧升级（美军袭击伊朗民用船只、交火声传出），航运成本已显著上升，硫磺和粮价数据刚公布，市场尚未完全反应。冲突可能进一步恶化，短期窗口有限。",
+  "related_signals": [
+    "sig_0806bfd8639e",
+    "sig_4bdf8baa2d3a",
+    "sig_2e7d7516821e",
+    "sig_755175bfd918",
+    "sig_c8ad6aa39ecc",
+    "sig_ec500e4d7f22"
+  ],
+  "inferred_events": [
+    "inferred_73977b67",
+    "inferred_1156cea6",
+    "inferred_956e7c6e",
+    "inferred_964e6cfb",
+    "inferred_8fffac49",
+    "inferred_97cb810a",
+    "inferred_74f6e9df"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军袭击伊朗民用船只致10伤5失踪，霍尔木兹海峡附近交火声不断，冲突升级",
+    "赫伯罗特每周额外成本超5000万美元，航运成本飙升",
+    "硫磺价格年内上涨约80%，散单突破8000元/吨",
+    "全球粮价连续第三个月上涨，受能源和物流中断影响"
+  ],
+  "counter_evidence": [
+    "冲突可能短期缓和，如外交介入或停火协议",
+    "航运和化肥板块已部分上涨，可能已消化部分利好"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡冲突在未来1-2周内不会显著缓和",
+    "假设2：硫磺和粮价上涨趋势持续，不出现政策干预或需求骤降"
+  ],
+  "uncertainty_map": [
+    "冲突升级程度不确定性（影响程度：高）：冲突可能快速升级为全面战争，或突然缓和",
+    "政策干预风险（影响程度：中）：各国可能释放战略储备或实施价格管制",
+    "市场情绪反转（影响程度：中）：避险情绪可能快速消退，导致价格回落"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 6,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.35000000000000003,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：航运、化肥、农业板块短期上涨10-20%；风险：冲突缓和导致价格回落，最大亏损约5-10%（止损可设于入场价下方5%）",
+  "next_validation_questions": [
+    "霍尔木兹海峡冲突是否有外交斡旋或停火迹象？",
+    "硫磺和粮价后续报价是否继续上涨？",
+    "航运公司（如赫伯罗特）是否发布更多成本数据？"
+  ],
+  "invalidation_conditions": [
+    "霍尔木兹海峡冲突显著缓和，航运恢复通行",
+    "硫磺或粮价出现大幅回调（如单日跌超5%）",
+    "主要国家宣布释放战略储备或实施价格管制"
+  ],
+  "must_watch_indicators": [
+    "霍尔木兹海峡冲突新闻和交火事件",
+    "硫磺现货价格和粮农组织食品价格指数",
+    "航运成本指数（如波罗的海干散货指数）",
+    "原油价格走势"
+  ],
+  "kill_switch_signals": [
+    "冲突双方宣布停火或谈判",
+    "硫磺价格单日暴跌超10%",
+    "全球股市因避险情绪大幅下跌（如单日跌超3%）"
+  ],
+  "warnings": [
+    "注意：地缘冲突高度不确定，短期交易风险较大",
+    "注意：硫磺和粮价已部分上涨，追高需谨慎"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:10:27.799337",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_20260509_astock_skill_2c8eda66",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

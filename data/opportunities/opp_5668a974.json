@@ -1,0 +1,113 @@
+{
+  "opportunity_id": "opp_5668a974",
+  "opportunity_title": "AI算力产业链景气",
+  "opportunity_thesis": "AI算力需求爆发已从预期进入业绩兑现期，中际旭创市值突破万亿、新易盛一季报增长76.8%、某半导体龙头预增150%-180%等信号，叠加字节跳动上调AI基础设施支出25%至2000亿元，共同确认产业链高景气。服务器CPU缺货涨价进一步强化供需紧张格局，当前是布局AI算力核心标的的窗口期。\n\n【M13调研】机会描述基于AI算力需求爆发、业绩超预期和政策利好，但新闻分析中缺乏直接验证。中韩半导体ETF领涨、英特尔AMD市值新高、胜宏科技订单饱满等间接支持半导体景气度，但具体公司业绩数据未出现，政策利好也未明确。风险在于业绩持续性分歧和缺乏直接证据。整体方向可行，但需谨慎验证具体数据，建议等待更多确认信号。\n\n【M13调研】AI算力需求驱动光模块和半导体景气度得到部分验证：新易盛业绩高增、英特尔AMD市值新高、胜宏科技订单饱满。但机会描述中的中际旭创市值破万亿、某半导体龙头预增等具体数据未在新闻中出现，政策利好也缺乏报道。市场对业绩持续性存分歧，风险在于信息不实和预期差。建议谨慎，等待更多确认信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "688981.SH",
+    "002371.SZ",
+    "688008.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "中际旭创市值突破万亿、新易盛业绩高增、半导体龙头预增等信号密集出现，叠加字节跳动上调AI支出，表明业绩兑现期已至，市场尚未完全定价后续增长。",
+  "related_signals": [
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f",
+    "sig_de9b85fe30aa",
+    "sig_1678cc7149dc",
+    "sig_c37fb23fb71a"
+  ],
+  "inferred_events": [
+    "inferred_94d1e17c",
+    "inferred_a9fb3e81",
+    "inferred_ba594490",
+    "inferred_cafd3266",
+    "inferred_b750092d",
+    "inferred_7ca65e5f",
+    "inferred_932fe107"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，创历史里程碑",
+    "新易盛一季报净利润同比增长76.8%",
+    "某半导体龙头Q1预增150%-180%",
+    "字节跳动AI基础设施支出上调25%至2000亿元",
+    "服务器CPU缺货涨价，供需紧张加剧"
+  ],
+  "counter_evidence": [
+    "AI应用板块走高可能已部分反映利好，短期追高风险",
+    "历史案例显示技术突破需商业化验证，当前订单数据尚不充分"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，不会出现需求断崖",
+    "假设2：供应链紧张不会导致产能瓶颈恶化至影响交付",
+    "假设3：中美科技摩擦不会突然升级影响关键芯片供应"
+  ],
+  "uncertainty_map": [
+    "AI需求增速放缓风险（影响程度：中）",
+    "地缘政治风险导致供应链中断（影响程度：高）",
+    "市场情绪过热后回调（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.5800000000000001,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI算力产业链业绩持续超预期，龙头股有望再创新高，收益空间20%-30%。潜在风险：需求增速放缓或地缘政治冲击，最大回撤约15%。",
+  "next_validation_questions": [
+    "中际旭创、新易盛等龙头的最新订单和产能利用率数据如何？",
+    "字节跳动2000亿支出计划的具体执行时间表和供应商分配？",
+    "服务器CPU缺货涨价是否已传导至下游客户需求抑制？"
+  ],
+  "invalidation_conditions": [
+    "AI算力龙头公司发布低于预期的季度指引",
+    "中美科技制裁升级，限制关键芯片出口",
+    "字节跳动等大厂削减AI资本开支计划"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛等龙头股价走势及成交量",
+    "AI芯片相关公司季度业绩预告",
+    "服务器CPU价格指数及交货周期",
+    "字节跳动等大厂AI资本开支实际执行情况"
+  ],
+  "kill_switch_signals": [
+    "龙头股放量下跌跌破关键支撑位",
+    "行业出现重大负面政策或制裁",
+    "AI需求端出现明显放缓信号（如云厂商下调资本开支）"
+  ],
+  "warnings": [
+    "注意：部分信号来源为新闻，非官方公告，需核实",
+    "注意：AI板块已部分上涨，短期追高需谨慎"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:21:11.343861",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_20260509_astock_skill_485a4d90",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

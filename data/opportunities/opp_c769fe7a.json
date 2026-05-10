@@ -1,0 +1,135 @@
+{
+  "opportunity_id": "opp_c769fe7a",
+  "opportunity_title": "AI半导体景气上行",
+  "opportunity_thesis": "AI与半导体产业链景气度持续上行，资金加速流入，业绩与政策双重催化。中际旭创市值突破万亿、新易盛净利增长76.8%、半导体龙头Q1预增150%-180%等信号表明行业基本面强劲；中国移动百亿级算力投入、AI终端国家标准发布等政策催化叠加，板块预期差仍大，当前是布局窗口。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持。关键发现包括：新闻内容与AI产业链关联度低，业绩数据未验证，外围市场存在不确定性。风险因素主要为信息不实和情绪过热。未发现重大利空，但置信度因证据不足下调0.2。综合来看，该机会缺乏近期数据支撑，建议谨慎对待，等待更多验证信号。\n\n【M13调研】该机会描述声称美股AI股创新高、A股AI产业链业绩验证，但新闻分析未找到相关证据，北方华创业绩增速仅3.42%，与预增150-180%严重不符。政策与资金面支撑也未在新闻中体现。M13调研已指出证据不足，研报分析无支持。综合来看，机会缺乏近期数据支撑，风险较高，建议谨慎对待，等待更多验证信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "002371.SZ",
+    "603019.SH",
+    "300476.SZ",
+    "600584.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "当前时点催化剂密集：中际旭创市值突破万亿、新易盛一季报净利增76.8%、半导体龙头Q1预增150%-180%等业绩信号集中释放；中国移动百亿级算力投入、AI终端国家标准发布等政策催化；资金从消费地产流向新能源半导体，市场成交额突破1.5万亿，情绪面中性偏乐观，窗口期明确。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f",
+    "sig_d9ef44f292bd",
+    "sig_294db3749c23",
+    "sig_4149b887d9b2",
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_32c14f9a2017",
+    "sig_41c9d0ac13e2",
+    "sig_a1a728ae8eed",
+    "sig_050c391c993e",
+    "sig_4ef836f98ad7",
+    "sig_e8ba30264edb",
+    "sig_ffdee791adf2",
+    "sig_14d75f807b3c",
+    "sig_237f646ed46b",
+    "sig_de1c0bc2bee5",
+    "sig_b305b999b74e",
+    "sig_c37fb23fb71a",
+    "sig_7cfae5a1c6bb",
+    "sig_59c364b7ab9e"
+  ],
+  "inferred_events": [
+    "inferred_8f45b053",
+    "inferred_c8a2175e",
+    "inferred_855cc242",
+    "inferred_f13c6728",
+    "inferred_2d28ff04",
+    "inferred_0908fc62",
+    "inferred_e9162f22",
+    "inferred_0d790675",
+    "inferred_715acbb2",
+    "inferred_95bd9894"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，创历史里程碑",
+    "新易盛一季报净利润同比增长76.8%",
+    "某半导体龙头Q1净利润预增150%-180%",
+    "中国移动宣布未来3-5年投入百亿级Token生态资源，建设千亿级算力基础设施",
+    "长电科技一季度产能利用率超80%，2026年固定资产投资预算约100亿元",
+    "沪深两市成交额突破1.5万亿元，资金从消费地产流向新能源半导体"
+  ],
+  "counter_evidence": [
+    "市场成交额放大但指数涨幅有限，可能存在资金博弈而非趋势性流入",
+    "部分AI概念股（如每日互动）AI收入体量仍为千万级，对整体业绩贡献有限"
+  ],
+  "key_assumptions": [
+    "假设1：AI芯片需求持续爆发，半导体产业链订单能见度维持高位",
+    "假设2：宏观经济不出现超预期下行，政策宽松环境延续",
+    "假设3：中美科技摩擦不显著升级，供应链稳定"
+  ],
+  "uncertainty_map": [
+    "中美科技摩擦升级风险（影响程度：高）",
+    "AI商业化落地速度不及预期，导致业绩增速放缓（影响程度：中）",
+    "市场情绪过热后回调，资金快速撤离（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.6,
+    "confidence_score": 0.38000000000000006,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI半导体板块业绩高增长叠加政策催化，有望推动板块估值修复和业绩驱动上涨，预期收益20%-30%。潜在风险：中美科技摩擦升级或AI商业化不及预期，可能导致板块回调10%-15%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "半导体龙头Q1业绩预增的具体公司及订单能见度如何？",
+    "中国移动百亿级算力投入的具体落地节奏和受益标的？",
+    "当前AI半导体板块整体估值水平，是否已透支部分预期？"
+  ],
+  "invalidation_conditions": [
+    "中美科技摩擦显著升级，如对半导体设备/材料实施新制裁",
+    "AI半导体龙头公司业绩不及预期，出现盈利预警",
+    "市场成交额持续萎缩，资金从科技板块大幅流出"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛等光模块龙头后续订单及业绩指引",
+    "长电科技、北方华创等半导体设备/封测公司产能利用率变化",
+    "沪深两市成交额及科技板块资金流向",
+    "AI终端国家标准落地后产业链实际受益情况"
+  ],
+  "kill_switch_signals": [
+    "半导体龙头公司发布业绩预警或下调指引",
+    "中美科技领域出现重大制裁或出口管制升级",
+    "市场恐慌指数飙升，资金全面撤离风险资产"
+  ],
+  "warnings": [
+    "部分信号（如半导体龙头预增）未明确公司名称，需进一步核实",
+    "AI板块已部分上涨，需警惕短期追高风险，建议分批建仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T15:44:50.318730",
+  "batch_id": "sched_signal_pipeline_20260509_145546_c8d320_20260509_astock_skill_dc41c22f",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

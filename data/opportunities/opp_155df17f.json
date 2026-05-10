@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_155df17f",
+  "opportunity_title": "AI算力基建加速",
+  "opportunity_thesis": "中国移动上线国内最大AI大模型服务平台并宣布百亿级Token投入、千亿级算力基建，叠加字节跳动上调AI基础设施支出至2000亿元，百度发布低成本高性能文心5.1，AI产业链从基础设施到应用端形成密集催化。市场已初步反应（软件ETF涨2%、中国软件涨停），但算力基础设施和AI应用龙头仍有预期差，当前是布局AI产业链的窗口期。\n\n【M13调研】机会描述指出中国移动、字节跳动等巨头加码AI基础设施，叠加政策标准发布和百度成本突破，形成多重共振，当前市场预期不足，存在做多机会。但缺乏研报、新闻和基本面数据支持，无法验证描述的真实性和时效性。风险包括前期涨幅、宏观经济不确定性等。综合来看，逻辑合理但证据不足，置信度偏低，需谨慎对待。\n\n【M13调研】机会描述声称AI产业链出现全面政策与资本共振，但所有关键事件均无新闻或研报验证，且现有信息显示AI龙头业绩承压、个股减持等负面信号。基本面数据缺失，行业趋势无结果，整体证据严重不足，风险极高。建议忽略该机会，避免追高。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "600941.SH",
+    "002230.SZ",
+    "688111.SH",
+    "600570.SH",
+    "601360.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-07-10T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "中国移动大模型平台上线（5月8日）、百度文心5.1发布（5月9日）、字节跳动上调AI支出（5月9日）三事件在48小时内密集发生，形成强催化剂共振。市场虽已部分反应（AI应用板块走高），但算力基础设施和AI应用龙头尚未充分定价，预期差仍存。",
+  "related_signals": [
+    "sig_294db3749c23",
+    "sig_4149b887d9b2",
+    "sig_32c14f9a2017",
+    "sig_92aa277c89e1",
+    "sig_1678cc7149dc",
+    "sig_59c364b7ab9e"
+  ],
+  "inferred_events": [
+    "inferred_dc3d7826",
+    "inferred_36e7071f",
+    "inferred_3edd90da",
+    "inferred_92f83979",
+    "inferred_b20120ad",
+    "inferred_6a15a9d2"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中国移动上线国内最大AI大模型服务平台，接入300余款模型，首创Token集约化运营",
+    "中国移动宣布未来3-5年投入百亿级Token资源、千亿级算力基础设施",
+    "字节跳动将AI基础设施支出上调25%至2000亿元",
+    "百度发布文心5.1，预训练成本仅为同规模模型的6%，性能领先",
+    "AI应用板块走高，中国软件涨停，软件ETF单日净流入近800万元"
+  ],
+  "counter_evidence": [
+    "AI板块已有一定涨幅，部分预期可能已提前反映",
+    "中国移动等央企的投入计划执行节奏和实际效果存在不确定性"
+  ],
+  "key_assumptions": [
+    "假设1：中国移动、字节跳动的AI投入计划将按公告规模执行，不出现大幅缩减",
+    "假设2：AI大模型商业化落地持续加速，带动算力需求和软件应用需求",
+    "假设3：宏观经济和政策环境不出现重大负面冲击（如地缘冲突升级）"
+  ],
+  "uncertainty_map": [
+    "AI投入执行节奏不确定性（影响程度：高）",
+    "地缘政治风险可能压制市场风险偏好（影响程度：中）",
+    "AI应用商业化变现速度低于预期（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.14000000000000004,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI算力基建和AI应用龙头在催化剂共振下有望迎来估值修复和业绩预期上调，预计10-20%上行空间。潜在风险：投入计划执行不及预期或市场情绪转冷，下行风险约5-10%，止损点可设在关键支撑位下方。",
+  "next_validation_questions": [
+    "中国移动和字节跳动的AI投入计划是否有更详细的执行时间表和预算分配？",
+    "AI应用板块（如中国软件、科大讯飞）的订单和业绩是否出现加速迹象？",
+    "算力基础设施相关公司（如中际旭创、新易盛）的产能和订单是否同步增长？"
+  ],
+  "invalidation_conditions": [
+    "中国移动或字节跳动公开下调AI投入计划",
+    "AI应用板块出现集体大幅回调，龙头股跌破关键支撑位",
+    "宏观经济或地缘政治出现重大负面事件，系统性风险上升"
+  ],
+  "must_watch_indicators": [
+    "中国移动（600941.SH）股价走势及成交量变化",
+    "软件ETF（159899）资金流入/流出情况",
+    "AI应用板块龙头（中国软件、科大讯飞）的订单和业绩公告",
+    "算力基础设施相关公司（中际旭创、新易盛）的产能利用率"
+  ],
+  "kill_switch_signals": [
+    "中国移动或字节跳动宣布缩减AI投入",
+    "AI应用板块指数跌破20日均线且成交量放大",
+    "监管层对AI概念炒作发出警示或限制"
+  ],
+  "warnings": [
+    "注意：部分信号来源为新闻，非官方公告，需验证准确性",
+    "注意：AI板块已有一定涨幅，追高需谨慎，建议分批建仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T05:18:49.588058",
+  "batch_id": "sched_signal_pipeline_20260510_045720_1d2d59_20260510_astock_skill_ae7e1fcd",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

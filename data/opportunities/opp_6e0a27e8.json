@@ -1,0 +1,109 @@
+{
+  "opportunity_id": "opp_6e0a27e8",
+  "opportunity_title": "AI基建资本开支潮",
+  "opportunity_thesis": "中国移动上线国内最大AI大模型服务平台并宣布百亿级Token生态与千亿级算力投资，叠加字节跳动上调AI基础设施支出25%至2000亿元、长电科技大幅增加先进封装资本开支，形成从平台、算力到封装的产业链共振。政策端人工智能终端国家标准发布为下游应用铺路，当前时点政策、产业、资本三重信号高度一致，AI基础设施投资叙事具备强催化与预期差。\n\n【M13调研】该机会受益于政策催化与资金流入，处于布局窗口期，但缺乏研报和新闻直接验证，基本面数据缺失。风险在于政策落地不确定性和市场过热。建议谨慎参与，等待更多确认信号。\n\n【M13调研】该机会受益于政策催化（算力网、AI标准）和资金流入（成交额放量、科技板块上涨），处于布局窗口期。但缺乏研报、新闻和基本面直接验证，行业趋势无数据，风险在于政策落地不确定性和市场过热。M13调研建议谨慎。综合评估，机会存在但需等待更多确认信号，建议小仓位试探或观望。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600941.SH",
+    "603019.SH",
+    "002230.SZ",
+    "600584.SH",
+    "688561.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-08-10T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "中国移动大模型平台上线（5月8日）、AI终端国标发布（5月8日）、字节跳动上调资本开支（5月9日）、长电科技百亿投资（5月9日）四事件集中在2天内密集释放，形成强催化剂簇，市场尚未充分定价，预期差显著。",
+  "related_signals": [
+    "sig_294db3749c23",
+    "sig_050c391c993e",
+    "sig_1678cc7149dc",
+    "sig_de1c0bc2bee5",
+    "sig_59c364b7ab9e"
+  ],
+  "inferred_events": [
+    "inferred_6eefcb33",
+    "inferred_42c2e269",
+    "inferred_6db5b131",
+    "inferred_6d0c487c",
+    "inferred_68168fc0"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中国移动上线国内最大大模型服务平台，接入300余款模型，并宣布百亿级Token生态与千亿级算力投资",
+    "字节跳动将2026年AI基础设施支出上调25%至2000亿元",
+    "长电科技2026年固定资产投资预算约100亿元，重点投向先进封装",
+    "工信部等联合发布人工智能终端国家标准，为下游应用标准化铺路"
+  ],
+  "counter_evidence": [
+    "字节跳动资本开支上调消息来源置信度仅5/10，存在不确定性",
+    "历史案例显示技术突破需商业化验证，当前缺乏订单落地信号"
+  ],
+  "key_assumptions": [
+    "假设1：字节跳动资本开支上调消息属实，且后续有更多互联网巨头跟进",
+    "假设2：中国移动的算力投资能转化为对上游设备/芯片的实际采购订单",
+    "假设3：宏观经济不出现超预期恶化，企业IT支出保持韧性"
+  ],
+  "uncertainty_map": [
+    "字节跳动消息真实性（影响程度：高）",
+    "资本开支转化为实际订单的节奏与规模（影响程度：中）",
+    "市场对AI概念炒作疲劳度（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.1,
+    "confidence_score": 0.5800000000000001,
+    "execution_readiness": 0.72
+  },
+  "risk_reward_profile": "潜在收益：AI基建资本开支周期启动，龙头公司订单/业绩超预期驱动估值修复，上行空间20-30%；潜在风险：消息证伪或资本开支落地缓慢，下行风险约10-15%，止损点明确。",
+  "next_validation_questions": [
+    "字节跳动资本开支上调消息是否有官方或可靠信源确认？",
+    "中国移动百亿Token生态的具体采购计划与时间表？",
+    "长电科技先进封装产能利用率及客户订单可见度如何？"
+  ],
+  "invalidation_conditions": [
+    "字节跳动资本开支上调消息被证伪",
+    "中国移动/长电科技资本开支计划大幅低于预期",
+    "AI板块出现集体性资金流出或技术破位"
+  ],
+  "must_watch_indicators": [
+    "中国移动/长电科技后续公告或调研纪要",
+    "AI板块成交额与资金流向",
+    "光模块/服务器等先行环节的订单数据",
+    "字节跳动官方对资本开支的回应"
+  ],
+  "kill_switch_signals": [
+    "字节跳动否认或下调资本开支计划",
+    "AI板块指数跌破20日均线且量能萎缩",
+    "宏观流动性超预期收紧"
+  ],
+  "warnings": [
+    "字节跳动消息来源置信度仅5/10，需等待官方确认",
+    "历史案例显示纯概念炒作缺乏订单支撑时易回落"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:45:27.796400",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_20260509_astock_skill_d62bea8b",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

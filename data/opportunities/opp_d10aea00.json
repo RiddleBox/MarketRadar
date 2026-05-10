@@ -1,0 +1,169 @@
+{
+  "opportunity_id": "opp_d10aea00",
+  "opportunity_title": "中东冲突能源危机",
+  "opportunity_thesis": "中东地缘冲突急剧升级，美军与伊朗在霍尔木兹海峡交火并实施海上封锁，导致全球能源运输通道受阻。进口煤炭价格飙升已出现与国内煤价倒挂，硫磺价格年内上涨80%，全球粮价连续三月上涨。这些变化对国内煤炭、化工、农业板块构成结构性利好，且市场尚未充分定价，存在预期差。\n\n【M13调研】美军封锁霍尔木兹海峡导致航运受阻，进口煤炭价格倒挂，国内煤企可能受益，但陕西煤业盈利下滑。全球粮价上涨但无直接新闻。市场未完全定价长期中断风险，但缺乏研报和行业趋势支持。风险在于冲突缓和或国内需求疲软。整体机会存在但置信度不高，需谨慎。\n\n【M13调研】中东冲突升级利好国内煤炭和农业的逻辑存在，但缺乏任何研报、新闻或基本面数据支持，信息基础薄弱。市场可能已部分定价，且冲突缓和风险高。当前置信度极低，建议观望，等待更多数据或催化剂出现。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601225.SH",
+    "600188.SH",
+    "600546.SH",
+    "000830.SZ",
+    "002601.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-07-10T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "美军5月7-8日在霍尔木兹海峡袭击伊朗民用船只并拦截油轮，伊朗武装力量全面备战，双方交火持续。同时，进口煤价倒挂、硫磺价格暴涨、全球粮价连续上涨等信号均在5月6-9日集中出现，形成多重催化剂叠加的时间窗口。",
+  "related_signals": [
+    "sig_3cf8fcf349ae",
+    "sig_0806bfd8639e",
+    "sig_8e8c4ed52bad",
+    "sig_4bdf8baa2d3a",
+    "sig_afe9eed20a0b",
+    "sig_968dbdfcd94a",
+    "sig_c03469c8ae34",
+    "sig_2e7d7516821e",
+    "sig_378c376ff8d4",
+    "sig_476a24c2a7b9",
+    "sig_755175bfd918",
+    "sig_09752e9de48e",
+    "sig_c8ad6aa39ecc",
+    "sig_b3de9b426692",
+    "sig_750e411aaff5",
+    "sig_992644367a0a",
+    "sig_1fcc386acab4",
+    "sig_9e1e9233ab36",
+    "sig_eb80de18be59",
+    "sig_82a8c461a4b6",
+    "sig_d045354f7ded",
+    "sig_926dd4b69f57",
+    "sig_bb9a9c6d60a1",
+    "sig_074e8c030441",
+    "sig_3ed518a56d14",
+    "sig_571a67c4298e",
+    "sig_5589fc51bf2b",
+    "sig_2201d7544cad",
+    "sig_70a333e7b67e",
+    "sig_debbf62cdf97",
+    "sig_ec500e4d7f22",
+    "sig_cf272f568f82",
+    "sig_adef1edef3e4",
+    "sig_279c656c4272",
+    "sig_5c4893f53a82",
+    "sig_bcbe0e0f0992",
+    "sig_5d0dab056657",
+    "sig_96e273cd5efd",
+    "sig_75b565ed3036",
+    "sig_30f065d81f86",
+    "sig_d16f96c0067c",
+    "sig_05dcba00c5e4",
+    "sig_cef8ea31a2f8",
+    "sig_211956c76085",
+    "sig_48a7c2ed9b4c",
+    "sig_860b74669ffd",
+    "sig_58f88905044b",
+    "sig_68f154d345f7",
+    "sig_99010c56b320",
+    "sig_01ce577d936b",
+    "sig_bc3c6b2f3550",
+    "sig_9e97800efd2d",
+    "sig_6b7e7d231dbd",
+    "sig_f079127c3165",
+    "sig_0fc517af075b",
+    "sig_a2e77e66c2bf",
+    "sig_068915bcbed8",
+    "sig_8469968f6630",
+    "sig_e56f3556b0af",
+    "sig_a82cb7eb4d39",
+    "sig_a23083bf8ef3"
+  ],
+  "inferred_events": [
+    "inferred_39a21e66",
+    "inferred_79768787",
+    "inferred_8547ef80",
+    "inferred_554fce4d",
+    "inferred_eae0512e",
+    "inferred_40689a02",
+    "inferred_ccb9ddea",
+    "inferred_63888094"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军在霍尔木兹海峡袭击伊朗民用船只并拦截油轮，伊朗武装力量全面备战，双方交火持续",
+    "进口煤炭价格大幅上涨，4月进口煤与国内煤价出现倒挂，部分企业转向国内采购",
+    "硫磺价格年内上涨约80%，下游钛白粉、磷肥企业成本急剧抬升",
+    "全球粮价连续第三个月上涨，受能源成本上涨和中东战事导致物流中断影响",
+    "德国3月工业产出环比下降0.7%，主因霍尔木兹海峡封锁导致能源运输受阻"
+  ],
+  "counter_evidence": [
+    "卡塔尔LNG船试图穿越霍尔木兹海峡，表明部分航运可能恢复",
+    "美联储官员释放鹰派信号，加息选项在桌面上，可能压制风险资产"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡航运受阻将持续至少2个月，不会快速恢复",
+    "假设2：国内煤炭、化工、农业板块受益于进口替代和价格上涨逻辑成立",
+    "假设3：中东冲突不会在短期内达成停火协议"
+  ],
+  "uncertainty_map": [
+    "中东冲突突然缓和或停火（影响程度：高）",
+    "国内政策干预抑制煤炭等商品价格过快上涨（影响程度：中）",
+    "全球经济衰退风险加剧，需求端萎缩抵消供给冲击（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.35000000000000003,
+    "execution_readiness": 0.65
+  },
+  "risk_reward_profile": "潜在收益：国内煤炭、化工、农业板块受益于价格上涨和进口替代，可能获得20-30%涨幅。潜在风险：中东冲突突然缓和导致商品价格回落，或国内政策干预，最大回撤约10-15%。",
+  "next_validation_questions": [
+    "霍尔木兹海峡航运受阻的具体程度和持续时间是否有官方确认？",
+    "国内煤炭、硫磺、粮食等商品价格是否继续上涨？",
+    "相关上市公司（如中国神华、陕西煤业、云天化等）近期是否有产能或订单公告？"
+  ],
+  "invalidation_conditions": [
+    "中东冲突各方达成停火协议，霍尔木兹海峡恢复通航",
+    "国内出台价格管控政策，限制煤炭等商品价格上涨",
+    "全球需求数据大幅恶化，商品价格下跌"
+  ],
+  "must_watch_indicators": [
+    "布伦特原油价格走势",
+    "国内动力煤期货价格",
+    "硫磺现货价格",
+    "霍尔木兹海峡航运通行情况"
+  ],
+  "kill_switch_signals": [
+    "中东冲突各方宣布停火并开始撤军",
+    "国内煤炭、硫磺等商品价格出现连续下跌",
+    "全球股市出现系统性暴跌，避险情绪极端化"
+  ],
+  "warnings": [
+    "注意：地缘政治事件具有高度不确定性，冲突可能突然缓和或升级",
+    "注意：部分信号来自新闻媒体，需交叉验证官方信息"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T05:53:51.835055",
+  "batch_id": "sched_signal_pipeline_20260510_055214_84c3bf_20260510_astock_skill_0cb2e31a",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

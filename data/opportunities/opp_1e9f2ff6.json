@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_1e9f2ff6",
+  "opportunity_title": "港股复苏交易",
+  "opportunity_thesis": "香港经济基本面（GDP、零售额）加速增长，住宅市场量价齐升，叠加IPO市场极度火爆（乐动机器人散户认购6707倍），显示资金正系统性回流港股。这一轮复苏并非单一事件驱动，而是宏观、地产、资本市场三重信号共振，有望带动港股整体估值修复，尤其利好券商、交易所、商业地产及本地消费龙头。当前市场尚未充分定价这一结构性变化，存在预期差。\n\n【M13调研】机会描述指出香港经济基本面、地产和资本市场三重信号共振，有望带动港股估值修复。新闻显示港股回购活跃，IPO市场火爆，资金流入迹象明显。但缺乏研报和详细基本面数据，风险因素包括外部不确定性和市场过热回调。综合来看，机会有一定合理性，但需谨慎，置信度小幅上调。\n\n【M13调研】机会描述提出香港经济、地产、资本市场三重信号共振，但新闻和基本面数据均未提供直接证据。港股回购和IPO火爆显示资金流入，但缺乏宏观数据支撑。无研报覆盖，市场共识度低。风险在于外部不确定性和市场过热回调。综合来看，机会有一定合理性但证据不足，置信度小幅下调。",
+  "target_markets": [
+    "HK"
+  ],
+  "target_instruments": [
+    "0388.HK",
+    "0688.HK",
+    "0012.HK",
+    "0016.HK",
+    "0001.HK"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "当前时点催化剂密集：1）乐动机器人IPO创下6707倍散户认购记录，显示市场情绪极度亢奋；2）香港一季度GDP和零售额数据加速增长，经济基本面确认复苏；3）住宅市场量价齐升，去化周期进入乐观区间，地产复苏信号明确。三重信号在5月上旬集中释放，形成共振窗口。",
+  "related_signals": [
+    "sig_69fe289e4fee",
+    "sig_4ef836f98ad7",
+    "sig_423c7cb04845",
+    "sig_b0c897ac9682"
+  ],
+  "inferred_events": [
+    "inferred_07e1c606",
+    "inferred_1c9d2053",
+    "inferred_e45d6e85",
+    "inferred_7219ca0a",
+    "inferred_79640aa9",
+    "inferred_1eb087dc",
+    "inferred_a54aa0bc",
+    "inferred_d0860aad"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "乐动机器人香港IPO散户认购6707倍，国际配售9.54倍，显示资金极度追捧港股新股",
+    "2026年第一季度香港GDP和零售额同比加速增长，经济复苏确认",
+    "2026年4月香港住宅市场延续量价齐升，去化周期进入乐观区间",
+    "港股IPO延续火热，有望加速商业地产租金及整体房地产市场复苏"
+  ],
+  "counter_evidence": [
+    "中东地缘冲突可能扰动全球资金流向，避险情绪或压制港股",
+    "港股估值修复已部分反映在近期涨幅中，短期追高风险存在"
+  ],
+  "key_assumptions": [
+    "假设1：香港经济复苏趋势可持续，GDP和零售额增长不会在二季度逆转",
+    "假设2：IPO火爆反映的是结构性资金回流，而非短期投机情绪",
+    "假设3：住宅市场量价齐升不会触发新的调控政策"
+  ],
+  "uncertainty_map": [
+    "地缘政治风险（中东冲突升级）对全球资金流向的影响程度：高",
+    "美联储货币政策转向节奏对港股流动性的影响程度：中",
+    "香港本地政策（如印花税、楼市调控）变化的不确定性：中"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：港股估值修复叠加资金流入，券商/交易所/商业地产龙头有望获得10-20%涨幅。风险：地缘冲突或经济数据不及预期可能导致5-10%回撤。风险收益比约2:1。",
+  "next_validation_questions": [
+    "香港4月零售额数据是否延续一季度增长趋势？",
+    "后续IPO（如已递表的公司）认购倍数是否维持高位？",
+    "香港住宅成交量在5月是否继续环比增长？"
+  ],
+  "invalidation_conditions": [
+    "香港GDP或零售额数据连续两个月环比下滑",
+    "港股IPO认购倍数骤降至10倍以下",
+    "中东地缘冲突导致全球股市系统性下跌"
+  ],
+  "must_watch_indicators": [
+    "香港月度零售额同比增速",
+    "港股IPO认购倍数及上市首日涨幅",
+    "香港住宅月度成交量及价格指数",
+    "恒生指数成交额及南向资金净流入"
+  ],
+  "kill_switch_signals": [
+    "香港政府出台新的楼市降温政策",
+    "美联储意外加息或鹰派转向",
+    "港股单日成交额萎缩至1000亿港元以下"
+  ],
+  "warnings": [
+    "信号来源均为新闻和宏观数据，非官方内幕信息",
+    "港股短期涨幅已部分反映复苏预期，需警惕获利回吐"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T12:05:24.024672",
+  "batch_id": "sched_signal_pipeline_20260509_110458_103b7e_20260509_astock_skill_fb9676c1",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

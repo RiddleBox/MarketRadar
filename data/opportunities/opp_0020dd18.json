@@ -1,0 +1,108 @@
+{
+  "opportunity_id": "opp_0020dd18",
+  "opportunity_title": "地缘分化避险",
+  "opportunity_thesis": "俄乌停火缓和全球风险偏好，但中东冲突升级（美伊交火、油轮拦截）持续推高地缘风险溢价，形成‘东稳西乱’的分化格局。国内黄金ETF一季度增仓114.88%、金条金币消费量同比增46.40%，显示资金已提前布局避险资产。当前时点，俄乌停火短期压制黄金避险需求，但中东风险未消且黄金实物需求强劲，黄金板块具备结构性配置机会。\n\n【M13调研】黄金板块受益于资金增配、业绩高增及宽松预期，结构性上涨动力充足。但缺乏研报验证，且金价高位存在回调风险。综合来看，机会可信度较高，建议关注黄金ETF及龙头个股。\n\n【M13调研】机会描述声称美军袭击伊朗并导致霍尔木兹海峡交火升级，但最近20条新闻中无任何相关报道，仅包含公司公告、行业数据等无关内容。研报和行业趋势数据为空。基本面数据为空。因此，该机会缺乏事实依据，存在重大利空（虚假信息风险）。建议忽略此机会，避免投资决策失误。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600489.SH",
+    "601899.SH",
+    "002155.SZ",
+    "600547.SH",
+    "000975.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "俄乌停火三天（5月9日起）短期压制黄金避险情绪，但中东冲突（美伊交火、油轮拦截）持续升级，且国内黄金ETF一季度增仓114.88%、金条金币消费量同比增46.40%，显示资金已提前布局。当前黄金板块回调或提供入场窗口，中东风险未消且实物需求强劲，构成短期配置机会。",
+  "related_signals": [
+    "sig_2cf7a78fa7a2",
+    "sig_73b1a2dad8ea",
+    "sig_2f2701927414",
+    "sig_0fe6119e9b8e"
+  ],
+  "inferred_events": [
+    "inferred_6eefcb33",
+    "inferred_42c2e269",
+    "inferred_6db5b131",
+    "inferred_6d0c487c",
+    "inferred_68168fc0"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "俄乌停火三天并交换战俘，短期缓和全球风险偏好，但中东冲突（美伊交火、油轮拦截）持续升级，地缘风险分化。",
+    "国内黄金ETF一季度增仓50.438吨，同比增114.88%，持仓量创阶段新高。",
+    "一季度金条金币消费量202.062吨，同比增46.40%，投资性需求强劲。",
+    "相似历史案例case_2024_geopolitical显示，地缘风险爆发后黄金是短期避险首选，15天内完成避险交易。"
+  ],
+  "counter_evidence": [
+    "俄乌停火若持续延长，可能进一步压制黄金避险需求。",
+    "黄金首饰消费量同比降37.10%，显示消费端疲软，可能拖累整体需求。"
+  ],
+  "key_assumptions": [
+    "假设1：中东冲突不会在短期内快速缓和。",
+    "假设2：国内黄金ETF增仓趋势不会因俄乌停火而逆转。",
+    "假设3：全球通胀预期未因停火而大幅回落。"
+  ],
+  "uncertainty_map": [
+    "中东冲突升级程度（影响程度：高）",
+    "俄乌停火是否延长（影响程度：中）",
+    "美联储货币政策转向（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 7.0,
+    "confidence_score": 0.26,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：中东冲突升级推动黄金板块上涨10-15%；潜在风险：俄乌停火延长或中东缓和导致黄金回调5-8%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "中东冲突是否有进一步升级的具体事件（如霍尔木兹海峡封锁）？",
+    "俄乌停火是否可能延长至三天以上？",
+    "国内黄金ETF近期持仓是否继续增长？"
+  ],
+  "invalidation_conditions": [
+    "中东冲突出现明确缓和信号（如美伊谈判）。",
+    "俄乌停火延长至一周以上且无新冲突。",
+    "黄金价格跌破关键支撑位（如沪金主力合约跌破550元/克）。"
+  ],
+  "must_watch_indicators": [
+    "沪金主力合约价格走势",
+    "国内黄金ETF持仓量变化",
+    "中东冲突相关新闻（美伊、霍尔木兹海峡）",
+    "俄乌停火进展"
+  ],
+  "kill_switch_signals": [
+    "中东冲突快速缓和（如美伊达成临时协议）。",
+    "俄乌停火延长且中东无新冲突，避险情绪全面消退。",
+    "黄金ETF出现连续大额赎回。"
+  ],
+  "warnings": [
+    "俄乌停火为短期事件，若延长可能持续压制黄金避险需求。",
+    "黄金板块已部分反映避险预期，追高需谨慎。"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:46:29.801116",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_20260509_astock_skill_d62bea8b",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

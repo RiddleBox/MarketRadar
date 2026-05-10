@@ -1,0 +1,113 @@
+{
+  "opportunity_id": "opp_2441e794",
+  "opportunity_title": "宽松加码博弈复苏",
+  "opportunity_thesis": "央行连续降准降息（降准0.5%+降逆回购利率10bp）释放万亿流动性，但经济数据（PMI连续3月收缩、CPI/PPI负值）显示通缩压力未减。市场预期后续仍有宽松政策，短期流动性驱动估值修复，但基本面疲弱压制反弹空间，机会在于博弈政策加码与情绪修复的阶段性窗口。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "600519.SH",
+    "000858.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-25T00:00:00",
+    "end": "2026-05-25T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "降准降息已落地，市场对后续宽松预期升温，但经济数据疲弱尚未充分定价，当前是政策底与市场底之间的博弈窗口。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_e39115aa3077",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203",
+    "sig_7298dda97ec7",
+    "sig_6030bb0be882"
+  ],
+  "inferred_events": [
+    "inferred_8e063140",
+    "inferred_31846bc5",
+    "inferred_757d6371",
+    "inferred_71ae8c9f",
+    "inferred_01abe7f2",
+    "inferred_34471920",
+    "inferred_bfed39e8"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5%释放约1万亿长期资金，逆回购利率下调10bp至1.7%，流动性显著改善",
+    "制造业PMI连续3个月低于荣枯线，CPI/PPI负值，通缩压力倒逼政策加码",
+    "央行行长表态适时降准，市场预期后续仍有降息空间"
+  ],
+  "counter_evidence": [
+    "经济基本面疲弱，企业盈利改善需时间，单纯流动性难以驱动持续上涨",
+    "历史案例显示降息后地产股反弹乏力，需基本面配合"
+  ],
+  "key_assumptions": [
+    "假设1：后续1个月内央行至少再降准或降息一次",
+    "假设2：通缩压力未进一步恶化，CPI/PPI不再大幅下行"
+  ],
+  "uncertainty_map": [
+    "政策力度不及预期（影响程度：高）",
+    "经济数据持续恶化，市场信心崩溃（影响程度：高）",
+    "地缘冲突升级引发避险情绪（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 7,
+    "overall_score": 6.7,
+    "confidence_score": 0.29999999999999993,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：流动性驱动估值修复，指数反弹5-10%；潜在风险：经济数据恶化或政策不及预期，指数下跌3-5%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "后续1周内是否有更多宽松信号（如MLF利率下调）？",
+    "4月PMI数据是否企稳或回升？",
+    "北向资金是否持续流入？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "4月PMI跌破48或CPI同比降幅扩大至0.5%以上",
+    "市场出现系统性风险事件（如信用违约潮）"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率",
+    "4月制造业PMI",
+    "北向资金净流入/流出",
+    "10年期国债收益率"
+  ],
+  "kill_switch_signals": [
+    "央行意外收紧流动性（如正回购）",
+    "PMI跌破48且无企稳迹象",
+    "地缘冲突导致全球股市暴跌"
+  ],
+  "warnings": [
+    "注意：经济基本面疲弱，反弹可能为短期情绪驱动，需严格止损",
+    "注意：历史案例显示降息后地产板块反弹乏力，需精选标的"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T19:42:18.859038",
+  "batch_id": "sched_signal_pipeline_20260509_194006_9160d7_20260509_astock_skill_064d8bc0",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

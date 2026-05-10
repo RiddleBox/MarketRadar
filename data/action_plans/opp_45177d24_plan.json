@@ -1,0 +1,71 @@
+{
+  "plan_id": "plan_d6f8973a2af8",
+  "opportunity_id": "opp_45177d24",
+  "plan_summary": "BULLISH | 601857.SH, 600028.SH",
+  "primary_instruments": [
+    "601857.SH",
+    "600028.SH",
+    "600188.SH",
+    "601088.SH",
+    "600026.SH"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "以布伦特原油期货收盘价跌破78美元/桶为全局止损信号"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "基于冲突升级至全面战争情景的估值上沿"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入上述5只品种，每只分配总仓位的4%（合计20%仓位）。使用限价单，买入价为触发条件当日收盘价+0.5%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "布伦特原油期货突破85美元/桶，且A股能源板块指数当日涨幅>2%且放量"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总仓位50%。每只品种再买入总仓位的6%（合计30%仓位）。使用市价单，在Phase 1浮盈达标后次日开盘买入",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1持仓浮盈达到8%，且布伦特原油期货维持在85美元/桶以上，且霍尔木兹海峡航运保险附加费持续高于0.5%"
+    },
+    {
+      "phase_name": "Phase 3 极限仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总仓位70%。每只品种再买入总仓位的4%（合计20%仓位）。使用市价单，在条件触发后1小时内完成买入",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 2持仓浮盈达到12%，且布伦特原油期货突破90美元/桶，且伊朗革命卫队正式开火（新闻确认）"
+    }
+  ],
+  "valid_until": "2026-05-31T07:56:56.977621",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T07:56:56.977720",
+  "opportunity_priority": "research"
+}

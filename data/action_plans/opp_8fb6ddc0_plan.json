@@ -1,0 +1,63 @@
+{
+  "plan_id": "plan_238af14393c4",
+  "opportunity_id": "opp_8fb6ddc0",
+  "plan_summary": "BULLISH | 601857.SH, 600028.SH",
+  "primary_instruments": [
+    "601857.SH",
+    "600028.SH",
+    "600026.SH",
+    "601872.SH",
+    "600688.SH"
+  ],
+  "instrument_type": "ETF",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 5.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破60日均线或布伦特原油回落至80美元/桶以下"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 10.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "目标价10.5元（基于冲突升级至120美元/桶油价的估值）"
+  },
+  "position_sizing": {
+    "suggested_allocation": "8.0%",
+    "max_allocation": "不超过8.0%",
+    "sizing_rationale": "优先级=urgent | 风险预算=8% | 止损=5.0% | 仓位=风险预算/止损=8.0%",
+    "suggested_allocation_pct": 0.08,
+    "max_allocation_pct": 0.08
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入601857.SH，仓位为总资金的20%（上限30%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "布伦特原油突破85美元/桶且石油板块放量上涨3%"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总资金的50%（累计仓位不超过50%），若Phase 1浮亏超过5%则取消加仓计划",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1浮盈超过8%，且布伦特原油站稳90美元/桶，且霍尔木兹海峡通行量下降超过30%持续3天"
+    }
+  ],
+  "valid_until": "2026-05-17T10:48:58.083415",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "7天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T10:48:58.083556",
+  "opportunity_priority": "urgent"
+}

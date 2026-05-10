@@ -1,0 +1,111 @@
+{
+  "opportunity_id": "opp_b0c772d8",
+  "opportunity_title": "人形机器人AI双主线",
+  "opportunity_thesis": "人形机器人与AI应用板块在2026年5月8日出现集体放量突破，多只龙头创历史新高，且沪深两市成交额突破1.5万亿，市场情绪贪婪但尚未极端，资金持续涌入。这构成一个短期强势主升浪机会，核心驱动力是技术突破叠加资金共识，但需警惕情绪过热后的回调风险。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】机会描述声称AI算力与应用板块在政策、龙头、业绩三重催化下爆发，但新闻和研报均未直接验证。新闻中科技主题ETF上涨，但无AI板块具体报道；科大讯飞一季报亏损构成利空；无研报覆盖；基本面数据为空。风险在于政策落地不确定性和市场过热。综合判断，该机会缺乏可靠证据，置信度低，建议谨慎观望。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "002230.SZ",
+    "600536.SH",
+    "300033.SZ",
+    "002415.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-05-22T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "当前时点，人形机器人概念股（绿的谐波创历史新高、巨轮智能2连板）与AI应用板块（中国软件涨停、软件ETF资金净流入）同时放量突破，叠加沪深两市成交额突破1.5万亿，市场情绪贪婪但未到极端（恐贪指数67），资金共识形成，短期主升浪窗口打开。",
+  "related_signals": [
+    "sent_afb94f7676ae",
+    "sig_cc33dd52b601",
+    "sig_de9b85fe30aa",
+    "sig_41c9d0ac13e2",
+    "sig_a1a728ae8eed"
+  ],
+  "inferred_events": [
+    "inferred_cd9eedae",
+    "inferred_cd8eb77a",
+    "inferred_301dbdce",
+    "inferred_8ff5c7af",
+    "inferred_dab56280",
+    "inferred_1d45d709"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "绿的谐波盘中涨超15%创历史新高，人形机器人概念股集体涨停",
+    "AI应用板块开盘走高，中国软件涨停，软件ETF单日净流入近800万",
+    "沪深两市成交额突破1.5万亿，市场交易活跃度显著提升",
+    "恐贪指数67处于贪婪区间，但未到80以上极端水平，仍有上行空间"
+  ],
+  "counter_evidence": [
+    "相似历史案例显示，技术突破缺乏商业化订单支撑时，概念炒作易回落",
+    "推理事件显示A股市场短期回调风险增加（概率65%），情绪过热可能引发获利了结"
+  ],
+  "key_assumptions": [
+    "假设1：人形机器人和AI应用板块的上涨有基本面或政策催化支撑，而非纯概念炒作",
+    "假设2：市场成交额能维持在1.5万亿以上，资金持续流入",
+    "假设3：市场情绪不会快速从贪婪转为极度贪婪（恐贪指数≥80）引发回调"
+  ],
+  "uncertainty_map": [
+    "板块上涨持续性不确定，若缺乏订单或业绩验证，可能快速回落（影响程度：高）",
+    "市场整体回调风险增加，若指数走弱可能拖累板块（影响程度：中）",
+    "情绪指标恐贪指数已接近贪婪区间上沿，若继续攀升可能触发获利了结（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 5,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.29999999999999993,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：短期主升浪延续，龙头股可能继续上涨10%-20%；潜在风险：情绪过热后回调，跌幅可达5%-10%，止损点可设在板块5日均线或成交额跌破1.2万亿。",
+  "next_validation_questions": [
+    "人形机器人和AI应用板块是否有新的政策或订单催化？",
+    "沪深两市成交额能否在后续交易日维持在1.5万亿以上？",
+    "恐贪指数是否会快速升至80以上？"
+  ],
+  "invalidation_conditions": [
+    "沪深两市成交额连续两日低于1.2万亿",
+    "人形机器人或AI应用板块出现集体跌停或龙头股放量下跌",
+    "恐贪指数升至80以上且北向资金转为净流出"
+  ],
+  "must_watch_indicators": [
+    "沪深两市成交额",
+    "恐贪指数",
+    "绿的谐波、中国软件等龙头股走势",
+    "北向资金流向"
+  ],
+  "kill_switch_signals": [
+    "板块内多只个股从涨停翻绿",
+    "成交额骤降至1万亿以下",
+    "恐贪指数突破85"
+  ],
+  "warnings": [
+    "注意：当前上涨部分基于情绪和资金推动，基本面验证不足，需警惕概念炒作风险",
+    "相似历史案例显示，缺乏订单支撑的技术突破概念易在25天内回落"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T10:32:13.341419",
+  "batch_id": "sched_signal_pipeline_20260509_051555_1189ae_20260509_astock_skill_de24da73",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

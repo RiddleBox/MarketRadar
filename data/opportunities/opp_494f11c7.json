@@ -1,0 +1,109 @@
+{
+  "opportunity_id": "opp_494f11c7",
+  "opportunity_title": "黄金投资需求激增",
+  "opportunity_thesis": "2026年一季度国内黄金ETF持仓量同比暴增114.88%，金条金币消费量同比大增46.40%，显示投资性需求取代消费性需求成为黄金市场核心驱动力。央行降准降息释放流动性、中东地缘冲突升级预期强化避险逻辑，黄金板块具备结构性上涨机会。\n\n【M13调研】黄金板块受益于资金增配、业绩高增及宽松预期，结构性上涨动力充足。但缺乏研报验证，且金价高位存在回调风险。综合来看，机会可信度较高，建议关注黄金ETF及龙头个股。\n\n【M13调研】该机会描述的地缘冲突事件在最近新闻、研报和基本面数据中均无任何证实，属于虚假信息。市场未定价该事件是合理的，因为事件并未发生。投资者应避免基于此机会进行任何投资决策，以免遭受损失。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600489.SH",
+    "600547.SH",
+    "601899.SH",
+    "002155.SZ",
+    "000975.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "一季度数据刚发布（5月9日），市场尚未充分定价；央行降准降息释放流动性（概率85%），中东地缘冲突升级预期（概率70%）强化避险需求，当前时点催化剂密集。",
+  "related_signals": [
+    "sig_2f2701927414",
+    "sig_0fe6119e9b8e",
+    "sig_9795ddba3bac"
+  ],
+  "inferred_events": [
+    "inferred_a3f4ac46",
+    "inferred_70a13652",
+    "inferred_35bc1165",
+    "inferred_adf2ea0d",
+    "inferred_e25615c5",
+    "inferred_45fac2ea"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "国内黄金ETF一季度增仓50.438吨，同比增长114.88%，持仓量创阶段新高",
+    "金条金币消费量同比增长46.40%，投资需求强劲",
+    "央行降准降息释放流动性，实际利率下行利好黄金",
+    "中东地缘冲突升级预期（概率70%），避险情绪升温"
+  ],
+  "counter_evidence": [
+    "黄金首饰消费量同比下降37.10%，消费端疲软可能压制金价上行空间",
+    "恐贪指数67处于贪婪区间，市场情绪已部分定价"
+  ],
+  "key_assumptions": [
+    "假设1：央行进一步降准降息在2周内落地",
+    "假设2：中东地缘冲突不会快速缓和",
+    "假设3：全球通胀预期未显著回落"
+  ],
+  "uncertainty_map": [
+    "中东冲突缓和速度（影响程度：高）",
+    "美联储货币政策转向节奏（影响程度：中）",
+    "国内黄金ETF持仓持续性（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.29000000000000004,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：黄金ETF及龙头股在催化剂兑现下有望上涨10%-15%；风险：地缘冲突缓和或央行宽松不及预期可能导致回调5%-8%，止损点明确。",
+  "next_validation_questions": [
+    "国内黄金ETF持仓量在4月是否继续增长？",
+    "央行降准降息具体落地时间？",
+    "中东冲突是否有进一步升级信号？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "中东地缘冲突显著缓和",
+    "黄金ETF持仓连续两周净流出"
+  ],
+  "must_watch_indicators": [
+    "国内黄金ETF每日持仓变化",
+    "COMEX黄金期货价格走势",
+    "央行公开市场操作信号",
+    "中东地缘冲突新闻"
+  ],
+  "kill_switch_signals": [
+    "黄金ETF持仓连续3日净流出",
+    "央行收紧流动性信号",
+    "中东冲突达成停火协议"
+  ],
+  "warnings": [
+    "注意：黄金首饰消费大幅下滑，消费端疲软可能限制金价涨幅",
+    "注意：恐贪指数67处于贪婪区间，短期追高风险较大"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:28:57.035476",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_20260509_astock_skill_65c07d40",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

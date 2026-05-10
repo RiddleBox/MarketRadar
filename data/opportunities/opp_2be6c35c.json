@@ -1,0 +1,119 @@
+{
+  "opportunity_id": "opp_2be6c35c",
+  "opportunity_title": "AI算力链景气确认",
+  "opportunity_thesis": "AI算力需求爆发叠加产业链龙头业绩持续超预期（中际旭创市值破万亿、新易盛净利增76.8%、某半导体龙头预增150%-180%），且资金从消费地产持续流入半导体/新能源板块，形成基本面+资金面共振。服务器CPU缺货涨价、巨头加速布局ASIC芯片进一步强化产业链景气度，当前处于业绩验证后的主升浪初期，预期差仍存。\n\n【M13调研】该机会描述缺乏实际数据支撑，最近20条新闻中仅胜宏科技一季报相关，无光模块其他公司、半导体龙头、政策催化或资金流向的报道。研报缺失，行业趋势无搜索结果。关键发现显示信息不实风险高，风险因素包括数据无法验证、政策催化缺失、资金流向不明。未发现重大利空，但置信度极低，调整-0.3。综合评估为不可靠机会。\n\n【M13调研】该机会描述缺乏实际数据支撑，关键业绩数据和资金流向均无法在最近20条新闻或研报中验证。仅长电科技一季报净利润增长42.74%部分相关，但产能利用率未提及。无政策催化或行业趋势报道，整体信息不实风险高。未发现重大利空，但置信度极低，综合评估为不可靠机会，建议规避。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300476.SZ",
+    "600584.SH",
+    "688981.SH",
+    "002371.SZ",
+    "688008.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-07-10T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "中际旭创市值突破万亿、新易盛一季报高增、某半导体龙头Q1预增150%-180%等密集业绩验证信号集中在4月下旬至5月上旬，叠加资金轮动信号确认，市场对AI算力链的认知从'概念炒作'转向'业绩兑现'，当前是业绩验证后的主升浪初期窗口。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f",
+    "sig_e8ba30264edb",
+    "sig_14d75f807b3c",
+    "sig_de1c0bc2bee5",
+    "sig_c37fb23fb71a",
+    "sig_7cfae5a1c6bb"
+  ],
+  "inferred_events": [
+    "inferred_83eddb1e",
+    "inferred_72c08007",
+    "inferred_cc7b0032",
+    "inferred_62cb07cd",
+    "inferred_63f8c652",
+    "inferred_1ecfe7b3",
+    "inferred_a3a6ceaf",
+    "inferred_de883ec1"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，标志性里程碑",
+    "新易盛一季报净利润增长76.8%，业绩强劲",
+    "某半导体龙头Q1预增150%-180%，AI芯片需求爆发",
+    "胜宏科技1.6T光模块产能利用率良好",
+    "长电科技产能利用率超80%，固定资产投资预算100亿元",
+    "服务器CPU缺货涨价，AI算力需求持续爆发",
+    "资金从消费地产流向新能源/半导体"
+  ],
+  "counter_evidence": [
+    "恐贪指数处于贪婪区间（67），市场情绪过热可能引发短期回调",
+    "历史案例显示技术突破需商业化验证，当前部分标的估值已较高"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，未出现需求拐点",
+    "假设2：产业链公司产能扩张顺利，未出现重大供应链中断",
+    "假设3：市场情绪维持积极，未出现系统性风险事件"
+  ],
+  "uncertainty_map": [
+    "最大不确定性1：AI算力需求增速放缓或出现技术路线替代（影响程度：高）",
+    "不确定性2：地缘政治风险导致供应链中断或出口限制（影响程度：中）",
+    "不确定性3：市场整体回调风险，恐贪指数偏高可能引发获利了结（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.18000000000000005,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI算力链业绩持续超预期，龙头股有望继续上涨20%-30%；潜在风险：需求拐点或市场回调导致回撤10%-15%，止损点可设在关键支撑位下方。",
+  "next_validation_questions": [
+    "1. 中际旭创、新易盛等龙头后续订单和产能指引是否持续超预期？",
+    "2. 半导体板块整体资金流入是否持续，是否有增量资金入场？",
+    "3. 服务器CPU缺货涨价是否进一步扩散至其他环节？"
+  ],
+  "invalidation_conditions": [
+    "AI算力需求出现明显放缓信号，如主要客户削减资本开支",
+    "产业链公司业绩不及预期或出现重大负面事件",
+    "市场整体出现系统性风险，资金大幅流出科技板块"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛后续季报/订单数据",
+    "半导体板块资金流向及成交量变化",
+    "服务器CPU价格及供需状况",
+    "恐贪指数是否进入极度贪婪区间（≥80）"
+  ],
+  "kill_switch_signals": [
+    "龙头公司业绩预告不及预期或下调指引",
+    "AI算力需求出现技术路线替代或需求拐点",
+    "市场整体出现恐慌性抛售，资金大幅流出"
+  ],
+  "warnings": [
+    "注意：部分信号来源为新闻，非官方公告，需核实具体数据",
+    "注意：恐贪指数处于贪婪区间，短期回调风险不可忽视"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T17:28:24.233880",
+  "batch_id": "sched_signal_pipeline_20260509_163638_e0e39c_20260509_astock_skill_c7c99d5a",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

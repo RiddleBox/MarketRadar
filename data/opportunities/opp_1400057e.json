@@ -1,0 +1,116 @@
+{
+  "opportunity_id": "opp_1400057e",
+  "opportunity_title": "欧洲军备扩张机遇",
+  "opportunity_thesis": "俄乌冲突反复但停火谈判仍在推进，欧洲安全焦虑持续上升，波兰率先获得欧盟437亿欧元国防贷款，标志着欧洲军备扩张进入实质性阶段。这一结构性变化将直接利好全球军工产业链，尤其是与欧洲防务需求相关的A股军工企业。当前市场对欧洲军备长期化的定价尚不充分，存在预期差。\n\n【M13调研】机会描述基于俄乌冲突缓和及欧盟国防贷款，但最近20条新闻无相关报道，研报和行业趋势分析缺失，基本面数据为空。关键事件真实性存疑，市场预期差缺乏依据。风险在于信息可能过时或虚假，且无数据支撑投资决策。综合评估，该机会置信度低，建议谨慎对待。\n\n【M13调研】该机会描述的核心事件（俄乌冲突缓和、欧盟国防贷款）在最近20条新闻、研报、基本面数据和行业趋势中均无任何佐证，信息真实性存疑。市场预期差缺乏数据支撑，风险极高。建议放弃该机会，避免基于未经验证的信息进行投资。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600760.SH",
+    "600893.SH",
+    "600185.SH",
+    "600391.SH",
+    "600862.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-08-10T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "波兰与欧盟签署首个国防贷款协议（437亿欧元）是欧洲军备扩张从表态到落地的关键转折点，叠加俄乌停火谈判反复（停火三天后谈判暂停），欧洲安全威胁感知短期难以消退，军备投入将持续加码。",
+  "related_signals": [
+    "sig_c03469c8ae34",
+    "sig_2cf7a78fa7a2",
+    "sig_f0f177c18de5",
+    "sig_495622dbc368",
+    "sig_73b1a2dad8ea",
+    "sig_09328c6024f4",
+    "sig_2be51ac7a68e",
+    "sig_6b7e7d231dbd"
+  ],
+  "inferred_events": [
+    "inferred_a4b14e43",
+    "inferred_e142fe63",
+    "inferred_8db359d7",
+    "inferred_abe9b5cd",
+    "inferred_617c5d9e",
+    "inferred_6d664afb",
+    "inferred_01e697a5",
+    "inferred_1abee75b",
+    "inferred_1b67963e",
+    "inferred_592ca8b7"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "波兰获欧盟437亿欧元国防贷款，为19个参与国中首个签署协议的国家，示范效应强",
+    "俄乌冲突反复：停火三天后谈判暂停，普京升级对抗性表述，欧洲安全威胁持续",
+    "德国工业产出因能源问题连续下滑，欧洲对安全自主的需求上升"
+  ],
+  "counter_evidence": [
+    "俄乌停火谈判虽反复但仍在进行，若达成长期停火可能削弱军备扩张逻辑",
+    "匈牙利新总理当选，其政策方向可能影响欧盟内部对国防贷款的一致性"
+  ],
+  "key_assumptions": [
+    "假设1：欧盟其他18个参与国将陆续签署类似国防贷款协议，欧洲军备扩张趋势确立",
+    "假设2：俄乌冲突维持当前紧张但可控状态，不会快速全面升级或彻底和解",
+    "假设3：中国军工企业能通过直接出口或供应链参与欧洲防务需求"
+  ],
+  "uncertainty_map": [
+    "欧洲军备扩张的实际执行速度和规模（影响程度：高）",
+    "中国军工企业参与欧洲市场的政策壁垒（影响程度：中）",
+    "俄乌冲突走向对军备逻辑的冲击（影响程度：高）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 7,
+    "overall_score": 6.7,
+    "confidence_score": 0.06,
+    "execution_readiness": 0.65
+  },
+  "risk_reward_profile": "潜在收益：欧洲军备扩张若持续，军工板块估值修复+业绩预期上调，龙头股有20-30%上行空间。潜在风险：俄乌快速和解或欧洲财政紧缩导致军备投入不及预期，下行风险约10-15%。",
+  "next_validation_questions": [
+    "欧盟其他参与国（如德国、法国）何时签署国防贷款协议？",
+    "A股军工企业（如中航沈飞、航发动力）是否有欧洲订单或合作公告？",
+    "当前军工板块估值和机构持仓水平如何？是否处于历史低位？"
+  ],
+  "invalidation_conditions": [
+    "俄乌达成长期停火协议并开始撤军",
+    "欧盟主要国家（如德国）公开反对或推迟国防贷款计划",
+    "A股军工板块出现系统性利空（如军费预算大幅削减）"
+  ],
+  "must_watch_indicators": [
+    "欧盟其他参与国签署国防贷款协议的进度",
+    "俄乌谈判进展及停火执行情况",
+    "A股军工龙头（中航沈飞、航发动力）的订单公告",
+    "军工ETF资金流向"
+  ],
+  "kill_switch_signals": [
+    "俄乌宣布全面停火并启动和平谈判",
+    "欧盟宣布暂停或缩减'欧洲安全行动'计划",
+    "A股军工板块出现连续放量下跌"
+  ],
+  "warnings": [
+    "注意：当前信号中俄乌冲突反复，停火与对抗信号交织，需警惕短期情绪波动",
+    "注意：中国军工企业参与欧洲市场的实际路径尚不明确，需验证"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:41:35.774501",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_20260509_astock_skill_c9c69eb9",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

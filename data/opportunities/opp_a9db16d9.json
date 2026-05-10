@@ -1,0 +1,108 @@
+{
+  "opportunity_id": "opp_a9db16d9",
+  "opportunity_title": "逆周期宽松交易",
+  "opportunity_thesis": "央行降准降息组合拳落地，叠加PMI、CPI、PPI持续疲软，确认经济处于下行周期，政策宽松空间进一步打开。市场对宽松的定价尚不充分，尤其是银行、地产等利率敏感板块存在估值修复机会。当前是布局逆周期调节受益品种的窗口期。\n\n【M13调研】地产龙头保利发展净利润暴跌79%，而银行券商一季报普遍增长，广发证券净利润增长超70%，市场资金从地产流向金融板块，形成明确的行业轮动和避险交易机会。当前一季报密集披露，业绩分化信号集中释放，预期差尚未完全price-in。风险在于地产持续恶化可能拖累银行资产质量，且轮动可能已部分反映。整体机会逻辑清晰，但缺乏研报和行业趋势数据支持，置信度中等偏上。\n\n【M13调研】机会逻辑基于通缩与政策对冲的预期差及行业轮动，但验证后缺乏研报、行业趋势和基本面数据支持。新闻中仅建设银行一季报增长3.53%提供微弱正面信号，地产风险未消除。置信度由中等偏上下调至中等偏低，建议谨慎参与，需等待更多数据或研报确认。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601398.SH",
+    "601939.SH",
+    "600036.SH",
+    "000002.SZ",
+    "600048.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-18T00:00:00",
+    "end": "2026-05-18T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "降准降息已落地，PMI连续3个月低于荣枯线、CPI/PPI负增长确认经济疲软，政策宽松预期与基本面恶化形成共振，市场尚未充分定价后续进一步宽松（如LPR下调）的可能性。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203"
+  ],
+  "inferred_events": [
+    "inferred_6eefcb33",
+    "inferred_42c2e269",
+    "inferred_6db5b131",
+    "inferred_6d0c487c",
+    "inferred_68168fc0"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行下调存款准备金率0.5个百分点，释放长期流动性约1万亿元",
+    "7天逆回购利率下调10bp至1.7%，降低银行负债成本",
+    "制造业PMI连续3个月低于50荣枯线，经济下行压力明确",
+    "CPI同比下降0.3%，PPI同比下降2.7%，通缩压力加大"
+  ],
+  "counter_evidence": [
+    "降准降息已被市场部分预期，利好落地后可能引发获利了结",
+    "地产行业基本面仍弱，单纯政策宽松难以扭转销售和投资下滑趋势"
+  ],
+  "key_assumptions": [
+    "假设1：后续LPR利率将跟随下调，进一步降低实体融资成本",
+    "假设2：经济数据短期内不会大幅恶化，避免系统性风险爆发"
+  ],
+  "uncertainty_map": [
+    "后续宽松力度不及预期（影响程度：高）",
+    "地产风险事件超预期爆发（影响程度：中）",
+    "外部地缘冲突升级导致避险情绪压制A股（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 6.9,
+    "confidence_score": 0.6199999999999999,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：银行股估值修复10-15%，地产股反弹5-10%；潜在风险：宽松不及预期或经济数据恶化导致下跌5-8%。风险收益比约1.5:1。",
+  "next_validation_questions": [
+    "LPR报价是否会在近期下调？",
+    "4月PMI数据是否继续低于50？",
+    "银行间市场利率（DR007）是否持续下行？"
+  ],
+  "invalidation_conditions": [
+    "LPR报价未下调，且央行未释放进一步宽松信号",
+    "PMI回升至50以上，经济企稳信号出现",
+    "CPI转正，通缩压力缓解"
+  ],
+  "must_watch_indicators": [
+    "LPR报价（1年期/5年期）",
+    "DR007利率走势",
+    "4月制造业PMI终值",
+    "银行板块成交量变化"
+  ],
+  "kill_switch_signals": [
+    "央行公开市场操作净回笼资金，收紧流动性",
+    "地产龙头股出现债务违约或评级下调",
+    "A股单日跌幅超3%且成交量放大"
+  ],
+  "warnings": [
+    "注意：降准降息利好已被部分定价，需警惕利好兑现后的回调风险",
+    "注意：地产行业基本面尚未改善，政策传导存在时滞"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:44:10.313779",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_20260509_astock_skill_d62bea8b",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

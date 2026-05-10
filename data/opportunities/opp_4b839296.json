@@ -1,0 +1,116 @@
+{
+  "opportunity_id": "opp_4b839296",
+  "opportunity_title": "中东冲突避险交易",
+  "opportunity_thesis": "美军袭击伊朗民用船只及霍尔木兹海峡持续交火，标志着中东地缘冲突从局部摩擦升级为全面对抗。海峡通行受阻直接推升全球能源与航运成本，同时带动粮价连续上涨，形成通胀压力。市场尚未完全定价冲突长期化风险，短期避险情绪将驱动原油、黄金及航运板块上涨，而股市整体承压。\n\n【M13调研】机会描述与新闻事实完全脱节：最近20条新闻均为A股公司日常公告，无任何关于霍尔木兹海峡冲突、伊朗油轮拦截或能源供应中断的报道。基本面数据和行业趋势搜索无结果，缺乏第三方验证。市场未出现恐慌或避险情绪，燃料油夜盘仅小幅上涨。因此，该机会缺乏事实基础，风险极高，建议规避。\n\n【M13调研】该机会描述的地缘冲突事件与新闻事实完全不符，最近20条新闻均为A股公司日常公告，无任何相关报道。基本面数据和行业趋势搜索无结果，市场未出现恐慌或避险情绪，燃料油夜盘仅小幅上涨。研报分析无相关报告。因此，该机会缺乏事实基础，风险极高，建议规避。置信度大幅下调。",
+  "target_markets": [
+    "A_SHARE",
+    "HK",
+    "US"
+  ],
+  "target_instruments": [
+    "601857.SH",
+    "600028.SH",
+    "600026.SH",
+    "601919.SH",
+    "600519.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-05-23T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "美军袭击伊朗民用船只并误击渔船，霍尔木兹海峡2小时内传出交火声，冲突从代理人战争升级为直接军事对抗。历史案例显示地缘风险爆发后15天内是避险交易黄金窗口，当前市场尚未充分定价冲突长期化风险。",
+  "related_signals": [
+    "sig_0806bfd8639e",
+    "sig_4bdf8baa2d3a",
+    "sig_2e7d7516821e",
+    "sig_755175bfd918",
+    "sig_c8ad6aa39ecc",
+    "sig_ec500e4d7f22"
+  ],
+  "inferred_events": [
+    "inferred_94d1e17c",
+    "inferred_a9fb3e81",
+    "inferred_ba594490",
+    "inferred_cafd3266",
+    "inferred_b750092d",
+    "inferred_7ca65e5f",
+    "inferred_932fe107"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军袭击伊朗民用船只致15人伤亡，冲突升级事实明确",
+    "霍尔木兹海峡附近2小时内接连传出交火声，紧张局势持续",
+    "航运巨头赫伯罗特每周额外成本超5000万美元，供应链中断已实质影响企业",
+    "全球粮价连续第三个月上涨，能源与物流成本传导至通胀",
+    "硫磺价格年内上涨约80%，化工成本飙升反映供应链压力"
+  ],
+  "counter_evidence": [
+    "冲突可能迅速降温，如双方达成临时停火协议",
+    "市场已部分定价地缘风险，原油价格前期已有涨幅"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡通行受阻持续至少2周以上",
+    "假设2：冲突不会迅速扩大为全面战争导致全球市场崩盘",
+    "假设3：OPEC+不会立即大幅增产以平抑油价"
+  ],
+  "uncertainty_map": [
+    "冲突升级为全面战争风险（影响程度：高）",
+    "国际调停或停火协议快速达成（影响程度：高）",
+    "美国释放战略石油储备压制油价（影响程度：中）"
+  ],
+  "priority_level": "urgent",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 5,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": -0.045,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益来自原油/黄金/航运板块短期避险上涨（10-20%），风险在于冲突快速缓和导致溢价消退（回撤5-10%）或全面战争引发系统性下跌（回撤20%+）。",
+  "next_validation_questions": [
+    "霍尔木兹海峡通行是否已完全中断？",
+    "美国或伊朗是否有停火谈判信号？",
+    "原油期货持仓量是否大幅增加？"
+  ],
+  "invalidation_conditions": [
+    "双方宣布停火或达成临时协议",
+    "霍尔木兹海峡恢复通行",
+    "美国大规模释放战略石油储备"
+  ],
+  "must_watch_indicators": [
+    "布伦特原油期货价格及持仓量",
+    "霍尔木兹海峡通行状态（航运数据）",
+    "VIX恐慌指数",
+    "黄金现货价格"
+  ],
+  "kill_switch_signals": [
+    "冲突双方宣布停火",
+    "原油价格单日暴跌超5%",
+    "全球股市连续两日暴跌超3%"
+  ],
+  "warnings": [
+    "地缘冲突事件高度不确定，止损需严格设置",
+    "历史案例显示地缘风险溢价通常在15天内消退，不宜长期持有"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:20:53.488296",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_20260509_astock_skill_485a4d90",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

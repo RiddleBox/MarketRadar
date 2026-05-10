@@ -1,0 +1,70 @@
+{
+  "plan_id": "plan_84b2ccba49b2",
+  "opportunity_id": "opp_d625ad6b",
+  "plan_summary": "BULLISH | 688981.SH, 603501.SH",
+  "primary_instruments": [
+    "688981.SH",
+    "603501.SH",
+    "688008.SH",
+    "002371.SZ"
+  ],
+  "instrument_type": "ETF",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 5.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破55元整数关口（对应前低支撑位）"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 10.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "第一目标65元（前高+5%），第二目标70元（估值修复上限）"
+  },
+  "position_sizing": {
+    "suggested_allocation": "8.0%",
+    "max_allocation": "不超过8.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=5.0% | 仓位=风险预算/止损=8.0%",
+    "suggested_allocation_pct": 0.08,
+    "max_allocation_pct": 0.08
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入688981.SH，仓位占总资金20%（侦察仓上限30%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "价格回调至20日均线附近（58.5元）且成交量萎缩至5日均值70%以下"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总仓位50%（加仓30%），同时将止损上移至58元（Phase 1成本价）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 浮盈达到5%（即价格从58.5元涨至61.4元）且成交额放大至15亿元以上"
+    },
+    {
+      "phase_name": "Phase 3 冲刺仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总仓位80%（再加仓30%），止损上移至60元（前高支撑位）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "价格突破前高62元且站稳3个交易日，同时央行发布新的宽松政策信号（如MLF利率下调）"
+    }
+  ],
+  "valid_until": "2026-05-31T05:54:32.542720",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T05:54:32.542812",
+  "opportunity_priority": "research"
+}

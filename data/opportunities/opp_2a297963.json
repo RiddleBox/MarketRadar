@@ -1,0 +1,132 @@
+{
+  "opportunity_id": "opp_2a297963",
+  "opportunity_title": "AI半导体景气加速",
+  "opportunity_thesis": "AI与半导体产业链景气度持续高涨，资金从传统板块流入科技成长方向。中际旭创市值突破万亿、新易盛业绩大增、长电科技产能利用率超80%等信号，叠加字节跳动2000亿AI基础设施支出、百度文心5.1上线等产业催化，构成基本面与资金面共振的做多机会。当前市场情绪中性偏乐观，预期差仍存，板块尚未过热。\n\n【M13调研】市场情绪贪婪但指数高开低走，成交额放大显示增量资金入场，资金从传统板块轮动至新能源和半导体，板块轮动信号与历史模式相似。然而，缺乏研报、新闻、基本面数据和行业趋势支持，信息不完整。风险在于情绪反转和信息不足。建议谨慎，等待更多确认信号。\n\n【M13调研】机会描述声称AI半导体产业链景气度高，但验证所需的数据严重不足：无研报、无基本面数据、无行业趋势，新闻中仅有北方华创一季报增速放缓（3.42%）和浪潮信息高管减持等偏负面信息。M13调研显示市场情绪贪婪但指数高开低走，存在分歧。缺乏正面催化，风险较高。建议等待更多确认信号，如业绩超预期、资本开支上调等具体数据。当前置信度较低，下调0.2。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "002371.SZ",
+    "600584.SH",
+    "688008.SH",
+    "603501.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-08-10T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "中际旭创市值突破万亿、新易盛业绩大增、长电科技产能利用率超80%等信号密集出现，叠加字节跳动增加AI基础设施支出、百度文心5.1上线、中国移动大模型服务平台上线等产业催化，AI与半导体产业链景气度确认加速。资金从消费、地产流向新能源/半导体，板块轮动信号明确。当前市场情绪中性偏乐观，预期差仍存，板块尚未过热。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sig_4880fa0cb378",
+    "sig_663cf59cd65a",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f",
+    "sig_d9ef44f292bd",
+    "sig_294db3749c23",
+    "sig_4149b887d9b2",
+    "sig_911415444bf5",
+    "sig_32c14f9a2017",
+    "sig_41c9d0ac13e2",
+    "sig_14d75f807b3c",
+    "sig_92aa277c89e1",
+    "sig_1678cc7149dc",
+    "sig_de1c0bc2bee5",
+    "sig_b305b999b74e",
+    "sig_c37fb23fb71a",
+    "sig_7cfae5a1c6bb",
+    "sig_25a8bce1601f",
+    "sig_52e83aeefa3d"
+  ],
+  "inferred_events": [
+    "inferred_edf59b52",
+    "inferred_49ff59df",
+    "inferred_f9a6d41f",
+    "inferred_e1a8acc6",
+    "inferred_e37ce040",
+    "inferred_a1d22190",
+    "inferred_ca3e928f",
+    "inferred_9cf568d0"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，光模块龙头地位确认",
+    "新易盛一季报净利润同比增长76.8%，业绩强劲",
+    "长电科技一季度产能利用率超80%，产能供不应求",
+    "字节跳动AI基础设施支出增加25%至2000亿元",
+    "百度文心5.1上线，预训练成本降至业界6%",
+    "中国移动上线国内最大AI大模型服务平台",
+    "资金从消费、地产流向新能源/半导体"
+  ],
+  "counter_evidence": [
+    "AI板块部分个股已大幅上涨，短期获利回吐压力",
+    "全球半导体周期存在不确定性，需求可能放缓"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，产业链订单保持高景气",
+    "假设2：国内政策继续支持AI与半导体产业发展",
+    "假设3：全球半导体周期未出现明显下行"
+  ],
+  "uncertainty_map": [
+    "全球半导体周期下行风险（影响程度：高）",
+    "地缘政治风险导致供应链中断（影响程度：中）",
+    "AI投资回报不及预期，资本开支放缓（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.38000000000000006,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI与半导体产业链景气度持续，龙头公司业绩超预期，板块估值修复。潜在风险：全球半导体周期下行、地缘政治风险、AI投资回报不及预期。风险收益比约3:1。",
+  "next_validation_questions": [
+    "中际旭创、新易盛等龙头公司后续订单及业绩指引如何？",
+    "长电科技产能利用率能否持续提升？",
+    "字节跳动AI基础设施支出计划是否已确认？"
+  ],
+  "invalidation_conditions": [
+    "全球半导体周期出现明显下行信号",
+    "AI产业链龙头公司业绩不及预期",
+    "地缘政治风险导致供应链中断"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛等龙头公司订单及业绩",
+    "长电科技产能利用率变化",
+    "全球半导体销售额数据",
+    "AI产业链资本开支计划"
+  ],
+  "kill_switch_signals": [
+    "AI产业链龙头公司业绩大幅低于预期",
+    "全球半导体周期出现明显下行",
+    "地缘政治风险导致供应链中断"
+  ],
+  "warnings": [
+    "注意：部分信号来源为新闻，非官方公告",
+    "注意：AI板块部分个股已大幅上涨，短期获利回吐压力"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T07:25:18.089777",
+  "batch_id": "sched_signal_pipeline_20260510_065007_cdc95c_20260510_astock_skill_f03c1b36",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,137 @@
+{
+  "opportunity_id": "opp_cef8b9ae",
+  "opportunity_title": "宽松轮动科技成长",
+  "opportunity_thesis": "央行密集降准降息释放万亿流动性，经济下行压力下资金从传统消费地产板块系统性流出，转向对利率敏感、景气度高的新能源和半导体板块。板块轮动信号已连续多日确认，且未来仍有进一步降准降息预期，构成结构性做多科技成长的机会。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持。关键发现包括：新闻内容与AI产业链关联度低，业绩数据未验证，外围市场存在不确定性。风险因素主要为信息不实和情绪过热。未发现重大利空，但置信度因证据不足下调0.2。综合来看，该机会缺乏近期数据支撑，建议谨慎对待，等待更多验证信号。\n\n【M13调研】机会描述强调科技成长主线，但新闻和研报中缺乏直接证据支持，关键业绩数据未验证，且豪威集团一季报净利润下降41.92%与板块爆发矛盾。外围市场存在不确定性（欧洲股市下跌、俄欧关系紧张）。未发现重大利空，但置信度较低（0.2），建议谨慎对待，等待更多验证信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688981.SH",
+    "603501.SH",
+    "601012.SH",
+    "300274.SZ",
+    "600438.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-05-24T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行4月18日宣布降准0.5个百分点（4月20日生效）并下调7天逆回购利率10bp至1.7%，4月24日再次确认降准释放万亿资金，同时PMI连续3个月低于荣枯线强化宽松预期。板块轮动信号在4月17-18日密集出现，资金已开始从消费地产流向新能源半导体，当前是政策落地+资金确认的共振窗口。",
+  "related_signals": [
+    "sent_b3cc88f9",
+    "sent_94185672",
+    "sent_c5cfe485",
+    "sent_b0cb4f31",
+    "sent_05da3317",
+    "sent_0fc7fb49",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_2ba5b3f88b20",
+    "sig_92a136d719dc",
+    "sig_66cd4adf6332",
+    "sig_ea7347bd74cf",
+    "sent_ec6c7cba",
+    "sig_b344dde14d32",
+    "sig_e39115aa3077",
+    "sig_7298dda97ec7",
+    "sig_8acb82a65167",
+    "sig_8a6f0519b08d",
+    "sig_9b5f9f0a102a",
+    "sig_6aae84620adb",
+    "sig_edc5b0434f33",
+    "sig_6030bb0be882",
+    "sig_7d650e648a54",
+    "sig_37b8e1ac32b6",
+    "sig_247fd5330706",
+    "sig_cf855bc992d0",
+    "sig_b19ea9e6181e",
+    "sig_e0e3bf1f136a",
+    "sig_de08dfbf89a4",
+    "sig_c26c00625075",
+    "sig_7a827ccde515",
+    "sig_dece1006f835"
+  ],
+  "inferred_events": [
+    "inferred_28114fca",
+    "inferred_2e166f1f",
+    "inferred_862788df",
+    "inferred_29434c83",
+    "inferred_1ea567e1",
+    "inferred_43b61ba2"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行4月18日宣布降准0.5个百分点并下调7天逆回购利率10bp，4月24日确认释放长期资金约1万亿元",
+    "板块轮动信号连续7次显示资金从消费、地产流向新能源、半导体",
+    "制造业PMI连续3个月低于荣枯线（49.0），经济下行压力加大，宽松政策预期持续",
+    "未来事件推理显示央行进一步降准降息概率85%，新能源/半导体资金流入概率80%"
+  ],
+  "counter_evidence": [
+    "PMI连续3个月低于荣枯线，基本面疲弱可能压制整体市场风险偏好",
+    "历史案例case_2024_rate_cut显示降息后地产股反弹乏力，单纯政策不够"
+  ],
+  "key_assumptions": [
+    "假设1：央行宽松政策能有效传导至实体经济，改善企业融资环境",
+    "假设2：新能源/半导体板块基本面未出现超预期恶化",
+    "假设3：资金从传统板块向科技成长的轮动趋势可持续"
+  ],
+  "uncertainty_map": [
+    "经济下行超预期导致整体市场系统性下跌（影响程度：高）",
+    "新能源/半导体板块业绩不及预期，无法支撑估值（影响程度：中）",
+    "地缘冲突升级（如中东）引发全球避险情绪，资金流出风险资产（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.45000000000000007,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：宽松政策+资金轮动推动新能源/半导体板块估值修复，龙头个股有望获得10-20%涨幅。潜在风险：经济下行超预期或板块业绩证伪，最大回撤约10-15%。",
+  "next_validation_questions": [
+    "新能源/半导体板块近期是否有业绩预告或订单公告支撑景气度？",
+    "消费、地产板块资金流出是否持续加速？",
+    "央行后续是否有进一步降准降息的具体时间表？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "新能源/半导体板块出现重大利空（如出口限制、龙头业绩暴雷）",
+    "资金轮动信号逆转，资金重新流入消费地产"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率及降准公告",
+    "新能源/半导体板块成交量及资金流向",
+    "制造业PMI及社融数据",
+    "板块轮动信号是否持续"
+  ],
+  "kill_switch_signals": [
+    "央行意外收紧流动性（如加息或正回购）",
+    "新能源/半导体龙头股单日放量下跌超5%",
+    "地缘冲突导致全球股市系统性暴跌"
+  ],
+  "warnings": [
+    "注意：板块轮动信号来自情绪面系统，恐贪指数未提供，需结合基本面验证",
+    "注意：PMI连续低于荣枯线，经济基本面疲弱可能压制反弹高度"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T19:02:33.629421",
+  "batch_id": "sched_signal_pipeline_20260509_182053_fc7de6_20260509_rss_a5dd320b",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,63 @@
+{
+  "plan_id": "plan_6566d49ba101",
+  "opportunity_id": "opp_b32ad374",
+  "plan_summary": "BULLISH | 601009.SH, 601825.SH",
+  "primary_instruments": [
+    "601009.SH",
+    "601825.SH",
+    "601997.SH",
+    "601838.SH",
+    "600926.SH"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破250日均线（约7.80元）或跌破近期低点8.00元"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "第一目标9.50元（2024年高点附近），第二目标10.50元（2023年高点附近）"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入601009.SH，仓位占总资金20%（侦察仓上限30%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "南京银行股价回踩20日均线（约8.50元）且成交量缩至5日均量60%以下"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总仓位50%（主仓上限50%），止损位同步上移至8.20元（成本价+1%）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 浮盈超过5%（即股价>8.93元）且成交量温和放大（>5日均量）"
+    }
+  ],
+  "valid_until": "2026-05-31T11:03:32.339546",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T11:03:32.339638",
+  "opportunity_priority": "research"
+}

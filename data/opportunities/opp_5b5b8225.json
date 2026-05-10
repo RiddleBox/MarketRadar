@@ -1,0 +1,124 @@
+{
+  "opportunity_id": "opp_5b5b8225",
+  "opportunity_title": "光伏龙头三重利好",
+  "opportunity_thesis": "隆基绿能同时获得百亿美元订单、BC电池技术突破和国家能源局200GW装机目标三重利好，形成订单+技术+政策的强共振。新能源汽车购置税减免延续至2027年底进一步强化新能源整体需求预期。当前股价涨停放量但尚未完全反映未来3年业绩增量，存在显著预期差。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性取决于后续经济数据。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。置信度下调0.2。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601012.SH",
+    "600438.SH",
+    "300274.SZ",
+    "688599.SH",
+    "002129.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "隆基绿能同日公告百亿美元订单和技术突破，国家能源局发布200GW装机目标，三事件叠加形成罕见催化共振。股价已涨停放量但市场尚未充分定价未来3年业绩增量，当前是事件驱动初期窗口。",
+  "related_signals": [
+    "sig_30d3e00700ed",
+    "sig_1c94cfaf9bad",
+    "sig_810b1cc2cedf",
+    "sig_80c24e558ad0",
+    "sig_e552050e5030",
+    "sig_a19c232b39d7",
+    "sig_d96752d3b6e2",
+    "sig_dcf5293d00c8",
+    "sig_f092b9093445",
+    "sig_ece38467157b",
+    "sig_6e2e78201e3e",
+    "sig_54951582fc78",
+    "sig_f51ed8d5222e",
+    "sig_5895f0b8ee96",
+    "sig_8b72684e688d"
+  ],
+  "inferred_events": [
+    "inferred_92b9d43c",
+    "inferred_bc790b29",
+    "inferred_57f8437f",
+    "inferred_3be66c91",
+    "inferred_8a2cd93a",
+    "inferred_03e6f187",
+    "inferred_5020d8a2",
+    "inferred_6265723e"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "隆基绿能签署100亿美元光伏订单，预计贡献净利润超15亿美元，为去年全年净利润3倍",
+    "BC电池技术转换效率26.5%打破世界纪录，Q3量产将巩固龙头地位",
+    "国家能源局2026年光伏新增装机目标200GW，同比增长50%",
+    "新能源汽车购置税减免延续至2027年底，新能源整体需求预期提升",
+    "股价涨停成交量放大至5倍，市场已开始反应但尚未完全定价"
+  ],
+  "counter_evidence": [
+    "隆基绿能股价已涨停，短期可能存在获利回吐压力",
+    "百亿美元订单需3年交付，业绩释放节奏存在不确定性"
+  ],
+  "key_assumptions": [
+    "假设1：百亿美元订单真实有效且不存在后续取消风险",
+    "假设2：BC电池技术量产顺利，良率和成本可控",
+    "假设3：2026年国内光伏装机200GW目标能够实现或接近实现"
+  ],
+  "uncertainty_map": [
+    "订单执行风险：100亿美元订单分3年交付，存在汇率波动、地缘政治等执行风险（影响程度：中）",
+    "技术量产风险：BC电池Q3量产可能面临良率爬坡慢、成本超预期等问题（影响程度：中）",
+    "政策落地风险：200GW装机目标为规划目标，实际执行可能受电网消纳等制约（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 9,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.7,
+    "confidence_score": 0.38000000000000006,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：隆基绿能订单利润贡献为去年3倍，若市场重新定价，股价有30-50%上行空间；风险：订单执行或技术量产不及预期，最大回撤约15-20%，止损点可设在涨停板下方5%",
+  "next_validation_questions": [
+    "隆基绿能百亿美元订单的预付款比例和交付时间表是否已披露？",
+    "BC电池量产良率和成本数据是否已有第三方验证？",
+    "光伏板块整体资金流向和机构持仓变化如何？"
+  ],
+  "invalidation_conditions": [
+    "隆基绿能公告订单取消或大幅缩水",
+    "BC电池量产出现重大技术障碍或延迟",
+    "国家能源局下调2026年装机目标"
+  ],
+  "must_watch_indicators": [
+    "隆基绿能每日成交量和资金流向",
+    "光伏板块ETF（如515790.SH）价格走势",
+    "国家能源局后续光伏装机数据",
+    "BC电池量产进度公告"
+  ],
+  "kill_switch_signals": [
+    "隆基绿能股价连续3日放量下跌",
+    "光伏板块出现集体跌停或恐慌性抛售",
+    "公司发布订单或技术相关的利空公告"
+  ],
+  "warnings": [
+    "注意：百亿美元订单和BC电池技术突破均为公司公告，需关注第三方验证",
+    "注意：股价已涨停，短期追高存在回调风险，建议等待回调或分批建仓"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T13:11:06.417725",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_253ad55a",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

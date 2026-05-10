@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_6f490049",
+  "opportunity_title": "地产龙头出清机会",
+  "opportunity_thesis": "保利发展等龙头房企净利润大幅下滑，但经营现金流暴增423%且成功发行低成本可转债，显示行业正经历最痛苦的出清阶段，优质龙头已率先实现现金流改善和融资能力恢复。市场过度聚焦利润下滑的悲观叙事，忽视了资产负债表修复和行业集中度提升的结构性利好，当前是左侧布局地产龙头的窗口期。\n\n【M13调研】保利发展业绩大幅下滑，但新闻和研报信息匮乏，缺乏资金轮动和板块共振的直接证据。地产板块做空机会存在，但风险较高，需谨慎。新能源和半导体轮动逻辑未获数据支持。整体置信度偏低，建议等待更多信息再决策。\n\n【M13调研】机会描述强调龙头房企现金流改善和融资恢复，但缺乏近期新闻、研报和基本面数据支持。M13调研显示信息匮乏，置信度偏低。未发现重大利空，但风险因素包括利润下滑持续和行业不确定性。建议谨慎，等待更多证据。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600048.SH",
+    "000002.SZ",
+    "001979.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-12T00:00:00",
+    "end": "2026-08-12T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "保利发展一季报（4月27日）和万科中票兑付调整（5月6日）集中释放悲观预期，市场情绪已极度悲观；但保利经营现金流暴增和低成本融资成功（4月28日）是未被定价的积极信号，预期差最大。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sig_deee36561d85",
+    "sig_b146ce2efab7",
+    "sig_77e33acaca10",
+    "sig_65d00d268232"
+  ],
+  "inferred_events": [
+    "inferred_f09f939a",
+    "inferred_f3b2dda0",
+    "inferred_5ffb8eba",
+    "inferred_a624a7c5",
+    "inferred_0c0abcb4",
+    "inferred_38c3be61",
+    "inferred_d00fffd3",
+    "inferred_920291d4",
+    "inferred_05eb70ff",
+    "inferred_f4c9653d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "保利发展一季度经营现金流净额86.73亿元，同比增长423%，现金回笼能力显著增强",
+    "保利发展成功发行国内首单现金类定向可转债85亿元，融资成本创历史新低",
+    "保利发展2025年净利润大降79.31%但营业收入仅降1.13%，利润下滑主因减值而非经营恶化",
+    "万科中票兑付调整显示行业出清仍在进行，但龙头已率先走出低谷"
+  ],
+  "counter_evidence": [
+    "保利发展一季度净利润仍同比下降53.1%，盈利压力持续",
+    "万科中票兑付调整可能引发市场对地产债的进一步担忧"
+  ],
+  "key_assumptions": [
+    "假设1：保利发展经营现金流改善趋势可持续，非一次性因素",
+    "假设2：行业政策环境不会进一步恶化，如无超预期收紧",
+    "假设3：市场对利润下滑的悲观情绪在1-2个月内逐步消化"
+  ],
+  "uncertainty_map": [
+    "行业销售复苏节奏不确定，若销售持续低迷将压制估值修复（影响程度：高）",
+    "龙头房企减值风险是否出清，若继续大额减值将侵蚀利润（影响程度：中）",
+    "政策面是否出现超预期宽松或收紧（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 7,
+    "market_confirmation": 4,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 8,
+    "signal_consistency": 7,
+    "overall_score": 6.7,
+    "confidence_score": 0.25,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：保利发展估值修复至行业平均PB水平（0.8x-1.0x），上行空间约30-50%；潜在风险：行业销售持续恶化或龙头继续大额减值，下行空间约15-20%（以当前股价为基准）。风险收益比约2:1。",
+  "next_validation_questions": [
+    "保利发展4-5月销售数据是否环比改善？",
+    "行业政策面是否有新的宽松信号（如降息、放松限购）？",
+    "其他龙头房企（如万科、招商蛇口）的经营现金流是否也出现改善？"
+  ],
+  "invalidation_conditions": [
+    "保利发展二季度经营现金流大幅恶化或转负",
+    "行业出现超预期政策收紧或系统性信用事件",
+    "保利发展股价跌破一季报公布前低点（确认市场选择方向向下）"
+  ],
+  "must_watch_indicators": [
+    "保利发展月度销售金额及同比增速",
+    "保利发展经营现金流净额季度变化",
+    "房地产行业政策动态（尤其降息、限购放松）",
+    "龙头房企信用利差变化"
+  ],
+  "kill_switch_signals": [
+    "保利发展或万科出现债务展期或违约",
+    "行业销售面积同比降幅持续扩大超过20%",
+    "保利发展股价放量跌破关键支撑位（如年线）"
+  ],
+  "warnings": [
+    "注意：利润下滑幅度超预期，短期仍有惯性下跌风险，建议分批建仓",
+    "注意：万科中票兑付调整可能引发板块情绪二次探底，需密切跟踪"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T18:46:41.183242",
+  "batch_id": "sched_signal_pipeline_20260509_182053_fc7de6_20260509_astock_skill_e62544ac",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

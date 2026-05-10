@@ -1,0 +1,110 @@
+{
+  "opportunity_id": "opp_bb85f60c",
+  "opportunity_title": "出口链景气上行",
+  "opportunity_thesis": "中国4月出口同比增14.1%超预期，机电产品出口增长17.6%，造船业新接订单同比暴增195%，贸易顺差扩大至848亿美元，显示外需强劲且中国制造业竞争力持续提升。这些信号指向出口导向型制造业（尤其是造船、机电）的景气上行周期，市场尚未充分定价这一结构性变化，存在预期差。\n\n【M13调研】中国4月出口数据超预期，机电和造船业景气度高，贸易顺差扩大，显示外需强劲和制造业竞争力提升。市场存在预期差，但缺乏研报和基本面数据验证，新闻中仅中国船舶业绩利好。风险在于贸易政策、原材料价格和汇率波动。综合评估，机会有一定逻辑但信息不充分，建议谨慎关注。\n\n【M13调研】中国4月出口数据超预期，机电和造船业高景气，贸易顺差扩大，显示外需强劲和制造业竞争力提升。市场存在预期差，但缺乏研报、基本面数据和行业趋势验证，新闻中仅中国船舶业绩利好。风险在于贸易政策、原材料价格和汇率波动。综合评估，机会有一定逻辑但信息不充分，置信度偏低，建议谨慎关注。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600150.SH",
+    "601989.SH",
+    "600685.SH",
+    "000039.SZ",
+    "601766.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-08-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "4月出口数据超预期（14.1% vs 预期8.4%）与造船业一季度订单爆发（+195%）同日发布，形成双重催化剂叠加，市场短期可能反应不足，后续随着更多出口相关公司中报预告披露，景气度将得到进一步确认。",
+  "related_signals": [
+    "sig_d835222c90d1",
+    "sig_890ae71c107a",
+    "sig_ccc7baf677c1",
+    "sig_dba0b0625849"
+  ],
+  "inferred_events": [
+    "inferred_68c74407",
+    "inferred_eba2b53c",
+    "inferred_8248f6ee",
+    "inferred_28b6ef8c",
+    "inferred_cd690755",
+    "inferred_15e0b6b5",
+    "inferred_f3cc663d"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中国4月出口同比增14.1%，大幅超预期（预期8.4%）",
+    "造船业一季度新接订单同比增195%，全球份额84.9%",
+    "前4月机电产品出口增长17.6%，高于整体出口增速",
+    "贸易顺差848亿美元，显示外需强劲"
+  ],
+  "counter_evidence": [
+    "中东地缘冲突升级可能影响全球航运和贸易",
+    "市场短期回调风险（技术面与情绪面）可能压制板块表现"
+  ],
+  "key_assumptions": [
+    "假设1：外需持续强劲，欧美经济未出现超预期衰退",
+    "假设2：全球供应链未因地缘冲突出现重大中断",
+    "假设3：人民币汇率保持相对稳定，不出现大幅升值"
+  ],
+  "uncertainty_map": [
+    "地缘政治风险（中东冲突升级）影响程度：高",
+    "全球经济衰退风险影响程度：中",
+    "人民币汇率波动影响程度：中"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.1,
+    "confidence_score": 0.65,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：出口链景气上行带动造船、机电龙头业绩超预期，股价有望获得20-30%涨幅。潜在风险：地缘冲突或全球经济衰退导致外需骤降，最大回撤约10-15%。",
+  "next_validation_questions": [
+    "造船企业（中国船舶、中国重工）一季度订单确认的交付周期和利润率如何？",
+    "机电产品出口高增是否可持续？主要出口目的地需求是否稳定？",
+    "市场对出口链的定价是否已充分反映？当前估值水平如何？"
+  ],
+  "invalidation_conditions": [
+    "5月出口数据大幅低于预期（如增速降至个位数）",
+    "中东冲突导致霍尔木兹海峡航运受阻，全球贸易成本飙升",
+    "人民币兑美元快速升值超过5%"
+  ],
+  "must_watch_indicators": [
+    "每月海关总署出口数据（特别是机电产品）",
+    "中国造船业月度新接订单量",
+    "波罗的海干散货指数（BDI）",
+    "人民币汇率走势"
+  ],
+  "kill_switch_signals": [
+    "出口增速连续两个月低于市场预期",
+    "主要贸易伙伴（美国、欧盟）经济数据大幅恶化",
+    "地缘冲突导致关键航道封锁"
+  ],
+  "warnings": [
+    "注意：出口数据受基数效应影响，后续增速可能回落",
+    "注意：地缘政治风险是当前最大不确定性，需密切关注"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T13:27:13.268494",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_ad2094fa",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

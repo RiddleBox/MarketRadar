@@ -1,0 +1,158 @@
+{
+  "opportunity_id": "opp_9301e8bd",
+  "opportunity_title": "宽松对冲衰退",
+  "opportunity_thesis": "经济数据持续疲软（PMI连续3个月低于荣枯线、CPI/PPI通缩）已触发央行强力宽松对冲：降准0.5个百分点+降息10bp，释放约1万亿长期资金。市场对衰退定价充分，但对政策持续加码的力度和效果尚未充分反应，存在预期差。当前是典型的'坏消息出尽+政策托底'窗口，流动性改善将推动估值修复，尤其利好利率敏感型资产。\n\n【M13调研】宏观经济数据疲软确认下行压力，央行超预期降准降息释放宽松信号，形成短期交易窗口。但无研报和行业趋势支持，新闻无相关重大事件，基本面数据缺失。逻辑成立但信息不充分，置信度中性。建议谨慎参与，关注后续经济数据验证。\n\n【M13调研】机会描述基于经济疲软和央行超预期宽松，形成短期交易窗口，逻辑成立。但缺乏研报、行业趋势和基本面数据支持，新闻无相关事件，信息不充分。无重大利空，但置信度偏低，建议谨慎参与，关注后续经济数据验证。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601318.SH",
+    "600036.SH",
+    "000002.SZ",
+    "600030.SH",
+    "601166.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-25T00:00:00",
+    "end": "2026-06-25T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行已明确降准+降息落地，且行长表态'适时进一步降准'，政策宽松周期确认开启。PMI连续3个月低于荣枯线、CPI/PPI通缩数据已充分暴露经济下行压力，市场悲观情绪达到极值。当前是政策底+情绪底共振窗口，后续经济数据若边际改善将触发反弹。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_2ba5b3f88b20",
+    "sig_92a136d719dc",
+    "sig_66cd4adf6332",
+    "sig_ea7347bd74cf",
+    "sig_b344dde14d32",
+    "sig_e39115aa3077",
+    "sig_3998302a0c94",
+    "sig_995ca91bd203",
+    "sig_7298dda97ec7",
+    "sig_8acb82a65167",
+    "sig_6d0d506ec2df",
+    "sig_5fbb3b22217e",
+    "sig_8a6f0519b08d",
+    "sig_9b5f9f0a102a",
+    "sig_21f5c177b742",
+    "sig_0bf2be0f1bda",
+    "sig_6aae84620adb",
+    "sig_eab6949342f3",
+    "sig_c9e5f674d9ca",
+    "sig_edc5b0434f33",
+    "sig_13fe94a19c08",
+    "sig_2ad1cb2b2377",
+    "sig_6030bb0be882",
+    "sig_7d650e648a54",
+    "sig_f5a17113c4e6",
+    "sig_87b1671a6111",
+    "sig_37b8e1ac32b6",
+    "sig_247fd5330706",
+    "sig_8d38b82a7d38",
+    "sig_504fbedd1b66",
+    "sig_cf855bc992d0",
+    "sig_771f563b82a1",
+    "sig_d5e1a6ec9732",
+    "sig_b19ea9e6181e",
+    "sig_e0e3bf1f136a",
+    "sig_db00c48abe84",
+    "sig_46e3ef6b4b10",
+    "sig_de08dfbf89a4",
+    "sig_007be518105c",
+    "sig_f441c8828a04",
+    "sig_ac93f560548e",
+    "sig_483c3b1eec29",
+    "sig_c26c00625075",
+    "sig_4c9e1bba1ed0",
+    "sig_e165b97b96f4",
+    "sig_7a827ccde515",
+    "sig_f0e05280f574",
+    "sig_0e9e62af2013",
+    "sig_dece1006f835",
+    "sig_1ee4d36e04da"
+  ],
+  "inferred_events": [
+    "inferred_58be37a1",
+    "inferred_583def61",
+    "inferred_d133f74a",
+    "inferred_5fd6aab0",
+    "inferred_288363b9"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行降准0.5个百分点释放约1万亿长期资金，流动性显著改善",
+    "7天逆回购利率下调10bp至1.7%，降低短期资金成本",
+    "PMI连续3个月低于50荣枯线，经济下行压力已被市场充分定价",
+    "CPI/PPI持续通缩，为政策进一步宽松提供空间"
+  ],
+  "counter_evidence": [
+    "经济数据持续恶化可能压制企业盈利，政策传导至实体经济需要时间",
+    "市场对宽松政策已有部分预期，降准落地后可能出现'买预期卖事实'"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续仍有进一步降准/降息动作，宽松周期持续",
+    "假设2：经济数据不会进一步急剧恶化，至少边际企稳",
+    "假设3：外部环境（如地缘冲突、海外利率）不出现重大负面冲击"
+  ],
+  "uncertainty_map": [
+    "经济数据恶化速度超预期，政策对冲效果有限（影响程度：高）",
+    "市场对宽松政策已充分定价，缺乏进一步催化剂（影响程度：中）",
+    "外部风险事件（如中东冲突升级）引发系统性避险（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 9,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.65,
+    "execution_readiness": 0.8
+  },
+  "risk_reward_profile": "潜在收益：流动性驱动估值修复，沪深300指数有望反弹5-10%；潜在风险：经济数据持续恶化导致盈利下修，最大回撤约3-5%。风险收益比约2:1。",
+  "next_validation_questions": [
+    "降准后银行间市场利率（DR007）是否显著下行？",
+    "后续公布的PMI/CPI/PPI数据是否出现边际改善？",
+    "外资是否开始净流入A股？",
+    "是否有更多行业龙头发布业绩预警？"
+  ],
+  "invalidation_conditions": [
+    "央行明确表态不再进一步宽松",
+    "PMI跌破48且无企稳迹象",
+    "出现系统性金融风险事件"
+  ],
+  "must_watch_indicators": [
+    "DR007利率",
+    "制造业PMI",
+    "北向资金净流入",
+    "社融数据"
+  ],
+  "kill_switch_signals": [
+    "央行意外收紧流动性（如正回购）",
+    "PMI跌破48且连续2个月恶化",
+    "外资单日净流出超100亿"
+  ],
+  "warnings": [
+    "注意：经济数据均为历史数据，未来改善存在不确定性",
+    "注意：宽松政策已被部分定价，需关注后续落地力度"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T13:00:39.853812",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_089f7b56",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

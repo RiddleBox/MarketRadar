@@ -1,0 +1,143 @@
+{
+  "opportunity_id": "opp_bdd02ee0",
+  "opportunity_title": "中东冲突能源危机",
+  "opportunity_thesis": "霍尔木兹海峡封锁与美伊军事冲突升级，导致全球石油供应出现实质性短缺（近10亿桶损失），且航运成本飙升（赫伯罗特每周额外成本超5000万美元）。此结构性变化对原油价格形成强力支撑，同时进口煤价倒挂将显著利好国内煤炭企业，形成明确的做多机会。当前市场虽已部分反应，但冲突持续升级（伊朗全面备战、美军拦截油轮）表明供应中断将长期化，预期差仍然存在。\n\n【M13调研】机会描述的地缘事件未获任何新闻支持，相反，新闻显示伊朗谈判仍在进行，且中国神华财报利空。无研报或行业趋势佐证。因此，该机会极可能基于虚假或过时信息，存在重大利空。建议忽略此机会。\n\n【M13调研】该机会描述的地缘事件未获任何新闻、研报或行业趋势支持，M13调研明确指出其基于虚假或过时信息。新闻显示伊朗谈判仍在进行，与冲突升级矛盾。无相关基本面数据。因此，该机会存在重大利空，建议忽略。置信度下调0.3。",
+  "target_markets": [
+    "A_SHARE",
+    "A_FUTURES"
+  ],
+  "target_instruments": [
+    "601088.SH",
+    "600188.SH",
+    "000983.SZ",
+    "600348.SH",
+    "600546.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-13T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "5月7-8日美伊在霍尔木兹海峡发生直接军事冲突（美军袭击伊朗民用船只、拦截油轮、交火），伊朗宣布全面备战，冲突从代理人战争升级为直接对抗。同时，进口煤价倒挂已导致企业转向国内采购，国内煤炭需求结构性增加。高盛调查显示多数投资者预期航运受阻将持续至7月后，当前是冲突升级后的关键窗口期。",
+  "related_signals": [
+    "sig_f79a5c8a4bd4",
+    "sig_3cf8fcf349ae",
+    "sig_0806bfd8639e",
+    "sig_8e8c4ed52bad",
+    "sig_4bdf8baa2d3a",
+    "sig_afe9eed20a0b",
+    "sig_968dbdfcd94a",
+    "sig_c03469c8ae34",
+    "sig_2e7d7516821e",
+    "sig_09752e9de48e",
+    "sig_c8ad6aa39ecc",
+    "sig_b3de9b426692",
+    "sig_750e411aaff5",
+    "sig_992644367a0a",
+    "sig_1fcc386acab4",
+    "sig_9e1e9233ab36",
+    "sig_eb80de18be59",
+    "sig_82a8c461a4b6",
+    "sig_d045354f7ded",
+    "sig_926dd4b69f57",
+    "sig_bb9a9c6d60a1",
+    "sig_074e8c030441",
+    "sig_3ed518a56d14",
+    "sig_571a67c4298e",
+    "sig_2201d7544cad",
+    "sig_70a333e7b67e",
+    "sig_debbf62cdf97",
+    "sig_ec500e4d7f22",
+    "sig_cf272f568f82",
+    "sig_adef1edef3e4",
+    "sig_cef8ea31a2f8",
+    "sig_211956c76085",
+    "sig_f079127c3165"
+  ],
+  "inferred_events": [
+    "inferred_2033f1f0",
+    "inferred_90af94e0",
+    "inferred_4074c293",
+    "inferred_e827c575",
+    "inferred_d24dd0ad",
+    "inferred_a7f7f88f",
+    "inferred_6c4a3000",
+    "inferred_3a92102c"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "霍尔木兹海峡封锁导致近10亿桶石油损失，短缺持续恶化",
+    "美军在阿曼湾拦截三艘伊朗油轮，伊朗武装力量全面备战",
+    "进口煤价倒挂，企业转向国内采购，国内煤炭需求增加",
+    "德国3月工业产出环比下降0.7%，主因能源运输受阻",
+    "高盛调查显示多数投资者预期航运受阻将持续至7月后"
+  ],
+  "counter_evidence": [
+    "美联储报告指出地缘冲突和石油冲击构成金融风险，可能引发需求端萎缩",
+    "美国对涉伊朗中企实施制裁，可能影响部分A股公司业务"
+  ],
+  "key_assumptions": [
+    "假设1：美伊军事冲突不会在短期内（2周内）达成停火协议",
+    "假设2：霍尔木兹海峡航运受阻将持续至少至6月底",
+    "假设3：国内煤炭企业产能足以承接进口煤转向的增量需求"
+  ],
+  "uncertainty_map": [
+    "冲突突然缓和或停火（影响程度：高）",
+    "美国战略石油储备释放或OPEC增产（影响程度：中）",
+    "全球经济衰退导致能源需求下降（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 9,
+    "timeliness": 9,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.9,
+    "confidence_score": -0.029999999999999985,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：国内煤炭股受益于进口替代和煤价上涨，预计有15-30%上行空间；原油期货受益于供应中断，预计有10-20%上行空间。潜在风险：冲突突然缓和导致油价和煤价快速回落，最大回撤约10-15%。整体风险收益比约2:1。",
+  "next_validation_questions": [
+    "国内主要煤炭企业（如中国神华、中煤能源）最新库存和产能利用率数据如何？",
+    "美国是否有释放战略石油储备的计划或迹象？",
+    "OPEC+是否有紧急增产会议安排？"
+  ],
+  "invalidation_conditions": [
+    "美伊达成停火协议或临时休战",
+    "霍尔木兹海峡航运恢复通行",
+    "美国大规模释放战略石油储备"
+  ],
+  "must_watch_indicators": [
+    "布伦特原油期货价格走势",
+    "霍尔木兹海峡通行状态（航运数据）",
+    "国内动力煤期货价格（郑煤）",
+    "美伊外交谈判进展"
+  ],
+  "kill_switch_signals": [
+    "伊朗宣布单方面停火或释放善意信号",
+    "美国宣布解除对伊朗油轮封锁",
+    "国际油价单日暴跌超过8%"
+  ],
+  "warnings": [
+    "注意：地缘政治事件具有高度不确定性，冲突可能突然缓和或升级",
+    "注意：部分信号来源为伊朗官方媒体，可能存在信息偏差"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T22:22:13.278875",
+  "batch_id": "sched_signal_pipeline_20260509_212153_0b40a6_20260509_rss_9f244f6f",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

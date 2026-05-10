@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_f3ff561c",
+  "opportunity_title": "宽松博弈结构性机会",
+  "opportunity_thesis": "央行密集降准降息释放强烈宽松信号，但经济基本面（PMI连续收缩）与市场情绪（指数翻绿、个股普跌）形成明显背离。这种'宽货币+弱现实'的组合，历史上往往催生结构性行情——资金从顺周期板块流向政策支持且业绩确定的成长方向（AI算力、新能源）。当前成交额突破1.5万亿，显示增量资金入场，但指数不涨，说明市场正在调仓而非离场，结构性机会大于系统性风险。\n\n【M13调研】机会描述基于AI算力需求爆发、业绩超预期和政策利好，但新闻分析中缺乏直接验证。中韩半导体ETF领涨、英特尔AMD市值新高、胜宏科技订单饱满等间接支持半导体景气度，但具体公司业绩数据未出现，政策利好也未明确。风险在于业绩持续性分歧和缺乏直接证据。整体方向可行，但需谨慎验证具体数据，建议等待更多确认信号。\n\n【M13调研】AI算力需求驱动光模块和半导体景气度得到部分验证：新易盛业绩高增、英特尔AMD市值新高、胜宏科技订单饱满。但机会描述中的中际旭创市值破万亿、某半导体龙头预增等具体数据未在新闻中出现，政策利好也缺乏报道。市场对业绩持续性存分歧，风险在于信息不实和预期差。建议谨慎，等待更多确认信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "601012.SH",
+    "600438.SH",
+    "688981.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-08T00:00:00",
+    "end": "2026-06-08T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "央行4月降准降息后，市场并未立即上涨，反而出现高开低走、个股普跌，说明悲观情绪已充分定价。5月8日成交额突破1.5万亿，是增量资金入场的明确信号，但指数疲弱意味着资金正在从旧经济板块（地产、有色）切换至新经济（AI算力、新能源）。当前是布局结构性行情的窗口期，等待基本面数据改善或政策进一步催化。",
+  "related_signals": [
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_38049b31fb61",
+    "sig_a1a728ae8eed"
+  ],
+  "inferred_events": [
+    "inferred_2d28d088",
+    "inferred_6c51262e",
+    "inferred_f3897edb",
+    "inferred_b5097f26",
+    "inferred_b05697a2",
+    "inferred_50142f4e",
+    "inferred_86b11419",
+    "inferred_65ef8a4f",
+    "inferred_930f5b8a",
+    "inferred_8a6cd02e"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行4月降准0.5个百分点+降息10bp，流动性充裕",
+    "沪深两市成交额突破1.5万亿，增量资金入场",
+    "AI算力需求爆发（日均词元调用量两年增长千倍），光模块龙头业绩超预期（新易盛净利润增长76.8%）",
+    "光伏行业政策支持（200GW装机目标）+隆基百亿美元订单+BC技术突破"
+  ],
+  "counter_evidence": [
+    "制造业PMI连续3个月低于荣枯线，经济下行压力持续",
+    "三大指数高开回落全部翻绿，下跌个股近4000只，市场情绪脆弱"
+  ],
+  "key_assumptions": [
+    "假设1：央行宽松政策不会因通胀或汇率压力而逆转",
+    "假设2：AI算力和新能源的业绩增长趋势可持续，且未被市场充分定价",
+    "假设3：资金从旧经济板块流出后，会持续流入成长板块，而非全面离场"
+  ],
+  "uncertainty_map": [
+    "经济基本面恶化超预期（影响程度：高）——若PMI继续下行至48以下，宽松政策可能失效",
+    "地缘政治风险升级（影响程度：中）——中东冲突若导致全球避险，A股可能被拖累",
+    "政策执行力度不及预期（影响程度：中）——若后续无进一步宽松或产业政策，市场可能重回悲观"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 6,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 7,
+    "overall_score": 7.0,
+    "confidence_score": 0.52,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：若结构性行情启动，AI算力和新能源龙头有望在1个月内上涨15%-25%。潜在风险：若经济数据持续恶化或地缘风险爆发，指数可能下跌5%-10%，但成长板块因业绩支撑跌幅有限。风险收益比约2:1。",
+  "next_validation_questions": [
+    "未来1周内，AI算力（光模块、半导体）和新能源（光伏）板块的成交额占比是否持续提升？",
+    "北向资金是否开始净流入成长板块？",
+    "PMI数据是否出现企稳迹象？"
+  ],
+  "invalidation_conditions": [
+    "沪深两市成交额跌破1万亿，增量资金离场",
+    "PMI进一步下滑至48以下，经济衰退确认",
+    "央行明确表态不再进一步宽松"
+  ],
+  "must_watch_indicators": [
+    "沪深两市日成交额",
+    "AI算力板块（光模块、半导体）成交额占比",
+    "制造业PMI月度数据",
+    "北向资金流向（尤其成长板块）"
+  ],
+  "kill_switch_signals": [
+    "连续3日成交额低于1.2万亿且指数下跌",
+    "PMI跌破48",
+    "中东冲突导致原油价格暴涨20%以上"
+  ],
+  "warnings": [
+    "注意：当前市场情绪脆弱，指数高开低走显示抛压仍存，需控制仓位",
+    "注意：AI算力和新能源板块已有一定涨幅，需警惕短期获利回吐"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T23:00:31.886905",
+  "batch_id": "sched_signal_pipeline_20260509_225333_23699a_19000101_astock_skill_da37c2ac",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

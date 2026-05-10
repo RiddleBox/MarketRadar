@@ -1,0 +1,71 @@
+{
+  "plan_id": "plan_5299539f594c",
+  "opportunity_id": "opp_0a8fccbc",
+  "plan_summary": "BULLISH | 300308.SZ, 300502.SZ",
+  "primary_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "688981.SH",
+    "002371.SZ",
+    "603501.SH"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破关键支撑位（如20日均线或前低）"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "基于技术阻力位和估值扩张目标，预计板块涨幅10%-20%"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入中际旭创（300308.SZ）和新易盛（300502.SZ）各15%仓位（合计30%总仓位），以开盘价执行",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "中际旭创或新易盛股价站稳20日均线且成交量放大30%以上，同时半导体龙头预增公告发布后次日开盘不跳空低开"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓北方华创（002371.SZ）和中芯国际（688981.SH）各20%仓位（合计40%总仓位），以次日开盘价执行",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 持仓浮盈达5%以上，且AI应用板块指数连续3日收涨"
+    },
+    {
+      "phase_name": "Phase 3 观察仓",
+      "action_type": "buy",
+      "timing_description": "加仓韦尔股份（603501.SH）30%仓位，以次日开盘价执行，总仓位达到100%",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 2 持仓浮盈达8%以上，且市场恐贪指数低于70"
+    }
+  ],
+  "valid_until": "2026-05-31T10:49:33.262326",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T10:49:33.262473",
+  "opportunity_priority": "research"
+}

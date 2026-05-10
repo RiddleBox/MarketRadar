@@ -1,0 +1,119 @@
+{
+  "opportunity_id": "opp_dfb7202e",
+  "opportunity_title": "人形机器人产业链爆发",
+  "opportunity_thesis": "人形机器人产业链正从概念炒作进入商业化落地阶段，核心催化包括：龙头公司股价创历史新高、IPO获6707倍超额认购、腾讯生态接入及万台量产意向。这些信号表明市场对产业前景的预期高度一致且强烈，短期资金涌入形成正反馈，但需警惕估值泡沫和商业化兑现风险。当前处于情绪与基本面共振的早期阶段，存在交易性机会。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头创历史新高，资金高度聚焦。固态电池技术提供支撑，IPO认购火爆显示市场关注。但短期涨幅较大，缺乏研报覆盖，产业落地进展不确定。整体机会真实，但需警惕回调风险，建议关注后续产业催化。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "601689.SH",
+    "300124.SZ",
+    "002747.SZ",
+    "002892.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "当前时点催化剂密集：1) 绿的谐波等龙头创历史新高，技术面突破确认趋势；2) 乐动机器人IPO获6707倍认购，显示一级市场极度看好；3) 腾讯OpenClaw接入及万台意向，商业化落地信号明确；4) 板块集体涨停，资金共识度高。这些事件集中在2天内发生，形成强催化窗口。",
+  "related_signals": [
+    "sig_cc33dd52b601",
+    "sig_41c9d0ac13e2",
+    "sig_4ef836f98ad7",
+    "sig_12415bc90517"
+  ],
+  "inferred_events": [
+    "inferred_4d35d3ea",
+    "inferred_13dab0dc",
+    "inferred_6f6362ee",
+    "inferred_441e664b",
+    "inferred_16d13569",
+    "inferred_0f7fb382",
+    "inferred_b8ed3025",
+    "inferred_4a8aa67d",
+    "inferred_a942b062",
+    "inferred_b3eabd65",
+    "inferred_9c8a773f",
+    "inferred_b7ef7758",
+    "inferred_32c015fa",
+    "inferred_dcfdccfd"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "绿的谐波(688017)股价创历史新高，盘中涨超15%",
+    "乐动机器人香港IPO获6707倍散户认购，国际配售9.54倍",
+    "Zeroth元点M1接入腾讯OpenClaw，达成万台硬件终端接入意向",
+    "多只人形机器人概念股涨停或创新高，板块效应明显"
+  ],
+  "counter_evidence": [
+    "部分个股短期涨幅过大，如绿的谐波单日涨超15%，存在技术性回调风险",
+    "商业化落地仍处于早期，万台意向尚未转化为实际收入"
+  ],
+  "key_assumptions": [
+    "假设1：人形机器人产业链商业化进程加速，订单和收入将在未来1-2个季度兑现",
+    "假设2：市场情绪不会因其他宏观风险（如地缘冲突）而突然逆转",
+    "假设3：龙头公司（如绿的谐波）的估值扩张有基本面支撑，而非纯炒作"
+  ],
+  "uncertainty_map": [
+    "商业化落地速度不及预期（影响程度：高）",
+    "市场整体回调或风格切换（影响程度：中）",
+    "监管政策变化或竞争加剧（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 8,
+    "tradability": 7,
+    "risk_clarity": 5,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：若商业化落地超预期，龙头股可能继续上涨20-30%；风险：若仅为情绪炒作，回调幅度可达15-20%。盈亏比约1.5:1，需严格止损。",
+  "next_validation_questions": [
+    "绿的谐波等龙头公司是否有近期订单或业绩预告？",
+    "乐动机器人上市首日表现如何？是否继续获得资金追捧？",
+    "腾讯OpenClaw接入的万台意向是否有进一步公告或交付时间表？",
+    "板块整体成交量是否持续放大，还是出现缩量滞涨？"
+  ],
+  "invalidation_conditions": [
+    "龙头股（如绿的谐波）出现放量下跌，跌破5日线",
+    "乐动机器人上市首日破发或涨幅低于预期",
+    "板块整体成交量萎缩，涨停股数量减少"
+  ],
+  "must_watch_indicators": [
+    "绿的谐波(688017)股价及成交量",
+    "人形机器人板块整体涨跌幅及涨停家数",
+    "乐动机器人上市首日表现",
+    "腾讯OpenClaw相关公告"
+  ],
+  "kill_switch_signals": [
+    "龙头股单日跌幅超7%且放量",
+    "板块内多只个股跌停",
+    "出现重大利空消息（如监管打压概念炒作）"
+  ],
+  "warnings": [
+    "注意：当前信号多为情绪和事件驱动，缺乏业绩验证，需警惕纯概念炒作风险",
+    "注意：历史案例显示，技术突破类机会若缺乏订单支撑，25天内可能回落"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T22:14:36.324861",
+  "batch_id": "sched_signal_pipeline_20260509_212153_0b40a6_20260509_astock_skill_c78bec52",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

@@ -1,0 +1,71 @@
+{
+  "plan_id": "plan_4e089e8a7db8",
+  "opportunity_id": "opp_5b0b79bd",
+  "plan_summary": "BULLISH | 601088.SH, 600188.SH",
+  "primary_instruments": [
+    "601088.SH",
+    "600188.SH",
+    "600348.SH",
+    "000983.SZ",
+    "601225.SH"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破 30 元整数关口（约 250 日均线附近）"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "第一目标 36 元（前高附近），第二目标 38 元（基于 15-25% 涨幅区间上沿）"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入 601088.SH，仓位为总计划资金的 20%（即侦察仓上限 30% 的 2/3），止损位按上述设置",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "上述入场条件中至少满足 2 条，且市场无突发利空（如中东停火协议草案流出）"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总计划资金的 50%（即再加 30% 仓位），止损位不变，止盈目标调整为 38 元（第一目标）和 42 元（第二目标）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 持仓浮盈达到 5%（即股价从入场价上涨 5%），且入场条件全部满足，同时硫磺价格未出现单日暴跌 5% 以上"
+    },
+    {
+      "phase_name": "Phase 3 极限仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总计划资金的 70%（即再加 20% 仓位），止损位上移至成本价（所有仓位平均成本），止盈目标调整为 42 元（第一目标）和 45 元（第二目标），并启用 8% 回撤移动止盈",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 2 持仓浮盈达到 10%，且国内煤炭增产政策明确落地（如发改委发文鼓励增产），同时硫磺价格维持高位（不跌回年内涨幅 50% 以下）"
+    }
+  ],
+  "valid_until": "2026-05-31T10:50:20.596998",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T10:50:20.597097",
+  "opportunity_priority": "research"
+}

@@ -1,0 +1,105 @@
+{
+  "opportunity_id": "opp_b2a3fc71",
+  "opportunity_title": "港股IPO热潮",
+  "opportunity_thesis": "香港市场正经历IPO集资额同比暴增604%、散户认购倍数创纪录的极端活跃期，叠加GDP与零售数据向好、住宅市场量价齐升，形成宏观与微观共振的牛市信号。当前市场情绪高涨但尚未完全反映在指数层面，存在预期差，港交所作为直接受益标的具备高确定性交易机会。\n\n【M13调研】港交所受益于IPO热潮和宏观经济复苏，交易量与上市费收入有望显著提升。当前市场资金充裕，基本面改善形成正反馈，但需警惕全球利率和地缘政治风险。机会窗口明确，但缺乏外部数据验证，建议谨慎乐观。",
+  "target_markets": [
+    "HK"
+  ],
+  "target_instruments": [
+    "00388.HK"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-08-10T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "港交所前4月IPO集资额同比增604%的数据于5月9日发布，乐动机器人6707倍散户认购创纪录，叠加GDP和零售数据向好，多重信号在48小时内集中释放，形成强烈的催化剂窗口。",
+  "related_signals": [
+    "sig_4ef836f98ad7",
+    "sig_423c7cb04845",
+    "sig_b0c897ac9682",
+    "sig_98977668d330",
+    "sig_09d9ef8d7272"
+  ],
+  "inferred_events": [
+    "inferred_bc6dd32f",
+    "inferred_fecdc352",
+    "inferred_9198987a",
+    "inferred_ed2df49b",
+    "inferred_024e6997"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "港交所2026年前4月IPO集资额1514亿港元，同比增604%，新上市公司49家同比增158%",
+    "乐动机器人IPO散户认购6707倍，国际配售9.54倍，创近年纪录",
+    "2026年Q1香港GDP和零售额同比加速增长",
+    "香港住宅市场4月延续量价齐升，去化周期进入乐观区间"
+  ],
+  "counter_evidence": [
+    "市场已部分定价IPO活跃度，港交所股价可能已包含部分预期",
+    "中东地缘冲突升级可能引发全球避险情绪，压制港股表现"
+  ],
+  "key_assumptions": [
+    "假设1：IPO热潮可持续至下半年，后续大型IPO（如字节跳动等）能落地",
+    "假设2：香港经济复苏趋势不被外部冲击打断",
+    "假设3：港交所作为垄断性交易平台，IPO活跃度直接转化为收入增长"
+  ],
+  "uncertainty_map": [
+    "中东地缘冲突升级导致全球风险偏好下降（影响程度：高）",
+    "美联储政策转向或全球流动性收紧（影响程度：中）",
+    "香港本地政策或监管变化（影响程度：低）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 6,
+    "tradability": 9,
+    "risk_clarity": 7,
+    "consensus_gap": 6,
+    "signal_consistency": 9,
+    "overall_score": 7.6,
+    "confidence_score": 0.98,
+    "execution_readiness": 0.85
+  },
+  "risk_reward_profile": "潜在收益：港交所作为IPO热潮直接受益方，若下半年IPO持续火爆，股价有望上涨15-25%。风险：若中东冲突升级或全球流动性收紧，港股可能回调5-10%，但港交所作为垄断标的具备防御性。",
+  "next_validation_questions": [
+    "未来1-2周是否有大型IPO（如字节跳动、蚂蚁集团）明确上市时间表？",
+    "港交所2026年Q1财报是否显示收入增长与IPO活跃度匹配？",
+    "中东局势是否出现实质性升级信号？"
+  ],
+  "invalidation_conditions": [
+    "港交所股价连续3日放量下跌，跌破50日均线",
+    "中东爆发全面军事冲突，全球股市暴跌",
+    "后续IPO出现大规模撤回或认购倍数骤降"
+  ],
+  "must_watch_indicators": [
+    "港交所每日成交额及IPO认购倍数",
+    "恒生指数及恒生科技指数走势",
+    "中东地缘政治事件进展",
+    "港交所股价相对强弱指标（RSI）"
+  ],
+  "kill_switch_signals": [
+    "港交所股价跌破200港元（约20日均线）",
+    "中东冲突导致原油价格单日暴涨10%以上",
+    "港交所公告IPO审核收紧或政策变化"
+  ],
+  "warnings": [
+    "注意：信号来源均为新闻，非官方公告，需核实港交所数据",
+    "注意：市场情绪已较高，需警惕短期过热回调风险"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T09:41:42.929372",
+  "batch_id": "sched_signal_pipeline_20260510_092622_664cc3_20260510_astock_skill_4f4259be",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

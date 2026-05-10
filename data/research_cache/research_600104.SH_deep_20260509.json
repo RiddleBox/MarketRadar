@@ -1,0 +1,305 @@
+{
+  "symbol": "600104.SH",
+  "research_level": "deep",
+  "triggered_by": "m3",
+  "reports": [],
+  "news": [
+    {
+      "title": "中复神鹰688295.SH：新增认定刘栋为核心技术人员",
+      "content": "2026年5月8日，中复神鹰(688295.SH发布公告称，公司新增认定刘栋先生为核心技术人员。 公告显示，刘栋现任公司总经理助理、科技发展中心主任，曾任中复神鹰碳纤维有限责任公司技术员、原丝车间副主任，中复神鹰碳纤维西宁有限公司纺丝车间主任等职，为高级工程师。",
+      "source": "界面新闻",
+      "published_at": "2026-05-08 19:12:43",
+      "url": "http://finance.eastmoney.com/a/202605083731690192.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "奇安信688561.SH：独立董事周道许离任，提名何佳为候选补选人",
+      "content": "2026年5月8日，奇安信(688561.SH发布公告称，独立董事周道许因个人原因申请辞去公司第三届董事会独立董事、审计委员会委员及战略委员会委员职务。其辞职将在年度股东会选举产生新任独立董事后生效，在此之前周道许将继续履行相关职责。",
+      "source": "界面新闻",
+      "published_at": "2026-05-08 19:12:38",
+      "url": "http://finance.eastmoney.com/a/202605083731690251.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "迈威生物688062.SH：9MW5211注射液获FDA临床试验许可",
+      "content": "2026年5月8日，迈威生物(688062.SH发布公告称，公司收到美国食品药品监督管理局（FDA）签发的《临床研究继续进行通知书》，9MW5211注射液用于炎症性肠病（IBD）适应症的临床试验申请正式获得FDA许可。",
+      "source": "界面新闻",
+      "published_at": "2026-05-08 19:12:34",
+      "url": "http://finance.eastmoney.com/a/202605083731690046.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "申联生物688098.SH：仔猪副伤寒活疫苗获兽药产品批准文号",
+      "content": "2026年5月8日，申联生物(688098.SH发布自愿性披露公告称，经农业农村部审查，公司兰州分公司生产的仔猪副伤寒活疫苗（商品名：联痢清）获核发兽药产品批准文号（兽药生字280181019），有效期五年。",
+      "source": "界面新闻",
+      "published_at": "2026-05-08 19:12:29",
+      "url": "http://finance.eastmoney.com/a/202605083731689859.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "申联生物（688098.SH）：新品“联痢清”获批，切入仔猪细菌疫苗赛道",
+      "content": "申联生物（688098）5月8日公告，公司兰州分公司正式获得农业农村部核发的“仔猪副伤寒活疫苗”（商品名：联痢清）兽药产品批准文号（兽药生字280181019），产品有效期至2031年5月5日。该产品主要用于预防由沙门氏菌引起的仔猪副伤寒，在养殖业“减抗禁抗”背景下，被视为抗生素替代的低成本免疫工具",
+      "source": "界面新闻",
+      "published_at": "2026-05-08 18:10:33",
+      "url": "http://finance.eastmoney.com/a/202605083731649620.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "创力集团603012.SH：董事会秘书常玉林因身体原因辞职",
+      "content": "2026年5月8日，创力集团(603012.SH发布公告称，公司董事会于近日收到董事会秘书常玉林的书面辞职报告。常玉林因个人身体原因，申请辞去公司董事会秘书职务，原定任期至公司第五届董事会任期届满之日（2026年11月3日）。",
+      "source": "界面新闻",
+      "published_at": "2026-05-08 17:16:38",
+      "url": "http://finance.eastmoney.com/a/202605083731565930.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "九州一轨688485.SH：非独立董事赵旋因工作变动辞职",
+      "content": "2026年5月8日，九州一轨(688485.SH发布公告称，公司董事会于近日收到非独立董事赵旋先生递交的书面辞职报告。赵旋先生因个人工作变动原因，申请辞去公司第三届董事会非独立董事职务、薪酬与考核委员会委员职务，辞职后不再担任公司任何职务。",
+      "source": "界面新闻",
+      "published_at": "2026-05-08 17:16:29",
+      "url": "http://finance.eastmoney.com/a/202605083731566376.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "康恩贝600572.SH：子公司布南色林片获药品注册证书",
+      "content": "2026年5月8日，康恩贝(600572.SH发布公告称，全资子公司金华康恩贝收到国家药监局核准签发的布南色林片《药品注册证书》。该药品规格为4mg，临床用于治疗精神分裂症，视同通过仿制药一致性评价。截至目前，康恩贝累计研发投入2130万元。",
+      "source": "界面新闻",
+      "published_at": "2026-05-08 17:16:20",
+      "url": "http://finance.eastmoney.com/a/202605083731566178.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "科沃斯603486.SH：完成注销约67.25万份股票期权",
+      "content": "2026年5月7日，科沃斯(603486.SH发布公告称，公司已向中国证券登记结算有限责任公司上海分公司提交股票期权注销申请，经审核确认，已于2026年5月7日完成注销业务，合计注销约67.25万份股票期权。",
+      "source": "界面新闻",
+      "published_at": "2026-05-07 20:22:22",
+      "url": "http://finance.eastmoney.com/a/202605073730359532.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "上汽集团600104.SH：2026年一季报净利润为30.26亿元、同比较去年同期上涨0.09%",
+      "content": "2026年4月30日，上汽集团600104.SH发布2026年一季报。 公司营业总收入为1404.18亿元，在已披露的同业公司中排名第2。",
+      "source": "界面新闻",
+      "published_at": "2026-04-30 10:03:12",
+      "url": "http://finance.eastmoney.com/a/202604303726083923.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "Amadeus FiRe AG (AFGZF) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 07:11:18",
+      "url": "https://seekingalpha.com/article/4901892-amadeus-fire-ag-afgzf-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Genesis Energy, L.P. Class A Common Units (GEL) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 07:11:16",
+      "url": "https://seekingalpha.com/article/4901868-genesis-energy-l-p-class-a-common-units-gel-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Earnings Strength And Easing Risks Support Markets",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 07:00:00",
+      "url": "https://seekingalpha.com/article/4901889-earnings-strength-easing-risks-support-markets?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Principal Well-Being Index: Optimism Among Businesses In Short Supply",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 06:50:00",
+      "url": "https://seekingalpha.com/article/4901887-principal-well-being-index-optimism-among-businesses-in-short-supply?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "FTAI Infrastructure: Lot Of Noise But Steps To Monetization",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 06:40:52",
+      "url": "https://seekingalpha.com/article/4901876-ftai-infrastructure-lot-of-noise-but-steps-to-monetization?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "April Jobs Report: Solid Gains Support A Fed Holding Pattern",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 06:40:00",
+      "url": "https://seekingalpha.com/article/4901886-april-jobs-report-solid-gains-support-fed-holding-pattern?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "CRA International, Inc. (CRAI) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 06:31:18",
+      "url": "https://seekingalpha.com/article/4901883-cra-international-inc-crai-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "IVR.PR.C: 12.5% In One Year By The Invesco Mortgage Capital's Preferred Stock",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 06:29:06",
+      "url": "https://seekingalpha.com/article/4901874-ivr-pr-c-12_5-percent-in-one-year-by-invesco-mortgage-capital-preferred-stock?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Don't Chase mREIT Yield: Rithm Outshines AGNC Investment",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 06:19:52",
+      "url": "https://seekingalpha.com/article/4901873-dont-chase-mreit-yield-rithm-outshines-agnc-investment?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Alta Equipment Group Inc. (ALTG) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 06:11:17",
+      "url": "https://seekingalpha.com/article/4901884-alta-equipment-group-inc-altg-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Outset Medical, Inc. (OM) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 06:11:15",
+      "url": "https://seekingalpha.com/article/4901882-outset-medical-inc-om-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Cogna Educação S.A. (COGNY) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 06:11:14",
+      "url": "https://seekingalpha.com/article/4901881-cogna-educacao-s-a-cogny-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "U.S. IPO Weekly Recap: Space Intelligence Provider HawkEye 350 Leads 5 IPO Week As Pipeline Grows",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 06:00:00",
+      "url": "https://seekingalpha.com/article/4901880-space-intelligence-provider-hawkeye-350-leads-5-ipo-week-pipeline-grows?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Ryerson Holding Corporation 2026 Q1 - Results - Earnings Call Presentation",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 05:51:32",
+      "url": "https://seekingalpha.com/article/4901879-ryerson-holding-corporation-2026-q1-results-earnings-call-presentation?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Ryerson Holding Corporation (RYZ) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 05:51:15",
+      "url": "https://seekingalpha.com/article/4901878-ryerson-holding-corporation-ryz-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Cooper-Standard Holdings Inc. (CPS) Q1 2026 Earnings Call Transcript",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 05:51:13",
+      "url": "https://seekingalpha.com/article/4901877-cooper-standard-holdings-inc-cps-q1-2026-earnings-call-transcript?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "12.7% Yield And Deep NAV Discount: Examining Blackstone Secured Lending's Dividend Sustainability",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 05:48:33",
+      "url": "https://seekingalpha.com/article/4901866-examining-blackstone-secured-lendings-dividend-sustainability-high-yield-deep-nav-discount?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Consumers Are Changing, Long Live AI",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 05:25:00",
+      "url": "https://seekingalpha.com/article/4901870-consumers-are-changing-long-live-ai?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Starbucks Earnings: Fully Caffeinated?",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 05:20:40",
+      "url": "https://seekingalpha.com/article/4901857-starbucks-earnings-fully-caffeinated?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "My S&P 500 Forecast For 2026",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 05:20:00",
+      "url": "https://seekingalpha.com/article/4901871-my-sp-500-forecast-for-2026?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    }
+  ],
+  "fundamentals": {},
+  "quote": {},
+  "semantic_results": [],
+  "summary": "4月出口数据超预期，贸易顺差创新高，电动车出口增长68.1%是核心亮点，对出口导向型制造业和电动车产业链构成短期催化。市场尚未充分定价这一结构性分化，存在预期差机会。但需注意贸易摩擦升级风险、出口持续性不确定性以及电动车产业链高估值。整体机会偏正面，但缺乏研报和直接新闻催化，置信度中等偏上。",
+  "key_findings": [
+    "4月出口同比增14.1%远超预期，贸易顺差848亿美元创历史同期新高，显示外需强劲。",
+    "电动汽车前4月出口增68.1%，是出口核心结构性亮点，产业链高景气持续。",
+    "出口超预期叠加电动车高景气，对出口导向型制造业和电动车产业链形成短期催化。",
+    "市场尚未充分定价这一结构性分化，可能存在预期差带来的投资机会。",
+    "近期新闻多为公司人事变动、产品获批等常规信息，未发现与出口或电动车直接相关的重大利好或利空。"
+  ],
+  "risk_factors": [
+    "出口数据超预期可能引发贸易摩擦升级风险，尤其是电动车领域。",
+    "全球经济复苏不确定性可能影响后续出口持续性，需关注海外需求变化。",
+    "电动车产业链估值已较高，短期催化可能已被部分定价，需警惕回调风险。"
+  ],
+  "confidence_assessment": "基于出口数据超预期和电动车高景气的明确事实，机会逻辑清晰。但缺乏研报和行业趋势的语义分析支持，且新闻中无直接相关催化事件，因此置信度中等。考虑到市场尚未充分定价，存在预期差，但需警惕贸易摩擦和估值风险。",
+  "confidence_multiplier": 1.0,
+  "confidence_delta": 0.1,
+  "has_major_negative": false,
+  "research_time": "2026-05-09T15:20:13.500426",
+  "data_sources": [
+    "news"
+  ],
+  "cache_hit": false,
+  "timeout": false,
+  "partial_result": false
+}

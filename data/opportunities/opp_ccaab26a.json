@@ -1,0 +1,113 @@
+{
+  "opportunity_id": "opp_ccaab26a",
+  "opportunity_title": "人形机器人加速落地",
+  "opportunity_thesis": "人形机器人产业链正从概念炒作进入融资加速、量产落地、股价共振的实质性阶段。小雨智造完成数亿元B+轮融资、Zeroth元点M1接入腾讯OpenClaw并达成万台硬件接入意向，叠加绿的谐波等核心零部件龙头股价创历史新高，表明产业资本和二级市场已形成正向反馈。当前时点处于量产前夜，预期差在于市场尚未充分定价万台级量产对供应链的拉动效应。\n\n【M13调研】人形机器人板块出现多信号共振，包括概念股涨停、龙头创新高、港股IPO超额认购及商业化意向，显示市场情绪高涨和资金涌入。然而，缺乏研报、新闻和基本面数据，上涨主要依赖情绪驱动，持续性存疑。风险因素包括情绪过热、基本面真空和商业化不确定性。综合评估，短期存在交易性机会，但置信度较低，建议谨慎参与。\n\n【M13调研】人形机器人板块出现多信号共振，包括概念股涨停、龙头创新高、港股IPO超额认购及万台量产意向，显示市场情绪高涨和资金涌入。然而，缺乏研报、新闻和基本面数据支撑，上涨主要依赖情绪驱动，持续性存疑。风险因素包括情绪过热、基本面真空和商业化不确定性。未发现重大利空，但置信度较低，建议谨慎参与。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "002031.SZ",
+    "603667.SH",
+    "002747.SZ",
+    "300124.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "Zeroth元点M1计划5月下旬正式上线、上半年启动预售，叠加小雨智造B+轮融资落地，量产时间窗口明确。同时绿的谐波等龙头股价创新高，市场情绪和资金已开始提前布局，当前是量产预期尚未完全price-in的窗口期。",
+  "related_signals": [
+    "sig_cc33dd52b601",
+    "sig_41c9d0ac13e2",
+    "sig_d36d819acfc5",
+    "sig_e49e84bd5c49",
+    "sig_aff5a3953935",
+    "sig_12415bc90517"
+  ],
+  "inferred_events": [
+    "inferred_edf59b52",
+    "inferred_49ff59df",
+    "inferred_f9a6d41f",
+    "inferred_e1a8acc6",
+    "inferred_e37ce040",
+    "inferred_a1d22190",
+    "inferred_ca3e928f",
+    "inferred_9cf568d0"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "Zeroth元点M1成为全球首款接入腾讯OpenClaw的可量产人形机器人，已达成万台硬件终端接入意向",
+    "小雨智造完成数亿元B+轮融资，北汽产投、复星锐正等产业资本参与，滴滴、小米联合创始人持续追加",
+    "绿的谐波股价创历史新高，盘中涨超15%，显示核心零部件龙头获得市场认可",
+    "人形机器人概念股集体上涨，多只个股涨停或创新高，板块效应明显"
+  ],
+  "counter_evidence": [
+    "当前股价上涨部分由情绪和概念驱动，缺乏大规模订单或营收验证",
+    "历史案例显示技术突破后若无商业化订单支撑，概念炒作易回落"
+  ],
+  "key_assumptions": [
+    "假设1：Zeroth元点M1按计划在5月下旬上线并启动预售，万台意向转化为实际订单",
+    "假设2：人形机器人量产进度不出现重大技术或供应链瓶颈",
+    "假设3：宏观经济和政策环境未出现系统性风险导致风险偏好急剧下降"
+  ],
+  "uncertainty_map": [
+    "量产进度不及预期（影响程度：高）——万台意向转化为实际订单的时间和规模存在不确定性",
+    "竞争格局恶化（影响程度：中）——其他厂商可能加速推出竞品，压缩先发优势",
+    "市场情绪过热后回调（影响程度：中）——短期涨幅过大可能引发获利了结"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.45,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：若万台级量产落地，核心零部件供应商（如绿的谐波）订单弹性大，股价有望获得业绩和估值双击。潜在风险：量产延迟或订单不及预期，概念炒作退潮后股价可能回调20%-30%。",
+  "next_validation_questions": [
+    "Zeroth元点M1在5月下旬上线后，首批订单量和客户反馈如何？",
+    "绿的谐波等核心零部件公司是否有公开的订单或产能扩张计划？",
+    "小雨智造B+轮融资后，下一轮估值和量产时间表是否明确？"
+  ],
+  "invalidation_conditions": [
+    "Zeroth元点M1上线或预售延期超过1个月",
+    "人形机器人板块出现集体大幅回调，龙头股跌破关键支撑位",
+    "产业资本融资明显降温，无新进入者或现有项目停滞"
+  ],
+  "must_watch_indicators": [
+    "Zeroth元点M1上线及预售进度",
+    "绿的谐波股价走势及成交量变化",
+    "人形机器人板块整体成交额和涨停家数",
+    "产业融资动态（新融资事件或大额订单）"
+  ],
+  "kill_switch_signals": [
+    "Zeroth元点M1上线后订单量远低于万台意向",
+    "核心零部件公司发布业绩预警或客户流失公告",
+    "监管层对人形机器人行业出台限制性政策"
+  ],
+  "warnings": [
+    "当前信号主要来自新闻和股价表现，缺乏官方订单或业绩公告验证",
+    "历史案例显示概念炒作若无商业化支撑，回调风险较大"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T07:28:03.947793",
+  "batch_id": "sched_signal_pipeline_20260510_065007_cdc95c_20260510_astock_skill_f03c1b36",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

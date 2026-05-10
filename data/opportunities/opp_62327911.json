@@ -1,0 +1,113 @@
+{
+  "opportunity_id": "opp_62327911",
+  "opportunity_title": "出口链景气上行",
+  "opportunity_thesis": "中国4月出口同比增14.1%远超预期（预估8.4%），机电产品出口增长17.6%，叠加造船新接订单暴增195%、航运运价上涨，表明外需强劲且出口结构持续优化。当前市场对出口韧性的定价不足，存在预期差，出口链（航运、造船、机电）有望迎来业绩与估值双修复。\n\n【M13调研】中国4月出口数据超预期，机电和造船业景气度高，贸易顺差扩大，显示外需强劲和制造业竞争力提升。市场存在预期差，但缺乏研报和基本面数据验证，新闻中仅中国船舶业绩利好。风险在于贸易政策、原材料价格和汇率波动。综合评估，机会有一定逻辑但信息不充分，建议谨慎关注。\n\n【M13调研】中国4月出口数据超预期，机电和造船业高景气，贸易顺差扩大，显示外需强劲和制造业竞争力提升。市场存在预期差，但缺乏研报、基本面数据和行业趋势验证，新闻中仅中国船舶业绩利好。风险在于贸易政策、原材料价格和汇率波动。综合评估，机会有一定逻辑但信息不充分，置信度偏低，建议谨慎关注。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "600150.SH",
+    "601989.SH",
+    "600685.SH",
+    "601919.SH",
+    "600026.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "4月出口数据超预期（14.1% vs 8.4%）刚刚公布，叠加造船新接订单同比+195%和航运运价创新高，多重信号在同一天集中释放，市场尚未充分消化，预期差最大。",
+  "related_signals": [
+    "sig_d835222c90d1",
+    "sig_d3ff18d62491",
+    "sig_debd6a76d715",
+    "sig_890ae71c107a",
+    "sig_ccc7baf677c1",
+    "sig_dba0b0625849"
+  ],
+  "inferred_events": [
+    "inferred_8e063140",
+    "inferred_31846bc5",
+    "inferred_757d6371",
+    "inferred_71ae8c9f",
+    "inferred_01abe7f2",
+    "inferred_34471920",
+    "inferred_bfed39e8"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中国4月出口同比增14.1%，大幅超预期（预估8.4%）",
+    "前4月机电产品出口同比增17.6%，增速高于整体出口",
+    "造船业一季度新接订单同比增195%，全球份额84.9%",
+    "三大船型运价上涨，海岬型船日租金创新高"
+  ],
+  "counter_evidence": [
+    "进口同比增25.3%可能反映内需回暖，但部分或为原材料涨价所致",
+    "地缘冲突风险可能干扰航运路线和贸易流"
+  ],
+  "key_assumptions": [
+    "假设1：外需韧性持续，欧美补库周期未结束",
+    "假设2：航运运价上涨反映真实需求而非短期扰动",
+    "假设3：造船订单高增能转化为未来2-3年业绩"
+  ],
+  "uncertainty_map": [
+    "地缘冲突升级导致贸易路线中断（影响程度：高）",
+    "全球衰退风险导致外需骤降（影响程度：中）",
+    "人民币汇率大幅升值削弱出口竞争力（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.65,
+    "execution_readiness": 0.65
+  },
+  "risk_reward_profile": "潜在收益：出口链景气上行叠加估值修复，龙头股有望获得15-25%涨幅；潜在风险：地缘冲突或全球衰退导致外需逆转，最大回撤约10-15%。",
+  "next_validation_questions": [
+    "5月高频出口数据（如港口集装箱吞吐量）是否延续强劲？",
+    "航运运价指数（BDI、CCFI）未来两周是否继续上行？",
+    "主要出口市场（欧美）的PMI和库存数据是否支持补库？"
+  ],
+  "invalidation_conditions": [
+    "5月出口数据大幅回落至个位数增长",
+    "BDI指数连续两周下跌超过15%",
+    "主要贸易伙伴出现衰退或贸易摩擦升级"
+  ],
+  "must_watch_indicators": [
+    "中国5月出口增速（高频跟踪）",
+    "波罗的海干散货运价指数（BDI）",
+    "中国出口集装箱运价指数（CCFI）",
+    "欧美制造业PMI"
+  ],
+  "kill_switch_signals": [
+    "地缘冲突导致霍尔木兹海峡或马六甲海峡封锁",
+    "中国出口增速连续两个月低于5%",
+    "航运运价指数单周暴跌20%以上"
+  ],
+  "warnings": [
+    "注意：出口数据为4月数据，5月可能受基数效应影响增速回落",
+    "注意：造船订单交付周期长（2-3年），短期业绩弹性有限"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T19:44:19.980534",
+  "batch_id": "sched_signal_pipeline_20260509_194006_9160d7_20260509_astock_skill_064d8bc0",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

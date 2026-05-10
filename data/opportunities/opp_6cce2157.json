@@ -1,0 +1,126 @@
+{
+  "opportunity_id": "opp_6cce2157",
+  "opportunity_title": "国内煤炭替代机会",
+  "opportunity_thesis": "中东地缘冲突升级导致霍尔木兹海峡航运受阻，叠加印尼限产提价，进口煤炭价格大幅上涨并出现与国内煤价倒挂，促使海外购煤企业转向国内采购。这一结构性变化将直接提升国内煤炭企业的销量和议价能力，且高盛调查显示航运受阻可能持续至下半年，为国内煤企提供中期盈利改善窗口。当前市场尚未充分定价这一替代效应，存在预期差。\n\n【M13调研】美军袭击伊朗民用船只事件确实发生，霍尔木兹海峡通行受阻风险上升，理论上利好能源替代和军工。但外交谈判同步进行，科技股大涨分流资金，且煤炭企业盈利下滑，削弱了利好逻辑。市场尚未充分定价冲突持续性，但预期差不大。综合评估，机会存在但风险较高，置信度下调0.1。\n\n【M13调研】该机会描述的地缘事件未获任何新闻、研报或行业趋势支持，M13调研明确指出其基于虚假或过时信息。新闻显示伊朗谈判仍在进行，与冲突升级矛盾。无相关基本面数据。因此，该机会存在重大利空，建议忽略。置信度下调0.3。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601225.SH",
+    "600188.SH",
+    "601088.SH",
+    "600985.SH",
+    "000983.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-31T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "当前时点催化剂密集：1) 美军在霍尔木兹海峡袭击伊朗民用船只并拦截油轮，冲突急剧升级；2) 进口煤价已出现与国内煤价倒挂，企业转向采购已发生；3) 高盛调查显示多数投资者预期航运受阻将持续至7月以后，中期影响确定性高；4) 硫磺等化工原料价格暴涨进一步强化能源成本上升逻辑。",
+  "related_signals": [
+    "sig_3cf8fcf349ae",
+    "sig_0806bfd8639e",
+    "sig_8e8c4ed52bad",
+    "sig_4bdf8baa2d3a",
+    "sig_afe9eed20a0b",
+    "sig_968dbdfcd94a",
+    "sig_2e7d7516821e",
+    "sig_755175bfd918",
+    "sig_c8ad6aa39ecc",
+    "sig_82a8c461a4b6",
+    "sig_bb9a9c6d60a1",
+    "sig_2201d7544cad",
+    "sig_70a333e7b67e",
+    "sig_ec500e4d7f22",
+    "sig_48a7c2ed9b4c",
+    "sig_0fef94bbb0e8"
+  ],
+  "inferred_events": [
+    "inferred_2b73ee6e",
+    "inferred_286976e9",
+    "inferred_c8c59d82",
+    "inferred_e32ea216",
+    "inferred_cc4fcd5d",
+    "inferred_af2cb657",
+    "inferred_f6231cec",
+    "inferred_f3f589ea",
+    "inferred_710340c8",
+    "inferred_1c02f948"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "印尼3800大卡动力煤华南到岸价较年初上涨171元至602元/吨，4月进口煤与国内煤价倒挂",
+    "美军在霍尔木兹海峡袭击伊朗民用船只并拦截油轮，冲突升级导致航运成本飙升",
+    "高盛调查显示43%受访者预计霍尔木兹海峡航运受阻将持续至7月以后",
+    "德国航运巨头赫伯罗特每周额外成本超5000万美元，反映航运中断的实质性影响"
+  ],
+  "counter_evidence": [
+    "国内煤炭产能释放可能压制煤价上涨空间",
+    "若美伊冲突快速缓和，航运恢复将削弱替代逻辑"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡航运受阻至少持续至6月底",
+    "假设2：印尼出口限产政策不放松",
+    "假设3：国内煤炭产能释放节奏可控，不会导致供给过剩"
+  ],
+  "uncertainty_map": [
+    "地缘冲突缓和速度（影响程度：高）",
+    "国内煤炭增产政策力度（影响程度：中）",
+    "替代需求向国内煤企利润传导的时滞（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.17500000000000002,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：国内煤炭企业销量增长+煤价上行带来盈利弹性，龙头煤企PE有望从当前8-10倍修复至12-15倍，对应30%-50%上行空间。潜在风险：地缘冲突快速缓和导致替代逻辑瓦解，煤价回落，下行风险约10%-15%。",
+  "next_validation_questions": [
+    "国内主要煤炭企业（如中国神华、陕西煤业）近期是否已公告订单增加或提价？",
+    "港口煤炭库存和电厂库存数据是否显示国内采购量上升？",
+    "印尼煤炭出口政策是否有进一步收紧信号？"
+  ],
+  "invalidation_conditions": [
+    "美伊达成停火协议，霍尔木兹海峡航运恢复正常",
+    "印尼取消出口限价或增产导致进口煤价回落",
+    "国内煤炭产能大幅释放导致供给过剩"
+  ],
+  "must_watch_indicators": [
+    "印尼3800大卡动力煤华南到岸价走势",
+    "国内港口动力煤价格（如秦皇岛港5500大卡）",
+    "霍尔木兹海峡通行状态及美伊冲突进展",
+    "国内煤炭企业月度产销量数据"
+  ],
+  "kill_switch_signals": [
+    "美伊双方宣布停火并恢复谈判",
+    "印尼宣布取消出口限价并增产",
+    "国内煤炭库存快速攀升至历史高位"
+  ],
+  "warnings": [
+    "注意：地缘政治事件具有高度不确定性，冲突可能快速缓和或进一步升级",
+    "注意：国内煤炭股近期已有一定涨幅，部分预期可能已被定价"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T20:49:44.053486",
+  "batch_id": "sched_signal_pipeline_20260509_194006_9160d7_20260509_rss_964ae995",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

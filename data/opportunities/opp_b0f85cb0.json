@@ -1,0 +1,111 @@
+{
+  "opportunity_id": "opp_b0f85cb0",
+  "opportunity_title": "AI算力链业绩爆发",
+  "opportunity_thesis": "AI算力需求持续超预期，带动光模块、半导体封测等环节业绩爆发。中际旭创市值突破万亿、新易盛净利增长76.8%、长电科技产能利用率超80%等信号高度一致，表明产业链高景气已从概念炒作进入业绩兑现阶段。当前市场对AI算力长期增长仍有分歧，预期差较大，是布局核心龙头的窗口期。\n\n【M13调研】机会描述基于AI算力需求爆发、业绩超预期和政策利好，但新闻分析中缺乏直接验证。中韩半导体ETF领涨、英特尔AMD市值新高、胜宏科技订单饱满等间接支持半导体景气度，但具体公司业绩数据未出现，政策利好也未明确。风险在于业绩持续性分歧和缺乏直接证据。整体方向可行，但需谨慎验证具体数据，建议等待更多确认信号。\n\n【M13调研】AI算力需求驱动光模块和半导体景气度得到部分验证：新易盛业绩高增、英特尔AMD市值新高、胜宏科技订单饱满。但机会描述中的中际旭创市值破万亿、某半导体龙头预增等具体数据未在新闻中出现，政策利好也缺乏报道。市场对业绩持续性存分歧，风险在于信息不实和预期差。建议谨慎，等待更多确认信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "300308.SZ",
+    "300502.SZ",
+    "600584.SH",
+    "688981.SH",
+    "002371.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-04-24T00:00:00",
+    "end": "2026-07-24T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "中际旭创市值突破万亿、新易盛一季报净利增长76.8%、长电科技产能利用率超80%等信号密集出现，且半导体龙头Q1预增150%-180%，业绩爆发已从个别公司扩散至产业链。当前正值一季报披露窗口，业绩超预期将催化股价上行。",
+  "related_signals": [
+    "sig_4880fa0cb378",
+    "sig_2f1946036bb1",
+    "sig_c65bd11e442f",
+    "sig_14d75f807b3c"
+  ],
+  "inferred_events": [
+    "inferred_7d7bf2d7",
+    "inferred_8fc2ca18",
+    "inferred_451f46a6",
+    "inferred_13a305e3",
+    "inferred_f3ce1471",
+    "inferred_537d5680",
+    "inferred_97be7387",
+    "inferred_0bc2aade"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "中际旭创盘中市值突破万亿，创历史里程碑",
+    "新易盛一季报净利润同比增长76.8%",
+    "长电科技一季度产能利用率超80%，产能供不应求",
+    "某半导体龙头Q1净利润预增150%-180%"
+  ],
+  "counter_evidence": [
+    "A股市场短期回调风险增加，恐贪指数67处于贪婪区间",
+    "历史案例显示技术突破需商业化验证，当前部分标的估值已较高"
+  ],
+  "key_assumptions": [
+    "假设1：AI算力需求持续增长，下游资本开支不出现大幅缩减",
+    "假设2：一季报业绩超预期趋势延续至二季度",
+    "假设3：中美科技摩擦不进一步升级影响供应链"
+  ],
+  "uncertainty_map": [
+    "AI算力需求增速放缓（影响程度：高）",
+    "中美科技制裁升级（影响程度：高）",
+    "市场整体回调拖累板块（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 7,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 9,
+    "overall_score": 7.4,
+    "confidence_score": 0.5800000000000001,
+    "execution_readiness": 0.75
+  },
+  "risk_reward_profile": "潜在收益：AI算力产业链业绩持续超预期，龙头股有望获得估值溢价，收益空间20%-30%。潜在风险：市场整体回调或AI需求不及预期，最大回撤约15%。",
+  "next_validation_questions": [
+    "中际旭创、新易盛等公司一季报详细数据是否全面超预期？",
+    "长电科技产能利用率能否持续提升？",
+    "AI芯片需求是否出现边际放缓信号？"
+  ],
+  "invalidation_conditions": [
+    "中际旭创或新易盛一季报不及预期",
+    "AI芯片龙头下调资本开支指引",
+    "中美科技制裁导致供应链中断"
+  ],
+  "must_watch_indicators": [
+    "中际旭创、新易盛股价走势及成交量",
+    "长电科技产能利用率变化",
+    "AI芯片龙头资本开支指引",
+    "一季报披露进度及市场反应"
+  ],
+  "kill_switch_signals": [
+    "中际旭创或新易盛股价跌破20日均线",
+    "长电科技产能利用率回落至70%以下",
+    "AI芯片龙头大幅下调资本开支"
+  ],
+  "warnings": [
+    "部分标的短期涨幅较大，需警惕回调风险",
+    "市场整体情绪偏贪婪，系统性风险不可忽视"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T21:26:30.814750",
+  "batch_id": "sched_signal_pipeline_20260509_212153_0b40a6_19000101_astock_skill_93295b03",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

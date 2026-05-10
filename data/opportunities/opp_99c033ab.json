@@ -1,0 +1,136 @@
+{
+  "opportunity_id": "opp_99c033ab",
+  "opportunity_title": "中东冲突能源航运机会",
+  "opportunity_thesis": "美军与伊朗在霍尔木兹海峡的军事冲突升级，导致航运受阻、能源价格飙升，且高盛调查显示市场预期中断将持续至下半年。进口煤价倒挂推动国内煤炭需求，同时干散货运价已创新高，形成能源与航运板块的共振机会。当前市场尚未完全定价冲突长期化风险，存在预期差。\n\n【M13调研】美军袭击伊朗民用船只事件确实发生，霍尔木兹海峡通行受阻风险上升，理论上利好能源替代和军工。但外交谈判同步进行，科技股大涨分流资金，且煤炭企业盈利下滑，削弱了利好逻辑。市场尚未充分定价冲突持续性，但预期差不大。综合评估，机会存在但风险较高，置信度下调0.1。\n\n【M13调研】该机会描述的地缘事件未获任何新闻、研报或行业趋势支持，M13调研明确指出其基于虚假或过时信息。新闻显示伊朗谈判仍在进行，与冲突升级矛盾。无相关基本面数据。因此，该机会存在重大利空，建议忽略。置信度下调0.3。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "601225.SH",
+    "600188.SH",
+    "601919.SH",
+    "600026.SH",
+    "601872.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-13T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "美军在霍尔木兹海峡连续拦截伊朗油轮并发生交火，伊朗武装力量全面备战，冲突从口头威胁升级为实际军事行动。同时，卫星图像显示伊朗哈尔克岛附近疑似大规模石油泄漏，进一步加剧供应中断风险。高盛调查显示多数投资者预期航运受阻将持续至6月底后，当前时点是冲突升级初期，市场尚未充分定价长期化风险。",
+  "related_signals": [
+    "sig_3cf8fcf349ae",
+    "sig_0806bfd8639e",
+    "sig_8e8c4ed52bad",
+    "sig_4bdf8baa2d3a",
+    "sig_afe9eed20a0b",
+    "sig_968dbdfcd94a",
+    "sig_c03469c8ae34",
+    "sig_2e7d7516821e",
+    "sig_b3de9b426692",
+    "sig_750e411aaff5",
+    "sig_992644367a0a",
+    "sig_1fcc386acab4",
+    "sig_9e1e9233ab36",
+    "sig_eb80de18be59",
+    "sig_82a8c461a4b6",
+    "sig_d045354f7ded",
+    "sig_926dd4b69f57",
+    "sig_bb9a9c6d60a1",
+    "sig_074e8c030441",
+    "sig_3ed518a56d14",
+    "sig_571a67c4298e",
+    "sig_2201d7544cad",
+    "sig_70a333e7b67e",
+    "sig_debbf62cdf97",
+    "sig_ec500e4d7f22",
+    "sig_cf272f568f82",
+    "sig_adef1edef3e4",
+    "sig_debd6a76d715"
+  ],
+  "inferred_events": [
+    "inferred_ce3e42a2",
+    "inferred_b11ef8bf",
+    "inferred_17754940",
+    "inferred_f5dcb43d",
+    "inferred_daf0f0bc",
+    "inferred_f3f0b2d9"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军在阿曼湾拦截两艘伊朗油轮，并使用精确制导弹药使其失去航行能力，封锁行动升级",
+    "伊朗武装力量全面备战，外交部表示将回击任何侵略，冲突有进一步升级风险",
+    "进口煤价较年初上涨171元/吨，与国内煤价倒挂，企业转向国内采购，利好国内煤炭企业",
+    "上海航运交易所报告显示三大船型运价上涨，海岬型船日租金创新高",
+    "高盛调查显示43%受访者预计霍尔木兹海峡航运要到7月后才恢复正常"
+  ],
+  "counter_evidence": [
+    "冲突可能短期缓和，美伊双方均表示停火状态名义上存在，地缘风险溢价可能快速消退",
+    "全球经济增长放缓（德国工业产出连续下降）可能抑制能源需求，限制油价上行空间"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡航运受阻将持续至少至6月底，不会在短期内迅速恢复",
+    "假设2：伊朗不会全面封锁海峡，但零星冲突和拦截行动持续，维持供应中断风险",
+    "假设3：国内煤炭需求因进口替代而实质性增加，而非短期情绪炒作"
+  ],
+  "uncertainty_map": [
+    "冲突升级程度（影响程度：高）：全面战争 vs 局部摩擦，决定能源价格涨幅和持续性",
+    "国际社会干预（影响程度：中）：联合国或大国调停可能迅速降温局势",
+    "伊朗石油出口实际受损量（影响程度：中）：哈尔克岛泄漏和油轮拦截的实际影响需量化"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 6,
+    "tradability": 7,
+    "risk_clarity": 5,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.17500000000000002,
+    "execution_readiness": 0.65
+  },
+  "risk_reward_profile": "潜在收益：能源和航运板块在冲突持续下可能上涨20-30%，国内煤炭企业受益于进口替代。潜在风险：冲突迅速缓和导致风险溢价消退，板块可能回吐5-10%。收益风险比约2:1至3:1。",
+  "next_validation_questions": [
+    "霍尔木兹海峡实际航运中断程度如何？是否有可量化的通行量数据？",
+    "国内煤炭企业（如中国神华、中煤能源）近期库存和订单数据是否显示需求增加？",
+    "原油期货（布伦特、WTI）价格是否已突破关键阻力位并伴随成交量放大？"
+  ],
+  "invalidation_conditions": [
+    "美伊双方宣布停火并恢复海峡正常通行",
+    "原油价格大幅回落至冲突前水平",
+    "国内煤炭库存高企，进口替代需求证伪"
+  ],
+  "must_watch_indicators": [
+    "布伦特原油期货价格及持仓量变化",
+    "霍尔木兹海峡通行船舶数量（实时数据）",
+    "上海航运交易所干散货运价指数",
+    "国内动力煤期货价格及库存数据"
+  ],
+  "kill_switch_signals": [
+    "美伊达成正式停火协议",
+    "原油价格单日暴跌超过5%",
+    "伊朗石油出口恢复至冲突前水平"
+  ],
+  "warnings": [
+    "地缘政治事件具有高度不确定性，冲突可能迅速升级或缓和，需严格设置止损",
+    "部分信号（如哈尔克岛泄漏）置信度较低，需等待官方确认"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T13:14:10.926351",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_455c84e2",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

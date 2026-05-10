@@ -1,0 +1,151 @@
+{
+  "opportunity_id": "opp_1f0aa3d2",
+  "opportunity_title": "中东冲突推升能源",
+  "opportunity_thesis": "美伊在霍尔木兹海峡的军事冲突持续升级，美军已拦截多艘伊朗油轮并改变58艘商船航向，伊朗革命卫队声称已锁定美国目标等待开火命令。霍尔木兹海峡航运受阻导致全球能源运输成本飙升（赫伯罗特每周额外成本超5000万美元），进口煤炭价格倒挂推动国内煤企受益，同时全球粮价连续第三个月上涨。这一地缘政治冲击尚未被市场充分定价，且高盛调查显示多数投资者预期航运受阻将持续至下半年，为能源和航运相关资产提供了明确的做多窗口。\n\n【M13调研】中东地缘冲突升级可能推高能源和航运成本，利好国内煤炭和农业板块，但当前缺乏研报、新闻和基本面数据支持，信息基础薄弱。风险在于冲突缓和或市场已部分定价。置信度调整-0.1，建议谨慎关注后续数据。\n\n【M13调研】中东冲突升级利好国内煤炭和农业的逻辑存在，但缺乏任何研报、新闻或基本面数据支持，信息基础薄弱。市场可能已部分定价，且冲突缓和风险高。当前置信度极低，建议观望，等待更多数据或催化剂出现。",
+  "target_markets": [
+    "A_SHARE",
+    "HK",
+    "US"
+  ],
+  "target_instruments": [
+    "601088.SH",
+    "600188.SH",
+    "600028.SH",
+    "601857.SH",
+    "600026.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-13T00:00:00",
+    "confidence_level": 0.75
+  },
+  "why_now": "美军5月7-8日连续袭击伊朗民用船只和油轮，伊朗革命卫队5月9日深夜发出军事打击警告，冲突从封锁升级为直接交火。霍尔木兹海峡航运受阻已持续数月，但当前军事摩擦的烈度和频率显著上升，且美联储报告将地缘冲突列为金融稳定风险，市场避险情绪尚未完全释放。",
+  "related_signals": [
+    "sig_3cf8fcf349ae",
+    "sig_0806bfd8639e",
+    "sig_8e8c4ed52bad",
+    "sig_4bdf8baa2d3a",
+    "sig_afe9eed20a0b",
+    "sig_968dbdfcd94a",
+    "sig_2e7d7516821e",
+    "sig_378c376ff8d4",
+    "sig_09752e9de48e",
+    "sig_c8ad6aa39ecc",
+    "sig_b3de9b426692",
+    "sig_750e411aaff5",
+    "sig_992644367a0a",
+    "sig_1fcc386acab4",
+    "sig_9e1e9233ab36",
+    "sig_eb80de18be59",
+    "sig_82a8c461a4b6",
+    "sig_d045354f7ded",
+    "sig_926dd4b69f57",
+    "sig_bb9a9c6d60a1",
+    "sig_074e8c030441",
+    "sig_3ed518a56d14",
+    "sig_571a67c4298e",
+    "sig_2201d7544cad",
+    "sig_70a333e7b67e",
+    "sig_debbf62cdf97",
+    "sig_ec500e4d7f22",
+    "sig_cf272f568f82",
+    "sig_adef1edef3e4",
+    "sig_279c656c4272",
+    "sig_05dcba00c5e4",
+    "sig_cef8ea31a2f8",
+    "sig_f079127c3165",
+    "sig_60c34f881549",
+    "sig_675d1b88071c",
+    "sig_79698a0b85b8",
+    "sig_9ea74c2afb50",
+    "sig_111204a32b90",
+    "sig_2c8d746e77e8",
+    "sig_a82cb7eb4d39",
+    "sig_a23083bf8ef3"
+  ],
+  "inferred_events": [
+    "inferred_b515cd32",
+    "inferred_4e3802a3",
+    "inferred_420b84ab",
+    "inferred_81fc5b99",
+    "inferred_d64942d2"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军在阿曼湾拦截两艘伊朗油轮并使用精确制导弹药使其失去航行能力，封锁力度升级",
+    "伊朗革命卫队声称导弹和无人机已锁定美国目标，等待开火命令，冲突一触即发",
+    "进口煤炭价格倒挂，印尼3800大卡动力煤华南到岸价较年初上涨171元，企业转向国内采购",
+    "全球粮价连续第三个月上涨，受能源成本和中东物流中断影响",
+    "高盛调查显示43%受访者预计霍尔木兹海峡航运要到7月后才恢复正常"
+  ],
+  "counter_evidence": [
+    "美伊双方名义上仍处于停火状态，冲突可能通过外交途径缓解",
+    "美联储官员释放鹰派信号，加息选项在桌面上，可能压制风险资产"
+  ],
+  "key_assumptions": [
+    "假设1：美伊军事冲突不会在短期内（1-2周）达成停火协议",
+    "假设2：霍尔木兹海峡航运受阻将持续至少至6月底",
+    "假设3：国内煤炭和能源企业能够受益于进口替代和价格上涨"
+  ],
+  "uncertainty_map": [
+    "冲突突然缓和或停火（影响程度：高）",
+    "美国制裁涉伊朗中企可能波及A股相关标的（影响程度：中）",
+    "全球经济增长放缓压制能源需求（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.38000000000000006,
+    "execution_readiness": 0.72
+  },
+  "risk_reward_profile": "潜在收益来自能源价格上涨和国内替代需求，风险在于冲突突然缓和导致风险溢价消退。若冲突持续，能源股和航运股可能获得20-30%涨幅；若停火，可能回撤10-15%。",
+  "next_validation_questions": [
+    "美伊双方是否有外交接触或停火谈判的迹象？",
+    "国内煤炭企业（如中国神华、中煤能源）的库存和产能利用率数据如何？",
+    "布伦特原油期货价格是否已突破关键阻力位（如85美元/桶）？",
+    "A股能源板块的成交量和资金流向是否持续放大？"
+  ],
+  "invalidation_conditions": [
+    "美伊达成停火协议或冲突显著降级",
+    "霍尔木兹海峡航运恢复正常，航运成本回落",
+    "国内煤炭价格出现大幅下跌或进口煤价回落"
+  ],
+  "must_watch_indicators": [
+    "布伦特原油期货价格走势",
+    "霍尔木兹海峡航运通行状态",
+    "国内动力煤期货价格（如郑商所动力煤合约）",
+    "A股煤炭板块指数（如申万煤炭指数）"
+  ],
+  "kill_switch_signals": [
+    "美伊双方宣布停火或恢复谈判",
+    "霍尔木兹海峡航运完全恢复",
+    "国内煤炭价格单日跌幅超过5%"
+  ],
+  "warnings": [
+    "注意：地缘政治事件具有高度不确定性，冲突可能突然缓和导致风险溢价快速消退",
+    "注意：美国对涉伊朗中企的制裁可能波及A股相关标的，需关注制裁名单变化"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T10:37:46.751616",
+  "batch_id": "sched_signal_pipeline_20260510_103554_d354f8_20260510_astock_skill_0cb2e31a",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

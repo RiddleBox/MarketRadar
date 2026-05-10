@@ -1,0 +1,143 @@
+{
+  "opportunity_id": "opp_1dca65d0",
+  "opportunity_title": "中东冲突能源航运",
+  "opportunity_thesis": "美军与伊朗在霍尔木兹海峡的军事冲突升级，导致航运受阻、进口煤价倒挂、全球粮价上涨，直接利好国内煤炭、航运和农业板块。当前冲突仍在持续且市场预期海峡封锁将延续至下半年，存在显著预期差，国内替代逻辑清晰。\n\n【M13调研】美军袭击伊朗民用船只事件确实发生，霍尔木兹海峡通行受阻风险上升，理论上利好能源替代和军工。但外交谈判同步进行，科技股大涨分流资金，且煤炭企业盈利下滑，削弱了利好逻辑。市场尚未充分定价冲突持续性，但预期差不大。综合评估，机会存在但风险较高，置信度下调0.1。\n\n【M13调研】该机会描述的地缘事件未获任何新闻、研报或行业趋势支持，M13调研明确指出其基于虚假或过时信息。新闻显示伊朗谈判仍在进行，与冲突升级矛盾。无相关基本面数据。因此，该机会存在重大利空，建议忽略。置信度下调0.3。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601225.SH",
+    "600188.SH",
+    "601919.SH",
+    "600026.SH",
+    "000998.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-31T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "美军5月7-8日连续袭击伊朗民用船只和油轮，伊朗武装力量全面备战并已发生零星交火，霍尔木兹海峡航运受阻已从预期变为现实。高盛调查显示多数投资者预期封锁将持续至7月后，当前时点是冲突升级初期，市场尚未充分定价国内替代和持续影响。",
+  "related_signals": [
+    "sig_3cf8fcf349ae",
+    "sig_0806bfd8639e",
+    "sig_8e8c4ed52bad",
+    "sig_4bdf8baa2d3a",
+    "sig_afe9eed20a0b",
+    "sig_968dbdfcd94a",
+    "sig_c03469c8ae34",
+    "sig_2e7d7516821e",
+    "sig_b3de9b426692",
+    "sig_750e411aaff5",
+    "sig_992644367a0a",
+    "sig_1fcc386acab4",
+    "sig_9e1e9233ab36",
+    "sig_eb80de18be59",
+    "sig_82a8c461a4b6",
+    "sig_d045354f7ded",
+    "sig_926dd4b69f57",
+    "sig_bb9a9c6d60a1",
+    "sig_074e8c030441",
+    "sig_3ed518a56d14",
+    "sig_571a67c4298e",
+    "sig_2201d7544cad",
+    "sig_70a333e7b67e",
+    "sig_debbf62cdf97",
+    "sig_ec500e4d7f22",
+    "sig_cf272f568f82",
+    "sig_adef1edef3e4",
+    "sig_debd6a76d715"
+  ],
+  "inferred_events": [
+    "inferred_bb2371e0",
+    "inferred_500c0bb1",
+    "inferred_f5ca9766",
+    "inferred_d4678648",
+    "inferred_c4ccf001",
+    "inferred_dd7580b6",
+    "inferred_d72c5078",
+    "inferred_8ce1698b",
+    "inferred_82e8a4e4",
+    "inferred_9f2f11b3",
+    "inferred_2e144a18",
+    "inferred_66ba1a37",
+    "inferred_0f236818",
+    "inferred_41dda864",
+    "inferred_f16c9e2a"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "进口煤价倒挂，印尼3800大卡动力煤华南到岸价较年初上涨171元至602元/吨，企业转向国内采购",
+    "上海航运交易所报告显示三大船型运价上涨，海岬型船日租金创新高",
+    "联合国粮农组织食品价格指数连续第三个月上涨，受能源成本和中东战事影响",
+    "高盛调查显示43%受访者预计霍尔木兹海峡航运7月后才恢复正常"
+  ],
+  "counter_evidence": [
+    "冲突可能短期结束，若美伊达成停火协议则航运恢复，利好逻辑瓦解",
+    "国内煤炭和航运板块已有所上涨，部分预期可能已price-in"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡航运受阻将持续至少1-2个月",
+    "假设2：国内煤炭企业产能充足，能承接进口替代需求",
+    "假设3：全球粮价上涨趋势延续，国内农业受益于替代效应"
+  ],
+  "uncertainty_map": [
+    "冲突升级程度不确定性（影响程度：高）——若全面战争爆发，全球市场系统性风险上升，利好逻辑可能被恐慌情绪淹没",
+    "政策干预不确定性（影响程度：中）——若国家动用储备煤或限制煤价，国内煤企利润空间受限",
+    "航运运价持续性不确定性（影响程度：中）——运价已创新高，后续涨幅空间取决于冲突持续时间"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 6,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.17500000000000002,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：国内煤炭股受益进口替代（历史弹性30-50%），航运股受益运价上涨（历史弹性20-40%），农业股受益粮价上涨（历史弹性15-25%）。潜在风险：冲突快速结束导致板块回调10-20%，或全面战争引发系统性风险导致整体下跌。",
+  "next_validation_questions": [
+    "霍尔木兹海峡航运受阻的具体量化数据（每日通过油轮数量变化）",
+    "国内主要煤炭企业（中国神华、中煤能源）5月销售和价格数据",
+    "上海航运交易所下周运价指数是否继续上涨",
+    "美伊双方是否有停火谈判信号"
+  ],
+  "invalidation_conditions": [
+    "美伊达成停火协议，霍尔木兹海峡航运恢复正常",
+    "国内煤价出现明显回调或政策限价",
+    "航运运价指数连续两周下跌"
+  ],
+  "must_watch_indicators": [
+    "布伦特原油价格走势",
+    "上海航运交易所远东干散货日租金指数",
+    "国内动力煤现货价格（CCI指数）",
+    "美伊双方官方表态（停火/升级信号）"
+  ],
+  "kill_switch_signals": [
+    "美伊宣布停火或达成临时协议",
+    "霍尔木兹海峡航运量恢复至冲突前水平",
+    "国内煤炭板块单日跌幅超5%且放量"
+  ],
+  "warnings": [
+    "注意：冲突升级可能导致全球市场系统性风险，需控制仓位",
+    "注意：部分信号来自新闻媒体，需交叉验证官方来源"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T14:00:14.044671",
+  "batch_id": "sched_signal_pipeline_20260509_125900_89fdd2_20260509_astock_skill_ddbe0ddd",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

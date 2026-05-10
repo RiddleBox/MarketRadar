@@ -1,0 +1,112 @@
+{
+  "opportunity_id": "opp_05c31d43",
+  "opportunity_title": "中东冲突推升能源航运",
+  "opportunity_thesis": "美伊在霍尔木兹海峡的军事对抗持续升级，导致全球关键能源运输通道受阻，航运成本飙升，进口煤炭价格倒挂，国内煤炭企业受益于进口替代。同时，全球粮价连续上涨，农业板块受能源成本与物流中断支撑。这是一个短期地缘风险驱动的结构性机会，核心受益方向为国内煤炭和农业板块。\n\n【M13调研】美军封锁霍尔木兹海峡导致航运受阻，进口煤炭价格倒挂，国内煤企可能受益，但陕西煤业盈利下滑。全球粮价上涨但无直接新闻。市场未完全定价长期中断风险，但缺乏研报和行业趋势支持。风险在于冲突缓和或国内需求疲软。整体机会存在但置信度不高，需谨慎。\n\n【M13调研】中东冲突升级利好国内煤炭和农业的逻辑存在，但缺乏任何研报、新闻或基本面数据支持，信息基础薄弱。市场可能已部分定价，且冲突缓和风险高。当前置信度极低，建议观望，等待更多数据或催化剂出现。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601225.SH",
+    "600188.SH",
+    "600546.SH",
+    "000998.SZ",
+    "002714.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "美军5月7-8日连续袭击伊朗民用船只和油轮，霍尔木兹海峡交火声不断，冲突烈度急剧升级。同时，进口煤价已出现倒挂，企业转向国内采购，国内煤炭企业直接受益。全球粮价连续第三个月上涨，农业板块受成本推动。当前是冲突升级与基本面变化共振的窗口期。",
+  "related_signals": [
+    "sig_3cf8fcf349ae",
+    "sig_0806bfd8639e",
+    "sig_4bdf8baa2d3a",
+    "sig_2e7d7516821e",
+    "sig_c8ad6aa39ecc",
+    "sig_82a8c461a4b6",
+    "sig_bb9a9c6d60a1",
+    "sig_ec500e4d7f22"
+  ],
+  "inferred_events": [
+    "inferred_7c18ecc7",
+    "inferred_53f19394",
+    "inferred_0f881e12",
+    "inferred_7e5d2a52",
+    "inferred_eefedef0"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军袭击伊朗民用船只致15人伤亡，霍尔木兹海峡附近2小时内传出交火声，冲突升级信号明确",
+    "进口煤炭价格较年初上涨171元/吨，4月出现倒挂，企业转向国内采购，利好国内煤企",
+    "全球粮价连续第三个月上涨，受能源成本与物流中断影响，农业板块受益",
+    "德国航运巨头赫伯罗特每周额外成本超5000万美元，航运成本飙升确认"
+  ],
+  "counter_evidence": [
+    "冲突可能迅速缓和，地缘风险溢价消退，能源价格回落",
+    "国内煤炭供给充足，进口替代空间有限，煤价上涨持续性存疑"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡通行受阻持续至少2周以上",
+    "假设2：国内煤炭需求未出现大幅下滑",
+    "假设3：全球粮价上涨趋势未被政策干预逆转"
+  ],
+  "uncertainty_map": [
+    "冲突缓和速度（影响程度：高）",
+    "国内煤炭增产政策响应（影响程度：中）",
+    "全球粮食供应链替代方案（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 5,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.32,
+    "execution_readiness": 0.65
+  },
+  "risk_reward_profile": "潜在收益来自冲突持续推升能源和航运成本，国内煤炭和农业板块受益；风险在于冲突快速缓和导致风险溢价消退，以及国内政策干预压制煤价。预计收益/风险比约2:1。",
+  "next_validation_questions": [
+    "国内主要煤炭企业（如中国神华、中煤能源）近期是否有提价或增产公告？",
+    "霍尔木兹海峡通行受阻是否导致原油期货价格突破关键阻力位？",
+    "农业板块（如北大荒、牧原股份）近期是否有成本传导或订单增加的迹象？"
+  ],
+  "invalidation_conditions": [
+    "美伊双方宣布停火或谈判",
+    "霍尔木兹海峡恢复通行",
+    "国内煤炭价格出现大幅下跌"
+  ],
+  "must_watch_indicators": [
+    "WTI原油期货价格",
+    "波罗的海干散货运价指数（BDI）",
+    "国内动力煤期货价格",
+    "联合国粮农组织食品价格指数"
+  ],
+  "kill_switch_signals": [
+    "美伊双方释放和谈信号",
+    "国内煤炭增产政策出台",
+    "全球股市大幅反弹，避险情绪消退"
+  ],
+  "warnings": [
+    "地缘冲突事件具有高度不确定性，冲突缓和可能导致相关资产快速回落",
+    "国内煤炭板块已部分反映进口替代预期，需警惕利好兑现"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-10T05:04:29.386096",
+  "batch_id": "sched_signal_pipeline_20260510_045720_1d2d59_20260510_astock_skill_3ecf7bf6",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

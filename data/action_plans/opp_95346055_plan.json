@@ -1,0 +1,71 @@
+{
+  "plan_id": "plan_7ca9b373fa13",
+  "opportunity_id": "opp_95346055",
+  "plan_summary": "BULLISH | 601225.SH, 600188.SH",
+  "primary_instruments": [
+    "601225.SH",
+    "600188.SH",
+    "600026.SH",
+    "601872.SH",
+    "000998.SZ"
+  ],
+  "instrument_type": "STOCK",
+  "direction": "BULLISH",
+  "market": "A_SHARE",
+  "stop_loss": {
+    "stop_loss_type": "percent",
+    "stop_loss_value": 6.0,
+    "stop_loss_price": null,
+    "hard_stop": true,
+    "notes": "跌破12.50元（前低支撑位，对应冲突缓和或航运恢复的假设失效）"
+  },
+  "take_profit": {
+    "take_profit_type": "percent",
+    "take_profit_value": 12.0,
+    "take_profit_price": null,
+    "partial_take_profit": true,
+    "partial_ratio": 0.5,
+    "notes": "第一目标15.00元（前高阻力位，对应航运成本持续上涨的短期兑现），第二目标16.50元（2023年高点，对应长期中断风险充分定价）"
+  },
+  "position_sizing": {
+    "suggested_allocation": "5.0%",
+    "max_allocation": "不超过5.0%",
+    "sizing_rationale": "优先级=research | 风险预算=1% | 止损=6.0% | 仓位=风险预算/止损=5.0%",
+    "suggested_allocation_pct": 0.05,
+    "max_allocation_pct": 0.05
+  },
+  "phases": [
+    {
+      "phase_name": "Phase 1 侦察仓",
+      "action_type": "buy",
+      "timing_description": "买入600026.SH，仓位20%（总资金上限30%），止损12.50元",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "当前价格（13.50元）直接触发，因冲突升级是实时事件，无需等待"
+    },
+    {
+      "phase_name": "Phase 2 主仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总仓位50%（追加30%），止损上移至13.00元（Phase 1成本价）",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 1 浮盈达到5%（即价格突破14.18元），且霍尔木兹海峡无停火信号"
+    },
+    {
+      "phase_name": "Phase 3 激进仓",
+      "action_type": "buy",
+      "timing_description": "加仓至总仓位70%（追加20%），止损上移至14.50元，采用移动止盈",
+      "allocation_ratio": 0.5,
+      "price_range": null,
+      "trigger_condition": "Phase 2 浮盈达到10%（即价格突破15.60元），且冲突烈度进一步升级（如伊朗封锁海峡或美军扩大打击范围）"
+    }
+  ],
+  "valid_until": "2026-05-31T04:15:25.771643",
+  "review_triggers": [
+    "关键假设失效",
+    "机会窗口到期前复核",
+    "21天内未触发入场则重新评估"
+  ],
+  "created_at": "2026-05-10T04:15:25.772180",
+  "opportunity_priority": "research"
+}

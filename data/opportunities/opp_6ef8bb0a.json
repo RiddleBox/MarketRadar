@@ -1,0 +1,109 @@
+{
+  "opportunity_id": "opp_6ef8bb0a",
+  "opportunity_title": "俄乌停火避险消退",
+  "opportunity_thesis": "俄乌冲突出现实质性缓和，双方同意延长停火并交换战俘，地缘风险溢价将快速消退。全球风险资产（尤其是欧洲及新兴市场）将迎来短期修复行情，A股和港股中受地缘风险压制的板块（如航空、旅游、军工下游）有望受益。但停火仅为短期安排，全面和平协议尚未达成，机会窗口有限，属于事件驱动型交易。\n\n【M13调研】俄乌停火为短期事件驱动机会，地缘风险消退利好航空、旅游等板块，但全面和平未达成，窗口有限。新闻无直接相关，南方航空一季报扭亏为盈提供微弱支撑。缺乏研报和基本面数据，风险在于停火反复和机会短暂。建议谨慎参与，控制仓位，快进快出。\n\n【M13调研】俄乌停火为短期事件驱动机会，地缘风险消退利好航空、旅游等板块，但全面和平未达成，窗口有限。南方航空、中国国航一季报扭亏为盈提供微弱基本面支撑，但无研报覆盖，新闻无直接相关。风险在于停火反复和机会短暂，建议谨慎参与，控制仓位，快进快出。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "600029.SH",
+    "601111.SH",
+    "600115.SH",
+    "000888.SZ",
+    "002707.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-05-20T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "俄乌双方首次正式同意延长停火并交换战俘，且乌克兰承诺不攻击红场阅兵，这是2022年冲突爆发以来最明确的缓和信号。市场此前已部分定价冲突长期化，停火消息将触发风险偏好短期修复。",
+  "related_signals": [
+    "sig_2cf7a78fa7a2",
+    "sig_f0f177c18de5",
+    "sig_73b1a2dad8ea"
+  ],
+  "inferred_events": [
+    "inferred_83eddb1e",
+    "inferred_72c08007",
+    "inferred_cc7b0032",
+    "inferred_62cb07cd",
+    "inferred_63f8c652",
+    "inferred_1ecfe7b3",
+    "inferred_a3a6ceaf",
+    "inferred_de883ec1"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "俄罗斯总统助理乌沙科夫确认俄方同意并支持特朗普提出的延长停火和换俘方案",
+    "乌克兰总统泽连斯基下令不攻击莫斯科红场阅兵，显示双方均有缓和意愿",
+    "特朗普作为中间人推动，停火方案具有较高执行力"
+  ],
+  "counter_evidence": [
+    "停火仅三天，后续能否延长存在不确定性，全面和平协议远未达成",
+    "历史案例显示地缘缓和带来的风险偏好修复通常短暂（如2024年2月中东冲突缓和后市场仅反弹5天）"
+  ],
+  "key_assumptions": [
+    "假设1：停火协议在5月9日至11日期间得到双方实际遵守，无重大违约事件",
+    "假设2：后续谈判能延续停火，而非回到全面冲突状态"
+  ],
+  "uncertainty_map": [
+    "停火执行力度（影响程度：高）—— 若出现违约，风险溢价将迅速回升",
+    "后续谈判进展（影响程度：中）—— 若双方分歧过大，停火可能仅为短期喘息",
+    "市场对地缘缓和的定价程度（影响程度：中）—— 若已充分price-in，修复空间有限"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 9,
+    "market_confirmation": 5,
+    "tradability": 6,
+    "risk_clarity": 5,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 6.6,
+    "confidence_score": 0.35,
+    "execution_readiness": 0.55
+  },
+  "risk_reward_profile": "潜在收益：地缘风险溢价消退带来的短期修复行情，航空、旅游等受压制板块可能有5-10%反弹空间。潜在风险：停火执行不力或谈判破裂，风险溢价迅速回归，回撤幅度可达3-5%。收益风险比约2:1，但时间窗口极短，需快速决策。",
+  "next_validation_questions": [
+    "5月9日停火首日是否有任何一方违反停火协议？",
+    "后续是否有更多国家（如欧盟）参与推动和平进程？",
+    "全球主要股指（如欧洲STOXX 600、俄罗斯RTS）开盘后是否出现明显上涨？"
+  ],
+  "invalidation_conditions": [
+    "停火期间发生重大军事冲突或人员伤亡",
+    "俄罗斯或乌克兰任何一方公开否认停火协议",
+    "市场开盘后风险资产不涨反跌，显示地缘风险已被充分定价"
+  ],
+  "must_watch_indicators": [
+    "俄乌边境军事动态（如炮击次数、部队调动）",
+    "欧洲股市开盘表现（尤其是德国DAX、法国CAC 40）",
+    "原油和黄金价格走势（避险资产是否回落）",
+    "俄罗斯卢布兑美元汇率"
+  ],
+  "kill_switch_signals": [
+    "停火期间出现大规模军事行动",
+    "俄罗斯或乌克兰宣布退出停火协议",
+    "特朗普撤回或修改停火方案"
+  ],
+  "warnings": [
+    "停火仅为短期安排，全面和平协议尚未达成，机会窗口极短",
+    "市场可能已部分定价停火预期，实际修复空间有限"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T17:29:17.582927",
+  "batch_id": "sched_signal_pipeline_20260509_163638_e0e39c_20260509_astock_skill_c7c99d5a",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

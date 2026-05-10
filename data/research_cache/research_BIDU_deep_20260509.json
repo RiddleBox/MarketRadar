@@ -1,0 +1,305 @@
+{
+  "symbol": "BIDU",
+  "research_level": "deep",
+  "triggered_by": "m3",
+  "reports": [],
+  "news": [
+    {
+      "title": "昆仑芯启动科创板IPO辅导：仍在正常推动港股上市进程 百度持股57%",
+      "content": "5月8日消息，据中国证监会官网，百度（Nasdaq：BIDU，09888.HK）旗下昆仑芯（北京）科技股份有限公司（简称：昆仑芯）拟首次公开发行股票并在科创板上市，中国国际金融股份有限公司担任辅导机构。",
+      "source": "澎湃新闻",
+      "published_at": "2026-05-08 10:13:00",
+      "url": "http://finance.eastmoney.com/a/202605083731214321.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "纳指、标普500再度刷新历史新高，英伟达市值收复5万亿美元关口",
+      "content": "个股方面，百度集团（BIDU.US）大涨11.37%，金山云（KC.US）涨超8%，阿里巴巴（BABA.US）涨近7%，世纪互联涨逾6%。 拼多多、汽车之家涨超5%，哔哩哔哩（BILI.US）涨超3%。",
+      "source": "界面新闻",
+      "published_at": "2026-05-07 09:13:50",
+      "url": "http://finance.eastmoney.com/a/202605073729528321.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "美股最新评级丨中信建投维持摩根大通买入评级 目标价378美元",
+      "content": "广发证券维持百度（BIDU.O）买入评级，目标价174美元： 26Q1 Core收入同比微降，广告承压但AI Cloud Infra同比增长41%，新兴业务占比提升。全年广告收入预计下滑19%，下半年趋稳；AI云受益GPU需求超预期，全年增速或达34%。",
+      "source": "财联社",
+      "published_at": "2026-04-17 16:41:00",
+      "url": "http://finance.eastmoney.com/a/202604173708967898.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "热门中概股普涨 金山云(KC.US)涨近6%",
+      "content": "周二，纳斯达克中国金龙指数涨1.67%，热门中概股普涨，金山云(KC.US)涨近6%，爱奇艺(IQ.US)涨逾4%，禾赛(HSAI.US)、京东(JD.US)、百度BIDU.US)涨逾3%，知乎(ZH.US)、老虎证券(TIGR.US)涨逾2%。",
+      "source": "每日经济新闻",
+      "published_at": "2026-04-14 22:13:14",
+      "url": "http://finance.eastmoney.com/a/202604143704825869.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "武汉“萝卜快跑”车辆停滞已恢复，业内人士：遇突发情况触发安全自检机制",
+      "content": "2月26日，百度（Nasdaq：BIDU，09888.HK）发布2025年第四季度及全年财报，财报显示，萝卜快跑四季度全球无人驾驶出行服务次数达340万，同比增长超200%，季度内每周出行次数峰值超30万。财报显示，萝卜快跑加速其向全球多个市场的扩张。",
+      "source": "澎湃新闻",
+      "published_at": "2026-04-01 08:49:00",
+      "url": "http://finance.eastmoney.com/a/202604013691733073.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "美股最新评级 | 中信证券维持戴尔买入评级，目标价160美元",
+      "content": "浦银国际维持百度（BIDU.O）买入评级，目标价195美元： 4Q25利润超预期，净利率11.9%，AI新业务营收占比达43%，智能云与AI应用高增；自动驾驶全球扩张加速，昆仑芯分拆上市进展顺利。股东回报提升叠加全栈AI商业化验证，支撑目标价。",
+      "source": "财联社",
+      "published_at": "2026-03-04 17:12:53",
+      "url": "http://finance.eastmoney.com/a/202603043661795857.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "美股最新评级 | 交银国际维持AMD买入评级 目标价275美元",
+      "content": "以下为各家券商对美股的最新评级和目标价： 招商证券(香港)维持百度（BIDU.O）买入评级，目标价161.7美元： 公司4Q25 AI营销收入同比大增110%，AI云基础设施收入增长34%，Apollo Go订单量强劲。",
+      "source": "财联社",
+      "published_at": "2026-03-03 16:03:08",
+      "url": "http://finance.eastmoney.com/a/202603033660339187.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "美股最新评级 | 开源证券维持英伟达买入评级",
+      "content": "中信建投维持百度（BIDU.O）买入评级： 公司AI云与自动驾驶业务加速兑现，4Q25 AI原生业务收入占比升至43%，全年AI业务收入约400亿元，验证“算力+模型+工具+营销闭环”商业化路径。Apollo Go全无人出行规模持续扩张，技术可复制性强。",
+      "source": "财联社",
+      "published_at": "2026-03-02 17:42:13",
+      "url": "http://finance.eastmoney.com/a/202603023658651636.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "百度2025年营收1291亿元，AI新业务增长48%，广告业务连续两个季度下滑",
+      "content": "红星资本局2月27日消息，百度（09888.HK；BIDU.US）昨日晚间发布了2025年第四季度及全年业绩。 2025年第四季度，百度总收入为327亿元，环比增长5%，但同比降低4%；归母净利润为18亿元，同比下滑65%。",
+      "source": "红星资本局",
+      "published_at": "2026-02-27 21:07:14",
+      "url": "http://finance.eastmoney.com/a/202602273656970577.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "百度集团2025年总收入1291亿元",
+      "content": "2月26日，百度集团（09888/89888/BIDU）发布2025年全年业绩公告。根据公告，公司2025年总收入为1291亿元，同比下降3%，主要由于传统业务减少，部分被百度核心AI新业务增长抵消。归属百度的净利润为55.89亿元，去年同期则为237.6亿元。",
+      "source": "财中社",
+      "published_at": "2026-02-26 17:33:32",
+      "url": "http://finance.eastmoney.com/a/202602263655411159.html",
+      "provider": "astock_skill",
+      "type": "explicit"
+    },
+    {
+      "title": "伊朗足协公布参加2026年美加墨世界杯10项条件",
+      "content": "【伊朗足协公布参加2026年美加墨世界杯10项条件】当地时间5月9日，伊朗足协主席迈赫迪·塔吉公布了伊朗参加2026年美加墨世界杯的10项条件。这些条件涉及签证办理、国家队安全保障、媒体采访以及赛事期间官方礼仪规范等问题。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 17:10:13",
+      "url": "https://finance.eastmoney.com/a/202605093732241494.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "央行就《城市商业银行银行汇票业务依托大额支付系统处理办法（征求意见稿）》等4件规范性文件公开征求意见",
+      "content": "【央行就《城市商业银行银行汇票业务依托大额支付系统处理办法（征求意见稿）》等4件规范性文件公开征求意见】据央行网站，为加强金融法治建设，完善中央银行法律法规体系，中国人民银行组织修订《城市商业银行银行汇票业务依托大额支付系统处理办法》（银办发〔2004〕206号印发）等4件规范性文件，形成征求意见稿。现向社会公开征求意见。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 17:07:54",
+      "url": "https://finance.eastmoney.com/a/202605093732241315.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "央行就《全国统一集中账户管理系统业务处理办法（征求意见稿）》公开征求意见",
+      "content": "【央行就《全国统一集中账户管理系统业务处理办法（征求意见稿）》公开征求意见】据央行网站，为加强金融法治建设，完善中央银行法律法规体系，中国人民银行拟制定《全国统一集中账户管理系统业务处理办法》，现向社会公开征求意见。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 17:06:37",
+      "url": "https://finance.eastmoney.com/a/202605093732241220.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "财政部发布关于下达2026年彩票市场调控资金预算的通知",
+      "content": "【财政部发布关于下达2026年彩票市场调控资金预算的通知】财政部发布关于下达2026年彩票市场调控资金预算的通知，2026年彩票市场调控资金下达数额，综合考虑各地区总人口数与销售场所数量的比值、平均每个销售场所的年销量、即开型彩票发展情况、地方彩票市场秩序情况、申请因素、资金绩效情况等确定，具体数额见《2026年彩票市场调控资金预算分配表》。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 17:02:00",
+      "url": "https://finance.eastmoney.com/a/202605093732239750.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "实属罕见！美银：美股和黄金今年或将连续第四年录得两位数涨幅",
+      "content": "【实属罕见！美银：美股和黄金今年或将连续第四年录得两位数涨幅】美国银行的策略师们最新指出，美国股市和黄金市场正呈现出一种罕见的态势，两者都有望迎来连续第四年的两位数涨幅。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 16:55:46",
+      "url": "https://finance.eastmoney.com/a/202605093732239146.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "硫磺价格年内涨幅约8成 下游钛白粉、磷肥企业多措并举控成本",
+      "content": "【硫磺价格年内涨幅约8成 下游钛白粉、磷肥企业多措并举控成本】记者采访获悉，今年来硫磺一直在涨价，5月8日报价上涨至6867元/吨，较年初上涨约80%，市场甚至有散单突破8000元/吨。面对成本急剧抬升，下游钛白粉、磷肥企业纷纷多措并举控成本，云天化、湖北宜化、惠云钛业等上市公司采用加强低价储备、向上游争取平价硫磺、采购硫铁矿自制硫酸等措施，以降低成本寻求竞争优势。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 16:55:11",
+      "url": "https://finance.eastmoney.com/a/202605093732239073.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "中国移动发布全国一体化算力网技术创新体系",
+      "content": "【中国移动发布全国一体化算力网技术创新体系】5月9日消息，中国移动正式发布“全国一体化算力网技术创新体系”。中国移动副总经理李慧镝表示，智能经济已成为承载新质生产力的核心引擎，面向AI时代，中国移动正围绕Token生产、传输、运营全链条构建全栈算力基础设施能力。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 16:55:05",
+      "url": "https://finance.eastmoney.com/a/202605093732238492.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "京东快递推出“顺手寄”服务",
+      "content": "【京东快递推出“顺手寄”服务】5月9日，京东快递宣布已推出“顺手寄”服务，让用户在查快递、收快递的同时，还可一键顺手寄件下单。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 16:47:18",
+      "url": "https://finance.eastmoney.com/a/202605093732237144.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "荣耀旗下星耀终端公司在宁波成立新公司",
+      "content": "【荣耀旗下星耀终端公司在宁波成立新公司】天眼查App显示，5月9日，宁波星耀终端商业有限公司成立，法定代表人为文洁，注册资本100万人民币，经营范围包括移动终端设备销售、家用电器销售、电子产品销售等，由荣耀旗下深圳星耀终端有限公司全资持股。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 16:43:18",
+      "url": "https://finance.eastmoney.com/a/202605093732236572.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "洋河股份声明：欢迎监督批评 对恶意诋毁、抹黑侵权行为依法追责",
+      "content": "【洋河股份声明：欢迎监督批评 对恶意诋毁、抹黑侵权行为依法追责】洋河股份官微5月9日发布声明称，近期，部分网络账号在微信、抖音、今日头条等平台，蓄意编造并传播针对公司的不实言论，包括但不限于编造“酒质缺陷”、“工厂被污染”等虚假信息，并通过转发、刷评等方式恶意扩散发酵。此类行为严重误导广大消费者，对洋河的产品声誉和品牌形象造成了恶劣影响。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 16:42:15",
+      "url": "https://finance.eastmoney.com/a/202605093732236495.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "美媒：中巴欧牵头组建全球碳定价联盟",
+      "content": "【美媒：中巴欧牵头组建全球碳定价联盟】据彭博新闻社网站5月8日报道，中国和欧盟已联手组建一个全球碳定价联盟。此举与美国政府力推化石燃料投资的政策形成鲜明对比。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 16:40:21",
+      "url": "https://finance.eastmoney.com/a/202605093732232435.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "涉疫邮轮预计10日抵达西班牙加那利群岛 多方协调乘客撤离",
+      "content": "【涉疫邮轮预计10日抵达西班牙加那利群岛 多方协调乘客撤离】总台记者当地时间5月9日获悉，涉汉坦病毒疫情的“洪迪厄斯”号邮轮预计在当地时间10日凌晨3时至5时停泊在西班牙加那利群岛的特内里费岛海域，并将于当日清晨抵达特内里费岛的格拉纳迪利亚港。乘客撤离行动预计将于当天中午开始。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 16:39:07",
+      "url": "https://finance.eastmoney.com/a/202605093732231552.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "理想汽车否认被监管部门约谈",
+      "content": "【理想汽车否认被监管部门约谈】理想汽车法务部5月9日发文称，近期，“因OTA锁电问题导致8家新能源车企被集中约谈，3家涉嫌违规被立案调查”一事引发网络热议，其中部分网友谣传理想汽车为被约谈企业之一。经核实，理想汽车并未因此事被监管部门约谈。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 16:31:57",
+      "url": "https://finance.eastmoney.com/a/202605093732230724.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "特发服务中标哔哩哔哩滨江总部物业服务项目",
+      "content": "【特发服务中标哔哩哔哩滨江总部物业服务项目】5月9日，据特发服务消息，特发服务中标哔哩哔哩上海滨江总部物业服务项目。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 16:25:57",
+      "url": "https://finance.eastmoney.com/a/202605093732230543.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "Deepseek和阿里谈崩了？市场人士：双方应该没有进行谈判",
+      "content": "【Deepseek和阿里谈崩了？市场人士：双方应该没有进行谈判】5月8日，有消息称，4月，DeepSeek（深度求索）罕见展开一场巨额融资计划，同时吸引了腾讯和阿里巴巴两家大厂。据该消息，近期，阿里巴巴和DeepSeek谈崩了。对此，市场人士5月9日对《每日经济新闻》记者独家透露，阿里应该没有进行谈判。",
+      "source": "东方财富",
+      "published_at": "2026-05-09 16:25:45",
+      "url": "https://finance.eastmoney.com/a/202605093732230454.html",
+      "provider": "astock_skill",
+      "type": "macro"
+    },
+    {
+      "title": "BDC Weekly Review: Private BDC Redemptions Supporting Public Funds",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 09:06:55",
+      "url": "https://seekingalpha.com/article/4901909-bdc-weekly-review-private-bdc-redemptions-supporting-public-funds?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "硫磺价格年内涨幅约8成，下游钛白粉、磷肥企业多措并举控成本",
+      "content": "记者采访获悉，今年来硫磺一直在涨价，5月8日报价上涨至6867元/吨，较年初上涨约80%，市场甚至有散单突破8000元/吨。面对成本急剧抬升，下游钛白粉、磷肥企业纷纷多措并举控成本，云天化、湖北宜化、惠云钛业等上市公司采用加强低价储备、向上游争取平价硫磺、采购硫铁矿自制硫酸等措施，以降低成本寻求竞争优势。（财联社）",
+      "source": "36氪",
+      "published_at": "2026-05-09 09:05:07",
+      "url": "https://36kr.com/newsflashes/3801827655556609?f=rss",
+      "provider": "rss",
+      "type": "tech"
+    },
+    {
+      "title": "MiMedx: The Hard Math Behind My Downgrade To Hold",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 09:04:28",
+      "url": "https://seekingalpha.com/article/4901907-mimedx-the-hard-math-behind-my-downgrade-to-hold?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "Reinsurance Group of America, Incorporated 2026 Q1 - Results - Earnings Call Presentation",
+      "content": "",
+      "source": "Seeking Alpha",
+      "published_at": "2026-05-09 09:01:04",
+      "url": "https://seekingalpha.com/article/4901916-reinsurance-group-of-america-incorporated-2026-q1-results-earnings-call-presentation?source=feed_all_articles",
+      "provider": "rss",
+      "type": "us_market"
+    },
+    {
+      "title": "光帆带摄像头AI耳机本月开售",
+      "content": "36氪获悉，光帆科技官方账号发布发售预热海报。海报显示，全球首款具备视觉感知能力的主动式AI耳机——光帆全感AI耳机，将于5月15日正式开售。",
+      "source": "36氪",
+      "published_at": "2026-05-09 08:56:08",
+      "url": "https://36kr.com/newsflashes/3801812857871876?f=rss",
+      "provider": "rss",
+      "type": "tech"
+    }
+  ],
+  "fundamentals": {},
+  "quote": {},
+  "semantic_results": [],
+  "summary": "机会描述的中国移动AI大模型服务平台上线及百亿Token投入缺乏新闻直接验证，仅算力网技术体系发布提供部分支撑。百度AI业务增长和昆仑芯IPO为间接利好，但市场对运营商基建的长期拉动效应尚未充分定价。风险在于政策落地不确定性和市场过热，基本面数据缺失。建议谨慎参与，等待更多确认信号。",
+  "key_findings": [
+    "中国移动发布全国一体化算力网技术创新体系，与机会描述中的千亿级算力基建计划吻合，但未提及AI大模型服务平台上线。",
+    "百度2025年营收1291亿元，AI新业务增长48%，但广告业务下滑，文心5.1成本降低未在新闻中直接验证。",
+    "昆仑芯启动科创板IPO辅导，百度持股57%，显示百度在AI芯片领域布局，但未直接关联大模型服务平台。",
+    "美股AI相关公司（英伟达、AMD等）获买入评级，市场对AI板块关注度回升，但未涉及运营商基建。",
+    "新闻中无直接提及中国移动AI大模型服务平台上线或百亿Token投入，机会描述缺乏直接证据。"
+  ],
+  "risk_factors": [
+    "政策落地不确定性：中国移动的算力基建计划可能受政策执行进度影响，实际投入和效果存疑。",
+    "市场过热风险：美股AI板块已创新高，若预期差未能兑现，可能面临回调压力。",
+    "基本面数据缺失：缺乏研报和财务数据支持，机会描述依赖叙事而非实证，验证难度大。"
+  ],
+  "confidence_assessment": "当前信息中，仅有一条新闻（中国移动发布算力网技术体系）部分支持机会描述，但核心事件（AI大模型服务平台上线、百亿Token投入）无直接报道。百度AI业务增长和昆仑芯IPO提供间接支撑，但力度有限。M13调研指出缺乏直接验证，基本面数据为空。整体置信度较低，需等待更多官方公告或研报确认。",
+  "confidence_multiplier": 1.0,
+  "confidence_delta": -0.2,
+  "has_major_negative": false,
+  "research_time": "2026-05-09T17:12:52.212927",
+  "data_sources": [
+    "news"
+  ],
+  "cache_hit": false,
+  "timeout": false,
+  "partial_result": false
+}

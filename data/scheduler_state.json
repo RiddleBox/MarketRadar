@@ -8,8 +8,8 @@
       "enabled": true,
       "interval_minutes": 30,
       "time_window": null,
-      "last_run": "2026-05-09T04:45:38.248668",
-      "run_count": 3,
+      "last_run": "2026-05-10T11:12:31.232069",
+      "run_count": 1,
       "error_count": 0,
       "last_status": "ok"
     },
@@ -22,10 +22,10 @@
         "09:25",
         "15:05"
       ],
-      "last_run": null,
-      "run_count": 0,
+      "last_run": "2026-05-10T11:35:15.146300",
+      "run_count": 3,
       "error_count": 0,
-      "last_status": null
+      "last_status": "ok"
     },
     "daily_review": {
       "name": "daily_review",
@@ -36,10 +36,10 @@
         "15:30",
         "23:59"
       ],
-      "last_run": "2026-05-08T22:32:34.302187",
-      "run_count": 1,
+      "last_run": null,
+      "run_count": 0,
       "error_count": 0,
-      "last_status": "ok"
+      "last_status": null
     },
     "news_collect": {
       "name": "news_collect",
@@ -69,8 +69,8 @@
       "enabled": true,
       "interval_minutes": 15,
       "time_window": null,
-      "last_run": "2026-05-09T05:03:54.922342",
-      "run_count": 6,
+      "last_run": "2026-05-10T11:30:45.028623",
+      "run_count": 2,
       "error_count": 0,
       "last_status": "ok"
     },
@@ -83,7 +83,7 @@
         "09:00",
         "22:00"
       ],
-      "last_run": "2026-05-08T22:32:34.253839",
+      "last_run": "2026-05-10T11:14:46.403733",
       "run_count": 1,
       "error_count": 0,
       "last_status": "ok"
@@ -125,10 +125,10 @@
         "21:30",
         "04:00"
       ],
-      "last_run": "2026-05-08T22:53:11.516598",
-      "run_count": 3,
+      "last_run": null,
+      "run_count": 0,
       "error_count": 0,
-      "last_status": "ok"
+      "last_status": null
     },
     "m12_premarket_a_share": {
       "name": "m12_premarket_a_share",
@@ -218,27 +218,32 @@
   "recent_runs": [
     {
       "task": "signal_pipeline",
-      "at": "2026-05-08T22:29:51.702955",
-      "run_id": "signal_pipeline_20260508_222951_2ed614",
+      "at": "2026-05-10T11:12:31.232224",
+      "run_id": "signal_pipeline_20260510_102452_817478",
       "status": "ok",
-      "duration_s": 0.0,
+      "duration_s": 2859.16,
       "result": {
-        "new_files": 0
+        "processed_files": 0,
+        "total_signals": 40,
+        "total_opportunities": 11,
+        "total_plans": 11,
+        "total_positions_opened": 0,
+        "files": []
       }
     },
     {
       "task": "unified_news_collect",
-      "at": "2026-05-08T22:31:45.281678",
-      "run_id": "unified_news_collect_20260508_222951_f86c53",
+      "at": "2026-05-10T11:14:02.736772",
+      "run_id": "unified_news_collect_20260510_111231_a95aee",
       "status": "ok",
-      "duration_s": 113.58,
+      "duration_s": 91.5,
       "result": {
         "status": "success",
         "macro": {
           "status": "success",
           "fetched": 50,
-          "written": 48,
-          "skipped": 2,
+          "written": 8,
+          "skipped": 30,
           "type": "macro"
         },
         "stock": {
@@ -253,72 +258,60 @@
           "astock_skill": true,
           "rss": true
         },
-        "run_id": "unified_news_collect_20260508_222951_f86c53"
+        "run_id": "unified_news_collect_20260510_111231_a95aee"
       }
     },
     {
       "task": "sentiment_collect",
-      "at": "2026-05-08T22:32:34.253844",
-      "run_id": "sentiment_collect_20260508_223145_99b593",
+      "at": "2026-05-10T11:14:46.403739",
+      "run_id": "sentiment_collect_20260510_111402_5923cb",
       "status": "ok",
-      "duration_s": 48.97,
+      "duration_s": 43.67,
       "result": {
-        "fear_greed": 53.6,
-        "label": "中性",
+        "fear_greed": 57.3,
+        "label": "略偏乐观",
         "direction": "NEUTRAL",
-        "intensity": 2.6,
-        "batch_id": "sched_sent_sentiment_collect_20260508_223145_99b593",
+        "intensity": 3.2,
+        "batch_id": "sched_sent_sentiment_collect_20260510_111402_5923cb",
         "errors": []
       }
     },
     {
-      "task": "daily_review",
-      "at": "2026-05-08T22:32:34.302203",
-      "run_id": "daily_review_20260508_223234_fb6499",
+      "task": "price_update",
+      "at": "2026-05-10T11:14:46.477713",
+      "run_id": "price_update_20260510_111446_7ff984",
       "status": "ok",
-      "duration_s": 0.04,
+      "duration_s": 0.07,
       "result": {
-        "reviewed": 0
+        "open_positions": 1,
+        "updated": 1,
+        "closed": 0
       }
     },
     {
-      "task": "m12_us_scan",
-      "at": "2026-05-08T22:32:40.020302",
-      "run_id": "m12_us_scan_20260508_223234_2033eb",
+      "task": "price_update",
+      "at": "2026-05-10T11:24:46.717807",
+      "run_id": "price_update_20260510_112446_ea06c9",
       "status": "ok",
-      "duration_s": 5.72,
+      "duration_s": 0.07,
       "result": {
-        "market": "US",
-        "opportunities": 0,
-        "instruments": [],
-        "batch_id": "sched_m12_US_m12_us_scan_20260508_223234_2033eb"
-      }
-    },
-    {
-      "task": "m12_us_scan",
-      "at": "2026-05-08T22:42:43.627772",
-      "run_id": "m12_us_scan_20260508_224240_61d85c",
-      "status": "ok",
-      "duration_s": 3.58,
-      "result": {
-        "market": "US",
-        "opportunities": 0,
-        "instruments": [],
-        "batch_id": "sched_m12_US_m12_us_scan_20260508_224240_61d85c"
+        "open_positions": 1,
+        "updated": 1,
+        "closed": 0
       }
     },
     {
       "task": "unified_news_collect",
-      "at": "2026-05-08T22:48:37.562884",
-      "run_id": "unified_news_collect_20260508_224713_8a3456",
+      "at": "2026-05-10T11:30:45.028635",
+      "run_id": "unified_news_collect_20260510_112916_1191fc",
       "status": "ok",
-      "duration_s": 83.92,
+      "duration_s": 88.25,
       "result": {
         "status": "success",
         "macro": {
           "status": "success",
           "fetched": 50,
-          "written": 12,
+          "written": 0,
           "skipped": 38,
           "type": "macro"
         },
@@ -331,295 +324,22 @@
           "symbols_count": 0
         },
         "health": {
-          "astock_skill": false,
-          "rss": true
-        },
-        "run_id": "unified_news_collect_20260508_224713_8a3456"
-      }
-    },
-    {
-      "task": "m12_us_scan",
-      "at": "2026-05-08T22:53:11.516616",
-      "run_id": "m12_us_scan_20260508_225307_c986ac",
-      "status": "ok",
-      "duration_s": 3.94,
-      "result": {
-        "market": "US",
-        "opportunities": 0,
-        "instruments": [],
-        "batch_id": "sched_m12_US_m12_us_scan_20260508_225307_c986ac"
-      }
-    },
-    {
-      "task": "signal_pipeline",
-      "at": "2026-05-09T02:12:21.721923",
-      "run_id": "signal_pipeline_20260508_230011_cf8d27",
-      "status": "ok",
-      "duration_s": 11530.19,
-      "result": {
-        "processed_files": 59,
-        "total_signals": 64,
-        "total_opportunities": 130,
-        "total_plans": 130,
-        "files": [
-          "19000101_astock_skill_0189e274.txt",
-          "19000101_astock_skill_326abbfb.txt",
-          "19000101_astock_skill_45ebc010.txt",
-          "19000101_astock_skill_4a590778.txt",
-          "19000101_astock_skill_4b5a10b2.txt",
-          "19000101_astock_skill_4d57b1f2.txt",
-          "19000101_astock_skill_6d74f746.txt",
-          "19000101_astock_skill_74269b5c.txt",
-          "19000101_astock_skill_835f7d8b.txt",
-          "19000101_astock_skill_86305d7b.txt",
-          "19000101_astock_skill_956eb256.txt",
-          "19000101_astock_skill_97ec11a0.txt",
-          "19000101_astock_skill_9f08c71a.txt",
-          "19000101_astock_skill_a9169a80.txt",
-          "19000101_astock_skill_ad27803c.txt",
-          "19000101_astock_skill_b944f5ac.txt",
-          "19000101_astock_skill_bc0fab38.txt",
-          "19000101_astock_skill_bc594e53.txt",
-          "19000101_astock_skill_bd83e010.txt",
-          "19000101_astock_skill_cab807c5.txt",
-          "19000101_astock_skill_cc255562.txt",
-          "19000101_astock_skill_ccc944d9.txt",
-          "19000101_astock_skill_ecaa209d.txt",
-          "19000101_astock_skill_eefb39c7.txt",
-          "20260508_astock_skill_047b699b.txt",
-          "20260508_astock_skill_0492d1b3.txt",
-          "20260508_astock_skill_10260fce.txt",
-          "20260508_astock_skill_13633262.txt",
-          "20260508_astock_skill_1376cd04.txt",
-          "20260508_astock_skill_14d97a6b.txt",
-          "20260508_astock_skill_1f4eabaa.txt",
-          "20260508_astock_skill_34cfff3a.txt",
-          "20260508_astock_skill_36899441.txt",
-          "20260508_astock_skill_41fee567.txt",
-          "20260508_astock_skill_49216636.txt",
-          "20260508_astock_skill_6e4369c9.txt",
-          "20260508_astock_skill_734be517.txt",
-          "20260508_astock_skill_7b137878.txt",
-          "20260508_astock_skill_87a84d92.txt",
-          "20260508_astock_skill_8ccb9dbb.txt",
-          "20260508_astock_skill_91081090.txt",
-          "20260508_astock_skill_91e20b2d.txt",
-          "20260508_astock_skill_9680fd7f.txt",
-          "20260508_astock_skill_97616435.txt",
-          "20260508_astock_skill_9ce59c0c.txt",
-          "20260508_astock_skill_a82c7ba0.txt",
-          "20260508_astock_skill_aaaa081e.txt",
-          "20260508_astock_skill_cd581f56.txt",
-          "20260508_astock_skill_d8c6ced4.txt",
-          "20260508_astock_skill_da9bc521.txt",
-          "20260508_astock_skill_e6ef1cb7.txt",
-          "20260508_astock_skill_e97a55f4.txt",
-          "20260508_astock_skill_fbd2e1f5.txt",
-          "20260508_astock_skill_fc400234.txt",
-          "20260508_rss_0b80383d.txt",
-          "20260508_rss_0e83c51a.txt",
-          "20260508_rss_63e7b3ee.txt",
-          "20260508_rss_718fc2b7.txt",
-          "20260508_rss_845f90f6.txt"
-        ]
-      }
-    },
-    {
-      "task": "unified_news_collect",
-      "at": "2026-05-09T02:14:18.575789",
-      "run_id": "unified_news_collect_20260509_021251_166c41",
-      "status": "ok",
-      "duration_s": 86.85,
-      "result": {
-        "status": "success",
-        "macro": {
-          "status": "success",
-          "fetched": 50,
-          "written": 29,
-          "skipped": 21,
-          "type": "macro"
-        },
-        "stock": {
-          "status": "success",
-          "fetched": 0,
-          "written": 0,
-          "skipped": 0,
-          "type": "explicit",
-          "symbols_count": 0
-        },
-        "health": {
           "astock_skill": true,
           "rss": true
         },
-        "run_id": "unified_news_collect_20260509_021251_166c41"
+        "run_id": "unified_news_collect_20260510_112916_1191fc"
       }
     },
     {
-      "task": "unified_news_collect",
-      "at": "2026-05-09T02:30:43.148703",
-      "run_id": "unified_news_collect_20260509_022918_88e8b3",
+      "task": "price_update",
+      "at": "2026-05-10T11:35:15.146311",
+      "run_id": "price_update_20260510_113515_721593",
       "status": "ok",
-      "duration_s": 84.28,
+      "duration_s": 0.08,
       "result": {
-        "status": "success",
-        "macro": {
-          "status": "success",
-          "fetched": 50,
-          "written": 3,
-          "skipped": 47,
-          "type": "macro"
-        },
-        "stock": {
-          "status": "success",
-          "fetched": 0,
-          "written": 0,
-          "skipped": 0,
-          "type": "explicit",
-          "symbols_count": 0
-        },
-        "health": {
-          "astock_skill": true,
-          "rss": true
-        },
-        "run_id": "unified_news_collect_20260509_022918_88e8b3"
-      }
-    },
-    {
-      "task": "signal_pipeline",
-      "at": "2026-05-09T04:45:38.248687",
-      "run_id": "signal_pipeline_20260509_024243_3e6789",
-      "status": "ok",
-      "duration_s": 7374.87,
-      "result": {
-        "processed_files": 63,
-        "total_signals": 65,
-        "total_opportunities": 173,
-        "total_plans": 173,
-        "files": [
-          "19000101_astock_skill_0a32bf33.txt",
-          "19000101_astock_skill_2d215499.txt",
-          "19000101_astock_skill_2da79101.txt",
-          "19000101_astock_skill_359bb5c9.txt",
-          "19000101_astock_skill_5723f99a.txt",
-          "19000101_astock_skill_5beae9ee.txt",
-          "19000101_astock_skill_619b8185.txt",
-          "19000101_astock_skill_659aa72a.txt",
-          "19000101_astock_skill_99218794.txt",
-          "19000101_astock_skill_aa6379cf.txt",
-          "19000101_astock_skill_b35da2a1.txt",
-          "19000101_astock_skill_c6f25aeb.txt",
-          "19000101_astock_skill_d2a46baf.txt",
-          "19000101_astock_skill_e56f7566.txt",
-          "19000101_astock_skill_fd926efa.txt",
-          "20260508_astock_skill_0ac2988b.txt",
-          "20260508_astock_skill_1eafb9a6.txt",
-          "20260508_astock_skill_2631c18b.txt",
-          "20260508_astock_skill_271e733f.txt",
-          "20260508_astock_skill_32e08ab9.txt",
-          "20260508_astock_skill_39ee4962.txt",
-          "20260508_astock_skill_3c1cc62b.txt",
-          "20260508_astock_skill_3ddb32fa.txt",
-          "20260508_astock_skill_4a47efa3.txt",
-          "20260508_astock_skill_4fe148b7.txt",
-          "20260508_astock_skill_6c9a3310.txt",
-          "20260508_astock_skill_72d83258.txt",
-          "20260508_astock_skill_7f83ff3d.txt",
-          "20260508_astock_skill_8e1594ae.txt",
-          "20260508_astock_skill_9db5557b.txt",
-          "20260508_astock_skill_d4d4754b.txt",
-          "20260508_astock_skill_e7918cde.txt",
-          "20260508_rss_01c42b02.txt",
-          "20260508_rss_41b12e4d.txt",
-          "20260508_rss_496c84b5.txt",
-          "20260508_rss_56aacbe7.txt",
-          "20260508_rss_80215694.txt",
-          "20260508_rss_c434b891.txt",
-          "20260508_rss_c9481837.txt",
-          "20260508_rss_da4cd638.txt",
-          "20260508_rss_f6b60220.txt",
-          "20260509_astock_skill_181ae92e.txt",
-          "20260509_astock_skill_227aea2b.txt",
-          "20260509_astock_skill_2c1d4145.txt",
-          "20260509_astock_skill_2d6f105c.txt",
-          "20260509_astock_skill_2e241512.txt",
-          "20260509_astock_skill_2e991c7b.txt",
-          "20260509_astock_skill_2fe2a3ca.txt",
-          "20260509_astock_skill_37463e4c.txt",
-          "20260509_astock_skill_4221087c.txt",
-          "20260509_astock_skill_434fe143.txt",
-          "20260509_astock_skill_759e272f.txt",
-          "20260509_astock_skill_9c9494da.txt",
-          "20260509_astock_skill_a7179076.txt",
-          "20260509_astock_skill_b6b0c2bf.txt",
-          "20260509_astock_skill_bb46f76d.txt",
-          "20260509_astock_skill_cc604284.txt",
-          "20260509_astock_skill_ceec2c16.txt",
-          "20260509_astock_skill_d763bcd9.txt",
-          "20260509_astock_skill_d819542f.txt",
-          "20260509_astock_skill_dd46c786.txt",
-          "20260509_astock_skill_e9d0e50f.txt",
-          "20260509_astock_skill_ecde0ce0.txt"
-        ]
-      }
-    },
-    {
-      "task": "unified_news_collect",
-      "at": "2026-05-09T04:47:27.245069",
-      "run_id": "unified_news_collect_20260509_044608_fcd226",
-      "status": "ok",
-      "duration_s": 78.99,
-      "result": {
-        "status": "success",
-        "macro": {
-          "status": "success",
-          "fetched": 50,
-          "written": 26,
-          "skipped": 24,
-          "type": "macro"
-        },
-        "stock": {
-          "status": "success",
-          "fetched": 0,
-          "written": 0,
-          "skipped": 0,
-          "type": "explicit",
-          "symbols_count": 0
-        },
-        "health": {
-          "astock_skill": true,
-          "rss": true
-        },
-        "run_id": "unified_news_collect_20260509_044608_fcd226"
-      }
-    },
-    {
-      "task": "unified_news_collect",
-      "at": "2026-05-09T05:03:54.922352",
-      "run_id": "unified_news_collect_20260509_050227_9c9ea3",
-      "status": "ok",
-      "duration_s": 87.39,
-      "result": {
-        "status": "success",
-        "macro": {
-          "status": "success",
-          "fetched": 50,
-          "written": 4,
-          "skipped": 46,
-          "type": "macro"
-        },
-        "stock": {
-          "status": "success",
-          "fetched": 0,
-          "written": 0,
-          "skipped": 0,
-          "type": "explicit",
-          "symbols_count": 0
-        },
-        "health": {
-          "astock_skill": true,
-          "rss": true
-        },
-        "run_id": "unified_news_collect_20260509_050227_9c9ea3"
+        "open_positions": 1,
+        "updated": 1,
+        "closed": 0
       }
     }
   ]

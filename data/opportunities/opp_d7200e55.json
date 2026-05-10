@@ -1,0 +1,114 @@
+{
+  "opportunity_id": "opp_d7200e55",
+  "opportunity_title": "港股机器人IPO热潮",
+  "opportunity_thesis": "港股IPO市场火爆，机器人赛道受资本追捧，乐动机器人IPO获6707倍散户认购，叠加香港经济基本面改善（GDP、零售额加速增长，住宅量价齐升），为港股机器人板块及整体市场带来结构性机会。A股人形机器人概念股集体上涨、龙头创历史新高，进一步验证了该赛道的市场热度。当前时点，IPO超购和板块强势形成共振，预期差在于市场尚未充分定价港股机器人IPO对相关产业链和市场的带动效应。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头绿的谐波业绩连续增长，固态电池技术提供支撑，IPO认购火爆，显示市场高度聚焦。但缺乏研报覆盖，短期涨幅较大，需警惕回调风险。整体机会真实，置信度中等偏上，建议关注后续产业落地进展。\n\n【M13调研】人形机器人板块在2026年5月8日集体爆发，龙头创历史新高，资金高度聚焦。固态电池技术提供支撑，IPO认购火爆显示市场关注。但短期涨幅较大，缺乏研报覆盖，产业落地进展不确定。整体机会真实，但需警惕回调风险，建议关注后续产业催化。",
+  "target_markets": [
+    "HK",
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "688017.SH",
+    "601689.SH",
+    "300124.SZ",
+    "002747.SZ",
+    "688160.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK",
+    "ETF"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "乐动机器人IPO于5月8日完成定价，6707倍散户认购创纪录，市场情绪极度亢奋；A股人形机器人概念股同日集体上涨、龙头创历史新高，板块热度达到短期峰值。香港经济数据（GDP、零售额）加速增长，住宅市场量价齐升，为IPO热潮提供了宏观支撑。当前是事件驱动+基本面改善的共振窗口，市场尚未充分定价港股机器人IPO对相关产业链的带动效应。",
+  "related_signals": [
+    "sig_cc33dd52b601",
+    "sig_41c9d0ac13e2",
+    "sig_4ef836f98ad7",
+    "sig_423c7cb04845",
+    "sig_b0c897ac9682"
+  ],
+  "inferred_events": [
+    "inferred_17e0974d",
+    "inferred_8e6aa64e",
+    "inferred_770f93db",
+    "inferred_075b4474",
+    "inferred_4278d7e5",
+    "inferred_1d06474d",
+    "inferred_6339cb06",
+    "inferred_5fb9f158"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "乐动机器人香港IPO获6707倍散户认购，国际配售9.54倍，显示资本对机器人赛道极度追捧",
+    "A股人形机器人概念股集体上涨，绿的谐波创历史新高，多只个股涨停",
+    "香港2026年Q1 GDP和零售额同比加速增长，住宅市场量价齐升，经济基本面改善支撑市场",
+    "历史案例显示，IPO超购+板块强势共振往往带来短期交易机会"
+  ],
+  "counter_evidence": [
+    "A股人形机器人概念股已短期大涨，部分个股创历史新高，存在获利回吐风险",
+    "港股IPO火爆可能已部分price-in，后续上涨空间有限"
+  ],
+  "key_assumptions": [
+    "假设1：乐动机器人上市后股价表现正面，带动港股机器人板块估值提升",
+    "假设2：香港经济改善趋势持续，支撑市场流动性",
+    "假设3：A股人形机器人概念股热度不会快速消退"
+  ],
+  "uncertainty_map": [
+    "港股IPO后股价表现不确定性（影响程度：高）",
+    "A股机器人板块短期过热回调风险（影响程度：中）",
+    "中东地缘冲突升级可能影响全球风险偏好（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 8,
+    "market_confirmation": 7,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 6,
+    "signal_consistency": 8,
+    "overall_score": 7.1,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：港股机器人板块估值修复+IPO带动效应，短期涨幅5-15%；风险：IPO后股价破发或板块回调，最大回撤5-10%。风险收益比约1:1.5。",
+  "next_validation_questions": [
+    "乐动机器人上市首日股价表现如何？",
+    "A股人形机器人板块后续是否有持续资金流入？",
+    "香港市场整体流动性是否改善？"
+  ],
+  "invalidation_conditions": [
+    "乐动机器人上市首日破发或涨幅低于预期",
+    "A股人形机器人板块出现集体大幅回调",
+    "香港经济数据出现恶化信号"
+  ],
+  "must_watch_indicators": [
+    "乐动机器人上市首日股价及成交量",
+    "A股人形机器人板块指数及龙头股走势",
+    "香港恒生指数及成交额",
+    "香港GDP和零售额后续数据"
+  ],
+  "kill_switch_signals": [
+    "乐动机器人上市首日跌幅超过10%",
+    "A股人形机器人板块单日跌幅超过5%",
+    "香港恒生指数跌破关键支撑位"
+  ],
+  "warnings": [
+    "注意：A股人形机器人概念股已短期大涨，存在追高风险",
+    "注意：港股IPO火爆可能已部分price-in，需警惕利好出尽"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T12:14:10.988602",
+  "batch_id": "sched_signal_pipeline_20260509_110458_103b7e_20260509_astock_skill_febd185d",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

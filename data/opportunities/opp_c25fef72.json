@@ -1,0 +1,113 @@
+{
+  "opportunity_id": "opp_c25fef72",
+  "opportunity_title": "中东冲突能源航运机会",
+  "opportunity_thesis": "中东地缘冲突升级，霍尔木兹海峡受阻，导致全球能源和航运价格承压。进口煤价上涨使国内煤企受益，同时航运运价上涨利好国内航运公司。市场尚未充分定价冲突持续至下半年的预期，存在预期差。\n\n【M13调研】美军袭击伊朗民用船只事件确实发生，霍尔木兹海峡通行受阻风险上升，理论上利好能源替代和军工。但外交谈判同步进行，科技股大涨分流资金，且煤炭企业盈利下滑，削弱了利好逻辑。市场尚未充分定价冲突持续性，但预期差不大。综合评估，机会存在但风险较高，置信度下调0.1。\n\n【M13调研】该机会描述的地缘事件未获任何新闻、研报或行业趋势支持，M13调研明确指出其基于虚假或过时信息。新闻显示伊朗谈判仍在进行，与冲突升级矛盾。无相关基本面数据。因此，该机会存在重大利空，建议忽略。置信度下调0.3。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "601225.SH",
+    "600188.SH",
+    "601919.SH",
+    "600026.SH",
+    "601872.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-07-13T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "霍尔木兹海峡冲突在5月8日集中爆发（交火、油轮拦截），叠加进口煤价倒挂和航运运价上涨，催化剂密集且时效性强。高盛调查显示市场预期冲突持续至下半年，但当前股价尚未充分反应。",
+  "related_signals": [
+    "sig_3cf8fcf349ae",
+    "sig_0806bfd8639e",
+    "sig_2e7d7516821e",
+    "sig_82a8c461a4b6",
+    "sig_bb9a9c6d60a1",
+    "sig_70a333e7b67e",
+    "sig_ec500e4d7f22",
+    "sig_debd6a76d715"
+  ],
+  "inferred_events": [
+    "inferred_c1c6110f",
+    "inferred_5cbedf2c",
+    "inferred_9bc79ff8",
+    "inferred_29ef4076",
+    "inferred_51dc6625",
+    "inferred_6bb879eb"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "美军在阿曼湾拦截伊朗油轮，霍尔木兹海峡附近交火，地缘冲突升级",
+    "进口煤价较年初上涨171元，与国内煤价倒挂，企业转向国内采购",
+    "三大船型运价上涨，海岬型船日租金创新高",
+    "高盛调查显示多数投资者预期航运受阻持续至7月后"
+  ],
+  "counter_evidence": [
+    "冲突可能短期缓和，风险溢价迅速消退",
+    "国内煤炭和航运板块前期已有一定涨幅"
+  ],
+  "key_assumptions": [
+    "假设1：霍尔木兹海峡航运受阻至少持续至6月底",
+    "假设2：国内煤炭和航运需求保持稳定或增长",
+    "假设3：冲突不会进一步升级为全面战争导致全球市场系统性下跌"
+  ],
+  "uncertainty_map": [
+    "冲突持续时间不确定性（影响程度：高）",
+    "国内煤炭和航运板块前期涨幅可能已部分定价（影响程度：中）",
+    "全球股市系统性风险（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 8,
+    "timeliness": 9,
+    "market_confirmation": 6,
+    "tradability": 7,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.3,
+    "confidence_score": 0.17500000000000002,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：国内煤炭和航运公司受益于价格上涨和需求转移，股价有10-20%上行空间。潜在风险：冲突缓和导致风险溢价消退，股价可能回调5-10%。",
+  "next_validation_questions": [
+    "霍尔木兹海峡航运受阻的最新进展如何？是否有缓和迹象？",
+    "国内煤炭和航运公司的近期订单和业绩情况如何？",
+    "市场对冲突持续性的预期是否已充分定价？"
+  ],
+  "invalidation_conditions": [
+    "霍尔木兹海峡航运恢复正常",
+    "国内煤炭和航运价格大幅回落",
+    "全球股市因冲突升级系统性下跌"
+  ],
+  "must_watch_indicators": [
+    "霍尔木兹海峡航运通行情况",
+    "布伦特原油价格",
+    "国内煤炭现货价格",
+    "波罗的海干散货运价指数(BDI)"
+  ],
+  "kill_switch_signals": [
+    "伊朗与美国达成临时停火协议",
+    "国内煤炭和航运板块放量下跌",
+    "全球股市恐慌性抛售"
+  ],
+  "warnings": [
+    "地缘冲突风险具有高度不确定性，需设置严格止损",
+    "证据来源均为新闻，非官方公告，需交叉验证"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T17:16:30.731882",
+  "batch_id": "sched_signal_pipeline_20260509_163638_e0e39c_20260509_astock_skill_75958673",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

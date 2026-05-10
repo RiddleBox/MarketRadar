@@ -1,0 +1,111 @@
+{
+  "opportunity_id": "opp_f76b3bc4",
+  "opportunity_title": "出口超预期+电动车高增",
+  "opportunity_thesis": "4月出口同比增14.1%远超预期，贸易顺差848亿美元创历史同期新高，其中电动汽车前4月出口增68.1%是核心结构性亮点。出口超预期叠加电动车高景气，构成对出口导向型制造业和电动车产业链的短期催化，市场尚未充分定价这一结构性分化。\n\n【M13调研】4月出口数据超预期，贸易顺差创新高，电动车出口增长68.1%是核心亮点，对出口导向型制造业和电动车产业链构成短期催化。市场尚未充分定价这一结构性分化，存在预期差机会。但需注意贸易摩擦升级风险、出口持续性不确定性以及电动车产业链高估值。整体机会偏正面，但缺乏研报和直接新闻催化，置信度中等偏上。\n\n【M13调研】4月出口数据超预期，电动车出口高增是结构性亮点，市场尚未充分定价，存在预期差。但缺乏研报和新闻催化，基本面数据缺失，且面临贸易摩擦和持续性风险。整体机会偏正面，但置信度下调至中等。",
+  "target_markets": [
+    "A_SHARE",
+    "HK"
+  ],
+  "target_instruments": [
+    "600104.SH",
+    "000625.SZ",
+    "601238.SH",
+    "002594.SZ",
+    "300750.SZ"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "STOCK"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-09T00:00:00",
+    "end": "2026-06-09T00:00:00",
+    "confidence_level": 0.7
+  },
+  "why_now": "海关总署刚于5月9日公布4月出口数据，超预期幅度大（14.1% vs 预期约10%），且电动车出口增速68.1%是增量信息，市场尚未充分消化。当前时点处于数据发布后1-2个交易日的窗口期，预期差最大。",
+  "related_signals": [
+    "sig_d3ff18d62491",
+    "sig_ccc7baf677c1",
+    "sig_e9adf347ff0c",
+    "sig_dba0b0625849"
+  ],
+  "inferred_events": [
+    "inferred_08556d4c",
+    "inferred_21a8474e",
+    "inferred_d83b2c88",
+    "inferred_dfc60d0c",
+    "inferred_9abfe34b",
+    "inferred_b0453054",
+    "inferred_cc749e5a"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "4月出口同比增14.1%，远超市场预期",
+    "前4月电动汽车出口增68.1%，增速是整体出口的4.8倍",
+    "机电产品出口增17.6%，结构持续优化",
+    "贸易顺差848.2亿美元，创历史同期新高"
+  ],
+  "counter_evidence": [
+    "进口增速25.3%高于出口，内需可能强于预期，削弱出口独大逻辑",
+    "地缘冲突风险可能压制出口预期（中东局势紧张）"
+  ],
+  "key_assumptions": [
+    "假设1：出口高增趋势可持续，5月数据不会大幅回落",
+    "假设2：电动车出口高景气不受海外贸易壁垒显著影响",
+    "假设3：市场尚未完全price-in电动车出口的结构性亮点"
+  ],
+  "uncertainty_map": [
+    "海外贸易政策变化（如欧盟反补贴调查升级）影响程度：高",
+    "全球需求回落风险影响程度：中",
+    "人民币汇率波动对出口企业利润的影响程度：中"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 8,
+    "overall_score": 7.0,
+    "confidence_score": 0.75,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：电动车/出口龙头短期5-10%涨幅；风险：数据脉冲式反应后回落，或海外政策突变导致5-8%回撤。风险收益比约1:1.5。",
+  "next_validation_questions": [
+    "5月高频出口数据（如港口集装箱吞吐量）是否延续4月趋势？",
+    "主要电动车出口目的地（欧盟、东南亚）是否有新的贸易壁垒信号？",
+    "市场资金是否已开始流入出口/电动车板块？"
+  ],
+  "invalidation_conditions": [
+    "5月出口数据大幅低于预期（增速<8%）",
+    "欧盟或美国宣布对华电动车加征惩罚性关税",
+    "人民币快速升值超过5%"
+  ],
+  "must_watch_indicators": [
+    "每周港口集装箱吞吐量同比增速",
+    "电动车出口月度数据（海关总署）",
+    "人民币兑美元汇率走势",
+    "欧盟/美国对华电动车贸易政策动态"
+  ],
+  "kill_switch_signals": [
+    "出口数据连续两个月回落",
+    "主要贸易伙伴宣布反补贴调查或加征关税",
+    "人民币单月升值超3%"
+  ],
+  "warnings": [
+    "注意：出口数据为月度数据，存在季节性扰动，需结合环比分析",
+    "注意：电动车出口高增部分受基数效应影响，需关注增速边际变化"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T15:18:28.495543",
+  "batch_id": "sched_signal_pipeline_20260509_145546_c8d320_20260509_astock_skill_4f74dd7d",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}

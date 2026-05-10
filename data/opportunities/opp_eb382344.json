@@ -1,0 +1,126 @@
+{
+  "opportunity_id": "opp_eb382344",
+  "opportunity_title": "宽松对冲地产链风险",
+  "opportunity_thesis": "央行连续降准降息释放明确宽松信号，但地产链（保利、万科）业绩持续恶化、制造业PMI连续收缩，市场情绪分化。当前宽松政策尚未有效传导至实体经济，市场对政策效果存疑，导致指数高开低走。这种'政策底'与'市场底'的背离，反而为后续政策加码和情绪修复提供了空间，构成阶段性博弈机会。\n\n【M13调研】保利发展业绩大幅下滑，但新闻和研报信息匮乏，缺乏资金轮动和板块共振的直接证据。地产板块做空机会存在，但风险较高，需谨慎。新能源和半导体轮动逻辑未获数据支持。整体置信度偏低，建议等待更多信息再决策。\n\n【M13调研】央行降准降息形成政策宽松窗口，但经济数据疲弱，市场处于博弈阶段。历史经验显示短期有估值修复机会，但持续性存疑。当前无研报、基本面数据，新闻无重大利好或利空，信息支撑薄弱。风险在于经济持续探底导致政策失效。综合判断，机会存在但不确定性高，建议谨慎参与，等待经济数据企稳信号。",
+  "target_markets": [
+    "A_SHARE"
+  ],
+  "target_instruments": [
+    "600048.SH",
+    "601012.SH"
+  ],
+  "trade_direction": "BULLISH",
+  "instrument_types": [
+    "ETF",
+    "FUTURES"
+  ],
+  "opportunity_window": {
+    "start": "2026-05-10T00:00:00",
+    "end": "2026-07-10T00:00:00",
+    "confidence_level": 0.65
+  },
+  "why_now": "央行已实施降准0.5个百分点和降息10bp，国常会研究地方债务化解，政策底已明确。但市场因地产链业绩暴雷和PMI数据疲弱而持续承压，指数高开低走，下跌个股近4000只，情绪极度悲观。当前时点是政策效果尚未显现、市场信心最脆弱的阶段，也是博弈政策加码和情绪修复的最佳窗口。",
+  "related_signals": [
+    "sig_43f38d210c01",
+    "sig_bb796ffb26fa",
+    "sig_a4d76d494a52",
+    "sig_b344dde14d32",
+    "sig_38049b31fb61",
+    "sig_e39115aa3077",
+    "sig_7298dda97ec7",
+    "sig_6030bb0be882",
+    "sig_37b8e1ac32b6",
+    "sig_cf855bc992d0",
+    "sig_3e2b5bd0cd4d",
+    "sig_e0e3bf1f136a",
+    "sig_b2d9156cf72e",
+    "sig_deee36561d85",
+    "sig_3334498cd821",
+    "sig_dc0079649df5",
+    "sig_65d00d268232",
+    "sig_61c0ebff0aa1",
+    "sig_67fb2a17eb23"
+  ],
+  "inferred_events": [
+    "inferred_2b73ee6e",
+    "inferred_286976e9",
+    "inferred_c8c59d82",
+    "inferred_e32ea216",
+    "inferred_cc4fcd5d",
+    "inferred_af2cb657",
+    "inferred_f6231cec",
+    "inferred_f3f589ea",
+    "inferred_710340c8",
+    "inferred_1c02f948"
+  ],
+  "supporting_cases": [
+    "case_2024_tech_breakthrough",
+    "case_2024_breakout",
+    "case_2024_rate_cut",
+    "case_2024_geopolitical"
+  ],
+  "supporting_evidence": [
+    "央行连续降准降息，释放长期资金约1万亿元，流动性宽松信号明确",
+    "国常会研究推进地方债务风险化解，政策托底意愿强烈",
+    "保利发展、万科等地产龙头业绩大幅下滑，市场已充分定价利空",
+    "制造业PMI连续3个月低于荣枯线，经济下行压力倒逼政策进一步宽松"
+  ],
+  "counter_evidence": [
+    "三大指数高开低走，下跌个股近4000只，市场情绪极度悲观",
+    "地产链业绩持续恶化，基本面拐点尚未出现"
+  ],
+  "key_assumptions": [
+    "假设1：央行后续仍有进一步宽松空间（降准/降息）",
+    "假设2：地产链利空已充分反映在股价中，不会进一步超预期恶化",
+    "假设3：政策传导至实体经济的时间差不会超过2个月"
+  ],
+  "uncertainty_map": [
+    "地产链信用风险扩散（如万科兑付安排调整）可能引发系统性冲击（影响程度：高）",
+    "政策宽松力度不及预期，或市场对政策效果持续悲观（影响程度：中）",
+    "外部地缘冲突升级（中东）导致避险情绪压倒宽松利好（影响程度：中）"
+  ],
+  "priority_level": "research",
+  "opportunity_score": {
+    "catalyst_strength": 7,
+    "timeliness": 8,
+    "market_confirmation": 5,
+    "tradability": 8,
+    "risk_clarity": 6,
+    "consensus_gap": 7,
+    "signal_consistency": 6,
+    "overall_score": 6.7,
+    "confidence_score": 0.25,
+    "execution_readiness": 0.7
+  },
+  "risk_reward_profile": "潜在收益：政策宽松叠加情绪修复，指数有望反弹5-10%；潜在风险：地产链信用风险扩散或政策效果持续不及预期，指数可能再跌5-8%。风险收益比约1:1.2，中等偏上。",
+  "next_validation_questions": [
+    "地产链（保利、万科）是否有进一步信用风险事件（如债券违约）？",
+    "央行是否在2周内释放进一步宽松信号（如降准/降息）？",
+    "制造业PMI是否在5月出现边际改善？"
+  ],
+  "invalidation_conditions": [
+    "地产链出现实质性信用违约事件（如万科债券违约）",
+    "央行明确表态不再进一步宽松",
+    "指数跌破近期低点且放量下跌"
+  ],
+  "must_watch_indicators": [
+    "央行公开市场操作利率及逆回购规模",
+    "保利发展、万科等地产龙头股价及债券收益率",
+    "制造业PMI月度数据",
+    "A股成交量及北向资金流向"
+  ],
+  "kill_switch_signals": [
+    "地产龙头股出现连续跌停或债券收益率飙升",
+    "央行意外收紧流动性（如提高逆回购利率）",
+    "指数跌破关键支撑位且成交量放大"
+  ],
+  "warnings": [
+    "注意：当前市场情绪极度悲观，政策底与市场底的时间差可能较长",
+    "注意：地产链风险尚未完全出清，需警惕信用事件扩散"
+  ],
+  "judgment_version": "v1.0",
+  "created_at": "2026-05-09T20:50:26.112604",
+  "batch_id": "sched_signal_pipeline_20260509_194006_9160d7_20260509_rss_964ae995",
+  "origin": "m3_judgment",
+  "entry_constraint": null
+}
