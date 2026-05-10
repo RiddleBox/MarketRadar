@@ -159,13 +159,70 @@ else:
                 st.markdown("---")
                 st.markdown("##### 🎬 操作")
 
-                if st.button("📊 查看详情", key=f"detail_{opp.get('opportunity_id', '')}"):
-                    st.info("详情页面待实现")
+                opp_id = opp.get('opportunity_id', '')
 
-                if st.button("🔍 查看信号", key=f"signals_{opp.get('opportunity_id', '')}"):
+                if st.button("📊 查看详情", key=f"detail_{opp_id}"):
+                    # 查找对应的 ActionPlan
+                    action_plan_path = ROOT / "data" / "action_plans" / f"{opp_id}_plan.json"
+                    if action_plan_path.exists():
+                        import json
+                        with open(action_plan_path, 'r', encoding='utf-8') as f:
+                            plan = json.load(f)
+
+                        st.markdown("---")
+                        st.markdown("### 📋 M4 行动计划详情")
+
+                        col_plan1, col_plan2 = st.columns(2)
+
+                        with col_plan1:
+                            st.markdown("##### 🎯 仓位管理")
+                            pos_sizing = plan.get("position_sizing", {})
+                            st.write(f"**建议仓位**: {pos_sizing.get('suggested_allocation', 'N/A')}")
+                            st.write(f"**最大仓位**: {pos_sizing.get('max_allocation', 'N/A')}")
+                            st.write(f"**仓位理由**: {pos_sizing.get('rationale', 'N/A')}")
+
+                            st.markdown("##### ⏱️ 时间管理")
+                            timing = plan.get("timing", {})
+                            st.write(f"**入场时机**: {timing.get('entry_timing', 'N/A')}")
+                            st.write(f"**持有期**: {timing.get('holding_period', 'N/A')}")
+                            st.write(f"**退出条件**: {timing.get('exit_conditions', 'N/A')}")
+
+                        with col_plan2:
+                            st.markdown("##### 🛡️ 风险控制")
+                            stop_loss = plan.get("stop_loss", {})
+                            st.write(f"**止损类型**: {stop_loss.get('stop_loss_type', 'N/A')}")
+                            st.write(f"**止损值**: {stop_loss.get('stop_loss_value', 'N/A')}")
+                            st.write(f"**止损理由**: {stop_loss.get('rationale', 'N/A')}")
+
+                            st.markdown("##### 💰 止盈策略")
+                            take_profit = plan.get("take_profit", {})
+                            st.write(f"**止盈类型**: {take_profit.get('take_profit_type', 'N/A')}")
+                            st.write(f"**止盈值**: {take_profit.get('take_profit_value', 'N/A')}")
+                            st.write(f"**止盈理由**: {take_profit.get('rationale', 'N/A')}")
+
+                        # 执行步骤
+                        execution_steps = plan.get("execution_steps", [])
+                        if execution_steps:
+                            st.markdown("##### 📝 执行步骤")
+                            for i, step in enumerate(execution_steps, 1):
+                                st.write(f"{i}. {step}")
+
+                        # 监控指标
+                        monitoring = plan.get("monitoring_metrics", [])
+                        if monitoring:
+                            st.markdown("##### 📊 监控指标")
+                            for metric in monitoring:
+                                st.write(f"• {metric}")
+
+                        st.markdown("---")
+                    else:
+                        st.warning(f"未找到该机会的行动计划文件: {opp_id}_plan.json")
+                        st.info("可能原因：\n- M4 尚未为此机会生成行动计划\n- 该机会优先级较低（watch/research）未触发M4")
+
+                if st.button("🔍 查看信号", key=f"signals_{opp_id}"):
                     st.info("信号查看功能待实现")
 
-                if st.button("💼 开仓", key=f"open_{opp.get('opportunity_id', '')}", type="primary"):
+                if st.button("💼 开仓", key=f"open_{opp_id}", type="primary"):
                     st.warning("开仓功能待实现")
 
 st.divider()
