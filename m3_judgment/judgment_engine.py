@@ -132,15 +132,30 @@ class JudgmentEngine:
                             adjusted_delta = max(-0.15, min(0.15, research.confidence_delta))
                             result.opportunity_score.confidence_score += adjusted_delta
 
-                            # 如果发现重大利空，降低置信度（从减半改为减30%）
+                            # 如果发现重大利空，降低置信度并添加到warnings
                             if research.has_major_negative:
                                 result.opportunity_score.confidence_score *= 0.7
+
+                                # 将重大利空信息添加到warnings
+                                if not result.warnings:
+                                    result.warnings = []
+                                result.warnings.append(
+                                    f"⚠️ M13调研发现重大利空 ({instrument}): {research.summary[:100]}"
+                                )
+
                                 logger.warning(
                                     f"[M3+M13] 发现重大利空: {instrument} - {research.summary}"
                                 )
 
                             # 确保置信度在有效范围内 [0, 1]
                             result.opportunity_score.confidence_score = max(0.0, min(1.0, result.opportunity_score.confidence_score))
+
+                            # 添加M13风险因素到counter_evidence
+                            if research.risk_factors:
+                                if not result.counter_evidence:
+                                    result.counter_evidence = []
+                                for risk in research.risk_factors[:3]:  # 最多添加3个风险
+                                    result.counter_evidence.append(f"[M13] {risk}")
 
                             # 添加调研摘要到机会描述
                             if research.summary and hasattr(result, 'opportunity_thesis'):
