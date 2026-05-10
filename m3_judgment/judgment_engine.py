@@ -127,12 +127,14 @@ class JudgmentEngine:
                                 context=result.opportunity_thesis
                             )
 
-                            # 调整置信度
-                            result.opportunity_score.confidence_score += research.confidence_delta
+                            # 调整置信度（限制调整幅度，避免过度降低）
+                            # confidence_delta范围：-0.3 ~ +0.3，我们限制为 -0.15 ~ +0.15
+                            adjusted_delta = max(-0.15, min(0.15, research.confidence_delta))
+                            result.opportunity_score.confidence_score += adjusted_delta
 
-                            # 如果发现重大利空，大幅降低置信度
+                            # 如果发现重大利空，降低置信度（从减半改为减30%）
                             if research.has_major_negative:
-                                result.opportunity_score.confidence_score *= 0.5
+                                result.opportunity_score.confidence_score *= 0.7
                                 logger.warning(
                                     f"[M3+M13] 发现重大利空: {instrument} - {research.summary}"
                                 )
@@ -653,7 +655,7 @@ class JudgmentEngine:
         """基于评分校准 LLM 给出的优先级。
 
         规则：
-          - overall >= 8 且 confidence >= 0.8 → position 或 urgent
+          - overall >= 7.5 且 confidence >= 0.7 → position 或 urgent
           - overall >= 6 且 execution_readiness >= 0.6 → research 或更高
           - overall < 4 → watch（不论 LLM 给什么）
           - 其余保持 LLM 输出
@@ -663,7 +665,7 @@ class JudgmentEngine:
         except ValueError:
             p = PriorityLevel.WATCH
 
-        if score.overall_score >= 8 and score.confidence_score >= 0.8:
+        if score.overall_score >= 7.5 and score.confidence_score >= 0.7:
             if score.timeliness >= 9:
                 return PriorityLevel.URGENT.value
             return PriorityLevel.POSITION.value
