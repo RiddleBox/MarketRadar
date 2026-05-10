@@ -120,51 +120,22 @@ class JudgmentEngine:
                 # M13深度验证（如果生成了机会且置信度中等）
                 if self.m13_agent and hasattr(result, 'opportunity_score') and result.opportunity_score.confidence_score > 0.5:
                     try:
-                        # 对机会中的每个标的进行深度调研
+                        # 收集所有标的的调研报告
+                        research_reports = []
                         for instrument in result.target_instruments[:2]:  # 限制前2个标的
                             research = self.m13_agent.deep_research(
                                 symbol=instrument,
                                 context=result.opportunity_thesis
                             )
-
-                            # 调整置信度（限制调整幅度，避免过度降低）
-                            # confidence_delta范围：-0.3 ~ +0.3，我们限制为 -0.15 ~ +0.15
-                            adjusted_delta = max(-0.15, min(0.15, research.confidence_delta))
-                            result.opportunity_score.confidence_score += adjusted_delta
-
-                            # 如果发现重大利空，降低置信度并添加到warnings
-                            if research.has_major_negative:
-                                result.opportunity_score.confidence_score *= 0.7
-
-                                # 将重大利空信息添加到warnings
-                                if not result.warnings:
-                                    result.warnings = []
-                                result.warnings.append(
-                                    f"⚠️ M13调研发现重大利空 ({instrument}): {research.summary[:100]}"
-                                )
-
-                                logger.warning(
-                                    f"[M3+M13] 发现重大利空: {instrument} - {research.summary}"
-                                )
-
-                            # 确保置信度在有效范围内 [0, 1]
-                            result.opportunity_score.confidence_score = max(0.0, min(1.0, result.opportunity_score.confidence_score))
-
-                            # 添加M13风险因素到counter_evidence
-                            if research.risk_factors:
-                                if not result.counter_evidence:
-                                    result.counter_evidence = []
-                                for risk in research.risk_factors[:3]:  # 最多添加3个风险
-                                    result.counter_evidence.append(f"[M13] {risk}")
-
-                            # 添加调研摘要到机会描述
-                            if research.summary and hasattr(result, 'opportunity_thesis'):
-                                result.opportunity_thesis += f"\n\n【M13调研】{research.summary}"
+                            research_reports.append((instrument, research))
 
                             logger.info(
-                                f"[M3+M13] 深度调研完成: {instrument} "
-                                f"- 置信度调整: {result.opportunity_score.confidence_score:.2f}"
+                                f"[M3+M13] 调研完成: {instrument} - {len(research.key_findings)} findings, "
+                                f"{len(research.risk_factors)} risks"
                             )
+
+                        # M3基于M13的调研信息重新评估机会
+                        result = self._rejudge_with_research(result, research_reports)
 
                     except Exception as e:
                         # M13失败不影响主流程
@@ -664,6 +635,133 @@ class JudgmentEngine:
             "sentiment_label": label,
             "signal_ids": sig_ids,
         }
+
+    def _rejudge_with_research(
+        self,
+        opportunity: OpportunityObject,
+        research_reports: List[tuple]
+    ) -> OpportunityObject:
+        """M3基于M13的调研信息重新评估机会
+
+        Args:
+            opportunity: M3初步判断的机会
+            research_reports: [(instrument, ResearchReport), ...]
+
+        Returns:
+            重新评估后的机会对象
+        """
+        original_confidence = opportunity.opportunity_score.confidence_score
+
+        # 收集所有调研信息
+        all_key_findings = []
+        all_risk_factors = []
+        has_any_major_negative = False
+        research_summaries = []
+
+        for instrument, research in research_reports:
+            all_key_findings.extend(research.key_findings)
+            all_risk_factors.extend(research.risk_factors)
+            if research.has_major_negative:
+                has_any_major_negative = True
+            if research.summary:
+                research_summaries.append(f"【{instrument}】{research.summary}")
+
+        # 构建M13调研上下文
+        research_context = {
+            "key_findings": all_key_findings[:10],  # 最多10个关键发现
+            "risk_factors": all_risk_factors[:10],  # 最多10个风险因素
+            "has_major_negative": has_any_major_negative,
+            "instruments_researched": [instr for instr, _ in research_reports]
+        }
+
+        # 使用LLM重新评估置信度
+        messages = [
+            {
+                "role": "system",
+                "content": """你是M3判断引擎，负责基于M13的调研信息重新评估机会的置信度。
+
+M13已经完成深度调研，提供了关键发现和风险因素。你需要：
+1. 分析M13的发现是否支持原机会论点
+2. 评估M13的风险因素是否构成重大威胁
+3. 重新评估置信度（0-1之间的浮点数）
+
+输出JSON格式：
+{
+  "confidence_score": 0.65,
+  "reasoning": "简短说明为什么调整置信度",
+  "should_downgrade": false
+}"""
+            },
+            {
+                "role": "user",
+                "content": f"""请重新评估以下机会的置信度：
+
+## 原机会论点
+{opportunity.opportunity_thesis}
+
+## 原置信度
+{original_confidence:.2f}
+
+## M13调研发现
+关键发现：
+{chr(10).join(f"- {f}" for f in research_context["key_findings"])}
+
+风险因素：
+{chr(10).join(f"- {r}" for r in research_context["risk_factors"])}
+
+是否发现重大利空：{"是" if research_context["has_major_negative"] else "否"}
+
+请基于M13的调研信息，重新评估置信度。"""
+            }
+        ]
+
+        try:
+            response = self.llm.chat_completion(
+                messages,
+                module_name="m3_judgment",
+                temperature=0.3,
+                max_tokens=500
+            )
+
+            result = self._parse_json_response(response, expected_key=None)
+            new_confidence = float(result.get("confidence_score", original_confidence))
+            reasoning = result.get("reasoning", "")
+
+            # 钳制到有效范围
+            new_confidence = max(0.0, min(1.0, new_confidence))
+
+            # 更新置信度
+            opportunity.opportunity_score.confidence_score = new_confidence
+
+            logger.info(
+                f"[M3] 基于M13调研重新评估: {original_confidence:.2f} → {new_confidence:.2f} | {reasoning}"
+            )
+
+        except Exception as e:
+            logger.warning(f"[M3] 重新评估失败，保持原置信度: {e}")
+
+        # 添加M13风险因素到counter_evidence
+        if all_risk_factors:
+            if not opportunity.counter_evidence:
+                opportunity.counter_evidence = []
+            for risk in all_risk_factors[:3]:  # 最多添加3个
+                opportunity.counter_evidence.append(f"[M13] {risk}")
+
+        # 如果发现重大利空，添加到warnings
+        if has_any_major_negative:
+            if not opportunity.warnings:
+                opportunity.warnings = []
+            for instrument, research in research_reports:
+                if research.has_major_negative:
+                    opportunity.warnings.append(
+                        f"⚠️ M13调研发现重大利空 ({instrument}): {research.summary[:100]}"
+                    )
+
+        # 添加调研摘要到机会描述
+        if research_summaries:
+            opportunity.opportunity_thesis += "\n\n【M13调研】\n" + "\n".join(research_summaries)
+
+        return opportunity
 
     @staticmethod
     def _calibrate_priority(llm_priority: str, score: OpportunityScore, sentiment_context: Optional[dict] = None) -> str:
