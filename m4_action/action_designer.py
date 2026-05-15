@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 import uuid
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -23,6 +24,8 @@ from core.schemas import (
     ActionPhase,
     ActionType,
     Direction,
+    EntryCondition,
+    EntryConditionType,
     InstrumentType,
     Market,
     OpportunityObject,
@@ -296,10 +299,11 @@ class ActionDesigner:
 ## 主要不确定性
 {uncertainties}
 
-## 请输出 JSON：
+## 请输出 JSON（包含 entry_condition_summary 和 phases 内结构化 entry_conditions）：
 ```json
 {{
   "instrument": "主要操作品种（代码或名称）",
+  "entry_condition_summary": "一句话概括 Phase 1 启动入场必须满足的条件",
   "entry_conditions": ["入场条件1", "入场条件2"],
   "stop_loss": {{
     "stop_price_description": "止损位描述（如：跌破250日均线）",
@@ -315,23 +319,41 @@ class ActionDesigner:
     {{
       "phase_name": "Phase 1 侦察仓",
       "trigger_condition": "入场触发条件",
+      "entry_conditions": [
+        {"condition_type": "price_above", "operator": ">", "value": 5.5, "description": "股价高于5.5元"},
+        {"condition_type": "volume_above_ma", "value": 1.5, "period": 20, "description": "成交量大于20日均量1.5倍"}
+      ],
       "action_description": "具体操作：买入/卖出 XX 品种，仓位 XX%"
     }},
     {{
       "phase_name": "Phase 2 主仓",
       "trigger_condition": "Phase 1 浮盈 X% 后",
+      "entry_conditions": [],
       "action_description": "加仓操作"
     }}
   ],
   "notes": "其他注意事项"
 }}
-```"""
+```
+
+**条件类型说明（condition_type）：**
+- price_above / price_below: 价格高于/低于 value
+- price_between: 价格在 value ~ value_high 之间
+- volume_above: 成交量大于 value
+- volume_above_ma: 成交量大于均量的 value 倍
+- price_above_ma / price_below_ma: 价格高于/低于 period 日均线
+- time_since_created: 计划创建超过 value 天
+
+请尽量为每个 phase 填写结构化的 entry_conditions。如无法确定具体数值，可以留空 []。
+```
+"""
 
     def _default_action_detail(self, opportunity: OpportunityObject) -> dict:
         """LLM 失败时的兜底默认模板"""
         instrument = opportunity.target_instruments[0] if opportunity.target_instruments else "待定"
         return {
             "instrument": instrument,
+            "entry_condition_summary": "一句话概括 Phase 1 启动入场必须满足的条件",
             "entry_conditions": ["等待机会窗口开启", "确认关键假设成立"],
             "stop_loss": {
                 "stop_price_description": "关键支撑位下方2%",
@@ -347,15 +369,95 @@ class ActionDesigner:
                 {
                     "phase_name": "Phase 1 侦察仓",
                     "trigger_condition": "入场条件满足",
+                    "entry_conditions": [
+                        {"condition_type": "price_above", "operator": ">", "value": 0, "description": "价格大于0（有效价格）"}
+                    ],
                     "action_description": f"买入 {instrument}，仓位 30%",
                 },
                 {
                     "phase_name": "Phase 2 主仓",
                     "trigger_condition": "Phase 1 浮盈 3% 后",
+                    "entry_conditions": [],
                     "action_description": f"加仓 {instrument}，追加 70%",
                 },
             ],
         }
+
+    @staticmethod
+    def _extract_conditions_from_text(text: str) -> list:
+        """从 trigger_condition 文本中提取结构化 EntryCondition。
+
+        当 LLM 输出了文本条件但未输出结构化条件时，用正则尝试提取。
+        无法解析的返回空列表（仍标记为 unevaluable）。
+        """
+        if not text:
+            return []
+
+        conditions = []
+
+        # 1. PRICE_BETWEEN: "X-Y元/美元" or "X~Y元/美元"
+        m = re.search(r'(\d+\.?\d*)\s*[-~]\s*(\d+\.?\d*)\s*(?:元|美元)', text)
+        if m:
+            conditions.append({
+                "condition_type": "price_between",
+                "operator": ">=",
+                "value": float(m.group(1)),
+                "value_high": float(m.group(2)),
+                "description": f"价格区间 [{m.group(1)}, {m.group(2)}]",
+            })
+
+        # 2. PRICE_ABOVE: "高于X元", ">X元"
+        m = re.search(r'(?:高于|>|突破|站上|稳定在)\s*(\d+\.?\d*)\s*(?:元|美元)', text)
+        if m:
+            conditions.append({
+                "condition_type": "price_above",
+                "operator": ">",
+                "value": float(m.group(1)),
+                "description": f"价格高于 {m.group(1)}",
+            })
+
+        # 3. PRICE_BELOW: "低于X元", "<X元"
+        m = re.search(r'(?:低于|<|跌破)\s*(\d+\.?\d*)\s*(?:元|美元)', text)
+        if m:
+            conditions.append({
+                "condition_type": "price_below",
+                "operator": "<",
+                "value": float(m.group(1)),
+                "description": f"价格低于 {m.group(1)}",
+            })
+
+        # 4. "$XX" pattern
+        m = re.search(r'\$\s*(\d+\.?\d*)', text)
+        if m:
+            conditions.append({
+                "condition_type": "price_above",
+                "operator": ">",
+                "value": float(m.group(1)),
+                "description": f"价格高于 ${m.group(1)}",
+            })
+
+        # 5. VOLUME_ABOVE_MA: "成交量放大X倍"
+        m = re.search(r'(?:成交量|成交额|量).*?(?:放大|大于|超过|高于)\s*(\d+\.?\d*)\s*倍', text)
+        if m:
+            conditions.append({
+                "condition_type": "volume_above_ma",
+                "operator": ">",
+                "value": float(m.group(1)),
+                "period": 20,
+                "description": f"成交量大于20日均量的 {m.group(1)} 倍",
+            })
+
+        # 6. VIX: "VIX指数<X"
+        m = re.search(r'VIX.*?[<小于]\s*(\d+)', text)
+        if m:
+            conditions.append({
+                "condition_type": "price_below",
+                "operator": "<",
+                "value": float(m.group(1)),
+                "description": f"VIX指数低于 {m.group(1)}",
+            })
+
+        return conditions
 
     # ------------------------------------------------------------------
     # 构建 ActionPlan 对象
@@ -434,6 +536,18 @@ class ActionDesigner:
             or default_phase_templates.get(priority.value, [])
         )
         for p in phase_source:
+            raw_ec = p.get("entry_conditions", [])
+            entry_conditions = []
+            for ec in raw_ec:
+                if isinstance(ec, dict) and "condition_type" in ec:
+                    try:
+                        entry_conditions.append(EntryCondition(**ec))
+                    except Exception:
+                        pass  # skip invalid entries
+            # Fallback: extract from text if LLM didn't produce structured conditions
+            if not entry_conditions:
+                tc = p.get("trigger_condition") or ""
+                entry_conditions = self._extract_conditions_from_text(tc)
             phases.append(ActionPhase(
                 phase_name=p.get("phase_name", ""),
                 action_type=ActionType(p.get("action_type", "buy")),
@@ -441,6 +555,7 @@ class ActionDesigner:
                 allocation_ratio=float(p.get("allocation_ratio", 0.5)),
                 price_range=p.get("price_range"),
                 trigger_condition=p.get("trigger_condition"),
+                entry_conditions=entry_conditions,
             ))
 
         if not phases:
@@ -479,6 +594,7 @@ class ActionDesigner:
             take_profit=take_profit,
             position_sizing=position_sizing,
             phases=phases,
+            entry_condition_summary=detail.get("entry_condition_summary", ""),
             valid_until=now + timedelta(days=PLAN_VALIDITY_DAYS[priority]),
             review_triggers=detail.get(
                 "review_triggers",

@@ -506,6 +506,28 @@ class TakeProfitConfig(BaseModel):
     notes: Optional[str] = Field(default=None)
 
 
+class EntryConditionType(str, Enum):
+    """入场条件类型 — 用于程序化评估"""
+    PRICE_ABOVE = "price_above"
+    PRICE_BELOW = "price_below"
+    PRICE_BETWEEN = "price_between"
+    VOLUME_ABOVE = "volume_above"
+    VOLUME_ABOVE_MA = "volume_above_ma"       # volume > avg volume of period
+    PRICE_ABOVE_MA = "price_above_ma"          # price > MA(period)
+    PRICE_BELOW_MA = "price_below_ma"
+    TIME_SINCE_CREATED = "time_since_created"  # days since plan created
+
+
+class EntryCondition(BaseModel):
+    """结构化的入场条件 — 可被程序化评估"""
+    condition_type: EntryConditionType = Field(..., description="条件类型")
+    operator: str = Field(default=">", description="比较运算符：>, <, >=, <=")
+    value: float = Field(..., description="目标值（或下界）")
+    value_high: Optional[float] = Field(default=None, description="上界（仅 PRICE_BETWEEN 使用）")
+    period: Optional[int] = Field(default=None, description="周期参数，如 MA 周期 20")
+    description: str = Field(default="", description="人类可读的描述")
+
+
 class PositionSizing(BaseModel):
     """仓位配置"""
     suggested_allocation: str = Field(
@@ -552,6 +574,10 @@ class ActionPhase(BaseModel):
     trigger_condition: Optional[str] = Field(
         default=None,
         description="触发该阶段行动的条件（可选，未满足条件则等待）"
+    )
+    entry_conditions: List[EntryCondition] = Field(
+        default_factory=list,
+        description="结构化的入场条件列表（程序可评估），与 trigger_condition 互补"
     )
 
 
@@ -604,6 +630,10 @@ class ActionPlan(BaseModel):
         ...,
         min_length=1,
         description="分阶段行动计划，按顺序执行"
+    )
+    entry_condition_summary: str = Field(
+        default="",
+        description="入场条件概要（LLM 生成的简短描述），供开盘检查时快速判断"
     )
 
     # 时间管理
@@ -1136,13 +1166,29 @@ class PriceAnomaly(BaseModel):
     market: Market = Field(..., description="所属市场")
     anomaly_type: AnomalyType = Field(..., description="异动类型")
     anomaly_date: date = Field(default_factory=date.today, description="异动日期")
-    price_change_pct: float = Field(..., description="涨幅百分比")
+    price_change_pct: float = Field(..., description="当日涨幅百分比")
     atr_multiple: float = Field(..., description="ATR倍数")
     sigma_multiple: float = Field(..., description="标准差倍数")
     volume_ratio: float = Field(..., description="量比（当日成交量/20日均量）")
+
+    # N日累计异动信息
+    n_days: int = Field(default=1, description="累计异动天数")
+    cumulative_return_pct: float = Field(default=0.0, description="N日累计涨幅")
+    cumulative_sigma_multiple: float = Field(default=0.0, description="N日累计涨幅的σ倍数")
+
+    # 相对强度信息
+    alpha_pct: float = Field(default=0.0, description="相对大盘/行业的超额收益(%)")
+    alpha_sigma_multiple: float = Field(default=0.0, description="超额收益的σ倍数")
+    index_return_pct: float = Field(default=0.0, description="同期大盘/行业涨跌幅(%)")
+
+    # 综合置信度 (0-1)，供下游模块参考
+    anomaly_confidence: float = Field(
+        default=0.0, ge=0.0, le=1.0,
+        description="异动检测综合置信度(0-1)"
+    )
+
     baseline_price: float = Field(..., description="异动前基线价格")
     anomaly_price: float = Field(..., description="异动时价格")
-    n_days: int = Field(default=1, description="累计异动天数")
     is_limit_up: bool = Field(default=False, description="是否涨停")
     is_limit_down: bool = Field(default=False, description="是否跌停")
     detected_at: datetime = Field(default_factory=datetime.now, description="检测时间")
