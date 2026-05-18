@@ -17,6 +17,8 @@ m12_opportunity_catcher/backward_causation.py — 反向溯源
 from __future__ import annotations
 
 import logging
+import os
+import re
 from datetime import datetime
 from typing import Dict, List, Optional
 
@@ -39,7 +41,7 @@ class BackwardCausation:
     """反向溯源器
 
     只做三件事：
-    1. 从M2找已有相关信号
+    1. 从M2找已有相关信号（含M1.5隐性信号验证）
     2. M0定向采集+M1解码（LLM提取结构化信号）
     3. 原因分类（有因/无因）
 
@@ -47,11 +49,22 @@ class BackwardCausation:
     """
 
     def __init__(self, llm_client=None, news_providers: dict = None,
-                 signal_decoder=None, signal_store=None):
+                 signal_decoder=None, signal_store=None, data_manager=None,
+                 m1_5_inferencer=None):
         self.llm_client = llm_client
         self.news_providers = news_providers or {}
         self.signal_decoder = signal_decoder
         self.signal_store = signal_store
+        self.m1_5_inferencer = m1_5_inferencer  # M1.5隐性推理器（可选）
+        # DataProviderManager 优先使用传入实例，否则自动获取全局单例
+        if data_manager is not None:
+            self.data_manager = data_manager
+        else:
+            try:
+                from integrations.data_provider_manager import get_global_data_manager
+                self.data_manager = get_global_data_manager()
+            except Exception:
+                self.data_manager = None
 
     def trace(
         self,
@@ -126,29 +139,93 @@ class BackwardCausation:
 
     # ── M2 相关信号查找 ────────────────────────────────────────
 
+    CROSS_INSTRUMENT_TYPES = {
+        SignalType.MACRO, SignalType.INDUSTRY, SignalType.POLICY,
+    }
+    """无直接标的匹配时，仅这些信号类型可以跨标的关联"""
+
     def _find_related_signals(
         self,
         anomaly: PriceAnomaly,
         signals: List[MarketSignal],
     ) -> List[MarketSignal]:
-        """从已有信号中查找与异动相关的信号"""
+        """从已有信号中查找与异动相关的信号
+
+        匹配策略（按优先级）：
+          1. 直接标的匹配 → 接受
+          2. 方向/时间不匹配 → 跳过
+          3. M1.5可用 → 用M1.5验证跨标的关联性
+          4. M1.5不可用 → 仅MACRO/INDUSTRY/POLICY可跨标的关联
+        """
         related = []
         instrument_code = anomaly.instrument.split(".")[0]
 
         for sig in signals:
-            instruments = [i.split(".")[0] for i in sig.affected_instruments]
-            if instrument_code in instruments:
+            sig_instruments = [i.split(".")[0] for i in sig.affected_instruments]
+            # Case 1: 直接标的匹配
+            if instrument_code in sig_instruments:
                 related.append(sig)
                 continue
 
-            if anomaly.price_change_pct > 0 and sig.signal_direction == Direction.BULLISH:
-                if self._is_time_relevant(sig, anomaly.anomaly_date):
+            # Case 2: 方向或时间不匹配 → 跳过
+            direction_match = (
+                (anomaly.price_change_pct > 0 and sig.signal_direction == Direction.BULLISH) or
+                (anomaly.price_change_pct < 0 and sig.signal_direction == Direction.BEARISH)
+            )
+            if not direction_match or not self._is_time_relevant(sig, anomaly.anomaly_date):
+                continue
+
+            # Case 3 (首选): M1.5 验证跨标的关联性
+            if self.m1_5_inferencer is not None:
+                if self._check_m1_5_relevance(sig, instrument_code):
                     related.append(sig)
-            elif anomaly.price_change_pct < 0 and sig.signal_direction == Direction.BEARISH:
-                if self._is_time_relevant(sig, anomaly.anomaly_date):
-                    related.append(sig)
+                continue
+
+            # Case 4 (降级): 无M1.5时仅接受宏观/行业/政策信号
+            if sig.signal_type in self.CROSS_INSTRUMENT_TYPES:
+                related.append(sig)
 
         return related[:5]
+
+    def _check_m1_5_relevance(self, signal: MarketSignal, instrument_code: str) -> bool:
+        """用M1.5验证信号是否影响指定标的
+
+        对 INDUSTRY/POLICY/MACRO 类信号，M1.5 通过产业链图谱
+        判断广义信号与具体标的之间的隐性关联。
+
+        Returns:
+            True=信号可能影响该标的, False=无关或无法判断
+        """
+        if self.m1_5_inferencer is None:
+            return False
+
+        try:
+            # 提取行业/板块上下文
+            industry_sector = ""
+            if signal.logic_frame and signal.logic_frame.affects:
+                industry_sector = "; ".join(signal.logic_frame.affects)
+            if not industry_sector:
+                industry_sector = signal.signal_label or ""
+
+            if not industry_sector:
+                return False
+
+            targets = self.m1_5_inferencer.identify_targets(
+                industry_sector=industry_sector,
+                opportunity_type=signal.signal_type.value,
+                context={"description": (signal.description or "")[:300]},
+            )
+
+            # 仅当 M1.5 明确返回了标的列表时才检查匹配
+            if not targets:
+                return False
+
+            target_codes = {t.split(".")[0] for t in targets}
+            return instrument_code in target_codes
+
+        except Exception as e:
+            logger.debug(f"[BackwardCausation] M1.5 relevance check failed: {e}")
+            return False
 
     def _query_signal_store(self, anomaly: PriceAnomaly) -> List[MarketSignal]:
         """从M2 SignalStore查询与异动股票相关的近期信号。"""
@@ -189,36 +266,155 @@ class BackwardCausation:
         except Exception as e:
             logger.debug(f"[BackwardCausation] SignalStore save failed: {e}")
 
+    # ── Yahoo Finance per-ticker RSS ───────────────────────────
+
+    @staticmethod
+    def _fetch_yahoo_ticker_rss(symbol: str, limit: int = 10) -> List:
+        """Yahoo Finance per-ticker RSS headlines (free, no API key needed).
+
+        URL format: https://feeds.finance.yahoo.com/rss/2.0/headline?s=AAPL
+        Returns simple article objects with .title / .content / .source_url / .source_name.
+        """
+        try:
+            import feedparser
+        except ImportError:
+            logger.warning("[BackwardCausation] feedparser not installed, Yahoo RSS unavailable")
+            return []
+
+        url = f"https://feeds.finance.yahoo.com/rss/2.0/headline?s={symbol}"
+        articles = []
+
+        try:
+            feed = feedparser.parse(url, request_headers={"User-Agent": "MarketRadar/1.0"})
+            if feed.bozo and not feed.entries:
+                logger.debug(f"[BackwardCausation] Yahoo RSS empty for {symbol}")
+                return []
+
+            for entry in feed.entries[:limit]:
+                title = (entry.get("title", "") or "").strip()
+                if not title:
+                    continue
+                link = entry.get("link", "") or url
+                summary = entry.get("summary", "") or ""
+
+                # Clean HTML from summary
+                clean = re.sub(r"<[^>]+>", "", summary)
+                clean = re.sub(r"&nbsp;", " ", clean)
+                clean = re.sub(r"&lt;", "<", clean)
+                clean = re.sub(r"&gt;", ">", clean)
+                clean = re.sub(r"&amp;", "&", clean)
+                clean = re.sub(r"\s+", " ", clean).strip()
+
+                articles.append(
+                    type("Article", (), {
+                        "title": title,
+                        "content": clean or title,
+                        "source_url": link,
+                        "source_name": "Yahoo Finance",
+                    })()
+                )
+
+            if articles:
+                logger.info(
+                    f"[BackwardCausation] Yahoo RSS: {len(articles)} headlines for {symbol}"
+                )
+        except Exception as e:
+            logger.warning(f"[BackwardCausation] Yahoo RSS failed for {symbol}: {e}")
+
+        return articles
+
     # ── M0 采集 + M1 解码 ──────────────────────────────────
 
+    @staticmethod
+    def _dict_to_article(data: dict) -> object:
+        """将 DataProviderManager 返回的新闻 dict 转为简易 article 对象"""
+        return type("Article", (), {
+            "title": data.get("title", data.get("source_name", "")) or "",
+            "content": data.get("content", data.get("summary", "")) or "",
+            "source_url": data.get("url", data.get("source_url", "")) or "",
+        })()
+
     def _collect_and_decode_news(self, anomaly: PriceAnomaly) -> List[MarketSignal]:
-        """M0定向采集 → M1解码：获取新闻并用LLM提取结构化信号。"""
+        """M0定向采集 → M1解码：获取新闻并用LLM提取结构化信号。
+
+        数据源优先级：
+          1. DataProviderManager（A股: astock_skill + 研报, 美股/港股: 通用RSS）
+          2. A股: AKShare / 美股港股: Yahoo per-ticker RSS → Finnhub（key-aware）
+        """
         raw_articles = []
+        instrument_code = anomaly.instrument.split(".")[0]
 
-        # A股：AKShare按股票代码采集
-        if anomaly.market == Market.A_SHARE:
+        # ── 路径1: DataProviderManager 多源聚合 ──
+        if self.data_manager is not None:
             try:
-                from m0_collector.providers.akshare_news import AkshareNewsProvider
-                code = anomaly.instrument.split(".")[0]
-                provider = AkshareNewsProvider(symbol=code)
-                articles = provider.fetch(limit=10)
-                if articles:
-                    raw_articles.extend(articles)
+                # 获取新闻（多源聚合: astock_skill + rss）
+                news_list = self.data_manager.get_news(
+                    symbol=instrument_code,
+                    limit=10,
+                    aggregate=True,
+                )
+                for item in news_list:
+                    raw_articles.append(self._dict_to_article(item))
+
+                # 获取研报（astock_skill 有研报能力）
+                if anomaly.market == Market.A_SHARE:
+                    try:
+                        reports = self.data_manager.get_research_reports(
+                            symbol=instrument_code,
+                            limit=3,
+                        )
+                        for r in reports:
+                            raw_articles.append(self._dict_to_article(r))
+                    except Exception as e:
+                        logger.debug(f"[BackwardCausation] research reports fetch failed: {e}")
+
+                if raw_articles:
+                    logger.info(
+                        f"[BackwardCausation] DataProviderManager returned "
+                        f"{len(raw_articles)} articles+reports for {anomaly.instrument}"
+                    )
             except Exception as e:
-                logger.warning(f"[BackwardCausation] AKShare news failed for {anomaly.instrument}: {e}")
+                logger.warning(f"[BackwardCausation] DataProviderManager failed for {anomaly.instrument}: {e}")
 
-        # 港股/美股：Finnhub
-        if anomaly.market in (Market.HK, Market.US):
-            try:
-                from m0_collector.providers.finnhub_provider import FinnhubProvider
-                provider = FinnhubProvider()
-                if hasattr(provider, 'fetch_company_news'):
-                    symbol = self._convert_to_finnhub_symbol(anomaly.instrument, anomaly.market)
-                    articles = provider.fetch_company_news(symbol=symbol, limit=10)
+        # ── 路径2: 降级到定向搜索 ──
+        if not raw_articles:
+            # A股：AKShare按股票代码采集
+            if anomaly.market == Market.A_SHARE:
+                try:
+                    from m0_collector.providers.akshare_news import AkshareNewsProvider
+                    provider = AkshareNewsProvider(symbol=instrument_code)
+                    articles = provider.fetch(limit=10)
                     if articles:
                         raw_articles.extend(articles)
-            except Exception as e:
-                logger.warning(f"[BackwardCausation] Finnhub news failed for {anomaly.instrument}: {e}")
+                except Exception as e:
+                    logger.warning(f"[BackwardCausation] AKShare news failed: {e}")
+
+            # 港股/美股：Yahoo RSS → Finnhub（key-aware）
+            if anomaly.market in (Market.HK, Market.US):
+                # 2a. Yahoo Finance per-ticker RSS (free, no key)
+                yahoo_articles = self._fetch_yahoo_ticker_rss(instrument_code, limit=10)
+                raw_articles.extend(yahoo_articles)
+
+                # 2b. Finnhub company_news (key required)
+                finnhub_key = os.getenv('FINNHUB_API_KEY')
+                if finnhub_key:
+                    try:
+                        from m0_collector.providers.finnhub_provider import FinnhubProvider
+                        provider = FinnhubProvider(api_key=finnhub_key)
+                        symbol = self._convert_to_finnhub_symbol(anomaly.instrument, anomaly.market)
+                        articles = provider.fetch_company_news(symbol=symbol, limit=10)
+                        if articles:
+                            raw_articles.extend(articles)
+                            logger.info(
+                                f"[BackwardCausation] Finnhub: {len(articles)} articles for {symbol}"
+                            )
+                    except Exception as e:
+                        logger.warning(f"[BackwardCausation] Finnhub news failed for {anomaly.instrument}: {e}")
+                else:
+                    logger.info(
+                        f"[BackwardCausation] FINNHUB_API_KEY not set, "
+                        f"skipping Finnhub for {anomaly.instrument}"
+                    )
 
         if not raw_articles:
             logger.info(f"[BackwardCausation] No news articles found for {anomaly.instrument}")

@@ -90,7 +90,18 @@ class JudgmentEngine:
             logger.info("[M3] 空信号列表，跳过判断")
             return []
 
-        all_signals = signals + (historical_signals or [])
+        # M3 不需要原文证据，去掉避免撑爆提示词
+        for sig in signals + (historical_signals or []):
+            sig.evidence_text = ""
+
+        # 限制历史信号数量，避免提示词超代理上下文限制
+        MAX_HISTORICAL_SIGNALS = 15
+        historical = historical_signals or []
+        if len(historical) > MAX_HISTORICAL_SIGNALS:
+            logger.info(f"[M3] 截断历史信号: {len(historical)} → {MAX_HISTORICAL_SIGNALS}")
+            historical = sorted(historical, key=lambda s: s.event_time or datetime(2000, 1, 1), reverse=True)[:MAX_HISTORICAL_SIGNALS]
+
+        all_signals = signals + historical
         batch_id = batch_id or f"batch_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
         logger.info(
@@ -543,6 +554,10 @@ class JudgmentEngine:
                     f"  - 经验教训: {case.lessons[:100]}...\n\n"
                 )
 
+        # 截断 inference_context 避免超代理上下文限制
+        if len(inference_context) > 4000:
+            inference_context = inference_context[:4000] + "\n...(以下内容已截断)"
+
         messages = [
             {"role": "system", "content": STEP_B_SYSTEM_PROMPT},
             {
@@ -674,6 +689,13 @@ class JudgmentEngine:
             "instruments_researched": [instr for instr, _ in research_reports]
         }
 
+        # M13 无发现时跳过 LLM 重评估（避免空转）
+        if not all_key_findings and not all_risk_factors:
+            logger.info(
+                f"[M3] M13无发现，跳过重评估，保持原置信度: {original_confidence:.2f}"
+            )
+            return opportunity
+
         # 使用LLM重新评估置信度
         messages = [
             {
@@ -768,10 +790,14 @@ M13已经完成深度调研，提供了关键发现和风险因素。你需要�
         """基于评分校准 LLM 给出的优先级。
 
         规则：
-          - overall >= 7.5 且 confidence >= 0.7 → position 或 urgent
+          - overall >= 7.0 且 confidence >= 0.7 → position 或 urgent（v3: 从7.5下调，解决持续上涨行情漏报）
+          - overall >= 7.5 且 confidence >= 0.7, timeliness >= 9 → urgent
           - overall >= 6 且 execution_readiness >= 0.6 → research 或更高
           - overall < 4 → watch（不论 LLM 给什么）
           - 其余保持 LLM 输出
+
+        Note: 回测表明 AnomalyDetector v2 的 confidence 评分可有效辅助
+        区分趋势上涨（高N日累计置信度）和随机波动（低置信度）。
         """
         try:
             p = PriorityLevel(llm_priority)
@@ -782,6 +808,12 @@ M13已经完成深度调研，提供了关键发现和风险因素。你需要�
             if score.timeliness >= 9:
                 return PriorityLevel.URGENT.value
             return PriorityLevel.POSITION.value
+
+        if score.overall_score >= 7.0 and score.confidence_score >= 0.7:
+            # 7.0-7.49 范围：只升级低级别 LLM 优先级（watch/research → position），
+            # 不覆盖已有的 position/urgent（让 sentiment 校准决定是否降级）
+            if p not in (PriorityLevel.POSITION, PriorityLevel.URGENT):
+                return PriorityLevel.POSITION.value
 
         if score.overall_score >= 6 and score.execution_readiness >= 0.6:
             if p in (PriorityLevel.POSITION, PriorityLevel.URGENT):
@@ -808,6 +840,49 @@ M13已经完成深度调研，提供了关键发现和风险因素。你需要�
                 return PriorityLevel.RESEARCH.value
 
         return p.value
+
+    @staticmethod
+    def _normalize_str_list(value, default: list) -> list:
+        """兼容 LLM 在 List[str] 字段返回 dict/list/dict 混合的情况
+
+        将任意值归一化为 List[str]：
+        - None → default
+        - List[str] → pass through
+        - List[dict] → 每个 dict 格式化为 "key: value" 字符串
+        - 其他 → str(value) 包成 list
+        """
+        if value is None:
+            return default
+        if isinstance(value, list):
+            result = []
+            for item in value:
+                if isinstance(item, str):
+                    result.append(item)
+                elif isinstance(item, dict):
+                    # dict → "key: value; key2: value2"
+                    parts = []
+                    for k, v in item.items():
+                        if isinstance(v, dict):
+                            parts.append(f"{k}: {json.dumps(v, ensure_ascii=False)}")
+                        else:
+                            parts.append(f"{k}: {v}")
+                    result.append("; ".join(parts))
+                else:
+                    result.append(str(item))
+            return result if result else default
+        if isinstance(value, dict):
+            return [f"{k}: {v}" for k, v in value.items()]
+        return [str(value)]
+
+    @staticmethod
+    def _normalize_risk_reward_profile(value) -> str:
+        """兼容 LLM 返回 dict 而非 str 的情况"""
+        if isinstance(value, str):
+            return value
+        if isinstance(value, dict):
+            # dict → 格式化的多行描述
+            return "; ".join(f"{k}={v}" for k, v in value.items())
+        return str(value)
 
     @staticmethod
     def _validate_invalidation_conditions(
@@ -957,13 +1032,34 @@ M13已经完成深度调研，提供了关键发现和风险因素。你需要�
             confidence_level=float(window_data.get("confidence_level", 0.6)),
         )
 
-        supporting_evidence = data.get("supporting_evidence") or [s.signal_label for s in signals[:3]] or ["LLM 未显式给出 supporting_evidence"]
-        key_assumptions = data.get("key_assumptions") or ["政策宽松将继续传导至流动性和风险偏好"]
-        uncertainty_map = data.get("uncertainty_map") or ["政策效果兑现节奏存在不确定性"]
-        next_validation_questions = data.get("next_validation_questions") or ["市场是否出现量价配合验证"]
-        invalidation_conditions = data.get("invalidation_conditions") or ["核心政策宽松预期被证伪"]
-        must_watch_indicators = data.get("must_watch_indicators") or ["成交量是否放大", "风险偏好是否持续修复"]
-        kill_switch_signals = data.get("kill_switch_signals") or ["核心假设被证伪", "市场出现显著反向宏观冲击"]
+        supporting_evidence = self._normalize_str_list(
+            data.get("supporting_evidence"),
+            [s.signal_label for s in signals[:3]] or ["LLM 未显式给出 supporting_evidence"]
+        )
+        key_assumptions = self._normalize_str_list(
+            data.get("key_assumptions"),
+            ["政策宽松将继续传导至流动性和风险偏好"]
+        )
+        uncertainty_map = self._normalize_str_list(
+            data.get("uncertainty_map"),
+            ["政策效果兑现节奏存在不确定性"]
+        )
+        next_validation_questions = self._normalize_str_list(
+            data.get("next_validation_questions"),
+            ["市场是否出现量价配合验证"]
+        )
+        invalidation_conditions = self._normalize_str_list(
+            data.get("invalidation_conditions"),
+            ["核心政策宽松预期被证伪"]
+        )
+        must_watch_indicators = self._normalize_str_list(
+            data.get("must_watch_indicators"),
+            ["成交量是否放大", "风险偏好是否持续修复"]
+        )
+        kill_switch_signals = self._normalize_str_list(
+            data.get("kill_switch_signals"),
+            ["核心假设被证伪", "市场出现显著反向宏观冲击"]
+        )
 
         invalidation_conditions, kill_switch_signals = self._validate_invalidation_conditions(
             invalidation_conditions, kill_switch_signals, data.get("opportunity_title", "")
@@ -972,6 +1068,9 @@ M13已经完成深度调研，提供了关键发现和风险因素。你需要�
         # 评分卡属于 M3 的解释层输出：用于解释判断、供后续模块消费，
         # 不作为独立的二次裁决器去反向覆盖 is_opportunity / priority_level。
         score_data = data.get("opportunity_score") or {}
+        # 处理LLM可能返回int而不是dict的情况
+        if not isinstance(score_data, dict):
+            score_data = {}
         catalyst_strength = int(score_data.get("catalyst_strength", max((getattr(s, 'intensity_score', 6) for s in signals), default=6)))
         timeliness = int(score_data.get("timeliness", max((getattr(s, 'timeliness_score', 6) for s in signals), default=6)))
         signal_consistency = int(score_data.get("signal_consistency", min(10, max(5, len(signals) + 5))))
@@ -1022,17 +1121,17 @@ M13已经完成深度调研，提供了关键发现和风险因素。你需要�
             inferred_events=[e.event_id for e in (inferred_events or [])],
             supporting_cases=[c.case_id for c in (similar_cases or [])],
             supporting_evidence=supporting_evidence,
-            counter_evidence=data.get("counter_evidence", []),
+            counter_evidence=self._normalize_str_list(data.get("counter_evidence"), []),
             key_assumptions=key_assumptions,
             uncertainty_map=uncertainty_map,
             priority_level=calibrated_priority,
             opportunity_score=opportunity_score,
-            risk_reward_profile=data.get("risk_reward_profile", "待进一步量化"),
+            risk_reward_profile=self._normalize_risk_reward_profile(data.get("risk_reward_profile", "待进一步量化")),
             next_validation_questions=next_validation_questions,
             invalidation_conditions=invalidation_conditions,
             must_watch_indicators=must_watch_indicators,
             kill_switch_signals=kill_switch_signals,
-            warnings=data.get("warnings"),
+            warnings=self._normalize_str_list(data.get("warnings"), None),
             judgment_version=self.version,
             created_at=now,
             batch_id=batch_id,
@@ -1051,7 +1150,11 @@ M13已经完成深度调研，提供了关键发现和风险因素。你需要�
         return "\n".join(lines)
 
     def _signals_to_detail(self, signals: List[MarketSignal]) -> str:
-        """信号列表 → 详细文本（供 Step B 使用）"""
+        """信号列表 → 详细文本（供 Step B 使用）
+
+        注意：description 和 evidence_text 截断到 300 字符以内，
+        避免 LLM 提示词超过代理上下文限制（cc-vibe.com CONTENT_LENGTH_EXCEEDS_THRESHOLD）。
+        """
         lines = []
         for s in signals:
             markets = "/".join([m.value for m in s.affected_markets])
@@ -1059,15 +1162,16 @@ M13已经完成深度调研，提供了关键发现和风险因素。你需要�
             extra = ""
             if s.signal_type.value == "sentiment":
                 extra = "\n⚠️ 【情绪信号】此信号来自 M10 情绪面系统，恐贪指数反映市场整体情绪状态"
+            desc = (s.description or "")[:300]
+            evid = (s.evidence_text or "")[:300]
             lines.append(
                 f"""---
 信号ID: {s.signal_id}
 类型: {s.signal_type.value} | 市场: {markets} | 方向: {s.signal_direction.value}
 标签: {s.signal_label}
-描述: {s.description}
-证据原文: {s.evidence_text}
+描述: {desc}
+证据原文: {evid}
 关联品种: {instruments}
-逻辑框架: {s.logic_frame.what_changed} → {s.logic_frame.change_direction} → 影响 {', '.join(s.logic_frame.affects)}
 评分: 强度={s.intensity_score}/10 置信={s.confidence_score}/10 时效={s.timeliness_score}/10
 事件时间: {s.event_time.isoformat() if s.event_time else '未知'}{extra}"""
             )
@@ -1091,6 +1195,15 @@ M13已经完成深度调研，提供了关键发现和风险因素。你需要�
         except Exception as anchor_err:
             logger.warning(f"[M3] 写调试锚点失败: {anchor_err}")
 
+    def _remove_trailing_commas(self, text: str) -> str:
+        """移除JSON中的trailing commas（数组/对象最后元素后的逗号）"""
+        import re
+        # 移除对象中最后一个字段后的逗号: , }
+        text = re.sub(r',(\s*})', r'\1', text)
+        # 移除数组中最后一个元素后的逗号: , ]
+        text = re.sub(r',(\s*])', r'\1', text)
+        return text
+
     def _parse_json_response(self, raw: str, expected_key: Optional[str] = None):
         """解析 LLM JSON 输出，兼容 markdown 代码块、前后解释文字与轻微脏输出。"""
         text = (raw or "").strip()
@@ -1104,6 +1217,9 @@ M13已经完成深度调研，提供了关键发现和风险因素。你需要�
             text = "\n".join(lines[start:end]).strip()
         if text.startswith("json\n"):
             text = text[5:].strip()
+
+        # 移除trailing commas
+        text = self._remove_trailing_commas(text)
 
         try:
             data = json.loads(text)
@@ -1123,6 +1239,8 @@ M13已经完成深度调研，提供了关键发现和风险因素。你需要�
                 arr_candidate = text[arr_start:arr_end + 1] if arr_start != -1 and arr_end != -1 and arr_end > arr_start else None
                 candidate = obj_candidate or arr_candidate
             if candidate:
+                # 移除trailing commas
+                candidate = self._remove_trailing_commas(candidate)
                 try:
                     data = json.loads(candidate)
                 except json.JSONDecodeError:
@@ -1138,6 +1256,18 @@ M13已经完成深度调研，提供了关键发现和风险因素。你需要�
 
         if expected_key:
             if not isinstance(data, dict) or expected_key not in data:
+                # 尝试常见字段别名映射，避免不必要的 LLM 重试
+                field_aliases = {
+                    "scenarios": ["opportunity_scenarios", "identified_opportunities", "opportunity_scenario_list"],
+                }
+                resolved = None
+                aliases = field_aliases.get(expected_key, [])
+                for alias in aliases:
+                    if alias in data:
+                        resolved = data[alias]
+                        break
+                if resolved is not None:
+                    return resolved
                 raise ValueError(f"LLM 输出缺少期望字段 '{expected_key}'，实际字段: {list(data.keys()) if isinstance(data, dict) else type(data)}")
             return data[expected_key]
         return data

@@ -496,3 +496,96 @@ def judge_opportunity(self, signals):
 - 同一标的短期内基本面不会大变
 - 避免重复调研浪费资源
 - 提升响应速度
+
+---
+
+## 十二、v2 补充：为 M12 提供异动证据搜索（2026-05-18）
+
+> 背景：M12 价格异动轨道需要的是“这个股票为什么刚刚动了”的快速证据搜索，不一定是完整研报/财报调研。现有 `quick_research()`、`standard_research()`、`deep_research()` 偏验证和补全，不能完全覆盖异动发生当下的因果搜索需求。
+>
+> v2.1 修订：`search_movement_evidence()` 是 P1/P2 的目标能力，不是 P0 的前置依赖。P0 先由 M12 直接接入 Yahoo ticker RSS 和 Finnhub key-aware fallback，等动态搜索、缓存、ranking、去重需要跨模块复用时，再迁移到 M13。
+
+### 12.1 新增能力定位
+
+M13 在 Track 2 v2 的完整形态中新增轻量能力：
+
+```text
+MovementContext
+  -> search_movement_evidence()
+  -> EvidenceBundle
+```
+
+该能力服务于 M12 的“反向溯源前置证据获取”，重点是快、准、可降级、可追踪查询过程。该能力应在 P1/P2 实现，不阻塞 P0。
+
+### 12.2 与现有研究接口的区别
+
+| 接口 | 触发点 | 目标 | 输出 |
+|------|--------|------|------|
+| `quick_research()` | M1.5 推理后 | 验证推理是否有明显反向证据 | `ResearchReport` |
+| `standard_research()` | 初步原因已存在后 | 补充新闻/研报/基本面，提高判断质量 | `ResearchReport` |
+| `deep_research()` | M3 生成机会后 | 最终验证机会质量与风险 | `ResearchReport` |
+| `search_movement_evidence()` | M12 异动刚发生后 | 寻找解释该异动的候选证据 | `EvidenceBundle` |
+
+### 12.3 建议接口
+
+```python
+def search_movement_evidence(
+    context: MovementContext,
+    max_items: int = 12,
+    timeout_seconds: int = 20,
+) -> EvidenceBundle:
+    """为 M12 价格异动搜索候选解释证据。
+
+    返回内容必须包含：
+    - normalized EvidenceItem 列表
+    - searched_queries
+    - providers_used
+    - providers_failed
+    - timeout / partial_result
+    """
+```
+
+### 12.4 搜索层级
+
+| 层级 | 数据源 | 默认策略 |
+|------|--------|----------|
+| Tier 0 | M2 recent signals | 读取同市场/同主题近期信号作为背景 |
+| Tier 1 | Finnhub company_news | 有 key 时优先，用于 US/HK ticker 新闻 |
+| Tier 1 | Yahoo Finance per-ticker RSS | 无 key 兜底，覆盖 US ticker headline |
+| Tier 1 | AStockSkill/EastMoney | A股 ticker 新闻 |
+| Tier 2 | DuckDuckGo/Bing/NewsAPI | 动态查询 `why moving`、`jumps`、行业主题 |
+| Tier 3 | 行业图谱/主题词表 | 扩展供应链、同业、板块、宏观关键词 |
+
+P0 说明：
+
+- Tier 1 的 Yahoo/Finnhub 先在 M12 内部实现，避免把尚未成型的搜索能力绕到 M13。
+- M13 从 P1 开始接管通用搜索、缓存、排序和去重。
+- `standard_research()` 仍可在已有初步原因后用于补充验证，但不承担 P0 异动溯源入口。
+
+### 12.5 输出要求
+
+`EvidenceBundle` 必须便于 M12 复盘：
+
+- 保留每条证据的原始来源、URL、发布时间、抓取时间。
+- 记录每个查询词，即使无结果。
+- 记录失败 provider 和失败原因。
+- 不直接判断“是否机会”，只给 M12/M1/M1.5/M3 使用。
+- 超时返回部分结果，不阻塞 M12 主流程。
+
+### 12.6 边界约束
+
+M13 不做以下事情：
+
+- 不决定 `causation_type`。
+- 不决定是否进入 M3。
+- 不突破 M12 的 `max_allowed_priority`。
+- 不直接生成 `OpportunityObject`。
+
+M13 可以做以下事情：
+
+- 对证据做初步 relevance/freshness/credibility 打分。
+- 缓存 ticker/query 级搜索结果。
+- 为 M12 提供 normalized evidence。
+- 在后续 `standard_research()` 中补充基本面、研报和反向证据。
+
+详细 Track 2 v2 方案见 `docs/M12_TRACK2_ITERATION_PLAN_2026-05-18.md`。

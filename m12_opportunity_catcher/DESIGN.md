@@ -364,3 +364,96 @@ m12_opportunity_catcher/
 | 决策追踪Dashboard | ✅ 已实现 | 新增决策追踪tab + 补牢tab显示决策链路 |
 | 决策日志系统 | ✅ 已实现 | pipeline/decision_log.py 全链路记录+每日报告 |
 - 新数据模型定义以外的schemas变更
+
+---
+
+## 十二、v2 迭代设计：异动解释驱动（2026-05-18）
+
+> 背景：美股/港股盘中异动检测已经可用，但反向溯源常因“没有直接 ticker 新闻”或“新闻无法被 M1 解码为 MarketSignal”而全部进入 `unexplained`，导致异动在进入 M3 前被丢弃。
+
+### 12.1 定位调整
+
+M12 v1 的反向溯源以“找新闻并解码为 MarketSignal”为主。v2 调整为“解释价格异动”：
+
+```text
+PriceAnomaly
+  -> MovementContext
+  -> EvidenceBundle
+  -> CauseHypothesis
+  -> CausalReasoningResult
+  -> M3 judge
+```
+
+M12 仍然不替代 M3。v2 只是把“异动为什么发生”这一步做得更完整，让 M3 能看到足够的移动上下文和因果假设。
+
+v2.1 落地原则：完整蓝图保留，但 P0 不一次性引入全部模型和 M13 搜索入口。P0 先修复当前代码路径，让美股/港股能拿到 raw articles 并复用现有 M1 decode + fallback weak signal。
+
+### 12.2 新增职责
+
+| 职责 | 说明 |
+|------|------|
+| 构造 MovementContext | 将 PriceAnomaly 补充为可搜索、可推理的上下文，包括标的、市场、涨跌幅、量比、行业、主题、时间窗 |
+| 编排证据获取 | 在无因放弃前调用 M13/M0/M2 获取 ticker 新闻、动态搜索结果、历史相关信号 |
+| 生成 CauseHypothesis | 对无法标准化为 MarketSignal 的异动原因，生成结构化因果假设 |
+| 因果门控 | 判断 direct_news / implicit_sector / macro_policy / sentiment_flow / technical_flow / unexplained |
+| 受限允许 | 对无新闻但强价格/量能的 flow/momentum 类异动，只允许进入 watch/research，不得直接开仓 |
+
+### 12.3 与 M13 的新接口
+
+完整 v2 目标中，M12 可以在 `BackwardCausation.trace()` 的无因放弃之前调用轻量证据搜索：
+
+```python
+evidence_bundle = m13_agent.search_movement_evidence(
+    context=movement_context,
+    max_items=12,
+    timeout_seconds=20,
+)
+```
+
+该接口不是 `standard_research()` 的替代，而是更靠前的“异动解释证据获取”。`standard_research()` 可在已有初步原因后继续用于验证基本面、研报、风险因素。
+
+但 P0 不依赖该接口。当前 M13 尚未真正实现 Yahoo/Finnhub/DDG movement search，P0 直接在 M12 `_collect_and_decode_news()` 中接入 Yahoo ticker RSS 和 Finnhub key-aware fallback。等 P1/P2 动态搜索、缓存、排序、去重需求稳定后，再迁移到 M13。
+
+### 12.4 v2 判定规则
+
+```text
+有直接新闻:
+  -> M1 解码为 MarketSignal
+  -> M12 生成 direct_news CauseHypothesis
+  -> 进入 M3
+
+无直接新闻但有板块/产业链/宏观证据:
+  -> M1.5 判断隐式关联
+  -> M12 生成 implicit_sector 或 macro_policy CauseHypothesis
+  -> 进入 M3
+
+无新闻但价格/量能显著:
+  -> M12 生成 technical_flow / momentum CauseHypothesis
+  -> max_allowed_priority = research
+  -> 进入 M3 或 watch_only
+
+无证据且价格结构不足:
+  -> causation_type = unexplained
+  -> drop
+```
+
+### 12.5 P0 落地范围
+
+第一阶段只解决“US/HK无证据导致全丢弃”：
+
+- 在 `_collect_and_decode_news()` 中新增 Yahoo Finance per-ticker RSS，作为 US/HK 无 key 兜底。
+- Finnhub company_news 只在存在 `FINNHUB_API_KEY` 时调用；无 key 时静默降级，不抛 ValueError。
+- 继续复用现有 M1 `SignalDecoder`。
+- 继续复用现有 `_fallback_simple_signals()`：raw articles 非空但 M1 无输出时，生成弱 `event_driven` 证据。
+- P0 不新增 shared schema，不把 `MovementContext`、`EvidenceBundle`、`CauseHypothesis` 写入 `core.schemas`。
+- P0 不要求 M13 注入。
+- 日志记录：providers tried、provider failures、raw article count、decoded signal count、fallback signal count。
+
+### 12.6 P1/P2 再引入的内容
+
+- P1：当动态搜索接入后，再根据真实查询结果决定是否新增本地 `MovementContext` / `EvidenceBundle` dataclass。
+- P1/P2：当 M3 需要消费非新闻型原因时，再引入 `CauseHypothesis`。
+- P1/P2：当搜索缓存、ranking、去重、跨模块复用变得必要时，再实现并接入 `M13.search_movement_evidence()`。
+- P2：实现美股行业/主题扩展前，先审计 `data/industry_graph_full.json` 的美股覆盖；不足时新增 US ticker-theme map。
+
+详细方案见 `docs/M12_TRACK2_ITERATION_PLAN_2026-05-18.md`。

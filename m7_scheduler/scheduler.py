@@ -67,6 +67,7 @@ class ScheduledTask:
         self.description = description
         self.time_window = time_window          # None = 全天
 
+        self.is_running: bool = False          # 标记是否正在执行（防重复触发）
         self.last_run: Optional[datetime] = None
         self.last_result: Optional[dict] = None
         self.run_count: int = 0
@@ -81,7 +82,9 @@ class ScheduledTask:
         """
         if not self.enabled:
             return False
-        
+        if self.is_running:  # 正在执行中，不再重复触发
+            return False
+
         # 判断时间窗口
         if self.time_window:
             start_h, start_m = map(int, self.time_window[0].split(":"))
@@ -226,7 +229,7 @@ class Scheduler:
             name="signal_pipeline",
             fn=self._task_signal_pipeline,
             description="M0收集→M1解码→M2存储→M3判断→M4行动，处理 data/incoming/ 新文件",
-            run_at_start=True,
+            run_at_start=False,
             **_c("signal_pipeline", 30),
         ))
 
@@ -234,7 +237,7 @@ class Scheduler:
             name="price_update",
             fn=self._task_price_update,
             description="M9模拟仓价格更新（盘中检查止损止盈）",
-            time_window=("09:25", "15:05"),    # 仅 A股交易时段
+            time_window=("09:25", "16:05"),    # A股+港股交易时段
             **_c("price_update", 10),
         ))
 
@@ -284,7 +287,7 @@ class Scheduler:
             name="m12_a_share_scan",
             fn=lambda run_id: self._task_m12_market_scan(Market.A_SHARE, run_id),
             description="M12 A股轨道：全景价格扫描→异动检测→反向溯源→趋势判断→机会生成",
-            run_at_start=False,
+            run_at_start=True,
             time_window=("09:30", "15:00"),   # A股交易时段
             **_c("m12_a_share_scan", 10),      # 每 10 分钟一次
         ))
@@ -293,7 +296,7 @@ class Scheduler:
             name="m12_hk_scan",
             fn=lambda run_id: self._task_m12_market_scan(Market.HK, run_id),
             description="M12 港股轨道：全景价格扫描→异动检测→反向溯源→趋势判断→机会生成",
-            run_at_start=False,
+            run_at_start=True,
             time_window=("09:30", "16:00"),   # 港股交易时段
             **_c("m12_hk_scan", 10),           # 每 10 分钟一次
         ))
@@ -302,7 +305,7 @@ class Scheduler:
             name="m12_us_scan",
             fn=lambda run_id: self._task_m12_market_scan(Market.US, run_id),
             description="M12 美股轨道：全景价格扫描→异动检测→反向溯源→趋势判断→机会生成",
-            run_at_start=False,
+            run_at_start=True,
             time_window=("21:30", "04:00"),   # 美股交易时段（跨日）
             **_c("m12_us_scan", 10),           # 每 10 分钟一次
         ))
@@ -363,6 +366,34 @@ class Scheduler:
             **_c("m12_postmarket_us", 1440),       # 每天一次
         ))
 
+        # ── M4 开盘检查计划储备 ────────────────────────────────
+        self.register(ScheduledTask(
+            name="m4_open_check_a_share",
+            fn=lambda run_id: self._task_m4_open_check(Market.A_SHARE, run_id),
+            description="M4 开盘检查A股计划储备：评估已保存ActionPlan是否符合开仓条件",
+            run_at_start=False,
+            time_window=("09:30", "09:30"),   # 开盘时执行，每天一次
+            **_c("m4_open_check_a_share", 1440),
+        ))
+
+        self.register(ScheduledTask(
+            name="m4_open_check_hk",
+            fn=lambda run_id: self._task_m4_open_check(Market.HK, run_id),
+            description="M4 开盘检查港股计划储备",
+            run_at_start=False,
+            time_window=("09:30", "09:30"),
+            **_c("m4_open_check_hk", 1440),
+        ))
+
+        self.register(ScheduledTask(
+            name="m4_open_check_us",
+            fn=lambda run_id: self._task_m4_open_check(Market.US, run_id),
+            description="M4 开盘检查美股计划储备",
+            run_at_start=False,
+            time_window=("21:30", "21:30"),
+            **_c("m4_open_check_us", 1440),
+        ))
+
     # ── 启停 ─────────────────────────────────────────────────
 
     def start(self, background: bool = True):
@@ -373,11 +404,15 @@ class Scheduler:
         self._stop_event.clear()
         self._is_running = True
 
-        # 处理 run_at_start
+        # 处理 run_at_start（独立 try/except 防止一个任务崩溃阻塞后续任务）
         for task in self.tasks.values():
             if task.run_at_start and task.enabled:
-                result = task.run()
-                self._append_log(task.name, result)
+                try:
+                    result = task.run()
+                    self._append_log(task.name, result)
+                except Exception as e:
+                    logger.error(f"[M7] 任务 {task.name} 启动执行失败: {e}")
+                    self._append_log(task.name, {"status": "error", "error": str(e)})
 
         # 立即保存初始状态
         self._save_state()
@@ -405,7 +440,14 @@ class Scheduler:
         task = self.tasks.get(task_name)
         if not task:
             return {"status": "error", "error": f"任务不存在: {task_name}"}
-        result = task.run()
+        if task.is_running:
+            logger.warning(f"[M7] 任务 {task_name} 已在执行中，跳过重复触发")
+            return {"status": "skipped", "reason": "already_running"}
+        task.is_running = True
+        try:
+            result = task.run()
+        finally:
+            task.is_running = False
         self._append_log(task_name, result)
         return result
 
@@ -423,7 +465,7 @@ class Scheduler:
     def _loop(self):
         from m7_scheduler.trading_calendar import is_trading_day
         from core.schemas import Market  # 在方法内部重新导入，确保可用
-        
+
         while not self._stop_event.is_set():
             now = datetime.now()
             with self._lock:
@@ -431,7 +473,7 @@ class Scheduler:
                 for t in self.tasks.values():
                     if not t.is_due(now):
                         continue
-                    
+
                     # 检查是否需要交易日判断（M12 相关任务）
                     if t.name.startswith("m12_"):
                         # 从任务名提取市场
@@ -443,19 +485,36 @@ class Scheduler:
                             market = Market.US
                         else:
                             market = None
-                        
+
                         # 如果是交易相关任务，检查是否为交易日
                         if market and not is_trading_day(market, now.date()):
                             logger.info(f"[M7] 跳过任务 {t.name}：今日非交易日")
                             continue
-                    
+
                     due_tasks.append(t)
-            
+
+            # 并行执行到期任务（互不阻塞的独立线程）
             for task in due_tasks:
-                result = task.run()
-                self._append_log(task.name, result)
-                self._save_state()
+                task.is_running = True
+                t = threading.Thread(
+                    target=self._run_task_wrapper, args=(task,), daemon=True
+                )
+                t.start()
+
             self._stop_event.wait(timeout=self.tick_interval)
+
+    def _run_task_wrapper(self, task: "ScheduledTask"):
+        """在独立线程中执行任务，完成后记录日志和持久化状态。"""
+        try:
+            result = task.run()
+        except Exception as e:
+            logger.error(f"[M7] 任务异常 {task.name}: {e}")
+            result = {"status": "error", "error": str(e)}
+        finally:
+            task.is_running = False
+        with self._lock:
+            self._append_log(task.name, result)
+            self._save_state()
 
     def _append_log(self, task_name: str, result: dict):
         entry = {"task": task_name, "at": datetime.now().isoformat(), **result}
@@ -473,6 +532,24 @@ class Scheduler:
         except Exception:
             pass
 
+    # ── 市场时间检查 ────────────────────────────────────────
+
+    @staticmethod
+    def _is_market_hours(market: Market) -> bool:
+        """检查指定市场当前是否在交易时段内"""
+        now = datetime.now()
+        h, m = now.hour, now.minute
+        hm = h * 100 + m  # 例如 9:30 → 930, 15:00 → 1500
+
+        if market == Market.A_SHARE:
+            return 930 <= hm < 1500
+        elif market == Market.HK:
+            return 930 <= hm < 1600
+        elif market == Market.US:
+            # 美股夏令时: 21:30-04:00(次日) 北京时间
+            return hm >= 2130 or hm < 400
+        return True  # 未知市场视为开放
+
     # ── 任务实现 ─────────────────────────────────────────────
 
     def _task_signal_pipeline(self, run_id: str = "") -> dict:
@@ -488,6 +565,23 @@ class Scheduler:
         if not files:
             logger.info("[M7/signal_pipeline] 无新文件")
             return {"new_files": 0}
+
+        # 跳过24小时前的旧文件，防止积压后误报
+        stale_cutoff = datetime.now() - timedelta(hours=24)
+        stale_skipped = 0
+        for f in list(files):
+            if f.exists() and datetime.fromtimestamp(f.stat().st_mtime) < stale_cutoff:
+                try:
+                    target = processed_dir / f.name
+                    if target.exists():
+                        target.unlink()
+                    f.rename(target)
+                    stale_skipped += 1
+                    files.remove(f)
+                except Exception:
+                    pass
+        if stale_skipped:
+            logger.info(f"[M7/signal_pipeline] 跳过 {stale_skipped} 个过期文件（>24h）")
 
         import sys
         sys.path.insert(0, str(ROOT))
@@ -588,7 +682,11 @@ class Scheduler:
 
                 if not signals:
                     try:
-                        f.rename(processed_dir / f.name)
+                        target_path = processed_dir / f.name
+                        # 如果目标文件已存在，先删除（Windows兼容）
+                        if target_path.exists():
+                            target_path.unlink()
+                        f.rename(target_path)
                     except FileNotFoundError:
                         logger.debug(f"[M7/signal_pipeline] 文件已被移动: {f.name}")
                     continue
@@ -599,15 +697,17 @@ class Scheduler:
                 logger.info(f"[M7/signal_pipeline] M2存储 {len(signals)} 个信号（显式+隐式）")
 
                 # M3 判断
-                from datetime import timedelta
                 hist = store.get_by_time_range(
-                    start=datetime.now() - timedelta(days=90),
+                    start=datetime.now() - timedelta(days=7),
                     end=datetime.now(),
-                    markets=[Market.A_SHARE, Market.HK],
-                    min_intensity=5,
+                    markets=[Market.A_SHARE, Market.HK, Market.US],
+                    min_intensity=7,
                 )
                 cur_ids = {s.signal_id for s in signals}
                 hist = [s for s in hist if s.signal_id not in cur_ids]
+                # 限制历史信号数量，避免超出API长度限制
+                if len(hist) > 50:
+                    hist = sorted(hist, key=lambda x: x.intensity_score, reverse=True)[:50]
 
                 opportunities = engine.judge(signals=signals, historical_signals=hist or None, batch_id=batch_id)
                 total_opps += len(opportunities)
@@ -647,6 +747,11 @@ class Scheduler:
 
                     # 如果是 position 或 urgent 级别，尝试开仓
                     if opp.priority_level.value in ['position', 'urgent']:
+                        # 检查市场是否在交易时段，非交易时段不开仓（价格不可靠）
+                        mkt = opp.target_markets[0] if opp.target_markets else Market.A_SHARE
+                        if not self._is_market_hours(mkt):
+                            logger.info(f"[M7/signal_pipeline] {mkt.value} 非交易时段，跳过开仓: {opp.opportunity_id}")
+                            continue
                         try:
                             # 获取实时价格
                             if not opp.target_instruments:
@@ -659,24 +764,26 @@ class Scheduler:
                             # 获取价格源
                             factory = get_factory()
                             feed = factory.get_feed(market)
-                            current_price = feed.get_current_price(instrument)
+                            price_snapshot = feed.get_price(instrument)
 
-                            if current_price is None:
+                            if price_snapshot is None or price_snapshot.price <= 0:
                                 logger.warning(f"[M7/signal_pipeline] {instrument} 无法获取价格，跳过开仓")
                                 continue
 
                             # 执行开仓
-                            position = trader.open_from_plan(
-                                action_plan=plan,
-                                entry_price=current_price,
-                                notes=f"Auto-open from signal_pipeline: {opp.opportunity_title}"
+                            positions = trader.open_from_plan(
+                                plan=plan,
+                                signal_ids=[s.signal_id for s in signals],
+                                opportunity_id=opp.opportunity_id,
+                                entry_price=price_snapshot.price,
                             )
 
-                            total_positions_opened += 1
-                            logger.info(
-                                f"[M7/signal_pipeline] M9开仓成功: {position.position_id} | "
-                                f"{instrument} @ {current_price} | {opp.priority_level.value}"
-                            )
+                            for pos in positions:
+                                total_positions_opened += 1
+                                logger.info(
+                                    f"[M7/signal_pipeline] M9开仓成功: {pos.paper_position_id} | "
+                                    f"{instrument} @ {price_snapshot.price} | {opp.priority_level.value}"
+                                )
 
                         except Exception as e:
                             logger.error(f"[M7/signal_pipeline] M9开仓失败 {opp.opportunity_id}: {e}")
@@ -685,7 +792,11 @@ class Scheduler:
                 # 处理完成后移动文件（容错处理）
                 try:
                     if f.exists():
-                        f.rename(processed_dir / f.name)
+                        target_path = processed_dir / f.name
+                        # 如果目标文件已存在，先删除（Windows兼容）
+                        if target_path.exists():
+                            target_path.unlink()
+                        f.rename(target_path)
                         processed_files.append(f.name)
                         logger.info(f"[M7/signal_pipeline] {f.name}: {len(signals)}信号 {len(opportunities)}机会")
                 except FileNotFoundError:
@@ -1051,6 +1162,29 @@ class Scheduler:
                     f"[M7/m12_{market.value.lower()}_scan] 保存 {len(retro_opps)} 个机会到 {retro_file.name}"
                 )
 
+                # M12→M4→M9 桥接：将机会转为模拟持仓
+                try:
+                    from pipeline.opportunity_to_position import opportunities_to_positions
+                    from m9_paper_trader.paper_trader import PaperTrader
+                    from core.schemas import PriorityLevel
+
+                    trade_results = opportunities_to_positions(
+                        opportunities=retro_opps,
+                        feed_cls=None,
+                        market=market,
+                        max_positions=2,
+                        min_priority=PriorityLevel.POSITION,
+                        trader=PaperTrader(),
+                    )
+                    opened = [r for r in trade_results if r.get("status") == "opened"]
+                    if opened:
+                        logger.info(
+                            f"[M7/m12_{market.value.lower()}_scan] M9开仓 {len(opened)} 个: "
+                            + ", ".join(f"{r['instrument']} @ {r['entry_price']}" for r in opened)
+                        )
+                except Exception as bridge_err:
+                    logger.warning(f"[M7/m12_{market.value.lower()}_scan] M9桥接失败: {bridge_err}")
+
             result = {
                 "market": market.value,
                 "opportunities": len(retro_opps),
@@ -1318,3 +1452,72 @@ class Scheduler:
         except Exception as e:
             logger.error(f"[M7/m12_postmarket_{market.value.lower()}] 失败: {e}")
             return {"error": str(e), "market": market.value}
+
+    # ── M4 开盘检查计划储备 ──────────────────────────────────
+
+    def _task_m4_open_check(self, market: "Market", run_id: str = "") -> dict:
+        """
+        M4 开盘检查计划储备：在开盘时读取已保存的 ActionPlan，
+        评估其结构化入场条件是否满足，对符合条件的执行开仓。
+
+        运行时机：开盘（A/HK 09:30, US 21:30）
+        """
+        from m7_scheduler.trading_calendar import is_trading_day
+        from pipeline.plan_evaluator import load_saved_plans, evaluate_plan, execute_eligible_plans
+        from m9_paper_trader.paper_trader import PaperTrader
+        from m9_paper_trader.feed_factory import get_factory
+        from core.schemas import Market, PriorityLevel
+
+        batch_id = f"open_check_{market.value}_{run_id or datetime.now().strftime('%Y%m%d_%H%M%S')}"
+
+        # 检查是否交易日
+        import sys
+        sys.path.insert(0, str(ROOT))
+        if not is_trading_day(market):
+            logger.info(f"[M7/m4_open_check_{market.value.lower()}] 今日休市，跳过")
+            return {"skipped": True, "reason": "non_trading_day", "market": market.value, "batch_id": batch_id}
+
+        # 获取数据源
+        factory = get_factory()
+        feed = factory.get_feed_with_fallback(market, scenario="m7_intraday_scan")
+
+        # 加载已保存的有效计划（非过期、非 WATCH）
+        plans = load_saved_plans(market=market, min_priority=PriorityLevel.RESEARCH)
+        if not plans:
+            logger.info(f"[M7/m4_open_check_{market.value.lower()}] 无待检查计划")
+            return {"market": market.value, "total_plans": 0, "batch_id": batch_id}
+
+        # 逐一评估条件
+        eligible_plans = []
+        for plan in plans:
+            result = evaluate_plan(plan, feed)
+            if result.eligible:
+                eligible_plans.append(plan)
+                logger.info(
+                    f"[M7/m4_open_check] {result.plan_id[:12]} 条件满足: {result.passed}"
+                )
+            else:
+                logger.info(
+                    f"[M7/m4_open_check] {result.plan_id[:12]} 不符合: "
+                    f"failed={result.failed} unevaluable={result.unevaluable}"
+                )
+
+        # 执行符合条件的计划
+        trader = PaperTrader()
+        exec_results = execute_eligible_plans(eligible_plans, trader, feed)
+
+        opened = sum(1 for r in exec_results if r.get("status") == "opened")
+        logger.info(
+            f"[M7/m4_open_check_{market.value.lower()}] "
+            f"完成: {len(plans)}plan -> {len(eligible_plans)}符合 -> {opened}开仓"
+        )
+
+        return {
+            "market": market.value,
+            "batch_id": batch_id,
+            "total_plans": len(plans),
+            "eligible": len(eligible_plans),
+            "opened": opened,
+            "execution_results": exec_results,
+        }
+
