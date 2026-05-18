@@ -24,6 +24,14 @@ from openai import OpenAI, APITimeoutError, RateLimitError, APIError
 
 logger = logging.getLogger(__name__)
 
+# Try to import Anthropic SDK (optional)
+try:
+    from anthropic import Anthropic
+    ANTHROPIC_AVAILABLE = True
+except ImportError:
+    ANTHROPIC_AVAILABLE = False
+    logger.debug("Anthropic SDK not available. Install with: pip install anthropic")
+
 
 # ───────────────────────────────────────────────────────────────────
 class GongfengOAuthClient:
@@ -110,6 +118,50 @@ class GongfengOAuthClient:
             return bool(p.get("access"))
         except Exception:
             return False
+
+
+# ───────────────────────────────────────────────────────────────────
+class AnthropicClient:
+    """
+    Anthropic 原生客户端。
+
+    使用 Anthropic SDK 调用 Claude API（支持自定义 base_url）。
+    """
+
+    def __init__(self, config: dict):
+        if not ANTHROPIC_AVAILABLE:
+            raise ImportError("Anthropic SDK not installed. Run: pip install anthropic")
+
+        self._config = config
+        api_key = config.get("api_key", "")
+        base_url = config.get("base_url")
+
+        if not api_key or str(api_key).startswith("${"):
+            raise ValueError(f"Anthropic API key not set: {api_key!r}")
+
+        timeout = config.get("timeout", 120)
+        self.client = Anthropic(api_key=api_key, base_url=base_url, timeout=timeout)
+        self.model = config.get("model", "claude-3-sonnet-20240229")
+        logger.info(f"[AnthropicClient] Initialized with model={self.model}, base_url={base_url}")
+
+    def chat_completions_create(self, model: str, messages: list, **kwargs) -> str:
+        """OpenAI-style interface, returns content string"""
+        temperature = kwargs.get("temperature", 0.7)
+        max_tokens = kwargs.get("max_tokens", 4096)
+
+        response = self.client.messages.create(
+            model=model,
+            max_tokens=max_tokens,
+            temperature=temperature,
+            messages=messages
+        )
+
+        return response.content[0].text
+
+    def is_available(self) -> bool:
+        """检查 API key 是否配置"""
+        api_key = self._config.get("api_key", "")
+        return bool(api_key and not str(api_key).startswith("${"))
 
 
 # ───────────────────────────────────────────────────────────────────
@@ -229,6 +281,23 @@ class LLMClient:
         # 确定使用的 provider
         provider_name = module_override.get("provider", self._config["default_provider"])
 
+        # ── 模块运行模式切换（m1_mode: local/api 等）────────────────
+        # 优先级：module_override.provider > {module}_mode > default_provider
+        mode_key = f"{module_name}_mode"
+        mode = self._config.get(mode_key)
+        if mode and "provider" not in module_override:
+            mode_provider_map = {
+                "m1_decoder": {"local": "ollama_m1", "api": "anthropic_decision"},
+            }
+            mapped = mode_provider_map.get(module_name, {}).get(mode)
+            if mapped:
+                provider_name = mapped
+            else:
+                logger.warning(
+                    f"Unknown {mode_key}='{mode}', "
+                    f"falling back to default provider '{provider_name}'"
+                )
+
         # 获取 provider 基础配置
         providers = self._config.get("providers", {})
         if provider_name not in providers:
@@ -250,6 +319,7 @@ class LLMClient:
         """获取或创建客户端实例（按 provider 缓存）
 
         工蜂AI provider 返回 GongfengOAuthClient（不是 OpenAI）。
+        Anthropic provider 返回 AnthropicClient（不是 OpenAI）。
         其他 provider 返回标准 OpenAI 实例。
         """
         if provider_name not in self._clients:
@@ -271,6 +341,14 @@ class LLMClient:
                     )
                 self._clients[provider_name] = gc
                 logger.info("[LLMClient] 工蜂AI OAuth 客户端已就绪")
+            elif auth_type == "anthropic":
+                ac = AnthropicClient(provider_config)
+                if not ac.is_available():
+                    raise RuntimeError(
+                        f"[LLMClient] Anthropic API key not configured for provider '{provider_name}'"
+                    )
+                self._clients[provider_name] = ac
+                logger.info(f"[LLMClient] Anthropic 客户端已就绪 (provider={provider_name})")
             else:
                 api_key = provider_config.get("api_key", "")
                 base_url = provider_config.get("base_url")
@@ -415,7 +493,33 @@ class LLMClient:
                 f"[工蜂AI] 调用失败，已重试 {max_retries} 次。Last: {last_exception}"
             ) from last_exception
 
+        # ── Anthropic 分支（AnthropicClient）───────────────────────────────
+        if isinstance(client, AnthropicClient):
+            logger.debug(f"[LLMClient] Using AnthropicClient for provider={provider_name}")
+            for attempt in range(1, max_retries + 1):
+                try:
+                    logger.debug(
+                        f"LLM request [Anthropic]: module={module_name}, "
+                        f"attempt={attempt}/{max_retries}, model={model}"
+                    )
+                    content = client.chat_completions_create(
+                        model=model, messages=messages,
+                        temperature=temperature, max_tokens=max_tokens,
+                    )
+                    logger.debug(f"LLM response: {len(content)} chars")
+                    return content
+                except Exception as e:
+                    last_exception = e
+                    logger.warning(f"[Anthropic] 尝试 {attempt}/{max_retries} 失败: {e}")
+                    if attempt < max_retries:
+                        time.sleep(2 ** attempt)
+
+            raise RuntimeError(
+                f"[Anthropic] 调用失败，已重试 {max_retries} 次。Last: {last_exception}"
+            ) from last_exception
+
         # ── 标准 OpenAI-compatible 分支─────────────────────────────────────
+        logger.debug(f"[LLMClient] Using OpenAI-compatible client for provider={provider_name}, client_type={type(client).__name__}")
         timeout = provider_config.get("timeout", 60)
         request_params: Dict[str, Any] = {
             "model": model,
@@ -425,6 +529,11 @@ class LLMClient:
             "timeout": timeout,
         }
         request_params.update(kwargs)
+
+        # 支持 provider 配置中的 api_options（用于 Ollama 等本地模型的参数调优）
+        api_options = provider_config.get("api_options", {})
+        if api_options:
+            request_params.setdefault("extra_body", {}).update(api_options)
 
         for attempt in range(1, max_retries + 1):
             try:
@@ -490,6 +599,32 @@ class LLMClient:
             f"LLM call failed after {max_retries} attempts. "
             f"Last error: {last_exception}"
         ) from last_exception
+
+    def chat_json(
+        self,
+        prompt: str,
+        module_name: str = "default",
+        **kwargs,
+    ) -> dict:
+        """发送 prompt 文本并解析 JSON 响应。
+
+        为兼容 M1.5 等模块的调用接口而提供。
+        将 prompt 包装为单条 user message，调用 chat_completion，然后解析 JSON。
+
+        Args:
+            prompt: 纯文本 prompt
+            module_name: 模块名称，用于配置覆盖
+            **kwargs: 传递给 chat_completion 的额外参数 (temperature, max_tokens 等)
+
+        Returns:
+            解析后的 JSON dict
+
+        Raises:
+            ValueError: 响应无法解析为 JSON
+        """
+        messages = [{"role": "user", "content": prompt}]
+        raw = self.chat_completion(messages, module_name=module_name, **kwargs)
+        return json.loads(raw.strip())
 
     def get_provider_info(self, module_name: str = "default") -> dict:
         """获取指定模块将使用的 provider 信息（脱敏），用于日志和调试。"""

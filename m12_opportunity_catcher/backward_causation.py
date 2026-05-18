@@ -19,6 +19,7 @@ from __future__ import annotations
 import logging
 import os
 import re
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeoutError
 from datetime import datetime
 from typing import Dict, List, Optional
 
@@ -334,98 +335,164 @@ class BackwardCausation:
             "source_url": data.get("url", data.get("source_url", "")) or "",
         })()
 
+    @staticmethod
+    def _dedup_articles(articles: List) -> List:
+        """跨源去重：按标题前缀去除重复文章。"""
+        seen = set()
+        unique = []
+        for a in articles:
+            title = (getattr(a, 'title', '') or '').strip()
+            key = title[:80].lower() if title else ""
+            if key and key not in seen:
+                seen.add(key)
+                unique.append(a)
+        return unique
+
     def _collect_and_decode_news(self, anomaly: PriceAnomaly) -> List[MarketSignal]:
         """M0定向采集 → M1解码：获取新闻并用LLM提取结构化信号。
 
         数据源优先级：
           1. DataProviderManager（A股: astock_skill + 研报, 美股/港股: 通用RSS）
-          2. A股: AKShare / 美股港股: Yahoo per-ticker RSS → Finnhub（key-aware）
+          2. A股: AKShare / 美股港股: Finnhub（key-aware, 主）→ Yahoo RSS（免费降级）
+          HK 符号统一为 {code}.HK（Yahoo RSS 和 Finnhub 均需此后缀）
         """
         raw_articles = []
         instrument_code = anomaly.instrument.split(".")[0]
+        source_stats = {}  # source_name -> {success, count, error}
 
-        # ── 路径1: DataProviderManager 多源聚合 ──
+        def _record(name: str, success: bool, count: int, error: str = ""):
+            source_stats[name] = {"success": success, "count": count, "error": error}
+
+        # ── 路径1: DataProviderManager 多源聚合（10s 超时保护）──
         if self.data_manager is not None:
+            dm_count = 0
+            dm_error = ""
             try:
-                # 获取新闻（多源聚合: astock_skill + rss）
-                news_list = self.data_manager.get_news(
-                    symbol=instrument_code,
-                    limit=10,
-                    aggregate=True,
-                )
+                # DataProviderManager 可能因 US/HK 无对应 provider 而长时间阻塞
+                with ThreadPoolExecutor(max_workers=1) as executor:
+                    future = executor.submit(
+                        self.data_manager.get_news,
+                        symbol=instrument_code, limit=10, aggregate=True,
+                    )
+                    try:
+                        news_list = future.result(timeout=10)
+                    except FutureTimeoutError:
+                        logger.warning(
+                            f"[BackwardCausation] DataProviderManager timeout (10s) for {anomaly.instrument}"
+                        )
+                        news_list = []
+                        dm_error = "timeout after 10s"
+
                 for item in news_list:
                     raw_articles.append(self._dict_to_article(item))
+                dm_count = len(raw_articles)
 
-                # 获取研报（astock_skill 有研报能力）
+                # 研报（仅A股）
                 if anomaly.market == Market.A_SHARE:
                     try:
                         reports = self.data_manager.get_research_reports(
-                            symbol=instrument_code,
-                            limit=3,
+                            symbol=instrument_code, limit=3,
                         )
                         for r in reports:
                             raw_articles.append(self._dict_to_article(r))
+                        dm_count = len(raw_articles)
                     except Exception as e:
                         logger.debug(f"[BackwardCausation] research reports fetch failed: {e}")
 
-                if raw_articles:
+                if dm_count:
                     logger.info(
                         f"[BackwardCausation] DataProviderManager returned "
-                        f"{len(raw_articles)} articles+reports for {anomaly.instrument}"
+                        f"{dm_count} articles+reports for {anomaly.instrument}"
                     )
             except Exception as e:
                 logger.warning(f"[BackwardCausation] DataProviderManager failed for {anomaly.instrument}: {e}")
+                dm_error = str(e)[:100]
+
+            _record("DataProviderManager", dm_error == "" or dm_count > 0, dm_count, dm_error)
 
         # ── 路径2: 降级到定向搜索 ──
         if not raw_articles:
             # A股：AKShare按股票代码采集
             if anomaly.market == Market.A_SHARE:
+                akshare_count = 0
+                akshare_error = ""
                 try:
                     from m0_collector.providers.akshare_news import AkshareNewsProvider
                     provider = AkshareNewsProvider(symbol=instrument_code)
                     articles = provider.fetch(limit=10)
                     if articles:
                         raw_articles.extend(articles)
+                    akshare_count = len(articles) if articles else 0
                 except Exception as e:
                     logger.warning(f"[BackwardCausation] AKShare news failed: {e}")
+                    akshare_error = str(e)[:100]
+                _record("AKShare", not akshare_error, akshare_count, akshare_error)
 
-            # 港股/美股：Yahoo RSS → Finnhub（key-aware）
+            # 港股/美股：Finnhub（主）→ Yahoo RSS（免费降级）
             if anomaly.market in (Market.HK, Market.US):
-                # 2a. Yahoo Finance per-ticker RSS (free, no key)
-                yahoo_articles = self._fetch_yahoo_ticker_rss(instrument_code, limit=10)
-                raw_articles.extend(yahoo_articles)
+                remote_symbol = f"{instrument_code}.HK" if anomaly.market == Market.HK else instrument_code
 
-                # 2b. Finnhub company_news (key required)
+                # 2a. Finnhub company_news (key required, richer content)
+                fh_count = 0
+                fh_error = ""
                 finnhub_key = os.getenv('FINNHUB_API_KEY')
                 if finnhub_key:
                     try:
                         from m0_collector.providers.finnhub_provider import FinnhubProvider
                         provider = FinnhubProvider(api_key=finnhub_key)
-                        symbol = self._convert_to_finnhub_symbol(anomaly.instrument, anomaly.market)
-                        articles = provider.fetch_company_news(symbol=symbol, limit=10)
+                        articles = provider.fetch_company_news(symbol=remote_symbol, limit=10)
                         if articles:
                             raw_articles.extend(articles)
+                        fh_count = len(articles) if articles else 0
+                        if fh_count:
                             logger.info(
-                                f"[BackwardCausation] Finnhub: {len(articles)} articles for {symbol}"
+                                f"[BackwardCausation] Finnhub: {fh_count} articles for {remote_symbol}"
                             )
                     except Exception as e:
-                        logger.warning(f"[BackwardCausation] Finnhub news failed for {anomaly.instrument}: {e}")
+                        logger.warning(f"[BackwardCausation] Finnhub news failed for {remote_symbol}: {e}")
+                        fh_error = str(e)[:100]
                 else:
-                    logger.info(
+                    logger.debug(
                         f"[BackwardCausation] FINNHUB_API_KEY not set, "
                         f"skipping Finnhub for {anomaly.instrument}"
                     )
+                    fh_error = "no API key"
+                _record("Finnhub", fh_count > 0 or not fh_error or fh_error == "no API key", fh_count, fh_error)
+
+                # 2b. Yahoo Finance per-ticker RSS (free, no key, always available)
+                yh_count = 0
+                yahoo_articles = self._fetch_yahoo_ticker_rss(remote_symbol, limit=10)
+                raw_articles.extend(yahoo_articles)
+                yh_count = len(yahoo_articles)
+                _record("YahooRSS", True, yh_count)
 
         if not raw_articles:
-            logger.info(f"[BackwardCausation] No news articles found for {anomaly.instrument}")
+            logger.info(f"[BackwardCausation] No news articles found for {anomaly.instrument} [sources: {list(source_stats.keys())}]")
             return []
+
+        # ── 跨源去重 ──
+        before_dedup = len(raw_articles)
+        raw_articles = self._dedup_articles(raw_articles)
+        after_dedup = len(raw_articles)
+        duped = before_dedup - after_dedup
+
+        # ── 结构化决策日志 ──
+        source_lines = []
+        for name, st in source_stats.items():
+            status = "OK" if st["success"] else f"ERR({st['error'][:40]})"
+            source_lines.append(f"{name}={st['count']}:{status}")
+        logger.info(
+            f"[BackwardCausation] SOURCES {anomaly.instrument}: "
+            f"total={before_dedup} deduped={duped} final={after_dedup} | "
+            + " | ".join(source_lines)
+        )
 
         # M1 LLM解码
         decoded_signals = self._decode_articles_with_m1(raw_articles, anomaly)
         if decoded_signals:
             logger.info(
                 f"[BackwardCausation] M1 decoded {len(decoded_signals)} signals "
-                f"from {len(raw_articles)} articles for {anomaly.instrument}"
+                f"from {after_dedup} articles for {anomaly.instrument}"
             )
             return decoded_signals
 
@@ -541,10 +608,14 @@ class BackwardCausation:
             return True
 
     @staticmethod
-    def _convert_to_finnhub_symbol(instrument: str, market: Market) -> str:
+    def _resolve_remote_symbol(instrument: str, market: Market) -> str:
+        """将本地标的代码转为远程 API 符号。
+
+        Yahoo RSS 和 Finnhub 都需要 .HK 后缀用于港股。
+        """
         code = instrument.split(".")[0]
         if market == Market.HK:
-            return code
+            return f"{code}.HK"
         return code
 
     @staticmethod

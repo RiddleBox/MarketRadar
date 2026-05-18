@@ -320,8 +320,8 @@ class ActionDesigner:
       "phase_name": "Phase 1 侦察仓",
       "trigger_condition": "入场触发条件",
       "entry_conditions": [
-        {"condition_type": "price_above", "operator": ">", "value": 5.5, "description": "股价高于5.5元"},
-        {"condition_type": "volume_above_ma", "value": 1.5, "period": 20, "description": "成交量大于20日均量1.5倍"}
+        {{"condition_type": "price_above", "operator": ">", "value": 5.5, "description": "股价高于5.5元"}},
+        {{"condition_type": "volume_above_ma", "value": 1.5, "period": 20, "description": "成交量大于20日均量1.5倍"}}
       ],
       "action_description": "具体操作：买入/卖出 XX 品种，仓位 XX%"
     }},

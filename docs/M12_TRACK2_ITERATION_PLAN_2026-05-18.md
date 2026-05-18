@@ -667,3 +667,39 @@ These defaults are locked for v2 implementation unless explicitly changed:
 - Do not require M13 evidence search in P0; migrate to M13 after concrete search/cache/ranking exists.
 - Keep M3 as the only opportunity judgment module.
 - Keep M10 as auxiliary context and M11 as offline calibration only.
+
+## 17. Implementation Log
+
+### 2026-05-15: P0 Implementation
+
+**Implemented** (`m12_opportunity_catcher/backward_causation.py`):
+- `_fetch_yahoo_ticker_rss()` — Yahoo Finance per-ticker RSS, free, no API key
+- `_collect_and_decode_news()` — Finnhub key-aware fallback for US/HK
+- Finnhub API key configured in `start_scheduler.py`
+- No new schemas, no M13 dependency
+
+### 2026-05-16: 3 Bug Fixes
+
+- M4 f-string: escaped `{` → `{{` in prompt template
+- M9 DB migration: ALTER TABLE for 19 missing columns
+- M1.5 interface: added `chat_json()` to LLMClient
+
+### 2026-05-18: P1+P2 Fixes
+
+**P1 — HK symbol format** — Both Yahoo RSS and Finnhub now use `{code}.HK` suffix for HK stocks. Previously passed bare code (e.g. `0700` instead of `0700.HK`), returning zero results.
+
+**P2 — Data source priority** — Finnhub called first (richer content), Yahoo RSS as free fallback. Previously inverted from Section 7.1 design spec.
+
+**P2 — DataProviderManager timeout** — `get_news()` wrapped in `ThreadPoolExecutor` with 10s timeout. US/HK stocks without A-share providers no longer block indefinitely on DataProviderManager. On timeout, falls through to Finnhub/Yahoo RSS.
+
+**P2 — Cross-source article dedup** — `_dedup_articles()` strips duplicates by normalized title prefix (first 80 chars) before M1 decode. Prevents M1 from decoding the same article from Finnhub + Yahoo RSS + DataProviderManager 3x.
+
+**P2 — Structured decision log** — Single `SOURCES` log line per anomaly with format:
+```
+SOURCES {symbol}: total=15 deduped=3 final=12 | Finnhub=5:OK | YahooRSS=8:OK | DataProviderManager=2:OK
+```
+Each source shows article count and status (OK or ERR with reason), making per-anomaly debugging straightforward.
+
+**Refactored** `_convert_to_finnhub_symbol` → `_resolve_remote_symbol` — correctly appends `.HK` suffix, reused by both providers.
+
+**All 6 audit issues resolved.**

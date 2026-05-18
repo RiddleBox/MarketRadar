@@ -31,7 +31,7 @@ class PortfolioDB:
         self._init_db()
 
     def _init_db(self):
-        """初始化数据库表结构"""
+        """初始化数据库表结构（含自动迁移）"""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
 
@@ -111,9 +111,42 @@ class PortfolioDB:
             ON positions(instrument)
         """)
         cursor.execute("""
-            CREATE INDEX IF NOT EXISTS idx_trade_log_timestamp 
+            CREATE INDEX IF NOT EXISTS idx_trade_log_timestamp
             ON trade_log(timestamp)
         """)
+
+        # ── 自动迁移：为旧的 positions 表添加缺失列 ──
+        cursor.execute("PRAGMA table_info(positions)")
+        existing_cols = {row[1] for row in cursor.fetchall()}
+        migrations = {
+            "stop_loss_price": "REAL",
+            "take_profit_price": "REAL",
+            "current_price": "REAL",
+            "exit_price": "REAL",
+            "exit_time": "TEXT",
+            "realized_pnl_pct": "REAL",
+            "realized_pnl_after_fees": "REAL",
+            "fee_paid": "REAL DEFAULT 0",
+            "opportunity_id": "TEXT",
+            "signal_ids": "TEXT",
+            "signal_intensity": "REAL DEFAULT 0",
+            "signal_confidence": "REAL DEFAULT 0",
+            "signal_type": "TEXT",
+            "time_horizon": "TEXT",
+            "prev_close": "REAL DEFAULT 0",
+            "board": "TEXT DEFAULT 'main'",
+            "max_adverse_excursion": "REAL DEFAULT 0",
+            "max_favorable_excursion": "REAL DEFAULT 0",
+            "unrealized_pnl_pct": "REAL DEFAULT 0",
+            "entry_date": "TEXT",
+        }
+        for col_name, col_type in migrations.items():
+            if col_name not in existing_cols:
+                try:
+                    cursor.execute(f"ALTER TABLE positions ADD COLUMN {col_name} {col_type}")
+                    logger.info(f"[PortfolioDB] 迁移: 添加列 positions.{col_name} {col_type}")
+                except Exception as e:
+                    logger.warning(f"[PortfolioDB] 迁移失败 {col_name}: {e}")
 
         conn.commit()
         conn.close()
@@ -123,8 +156,11 @@ class PortfolioDB:
         """保存或更新持仓
 
         Args:
-            position_dict: PaperPosition.to_dict() 的返回值
+            position_dict: PaperPosition.to_dict() 的返回值（也可直接传 PaperPosition 对象）
         """
+        # 兼容直接传入 PaperPosition 对象
+        if hasattr(position_dict, 'to_dict'):
+            position_dict = position_dict.to_dict()
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
 
