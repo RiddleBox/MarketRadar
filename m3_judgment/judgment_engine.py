@@ -1084,6 +1084,23 @@ M13已经完成深度调研，提供了关键发现和风险因素。你需要�
         ))
         confidence_score = float(score_data.get("confidence_score", min(1.0, round(sum(getattr(s, 'confidence_score', 7) for s in signals) / max(len(signals), 1) / 10, 2))))
         execution_readiness = float(score_data.get("execution_readiness", min(1.0, round((timeliness + tradability + risk_clarity) / 30, 2))))
+        # 检测 LLM 偷懒：7 个维度分数过于集中（标准差 < 1.2）则打折扣
+        components = [
+            catalyst_strength, timeliness, market_confirmation,
+            tradability, risk_clarity, consensus_gap, signal_consistency,
+        ]
+        comp_mean = sum(components) / 7
+        comp_variance = sum((c - comp_mean) ** 2 for c in components) / 7
+        comp_std = comp_variance ** 0.5
+        if comp_std < 1.2 and comp_mean >= 6.0:
+            # 分数过于集中 → LLM 未真正区分维度 → overall 乘以折扣因子
+            discount = 0.85 + (comp_std / 1.2) * 0.15  # std=0 → 0.85, std=1.2 → 1.0
+            overall_score = round(overall_score * discount, 2)
+            logger.info(
+                f"[M3] 评分集中度低(std={comp_std:.2f})，overall {round(comp_mean, 2)} → {overall_score} "
+                f"(discount={discount:.2f})"
+            )
+
         opportunity_score = OpportunityScore(
             catalyst_strength=catalyst_strength,
             timeliness=timeliness,

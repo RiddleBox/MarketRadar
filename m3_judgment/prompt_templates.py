@@ -22,7 +22,7 @@ STEP_A_SYSTEM_PROMPT = """你是一位专业的市场机会分析师，具备跨
 5. 场景数量不应过多——宁可合并相似场景，也不要拆成太细
 
 ## 输出格式
-严格输出 JSON，不加任何解释文字：
+严格输出 JSON，不加任何解释文字。**重要：JSON中不要在数组或对象的最后一个元素后添加逗号（trailing comma）**：
 ```json
 {
   "scenarios": [
@@ -39,6 +39,11 @@ STEP_A_SYSTEM_PROMPT = """你是一位专业的市场机会分析师，具备跨
 ```json
 {"scenarios": []}
 ```
+
+**注意：确保JSON格式正确，特别是：**
+- 数组最后一个元素后不要有逗号
+- 对象最后一个字段后不要有逗号
+- 所有字符串用双引号
 """
 
 STEP_A_USER_PROMPT = """请分析以下市场信号，识别可能构成机会的信号组合场景：
@@ -81,6 +86,12 @@ STEP_B_SYSTEM_PROMPT = """你是一位专业的市场机会分析师，负责判
 - **confidence_score**: 判断置信度（0-1），衡量你对自己判断的确信程度
 - **execution_readiness**: 执行就绪度（0-1），从判断到可操作行动的转化难度
 
+**关键：评分必须使用全量程（1-10），分化不同机会的质量差异。**
+- 平庸机会的评分应偏中低（4-6 分），不要给每个机会都打 7-8 分
+- 只有证据充分、窗口明确、风险可量化的机会才能拿 8+ 分
+- 不同维度的分数应有显著差异，而不是全在 6-8 之间排列组合
+- 7 个维度的分布形态（哪些强/哪些弱）比 overall_score 的绝对值更重要
+
 ## 情绪信号处理规则
 当信号列表中包含 `sentiment` 类型信号（来自 M10 情绪面系统）时，遵循以下规则：
 - 情绪信号是辅助输入，不是独立机会来源；情绪极值 + 结构性信号才构成机会调整依据
@@ -119,15 +130,15 @@ STEP_B_SYSTEM_PROMPT = """你是一位专业的市场机会分析师，负责判
   "uncertainty_map": ["最大不确定性1（影响程度：高）", "不确定性2（影响程度：中）"],
   "priority_level": "research",
   "opportunity_score": {
-    "catalyst_strength": 8,
-    "timeliness": 8,
-    "market_confirmation": 6,
-    "tradability": 7,
-    "risk_clarity": 6,
-    "consensus_gap": 7,
-    "signal_consistency": 8,
-    "overall_score": 7.1,
-    "confidence_score": 0.78,
+    "catalyst_strength": 9,
+    "timeliness": 5,
+    "market_confirmation": 7,
+    "tradability": 8,
+    "risk_clarity": 4,
+    "consensus_gap": 9,
+    "signal_consistency": 7,
+    "overall_score": 7.0,
+    "confidence_score": 0.72,
     "execution_readiness": 0.72
   },
   "risk_reward_profile": "潜在收益/风险结构描述",
@@ -146,14 +157,14 @@ STEP_B_SYSTEM_PROMPT = """你是一位专业的市场机会分析师，负责判
   "reason": "简短说明为什么不构成机会",
   "opportunity_score": {
     "catalyst_strength": 3,
-    "timeliness": 4,
-    "market_confirmation": 3,
+    "timeliness": 2,
+    "market_confirmation": 4,
     "tradability": 5,
-    "risk_clarity": 4,
-    "consensus_gap": 2,
-    "signal_consistency": 3,
-    "overall_score": 3.4,
-    "confidence_score": 0.62,
+    "risk_clarity": 2,
+    "consensus_gap": 1,
+    "signal_consistency": 4,
+    "overall_score": 3.0,
+    "confidence_score": 0.58,
     "execution_readiness": 0.28
   }
 }
