@@ -5,6 +5,7 @@
 active_markets:
   - A_SHARE
   - HK
+  - US
 
 # ============================================================
 # A股市场配置
@@ -125,7 +126,7 @@ markets:
     display_name: "美股（纽约/纳斯达克）"
     currency: USD
     timezone: "America/New_York"
-    active: false  # Phase 2 启用
+    active: true
 
     trading_hours:
       regular_open: "09:30"
@@ -150,8 +151,12 @@ markets:
 
     data_sources:
       priority:
+        - futu         # 美股首选：Futu OpenD（实时+历史）
+        - yfinance     # 备用：15分钟延迟，有频率限制
         - csv_local
-      notes: "Phase 2 接入，当前使用本地数据"
+      notes: >
+        Futu OpenD 提供美股实时行情，需运行 OpenD 进程。
+        yfinance 为备用，有频率限制。
 
   # ============================================================
   # 期货市场配置

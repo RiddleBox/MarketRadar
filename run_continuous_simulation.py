@@ -140,8 +140,12 @@ def _get_feed_configs(a_share_feed_cls=None, is_a_share_trading_fn=None, is_us_t
     return configs, None
 
 
-def run_daily_scan(a_share_feed_cls=None):
-    """盘后全量扫描（仅在所有市场闭市时执行）"""
+def run_daily_scan(a_share_feed_cls=None, max_anomalies=5):
+    """盘后全量扫描（仅在所有市场闭市时执行）
+
+    Args:
+        max_anomalies: 每轮每市场最多处理的异动数量，0=不限制
+    """
     if a_share_feed_cls is None:
         a_share_feed_cls = BaostockFeed
 
@@ -157,7 +161,7 @@ def run_daily_scan(a_share_feed_cls=None):
     with ThreadPoolExecutor(max_workers=3) as executor:
         futures = {}
         for market, feed_cls in markets_configs:
-            future = executor.submit(_scan_single_market, market, feed_cls, is_intraday=False)
+            future = executor.submit(_scan_single_market, market, feed_cls, is_intraday=False, max_anomalies=max_anomalies)
             futures[future] = market
 
         for future in as_completed(futures):
@@ -208,23 +212,21 @@ def run_daily_scan(a_share_feed_cls=None):
     return total
 
 
-def _scan_single_market(market, feed_cls, is_intraday=True):
-    """扫描单个市场（用于并行执行）"""
+def _scan_single_market(market, feed_cls, is_intraday=True, max_anomalies=0):
+    """扫描单个市场（用于并行执行）
+
+    Args:
+        max_anomalies: 每轮最多处理的异动数量，0=不限制（控制LLM成本）
+    """
     try:
         console.print(f"  [bold]扫描 {market.value}...[/bold]")
-        detector_kwargs = {}
-        if market == Market.A_SHARE:
-            detector_kwargs = dict(
-                sigma_threshold=2.0,
-                atr_threshold=2.0,
-                volume_threshold=1.5,
-            )
-        elif market in (Market.HK, Market.US):
-            detector_kwargs = dict(
-                sigma_threshold=2.0,
-                atr_threshold=1.5,
-                volume_threshold=1.5,
-            )
+        # v2 阈值: 低阈值 + N日累计异动（经回测验证，TPR 14.4%→35.3%）
+        detector_kwargs = dict(
+            sigma_threshold=1.5,
+            atr_threshold=1.5,
+            volume_threshold=1.2,
+            n_day_windows=(3, 5),
+        )
 
         detector = AnomalyDetector(**detector_kwargs)
         engine = OpportunityCatcherEngine(anomaly_detector=detector)
@@ -235,10 +237,10 @@ def _scan_single_market(market, feed_cls, is_intraday=True):
             stock_universe = get_stock_universe()
             stock_list = stock_universe.get_stock_list(market)
             _record_price_snapshots(market, stock_list, pf)
-            results = engine.run_intraday_scan(market=market, price_feed=pf)
+            results = engine.run_intraday_scan(market=market, price_feed=pf, max_anomalies=max_anomalies)
         else:
             # 盘后扫描
-            results = engine.run_daily_scan(market=market, price_feed=pf)
+            results = engine.run_daily_scan(market=market, price_feed=pf, max_anomalies=max_anomalies)
 
         return results
     except Exception as e:
@@ -246,8 +248,12 @@ def _scan_single_market(market, feed_cls, is_intraday=True):
         return []
 
 
-def run_intraday_scan(markets_to_scan=None, a_share_feed_cls=None):
-    """盘中扫描（支持指定市场列表，并行执行）"""
+def run_intraday_scan(markets_to_scan=None, a_share_feed_cls=None, max_anomalies=3):
+    """盘中扫描（支持指定市场列表，并行执行）
+
+    Args:
+        max_anomalies: 每轮每市场最多处理的异动数量，0=不限制（控制LLM成本）
+    """
     if a_share_feed_cls is None:
         a_share_feed_cls = detect_a_share_feed()
 
@@ -290,7 +296,7 @@ def run_intraday_scan(markets_to_scan=None, a_share_feed_cls=None):
         futures = {}
         for market in markets_to_scan:
             feed_cls = feed_map.get(market, a_share_feed_cls)
-            future = executor.submit(_scan_single_market, market, feed_cls, is_intraday=True)
+            future = executor.submit(_scan_single_market, market, feed_cls, is_intraday=True, max_anomalies=max_anomalies)
             futures[future] = market
 
         for future in as_completed(futures):
@@ -446,6 +452,11 @@ def run_signal_pipeline(batch_id: str = None) -> dict:
                 # 在opportunity_id中添加来源标记
                 if not opp.opportunity_id.endswith("_signal"):
                     opp.opportunity_id = f"{opp.opportunity_id}_signal"
+
+            # 打印每个机会的详情，便于判断是否是不同的交易选择
+            for opp in opportunities:
+                instruments = ", ".join(opp.target_instruments[:3])
+                console.print(f"      [{opp.priority_level}] {opp.opportunity_title[:60]} | {opp.trade_direction} | {instruments}")
 
             all_opportunities.extend(opportunities)
 

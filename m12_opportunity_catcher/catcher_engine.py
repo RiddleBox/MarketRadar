@@ -107,6 +107,10 @@ class OpportunityCatcherEngine:
             llm_client=self.llm_client,
             signal_store=self.signal_store,
         )
+
+        # 初始化 M1.5 隐性推理器（可选，用于改进跨标的信号匹配）
+        self._init_m1_5_inferencer()
+
         self.trend_assessor = trend_assessor or TrendAssessor(
             m3_engine=self.m3_engine,
             signal_store=self.signal_store,
@@ -115,6 +119,28 @@ class OpportunityCatcherEngine:
         # 决策日志：记录每个异动的完整决策链路
         self.decision_log = decision_log or DecisionLog()
 
+    def _init_m1_5_inferencer(self):
+        """初始化 M1.5 隐性推理器（可选组件）
+
+        用于改进 M12 跨标的信号匹配：当信号类型为 INDUSTRY/POLICY/MACRO
+        且无直接标的匹配时，M1.5 通过产业链图谱判断广义信号是否影响异动标的。
+
+        异常静默处理 —— M1.5 不可用时不阻塞 M12 主流程。
+        """
+        try:
+            from m1_5_implicit_reasoner.inferencer import LLMImplicitSignalInferencer
+            from m2_knowledge_base.industry_graph import IndustryGraph
+
+            industry_graph = IndustryGraph.load_from_file("data/industry_graph_full.json")
+            inferencer = LLMImplicitSignalInferencer(
+                llm_client=self.llm_client,
+                industry_graph=industry_graph,
+            )
+            self.backward_causation.m1_5_inferencer = inferencer
+            logger.info("[CatcherEngine] M1.5 inferencer initialized for signal-instrument matching")
+        except Exception as e:
+            logger.info(f"[CatcherEngine] M1.5 not available (non-fatal): {e}")
+
     def run_daily_scan(
         self,
         market: Market,
@@ -122,10 +148,14 @@ class OpportunityCatcherEngine:
         stock_list: Optional[List[str]] = None,
         scan_date: Optional[date] = None,
         sentiment_data: Optional[Dict] = None,
+        max_anomalies: int = 0,
     ) -> List[RetroOpportunity]:
         """盘后扫描（A股15:30，港股16:30，美股次日早晨）
 
         完整流程：异动检测 → 反向溯源 → 趋势判断 → 机会生成
+
+        Args:
+            max_anomalies: 每轮扫描最多处理的异动数量，0=不限制
         """
         logger.info(f"[CatcherEngine] run_daily_scan: market={market.value}, date={scan_date}")
 
@@ -142,6 +172,12 @@ class OpportunityCatcherEngine:
             return []
 
         logger.info(f"[CatcherEngine] detected {len(anomalies)} anomalies")
+
+        if max_anomalies > 0 and len(anomalies) > max_anomalies:
+            logger.info(
+                f"[CatcherEngine] capping anomalies: {len(anomalies)} -> {max_anomalies}"
+            )
+            anomalies = anomalies[:max_anomalies]
 
         # Step 2: 获取历史相关信号
         historical_signals = self._get_historical_signals(market)
@@ -177,10 +213,14 @@ class OpportunityCatcherEngine:
         price_feed=None,
         stock_list: Optional[List[str]] = None,
         sentiment_data: Optional[Dict] = None,
+        max_anomalies: int = 0,
     ) -> List[RetroOpportunity]:
         """盘中快速扫描（每30分钟触发一次）
 
         对涨停股标记观察池，不生成入场机会
+
+        Args:
+            max_anomalies: 每轮扫描最多处理的异动数量，0=不限制
         """
         logger.info(f"[CatcherEngine] run_intraday_scan: market={market.value}")
 
@@ -192,6 +232,12 @@ class OpportunityCatcherEngine:
 
         if not anomalies:
             return []
+
+        if max_anomalies > 0 and len(anomalies) > max_anomalies:
+            logger.info(
+                f"[CatcherEngine] capping anomalies: {len(anomalies)} -> {max_anomalies}"
+            )
+            anomalies = anomalies[:max_anomalies]
 
         strategy = get_strategy(market)
 
