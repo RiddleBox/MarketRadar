@@ -15,12 +15,33 @@ import json
 import logging
 import os
 import re
+import threading
 import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+import httpx
 import yaml
 from openai import OpenAI, APITimeoutError, RateLimitError, APIError
+
+_LOCAL_HOSTNAMES = {"127.0.0.1", "localhost", "::1"}
+_NO_PROXY_SET = False
+
+def _ensure_no_proxy_for_localhost():
+    global _NO_PROXY_SET
+    if _NO_PROXY_SET:
+        return
+    existing = os.environ.get("NO_PROXY", "")
+    needed = {"127.0.0.1", "localhost", "::1"}
+    current = set(existing.split(",")) if existing else set()
+    if not needed.issubset(current):
+        additions = needed - current
+        new_val = ",".join(sorted(current | needed))
+        os.environ["NO_PROXY"] = new_val
+        logger.debug(f"Set NO_PROXY={new_val} for local Ollama access")
+    _NO_PROXY_SET = True
+
+_ensure_no_proxy_for_localhost()
 
 logger = logging.getLogger(__name__)
 
@@ -226,6 +247,7 @@ class LLMClient:
         """
         self._config = self._load_config(config_path)
         self._clients: Dict[str, OpenAI] = {}
+        self._concurrency_semaphores: Dict[str, threading.Semaphore] = {}
         logger.info(f"LLMClient initialized with default provider: {self._config['default_provider']}")
 
     def _load_config(self, config_path: Optional[str]) -> dict:
@@ -287,7 +309,7 @@ class LLMClient:
         mode = self._config.get(mode_key)
         if mode and "provider" not in module_override:
             mode_provider_map = {
-                "m1_decoder": {"local": "ollama_m1", "api": "anthropic_decision"},
+                "m1_decoder": {"local": "ollama_m1", "api": "anthropic"},
             }
             mapped = mode_provider_map.get(module_name, {}).get(mode)
             if mapped:
@@ -323,6 +345,12 @@ class LLMClient:
         其他 provider 返回标准 OpenAI 实例。
         """
         if provider_name not in self._clients:
+            # 创建并发限制信号量（用于 Ollama 等本地模型防过载）
+            max_concurrency = provider_config.get("max_concurrency", 0)
+            if max_concurrency > 0:
+                self._concurrency_semaphores[provider_name] = threading.Semaphore(max_concurrency)
+                logger.debug(f"[LLMClient] Provider '{provider_name}' max_concurrency={max_concurrency}")
+
             auth_type = provider_config.get("auth_type", "api_key")
 
             if auth_type == "gongfeng_oauth":
@@ -361,8 +389,9 @@ class LLMClient:
                         f"Provider '{provider_name}' base_url is unresolved: {base_url!r}. "
                         f"Please set the required environment variable before running LLM flows."
                     )
-                self._clients[provider_name] = OpenAI(api_key=api_key, base_url=base_url)
-                logger.debug(f"Created OpenAI client for provider '{provider_name}' at {base_url}")
+                http_client = httpx.Client(proxy=None)
+                self._clients[provider_name] = OpenAI(api_key=api_key, base_url=base_url, http_client=http_client)
+                logger.debug(f"Created OpenAI client for provider '{provider_name}' at {base_url} (proxy bypassed)")
 
         return self._clients[provider_name]
 
@@ -542,7 +571,16 @@ class LLMClient:
                     f"attempt={attempt}/{max_retries}, model={model}"
                 )
 
-                response = client.chat.completions.create(**request_params)
+                semaphore = self._concurrency_semaphores.get(provider_name)
+                if semaphore:
+                    semaphore.acquire()
+
+                try:
+                    response = client.chat.completions.create(**request_params)
+                finally:
+                    if semaphore:
+                        semaphore.release()
+
                 content = response.choices[0].message.content
 
                 if content is None:

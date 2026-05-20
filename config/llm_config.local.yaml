@@ -1,10 +1,66 @@
 # LLM 本地配置（不提交到 Git）
 # 此文件覆盖 llm_config.yaml 中的默认值
-# 用途：在本地机器上设置默认 provider 和 API Key
 
-default_provider: deepseek
+# ═══════════════════════════════════════════════════════════════
+# M1 解码器运行模式（m1_decoder_mode） ← 切换本地/云端就在这里改
+# ═══════════════════════════════════════════════════════════════
+# local = 本地 Ollama + Qwen2.5:1.5B（免费、CPU模式、低延迟）
+# api   = 云端 Claude（精度高、context 大、付费 30-60s 延迟）
+# ═════════════════════════════════════════════════════════════════════════════
+m1_decoder_mode: local
+
+# 默认用决策key（M13等无module_name的模块走default）
+default_provider: anthropic
 
 providers:
-  deepseek:
-    api_key: "sk-63086f70fc0f4284a4a0358a933a4e70"
-    model: "deepseek-chat"
+  # ── 本地 Ollama（M1 信号解码）──────────────────────────
+  ollama_m1:
+    auth_type: openai_compatible
+    api_key: "ollama"
+    model: "qwen2.5:1.5b"
+    base_url: "http://127.0.0.1:11434/v1"
+    timeout: 120
+    max_retries: 2
+    max_concurrency: 2
+    api_options:
+      options:
+        num_ctx: 2048
+        num_batch: 1
+
+  # key 1：采集和解码（M0, M1）
+  anthropic:
+    auth_type: anthropic
+    api_key: "sk-cc12716a69813cffab85d92d375d469c42973771fbb43fe04e0971d4a4ac8288"
+    model: "claude-sonnet-4-6"
+    base_url: "https://cc-vibe.com"
+    timeout: 90
+    max_retries: 3
+
+  # key 2：判断/规划/开仓/溯因（M3, M4, M6, M13）
+  anthropic_decision:
+    auth_type: anthropic
+    api_key: "sk-0c8cfb7a7a4f25ffc833cc71fec4ccc15cad02748478ce48f025b9b9530d0326"
+    model: "claude-sonnet-4-6"
+    base_url: "https://cc-vibe.com"
+    timeout: 120
+    max_retries: 3
+
+# 按模块分配不同 provider（暂时全部用 key2 先跑通）
+module_overrides:
+  m1_decoder:
+    # provider 由 m1_mode 自动决定（local→ollama_m1, api→anthropic_decision）
+    # 如需显式覆盖，取消下面注释并设置 m1_mode 不存在的值
+    # provider: ollama_m1
+    temperature: 0
+  m3_judgment:
+    provider: anthropic
+    temperature: 0.2
+  m4_action:
+    provider: anthropic
+    temperature: 0.2
+  m6_retrospective:
+    provider: anthropic
+    temperature: 0.1
+  m13_research:
+    provider: anthropic
+    temperature: 0.3

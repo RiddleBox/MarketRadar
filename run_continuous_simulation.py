@@ -22,6 +22,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 if sys.platform == "win32":
     os.environ.setdefault("PYTHONIOENCODING", "utf-8")
+    os.environ.setdefault("NO_PROXY", "127.0.0.1,localhost,::1")
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
         sys.stderr.reconfigure(encoding="utf-8", errors="replace")

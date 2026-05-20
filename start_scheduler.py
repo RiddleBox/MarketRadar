@@ -1,8 +1,12 @@
 ﻿import sys, os, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from dotenv import load_dotenv
+load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env'))
+
 os.environ['PYTHONIOENCODING'] = 'utf-8'
 os.environ['TERM'] = 'xterm'
-os.environ['FINNHUB_API_KEY'] = 'd7lhlbhr01qm7o0bsj30d7lhlbhr01qm7o0bsj3g'
+os.environ.setdefault('NO_PROXY', '127.0.0.1,localhost,::1')
 
 import logging
 log_file = os.path.join('data', 'logs', 'scheduler_daemon.log')

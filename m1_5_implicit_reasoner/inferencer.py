@@ -3,8 +3,11 @@ M1.5 隐性信号推理器接口
 """
 
 from abc import ABC, abstractmethod
+import logging
 from typing import List, Dict, Optional
 from m1_5_implicit_reasoner.models import ImplicitSignal, ReasoningChain, CausalLink
+
+logger = logging.getLogger(__name__)
 
 
 class ImplicitSignalInferencer(ABC):
@@ -146,6 +149,9 @@ class LLMImplicitSignalInferencer(ImplicitSignalInferencer):
 
         # 2. 调用LLM生成推理
         try:
+            if self.llm_client is None:
+                logger.warning("[M1.5] llm_client is None, skipping inference")
+                return []
             llm_response = self.llm_client.chat_json(prompt, temperature=0.7, max_tokens=4096)
         except Exception as e:
             print(f"LLM调用失败: {e}")
@@ -280,6 +286,9 @@ class LLMImplicitSignalInferencer(ImplicitSignalInferencer):
 """
 
         try:
+            if self.llm_client is None:
+                logger.warning("[M1.5] llm_client is None, skipping causal analysis")
+                return []
             llm_response = self.llm_client.chat_json(prompt, temperature=0.7)
         except Exception as e:
             print(f"LLM调用失败: {e}")
@@ -361,6 +370,9 @@ class LLMImplicitSignalInferencer(ImplicitSignalInferencer):
 """
 
         try:
+            if self.llm_client is None:
+                logger.warning("[M1.5] llm_client is None, skipping target identification")
+                return []
             llm_response = self.llm_client.chat_json(prompt, temperature=0.5)
             return llm_response.get('targets', [])
         except Exception as e:
