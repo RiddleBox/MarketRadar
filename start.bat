@@ -3,6 +3,15 @@ setlocal enabledelayedexpansion
 
 title MarketRadar Launcher
 
+REM Ollama environment (local M1 decoder)
+if defined OLLAMA_MODELS (goto :ollama_ok)
+echo [INFO] Setting OLLAMA_MODELS and OLLAMA_NUM_GPU for local M1 decoder
+set OLLAMA_MODELS=D:\ollama_models
+set OLLAMA_NUM_GPU=0
+set OLLAMA_LLM_LIBRARY=cpu_avx2
+set NO_PROXY=127.0.0.1,localhost,::1
+:ollama_ok
+
 echo ========================================
 echo   MarketRadar Trading System
 echo ========================================

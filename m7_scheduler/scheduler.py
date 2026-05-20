@@ -552,16 +552,17 @@ class Scheduler:
 
     # ── 任务实现 ─────────────────────────────────────────────
 
-    def _task_signal_pipeline(self, run_id: str = "") -> dict:
+    def _task_signal_pipeline(self, run_id: str = "", max_files: int = 5) -> dict:
         """
         信号管道：扫描 data/incoming/ 新文件 → M1→M2→M3→M4
+        max_files: 每次最多处理文件数，防止 API 请求洪水和配额耗尽
         """
         incoming_dir = ROOT / "data" / "incoming"
         processed_dir = ROOT / "data" / "processed"
         incoming_dir.mkdir(parents=True, exist_ok=True)
         processed_dir.mkdir(parents=True, exist_ok=True)
 
-        files = sorted(incoming_dir.glob("*.txt"))
+        files = sorted(incoming_dir.glob("*.txt"))[:max_files]
         if not files:
             logger.info("[M7/signal_pipeline] 无新文件")
             return {"new_files": 0}
@@ -1126,10 +1127,11 @@ class Scheduler:
             factory = get_factory()
             price_feed = factory.get_feed_with_fallback(market, scenario="m7_intraday_scan")
 
-            # 执行盘中扫描
+            # 执行盘中扫描（max_anomalies=3 控制每轮LLM成本）
             retro_opps = engine.run_intraday_scan(
                 market=market,
                 price_feed=price_feed,
+                max_anomalies=3,
             )
 
             # 保存机会到文件（供dashboard读取）
@@ -1397,11 +1399,12 @@ class Scheduler:
             factory = get_factory()
             price_feed = factory.get_feed_with_fallback(market, scenario="m7_premarket_scan")
 
-            # 执行盘后全量扫描（stock_list=None表示全市场）
+            # 执行盘后全量扫描（stock_list=None表示全市场, max_anomalies=5 控制LLM成本）
             retro_opps = engine.run_daily_scan(
                 market=market,
                 price_feed=price_feed,
                 stock_list=None,  # 全量扫描
+                max_anomalies=5,
             )
 
             # 保存盘后机会
