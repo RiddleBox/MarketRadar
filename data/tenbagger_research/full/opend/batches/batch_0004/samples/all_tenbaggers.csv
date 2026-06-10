@@ -1,0 +1,1 @@
+ticker,company_name,exchange,start_date,target_end_date,end_date,start_price,end_price,return_90d,raw_start_price,raw_end_price,raw_return_90d,adjusted_start_price,adjusted_end_price,adjusted_return_90d,qualification_basis,quality_tier,needs_manual_review,market_cap_at_start,industry,episode_id,data_source,data_quality,preliminary,price_basis,notes

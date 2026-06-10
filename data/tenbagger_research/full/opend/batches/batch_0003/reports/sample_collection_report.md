@@ -1,0 +1,235 @@
+# M17 Sample Collection Report
+
+## Summary
+
+- Provider: opend
+- Tickers requested: 200
+- Qualifying windows: 0
+- Episodes: 0
+- Failed tickers: 200
+- Data quality: POC
+- Preliminary: true
+
+## Qualification Quality
+
+- both: 0
+- raw: 0
+- adjusted: 0
+- BOTH_QUALIFIED: 0
+- RAW_ONLY_REVIEW: 0
+- ADJUSTED_ONLY_REVIEW: 0
+- Needs manual review: 0
+
+## Known Limitations
+
+- POC data may have survivorship bias.
+- Delisted, renamed, merged, or bankrupt securities may be missing.
+- Raw and adjusted close conflicts require manual review.
+- Provider-specific corporate action handling has not been fully audited.
+
+## Episodes
+
+- No qualifying episodes found.
+
+## Failed Tickers
+
+- AOUT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APAC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APACR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APACU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APAM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APD: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APEI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APG: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APGE: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APH: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- API: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APLD: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APLM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APLS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APMCU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APOG: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APOS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APPF: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APPN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APPS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APRE: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APTV: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APURU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APUS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APVO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APWC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APXT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APXTU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- APYX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AQB: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AQMS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AQN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AQNA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AQNB: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AQNU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AQST: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARAI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARAV: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARAY: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARBB: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARBCU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARBE: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARBK: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARCB: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARCC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARCI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARCIU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARCL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARCLR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARCLU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARCO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARCT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARDT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARDX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AREC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AREN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARES: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARGX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARHS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARIS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARKO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARKR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARLO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARLP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARMK: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARMP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AROC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AROW: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARQ: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARQQ: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARQT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARRY: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARTC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARTCU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARTL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARTNA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARTV: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARTW: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARVN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARW: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARWR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ARXS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASAN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASB: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASBA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASBP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASH: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASIC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASIX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASLE: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASLN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASMB: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASML: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASND: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASPC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASPCR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASPCU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASPI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASPN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASPPU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASPS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASRT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASRV: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASRVP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASST: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASTC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASTE: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASTH: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASTI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASTL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASTS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASUR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ASYS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATAI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATAT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATCH: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATCOL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATCX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATEC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATEN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATER: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATEST: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATEX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATGL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATHE: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATHM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATHR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATHS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATII: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATIIU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATKR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATLC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATLCL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATLCP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATLCZ: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATLN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATLO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATLX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATMCR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATMU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATNI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATNM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATOM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATOS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATPC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATRA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATRC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATRO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATXG: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ATYR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AUB: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AUBN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AUC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AUDC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AUGO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AUID: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AUNA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AUPH: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AUR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AURA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AURE: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AUST: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AUTL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AUUD: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AVA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AVAH: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AVAL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AVAV: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AVBC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AVBH: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AVBP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AVD: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AVEX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AVG: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AVGO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AVGR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AVIR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AVLN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。

@@ -1,0 +1,8 @@
+{
+  "batch": 7,
+  "error": "OpenD history kline quota exhausted after batch 2; this batch is invalid coverage and must be retried.",
+  "first_ticker": "CFND",
+  "last_ticker": "COLAU",
+  "stopped_at": "2026-06-08T11:23:16",
+  "tickers": 200
+}

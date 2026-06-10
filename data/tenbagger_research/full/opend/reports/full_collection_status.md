@@ -1,0 +1,227 @@
+# M17 Sample Collection Report
+
+## Summary
+
+- Provider: opend
+- Tickers requested: 6456
+- Qualifying windows: 2078
+- Episodes: 59
+- Failed tickers: 134
+- Data quality: POC
+- Preliminary: true
+
+## Qualification Quality
+
+- both: 180
+- raw: 1870
+- adjusted: 28
+- BOTH_QUALIFIED: 180
+- RAW_ONLY_REVIEW: 1870
+- ADJUSTED_ONLY_REVIEW: 28
+- Needs manual review: 1898
+
+## Known Limitations
+
+- POC data may have survivorship bias.
+- Delisted, renamed, merged, or bankrupt securities may be missing.
+- Raw and adjusted close conflicts require manual review.
+- Provider-specific corporate action handling has not been fully audited.
+
+## Episodes
+
+- AACG_001: 2020-11-06 to 2021-02-04, best_return=11.3810, windows=1
+- ABEO_002: 2022-04-04 to 2022-07-05, best_return=28.3358, windows=62
+- ABTC_003: 2022-10-14 to 2023-01-12, best_return=17.4382, windows=15
+- ABTC_004: 2023-11-13 to 2024-02-12, best_return=16.1849, windows=3
+- ABTS_005: 2025-03-04 to 2025-06-02, best_return=15.3419, windows=3
+- ABVX_006: 2025-05-13 to 2025-08-11, best_return=13.1700, windows=29
+- ACB_007: 2020-02-28 to 2020-05-28, best_return=19.9760, windows=46
+- ACB_008: 2024-01-04 to 2024-04-03, best_return=23.2831, windows=31
+- ACET_009: 2020-05-27 to 2020-09-16, best_return=118.7770, windows=63
+- ACET_010: 2025-10-29 to 2026-01-27, best_return=14.4194, windows=35
+- ACFN_011: 2023-06-12 to 2023-09-11, best_return=25.2333, windows=61
+- ACGN_012: 2022-10-20 to 2023-01-18, best_return=21.7428, windows=43
+- ACHV_013: 2020-05-04 to 2020-08-03, best_return=26.9286, windows=62
+- ACON_014: 2024-11-01 to 2025-01-30, best_return=242.6364, windows=47
+- ACXP_015: 2025-05-07 to 2025-08-05, best_return=18.1025, windows=46
+- ADIL_016: 2023-05-08 to 2023-08-07, best_return=18.4375, windows=40
+- ADTX_017: 2022-06-16 to 2022-09-14, best_return=73.7482, windows=48
+- ADTX_018: 2023-05-22 to 2023-08-21, best_return=92.2361, windows=61
+- ADTX_019: 2024-12-16 to 2025-03-17, best_return=71.1393, windows=60
+- ADTX_020: 2025-10-30 to 2026-01-28, best_return=12.8081, windows=2
+- ADV_021: 2025-12-29 to 2026-03-30, best_return=31.0508, windows=3
+- ADVB_022: 2025-12-04 to 2026-03-04, best_return=14.6271, windows=17
+- ADVM_023: 2023-12-22 to 2024-03-21, best_return=18.3915, windows=22
+- ADXN_024: 2023-07-24 to 2023-10-23, best_return=20.5086, windows=56
+- AEC_025: 2025-05-05 to 2025-09-04, best_return=131.1463, windows=61
+- AEHL_026: 2016-04-25 to 2016-07-25, best_return=14.1429, windows=14
+- AEHL_027: 2025-01-07 to 2025-04-07, best_return=57.3162, windows=60
+- AEI_028: 2022-09-29 to 2022-12-28, best_return=14.8487, windows=36
+- AEMD_029: 2015-01-14 to 2015-04-14, best_return=50.6110, windows=61
+- AEMD_030: 2019-07-17 to 2019-10-15, best_return=18.2143, windows=27
+- AEMD_031: 2023-10-04 to 2024-01-02, best_return=10.0403, windows=1
+- AGEN_032: 2024-01-24 to 2024-04-23, best_return=33.9249, windows=55
+- AGIG_033: 2020-05-04 to 2020-08-03, best_return=20.3467, windows=34
+- AGIG_034: 2025-03-19 to 2025-06-17, best_return=19.7018, windows=56
+- AGL_035: 2025-12-31 to 2026-03-31, best_return=10.4854, windows=1
+- AGMH_036: 2025-03-05 to 2025-06-03, best_return=96.6271, windows=62
+- AGPU_037: 2016-08-01 to 2016-10-31, best_return=53.4828, windows=63
+- AGPU_038: 2023-03-20 to 2023-06-20, best_return=31.8701, windows=24
+- AGPU_039: 2025-07-02 to 2025-09-30, best_return=17.1250, windows=21
+- AHG_040: 2021-07-22 to 2021-10-20, best_return=11.9247, windows=1
+- AHI_041: 2023-04-03 to 2023-07-03, best_return=14.8289, windows=31
+- AHT_042: 2024-08-14 to 2024-11-12, best_return=14.2237, windows=17
+- AIB_043: 2024-08-19 to 2024-11-18, best_return=56.5251, windows=42
+- AIFC_044: 2019-01-24 to 2019-04-24, best_return=13.8672, windows=37
+- AIFF_045: 2023-07-21 to 2023-10-19, best_return=10.1111, windows=1
+- AIFU_046: 2025-03-17 to 2025-06-16, best_return=73.7967, windows=44
+- AIMD_047: 2022-05-20 to 2022-08-18, best_return=18.5375, windows=3
+- AIRTP_048: 2019-10-16 to 2020-01-14, best_return=10.1382, windows=1
+- AIXC_049: 2018-02-22 to 2018-05-23, best_return=15.5899, windows=10
+- AIXC_050: 2020-02-24 to 2020-05-26, best_return=37.0488, windows=53
+- AIXC_051: 2024-08-07 to 2024-11-05, best_return=37.9454, windows=63
+- AIXI_052: 2024-07-08 to 2024-10-07, best_return=21.2711, windows=16
+- AKA_053: 2023-07-05 to 2023-10-03, best_return=21.9212, windows=60
+- AKAN_054: 2024-02-26 to 2024-05-28, best_return=23.5484, windows=57
+- AKTX_055: 2015-06-19 to 2015-09-17, best_return=50.6393, windows=42
+- AKTX_056: 2023-05-19 to 2023-08-17, best_return=23.9384, windows=61
+- AKTX_057: 2025-12-31 to 2026-03-31, best_return=16.8201, windows=1
+- ALBT_058: 2024-07-29 to 2024-10-28, best_return=20.4205, windows=44
+- ALGS_059: 2024-05-20 to 2024-08-19, best_return=39.7832, windows=62
+
+## Failed Tickers
+
+- AACO: OpenD history kline returned no rows
+- AACP: OpenD history kline returned no rows
+- AACPR: OpenD history kline returned no rows
+- AADX: OpenD history kline returned no rows
+- AAS: OpenD history kline returned no rows
+- ACGC: OpenD history kline returned no rows
+- ACLL: OpenD history kline returned no rows
+- AED: OpenD history kline returned no rows
+- AESPU: OpenD history kline returned no rows
+- AEZSW: OpenD history kline returned no rows
+- AGII: OpenD history kline returned no rows
+- AIAI: OpenD history kline returned no rows
+- AIGO: OpenD history kline returned no rows
+- AIIAU: OpenD history kline returned no rows
+- ALD: OpenD history kline returned no rows
+- ALEH: OpenD history kline returned no rows
+- ALK: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALKS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALKT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALLE: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALLO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALLR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALLT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALLY: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALMR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALMS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALMU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALNT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALNY: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALOHA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALOT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALOV: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALOVU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALOY: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALPS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALPX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALRM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALRS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALSN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALTG: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALTI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALTO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALUB: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALUBU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALV: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALVO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALXO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ALZN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMAL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMAN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMAT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMBA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMBO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMBP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMBQ: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMBR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMCI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMCR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMCX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMD: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMDI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AME: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMG: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMGN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMGSU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMIX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMJK: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMKR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMLX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMOD: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMPG: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMPGR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMPGZ: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMPH: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMPL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMPX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMPY: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMRC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMRN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMRX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMRZ: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMSC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMSF: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMSS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMST: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMTB: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMTD: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMTM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMTU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMTX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMWD: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMWL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AMZE: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANAB: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AND: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANDE: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANDG: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANET: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANF: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANGH: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANGI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANGO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANGX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANIK: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANIP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANIX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANNA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANNX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANPA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANRO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANSC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANSCU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANTA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANTX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANVS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- ANY: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AOMD: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AOMN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AON: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AORT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AOS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- AOSL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。

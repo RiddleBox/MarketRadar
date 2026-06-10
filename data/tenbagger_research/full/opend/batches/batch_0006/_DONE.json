@@ -1,0 +1,10 @@
+{
+  "batch": 6,
+  "completed_at": "2026-06-08T11:19:32",
+  "episodes": 0,
+  "failed": 200,
+  "first_ticker": "BTU",
+  "last_ticker": "CFG",
+  "tickers": 200,
+  "windows": 0
+}

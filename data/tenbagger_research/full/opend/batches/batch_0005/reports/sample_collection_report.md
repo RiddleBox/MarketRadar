@@ -1,0 +1,235 @@
+# M17 Sample Collection Report
+
+## Summary
+
+- Provider: opend
+- Tickers requested: 200
+- Qualifying windows: 0
+- Episodes: 0
+- Failed tickers: 200
+- Data quality: POC
+- Preliminary: true
+
+## Qualification Quality
+
+- both: 0
+- raw: 0
+- adjusted: 0
+- BOTH_QUALIFIED: 0
+- RAW_ONLY_REVIEW: 0
+- ADJUSTED_ONLY_REVIEW: 0
+- Needs manual review: 0
+
+## Known Limitations
+
+- POC data may have survivorship bias.
+- Delisted, renamed, merged, or bankrupt securities may be missing.
+- Raw and adjusted close conflicts require manual review.
+- Provider-specific corporate action handling has not been fully audited.
+
+## Episodes
+
+- No qualifying episodes found.
+
+## Failed Tickers
+
+- BIDU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIDWU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIIB: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIII: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIIIU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BILI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BILL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIO.B: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIOA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIOC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIOX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIPC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIPH: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIPI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIPJ: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIRD: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIRK: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIVI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIXI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIXIU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BIYA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BJ: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BJDX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BJRI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BKD: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BKDT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BKE: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BKEPP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BKH: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BKHA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BKHAR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BKHAU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BKKT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BKNG: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BKR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BKSY: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BKTI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BKU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BKV: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLBD: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLCO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLD: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLDP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLDR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLEU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLEUR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLEUU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLFS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLIN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLIV: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLK: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLKB: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLLN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLMN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLND: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLNE: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLNK: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLRK: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLRKU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLRX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLSH: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLTE: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLUW: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLUWU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLZE: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLZR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BLZRU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BMA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BMBL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BMEA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BMGL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BMHL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BMI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BMM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BMNR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BMO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BMR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BMRA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BMRC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BMRN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BMY: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BNAI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BNBX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BNC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BNED: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BNGO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BNH: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BNJ: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BNKK: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BNR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BNRG: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BNS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BNT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BNTC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BNTX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BNY: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BNZI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOBS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BODI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOF: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOH: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOKF: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOKFL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOLD: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOLT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BON: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOOM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOOT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BORR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOSC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOTJ: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOW: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOWN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOWNR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BOXL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BPAC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BPACR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BPACU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BPOP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BPOPM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BPOPN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BPRN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BPYPM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BPYPN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BPYPO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BPYPP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BPYUP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BQ: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRACR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRACU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRAG: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRAI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRBI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRBR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRBS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRCB: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRCC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BREZU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRFH: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRIA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRID: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRK.A: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRK.B: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRKHU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRKR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRKRP: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRLS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRLT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRNS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BROS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRSL: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRTH: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRTX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRUN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BRZE: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BSAA: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BSAAR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BSAAU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BSAC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BSBK: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BSBR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BSET: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BSM: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BSRR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BSVN: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BSX: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BSY: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTAI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTBD: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTBT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTCS: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTCT: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTDR: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTE: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTG: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTGO: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTI: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTMD: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTOC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTOG: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTQ: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTRU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTRY: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTSG: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTSGU: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。
+- BTTC: OpenD history kline failed: 历史K线额度不足，请求失败。额度会滚动释放，直至30天后全部释放。

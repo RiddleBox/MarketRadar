@@ -1,0 +1,10 @@
+{
+  "batch": 1,
+  "completed_at": "2026-06-08T11:00:01",
+  "episodes": 39,
+  "failed": 11,
+  "first_ticker": "A",
+  "last_ticker": "AGYS",
+  "tickers": 200,
+  "windows": 1432
+}

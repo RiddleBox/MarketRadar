@@ -1,0 +1,8 @@
+{
+  "batch": 5,
+  "error": "OpenD history kline quota exhausted after batch 2; this batch is invalid coverage and must be retried.",
+  "first_ticker": "BIDU",
+  "last_ticker": "BTTC",
+  "stopped_at": "2026-06-08T11:15:49",
+  "tickers": 200
+}
