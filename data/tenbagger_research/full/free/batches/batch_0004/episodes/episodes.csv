@@ -1,0 +1,5 @@
+ticker,episode_id,company_name,exchange,first_qualifying_start_date,first_qualifying_end_date,best_90d_start_date,best_90d_end_date,best_90d_return,episode_start_date,episode_end_date,num_qualifying_windows,data_quality,preliminary,notes
+ALPS,ALPS_001,ALPS GROUP INC,NASDAQ,2023-07-18,2025-10-31,2023-07-20,2025-10-31,16.964912280701757,2023-07-18,2025-10-31,3,POC,True,
+AM,AM_002,Antero Midstream,NYSE,2020-06-05,2020-09-03,2020-06-05,2020-09-03,303.0,2020-06-05,2020-09-03,1,POC,True,
+AM,AM_003,Antero Midstream,NYSE,2020-09-10,2020-12-09,2020-09-21,2020-12-21,319.75,2020-09-10,2021-01-04,10,POC,True,
+AMSF,AMSF_004,Amerisafe,NASDAQ,2015-06-26,2015-09-24,2015-07-15,2015-10-13,31.833333333333336,2015-06-26,2015-12-17,7,POC,True,

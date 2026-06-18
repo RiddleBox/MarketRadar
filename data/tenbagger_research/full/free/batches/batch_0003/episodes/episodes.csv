@@ -1,0 +1,4 @@
+ticker,episode_id,company_name,exchange,first_qualifying_start_date,first_qualifying_end_date,best_90d_start_date,best_90d_end_date,best_90d_return,episode_start_date,episode_end_date,num_qualifying_windows,data_quality,preliminary,notes
+AIM,AIM_001,AIM ImmunoTech,AMEX,2019-12-09,2020-03-09,2019-12-09,2020-03-09,13.877685546874998,2019-12-09,2020-03-09,2,POC,True,
+AIM,AIM_002,AIM ImmunoTech,AMEX,2025-01-06,2025-06-17,2025-04-04,2025-07-03,92.26160337552744,2025-01-06,2025-07-03,62,POC,True,
+AKTS,AKTS_003,Aktis Oncology,NASDAQ,2024-09-19,2026-01-09,2024-12-17,2026-01-09,601.1505376344086,2024-09-19,2026-01-09,63,POC,True,

@@ -1,0 +1,4 @@
+ticker,episode_id,company_name,exchange,first_qualifying_start_date,first_qualifying_end_date,best_90d_start_date,best_90d_end_date,best_90d_return,episode_start_date,episode_end_date,num_qualifying_windows,data_quality,preliminary,notes
+AACG,AACG_001,ATA Creativity Global,NASDAQ,2020-11-06,2021-02-04,2020-11-06,2021-02-04,11.434782608695654,2020-11-06,2021-02-04,1,POC,True,
+AB,AB_002,联博控股,NYSE,2020-03-16,2020-06-15,2020-04-15,2020-07-14,170.79999999999998,2020-03-16,2020-07-23,7,POC,True,
+ACET,ACET_003,艾切托,NASDAQ,2019-02-26,2020-09-16,2019-04-02,2020-09-16,15.923076923076923,2019-02-26,2020-09-16,20,POC,True,

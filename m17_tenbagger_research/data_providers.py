@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import date
 import concurrent.futures
 from typing import Protocol
@@ -48,11 +48,14 @@ class YFinanceProvider:
         )
 
 
-@dataclass(frozen=True)
+@dataclass
 class AkShareProvider:
     """AKShare POC provider for low-cost market data."""
 
     name: str = "akshare"
+    us_hist_disable_after_failures: int = 3
+    _us_hist_failures: int = field(default=0, init=False, repr=False)
+    _us_hist_disabled: bool = field(default=False, init=False, repr=False)
 
     def fetch_daily_prices(
         self,
@@ -103,27 +106,45 @@ class AkShareProvider:
         )
         return frame if frame is not None else pd.DataFrame()
 
-    @staticmethod
     def _fetch_us(
+        self,
         ak,
         ticker: str,
         start_date: date,
         end_date: date,
     ) -> pd.DataFrame:
         symbol = ticker.replace(".US", "")
-        for prefix in ("105.", "106.", ""):
-            try:
-                frame = ak.stock_us_hist(
-                    symbol=f"{prefix}{symbol}",
-                    period="daily",
-                    start_date=start_date.strftime("%Y%m%d"),
-                    end_date=end_date.strftime("%Y%m%d"),
-                    adjust="qfq",
-                )
-            except Exception:
-                continue
-            if frame is not None and not frame.empty:
-                return frame
+        if not self._us_hist_disabled:
+            for prefix in ("105.", "106.", ""):
+                try:
+                    frame = ak.stock_us_hist(
+                        symbol=f"{prefix}{symbol}",
+                        period="daily",
+                        start_date=start_date.strftime("%Y%m%d"),
+                        end_date=end_date.strftime("%Y%m%d"),
+                        adjust="qfq",
+                    )
+                except Exception:
+                    self._record_us_hist_failure()
+                    if self._us_hist_disabled:
+                        break
+                    continue
+                if frame is not None and not frame.empty:
+                    self._us_hist_failures = 0
+                    return frame
+                self._record_us_hist_failure()
+                if self._us_hist_disabled:
+                    break
+
+        return self._fetch_us_daily(ak, symbol, start_date, end_date)
+
+    @staticmethod
+    def _fetch_us_daily(
+        ak,
+        symbol: str,
+        start_date: date,
+        end_date: date,
+    ) -> pd.DataFrame:
         try:
             frame = ak.stock_us_daily(symbol=symbol, adjust="qfq")
         except TypeError:
@@ -133,6 +154,11 @@ class AkShareProvider:
         if frame is None or frame.empty:
             return pd.DataFrame()
         return AkShareProvider._clip_date_range(frame, start_date, end_date)
+
+    def _record_us_hist_failure(self) -> None:
+        self._us_hist_failures += 1
+        if self._us_hist_failures >= self.us_hist_disable_after_failures:
+            self._us_hist_disabled = True
 
     @staticmethod
     def _clip_date_range(
@@ -158,9 +184,12 @@ class FreeFallbackProvider:
 
     name = "free"
 
-    def __init__(self) -> None:
+    def __init__(self, yfinance_disable_after_failures: int = 3) -> None:
         self.last_source = ""
         self._providers = (YFinanceProvider(), AkShareProvider())
+        self._provider_failures: dict[str, int] = {}
+        self._disabled_providers: set[str] = set()
+        self._yfinance_disable_after_failures = yfinance_disable_after_failures
 
     def fetch_daily_prices(
         self,
@@ -170,17 +199,31 @@ class FreeFallbackProvider:
     ) -> pd.DataFrame:
         errors: list[str] = []
         for provider in self._providers:
+            if provider.name in self._disabled_providers:
+                errors.append(f"{provider.name}: skipped after repeated failures")
+                continue
             try:
                 frame = provider.fetch_daily_prices(ticker, start_date, end_date)
                 if frame is None or frame.empty:
                     raise ValueError("no price data returned")
                 self.last_source = provider.name
+                self._provider_failures[provider.name] = 0
                 return frame
             except Exception as exc:  # noqa: BLE001 - preserve provider-specific errors
                 errors.append(f"{provider.name}: {exc}")
+                self._record_provider_failure(provider.name)
 
         self.last_source = ""
         raise RuntimeError("all free sources failed: " + "; ".join(errors))
+
+    def _record_provider_failure(self, provider_name: str) -> None:
+        failures = self._provider_failures.get(provider_name, 0) + 1
+        self._provider_failures[provider_name] = failures
+        if (
+            provider_name == "yfinance"
+            and failures >= self._yfinance_disable_after_failures
+        ):
+            self._disabled_providers.add(provider_name)
 
 
 @dataclass(frozen=True)

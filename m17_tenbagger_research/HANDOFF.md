@@ -90,6 +90,8 @@ Low-cost provider details:
 
 ```text
 provider=free tries yfinance first, then AKShare.
+If yfinance repeatedly returns empty/rate-limited results in one run, it is skipped for the rest of that provider instance.
+If AKShare stock_us_hist repeatedly fails, AKShareProvider falls back directly to stock_us_daily.
 The pipeline records the actual successful source in sample data_source.
 Cache sidecars now preserve provider/source metadata for later reruns.
 run_small_poc.py supports: free, yfinance, akshare, stooq, opend.
@@ -149,7 +151,7 @@ This means the OpenD historical K-line quota is exhausted. Continuing to force O
 As of 2026-06-18, a low-cost fallback path exists, so the next practical route is to continue collection under a separate output root:
 
 ```powershell
-python -m m17_tenbagger_research.run_full_batch --provider free --output-dir data/tenbagger_research/full/free --batch-size 100 --max-batches 1 --request-delay 0.2 --no-cache
+python -m m17_tenbagger_research.run_full_batch --provider free --output-dir data/tenbagger_research/full/free --batch-size 100 --start-batch 6 --max-batches 1 --request-delay 0.2
 ```
 
 Notes:
@@ -159,6 +161,8 @@ yfinance is currently rate-limited in this environment.
 AKShare stock_us_daily successfully recovered GME daily history.
 AKShare US daily currently provides a single close series, so GME probe rows are RAW_ONLY_REVIEW rather than BOTH_QUALIFIED.
 HKD was still missing from both free sources in the probe.
+Free-provider batches 1-5 are complete under data/tenbagger_research/full/free.
+Current free-provider coverage: 500 tickers, 324 windows, 31 episodes, 227 failed tickers.
 ```
 
 Do not treat these batches as valid sample coverage:
@@ -258,9 +262,9 @@ Current state:
 
 Your next task:
 1. Run the M17 tests.
-2. Run merge-only to verify current partial outputs.
-3. If continuing without OpenD, use provider=free and a separate output dir.
-4. Start with a 50-200 ticker free-provider micro-batch.
+2. Run merge-only to verify current free-provider partial outputs.
+3. Continue provider=free from batch 6.
+4. Review source/quality summary after each few batches.
 5. Keep BOTH_QUALIFIED / RAW_ONLY_REVIEW / ADJUSTED_ONLY_REVIEW separation intact.
 6. Treat AKShare-only US rows as review candidates until raw/adjusted handling is audited.
 ```

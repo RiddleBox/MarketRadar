@@ -940,3 +940,101 @@ failed=1
 3. 对 AKShare-only 样本补 raw/adjusted 口径复核策略。
 4. 再决定是否扩大到 full universe。
 ```
+
+---
+
+## 2026-06-18 Update 10
+
+阶段:
+
+```text
+Step 1 样本收集
+```
+
+当前推进:
+
+```text
+free provider 从探针推进到 500 ticker micro-batch。
+```
+
+完成内容:
+
+```text
+1. 优化 FreeFallbackProvider:
+   yfinance 连续失败后，本轮 provider instance 自动跳过 yfinance。
+2. 优化 AkShareProvider:
+   stock_us_hist 连续失败后，直接降级到 stock_us_daily，避免每个 ticker 等待代理超时。
+3. 新增两条离线测试覆盖上述降级逻辑。
+4. 完成 provider=free 的 batch 1-5，每批 100 ticker。
+```
+
+验证结果:
+
+```text
+python -m py_compile m17_tenbagger_research\data_providers.py
+
+python -m pytest tests\test_m17_sample_discovery.py tests\test_m17_ticker_universe_and_pipeline.py -q
+18 passed in 3.86s
+```
+
+free micro-batch 输出:
+
+```text
+output_dir = data/tenbagger_research/full/free
+completed batches = 1-5
+covered tickers = 500
+windows = 324
+episodes = 31
+failed tickers = 227
+```
+
+质量分布:
+
+```text
+akshare + RAW_ONLY_REVIEW: 324 windows
+BOTH_QUALIFIED: 0
+ADJUSTED_ONLY_REVIEW: 0
+Needs manual review: 324
+```
+
+速度观察:
+
+```text
+batch 2 before AKShare stock_us_hist downgrade: about 557 seconds
+batch 3 after downgrade: about 250 seconds
+batch 4 after downgrade: about 234 seconds
+batch 5 after downgrade: about 221 seconds
+```
+
+Top observed free-provider episodes by best_90d_return:
+
+```text
+AFG_005: 2865.0
+AKTS_011: 601.1505
+APAM_018: 398.0
+AM_014: 319.75
+AM_013: 303.0
+AFG_006: 279.0
+APAM_016: 193.0
+AB_002: 170.8
+AGM.A_008: 166.6667
+ARCC_021: 110.0
+```
+
+已知风险:
+
+```text
+1. 当前 free provider 的有效样本全部来自 AKShare。
+2. 当前 AKShare 美股 daily 路径缺 adjusted_close 双轨，所有命中均为 RAW_ONLY_REVIEW。
+3. free 输出适合作为低成本候选样本层，不应直接替代 OpenD BOTH_QUALIFIED 层。
+4. 部分早期 batch 仍记录旧逻辑下的 stock_us_hist 不可归一化失败，可后续 --force 重跑 batch 1-3 修正。
+```
+
+下一步:
+
+```text
+1. 从 batch 6 继续:
+   python -m m17_tenbagger_research.run_full_batch --provider free --output-dir data/tenbagger_research/full/free --batch-size 100 --start-batch 6 --max-batches 1 --request-delay 0.2
+2. 跑到 1000 ticker 后再做一次阶段汇总。
+3. 设计 AKShare-only 样本的 raw/adjusted 复核策略。
+```

@@ -195,6 +195,36 @@ def test_free_fallback_provider_records_actual_successful_source(
     assert [window.data_source for window in result.windows] == ["akshare"]
 
 
+def test_free_fallback_provider_skips_yfinance_after_repeated_failures(monkeypatch):
+    calls = {"yfinance": 0, "akshare": 0}
+
+    class FakeYFinanceProvider:
+        name = "yfinance"
+
+        def fetch_daily_prices(self, ticker, start_date, end_date):
+            calls["yfinance"] += 1
+            raise RuntimeError("rate limited")
+
+    class FakeAkShareProvider:
+        name = "akshare"
+
+        def fetch_daily_prices(self, ticker, start_date, end_date):
+            calls["akshare"] += 1
+            raise RuntimeError("missing")
+
+    monkeypatch.setattr(data_providers, "YFinanceProvider", FakeYFinanceProvider)
+    monkeypatch.setattr(data_providers, "AkShareProvider", FakeAkShareProvider)
+
+    provider = data_providers.FreeFallbackProvider(yfinance_disable_after_failures=2)
+    for ticker in ("AAA", "BBB", "CCC"):
+        try:
+            provider.fetch_daily_prices(ticker, date(2021, 1, 1), date(2021, 12, 31))
+        except RuntimeError:
+            pass
+
+    assert calls == {"yfinance": 2, "akshare": 3}
+
+
 def test_akshare_us_provider_falls_back_to_daily_and_clips_dates():
     class FakeAk:
         def stock_us_hist(self, **kwargs):
@@ -209,7 +239,7 @@ def test_akshare_us_provider_falls_back_to_daily_and_clips_dates():
                 ]
             )
 
-    frame = data_providers.AkShareProvider._fetch_us(
+    frame = data_providers.AkShareProvider()._fetch_us(
         FakeAk(),
         "GME",
         date(2021, 1, 1),
@@ -218,6 +248,32 @@ def test_akshare_us_provider_falls_back_to_daily_and_clips_dates():
 
     assert list(frame["date"]) == ["2021-01-01"]
     assert list(frame["close"]) == [2.0]
+
+
+def test_akshare_us_provider_skips_hist_after_repeated_failures():
+    class FakeAk:
+        def __init__(self):
+            self.hist_calls = 0
+            self.daily_calls = 0
+
+        def stock_us_hist(self, **kwargs):
+            self.hist_calls += 1
+            raise RuntimeError("proxy unavailable")
+
+        def stock_us_daily(self, **kwargs):
+            self.daily_calls += 1
+            return pd.DataFrame(
+                [{"date": "2021-01-01", "close": 2.0, "volume": 20}]
+            )
+
+    fake_ak = FakeAk()
+    provider = data_providers.AkShareProvider(us_hist_disable_after_failures=2)
+
+    provider._fetch_us(fake_ak, "GME", date(2021, 1, 1), date(2021, 12, 31))
+    provider._fetch_us(fake_ak, "AMC", date(2021, 1, 1), date(2021, 12, 31))
+
+    assert fake_ak.hist_calls == 2
+    assert fake_ak.daily_calls == 2
 
 
 def test_write_collection_outputs_creates_report_and_csvs(tmp_path):

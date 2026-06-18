@@ -1,0 +1,6 @@
+ticker,episode_id,company_name,exchange,first_qualifying_start_date,first_qualifying_end_date,best_90d_start_date,best_90d_end_date,best_90d_return,episode_start_date,episode_end_date,num_qualifying_windows,data_quality,preliminary,notes
+AEG,AEG_001,荷兰全球保险,NYSE,2020-03-16,2020-06-15,2020-03-16,2020-06-15,16.019736842105264,2020-03-16,2020-06-15,1,POC,True,
+AFG,AFG_002,美国金融,NYSE,2016-12-27,2017-03-27,2016-12-28,2017-03-28,2865.0,2016-12-27,2017-04-26,11,POC,True,
+AFG,AFG_003,美国金融,NYSE,2020-10-08,2021-01-06,2020-10-15,2021-01-13,279.0,2020-10-08,2021-01-25,5,POC,True,
+AGM,AGM_004,联邦农业抵押贷款-C,NYSE,2016-05-17,2016-08-15,2016-05-23,2016-08-22,20.130434782608695,2016-05-17,2016-10-06,9,POC,True,
+AGM.A,AGM.A_005,联邦农业抵押贷款-A,NYSE,2016-05-31,2016-08-29,2016-06-10,2016-09-08,166.66666666666666,2016-05-31,2016-11-28,26,POC,True,

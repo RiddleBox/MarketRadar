@@ -1,0 +1,76 @@
+# M17 Sample Collection Report
+
+## Summary
+
+- Provider: free
+- Tickers requested: 100
+- Qualifying windows: 52
+- Episodes: 5
+- Failed tickers: 37
+- Data quality: POC
+- Preliminary: true
+
+## Qualification Quality
+
+- both: 0
+- raw: 52
+- adjusted: 0
+- BOTH_QUALIFIED: 0
+- RAW_ONLY_REVIEW: 52
+- ADJUSTED_ONLY_REVIEW: 0
+- Needs manual review: 52
+
+## Known Limitations
+
+- POC data may have survivorship bias.
+- Delisted, renamed, merged, or bankrupt securities may be missing.
+- Raw and adjusted close conflicts require manual review.
+- Provider-specific corporate action handling has not been fully audited.
+
+## Episodes
+
+- AEG_001: 2020-03-16 to 2020-06-15, best_return=16.0197, windows=1
+- AFG_002: 2016-12-27 to 2017-03-27, best_return=2865.0000, windows=11
+- AFG_003: 2020-10-08 to 2021-01-06, best_return=279.0000, windows=5
+- AGM_004: 2016-05-17 to 2016-08-15, best_return=20.1304, windows=9
+- AGM.A_005: 2016-05-31 to 2016-08-29, best_return=166.6667, windows=26
+
+## Failed Tickers
+
+- ADAMO: all free sources failed: yfinance: no price data returned; akshare: no price data returned
+- ADCT: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- ADGM: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- ADMA: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- ADPT: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- ADSE: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- ADUR: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- ADUS: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AEAQ: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AEAQU: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AEC: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AEE: price_frame must contain a date column or a date-like index
+- AEHR: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AENT: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AERO: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AESPU: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AEXA: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AEZSW: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AFAR: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AFARU: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AFGD: price_frame must contain a date column or a date-like index
+- AFJK: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AFJKR: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AFJKU: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AFRI: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AFRM: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AGBK: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AGCC: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AGIG: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AGII: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AGIL: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AGIO: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AGMB: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AGNCZ: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AGNT: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AGPU: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
+- AGRZ: all free sources failed: yfinance: skipped after repeated failures; akshare: no price data returned
