@@ -11,7 +11,13 @@ from typing import Iterable
 
 import pandas as pd
 
-from .data_providers import FutuOpenDProvider
+from .data_providers import (
+    AkShareProvider,
+    FreeFallbackProvider,
+    FutuOpenDProvider,
+    PriceDataProvider,
+    YFinanceProvider,
+)
 from .pipeline import (
     CollectionConfig,
     CollectionResult,
@@ -30,6 +36,9 @@ from .ticker_universe import TickerInfo, fetch_opend_us_universe
 
 
 DEFAULT_OUTPUT_DIR = Path("data/tenbagger_research/full/opend")
+DEFAULT_OPEND_UNIVERSE_SNAPSHOT = (
+    Path("data/tenbagger_research/full/opend/universe/opend_us.csv")
+)
 QUOTA_EXHAUSTED_MARKER = "_QUOTA_EXHAUSTED.json"
 QUOTA_ERROR_MARKERS = ("额度不足", "额度会滚动释放", "quota", "rate limit", "ratelimit")
 
@@ -40,7 +49,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--provider",
-        choices=("opend",),
+        choices=("opend", "free", "yfinance", "akshare"),
         default="opend",
         help="Price provider for full collection",
     )
@@ -83,7 +92,7 @@ def main() -> None:
         "--request-delay",
         type=float,
         default=1.1,
-        help="Delay before each ticker request, useful for OpenD rate limits",
+        help="Delay before each ticker request, useful for provider rate limits",
     )
     parser.add_argument(
         "--opend-timeout",
@@ -109,8 +118,12 @@ def main() -> None:
     args = parser.parse_args()
 
     output_dir = Path(args.output_dir)
-    provider = FutuOpenDProvider(timeout_seconds=args.opend_timeout)
-    tickers = _load_universe_for_mode(output_dir, args.merge_only)
+    provider = _build_provider(args.provider, opend_timeout=args.opend_timeout)
+    tickers = _load_universe_for_mode(
+        output_dir,
+        args.merge_only,
+        provider_name=provider.name,
+    )
     if args.limit > 0 and not args.merge_only:
         tickers = tickers[: args.limit]
 
@@ -152,7 +165,7 @@ def main() -> None:
 
 def _run_batches(
     tickers: list[TickerInfo],
-    provider: FutuOpenDProvider,
+    provider: PriceDataProvider,
     *,
     output_dir: Path,
     batch_size: int,
@@ -210,6 +223,16 @@ def _run_batches(
             f"episodes={len(result.episodes)} "
             f"failed={len(result.failed_tickers)}"
         )
+
+
+def _build_provider(provider_name: str, *, opend_timeout: int) -> PriceDataProvider:
+    if provider_name == "free":
+        return FreeFallbackProvider()
+    if provider_name == "yfinance":
+        return YFinanceProvider()
+    if provider_name == "akshare":
+        return AkShareProvider()
+    return FutuOpenDProvider(timeout_seconds=opend_timeout)
 
 
 def merge_batch_outputs(output_dir: str | Path) -> CollectionResult:
@@ -303,25 +326,51 @@ def _write_universe_snapshot(tickers: list[TickerInfo], path: Path) -> None:
     pd.DataFrame([asdict(ticker) for ticker in tickers]).to_csv(path, index=False)
 
 
-def _load_universe_for_mode(output_dir: Path, merge_only: bool) -> list[TickerInfo]:
-    snapshot_path = output_dir / "universe" / "opend_us.csv"
-    if merge_only:
-        if not snapshot_path.exists():
-            return []
-        frame = pd.read_csv(snapshot_path)
-        return [
-            TickerInfo(
-                ticker=str(row.get("ticker", "")),
-                company_name=_optional_string(row.get("company_name")),
-                exchange=_optional_string(row.get("exchange")),
-                source=_optional_string(row.get("source")),
-                active=_optional_bool(row.get("active"), default=True),
-                notes=_optional_string(row.get("notes")),
+def _load_universe_for_mode(
+    output_dir: Path,
+    merge_only: bool,
+    *,
+    provider_name: str,
+) -> list[TickerInfo]:
+    if merge_only or provider_name != "opend":
+        snapshot_path = _resolve_universe_snapshot(output_dir)
+        if snapshot_path is None:
+            if merge_only:
+                return []
+            raise SystemExit(
+                "non-OpenD providers need an existing universe snapshot; "
+                "expected output_dir/universe/opend_us.csv or "
+                f"{DEFAULT_OPEND_UNIVERSE_SNAPSHOT}"
             )
-            for row in frame.to_dict(orient="records")
-            if _optional_string(row.get("ticker"))
-        ]
+        return _read_universe_snapshot(snapshot_path)
     return fetch_opend_us_universe()
+
+
+def _resolve_universe_snapshot(output_dir: Path) -> Path | None:
+    candidates = [
+        output_dir / "universe" / "opend_us.csv",
+        DEFAULT_OPEND_UNIVERSE_SNAPSHOT,
+    ]
+    for path in candidates:
+        if path.exists():
+            return path
+    return None
+
+
+def _read_universe_snapshot(snapshot_path: Path) -> list[TickerInfo]:
+    frame = pd.read_csv(snapshot_path)
+    return [
+        TickerInfo(
+            ticker=str(row.get("ticker", "")),
+            company_name=_optional_string(row.get("company_name")),
+            exchange=_optional_string(row.get("exchange")),
+            source=_optional_string(row.get("source")),
+            active=_optional_bool(row.get("active"), default=True),
+            notes=_optional_string(row.get("notes")),
+        )
+        for row in frame.to_dict(orient="records")
+        if _optional_string(row.get("ticker"))
+    ]
 
 
 def _write_done_marker(

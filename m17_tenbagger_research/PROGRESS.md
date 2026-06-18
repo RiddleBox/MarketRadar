@@ -2,7 +2,7 @@
 
 > 创建日期: 2026-06-06
 > 当前阶段: Step 1 样本收集
-> 当前状态: 样本扫描核心逻辑已实现，真实数据拉取尚未开始
+> 当前状态: OpenD partial 已产出，低成本 free fallback provider 已接入
 
 ---
 
@@ -104,6 +104,8 @@ episode 合并规则变化
 | 2026-06-06 | 对照组留到 Step 3 | 100% / 200% / 300% 对照组在完整样本和特征基础上按模型需求构建 |
 | 2026-06-06 | Simple-first 执行策略 | 先用简单完整流程跑通 Step 1；Tushare Pro 等 POC 有效后再迭代接入 |
 | 2026-06-06 | Step 1 核心算法先行 | 先实现不依赖外网的样本扫描和 episode 合并，再接真实 provider |
+| 2026-06-18 | 低成本源优先级 | 参考 Vibe-Trading/FinceptTerminal 后，M17 新增 free provider，顺序为 yfinance -> AKShare |
+| 2026-06-18 | 非 OpenD 全量扫描复用 universe snapshot | OpenD quota 耗尽时，非 OpenD provider 不重新请求 OpenD universe，直接复用已保存的 opend_us.csv |
 
 ---
 
@@ -835,4 +837,106 @@ Step 1 的全量样本收集已启动，但被 OpenD 历史 K 额度限制中断
    python -m m17_tenbagger_research.run_full_batch --output-dir data/tenbagger_research/full/opend --start-batch 3
 2. 或接入新的历史价格源，避免 OpenD 30 天额度限制。
 3. 后续最终样本库必须继续保持 BOTH_QUALIFIED / RAW_ONLY_REVIEW / ADJUSTED_ONLY_REVIEW 分层。
+```
+
+---
+
+## 2026-06-18 Update 9
+
+阶段:
+
+```text
+Step 1 样本收集
+```
+
+当前推进:
+
+```text
+接入低成本数据源，绕开 OpenD 历史 K 线额度耗尽阻塞。
+```
+
+完成内容:
+
+```text
+1. 新增 AkShareProvider。
+2. 新增 FreeFallbackProvider，顺序为 yfinance -> AKShare。
+3. AKShare 美股路径支持 stock_us_hist，并兼容 stock_us_daily 全历史接口。
+4. pipeline 缓存新增 .meta.json sidecar，记录 provider/source。
+5. collect_samples() 会把实际命中的底层源写入 sample data_source。
+6. run_small_poc.py 支持 free / yfinance / akshare / stooq / opend。
+7. run_full_batch.py 支持 opend / free / yfinance / akshare。
+8. 非 OpenD full-batch 会复用已保存的 OpenD universe snapshot，不再依赖 OpenD 取 universe。
+```
+
+输出文件:
+
+```text
+m17_tenbagger_research/data_providers.py
+m17_tenbagger_research/pipeline.py
+m17_tenbagger_research/run_small_poc.py
+m17_tenbagger_research/run_full_batch.py
+tests/test_m17_ticker_universe_and_pipeline.py
+data/tenbagger_research/poc/free_probe/free/
+data/tenbagger_research/full/free_probe/
+```
+
+验证结果:
+
+```text
+python -m py_compile m17_tenbagger_research\data_providers.py m17_tenbagger_research\pipeline.py m17_tenbagger_research\run_small_poc.py m17_tenbagger_research\run_full_batch.py
+
+python -m pytest tests\test_m17_sample_discovery.py tests\test_m17_ticker_universe_and_pipeline.py -q
+16 passed in 2.69s
+```
+
+真实 free provider 探针:
+
+```text
+python -m m17_tenbagger_research.run_small_poc --provider free --output-dir data\tenbagger_research\poc\free_probe --no-cache GME AMC HKD
+
+provider=free
+tickers=3
+windows=16
+episodes=1
+failed=1
+```
+
+探针结论:
+
+```text
+1. yfinance 当前仍返回 YFRateLimitError。
+2. free provider 成功 fallback 到 AKShare。
+3. GME 命中 16 个 windows，1 个 episode，data_source=akshare。
+4. HKD 在 yfinance 与 AKShare 下均未返回价格。
+5. AKShare stock_us_daily 只提供单 close 序列，因此 GME 当前为 RAW_ONLY_REVIEW，不是 BOTH_QUALIFIED。
+```
+
+full-batch 入口探针:
+
+```text
+python -m m17_tenbagger_research.run_full_batch --provider free --output-dir data\tenbagger_research\full\free_probe --limit 3 --batch-size 3 --max-batches 1 --request-delay 0.1 --no-cache
+
+provider=free
+universe_tickers=3
+windows=0
+episodes=0
+failed=1
+```
+
+已知风险:
+
+```text
+1. AKShare 免费源不是 survivorship-bias-free。
+2. AKShare US daily 当前缺少 adjusted_close 双轨，输出多为 RAW_ONLY_REVIEW。
+3. yfinance 当前环境被限流，短期不能作为稳定主源。
+4. HKD 等部分标的可能仍缺失，需要后续补充源或本地导入。
+```
+
+下一步:
+
+```text
+1. 用 provider=free 跑 50-200 ticker micro-batch，输出到 data/tenbagger_research/full/free。
+2. 汇总 yfinance/akshare 成功率、失败标的和样本 quality_tier。
+3. 对 AKShare-only 样本补 raw/adjusted 口径复核策略。
+4. 再决定是否扩大到 full universe。
 ```

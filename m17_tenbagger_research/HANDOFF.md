@@ -1,6 +1,6 @@
 # M17 Ten-Bagger Research Handoff
 
-> Last updated: 2026-06-10
+> Last updated: 2026-06-18
 > Module: M17 ten-bagger sample collection
 > Current phase: Step 1 sample collection
 
@@ -76,6 +76,7 @@ The full-batch runner supports:
 
 ```text
 OpenD US universe
+free low-cost provider: yfinance -> AKShare
 batch output
 shared price cache
 merge-only final output
@@ -83,6 +84,17 @@ resume by --start-batch
 quota fail-fast
 skip quota-exhausted invalid batches during merge
 retry quota-failed batches instead of trusting old _DONE.json
+```
+
+Low-cost provider details:
+
+```text
+provider=free tries yfinance first, then AKShare.
+The pipeline records the actual successful source in sample data_source.
+Cache sidecars now preserve provider/source metadata for later reruns.
+run_small_poc.py supports: free, yfinance, akshare, stooq, opend.
+run_full_batch.py supports: opend, free, yfinance, akshare.
+For non-OpenD providers, run_full_batch reuses the saved OpenD universe snapshot.
 ```
 
 ## Current Data State
@@ -134,6 +146,21 @@ OpenD returned:
 
 This means the OpenD historical K-line quota is exhausted. Continuing to force OpenD will only produce quota failures.
 
+As of 2026-06-18, a low-cost fallback path exists, so the next practical route is to continue collection under a separate output root:
+
+```powershell
+python -m m17_tenbagger_research.run_full_batch --provider free --output-dir data/tenbagger_research/full/free --batch-size 100 --max-batches 1 --request-delay 0.2 --no-cache
+```
+
+Notes:
+
+```text
+yfinance is currently rate-limited in this environment.
+AKShare stock_us_daily successfully recovered GME daily history.
+AKShare US daily currently provides a single close series, so GME probe rows are RAW_ONLY_REVIEW rather than BOTH_QUALIFIED.
+HKD was still missing from both free sources in the probe.
+```
+
 Do not treat these batches as valid sample coverage:
 
 ```text
@@ -157,7 +184,7 @@ python -m pytest tests/test_m17_sample_discovery.py tests/test_m17_ticker_univer
 Expected current result:
 
 ```text
-13 passed
+16 passed
 ```
 
 To rebuild current partial merged outputs from valid batches:
@@ -208,8 +235,8 @@ After adding a new provider:
 3. Preserve episode merge rule: same ticker, qualifying start-date gap < 90 days.
 4. Run the M17 tests.
 5. Run a small POC first: GME / AMC / HKD.
-6. Run a 50-200 ticker micro-batch.
-7. Only then resume full-universe collection.
+6. Run a 50-200 ticker micro-batch under data/tenbagger_research/full/free.
+7. Only then continue full-universe collection in batches.
 ```
 
 ## Suggested Prompt For Next Agent
@@ -232,8 +259,8 @@ Current state:
 Your next task:
 1. Run the M17 tests.
 2. Run merge-only to verify current partial outputs.
-3. Check whether OpenD quota has recovered.
-4. If recovered, resume from batch 3.
-5. If not recovered, implement an alternative historical daily price provider using the existing PriceDataProvider contract.
-6. Keep BOTH_QUALIFIED / RAW_ONLY_REVIEW / ADJUSTED_ONLY_REVIEW separation intact.
+3. If continuing without OpenD, use provider=free and a separate output dir.
+4. Start with a 50-200 ticker free-provider micro-batch.
+5. Keep BOTH_QUALIFIED / RAW_ONLY_REVIEW / ADJUSTED_ONLY_REVIEW separation intact.
+6. Treat AKShare-only US rows as review candidates until raw/adjusted handling is audited.
 ```

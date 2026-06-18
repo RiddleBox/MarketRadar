@@ -3,6 +3,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from m17_tenbagger_research import data_providers
 from m17_tenbagger_research.pipeline import (
     CollectionConfig,
     collect_samples,
@@ -11,6 +12,7 @@ from m17_tenbagger_research.pipeline import (
 )
 from m17_tenbagger_research.data_providers import FutuOpenDProvider
 from m17_tenbagger_research.ticker_universe import (
+    TickerInfo,
     _exchange_from_futu_exchange_type,
     _from_futu_us_code,
     _looks_like_common_stock_ticker,
@@ -31,6 +33,20 @@ class FakeProvider:
         if ticker == "FAIL":
             raise RuntimeError("boom")
         return self.frames.get(ticker, pd.DataFrame())
+
+
+class SourceAwareProvider:
+    name = "free"
+
+    def __init__(self, frame):
+        self.frame = frame
+        self.last_source = ""
+        self.requests = []
+
+    def fetch_daily_prices(self, ticker, start_date, end_date):
+        self.requests.append((ticker, start_date, end_date))
+        self.last_source = "akshare"
+        return self.frame
 
 
 def test_normalize_ticker_universe_filters_exchanges_and_dedupes():
@@ -113,6 +129,95 @@ def test_fetch_prices_with_cache_reuses_normalized_csv(tmp_path):
     assert list(first.columns) == ["date", "raw_close", "adjusted_close", "volume"]
     assert list(second.columns) == ["date", "raw_close", "adjusted_close", "volume"]
     assert Path(tmp_path / "prices" / "fake" / "AAA.csv").exists()
+
+
+def test_fetch_prices_with_cache_restores_cached_source(tmp_path):
+    provider = SourceAwareProvider(
+        pd.DataFrame(
+            [
+                {"date": "2021-01-01", "close": 1.0, "adj_close": 1.0},
+                {"date": "2021-04-01", "close": 11.0, "adj_close": 11.0},
+            ]
+        )
+    )
+    config = CollectionConfig(
+        scan_start_date=date(2021, 1, 1),
+        scan_end_date=date(2021, 12, 31),
+        output_dir=tmp_path,
+        use_cache=True,
+    )
+
+    fetch_prices_with_cache(provider, "AAA", config=config)
+    provider.last_source = ""
+    fetch_prices_with_cache(provider, "AAA", config=config)
+
+    assert len(provider.requests) == 1
+    assert provider.last_source == "akshare"
+
+
+def test_free_fallback_provider_records_actual_successful_source(
+    monkeypatch,
+    tmp_path,
+):
+    class FakeYFinanceProvider:
+        name = "yfinance"
+
+        def fetch_daily_prices(self, ticker, start_date, end_date):
+            raise RuntimeError("yf unavailable")
+
+    class FakeAkShareProvider:
+        name = "akshare"
+
+        def fetch_daily_prices(self, ticker, start_date, end_date):
+            return pd.DataFrame(
+                [
+                    {"date": "2021-01-01", "close": 1.0, "adj_close": 1.0},
+                    {"date": "2021-04-01", "close": 11.0, "adj_close": 11.0},
+                ]
+            )
+
+    monkeypatch.setattr(data_providers, "YFinanceProvider", FakeYFinanceProvider)
+    monkeypatch.setattr(data_providers, "AkShareProvider", FakeAkShareProvider)
+
+    provider = data_providers.FreeFallbackProvider()
+    result = collect_samples(
+        [TickerInfo(ticker="AAA", company_name="AAA Corp", exchange="NASDAQ")],
+        provider,
+        config=CollectionConfig(
+            scan_start_date=date(2021, 1, 1),
+            scan_end_date=date(2021, 12, 31),
+            output_dir=tmp_path,
+            use_cache=False,
+        ),
+    )
+
+    assert provider.last_source == "akshare"
+    assert [window.data_source for window in result.windows] == ["akshare"]
+
+
+def test_akshare_us_provider_falls_back_to_daily_and_clips_dates():
+    class FakeAk:
+        def stock_us_hist(self, **kwargs):
+            raise RuntimeError("proxy unavailable")
+
+        def stock_us_daily(self, **kwargs):
+            return pd.DataFrame(
+                [
+                    {"date": "2020-01-01", "close": 1.0, "volume": 10},
+                    {"date": "2021-01-01", "close": 2.0, "volume": 20},
+                    {"date": "2022-01-01", "close": 3.0, "volume": 30},
+                ]
+            )
+
+    frame = data_providers.AkShareProvider._fetch_us(
+        FakeAk(),
+        "GME",
+        date(2021, 1, 1),
+        date(2021, 12, 31),
+    )
+
+    assert list(frame["date"]) == ["2021-01-01"]
+    assert list(frame["close"]) == [2.0]
 
 
 def test_write_collection_outputs_creates_report_and_csvs(tmp_path):

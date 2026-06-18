@@ -49,6 +49,141 @@ class YFinanceProvider:
 
 
 @dataclass(frozen=True)
+class AkShareProvider:
+    """AKShare POC provider for low-cost market data."""
+
+    name: str = "akshare"
+
+    def fetch_daily_prices(
+        self,
+        ticker: str,
+        start_date: date,
+        end_date: date,
+    ) -> pd.DataFrame:
+        import akshare as ak
+
+        symbol = ticker.strip().upper()
+        if symbol.endswith(".HK"):
+            return self._fetch_hk(ak, symbol, start_date, end_date)
+        if symbol.endswith((".SH", ".SZ", ".BJ")):
+            return self._fetch_a_share(ak, symbol, start_date, end_date)
+        return self._fetch_us(ak, symbol, start_date, end_date)
+
+    @staticmethod
+    def _fetch_a_share(
+        ak,
+        ticker: str,
+        start_date: date,
+        end_date: date,
+    ) -> pd.DataFrame:
+        symbol = ticker.split(".")[0]
+        frame = ak.stock_zh_a_hist(
+            symbol=symbol,
+            period="daily",
+            start_date=start_date.strftime("%Y%m%d"),
+            end_date=end_date.strftime("%Y%m%d"),
+            adjust="qfq",
+        )
+        return frame if frame is not None else pd.DataFrame()
+
+    @staticmethod
+    def _fetch_hk(
+        ak,
+        ticker: str,
+        start_date: date,
+        end_date: date,
+    ) -> pd.DataFrame:
+        symbol = ticker.replace(".HK", "").zfill(5)
+        frame = ak.stock_hk_hist(
+            symbol=symbol,
+            period="daily",
+            start_date=start_date.strftime("%Y%m%d"),
+            end_date=end_date.strftime("%Y%m%d"),
+            adjust="qfq",
+        )
+        return frame if frame is not None else pd.DataFrame()
+
+    @staticmethod
+    def _fetch_us(
+        ak,
+        ticker: str,
+        start_date: date,
+        end_date: date,
+    ) -> pd.DataFrame:
+        symbol = ticker.replace(".US", "")
+        for prefix in ("105.", "106.", ""):
+            try:
+                frame = ak.stock_us_hist(
+                    symbol=f"{prefix}{symbol}",
+                    period="daily",
+                    start_date=start_date.strftime("%Y%m%d"),
+                    end_date=end_date.strftime("%Y%m%d"),
+                    adjust="qfq",
+                )
+            except Exception:
+                continue
+            if frame is not None and not frame.empty:
+                return frame
+        try:
+            frame = ak.stock_us_daily(symbol=symbol, adjust="qfq")
+        except TypeError:
+            frame = ak.stock_us_daily(symbol=symbol)
+        except Exception:
+            return pd.DataFrame()
+        if frame is None or frame.empty:
+            return pd.DataFrame()
+        return AkShareProvider._clip_date_range(frame, start_date, end_date)
+
+    @staticmethod
+    def _clip_date_range(
+        frame: pd.DataFrame,
+        start_date: date,
+        end_date: date,
+    ) -> pd.DataFrame:
+        date_column = None
+        for column in frame.columns:
+            if str(column).lower() in {"date", "日期"}:
+                date_column = column
+                break
+        if date_column is None:
+            return frame
+        clipped = frame.copy()
+        dates = pd.to_datetime(clipped[date_column], errors="coerce").dt.date
+        clipped = clipped[(dates >= start_date) & (dates <= end_date)]
+        return clipped.reset_index(drop=True)
+
+
+class FreeFallbackProvider:
+    """Low-cost fallback provider that prefers yfinance, then AKShare."""
+
+    name = "free"
+
+    def __init__(self) -> None:
+        self.last_source = ""
+        self._providers = (YFinanceProvider(), AkShareProvider())
+
+    def fetch_daily_prices(
+        self,
+        ticker: str,
+        start_date: date,
+        end_date: date,
+    ) -> pd.DataFrame:
+        errors: list[str] = []
+        for provider in self._providers:
+            try:
+                frame = provider.fetch_daily_prices(ticker, start_date, end_date)
+                if frame is None or frame.empty:
+                    raise ValueError("no price data returned")
+                self.last_source = provider.name
+                return frame
+            except Exception as exc:  # noqa: BLE001 - preserve provider-specific errors
+                errors.append(f"{provider.name}: {exc}")
+
+        self.last_source = ""
+        raise RuntimeError("all free sources failed: " + "; ".join(errors))
+
+
+@dataclass(frozen=True)
 class StooqProvider:
     """Stooq POC provider using daily CSV downloads."""
 

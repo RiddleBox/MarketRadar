@@ -10,7 +10,13 @@ import argparse
 from datetime import date
 from pathlib import Path
 
-from .data_providers import FutuOpenDProvider, StooqProvider, YFinanceProvider
+from .data_providers import (
+    AkShareProvider,
+    FreeFallbackProvider,
+    FutuOpenDProvider,
+    StooqProvider,
+    YFinanceProvider,
+)
 from .pipeline import CollectionConfig, collect_samples, write_collection_outputs
 from .ticker_universe import TickerInfo, fetch_opend_us_universe
 
@@ -38,7 +44,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--provider",
-        choices=("yfinance", "stooq", "opend"),
+        choices=("free", "yfinance", "akshare", "stooq", "opend"),
         default="yfinance",
         help="POC price provider",
     )
@@ -60,8 +66,12 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    if args.provider == "yfinance":
+    if args.provider == "free":
+        provider = FreeFallbackProvider()
+    elif args.provider == "yfinance":
         provider = YFinanceProvider()
+    elif args.provider == "akshare":
+        provider = AkShareProvider()
     elif args.provider == "stooq":
         provider = StooqProvider()
     else:

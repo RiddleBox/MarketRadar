@@ -1,0 +1,2 @@
+ticker,episode_id,company_name,exchange,first_qualifying_start_date,first_qualifying_end_date,best_90d_start_date,best_90d_end_date,best_90d_return,episode_start_date,episode_end_date,num_qualifying_windows,data_quality,preliminary,notes
+GME,GME_001,,US,2020-10-28,2021-01-26,2020-10-29,2021-01-27,28.625745950554133,2020-10-28,2021-03-22,16,POC,True,

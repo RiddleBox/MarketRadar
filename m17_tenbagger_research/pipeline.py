@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import date, timedelta
+import json
 from pathlib import Path
 import time
 from typing import Sequence
@@ -69,13 +70,14 @@ def collect_samples(
             if frame.empty:
                 raise ValueError("no price data returned")
 
+            data_source = _provider_source_name(provider)
             windows.extend(
                 scan_qualifying_windows(
                     frame,
                     ticker_info.ticker,
                     company_name=ticker_info.company_name,
                     exchange=ticker_info.exchange,
-                    data_source=provider.name,
+                    data_source=data_source,
                     scan_start_date=config.scan_start_date,
                     scan_end_date=config.scan_end_date,
                 )
@@ -98,9 +100,11 @@ def fetch_prices_with_cache(
     """Fetch daily prices and cache normalized provider output locally."""
 
     cache_path = _price_cache_path(config.output_dir, provider.name, ticker)
+    metadata_path = _price_cache_metadata_path(cache_path)
     if config.use_cache and cache_path.exists():
         cached = pd.read_csv(cache_path)
         if not cached.empty:
+            _restore_cached_source(provider, metadata_path)
             return cached
 
     frame = provider.fetch_daily_prices(
@@ -113,6 +117,14 @@ def fetch_prices_with_cache(
     if config.use_cache and not normalized.empty:
         cache_path.parent.mkdir(parents=True, exist_ok=True)
         normalized.to_csv(cache_path, index=False)
+        metadata = {
+            "provider": provider.name,
+            "source": _provider_source_name(provider),
+        }
+        metadata_path.write_text(
+            json.dumps(metadata, indent=2, sort_keys=True),
+            encoding="utf-8",
+        )
 
     return normalized
 
@@ -232,6 +244,33 @@ def write_sample_collection_report(
 def _price_cache_path(output_dir: Path, provider_name: str, ticker: str) -> Path:
     safe_ticker = ticker.replace("/", "_").replace("\\", "_")
     return Path(output_dir) / "prices" / provider_name / f"{safe_ticker}.csv"
+
+
+def _price_cache_metadata_path(cache_path: Path) -> Path:
+    return cache_path.with_name(f"{cache_path.name}.meta.json")
+
+
+def _provider_source_name(provider: PriceDataProvider) -> str:
+    source_name = getattr(provider, "last_source", "") or provider.name
+    return str(source_name)
+
+
+def _restore_cached_source(
+    provider: PriceDataProvider,
+    metadata_path: Path,
+) -> None:
+    source_name = provider.name
+    if metadata_path.exists():
+        try:
+            metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+            source_name = str(metadata.get("source") or source_name)
+        except json.JSONDecodeError:
+            source_name = provider.name
+
+    try:
+        setattr(provider, "last_source", source_name)
+    except Exception:
+        pass
 
 
 def _qualification_summary(windows: Sequence[QualifyingWindow]) -> dict[str, int]:

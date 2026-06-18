@@ -1,0 +1,4 @@
+ticker,company_name,exchange,source,active,notes
+A,安捷伦科技,NYSE,opend_us,True,
+AA,美国铝业公司,NYSE,opend_us,True,
+AACB,Artius II Acquisition Inc,NASDAQ,opend_us,True,
