@@ -1,6 +1,6 @@
 # M17 Ten-Bagger Research Handoff
 
-> Last updated: 2026-06-18
+> Last updated: 2026-06-19
 > Module: M17 ten-bagger sample collection
 > Current phase: Step 1 sample collection
 
@@ -151,7 +151,7 @@ This means the OpenD historical K-line quota is exhausted. Continuing to force O
 As of 2026-06-18, a low-cost fallback path exists, so the next practical route is to continue collection under a separate output root:
 
 ```powershell
-python -m m17_tenbagger_research.run_full_batch --provider free --output-dir data/tenbagger_research/full/free --batch-size 100 --start-batch 11 --max-batches 1 --request-delay 0.2
+python -m m17_tenbagger_research.run_full_batch --provider free --output-dir data/tenbagger_research/full/free --batch-size 100 --start-batch 15 --max-batches 1 --request-delay 0.2
 ```
 
 Notes:
@@ -161,8 +161,10 @@ yfinance is currently rate-limited in this environment.
 AKShare stock_us_daily successfully recovered GME daily history.
 AKShare US daily currently provides a single close series, so GME probe rows are RAW_ONLY_REVIEW rather than BOTH_QUALIFIED.
 HKD was still missing from both free sources in the probe.
-Free-provider batches 1-10 are complete under data/tenbagger_research/full/free.
-Current free-provider coverage: 1000 tickers, 794 windows, 89 episodes, 443 failed tickers.
+Free-provider batches 1-14 are complete under data/tenbagger_research/full/free.
+Batch 15 was not completed in the latest run and is not included in merged outputs.
+Current free-provider coverage: 1400 tickers, 1138 windows, 149 episodes, 583 failed tickers.
+All current free-provider windows are akshare + RAW_ONLY_REVIEW.
 ```
 
 Do not treat these batches as valid sample coverage:
@@ -263,7 +265,7 @@ Current state:
 Your next task:
 1. Run the M17 tests.
 2. Run merge-only to verify current free-provider partial outputs.
-3. Continue provider=free from batch 11.
+3. Continue provider=free from batch 15.
 4. Review source/quality summary after each few batches.
 5. Keep BOTH_QUALIFIED / RAW_ONLY_REVIEW / ADJUSTED_ONLY_REVIEW separation intact.
 6. Treat AKShare-only US rows as review candidates until raw/adjusted handling is audited.

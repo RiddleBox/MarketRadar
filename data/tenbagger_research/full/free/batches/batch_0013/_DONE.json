@@ -1,0 +1,10 @@
+{
+  "batch": 13,
+  "completed_at": "2026-06-19T16:06:32",
+  "episodes": 12,
+  "failed": 33,
+  "first_ticker": "CFND",
+  "last_ticker": "CLMT",
+  "tickers": 100,
+  "windows": 45
+}

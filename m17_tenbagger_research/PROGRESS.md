@@ -1128,3 +1128,108 @@ AM_014: 319.75
 2. 跑到 2000 ticker 后再做下一次阶段汇总。
 3. 设计 AKShare-only 样本的 raw/adjusted 复核策略。
 ```
+
+---
+
+## 2026-06-19 Update 12
+
+阶段:
+
+```text
+Step 1 样本收集
+```
+
+当前推进:
+
+```text
+free provider 从 1000 ticker 推进到 1400 ticker。
+```
+
+完成内容:
+
+```text
+1. 完成 provider=free 的 batch 11-14，每批 100 ticker。
+2. batch 15 未完成，未计入当前 merged outputs。
+3. 停止一个已停滞的 run_full_batch 残留进程。
+4. 运行 merge-only，只合并带 _DONE.json 的完成批次。
+```
+
+验证结果:
+
+```text
+python -m m17_tenbagger_research.run_full_batch --provider free --output-dir data\tenbagger_research\full\free --merge-only
+
+provider=free
+universe_tickers=6456
+windows=1138
+episodes=149
+failed=583
+output_dir=data\tenbagger_research\full\free
+```
+
+free micro-batch 累计输出:
+
+```text
+output_dir = data/tenbagger_research/full/free
+completed batches = 1-14
+covered tickers = 1400
+windows = 1138
+episodes = 149
+failed tickers = 583
+```
+
+质量分布:
+
+```text
+akshare + RAW_ONLY_REVIEW: 1138 windows
+BOTH_QUALIFIED: 0
+ADJUSTED_ONLY_REVIEW: 0
+Needs manual review: 1138
+```
+
+Top observed free-provider episodes by best_90d_return:
+
+```text
+BBAR_047: 7952.0
+CIB_119: 4019.0
+AFG_005: 2865.0
+BBVA_051: 1382.3529
+CCOI_108: 1108.0
+BCC_055: 847.0
+CNQ_143: 733.4894
+BMA_075: 671.3063
+AKTS_011: 601.1505
+BTU_090: 583.5
+```
+
+低成本样本 vs 高置信样本:
+
+```text
+低成本样本是数据获取成本低的候选层，当前主要来自 AKShare free path。
+它适合扩大覆盖、发现候选、建立待复核清单，但当前缺 adjusted_close 双轨确认。
+
+高置信样本不是按数据源价格定义，而是按证据质量定义。
+当前 M17 的高置信层应优先使用 BOTH_QUALIFIED，即 raw_close 和 adjusted_close 口径同时达到 90 自然日 >= 1000%。
+
+因此低成本和高置信不是天然互斥。
+如果低成本源能提供可信 raw/adjusted 双轨，且两条口径都命中，也可以进入高置信层。
+但当前 AKShare-only 输出全部是 RAW_ONLY_REVIEW，只能作为候选样本层。
+```
+
+已知风险:
+
+```text
+1. 当前 free provider 的有效样本仍全部来自 AKShare。
+2. AKShare 美股 daily 路径当前缺 adjusted_close 双轨，所有命中均为 RAW_ONLY_REVIEW。
+3. 极高 return 可能来自 corporate action / 复权 / 数据口径问题，必须后续复核。
+4. batch 15 未完成，下一次应从 batch 15 开始。
+```
+
+下一步:
+
+```text
+1. 从 batch 15 继续:
+   python -m m17_tenbagger_research.run_full_batch --provider free --output-dir data\tenbagger_research\full\free --batch-size 100 --start-batch 15 --max-batches 1 --request-delay 0.2
+2. 跑到 2000 ticker 后再做下一次阶段汇总。
+3. 设计 AKShare-only 样本的 raw/adjusted 复核策略。
+```
