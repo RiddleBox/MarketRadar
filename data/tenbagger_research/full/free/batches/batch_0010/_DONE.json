@@ -1,0 +1,10 @@
+{
+  "batch": 10,
+  "completed_at": "2026-06-19T15:41:14",
+  "episodes": 11,
+  "failed": 48,
+  "first_ticker": "BNY",
+  "last_ticker": "BTTC",
+  "tickers": 100,
+  "windows": 93
+}

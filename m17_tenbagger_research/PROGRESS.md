@@ -1038,3 +1038,93 @@ ARCC_021: 110.0
 2. 跑到 1000 ticker 后再做一次阶段汇总。
 3. 设计 AKShare-only 样本的 raw/adjusted 复核策略。
 ```
+
+---
+
+## 2026-06-19 Update 11
+
+阶段:
+
+```text
+Step 1 样本收集
+```
+
+当前推进:
+
+```text
+free provider 从 500 ticker 推进到 1000 ticker。
+```
+
+完成内容:
+
+```text
+1. 完成 provider=free 的 batch 6-10，每批 100 ticker。
+2. 当前 completed batches: batch_0001 ~ batch_0010。
+3. 运行 merge-only 验证，最终输出可由 batch 重建。
+```
+
+验证结果:
+
+```text
+python -m m17_tenbagger_research.run_full_batch --provider free --output-dir data\tenbagger_research\full\free --merge-only
+
+provider=free
+universe_tickers=6456
+windows=794
+episodes=89
+failed=443
+output_dir=data\tenbagger_research\full\free
+```
+
+free micro-batch 累计输出:
+
+```text
+output_dir = data/tenbagger_research/full/free
+completed batches = 1-10
+covered tickers = 1000
+windows = 794
+episodes = 89
+failed tickers = 443
+```
+
+质量分布:
+
+```text
+akshare + RAW_ONLY_REVIEW: 794 windows
+BOTH_QUALIFIED: 0
+ADJUSTED_ONLY_REVIEW: 0
+Needs manual review: 794
+```
+
+Top observed free-provider episodes by best_90d_return:
+
+```text
+BBAR_047: 7952.0
+AFG_005: 2865.0
+BBVA_051: 1382.3529
+BCC_055: 847.0
+BMA_075: 671.3063
+AKTS_011: 601.1505
+AVGO_036: 550.75
+BSBR_083: 419.5263
+APAM_018: 398.0
+AM_014: 319.75
+```
+
+已知风险:
+
+```text
+1. 当前 free provider 的有效样本仍全部来自 AKShare。
+2. 当前 AKShare 美股 daily 路径缺 adjusted_close 双轨，所有命中均为 RAW_ONLY_REVIEW。
+3. 部分极高 return 可能是 corporate action / 复权 / 数据口径问题，必须后续复核。
+4. free 输出是低成本候选样本层，不是高置信正式样本层。
+```
+
+下一步:
+
+```text
+1. 从 batch 11 继续:
+   python -m m17_tenbagger_research.run_full_batch --provider free --output-dir data\tenbagger_research\full\free --batch-size 100 --start-batch 11 --max-batches 1 --request-delay 0.2
+2. 跑到 2000 ticker 后再做下一次阶段汇总。
+3. 设计 AKShare-only 样本的 raw/adjusted 复核策略。
+```

@@ -1,0 +1,6 @@
+ticker,episode_id,company_name,exchange,first_qualifying_start_date,first_qualifying_end_date,best_90d_start_date,best_90d_end_date,best_90d_return,episode_start_date,episode_end_date,num_qualifying_windows,data_quality,preliminary,notes
+ASST,ASST_001,Strive,NASDAQ,2025-02-07,2025-05-08,2025-02-21,2025-05-22,18.79309295603225,2025-02-07,2025-07-14,27,POC,True,
+AU,AU_002,AngloGold Ashanti,NYSE,2015-07-17,2015-10-15,2015-07-17,2015-10-15,10.649474689589303,2015-07-17,2015-10-15,1,POC,True,
+AU,AU_003,AngloGold Ashanti,NYSE,2015-12-23,2016-03-22,2016-01-15,2016-04-14,147.36842105263156,2015-12-23,2016-04-21,15,POC,True,
+AU,AU_004,AngloGold Ashanti,NYSE,2018-08-16,2018-11-14,2018-08-16,2018-11-14,179.6875,2018-08-16,2018-11-19,3,POC,True,
+AVGO,AVGO_005,博通,NASDAQ,2016-03-07,2016-06-06,2016-05-05,2016-08-03,550.75,2016-03-07,2016-08-17,9,POC,True,
