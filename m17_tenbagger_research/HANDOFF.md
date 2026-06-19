@@ -1,6 +1,6 @@
 # M17 Ten-Bagger Research Handoff
 
-> Last updated: 2026-06-19
+> Last updated: 2026-06-19 (session 2)
 > Module: M17 ten-bagger sample collection
 > Current phase: Step 1 sample collection
 
@@ -162,8 +162,12 @@ AKShare stock_us_daily successfully recovered GME daily history.
 AKShare US daily currently provides a single close series, so GME probe rows are RAW_ONLY_REVIEW rather than BOTH_QUALIFIED.
 HKD was still missing from both free sources in the probe.
 Free-provider batches 1-14 are complete under data/tenbagger_research/full/free.
-Batch 15 was not completed in the latest run and is not included in merged outputs.
-Current free-provider coverage: 1400 tickers, 1138 windows, 149 episodes, 583 failed tickers.
+Batch 15 was attempted twice in 2026-06-19 session 2 and both attempts stalled before producing output.
+First attempt used provider=free; the yfinance leg blocked indefinitely (yfinance.download has no timeout).
+Second attempt used provider=akshare; AKShare stock_us_hist / stock_us_daily intermittently hung on the COLAU/COLB/COLL/COLM/COMP slice.
+Standalone AKShare probes for AAPL, COMP, CON, COO, COOK, COP returned within 1-6s, so the issue is intermittent batch-time stalls, not a global outage.
+Both stalled batch_0015 directories were never created, so no invalid coverage was added.
+Current free-provider coverage stays at 1400 tickers, 1138 windows, 149 episodes, 583 failed tickers.
 All current free-provider windows are akshare + RAW_ONLY_REVIEW.
 ```
 
@@ -261,12 +265,15 @@ Current state:
 - OpenD historical K-line quota was exhausted after batch 2.
 - Batches 3-7 are quota-exhausted invalid batches and must not be treated as valid coverage.
 - Merge-only currently skips quota-exhausted batches.
+- Free-provider batches 1-14 are valid (1138 windows / 149 episodes / 583 failed across 1400 tickers).
+- Batch 15 has stalled twice on the COLAU..COMP slice; current network conditions may not let it finish at all in one shot.
 
 Your next task:
 1. Run the M17 tests.
 2. Run merge-only to verify current free-provider partial outputs.
-3. Continue provider=free from batch 15.
-4. Review source/quality summary after each few batches.
-5. Keep BOTH_QUALIFIED / RAW_ONLY_REVIEW / ADJUSTED_ONLY_REVIEW separation intact.
-6. Treat AKShare-only US rows as review candidates until raw/adjusted handling is audited.
+3. Continue provider=free from batch 15 only when AKShare stock_us_hist / stock_us_daily are responding cleanly for that slice (probe COLAU, COLB, COLL, COLM, COMP, CON.WI before launching).
+4. Consider adding a hard yfinance.download(timeout=...) so the free fallback can give up on a wedged yfinance call instead of hanging the whole batch.
+5. Review source/quality summary after each few batches.
+6. Keep BOTH_QUALIFIED / RAW_ONLY_REVIEW / ADJUSTED_ONLY_REVIEW separation intact.
+7. Treat AKShare-only US rows as review candidates until raw/adjusted handling is audited.
 ```

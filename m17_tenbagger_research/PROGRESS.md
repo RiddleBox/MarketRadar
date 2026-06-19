@@ -1233,3 +1233,69 @@ BTU_090: 583.5
 2. 跑到 2000 ticker 后再做下一次阶段汇总。
 3. 设计 AKShare-only 样本的 raw/adjusted 复核策略。
 ```
+
+---
+
+## 2026-06-19 Update 13
+
+阶段:
+
+```text
+Step 1 样本收集
+```
+
+当前推进:
+
+```text
+本次会话尝试推进 batch 15，未能完成；记录网络阻塞情况并保留原有 1400 ticker 覆盖。
+```
+
+完成内容:
+
+```text
+1. 运行 M17 测试套件，18 项全部通过。
+2. 运行 merge-only，确认 batches 1-14 的有效输出未被破坏。
+3. 两次尝试推进 batch 15:
+   a. provider=free, batch-size=100, start-batch=15: yfinance.download() 在限流环境下没有 timeout，整批阻塞 26 分钟无任何 cache 写入。
+   b. provider=akshare, batch-size=100, start-batch=15: AKShare 在 COLAU..COMP 切片附近间歇性挂起，约 8-10 分钟仅缓存 2 个 ticker (COLB / COLM)。
+4. 用 timeout 包裹的独立探针确认 AKShare stock_us_daily / stock_us_hist 在隔离环境下响应良好 (1-6s/ticker)，问题是批量运行中的间歇性挂起，不是全网络故障。
+5. 两次尝试都没有创建 batch_0015 目录，没有产生任何无效 batch 残留。
+6. 当前 free-provider 累计输出保持: 1400 tickers, 1138 windows, 149 episodes, 583 failed tickers。
+```
+
+验证结果:
+
+```text
+python -m pytest tests/test_m17_sample_discovery.py tests/test_m17_ticker_universe_and_pipeline.py -q
+18 passed in 3.98s
+
+python -m m17_tenbagger_research.run_full_batch --provider free --output-dir data/tenbagger_research/full/free --merge-only
+provider=free
+universe_tickers=6456
+windows=1138
+episodes=149
+failed=583
+output_dir=data\tenbagger_research\full\free
+```
+
+已知风险:
+
+```text
+1. yfinance.download() 没有 timeout，限流环境下会阻塞整个 batch 无法继续。
+   provider=free 在 yfinance 阻塞期间无法 fallback 到 AKShare，因为 fallback 只在异常或空数据时触发，挂起不会触发。
+2. AKShare 美股接口当前出现间歇性 ProxyError / 挂起，单次重试可以恢复但批量长跑容易卡住。
+3. batch 15 切片 (COLAU..) 含较多新上市/SPAC/.WI 衍生证券，stock_us_daily 失败率较高，stock_us_hist 必须连续 3 次失败后才会被 disable。
+4. 当前 free 输出仍全部为 akshare + RAW_ONLY_REVIEW，没有 BOTH_QUALIFIED 高置信样本。
+```
+
+下一步:
+
+```text
+1. 网络条件改善后再继续 batch 15:
+   python -m m17_tenbagger_research.run_full_batch --provider akshare --output-dir data/tenbagger_research/full/free --batch-size 100 --start-batch 15 --max-batches 1 --request-delay 0.2
+   建议运行前先用脚本探针确认 COLAU/COLB/COLL/COLM/COMP/CON.WI 在 stock_us_hist/stock_us_daily 下都能在 10s 内返回。
+2. 在 m17_tenbagger_research/data_providers.py 给 YFinanceProvider 加一个硬超时
+   (yf.download(..., timeout=30) 或 concurrent.futures 包裹)，让 provider=free 在 yfinance 挂起时也能 fallback 到 AKShare。
+3. 跑到 2000 ticker 后再做一次阶段汇总。
+4. 设计 AKShare-only 样本的 raw/adjusted 复核策略。
+```
