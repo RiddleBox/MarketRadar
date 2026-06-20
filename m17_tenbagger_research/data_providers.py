@@ -5,6 +5,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import date
 import concurrent.futures
+import multiprocessing as mp
+import queue
 from typing import Callable, Protocol, TypeVar
 
 import pandas as pd
@@ -32,6 +34,76 @@ def _call_with_timeout(
             executor.shutdown(wait=False, cancel_futures=True)
 
 
+def _provider_subprocess_worker(result_queue, function_name: str, kwargs: dict) -> None:
+    try:
+        if function_name == "yfinance_download":
+            import yfinance as yf
+
+            frame = yf.download(**kwargs)
+        elif function_name == "akshare_stock_zh_a_hist":
+            import akshare as ak
+
+            frame = ak.stock_zh_a_hist(**kwargs)
+        elif function_name == "akshare_stock_hk_hist":
+            import akshare as ak
+
+            frame = ak.stock_hk_hist(**kwargs)
+        elif function_name == "akshare_stock_us_hist":
+            import akshare as ak
+
+            frame = ak.stock_us_hist(**kwargs)
+        elif function_name == "akshare_stock_us_daily":
+            import akshare as ak
+
+            frame = ak.stock_us_daily(**kwargs)
+        else:
+            raise ValueError(f"unknown provider function: {function_name}")
+    except Exception as exc:  # noqa: BLE001 - cross-process provider boundary
+        result_queue.put(("error", exc.__class__.__name__, str(exc)))
+        return
+
+    result_queue.put(("ok", frame))
+
+
+def _call_provider_subprocess(
+    function_name: str,
+    kwargs: dict,
+    *,
+    timeout_seconds: int,
+    label: str,
+) -> pd.DataFrame:
+    ctx = mp.get_context("spawn")
+    result_queue = ctx.Queue(maxsize=1)
+    process = ctx.Process(
+        target=_provider_subprocess_worker,
+        args=(result_queue, function_name, kwargs),
+    )
+    process.start()
+    process.join(timeout_seconds)
+
+    if process.is_alive():
+        process.terminate()
+        process.join(5)
+        if process.is_alive():
+            process.kill()
+            process.join(5)
+        raise TimeoutError(f"{label} timed out after {timeout_seconds}s")
+
+    try:
+        status, payload, *rest = result_queue.get_nowait()
+    except queue.Empty as exc:
+        raise RuntimeError(f"{label} exited without returning data") from exc
+
+    if status == "ok":
+        return payload
+
+    error_type = str(payload)
+    message = str(rest[0]) if rest else ""
+    if error_type == "TypeError":
+        raise TypeError(message)
+    raise RuntimeError(f"{error_type}: {message}")
+
+
 class PriceDataProvider(Protocol):
     name: str
 
@@ -57,18 +129,17 @@ class YFinanceProvider:
         start_date: date,
         end_date: date,
     ) -> pd.DataFrame:
-        import yfinance as yf
-
-        return _call_with_timeout(
-            lambda: yf.download(
-                ticker,
-                start=start_date.isoformat(),
-                end=end_date.isoformat(),
-                auto_adjust=False,
-                progress=False,
-                threads=False,
-                timeout=self.timeout_seconds,
-            ),
+        return _call_provider_subprocess(
+            "yfinance_download",
+            {
+                "tickers": ticker,
+                "start": start_date.isoformat(),
+                "end": end_date.isoformat(),
+                "auto_adjust": False,
+                "progress": False,
+                "threads": False,
+                "timeout": self.timeout_seconds,
+            },
             timeout_seconds=self.timeout_seconds + 5,
             label=f"yfinance.download({ticker})",
         )
@@ -90,14 +161,12 @@ class AkShareProvider:
         start_date: date,
         end_date: date,
     ) -> pd.DataFrame:
-        import akshare as ak
-
         symbol = ticker.strip().upper()
         if symbol.endswith(".HK"):
-            return self._fetch_hk(ak, symbol, start_date, end_date)
+            return self._fetch_hk(None, symbol, start_date, end_date)
         if symbol.endswith((".SH", ".SZ", ".BJ")):
-            return self._fetch_a_share(ak, symbol, start_date, end_date)
-        return self._fetch_us(ak, symbol, start_date, end_date)
+            return self._fetch_a_share(None, symbol, start_date, end_date)
+        return self._fetch_us(None, symbol, start_date, end_date)
 
     def _fetch_a_share(
         self,
@@ -107,17 +176,22 @@ class AkShareProvider:
         end_date: date,
     ) -> pd.DataFrame:
         symbol = ticker.split(".")[0]
-        frame = _call_with_timeout(
-            lambda: ak.stock_zh_a_hist(
-                symbol=symbol,
-                period="daily",
-                start_date=start_date.strftime("%Y%m%d"),
-                end_date=end_date.strftime("%Y%m%d"),
-                adjust="qfq",
-            ),
-            timeout_seconds=self.timeout_seconds,
-            label=f"akshare.stock_zh_a_hist({ticker})",
-        )
+        kwargs = {
+            "symbol": symbol,
+            "period": "daily",
+            "start_date": start_date.strftime("%Y%m%d"),
+            "end_date": end_date.strftime("%Y%m%d"),
+            "adjust": "qfq",
+        }
+        if ak is None:
+            frame = _call_provider_subprocess(
+                "akshare_stock_zh_a_hist",
+                kwargs,
+                timeout_seconds=self.timeout_seconds,
+                label=f"akshare.stock_zh_a_hist({ticker})",
+            )
+        else:
+            frame = ak.stock_zh_a_hist(**kwargs)
         return frame if frame is not None else pd.DataFrame()
 
     def _fetch_hk(
@@ -128,17 +202,22 @@ class AkShareProvider:
         end_date: date,
     ) -> pd.DataFrame:
         symbol = ticker.replace(".HK", "").zfill(5)
-        frame = _call_with_timeout(
-            lambda: ak.stock_hk_hist(
-                symbol=symbol,
-                period="daily",
-                start_date=start_date.strftime("%Y%m%d"),
-                end_date=end_date.strftime("%Y%m%d"),
-                adjust="qfq",
-            ),
-            timeout_seconds=self.timeout_seconds,
-            label=f"akshare.stock_hk_hist({ticker})",
-        )
+        kwargs = {
+            "symbol": symbol,
+            "period": "daily",
+            "start_date": start_date.strftime("%Y%m%d"),
+            "end_date": end_date.strftime("%Y%m%d"),
+            "adjust": "qfq",
+        }
+        if ak is None:
+            frame = _call_provider_subprocess(
+                "akshare_stock_hk_hist",
+                kwargs,
+                timeout_seconds=self.timeout_seconds,
+                label=f"akshare.stock_hk_hist({ticker})",
+            )
+        else:
+            frame = ak.stock_hk_hist(**kwargs)
         return frame if frame is not None else pd.DataFrame()
 
     def _fetch_us(
@@ -151,18 +230,23 @@ class AkShareProvider:
         symbol = ticker.replace(".US", "")
         if not self._us_hist_disabled:
             for prefix in ("105.", "106.", ""):
+                kwargs = {
+                    "symbol": f"{prefix}{symbol}",
+                    "period": "daily",
+                    "start_date": start_date.strftime("%Y%m%d"),
+                    "end_date": end_date.strftime("%Y%m%d"),
+                    "adjust": "qfq",
+                }
                 try:
-                    frame = _call_with_timeout(
-                        lambda prefix=prefix: ak.stock_us_hist(
-                            symbol=f"{prefix}{symbol}",
-                            period="daily",
-                            start_date=start_date.strftime("%Y%m%d"),
-                            end_date=end_date.strftime("%Y%m%d"),
-                            adjust="qfq",
-                        ),
-                        timeout_seconds=self.timeout_seconds,
-                        label=f"akshare.stock_us_hist({prefix}{symbol})",
-                    )
+                    if ak is None:
+                        frame = _call_provider_subprocess(
+                            "akshare_stock_us_hist",
+                            kwargs,
+                            timeout_seconds=self.timeout_seconds,
+                            label=f"akshare.stock_us_hist({prefix}{symbol})",
+                        )
+                    else:
+                        frame = ak.stock_us_hist(**kwargs)
                 except Exception:
                     self._record_us_hist_failure()
                     if self._us_hist_disabled:
@@ -185,17 +269,25 @@ class AkShareProvider:
         end_date: date,
     ) -> pd.DataFrame:
         try:
-            frame = _call_with_timeout(
-                lambda: ak.stock_us_daily(symbol=symbol, adjust="qfq"),
-                timeout_seconds=self.timeout_seconds,
-                label=f"akshare.stock_us_daily({symbol})",
-            )
+            if ak is None:
+                frame = _call_provider_subprocess(
+                    "akshare_stock_us_daily",
+                    {"symbol": symbol, "adjust": "qfq"},
+                    timeout_seconds=self.timeout_seconds,
+                    label=f"akshare.stock_us_daily({symbol})",
+                )
+            else:
+                frame = ak.stock_us_daily(symbol=symbol, adjust="qfq")
         except TypeError:
-            frame = _call_with_timeout(
-                lambda: ak.stock_us_daily(symbol=symbol),
-                timeout_seconds=self.timeout_seconds,
-                label=f"akshare.stock_us_daily({symbol})",
-            )
+            if ak is None:
+                frame = _call_provider_subprocess(
+                    "akshare_stock_us_daily",
+                    {"symbol": symbol},
+                    timeout_seconds=self.timeout_seconds,
+                    label=f"akshare.stock_us_daily({symbol})",
+                )
+            else:
+                frame = ak.stock_us_daily(symbol=symbol)
         except Exception:
             return pd.DataFrame()
         if frame is None or frame.empty:

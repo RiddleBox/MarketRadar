@@ -1359,3 +1359,70 @@ AKShare 在单独探针中通常能 1-6s 返回，但批量长跑中仍可能间
    python -m m17_tenbagger_research.run_full_batch --provider free --output-dir data\tenbagger_research\full\free --batch-size 100 --start-batch 15 --max-batches 1 --request-delay 0.2
 3. 如果仍挂起，改造为 per-ticker subprocess isolation。
 ```
+
+---
+
+## 2026-06-20 Update 15
+
+阶段:
+
+```text
+Step 1 样本收集
+```
+
+当前推进:
+
+```text
+将 provider timeout 从线程级升级为子进程级，解决第三方网络调用留下不可杀后台线程的问题。
+```
+
+完成内容:
+
+```text
+1. 用户重试 batch 15 后，yfinance 仍出现 YFRateLimitError，进程随后无 CPU 增长且无新 cache 写入。
+2. 确认卡住进程是 m17_tenbagger_research.run_full_batch --provider free 的 batch 15 任务后，停止该进程。
+3. 将 yfinance / AKShare 的生产外部调用改为 subprocess timeout guard。
+4. Windows 下如果第三方调用卡死，主进程现在可以 terminate/kill 子进程，而不是被 ThreadPoolExecutor 的非 daemon 线程拖住。
+5. 保留离线 FakeAk 测试路径，不让单元测试依赖真实网络或 AKShare/yfinance。
+```
+
+验证结果:
+
+```text
+python -m py_compile m17_tenbagger_research\data_providers.py
+
+python -m pytest tests\test_m17_sample_discovery.py tests\test_m17_ticker_universe_and_pipeline.py -q
+19 passed in 3.96s
+```
+
+外部数据源要求:
+
+```text
+必需:
+1. 美股日频 OHLCV，至少覆盖 NASDAQ / NYSE / AMEX common stocks。
+2. 时间范围至少覆盖 2015-01-01 到 2025-12-31。
+3. 可程序化批量下载，最好是 Python API / CSV / Parquet，不依赖浏览器 JS 验证。
+4. 至少有 date 和 close；最好有 volume。
+5. 需要说明复权/拆股/分红处理。
+
+强烈建议:
+1. 同时提供 raw close 和 adjusted close，或提供 split/dividend 事件以重建两条价格轨。
+2. 覆盖 delisted / renamed / merged tickers，降低 survivorship bias。
+3. 有稳定 symbol mapping。
+4. 允许研究/回测缓存。
+
+M17 标准化目标字段:
+date, raw_close, adjusted_close, volume
+
+只有单 close 序列的数据源可以作为低成本候选层，但输出只能标记 RAW_ONLY_REVIEW。
+高置信样本优先要求 BOTH_QUALIFIED，即 raw_close 和 adjusted_close 均满足 90 自然日 >= 1000%。
+```
+
+下一步:
+
+```text
+1. 重试 batch 15:
+   python -m m17_tenbagger_research.run_full_batch --provider free --output-dir data\tenbagger_research\full\free --batch-size 100 --start-batch 15 --max-batches 1 --request-delay 0.2
+2. 如果 batch 15 仍然推进很慢，把 batch-size 降到 10-25，避免一个切片拖太久。
+3. 并行寻找新的低成本历史日线源，优先找 raw+adjusted 双轨和 delisted 覆盖。
+```
