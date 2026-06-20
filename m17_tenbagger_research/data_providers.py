@@ -5,11 +5,31 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import date
 import concurrent.futures
-from typing import Protocol
+from typing import Callable, Protocol, TypeVar
 
 import pandas as pd
 
 from .sample_discovery import DATE_ALIASES
+
+_T = TypeVar("_T")
+
+
+def _call_with_timeout(
+    func: Callable[[], _T],
+    *,
+    timeout_seconds: int,
+    label: str,
+) -> _T:
+    executor = concurrent.futures.ThreadPoolExecutor(max_workers=1)
+    future = executor.submit(func)
+    try:
+        return future.result(timeout=timeout_seconds)
+    except concurrent.futures.TimeoutError as exc:
+        executor.shutdown(wait=False, cancel_futures=True)
+        raise TimeoutError(f"{label} timed out after {timeout_seconds}s") from exc
+    finally:
+        if future.done():
+            executor.shutdown(wait=False, cancel_futures=True)
 
 
 class PriceDataProvider(Protocol):
@@ -29,6 +49,7 @@ class YFinanceProvider:
     """Yahoo/yfinance POC provider."""
 
     name: str = "yfinance"
+    timeout_seconds: int = 30
 
     def fetch_daily_prices(
         self,
@@ -38,13 +59,18 @@ class YFinanceProvider:
     ) -> pd.DataFrame:
         import yfinance as yf
 
-        return yf.download(
-            ticker,
-            start=start_date.isoformat(),
-            end=end_date.isoformat(),
-            auto_adjust=False,
-            progress=False,
-            threads=False,
+        return _call_with_timeout(
+            lambda: yf.download(
+                ticker,
+                start=start_date.isoformat(),
+                end=end_date.isoformat(),
+                auto_adjust=False,
+                progress=False,
+                threads=False,
+                timeout=self.timeout_seconds,
+            ),
+            timeout_seconds=self.timeout_seconds + 5,
+            label=f"yfinance.download({ticker})",
         )
 
 
@@ -54,6 +80,7 @@ class AkShareProvider:
 
     name: str = "akshare"
     us_hist_disable_after_failures: int = 3
+    timeout_seconds: int = 30
     _us_hist_failures: int = field(default=0, init=False, repr=False)
     _us_hist_disabled: bool = field(default=False, init=False, repr=False)
 
@@ -72,37 +99,45 @@ class AkShareProvider:
             return self._fetch_a_share(ak, symbol, start_date, end_date)
         return self._fetch_us(ak, symbol, start_date, end_date)
 
-    @staticmethod
     def _fetch_a_share(
+        self,
         ak,
         ticker: str,
         start_date: date,
         end_date: date,
     ) -> pd.DataFrame:
         symbol = ticker.split(".")[0]
-        frame = ak.stock_zh_a_hist(
-            symbol=symbol,
-            period="daily",
-            start_date=start_date.strftime("%Y%m%d"),
-            end_date=end_date.strftime("%Y%m%d"),
-            adjust="qfq",
+        frame = _call_with_timeout(
+            lambda: ak.stock_zh_a_hist(
+                symbol=symbol,
+                period="daily",
+                start_date=start_date.strftime("%Y%m%d"),
+                end_date=end_date.strftime("%Y%m%d"),
+                adjust="qfq",
+            ),
+            timeout_seconds=self.timeout_seconds,
+            label=f"akshare.stock_zh_a_hist({ticker})",
         )
         return frame if frame is not None else pd.DataFrame()
 
-    @staticmethod
     def _fetch_hk(
+        self,
         ak,
         ticker: str,
         start_date: date,
         end_date: date,
     ) -> pd.DataFrame:
         symbol = ticker.replace(".HK", "").zfill(5)
-        frame = ak.stock_hk_hist(
-            symbol=symbol,
-            period="daily",
-            start_date=start_date.strftime("%Y%m%d"),
-            end_date=end_date.strftime("%Y%m%d"),
-            adjust="qfq",
+        frame = _call_with_timeout(
+            lambda: ak.stock_hk_hist(
+                symbol=symbol,
+                period="daily",
+                start_date=start_date.strftime("%Y%m%d"),
+                end_date=end_date.strftime("%Y%m%d"),
+                adjust="qfq",
+            ),
+            timeout_seconds=self.timeout_seconds,
+            label=f"akshare.stock_hk_hist({ticker})",
         )
         return frame if frame is not None else pd.DataFrame()
 
@@ -117,12 +152,16 @@ class AkShareProvider:
         if not self._us_hist_disabled:
             for prefix in ("105.", "106.", ""):
                 try:
-                    frame = ak.stock_us_hist(
-                        symbol=f"{prefix}{symbol}",
-                        period="daily",
-                        start_date=start_date.strftime("%Y%m%d"),
-                        end_date=end_date.strftime("%Y%m%d"),
-                        adjust="qfq",
+                    frame = _call_with_timeout(
+                        lambda prefix=prefix: ak.stock_us_hist(
+                            symbol=f"{prefix}{symbol}",
+                            period="daily",
+                            start_date=start_date.strftime("%Y%m%d"),
+                            end_date=end_date.strftime("%Y%m%d"),
+                            adjust="qfq",
+                        ),
+                        timeout_seconds=self.timeout_seconds,
+                        label=f"akshare.stock_us_hist({prefix}{symbol})",
                     )
                 except Exception:
                     self._record_us_hist_failure()
@@ -138,17 +177,25 @@ class AkShareProvider:
 
         return self._fetch_us_daily(ak, symbol, start_date, end_date)
 
-    @staticmethod
     def _fetch_us_daily(
+        self,
         ak,
         symbol: str,
         start_date: date,
         end_date: date,
     ) -> pd.DataFrame:
         try:
-            frame = ak.stock_us_daily(symbol=symbol, adjust="qfq")
+            frame = _call_with_timeout(
+                lambda: ak.stock_us_daily(symbol=symbol, adjust="qfq"),
+                timeout_seconds=self.timeout_seconds,
+                label=f"akshare.stock_us_daily({symbol})",
+            )
         except TypeError:
-            frame = ak.stock_us_daily(symbol=symbol)
+            frame = _call_with_timeout(
+                lambda: ak.stock_us_daily(symbol=symbol),
+                timeout_seconds=self.timeout_seconds,
+                label=f"akshare.stock_us_daily({symbol})",
+            )
         except Exception:
             return pd.DataFrame()
         if frame is None or frame.empty:

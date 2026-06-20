@@ -1,5 +1,6 @@
 from datetime import date
 from pathlib import Path
+import time
 
 import pandas as pd
 
@@ -223,6 +224,19 @@ def test_free_fallback_provider_skips_yfinance_after_repeated_failures(monkeypat
             pass
 
     assert calls == {"yfinance": 2, "akshare": 3}
+
+
+def test_provider_timeout_helper_raises_timeout():
+    try:
+        data_providers._call_with_timeout(
+            lambda: time.sleep(0.2),
+            timeout_seconds=0.01,
+            label="slow provider",
+        )
+    except TimeoutError as exc:
+        assert "slow provider timed out" in str(exc)
+    else:
+        raise AssertionError("expected provider timeout")
 
 
 def test_akshare_us_provider_falls_back_to_daily_and_clips_dates():

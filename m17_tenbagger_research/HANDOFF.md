@@ -1,6 +1,6 @@
 # M17 Ten-Bagger Research Handoff
 
-> Last updated: 2026-06-19 (session 2)
+> Last updated: 2026-06-20
 > Module: M17 ten-bagger sample collection
 > Current phase: Step 1 sample collection
 
@@ -92,6 +92,7 @@ Low-cost provider details:
 provider=free tries yfinance first, then AKShare.
 If yfinance repeatedly returns empty/rate-limited results in one run, it is skipped for the rest of that provider instance.
 If AKShare stock_us_hist repeatedly fails, AKShareProvider falls back directly to stock_us_daily.
+YFinanceProvider and AKShareProvider now have provider-level timeout guards to avoid indefinite batch stalls.
 The pipeline records the actual successful source in sample data_source.
 Cache sidecars now preserve provider/source metadata for later reruns.
 run_small_poc.py supports: free, yfinance, akshare, stooq, opend.
@@ -167,6 +168,9 @@ First attempt used provider=free; the yfinance leg blocked indefinitely (yfinanc
 Second attempt used provider=akshare; AKShare stock_us_hist / stock_us_daily intermittently hung on the COLAU/COLB/COLL/COLM/COMP slice.
 Standalone AKShare probes for AAPL, COMP, CON, COO, COOK, COP returned within 1-6s, so the issue is intermittent batch-time stalls, not a global outage.
 Both stalled batch_0015 directories were never created, so no invalid coverage was added.
+On 2026-06-20, YFinanceProvider was updated to call yf.download(..., timeout=30) and wrap the call with a provider-level timeout guard.
+On 2026-06-20, AKShareProvider stock_* calls were also wrapped with provider-level timeout guards.
+If AKShare still leaves stuck background threads after timeout, the next escalation is per-ticker subprocess isolation rather than plain threads.
 Current free-provider coverage stays at 1400 tickers, 1138 windows, 149 episodes, 583 failed tickers.
 All current free-provider windows are akshare + RAW_ONLY_REVIEW.
 ```
@@ -194,7 +198,7 @@ python -m pytest tests/test_m17_sample_discovery.py tests/test_m17_ticker_univer
 Expected current result:
 
 ```text
-16 passed
+19 passed
 ```
 
 To rebuild current partial merged outputs from valid batches:
@@ -267,12 +271,13 @@ Current state:
 - Merge-only currently skips quota-exhausted batches.
 - Free-provider batches 1-14 are valid (1138 windows / 149 episodes / 583 failed across 1400 tickers).
 - Batch 15 has stalled twice on the COLAU..COMP slice; current network conditions may not let it finish at all in one shot.
+- Provider-level timeout guards have been added for yfinance and AKShare calls after those stalls.
 
 Your next task:
 1. Run the M17 tests.
 2. Run merge-only to verify current free-provider partial outputs.
 3. Continue provider=free from batch 15 only when AKShare stock_us_hist / stock_us_daily are responding cleanly for that slice (probe COLAU, COLB, COLL, COLM, COMP, CON.WI before launching).
-4. Consider adding a hard yfinance.download(timeout=...) so the free fallback can give up on a wedged yfinance call instead of hanging the whole batch.
+4. If batch 15 still hangs after the provider timeout guard, replace the thread timeout with per-ticker subprocess isolation so a stuck AKShare call can be killed.
 5. Review source/quality summary after each few batches.
 6. Keep BOTH_QUALIFIED / RAW_ONLY_REVIEW / ADJUSTED_ONLY_REVIEW separation intact.
 7. Treat AKShare-only US rows as review candidates until raw/adjusted handling is audited.

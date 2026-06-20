@@ -1299,3 +1299,63 @@ output_dir=data\tenbagger_research\full\free
 3. 跑到 2000 ticker 后再做一次阶段汇总。
 4. 设计 AKShare-only 样本的 raw/adjusted 复核策略。
 ```
+
+---
+
+## 2026-06-20 Update 14
+
+阶段:
+
+```text
+Step 1 样本收集
+```
+
+当前推进:
+
+```text
+修复 batch 15 长跑中的 provider 网络挂起问题。
+```
+
+完成内容:
+
+```text
+1. 在 YFinanceProvider 中给 yf.download() 增加 timeout=30。
+2. 为 yfinance 调用增加 provider-level timeout guard，避免单个 ticker 无限阻塞 free fallback。
+3. 为 AKShareProvider 的 stock_zh_a_hist / stock_hk_hist / stock_us_hist / stock_us_daily 增加 provider-level timeout guard。
+4. 新增 timeout helper 单元测试。
+```
+
+验证结果:
+
+```text
+python -m py_compile m17_tenbagger_research\data_providers.py
+
+python -m pytest tests\test_m17_sample_discovery.py tests\test_m17_ticker_universe_and_pipeline.py -q
+19 passed in 3.61s
+```
+
+问题解释:
+
+```text
+这不是 M17 样本扫描算法错误，也不是 batch merge 错误。
+核心问题是第三方行情源在网络不稳定/限流/代理异常时会长时间挂起，而 provider 层此前没有每个外部调用的硬等待上限。
+provider=free 会先尝试 yfinance；如果 yfinance 挂起而不是抛异常，fallback 到 AKShare 就永远不会发生。
+AKShare 在单独探针中通常能 1-6s 返回，但批量长跑中仍可能间歇性卡在某个 ticker 的 stock_us_hist / stock_us_daily 调用。
+```
+
+已知风险:
+
+```text
+1. provider-level thread timeout 能让主采集逻辑不再无限等 future.result()，但如果第三方库底层线程永久卡死，进程退出仍可能受影响。
+2. 如果 batch 15 仍挂住，下一步应升级为 per-ticker subprocess isolation，让每只 ticker 的外部数据调用都能被进程级 kill。
+3. 当前 free 输出仍全部为 akshare + RAW_ONLY_REVIEW，没有 BOTH_QUALIFIED 高置信样本。
+```
+
+下一步:
+
+```text
+1. 先探针确认 COLAU/COLB/COLL/COLM/COMP/CON.WI 响应正常。
+2. 再从 batch 15 继续:
+   python -m m17_tenbagger_research.run_full_batch --provider free --output-dir data\tenbagger_research\full\free --batch-size 100 --start-batch 15 --max-batches 1 --request-delay 0.2
+3. 如果仍挂起，改造为 per-ticker subprocess isolation。
+```
